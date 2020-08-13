@@ -29,7 +29,7 @@
 * type: testable-project
 * id: 99d480d9-6d1d-4df8-8a1d-0e270104a61f
 * title: List Implementations
-* upstream: https://github.com/AdaGold/list-implementations
+* upstream: https://github.com/ada-c13/list-implementations
 * validate_fork: false
 * points: 3
 * topics: linked-lists
