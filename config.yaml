@@ -24,7 +24,7 @@ Standards:
         Path: /01-Code-Reviews/02-code-reviews-checkpoint.md
   -
     Title: Linked Lists
-    Description: Linked Lists
+    Description: Creating Linked Lists
     UID: 9a25dc7a043912f574d03caae5538793
     SuccessCriteria:
       - success criteria
