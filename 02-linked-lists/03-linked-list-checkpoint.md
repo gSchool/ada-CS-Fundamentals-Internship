@@ -27,9 +27,9 @@
 ### !challenge
 
 * type: testable-project
-* id: 99d480d9-6d1d-4df8-8a1d-0e270104a61f
+* id: 4b73b5cb-8ebe-4f1a-8575-0618c4b2a3ac
 * title: List Implementations
-* upstream: https://github.com/ada-c13/list-implementations
+* upstream: https://github.com/Ada-C13/linked-list
 * validate_fork: false
 * points: 3
 * topics: linked-lists
@@ -61,7 +61,7 @@ Link to your repo
 ### !challenge
 
 * type: short-answer
-* id: 91ea123a-3d04-4273-b088-31ff25be58ab
+* id: b5763115-0402-4359-8177-1a3186b86f47
 * title: Link to your PR
 <!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
 * topics: linked-lists
