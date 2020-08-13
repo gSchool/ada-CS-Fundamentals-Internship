@@ -22,3 +22,18 @@ Standards:
         Type: Checkpoint
         UID: 728c9bb2c032fde3ff8f53744c495fff
         Path: /01-Code-Reviews/02-code-reviews-checkpoint.md
+  -
+    Title: Linked Lists
+    Description: Linked Lists
+    UID: 9a25dc7a043912f574d03caae5538793
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: 3fbc2c70204df4030287217793211b52
+        Path: /02-linked-lists/02-linked-lists.md
+      -
+        Type: Checkpoint
+        UID: aa839f3c34b7e5c614f58d28cf61459c
+        Path: /02-linked-lists/03-linked-list-checkpoint.md
