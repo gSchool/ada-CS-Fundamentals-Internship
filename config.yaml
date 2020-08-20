@@ -37,3 +37,18 @@ Standards:
         Type: Checkpoint
         UID: aa839f3c34b7e5c614f58d28cf61459c
         Path: /02-linked-lists/03-linked-list-checkpoint.md
+  -
+    Title: Binary Search Trees
+    Description: Creating Binary Search Trees
+    UID: 573a7b75-0ce3-41ea-b2e0-48de2a5f51c0
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: c9758c0c-f8e3-4d00-9f1f-66f4347978dc
+        Path: /03-Binary-Search-Trees/01-Binary-Search-Trees.md
+      -
+        Type: Checkpoint
+        UID: 962e5b9f-c4a0-4b97-b98f-b394001e5f16
+        Path: /03-Binary-Search-Trees/02-Bst-checkpoint.md
