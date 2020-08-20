@@ -19,6 +19,7 @@ By the end of this lesson you should be able to:
 
 - [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d9746397-8a10-43be-b1cc-aaaf00720b31)
 - [Slide Deck](https://docs.google.com/presentation/d/1Fj0deIUswGZ3ooJMpgVUqPEaWHKTkQ1w2Ci-yf8v66M/edit#slide=id.p)
+- [BST Exercise](https://github.com/Ada-C13/tree-practice)
 
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d9746397-8a10-43be-b1cc-aaaf00720b31&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
