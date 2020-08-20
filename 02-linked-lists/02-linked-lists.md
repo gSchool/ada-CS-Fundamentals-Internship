@@ -79,36 +79,260 @@ Arrays have the following advantages:
 
 ### Questions
 
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: 30585bca-c0e3-434f-b3cd-2f804b183c69
+* title: Suppose you have an online store and need to lookup and access product descriptions by an id (index) number.  What would you pick, LinkedList or Array?
+* points: 1
+* topics: linked-lists
+
+##### !question
+
+Suppose you have an online store and need to lookup and access product descriptions by an id (index) number.  What would you pick, LinkedList or Array?
+
+##### !end-question
+
+##### !options
+
+* Array
+* LinkedList
+* Either
+
+##### !end-options
+
+##### !answer
+
+* Array
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- 
 <details>
 <summary>Suppose you have an online store and need to lookup and access product descriptions by an id (index) number.  What would you pick, LinkedList or Array?</summary>
   
 An Array because looking up items by index is much faster O(1) vs O(n) with an Array.
 </details>
+-->
 
-<details>
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: 88936263-eb5f-47dd-bce9-0d80c70dbbcb
+* title: You need to look up orders by customer name and the list is maintained in order by the customer name.  What would you pick, LinkedList or Array?
+* points: 1
+* topics: linked-lists
+
+##### !question
+
+You need to look up orders by customer name and the list is maintained in order by the customer name.  What would you pick, LinkedList or Array?
+
+##### !end-question
+
+##### !options
+
+* Array
+* LinkedList
+* Either
+
+##### !end-options
+
+##### !answer
+
+* Array
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+
+<!-- <details>
 <summary>You need to look up orders by customer name and the list is maintained in order by the customer name.  What would you pick, LinkedList or Array?</summary>
   
 An Array because you can search for elements in an Array using binary search O(log n) vs an Array with linear search O(n).
 </details>
+-->
 
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: f6905284-acff-486f-9206-4e49ed1877d0
+* title: You need to regularly add orders to the end of a list and remove orders from the front to process them.  What would you pick, LinkedList or Array?
+* points: 1
+* topics: linked-lists
+
+##### !question
+
+You need to regularly add orders to the end of a list and remove orders from the front to process them.  What would you pick, LinkedList or Array?
+
+##### !end-question
+
+##### !options
+
+* Array
+* LinkedList
+* Either
+
+##### !end-options
+
+##### !answer
+
+* LinkedList
+
+##### !end-answer
+
+<!-- other optional sections -->
+##### !hint 
+
+A Linked List because you can add and remove elements from the ends in constant time O(1) vs an Array where you have to shift all elements over causing it to run in O(n) time.
+
+##### !end-hint
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- 
 <details>
 <summary>You need to regularly add orders to the end of a list and remove orders from the front to process them.  What would you pick, LinkedList or Array?</summary>
   
 A Linked List because you can add and remove elements from the ends in constant time O(1) vs an Array where you have to shift all elements over causing it to run in O(n) time.
 </details>
+-->
 
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: f6905284-acff-486f-9206-4e49ed1877d0
+* title: You need to regularly look up students from an unordered list and remove them from the list.  What would you pick a LinkedList or an Array?
+* points: 1
+* topics: linked-lists
+
+##### !question
+
+You need to regularly look up students from an unordered list and remove them from the list.  What would you pick a LinkedList or an Array?
+
+##### !end-question
+
+##### !options
+
+* Array
+* LinkedList
+* Either
+
+##### !end-options
+
+##### !answer
+
+* Either
+
+##### !end-answer
+
+<!-- other optional sections -->
+##### !hint 
+
+Either could work as finding an element will take O(n) for an unordered list in both cases.  Granted removing an element in a LinkedList will take O(1) vs O(n) for an Array.
+
+##### !end-hint
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!--
 <details>
 <summary>You need to regularly look up students from an unordered list and remove them from the list.  What would you pick a LinkedList or an Array?</summary>
   
 Either could work as finding an element will take O(n) for an unordered list in both cases.  Granted removing an element in a LinkedList will take O(1) vs O(n) for an Array.
 </details>
+-->
 
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: 2932b843-cb6b-46de-b419-ac90ad59cc29
+* title: Your low memory capacity smart lightbulb needs to store a list of data.  What would you pick, LinkedList or Array?
+* points: 1
+* topics: linked-lists
+
+##### !question
+
+You need to regularly look up students from an unordered list and remove them from the list.  What would you pick a LinkedList or an Array?
+
+##### !end-question
+
+##### !options
+
+* Array
+* LinkedList
+* Either
+
+##### !end-options
+
+##### !answer
+
+* LinkedList
+
+##### !end-answer
+
+<!-- other optional sections -->
+##### !hint
+
+A Linked List because it does not require the items to be adjacent and will only use as much memory as it requires in the moment.
+
+##### !end-hint
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!--
 <details>
 <summary>Your low memory capacity smart lightbulb needs to store a list of data.  What would you pick, LinkedList or Array?</summary>
   
 A Linked List because it does not require the items to be adjacent and will only use as much memory as it requires in the moment.
 </details>
-
+-->
 
 ## Object Oriented Design of a Linked List
 
@@ -305,31 +529,6 @@ void removeFirst(struct node **headRef) {
   }
 }
 ```
-
-
-## Exercises
-
-The exercises will be done on the [Linked List Repository](https://github.com/Ada-C12/linked-list), please turn in a PR when done.
-
-Design an algorithm, deduce the space and time complexity and then, author functions to do the following:
-
-For each of the problems below: Assume you are given a singly linked list where each node in the linked list has integer data and a link to the next node.
-
-  1. Add a new node with the specific input data value in the linked list. Insert the new node at the beginning of the linked list
-  2. Check if the linked list contains a node with specified input value. Returns true if found, false otherwise.
-  3. Return the max value in the linked list. Returns the data value and not the node.
-  4. Return the min value in the linked list. Returns the data value and not the node.
-  5. Return the count of nodes in the singly linked list.
-  6. Return the value of the nth node from the beginning. *n* is the input to the method.
-     Assume indexing starts at 0 while counting to n.
-  7. Insert a new node with specific input data value, assuming the linked list is sorted in ascending order.
-  8. Print the value of each node in the singly linked list separated by a space.
-  9. Delete the first node found with the specified input data value.
-  10. Reverse the singly linked list. The nodes should be moved and not just the values in the nodes.
-  11. Returns the value at the middle node in the singly linked list.
-      If the node count is even, pick one of the two middle values to return.
-  12. Find the nth node from the end of the linked list and return its value. Assume indexing starts at 0 while counting to n.
-  13. Check if the linked list has a cycle. A cycle exists if any node in the linked list links to a node already visited. Returns true if a cycle is found, false otherwise.
 
 ## Resources
 
