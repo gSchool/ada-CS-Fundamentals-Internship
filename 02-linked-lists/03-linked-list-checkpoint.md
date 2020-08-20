@@ -1,5 +1,7 @@
 # List Implementations
 
+* [Exercise](https://github.com/Ada-C13/linked-list) 
+
 **Native Arrays and Array Lists**
 
   1. Let's talk about native arrays vs. Ruby arrays (`ArrayList` in Java)
