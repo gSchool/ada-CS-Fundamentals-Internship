@@ -2,29 +2,15 @@
 
 * [Exercise](https://github.com/Ada-C13/linked-list) 
 
-**Native Arrays and Array Lists**
+Using object oriented design constructs, define a Node class and LinkedList class for a singly linked list. Each node has integer data value and a link to the next node. The linked list class has a head node and the following methods defined.
 
-  1. Let's talk about native arrays vs. Ruby arrays (`ArrayList` in Java)
-  2. Let's write `lib/array_list.rb` where we will simulate what happens "under the hood" with Ruby's Array object.
-      - together: `initialize`, `add`, `delete`, `to_s`, `include?`, `size`
-      - on your own: `max`
+## Exercise
 
-**Array Lists vs Linked Lists**
+Design and implement the classes and the methods. Implement the methods within the Linked List class that are currently raising NotImplementedError.
 
-  3. Let's talk about linked lists
-  4. Let's take look at `lib/linked_list.rb` and see how the _implementation_ is different (but the _interface_ is the same) and uses nodes instead of a native array to store data.
-      - provided: `Node` class, `LinkedList` class: `initialize`, `add`, `delete`, `to_s`
-      - together: `include?`, `size`
-      - on your own: `max`
+### Going Further
 
-**Interfaces vs Implementations**
-
-  5. Let's look at `lotto.rb` and talk about interfaces vs implementations
-  6. Let's make it so that lotto ticket numbers are always displayed in numerical order. Do this by modifying the `add(value)` method in `ArrayList`
-  7. Do the same for `add(value)` method in `LinkedList`
-
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
+There are a set of advanced methods you can choose to implement for additional practice.
 
 ### !challenge
 
