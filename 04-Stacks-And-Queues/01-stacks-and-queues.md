@@ -14,7 +14,7 @@ By the end of this lesson you should be able to:
 ## Video Lesson & Slides
 
 - [Slides](https://docs.google.com/presentation/d/1aKqaO5q5gtuw31eGDvK47IleU5-XOCJKnbj4UjHmh9I/edit?usp=sharing)
-- [Stacks & Queues Exercise](https://github.com/Ada-C12/stacks-queues)
+- [Stacks & Queues Exercise](https://github.com/Ada-C13/stacks-queues)
 
 ## Introduction
 
