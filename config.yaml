@@ -52,3 +52,18 @@ Standards:
         Type: Checkpoint
         UID: 2f92c2de-f86f-497d-ad19-a00ea82ea819
         Path: /03-Binary-Search-Trees/02-Bst-checkpoint.md
+    -
+    Title: Stacks & Queues
+    Description: Exploring Abstract Data Types
+    UID: 0912ba3e-72f4-4779-92a8-c29cd180348a
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: d8a2d0de-aebe-4188-993b-4ae07c871306
+        Path: /04-Stacks-And-Queues/01-stacks-and-queues.md
+      -
+        Type: Checkpoint
+        UID: 2f92c2de-f86f-497d-ad19-a00ea82ea819
+        Path: /04-Stacks-And-Queues/02-stacks-and-queues-checkpoint.md
