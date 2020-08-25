@@ -320,4 +320,4 @@ Stacks and queues are standard computer science data structures.  They provide a
 
 ## References
 
-- [Stack Diagram from wikipedia](Sources: https://simple.wikipedia.org/wiki/Stack_(data_structure))
+- [Stack Diagram from wikipedia](https://simple.wikipedia.org/wiki/Stack_(data_structure))
