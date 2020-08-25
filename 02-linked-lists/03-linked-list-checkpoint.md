@@ -51,7 +51,7 @@ Link to your repo
 * type: short-answer
 * id: ad92de38-925b-42f1-9f8e-602f6943092a
 * title: Link to your PR
-<!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
+* points: 1
 * topics: linked-lists
 
 ##### !question
@@ -71,6 +71,41 @@ Your PR link goes here.
 /*/
 
 ##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: testable-project
+* id: 795b30c2-9d88-4480-8062-d0e5466a09eb
+* title: Optional JS Version
+* upstream: https://github.com/Ada-C13/linked-list-js
+* validate_fork: false
+* points: 1
+* topics: linked-lists
+
+##### !question
+
+Optionally you can submit a link to a fork of https://github.com/Ada-C13/linked-list-js
+
+##### !end-question
+
+##### !placeholder
+
+Link to your repository here.
+
+##### !end-placeholder
 
 <!-- other optional sections -->
 <!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
