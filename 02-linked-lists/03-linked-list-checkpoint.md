@@ -15,7 +15,7 @@ There are a set of advanced methods you can choose to implement for additional p
 ### !challenge
 
 * type: testable-project
-* id: 3b54d8d2-36d5-45a4-9f4d-d31c6418de7d
+* id: e43687d0-a809-44f8-af5d-3c1543f154e9
 * title: List Implementations
 * upstream: https://github.com/Ada-C13/linked-list
 * validate_fork: false
@@ -49,7 +49,7 @@ Link to your repo
 ### !challenge
 
 * type: short-answer
-* id: b5763115-0402-4359-8177-1a3186b86f47
+* id: ad92de38-925b-42f1-9f8e-602f6943092a
 * title: Link to your PR
 <!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
 * topics: linked-lists
@@ -88,7 +88,7 @@ Your PR link goes here.
 ### !challenge
 
 * type: testable-project
-* id: ca0a2ed2-88f3-4408-b5a0-8ed11a37a8e2
+* id: 840a97f1-eab3-4ebf-bdc4-1154f1ce286c
 * title: Optional JS Version
 * upstream: https://github.com/Ada-C13/linked-list-js
 * validate_fork: false
