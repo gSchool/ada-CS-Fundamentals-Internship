@@ -40,7 +40,7 @@ Standards:
       -
         Type: Checkpoint
         UID: 85ebdd63-f23f-40b6-bd63-8f005a97f897
-        Path: /02-linked-list/04-optional-checkpoint.md
+        Path: /02-linked-lists/04-optional-checkpoint.md
   -
     Title: Binary Search Trees
     Description: Binary Search Trees
