@@ -35,7 +35,7 @@ Standards:
         Path: /02-linked-lists/02-linked-lists.md
       -
         Type: Checkpoint
-        UID: 0267f22f-69b1-4ea4-9339-ad29ed48739d
+        UID: 7623d2f0-d549-43ab-af77-f54c87f061f9
         Path: /02-linked-lists/03-linked-list-checkpoint.md
   -
     Title: Binary Search Trees
