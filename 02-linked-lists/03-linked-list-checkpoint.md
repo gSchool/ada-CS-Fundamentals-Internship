@@ -1,6 +1,6 @@
 # List Implementations
 
-* [Exercise](https://github.com/Ada-C13/linked-list) 
+* [Exercise](https://github.com/Ada-C13/linked-list)
 
 Using object oriented design constructs, define a Node class and LinkedList class for a singly linked list. Each node has integer data value and a link to the next node. The linked list class has a head node and the following methods defined.
 
@@ -68,7 +68,7 @@ Your PR link goes here.
 
 ##### !answer
 
-/*/
+/.*/
 
 ##### !end-answer
 
