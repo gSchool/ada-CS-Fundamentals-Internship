@@ -262,7 +262,7 @@ Number goes here
 
 ##### !question
 
-With the visualizer, build a balanced tree with a height of 5 levels.  How many comparisons do you need to make to find a particular leaf node?
+With the [Binary Tree Visualizer](http://btv.melezinek.cz/binary-search-tree.html), build a balanced tree with a height of 5 levels.  How many comparisons do you need to make to find a particular leaf node?
 ##### !end-question
 
 ##### !placeholder
