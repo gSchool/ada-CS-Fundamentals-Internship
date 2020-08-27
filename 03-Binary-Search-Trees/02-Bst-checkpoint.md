@@ -74,7 +74,7 @@ Your PR link goes here.
 
 ##### !answer
 
-/^https:\/\/github.com\/.*\/pull.*/
+/^https:\/\/github.com\/.*\/pull.*\d$/
 
 ##### !end-answer
 
