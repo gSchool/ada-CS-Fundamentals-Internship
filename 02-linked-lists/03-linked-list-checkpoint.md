@@ -19,7 +19,7 @@ There are a set of advanced methods you can choose to implement for additional p
 * title: List Implementations
 * upstream: https://github.com/Ada-C13/linked-list
 * validate_fork: false
-* points: 3
+* points: 0
 * topics: linked-lists
 
 ##### !question
@@ -51,7 +51,7 @@ Link to your repo
 * type: short-answer
 * id: ad92de38-925b-42f1-9f8e-602f6943092a
 * title: Link to your PR
-* points: 1
+* points: 2
 * topics: linked-lists
 
 ##### !question
@@ -92,7 +92,7 @@ Your PR link goes here.
 * title: Optional JS Version
 * upstream: https://github.com/Ada-C13/linked-list-js
 * validate_fork: false
-* points: 1
+* points: 0
 * topics: linked-lists
 
 ##### !question
