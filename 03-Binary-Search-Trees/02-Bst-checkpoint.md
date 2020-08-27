@@ -25,7 +25,7 @@ In this exercise you will implement, in Ruby, several Tree methods.
 * title: Tree Implementations
 * upstream: https://github.com/Ada-C13/tree-practice
 * validate_fork: false
-* points: 3
+* points: 0
 * topics: binary-search-trees
 
 ##### !question
@@ -74,7 +74,7 @@ Your PR link goes here.
 
 ##### !answer
 
-/*/
+/^https:\/\/github.com\/.*\/pull.*/
 
 ##### !end-answer
 
