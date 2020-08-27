@@ -10,7 +10,7 @@
 * title: Stacks & Queues Project
 * upstream: https://github.com/Ada-C13/stacks-queues
 * validate_fork: false
-* points: 2
+* points: 0
 * topics: stacks, queues
 
 ##### !question
@@ -41,7 +41,7 @@ Complete https://github.com/Ada-C13/stacks-queues and submit a link to your repo
 * type: short-answer
 * id: 6d5a8dd1-d341-4306-b733-a4208bde9cc6
 * title: Stacks & Queues PR
-* points: 0
+* points: 3
 * topics: stacks, queues
 
 ##### !question
@@ -52,7 +52,7 @@ Submit a link to your PR here please.
 
 ##### !placeholder
 
-[text, placeholder text for the input field]
+Add your PR here
 
 ##### !end-placeholder
 
