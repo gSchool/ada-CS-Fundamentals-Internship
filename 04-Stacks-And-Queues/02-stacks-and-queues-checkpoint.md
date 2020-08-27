@@ -58,7 +58,7 @@ Submit a link to your PR here please.
 
 ##### !answer
 
-/^https://github.com/
+^https:\/\/github.com\/.*\/pull.*\d$
 
 ##### !end-answer
 
