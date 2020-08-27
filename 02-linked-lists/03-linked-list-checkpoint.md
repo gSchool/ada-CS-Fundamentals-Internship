@@ -68,7 +68,7 @@ Your PR link goes here.
 
 ##### !answer
 
-/*/
+/^https:\/\/github.com\/.*\/pull.*/
 
 ##### !end-answer
 
