@@ -168,13 +168,6 @@ On the other hand this is an unbalanced tree.
 
 ![unbalanced bst](images/unbalanced-bst.png)
 
-<details>
-  <summary>How many nodes do you need to examine to find 5, in the 1st example.  How many in the 2nd?</summary>
-
-  In the 1st example you look at 25, then 10, and then 5.  In the 2nd you look at 100, then 50, then 25, then 15, then 10 and then 5.  
-
-  So the 1st requires 3 lookups while the 2nd requires 5.
-</details>
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
@@ -254,13 +247,6 @@ Number goes here
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-<br />
-
-<details>
-  <summary>With the visualizer, build a balanced tree with a height of 5 levels.  How many comparisons do you need to make to find a particular leaf node?</summary>
-
-  Answer: 5
-</details>
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
@@ -299,12 +285,6 @@ Number goes here
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
-
-<details>
-  <summary>Add 5 more nodes to the balanced tree, maintaining the balance.  How many comparisons do you need to make now to find a particular leaf node?</summary>
-  Answer: 6 (at most)
-</details>
-
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
@@ -585,13 +565,6 @@ Number goes here
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-<details>
-  <summary>Is the tree balanced?
-  </summary>
-    Yes because the left and right subtrees only differ by a height of 1.
-</details>
-
-
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
 
@@ -761,14 +734,6 @@ In what order would you hit the nodes doing an postorder traversal
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-<details>
-  <summary>In what order are the nodes in this tree visited for each type of traversal
-  </summary>
-    Pre-Order  [17, 14, 20, 19, 52]
-    In-Order: [14, 17, 19, 20, 52]
-    Post-Order: [14, 19, 52, 20, 17]
-</details>
-
 ### Why Do Traversals
 
 There are a few common use-cases for each of the depth-first traversals.
@@ -794,12 +759,6 @@ Otherwise return 1 plus the maximum of the heights of the right and left subtree
 ```
 
 This is a recursive solution because it treats the left and right sides of a node as trees.
-
-<details>
-  <summary>What do you think the Big-O of finding the height of a tree is in this manner in terms of time & space complexity?</summary>
-
-  Since you have to visit each node once, the time complexity is O(n).  Because you will have a maximum call stack (due to recursion) based on the height of the tree, you can estimate the space complexity as O(log n)
-</details>
 
 <!--
 ## Exercises
