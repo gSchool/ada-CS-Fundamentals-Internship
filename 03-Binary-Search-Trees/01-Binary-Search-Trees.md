@@ -451,7 +451,7 @@ Big O answer here
 
 ##### !answer
 
-/O(log n)/
+/O\(log n\)/
 
 ##### !end-answer
 
