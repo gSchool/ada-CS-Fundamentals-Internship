@@ -157,10 +157,55 @@ class Queue
 end
 ```
 
-<details>
-  <summary>What would be the Big-O here of enqueue and dequeue?</summary>
-  If the Linked List has a tail reference, and is a doubly linked list, then both enqueue and dequeue can be done in O(1) time.  If there is no tail reference then enqueue should perform in O(n) time.
-</details>
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: bade61da-8d68-401f-abd1-345fbd38bc4b
+* title: Enqueue & Dequeue
+* points: 1
+* topics: queues, linked lists
+
+##### !question
+
+What would be the Big-O here of enqueue and dequeue?
+
+##### !end-question
+
+##### !options
+
+* O(1)
+* O(log n)
+* O(n log n)
+* O(n^2)
+* It depends
+
+##### !end-options
+
+##### !answer
+
+* It depends
+
+##### !end-answer
+
+<!-- other optional sections -->
+##### !hint
+
+Do all LinkedList implementation have the same time complexity for add_last and remove_first?
+
+##### !end-hint
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+If the Linked List has a tail reference, and is a doubly linked list, then both enqueue and dequeue can be done in O(1) time.  If there is no tail reference then enqueue should perform in O(n) time.
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 This implementation has a number of advantages, it's easy to read, fairly performant, but the data is a bit fragmented.  If you had a queue with a fixed maximum size, how would you use an Array to implement it?
 
@@ -223,11 +268,55 @@ Method dequeue
 end method
 ```
 
-<details>
-  <summary>What is the Big-O of each method?</summary>
-  Since a fixed number of comamnds are executed no matter the size of the queue, the Big-O of enqueue and dequeue are both O(1)
-</details>
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
 
+### !challenge
+
+* type: multiple-choice
+* id: e14d878c-9bf9-4690-af6d-6bedb7f44f46
+* title: Circular Buffer Queue
+* points: 1
+* topics: queues, circular buffer
+
+##### !question
+
+What is the Big-O of each method?
+
+##### !end-question
+
+##### !options
+
+* O(1)
+* O(log n)
+* O(n)
+* O(n^2)
+* It depends
+
+##### !end-options
+
+##### !answer
+
+* O(1)
+
+##### !end-answer
+
+<!-- other optional sections -->
+##### !hint 
+
+How or does the number of instructions executed change as the size of the queue changes?
+
+##### !end-hint
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation 
+
+Since a fixed number of comamnds are executed no matter the size of the queue, the Big-O of enqueue and dequeue are both O(1)
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 This strategy of using floating front and rear references is known as a _circular buffer_.  It allows you to work around the need to shift elements left and right when adding and removing to the front of a list.  It can, however be more difficult to understand.  This kind of buffer is used for things like round-robin scheduling of tasks, like in the CPU and for storing in-memory logs.  
 
