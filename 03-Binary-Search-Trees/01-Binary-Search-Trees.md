@@ -173,8 +173,86 @@ On the other hand this is an unbalanced tree.
 
   In the 1st example you look at 25, then 10, and then 5.  In the 2nd you look at 100, then 50, then 25, then 15, then 10 and then 5.  
 
-  So the 1st requires 3 lookups while the 2nd requires 6.
+  So the 1st requires 3 lookups while the 2nd requires 5.
 </details>
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: number
+* id: 476cab10-a81f-4877-aad3-682602a3c30d
+* title: How many nodes do you need to examine to find 5, in the 1st example?
+* decimal: 0
+* points: 1
+* topics: bst
+
+##### !question
+
+How many nodes do you need to examine to find 5, in the 1st example?
+
+##### !end-question
+
+##### !placeholder
+
+put a number in here
+
+##### !end-placeholder
+
+##### !answer
+
+3
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: number
+* id: 5a4ce281-7f17-47e5-961e-a582171eb3be
+* title: How many nodes to check in the 2nd example?
+* decimal: 0
+* points: 1
+* topics: bst
+
+##### !question
+
+How many in the 2nd?
+
+##### !end-question
+
+##### !placeholder
+
+Number goes here
+
+##### !end-placeholder
+
+##### !answer
+
+5
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 <br />
 
@@ -184,26 +262,235 @@ On the other hand this is an unbalanced tree.
   Answer: 5
 </details>
 
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: number
+* id: b7d69d24-04e0-4891-beaa-ccbb81f73fed
+* title: 5 level tree
+* decimal: 0
+* points: 1
+* topics: bst
+
+##### !question
+
+With the visualizer, build a balanced tree with a height of 5 levels.  How many comparisons do you need to make to find a particular leaf node?
+##### !end-question
+
+##### !placeholder
+
+Number goes here
+
+##### !end-placeholder
+
+##### !answer
+
+5
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
 <details>
   <summary>Add 5 more nodes to the balanced tree, maintaining the balance.  How many comparisons do you need to make now to find a particular leaf node?</summary>
   Answer: 6 (at most)
 </details>
 
 
-<details>
-  <summary>Build a completely unbalanced tree with 5 levels.  How many comparisons to find a leaf node?  What if you added 4 nodes and kept the tree unbalanced.  How many more comparisons would you need to make?</summary>
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
 
-  Answer #1:  5
-  Answer #2: 9
-</details>
+### !challenge
 
+* type: number
+* id: b7d69d24-04e0-4891-beaa-ccbb81f73fed
+* title: 6 level tree
+* decimal: 0
+* points: 1
+* topics: bst
 
-Create a tree with one node.  Then double the number of nodes, but keep the tree balanced.  Then double the number of nodes again, maintaining balance.  How does the height change?
+##### !question
 
-<details>
-  <summary>What standard Big-O time complexity does this match?</summary>
-  O(log n) when you double the number of nodes, the height increases by 1.
-</details>
+Add 5 more nodes to the balanced tree, maintaining the balance.  How many comparisons do you need to make now to find a particular leaf node?
+
+##### !end-question
+
+##### !placeholder
+
+Number goes here
+
+##### !end-placeholder
+
+##### !answer
+
+6
+
+##### !end-answer
+
+<!-- other optional sections -->
+##### !hint 
+
+How many levels does adding 5 nodes add, if you maintain balance?
+
+##### !end-hint
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: number
+* id: f32167e5-2264-49bc-8850-f81afd0f697b
+* title: Unbalanced 5 level tree
+* decimal: 0
+* points: 1
+* topics: bst
+
+##### !question
+
+Build a completely unbalanced tree with 5 levels.  How many comparisons to find a leaf node?
+
+##### !end-question
+
+##### !placeholder
+
+Number here
+
+##### !end-placeholder
+
+##### !answer
+
+5
+
+##### !end-answer
+
+<!-- other optional sections -->
+##### !hint
+
+What's the worst case?
+
+##### !end-hint
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+Worst-case you have to travel to the last node in the chain and since there are 5 levels, it takes 5 comparisons
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: number
+* id: a97fce91-ee27-4f04-be01-7484247a236e
+* title: Adding 4 more unbalanced nodes
+* decimal: 0
+* points: 1
+* topics: bst
+
+##### !question
+
+What if you added 4 nodes and kept the tree unbalanced.  How many more comparisons would you need to make?
+
+##### !end-question
+
+##### !placeholder
+
+Number goes here 
+
+##### !end-placeholder
+
+##### !answer
+
+9
+
+##### !end-answer
+
+<!-- other optional sections -->
+##### !hint
+
+If you have 5 levels and add 4 more nodes, how many levels do you gain if the tree is totally unbalanced?
+
+##### !end-hint
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+Worst case you added 4 more levels 5 + 4 = 9, so 9 comparisons to find the value.
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: short-answer
+* id: 78ea3ad2-2a41-496b-af4a-535720e0e4f4
+* title: Growth as `n` changes
+* points: 1
+* topics: bst
+
+##### !question
+
+Create a tree with one node.  Then double the number of nodes, but keep the tree balanced.  Then double the number of nodes again, maintaining balance.  The height changes
+
+What standard Big-O time complexity does this match?
+  
+
+##### !end-question
+
+##### !placeholder
+
+Big O answer here
+
+##### !end-placeholder
+
+##### !answer
+
+/O(log n)/
+
+##### !end-answer
+
+<!-- other optional sections -->
+##### !hint 
+
+Answer in the form of O(n), O(nlog n) or O(log n) etc
+
+##### !end-hint
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation 
+
+O(log n) when you double the number of nodes, the height increases by 1.
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 Notice if a tree is balanced, when you move left or right, you eliminate half of the possible nodes.  This means you are essentially doing **binary search.**  If the tree is unbalanced, you are performing a linear search.
 
@@ -260,18 +547,219 @@ For the above Binary Search Tree
 
 ![bst3](images/bst3.png)
 
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
 
-<details>
-  <summary>What is the height of the above BST?
-  </summary>
-    3
-</details>
+### !challenge
+
+* type: number
+* id: 83e29c11-66b7-4b74-a85b-4fe936c92fa2
+* title: Height of a tree
+* decimal: 0
+* points: 1
+* topics: bst
+
+##### !question
+
+What is the height of the above BST?
+
+##### !end-question
+
+##### !placeholder
+
+Number goes here
+
+##### !end-placeholder
+
+##### !answer
+
+3
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 <details>
   <summary>Is the tree balanced?
   </summary>
     Yes because the left and right subtrees only differ by a height of 1.
 </details>
+
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: a1703f9c-c97c-4b7a-86cf-cadb8780c77f
+* title: Balanced
+* points: 1
+* topics: bst
+
+##### !question
+
+Is the tree balanced?
+
+##### !end-question
+
+##### !options
+
+* Yes
+* No
+* Huh?
+
+##### !end-options
+
+##### !answer
+
+* Yes
+
+##### !end-answer
+
+<!-- other optional sections -->
+##### !hint
+
+In a balanced tree no sibling subtrees differ in height more than 1.  So no left-right subtrees differ in height by 1.
+
+##### !end-hint
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: e755df96-56ec-4d50-a336-3834838abb96
+* title: Inorder
+* points: 1
+* topics: bst, traversal
+
+##### !question
+
+In what order would you hit the nodes doing an inorder traversal
+
+##### !end-question
+
+##### !options
+
+* [17, 14, 20, 19, 52]
+* [14, 17, 19, 20, 52]
+* [14, 19, 52, 20, 17]
+
+##### !end-options
+
+##### !answer
+
+* [14, 17, 19, 20, 52]
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: 08e94a48-fc15-4d95-8a47-d8ed9e199b34
+* title: Preorder
+* points: 1
+* topics: bst, traversal
+
+##### !question
+
+In what order would you hit the nodes doing an preorder traversal
+
+##### !end-question
+
+##### !options
+
+* [17, 14, 20, 19, 52]
+* [14, 17, 19, 20, 52]
+* [14, 19, 52, 20, 17]
+
+##### !end-options
+
+##### !answer
+
+* [17, 14, 20, 19, 52]
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: c6009e6c-5717-459a-ae66-4570918271b9
+* title: Postorder
+* points: 1
+* topics: bst, traversal
+
+##### !question
+
+In what order would you hit the nodes doing an postorder traversal
+
+##### !end-question
+
+##### !options
+
+* [17, 14, 20, 19, 52]
+* [14, 17, 19, 20, 52]
+* [14, 19, 52, 20, 17]
+
+##### !end-options
+
+##### !answer
+
+* [14, 19, 52, 20, 17]
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 <details>
   <summary>In what order are the nodes in this tree visited for each type of traversal
