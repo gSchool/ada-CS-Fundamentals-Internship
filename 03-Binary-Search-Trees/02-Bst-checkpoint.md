@@ -30,7 +30,7 @@ In this exercise you will implement, in Ruby, several Tree methods.
 
 ##### !question
 
-Fork the linked repo and submit your completed exercise.  **Then** on the next question submit your PR, so I can make PR comments.
+Fork the [linked repo](https://github.com/Ada-C13/tree-practice) and submit your completed exercise.  **Then** on the next question submit your PR, so I can make PR comments.
 
 ##### !end-question
 
