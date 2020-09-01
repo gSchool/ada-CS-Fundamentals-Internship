@@ -67,3 +67,19 @@ Standards:
         Type: Checkpoint
         UID: 8688cbae92d4c42a5e2e66d78f164089
         Path: /04-Stacks-And-Queues/02-stacks-and-queues-checkpoint.md
+  -
+    Title: Hash Tables
+    Description: How hashes work
+    UID: 102b4725-f3d5-4921-b3cd-465ea0f726b2
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: d65101b1-cfd1-4f57-8fb1-8e68e051a388
+        Path: /05-hash-tables/01-hash-tables.md
+      -
+        Type: Checkpoint
+        UID: 140b3755-094c-4f8f-8a14-29c0f2bc09c4
+        Path: /05-hash-tables/02-hash-table-checkpoint.md
+      
