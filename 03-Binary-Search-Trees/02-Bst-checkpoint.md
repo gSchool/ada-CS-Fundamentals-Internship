@@ -58,7 +58,7 @@ Link to your repo
 * id: 1cfe520c-d3e0-483c-ba61-e72fc8daaa6d
 * title: Link to your PR
 * points: 3
-* topics: linked-lists
+* topics: binary-search-trees
 
 ##### !question
 
@@ -77,6 +77,40 @@ Your PR link goes here.
 /^https:\/\/github.com\/.*\/pull.*\d$/
 
 ##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: testable-project
+* id: 9d78076f-8cd3-4574-9c31-01038b49f5a4
+* title: Binary Search Tree Practice - JS
+* upstream: https://github.com/Ada-C14/tree-practice-js
+* validate_fork: true
+* points: 0
+* topics: binary-search-trees
+
+##### !question
+
+**Optional**:  The JavaScript version can be submitted here.
+
+##### !end-question
+
+##### !placeholder
+
+Link to your JS version here
+
+##### !end-placeholder
 
 <!-- other optional sections -->
 <!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
