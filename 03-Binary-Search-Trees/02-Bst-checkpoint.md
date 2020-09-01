@@ -95,8 +95,8 @@ Your PR link goes here.
 * type: testable-project
 * id: 9d78076f-8cd3-4574-9c31-01038b49f5a4
 * title: Binary Search Tree Practice - JS
-* upstream: https://github.com/Ada-C14/tree-practice-js
-* validate_fork: true
+* upstream: https://github.com/Ada-C13/tree-practice-js
+* validate_fork: false
 * points: 0
 * topics: binary-search-trees
 
