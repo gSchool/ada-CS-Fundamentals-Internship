@@ -451,7 +451,32 @@ Output:
 "bbaA" is also a valid answer, but "Aabb" is incorrect.
 Note that 'A' and 'a' are treated as two different characters.
 
-You can find a [solution in the example code folder](example-code/character_frequency.rb).
+Below would be a valid solution:
+
+```ruby
+def frequency_sort(s)
+  counts = s.chars.reduce(Hash.new(0)) do |hash, character|
+    hash[character] += 1
+    hash
+  end
+
+  max_count = 0
+
+  letter_strings = Hash.new("")
+  counts.each do |letter, count|
+    letter_strings[count] += letter * count
+    max_count = max_count > count ? max_count : count
+  end
+
+  return max_count.downto(1).reduce("") do |string, num|
+    if letter_strings[num]
+      string + letter_strings[num]
+    else
+      string
+    end
+  end
+end
+```
 
 ## Array, Linked List, Binary Search Tree or Hash Table
 
