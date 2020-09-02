@@ -82,4 +82,14 @@ Standards:
         Type: Checkpoint
         UID: 140b3755-094c-4f8f-8a14-29c0f2bc09c4
         Path: /05-hash-tables/02-hash-table-checkpoint.md
-      
+  -
+    Title: Heaps
+    Description: An alternative binary tree
+    UID: e2267b4a-3293-431d-8c64-d52ec6a21853
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: 9b9434cb-a843-4d6d-ac86-5518d3097a1d
+        Path: /06-heaps/01-heaps.md
