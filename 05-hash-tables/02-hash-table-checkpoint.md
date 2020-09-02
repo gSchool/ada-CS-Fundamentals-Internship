@@ -54,7 +54,7 @@ Link to your repo
 * id: 692c40a5-d9cc-470f-ada4-bf723ca5cf4b
 * title: Link to your PR
 * points: 2
-* topics: has-table
+* topics: hash-table
 
 ##### !question
 
@@ -70,7 +70,7 @@ Your PR link goes here.
 
 ##### !answer
 
-/.*/
+/^https:\/\/github.com\/.*\/pull.*\d$/
 
 ##### !end-answer
 

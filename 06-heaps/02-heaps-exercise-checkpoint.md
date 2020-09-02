@@ -93,7 +93,7 @@ Your PR link goes here.
 * type: testable-project
 * id: 770e6706-7f39-4b44-99a4-88c563672c1c
 * title: Optional JavaScript Version
-* upstream: [[URL, the upstream repo URL like https://github.com/gSchool/js-native-array-methods/]](https://github.com/Ada-C13/heaps-js)
+* upstream: https://github.com/Ada-C13/heaps-js
 * validate_fork: true
 * points: 0
 * topics: heaps
