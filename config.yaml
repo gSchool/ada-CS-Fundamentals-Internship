@@ -93,3 +93,8 @@ Standards:
         Type: Lesson
         UID: 9b9434cb-a843-4d6d-ac86-5518d3097a1d
         Path: /06-heaps/01-heaps.md
+      -
+        Type: Checkpoint
+        UID: a94c5a3d-2a61-4194-88ae-1945a162005b
+        Path: /06-heaps/02-heaps-exercise-checkpoint.md
+  
