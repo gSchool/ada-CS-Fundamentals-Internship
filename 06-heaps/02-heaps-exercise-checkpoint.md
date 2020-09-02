@@ -100,7 +100,7 @@ Your PR link goes here.
 
 ##### !question
 
-Add a link to your fork of the [JavaScript version]([heaps](https://github.com/Ada-C13/heaps-js))
+Add a link to your fork of the [JavaScript version](https://github.com/Ada-C13/heaps-js)
 
 ##### !end-question
 
