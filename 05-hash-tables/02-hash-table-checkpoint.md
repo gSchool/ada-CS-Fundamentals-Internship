@@ -95,7 +95,7 @@ Your PR link goes here.
 * id: 4d84719d-6907-4d5f-a686-ff363961e0c2
 * title: Optional JS version
 * upstream: https://github.com/Ada-C13/hash-practice-js
-* validate_fork: true
+* validate_fork: false
 * points: 0
 * topics: hashes
 
