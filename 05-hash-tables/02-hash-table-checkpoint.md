@@ -84,3 +84,38 @@ Your PR link goes here.
 <!-- ======================= END CHALLENGE ======================= -->
 
 
+
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: testable-project
+* id: 4d84719d-6907-4d5f-a686-ff363961e0c2
+* title: Optional JS version
+* upstream: https://github.com/Ada-C13/hash-practice-js
+* validate_fork: true
+* points: 0
+* topics: hashes
+
+##### !question
+
+Optionally you can for the [JavaScript](https://github.com/Ada-C13/hash-practice-js) version and submit that instead.
+
+##### !end-question
+
+##### !placeholder
+
+Fork of the JS version
+
+##### !end-placeholder
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
