@@ -71,6 +71,39 @@ Add your PR here
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-## No JS Version
+## JS Version
 
-There is currently no JS version of the project.
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: testable-project
+* id: 432457c4-46dd-4c99-bc43-0b98d4335f0f
+* title: JavaScript version of the project
+* upstream: https://github.com/Ada-C13/stacks-queues-js
+* validate_fork: false
+* points: 0
+* topics: stacks, queues, circular buffer
+
+##### !question
+
+Optional:  Fork the [JavaScript version](https://github.com/Ada-C13/stacks-queues-js) of the project and submit it here.  
+
+##### !end-question
+
+##### !placeholder
+
+Your JavaScript Repository **NOT PR**
+
+##### !end-placeholder
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
