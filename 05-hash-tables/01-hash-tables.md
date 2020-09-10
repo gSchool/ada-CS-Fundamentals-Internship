@@ -299,10 +299,10 @@ Given a string, return the distinct letters sorted in decreasing order based on 
 
 So for example:
 
-  Input:  "party hardy"
-  Output:  "ayrpt hd"  
+  **Input:**  "party hardy"
+  **Output:**  "ayrpt hd"  
 
-  Explanation:  a, y, and r appear twice so they are shown first, each subsequent character appears once including the space.
+  **Explanation:**  a, y, and r appear twice so they are shown first, each subsequent character appears once including the space.
 
 Would a hash table be a good approach here?  Why or why not?
 
