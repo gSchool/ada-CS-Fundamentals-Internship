@@ -675,12 +675,6 @@ Since the tracking numbers are distinct and order is not important, a hash table
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-
-<details>
-  <summary>Postgres needs to keep track of fields in a table to output sorted data.  Items will be regularly inserted and deleted from the table.</summary>
-  Since order is important, maintaining a set of binary search trees would make a great deal of sense.  Postgres doesn't actually use a binary search tree, but it does use a similarly ordered data structure.
-</details>
-
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
 
