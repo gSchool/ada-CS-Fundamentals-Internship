@@ -109,13 +109,6 @@ So if:
 
 **Exercise** Assuming `A` is 0.71 and `m` = 100, answer the following
 
-<details>
-  <summary>   What about the division method?
-  </summary>
-  Multiplication method: 64 <br />
-  Division method: 15
-</details>
-
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
 
@@ -187,6 +180,7 @@ if k is 15, and m = 100 what is h(k) using the division method?
 
 ##### !placeholder
 
+Answer with a number
 
 ##### !end-placeholder
 
