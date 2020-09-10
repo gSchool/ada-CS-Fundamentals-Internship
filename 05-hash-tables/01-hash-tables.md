@@ -1,5 +1,7 @@
 # Introduction to Hash Tables
 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6dfc0f2a-8f7d-4fa6-be61-aac3003b4abf&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ## Learning Goals
 
 By the end of this lesson you should be able to:
