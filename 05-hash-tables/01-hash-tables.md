@@ -295,7 +295,16 @@ Take a look at the problem below and answer:
 
 ##### !question
 
-Why would a hash table be a good approach here?
+Given a string, return the distinct letters sorted in decreasing order based on the frequency of characters.
+
+So for example:
+
+  Input:  "party hardy"
+  Output:  "ayrpt hd"  
+
+  Explanation:  a, y, and r appear twice so they are shown first, each subsequent character appears once including the space.
+
+Would a hash table be a good approach here?  Why or why not?
 
 ##### !end-question
 
