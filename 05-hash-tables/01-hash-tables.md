@@ -110,13 +110,115 @@ So if:
 **Exercise** Assuming `A` is 0.71 and `m` = 100, answer the following
 
 <details>
-  <summary> if k is 15, what is h(k) using the multiplication method?  What about the division method?
+  <summary>   What about the division method?
   </summary>
   Multiplication method: 64 <br />
   Division method: 15
 </details>
 
-<br />
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: short-answer
+* id: dd5eb3ae-c600-4991-92a5-9dd166944386
+* title: What is the h(k) with multiplication
+* points: 1
+* topics: hashes
+  
+##### !question
+
+if k is 15, what is h(k) using the multiplication method?
+
+##### !end-question
+
+##### !placeholder
+
+Answer with a number
+
+##### !end-placeholder
+
+##### !answer
+
+/^64$/
+
+##### !end-answer
+
+<!-- other optional sections -->
+##### !hint
+
+With
+* m = 100
+* A = 0.71
+* k = 15
+
+`h(k)` = `floor(m * (k * A mod 1))` = `floor(100 * (15 * 0.71 mod 1))`
+
+##### !end-hint
+
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+`floor(100 * (15 * 0.71 mod 1))` = 64
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: short-answer
+* id: 8c1fa2ed-be02-4d52-a3ee-0fe7f7629886
+* title: What is the h(k) with division method
+* points: 1
+* topics: hashes
+
+##### !question
+
+if k is 15, and m = 100 what is h(k) using the division method?
+
+##### !end-question
+
+##### !placeholder
+
+
+##### !end-placeholder
+
+##### !answer
+
+/^15$/
+
+##### !end-answer
+
+<!-- other optional sections -->
+##### !hint
+
+With
+* m = 100
+* A = 0.71
+* k = 15
+
+`h(k)` = k % m = 15 % 100
+
+##### !end-hint
+
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+`h(k)` = `k % m = 15 % 100` = 15
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
 
 You are **not** expected to memorize these methods, but rather be able to see how they work to identify a bucket to find values in a hash table.
 
@@ -185,20 +287,6 @@ Now that we've had some theory, when would you expect to use a hash table?  In a
 Hash tables are a common, practical solution to a variety of programming problems.  Below is a sample interview problem taking from [leetcode.com](https://leetcode.com/problems/sort-characters-by-frequency/)
 
 Take a look at the problem below and answer:
-
-<!-- <details>
-  <summary>Why would a hash table be a good approach here?</summary>
-
-  - To solve this problem we need to store each letter and the number of occurences. <br />
-    - There are a few of ways to do this:
-      1. We could traverse the list repeatedly counting the occurences of each letter.  This would require nested loops and O(n<sup>2</sup>) time complexity.
-      1. We could also sort the string by letter and use this sorted string to count the occurences of each letter.  Sorting the string would require O(nlogn) time complexity.
-      1. Or we could use a hash table with each character as the keys and the number of occurences as the value.  Building this hash would require one traversal of the string or O(n).  
-    - Once we have the list of letters and their number of occurences, we can use this to build the output string.
-
-  Because looking up an item in a hash table is so fast, hash tables turn out to be excellent data structures.
-
-</details> -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
@@ -486,11 +574,6 @@ Hash tables are excellent for looking up data from a key.  Binary search trees a
 
 So, which would you use in these situations?
 
-
-<details>
-  <summary>A list of candidate records that need to be stored so that you can find the max or min test scores</summary>
-  Hash tables are not good for maintaining ordered data.  Instead, a binary search tree, sorted array or linked list (sorted by test scores) would serve better.
-</details>
 
 <!-- source: http://www.cs.cmu.edu/~guna/15-123S11/Lectures/Lecture17.pdf -->
 <br />
