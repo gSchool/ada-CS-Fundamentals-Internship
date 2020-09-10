@@ -53,9 +53,47 @@ The study of computer science is the study of algorithms.  Researchers in CS foc
   - We also _profile_ or conduct performance measurements by running the algorithm on sample data and measuring performance changes and memory usage.
     - If you have seen [leetcode](https://leetcode.com/), this site will take your solution to a common programming problem and compare it's performance to solutions from other developers.
 
-**Question**
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: short-answer
+* id: 879e8f9c-1b42-4fab-9fea-6931c69d9176
+* title: Cheap Hardware
+* points: 1
+* topics: algorithms
+
+##### !question
 
 Now that hardware is so cheap and powerful and now that we have enormous cloud computing providers like AWS, is it worth wasting a programmer's valuable time trying to shave off seconds from the runtime of an algorithm?
+
+##### !end-question
+
+##### !placeholder
+
+Are efficient algorithms worthwhile?
+
+##### !end-placeholder
+
+##### !answer
+
+/.+/
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+Because while hardware may have historically doubled in efficiency every 18 months, an algorithm's time complexity could grow even faster and the amount of data produced on the internet grows exponentially.
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 ## Analyzing Algorithms
 
@@ -118,11 +156,96 @@ We have looked at a few examples of divide and conquer algorithms above with Mer
 
 **Questions**
 
-- What are some divide and conquer algorithms you have used?
-- Is Heapsort a divide and conquer algorithm?  Why or why not?
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
 
+### !challenge
 
-**Example**
+* type: short-answer
+* id: 045f08a3-03cb-4fc9-8c56-938b5862e969
+* title: What are some divide and conquer algorithms you have used?
+* points: 1
+* topics: algorithms, divide and conquer
+
+##### !question
+
+What are some divide and conquer algorithms you have used?
+
+##### !end-question
+
+##### !placeholder
+
+Example divide & conquer algorithms
+
+##### !end-placeholder
+
+##### !answer
+
+/.+/
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+Some example Divide & Conquer Algorithms are:
+
+1.  Binary Search
+1.  MergeSort
+
+These algorithms break the problem into halves at each step in the process.
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: short-answer
+* id: f7a45db5-f74f-435c-8b4b-7c60b13f5d7c
+* title: Is Heapsort a divide and conquer algorithm?  Why or why not?
+* points: 1
+* topics: Algorithms, Divide and conquer, Heapsort
+
+##### !question
+
+Is Heapsort a divide and conquer algorithm?  Why or why not?
+
+##### !end-question
+
+##### !placeholder
+
+Heapsort a divide and conquer algorithm????
+
+##### !end-placeholder
+
+##### !answer
+
+/.+/
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+Heapsort is **not** a divide and conquer algorithm.  Instead of dividing the problem into halves and tackling each half, it puts the entire data structure into a heap and then extracts them from the heap.  
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+#### Example - Quicksort
 
 One divide and conquer algorithm is Quicksort.  Quicksort works by:
 
@@ -174,10 +297,51 @@ In this problem you are given `k` sorted arrays of varying lengths and asked to 
 
 For example, suppose you had arrays a, b, and c which have 30, 20 and 15 elements each.  The greedy approach would be to merge arrays b & c, which would take 35 iterations, then merge the result with array a, which would take 65 iterations, for a total of 100.  If you had merged arrays a and b first, that would take 50 iterations, and then merging array c would take 65, for a total of 115 iterations.  
 
-<details>
-  <summary>Can you think of another way to solve this problem?</summary>
-  You could also use a heap to solve this by adding the 1st element of each list to a min-heap, then removing the root value from the min-heap and adding the next element in the list from which it came into the heap, and repeating until the heap is empty.  This can be done in O(n log k) time where n is the total number of elements in all of the arrays and k is the number of arrays.
-</details>
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: short-answer
+* id: a6405591-60d6-4ae7-9cf8-fdbe87965b37
+* title: Can you think of another way to solve this problem?
+* points: 1
+* topics: algorithms, greedy
+
+##### !question
+
+Can you think of another way to solve this problem?
+
+##### !end-question
+
+##### !placeholder
+
+Another approach
+
+##### !end-placeholder
+
+##### !answer
+
+/.+/
+
+##### !end-answer
+
+<!-- other optional sections -->
+##### !hint
+
+Could a heap be used?
+
+##### !end-hint
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+You could also use a heap to solve this by adding the 1st element of each list to a min-heap, then removing the root value from the min-heap and adding the next element in the list from which it came into the heap, and repeating until the heap is empty.  This can be done in O(n log k) time where n is the total number of elements in all of the arrays and k is the number of arrays.
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 ### Dynamic Programming
 
