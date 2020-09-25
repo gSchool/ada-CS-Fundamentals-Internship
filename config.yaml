@@ -108,6 +108,10 @@ Standards:
         Type: Lesson
         UID: 8da3c432-2bc1-418b-9ca2-2bbe7c3662b0
         Path: /07-algorithms/algorithms.md
+      -
+        Type: Checkpoint
+        UID: fb3bff8f-5496-484e-bebf-1729b73f0e06
+        Path: /07-algorithms/algorithms-checkpoint.md
   -
     Title: Career Preparation
     Description: Career prep resources
