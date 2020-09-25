@@ -213,17 +213,98 @@ Breadth first search is a solution in a variety of problems including:
 
 **Questions**
 
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: 7b46c76f-c47e-4ed1-8606-732c610a1eaa
+* title: Time complexity of BFS
+* points: 1
+* topics: graphs
+
+##### !question
+
+What is the time complexity of Breadth-First-Search with N nodes and E edges.
+
+##### !end-question
+
+##### !options
+
+* O(N)
+* O(E)
+* O(NE)
+* O(N + E)
+* O(1)
+
+##### !end-options
+
+##### !answer
+
+* O(N + E)
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+Since you will visit each node once, and loop through each of the edges in each node the Big-O of this algorithm is O(N + E) where `N` is the number of nodes in the graph and `E` is the number of edges since each node and each edge will be explored.
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: 4376fdea-ebec-4fdc-897d-21fc7ca5ff91
+* title: Space Complexity of BFS
+* points: 1
+* topics: graphs
+
+##### !question
+
+What is the space complexity of Breadth-First-Search with N nodes and E edges?
+
+##### !end-question
+
+##### !options
+
+* O(N)
+* O(E)
+* O(NE)
+* O(N + E)
+* O(1)
 
 
-<details>
-  <summary>What is the time complexity of Breadth-First-Search</summary>
-  Since you will visit each node once, and loop through each of the edges in each node the Big-O of this algorithm is O(N + E) where `N` is the number of nodes in the graph and `E` is the number of edges since each node and each edge will be explored.
-</details>
+##### !end-options
 
-<details>
-  <summary>What is the space complexity of Breadth-First-Search</summary>
-  In the worst-case you will need to add each node to the Queue, so the space complexity is O(N) where `N` is the number of nodes in the graph.
-</details>
+##### !answer
+
+* O(N)
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+In the worst-case you will need to add each node to the Queue, so the space complexity is O(N) where `N` is the number of nodes in the graph.
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 
 ### Depth-First-Search
@@ -247,15 +328,98 @@ Where breadth-first-search spreads out from a starting node in order of distance
 
 **Questions**
 
-<details>
-  <summary>What is the time complexity of Depth-First-Search</summary>
-  Since you will visit each node once, and loop through each of the edges in each node the Big-O of this algorithm is O(N + E) where `N` is the number of nodes in the graph and `E` is the number of edges since each node and each edge will be explored.  Note, this is the same as breadth-first-search.
-</details>
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
 
-<details>
-  <summary>What is the space complexity of Depth-First-Search</summary>
-  In the worst-case you will need to add each node to the Stack, so the space complexity is O(N) where `N` is the number of nodes in the graph.
-</details>
+### !challenge
+
+* type: multiple-choice
+* id: 72fd7b4f-2d0b-4f60-9f99-57ede4dc769b
+* title: Time complexity of DFS
+* points: 1
+* topics: graphs
+
+##### !question
+
+What is the time complexity of Depth-First-Search with N nodes and E edges?
+
+##### !end-question
+
+##### !options
+
+* O(N)
+* O(E)
+* O(NE)
+* O(N + E)
+* O(1)
+
+
+##### !end-options
+
+##### !answer
+
+* O(N + E)
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+Since you will visit each node once, and loop through each of the edges in each node the Big-O of this algorithm is O(N + E) where `N` is the number of nodes in the graph and `E` is the number of edges since each node and each edge will be explored.  Note, this is the same as breadth-first-search.
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: ac56a302-147e-44bd-9438-3779d9fe226a
+* title: Space complexity of DFS
+* points: 1
+* topics: graphs
+
+##### !question
+
+What is the space complexity of Depth-First-Search?
+
+##### !end-question
+
+##### !options
+
+* O(N)
+* O(E)
+* O(NE)
+* O(N + E)
+* O(1)
+
+##### !end-options
+
+##### !answer
+
+* O(N)
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+In the worst-case you will need to add each node to the Stack, so the space complexity is O(N) where `N` is the number of nodes in the graph.
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 [HackerEarth](https://www.hackerearth.com/practice/algorithms/graphs/depth-first-search/visualize/) has an excellent description and visualization of the algorithm.
 
@@ -360,14 +524,101 @@ end
 **Questions**
 
 <details>
-  <summary>Is Dijkstra's Algorithm a greedy algorithm?</summary>
-  <strong>YES!</strong>  With each iteration of the main loop Dijkstra's algorithm picks the next node with the shortest path.  It makes each choice by picking the next shortest path available.  
+  <summary></summary>
+  
 </details>
 
-<details>
-  <summary>What is the time complexity of Dijkstra's Algorithm?</summary>
-  <strong>O(N<sup>2</sup>)</strong>  Where N is the number of nodes.  The algorithm iterates until each node has been visited, N times, and with each iteration you have to find the node with the smallest current distance, so with each iteration you have to look roughly at most N other nodes.
-</details>
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: 7902730c-7339-4fc0-95d6-92ab2705799f
+* title: Dijkstra's Algorithm Greedy?
+* points: 1
+<!-- * topics: [python, pandas] (optional the topics for analyzing points) -->
+
+##### !question
+
+Is Dijkstra's Algorithm a greedy algorithm?
+
+##### !end-question
+
+##### !options
+
+* Yes
+* No
+
+
+##### !end-options
+
+##### !answer
+
+* Yes
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+<strong>YES!</strong>  With each iteration of the main loop Dijkstra's algorithm picks the next node with the shortest path.  It makes each choice by picking the next shortest path available.  
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: 4175fd70-8f1b-4c2b-bcf1-80985a9d0159
+* title: Dijkstra's Algorithm Time complexity?
+* points: 1
+<!-- * topics: [python, pandas] (optional the topics for analyzing points) -->
+
+##### !question
+
+What is the time complexity of Dijkstra's Algorithm?
+
+##### !end-question
+
+##### !options
+
+* O(N)
+* O(E)
+* <strong>O(N<sup>2</sup>)</strong>
+* O(2<sup>N</sup>)
+* O(1)
+
+
+##### !end-options
+
+##### !answer
+
+* Yes
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+<strong>O(N<sup>2</sup>)</strong>  Where N is the number of nodes.  The algorithm iterates until each node has been visited, and with each iteration you have to find the node with the smallest current distance, so with each iteration you have to look roughly at most N other nodes.
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
 
 **Exercise** 
 
