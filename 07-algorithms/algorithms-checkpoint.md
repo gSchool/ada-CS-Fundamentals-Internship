@@ -1,4 +1,4 @@
-# Heaps Exercise
+# Dynamic Programming Exercise
 
 * [Exercise](https://github.com/Ada-C13/dynamic-programming) 
 
