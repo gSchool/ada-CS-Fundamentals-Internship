@@ -602,7 +602,7 @@ What is the time complexity of Dijkstra's Algorithm?
 
 ##### !answer
 
-* Yes
+* <strong>O(N<sup>2</sup>)</strong>
 
 ##### !end-answer
 
