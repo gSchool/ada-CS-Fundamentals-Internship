@@ -130,7 +130,7 @@ Standards:
       -
         Type: Lesson
         UID: 3c34423f-8863-4dd7-a97b-eee515947c8d
-        Path: /08-graphs/dijkstra.md
+        Path: /08-graphs/dijskstra.md
   
   -
     Title: Career Preparation
