@@ -8,6 +8,17 @@
 ---
 Standards:
   -
+    Title: About Thursdays @ Ada
+    Description: Overview and links
+    UID: 7d9b6722-79c9-4230-9305-6ec09a451a6e
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: c7084ccf-b3b9-467d-a3c5-85ffcc3f4284
+        Path: /00-about-thursdays-at-ada/about-thursdays-at-ada.md
+  -
     Title: Code Reviews
     Description: Code Reviews
     UID: 711a304217d2e279d61b9044d6064b5e
