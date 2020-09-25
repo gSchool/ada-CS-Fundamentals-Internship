@@ -113,6 +113,26 @@ Standards:
         UID: fb3bff8f-5496-484e-bebf-1729b73f0e06
         Path: /07-algorithms/algorithms-checkpoint.md
   -
+    Title: Graphs
+    Description: Graph Data Structures & Algorithms
+    UID: e2aa5076-ffbe-4682-a4b9-899d4ba19ff4
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: 3dd55370-f6a4-42a0-b209-def06db395af
+        Path: /08-graphs/graphs.md
+      -
+        Type: Checkpoint
+        UID: 56778405-6fa2-4154-ad80-281fedb3a67b
+        Path: /08-graphs/graphs.checkpoint.md
+      -
+        Type: Lesson
+        UID: 3c34423f-8863-4dd7-a97b-eee515947c8d
+        Path: /08-graphs/dijkstra.md
+  
+  -
     Title: Career Preparation
     Description: Career prep resources
     UID: b9f20e41-3377-4743-8ca8-324097b0dc99
