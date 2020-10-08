@@ -17,7 +17,7 @@
 
 ##### !question
 
-Complete the Bipartition Graph Problem 
+Complete the [Bipartition Graph Problem](https://github.com/Ada-C13/Bipartition-Graph)
 
 ##### !end-question
 
