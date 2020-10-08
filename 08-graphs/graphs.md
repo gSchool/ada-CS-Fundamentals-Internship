@@ -1,5 +1,7 @@
 # Graphs
 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=09cd9474-04a2-4460-8eb8-aad8005b7065&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ## Learning Goals
 
 By the end of this lesson we should be able to:
@@ -436,6 +438,8 @@ It is common that given a graph with weighted edges you need to discover the sho
 For unweighted graphs, you could solve this problem using breadth-first-search, however for a weighted graph, a more complicated algorithm is needed.
 
 **Dijkstra's Algorithm**
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=9055aad9-f2ec-401b-abc0-ac4e01374f3f&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 Dijkstra's algorithm is an algorithm which takes a weighted graph and computes **all** the shortest paths from one node to all other reachable vertices.
 
