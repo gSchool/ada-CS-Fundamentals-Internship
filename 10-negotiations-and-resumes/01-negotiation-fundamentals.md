@@ -15,3 +15,8 @@ The required videos are must-watch prior to a negotiation lesson on a later Thur
   - Multi-Issue Negotiations TBD
 
 
+## Question
+
+Please submit any questions you have on the above videos through the following form.
+
+[Salary Negotiation Questions for Professor Umphress](https://docs.google.com/forms/d/e/1FAIpQLSfzK5TY_yvmAxowB2p0rXZ72aT60ZWQOHgOlAMZbO_LgoANSg/viewform)
