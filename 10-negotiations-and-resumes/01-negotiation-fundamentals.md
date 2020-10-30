@@ -15,7 +15,7 @@ The required videos are must-watch prior to a negotiation lesson on a later Thur
   - Multi-Issue Negotiations TBD
 
 
-## Question
+## Questions
 
 Please submit any questions you have on the above videos through the following form.
 
