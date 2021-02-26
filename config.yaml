@@ -10,151 +10,151 @@ Standards:
   -
     Title: About Thursdays @ Ada
     Description: Overview and links
-    UID: 7d9b6722-79c9-4230-9305-6ec09a451a6e
+    UID: ffe615ec-8c18-48a2-8a12-5fa54aa0214d
     SuccessCriteria:
       - success criteria
     ContentFiles:
       -
         Type: Lesson
-        UID: c7084ccf-b3b9-467d-a3c5-85ffcc3f4284
+        UID: d75af4a1-ff7d-46b9-988d-8fcda5d75bc5
         Path: /00-about-thursdays-at-ada/about-thursdays-at-ada.md
   -
     Title: Code Reviews
     Description: Code Reviews
-    UID: 711a304217d2e279d61b9044d6064b5e
+    UID: 9141935e-3d6b-4f83-9eef-eca929c19ad6
     SuccessCriteria:
       - success criteria
     ContentFiles:
       -
         Type: Lesson
-        UID: 5ece47110df15df9ca62e869d131f06a
+        UID: 213deeac-736c-42e9-a774-1d904d87991e
         Path: /01-Code-Reviews/01-code-reviews.md
       -
         Type: Checkpoint
-        UID: 728c9bb2c032fde3ff8f53744c495fff
+        UID: 8acf7333-842f-4c09-98ff-379f5163f27f
         Path: /01-Code-Reviews/02-code-reviews-checkpoint.md
   -
     Title: Linked Lists
     Description: Linked Lists
-    UID: 9a25dc7a043912f574d03caae5538793
+    UID: 8e6f54bf-41e8-41d6-9a03-dca103bf15ed
     SuccessCriteria:
       - success criteria
     ContentFiles:
       -
         Type: Lesson
-        UID: 3fbc2c70204df4030287217793211b52
+        UID: 99474aeb-183e-4f01-990b-0a689c022c30
         Path: /02-linked-lists/02-linked-lists.md
       -
         Type: Checkpoint
-        UID: 0bb4c260-172f-4d9d-b59d-6ac8c6a1677e
+        UID: e1d0e2c0-acb2-436a-b329-8c3da5155443
         Path: /02-linked-lists/03-linked-list-checkpoint.md
   -
     Title: Binary Search Trees
     Description: Binary Search Trees
-    UID: e2624d1071a3a1d57e8b2c0887f210ee
+    UID: fc8d8eae-2456-4b22-9213-127d6e83dd5e
     SuccessCriteria:
       - success criteria
     ContentFiles:
       -
         Type: Lesson
-        UID: 9a33c03a1ec6a712bf4c2ec20a261a6c
+        UID: d363c5cb-af6d-45d1-8e98-eaf960f8fac9
         Path: /03-Binary-Search-Trees/01-Binary-Search-Trees.md
       -
         Type: Checkpoint
-        UID: ccc39bae6d07b5b29e24433c77f4f7d9
+        UID: bbf1e2a2-0d6e-4337-9b00-81216688e16a
         Path: /03-Binary-Search-Trees/02-Bst-checkpoint.md
   -
     Title: Stacks And Queues
     Description: Stacks And Queues
-    UID: 6de9a1591c5b6c496b002c454e694cac
+    UID: 48065b1f-127a-4434-8029-d3e8f2098694
     SuccessCriteria:
       - success criteria
     ContentFiles:
       -
         Type: Lesson
-        UID: e1bbd20051b93d08cd52f7cfef762837
+        UID: 4710249d-f9f4-4943-ac42-7688a34232b3
         Path: /04-Stacks-And-Queues/01-stacks-and-queues.md
       -
         Type: Checkpoint
-        UID: 8688cbae92d4c42a5e2e66d78f164089
+        UID: 13fd1a26-237c-4d3c-884d-575408019668
         Path: /04-Stacks-And-Queues/02-stacks-and-queues-checkpoint.md
   -
     Title: Hash Tables
     Description: How hashes work
-    UID: 102b4725-f3d5-4921-b3cd-465ea0f726b2
+    UID: 0ae273c2-90b1-4ec0-9738-1296f9ccfe08
     SuccessCriteria:
       - success criteria
     ContentFiles:
       -
         Type: Lesson
-        UID: d65101b1-cfd1-4f57-8fb1-8e68e051a388
+        UID: b1b69d98-9fb4-4b91-9eb1-2cfbcf4d1046
         Path: /05-hash-tables/01-hash-tables.md
       -
         Type: Checkpoint
-        UID: 140b3755-094c-4f8f-8a14-29c0f2bc09c4
+        UID: a39c4928-599f-43b9-9b01-9637439502bf
         Path: /05-hash-tables/02-hash-table-checkpoint.md
   -
     Title: Heaps
     Description: An alternative binary tree
-    UID: e2267b4a-3293-431d-8c64-d52ec6a21853
+    UID: 544bdf6a-3e48-48e6-8434-414e21b26fd7
     SuccessCriteria:
       - success criteria
     ContentFiles:
       -
         Type: Lesson
-        UID: 9b9434cb-a843-4d6d-ac86-5518d3097a1d
+        UID: 4a7e9b34-203d-44c5-ae25-86f815f85576
         Path: /06-heaps/01-heaps.md
       -
         Type: Checkpoint
-        UID: a94c5a3d-2a61-4194-88ae-1945a162005b
+        UID: 824d3954-8e7f-472e-9878-426197b86f6f
         Path: /06-heaps/02-heaps-exercise-checkpoint.md
   -
     Title: Algorithms
     Description: Divide & Conquer, Greedy and Dynamic Programming
-    UID: 0687865e-2d91-4a16-a022-7a27359138c9
+    UID: ccdccab2-b7f3-42d8-977d-955a58ce9d05
     SuccessCriteria:
       - success criteria
     ContentFiles:
       -
         Type: Lesson
-        UID: 8da3c432-2bc1-418b-9ca2-2bbe7c3662b0
+        UID: a76dfc02-3b54-459c-bf72-66a072b26119
         Path: /07-algorithms/algorithms.md
       -
         Type: Checkpoint
-        UID: fb3bff8f-5496-484e-bebf-1729b73f0e06
+        UID: 92514af3-c487-40cb-acbc-8b62d864be82
         Path: /07-algorithms/algorithms-checkpoint.md
   -
     Title: Graphs
     Description: Graph Data Structures & Algorithms
-    UID: e2aa5076-ffbe-4682-a4b9-899d4ba19ff4
+    UID: b0d74464-2678-44a8-a4ff-dc74350e7114
     SuccessCriteria:
       - success criteria
     ContentFiles:
       -
         Type: Lesson
-        UID: 3dd55370-f6a4-42a0-b209-def06db395af
+        UID: 43ec38b5-3ce1-4882-b709-ca99d4b702c1
         Path: /08-graphs/graphs.md
       -
         Type: Checkpoint
-        UID: 56778405-6fa2-4154-ad80-281fedb3a67b
+        UID: 8f80f1c3-71f9-42c7-b658-9720f6e3f5b1
         Path: /08-graphs/graphs.checkpoint.md
       -
         Type: Lesson
-        UID: 3c34423f-8863-4dd7-a97b-eee515947c8d
+        UID: f0e4986d-dc1b-441d-8236-4c4de94c4422
         Path: /08-graphs/dijskstra.md
   
   -
     Title: Career Preparation
     Description: Career prep resources - negotiations updated!
-    UID: b9f20e41-3377-4743-8ca8-324097b0dc99
+    UID: 87eceab3-9933-4299-85b7-bd3f4adacc17
     SuccessCriteria:
       - success criteria
     ContentFiles:
       -
         Type: Lesson
-        UID: a2f92983-00e6-48d9-81ec-b7b6bf318faa
+        UID: 2786248b-d48c-414a-93cd-24045527f1ca
         Path: /10-negotiations-and-resumes/01-negotiation-fundamentals.md
       -
         Type: Lesson
-        UID: c2bdcbf6-c174-477f-8c14-05f4ea4bd2d3
+        UID: 95ce1a6f-8974-46ab-9ba0-a5ce49385588
         Path: /10-negotiations-and-resumes/resumes.md
