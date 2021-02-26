@@ -25,5 +25,3 @@ CS Fundamentals is taught in a [flipped-classroom](https://omerad.msu.edu/teachi
 All the CS Fundamentals Online sessions are recorded in Panopto.
 
 - [CS Fundamentals Panopto Recordings](https://adaacademy.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=68179df6-b98d-4b12-8f68-ac32016bc0a0)
-
-## Career Development Changes
