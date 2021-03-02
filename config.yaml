@@ -35,11 +35,11 @@ Standards:
         Path: /01-Code-Reviews/02-code-reviews-checkpoint.md
   -
    Title: Internship Expectations
-    Description: What to expect with Alice and Jackie
-    UID: 35618d16-7b8a-11eb-9439-0242ac130002 
-    SuccessCriteria:
+   Description: What to expect with Alice and Jackie
+   UID: 35618d16-7b8a-11eb-9439-0242ac130002 
+   SuccessCriteria:
       - success criteria
-    ContentFiles:
+   ContentFiles:
       -
         Type: Lesson
         UID: 462be236-7b8a-11eb-9439-0242ac130002 
