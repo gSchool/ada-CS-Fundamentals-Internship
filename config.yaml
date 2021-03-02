@@ -143,18 +143,3 @@ Standards:
         UID: f0e4986d-dc1b-441d-8236-4c4de94c4422
         Path: /08-graphs/dijskstra.md
   
-  -
-    Title: Career Preparation
-    Description: Career prep resources - negotiations updated!
-    UID: 87eceab3-9933-4299-85b7-bd3f4adacc17
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
-      -
-        Type: Lesson
-        UID: 2786248b-d48c-414a-93cd-24045527f1ca
-        Path: /10-negotiations-and-resumes/01-negotiation-fundamentals.md
-      -
-        Type: Lesson
-        UID: 95ce1a6f-8974-46ab-9ba0-a5ce49385588
-        Path: /10-negotiations-and-resumes/resumes.md
