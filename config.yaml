@@ -44,7 +44,7 @@ Standards:
         Type: Lesson
         UID: 462be236-7b8a-11eb-9439-0242ac130002 
         Path: /internshipexpectations/overview.md
-        
+      -
         Type: Checkpoint
         UID: 57680014-7b8c-11eb-9439-0242ac130002  
         Path: /internshipexpectations/survey.md
