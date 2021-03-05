@@ -19,6 +19,18 @@ Standards:
         UID: d75af4a1-ff7d-46b9-988d-8fcda5d75bc5
         Path: /00-about-thursdays-at-ada/about-thursdays-at-ada.md
   -
+    Title: Internship Expectations
+    Description: Internship Expecatations with Alice and Jackie
+    UID: c206a7d1-8906-4585-a73f-d3bf6dde13da 
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: 1f06f3a5-dd8e-4535-939a-b217c7a752d0 
+        Path: /internshipexpectations/overview.md  
+        
+  -
     Title: Code Reviews
     Description: Code Reviews
     UID: 9141935e-3d6b-4f83-9eef-eca929c19ad6
