@@ -1,6 +1,6 @@
 # Internship Expectations
 
-[Embed video here]
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=19b692d8-ddf3-4c4f-9f69-ace200043d14&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ## Takeaways
 
@@ -19,6 +19,6 @@ Takeaways:
 
 ## Links
 
-- [Recording]()
+- [Recording](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=19b692d8-ddf3-4c4f-9f69-ace200043d14)
 - [Slide Deck](https://docs.google.com/presentation/d/1lg-FfN0osevNgDrYJTpuKJwlqnaVNaiRip96T9yDESM/edit?usp=sharing)
 - [Survey](https://docs.google.com/forms/d/1HHHJgQsXcEkuRe6KsGjUPDUWkSzipF2WCzJF4-zBbR0/edit?ts=60381c2d&gxids=7628)
