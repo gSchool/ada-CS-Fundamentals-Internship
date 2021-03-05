@@ -29,7 +29,17 @@ Standards:
         Type: Lesson
         UID: 1f06f3a5-dd8e-4535-939a-b217c7a752d0 
         Path: /internshipexpectations/overview.md  
-        
+   -
+    Title: Keys to a Remote Internship
+    Description: Tips from previous cohorts
+    UID: e874892f-523f-4fa2-bf1c-3212f8dc3087  
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: 3aa119d8-f5f6-4aa2-a7e0-23a7b3bd716e  
+        Path: /remote%20internship/overview.md
   -
     Title: Code Reviews
     Description: Code Reviews
