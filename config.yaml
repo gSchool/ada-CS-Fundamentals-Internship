@@ -18,6 +18,17 @@ Standards:
         Type: Lesson
         UID: d75af4a1-ff7d-46b9-988d-8fcda5d75bc5
         Path: /00-about-thursdays-at-ada/about-thursdays-at-ada.md
+   -
+    Title: Internship Expectations
+    Description: Internship Expectations & Month by Month Areas of Focus
+    UID: e4545dc1-1332-4d28-bb61-5f8c06909ec8
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: 395b9974-af6d-43e3-9ab9-02f31bc62109
+        Path: /internshipexpecatations/overview.md
   -
     Title: Code Reviews
     Description: Code Reviews
