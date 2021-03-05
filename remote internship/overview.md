@@ -17,6 +17,6 @@
 
 
 ## Links
--[Recording](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3ff5a99d-cfa5-4803-8041-ace200043ceb)
--[Slides](https://docs.google.com/presentation/d/1DPu6OTiDcBlr49541fUB3JItxbgOz21Obh5y3VRMP50/edit#slide=id.g8b49b131a0_0_0)
+-[Recording](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3ff5a99d-cfa5-4803-8041-ace200043ceb) <br>
+-[Slides](https://docs.google.com/presentation/d/1DPu6OTiDcBlr49541fUB3JItxbgOz21Obh5y3VRMP50/edit#slide=id.g8b49b131a0_0_0) <br>
 -[Survey](https://docs.google.com/forms/d/1HHHJgQsXcEkuRe6KsGjUPDUWkSzipF2WCzJF4-zBbR0/edit?ts=60381c2d&gxids=7628)
