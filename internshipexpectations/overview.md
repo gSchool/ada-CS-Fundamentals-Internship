@@ -19,6 +19,6 @@ Takeaways:
 
 ## Links
 
-- [Video Lesson]()
+- [Recording]()
 - [Slide Deck](https://docs.google.com/presentation/d/1lg-FfN0osevNgDrYJTpuKJwlqnaVNaiRip96T9yDESM/edit?usp=sharing)
 - [Survey](https://docs.google.com/forms/d/1HHHJgQsXcEkuRe6KsGjUPDUWkSzipF2WCzJF4-zBbR0/edit?ts=60381c2d&gxids=7628)
