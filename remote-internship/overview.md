@@ -17,6 +17,7 @@
 
 
 ## Links
-- [Recording](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3ff5a99d-cfa5-4803-8041-ace200043ceb)
+- [Recording of talk](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3ff5a99d-cfa5-4803-8041-ace200043ceb)
 - [Slides](https://docs.google.com/presentation/d/1DPu6OTiDcBlr49541fUB3JItxbgOz21Obh5y3VRMP50/edit#slide=id.g8b49b131a0_0_0)
-- [Survey](https://docs.google.com/forms/d/e/1FAIpQLSe2gi4oVBEkVEOUQm2zCnFudDHN258Q2KoBNGBX2g6KpdA2PA/viewform?usp=sf_link)
+- [Survey for talk](https://docs.google.com/forms/d/e/1FAIpQLSe2gi4oVBEkVEOUQm2zCnFudDHN258Q2KoBNGBX2g6KpdA2PA/viewform?usp=sf_link)
+- [Keys to a Remote Internship document](https://docs.google.com/document/d/1GybUp9x0lDXLPY0FaUJcjfz3rRLurMS_xKi7oK65rEA/edit?usp=sharing)
