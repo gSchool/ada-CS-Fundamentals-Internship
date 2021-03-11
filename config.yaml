@@ -48,6 +48,17 @@ Standards:
         Type: Checkpoint
         UID: 8acf7333-842f-4c09-98ff-379f5163f27f
         Path: /01-Code-Reviews/02-code-reviews-checkpoint.md
+  - 
+    Title: Panel with C13 Interns
+    Description: Internship advice from previous interns
+    UID: 92d77dbc-0459-4de8-be6c-f448a121cc3f 
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: 04ef43e2-8d68-4689-9b43-569ff5d5b357
+        Path: /internshippanel/overview.md
   -
   
     Title: Linked Lists
