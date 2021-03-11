@@ -93,14 +93,14 @@ Your PR link goes here.
 * type: testable-project
 * id: 770e6706-7f39-4b44-99a4-88c563672c1c
 * title: Optional JavaScript Version
-* upstream: https://github.com/Ada-14/heaps-js
+* upstream: https://github.com/ada-c14/heaps-js
 * validate_fork: true
 * points: 0
 * topics: heaps
 
 ##### !question
 
-Add a link to your fork of the [JavaScript version](https://github.com/Ada-C14/heaps-js)
+Add a link to your fork of the [JavaScript version](https://github.com/ada-c14/heaps-js)
 
 ##### !end-question
 

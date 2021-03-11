@@ -90,7 +90,7 @@ Your PR link goes here.
 * type: testable-project
 * id: 795b30c2-9d88-4480-8062-d0e5466a09eb
 * title: Optional JS Version
-* upstream: https://github.com/Ada-C14/linked-list-js
+* upstream: https://github.com/ada-c14/linked-list-js
 * validate_fork: false
 * points: 0
 * topics: linked-lists
