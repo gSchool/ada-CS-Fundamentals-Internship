@@ -97,7 +97,7 @@ Your PR link goes here.
 
 ##### !question
 
-Optionally you can submit a link to a fork of https://github.com/Ada-C14/linked-list-js
+Optionally you can submit a link to a fork of https://github.com/ada-c14/linked-list-js
 
 ##### !end-question
 
