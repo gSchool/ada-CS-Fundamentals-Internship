@@ -1,6 +1,6 @@
 # Code Reviews Exercise
 
-For today's exercise take a look at the [Code Reviews Repo](https://github.com/ada-c13/code-reviews).
+For today's exercise take a look at the [Code Reviews Repo](https://github.com/ada-c14/code-reviews).
 
 ## Reviewing a PR
 
