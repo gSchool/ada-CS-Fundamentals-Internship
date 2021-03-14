@@ -17,7 +17,7 @@ There are a set of advanced methods you can choose to implement for additional p
 * type: testable-project
 * id: 4f3d244b-d34b-4e34-9a85-bce2232203e5
 * title: List Implementations
-* upstream: https://github.com/Ada-C14/linked-list
+* upstream: https://github.com/Ada-C13/linked-list
 * validate_fork: false
 * points: 0
 * topics: linked-lists
