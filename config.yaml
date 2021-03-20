@@ -86,7 +86,7 @@ Standards:
       -
         Type: Lesson
         UID: c9f8125a-1ef8-49a2-b08d-3a82da514ade
-        Path: /mangingup/overview.md       
+        Path: /managingup/overview.md       
   -
     Title: Binary Search Trees
     Description: Binary Search Trees
