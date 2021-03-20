@@ -76,6 +76,18 @@ Standards:
         UID: e1d0e2c0-acb2-436a-b329-8c3da5155443
         Path: /02-linked-lists/03-linked-list-checkpoint.md
   -
+  
+    Title: Managing Up
+    Description: How to get the most out of your relationship with your manager
+    UID: 974825d6-b35c-467f-9d38-7df7f4eb03ed
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: c9f8125a-1ef8-49a2-b08d-3a82da514ade
+        Path: /mangingup/overview.md       
+  -
     Title: Binary Search Trees
     Description: Binary Search Trees
     UID: fc8d8eae-2456-4b22-9213-127d6e83dd5e
