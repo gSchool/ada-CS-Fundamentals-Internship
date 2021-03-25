@@ -102,6 +102,20 @@ Standards:
         Type: Checkpoint
         UID: bbf1e2a2-0d6e-4337-9b00-81216688e16a
         Path: /03-Binary-Search-Trees/02-Bst-checkpoint.md
+        
+  -
+  
+    Title: Self Care and Boundary Setting
+    Description: Taking care of yourself during internship
+    UID: 4661fd35-2ee4-4061-8b89-35b5385bd59c 
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: efe4dd39-c552-4156-99c0-8943539bc46d 
+        Path: /selfcare/overview.md               
+ 
   -
     Title: Stacks And Queues
     Description: Stacks And Queues
