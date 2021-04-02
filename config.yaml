@@ -132,6 +132,19 @@ Standards:
         UID: 13fd1a26-237c-4d3c-884d-575408019668
         Path: /04-Stacks-And-Queues/02-stacks-and-queues-checkpoint.md
   -
+    Title: Preparing for Midpoint Reviews
+    Description: Keys to a successful midpoint review
+    UID: 73f47a05-d695-480e-8337-98cf0277fa9c
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: a861d76a-0236-46ca-94a9-70093f15a522
+        Path: /prepping-for-midpoint-reviews/preparing-for-midpoint-reviews.md
+
+      
+  -
     Title: Hash Tables
     Description: How hashes work
     UID: 0ae273c2-90b1-4ec0-9738-1296f9ccfe08
