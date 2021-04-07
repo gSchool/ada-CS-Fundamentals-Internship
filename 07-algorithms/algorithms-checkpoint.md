@@ -19,7 +19,7 @@ By the end of this lesson you should be able to:
 * id: da54c4ff-3e53-47f0-a193-5a90bfb10f0c
 * title: Dynamic Programming
 * upstream: https://github.com/Ada-C14/dynamic-programming
-* validate_fork: true
+* validate_fork: false
 * points: 0
 * topics: dynamic programming
 

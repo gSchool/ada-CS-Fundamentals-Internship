@@ -142,8 +142,6 @@ Standards:
         Type: Lesson
         UID: a861d76a-0236-46ca-94a9-70093f15a522
         Path: /prepping-for-midpoint-reviews/preparing-for-midpoint-reviews.md
-
-      
   -
     Title: Hash Tables
     Description: How hashes work
