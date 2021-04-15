@@ -122,7 +122,7 @@ So if:
   
 ##### !question
 
-if k is 15, what is h(k) using the multiplication method?
+If k is 15, what is h(k) using the multiplication method?
 
 ##### !end-question
 
