@@ -1,7 +1,7 @@
 ---
 Standards:
   -
-    Title: "About Thursdays @ Ada"
+    Title: CS Fundamentals Overview
     Description: Overview and links
     UID: ffe615ec-8c18-48a2-8a12-5fa54aa0214d
     SuccessCriteria:
@@ -11,6 +11,18 @@ Standards:
         Type: Lesson
         UID: d75af4a1-ff7d-46b9-988d-8fcda5d75bc5
         Path: /00-about-thursdays-at-ada/about-thursdays-at-ada.md
+ 
+  -
+    Title: Thursdays at Ada Norms
+    Description: Expectations for our sessions
+    UID: 88fccfa1-fe50-4434-8834-6efdf422f247
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: 9dda64ff-9362-46f2-8b09-d5843c7af04c
+        Path: /norms/overview.md
   -
     Title: Code Reviews
     Description: Code Reviews
