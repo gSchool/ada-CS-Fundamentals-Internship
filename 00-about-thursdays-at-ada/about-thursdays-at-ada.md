@@ -1,7 +1,3 @@
-# Thursdays at Ada
-
-While in Internship students return on Thursdays for additional learning on Computer Science Fundamentals and career development.
-
 ## CS Fundamentals
 
 In Computer Science fundamentals students learn the following concepts and data structures:
