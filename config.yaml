@@ -12,28 +12,6 @@ Standards:
         UID: d75af4a1-ff7d-46b9-988d-8fcda5d75bc5
         Path: /00-about-thursdays-at-ada/about-thursdays-at-ada.md
   -
-    Title: Internship Expectations
-    Description: Internship Expecatations with Alice and Jackie
-    UID: c206a7d1-8906-4585-a73f-d3bf6dde13da 
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
-      -
-        Type: Lesson
-        UID: 1f06f3a5-dd8e-4535-939a-b217c7a752d0 
-        Path: /internshipexpectations/overview.md 
-  -
-    Title: Remote Internship Tips
-    Description: Advice from Previous Cohorts
-    UID: fb7ca18e-462d-49a9-a38f-d3eaf2cfe958  
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
-      -
-        Type: Lesson
-        UID: 98d6a0e1-7de9-487b-a953-97d1522c5061  
-        Path: /remote-internship/overview.md          
-  -
     Title: Code Reviews
     Description: Code Reviews
     UID: 9141935e-3d6b-4f83-9eef-eca929c19ad6
@@ -48,18 +26,6 @@ Standards:
         Type: Checkpoint
         UID: 8acf7333-842f-4c09-98ff-379f5163f27f
         Path: /01-Code-Reviews/02-code-reviews-checkpoint.md
-  - 
-    Title: Panel with C13 Interns
-    Description: Internship advice from previous interns
-    UID: 92d77dbc-0459-4de8-be6c-f448a121cc3f 
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
-      -
-        Type: Lesson
-        UID: 04ef43e2-8d68-4689-9b43-569ff5d5b357
-        Path: /internshippanel/overview.md
-        
   -
   
     Title: Linked Lists
@@ -77,18 +43,6 @@ Standards:
         UID: e1d0e2c0-acb2-436a-b329-8c3da5155443
         Path: /02-linked-lists/03-linked-list-checkpoint.md
   -
-  
-    Title: Managing Up
-    Description: How to get the most out of your relationship with your manager
-    UID: 974825d6-b35c-467f-9d38-7df7f4eb03ed
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
-      -
-        Type: Lesson
-        UID: c9f8125a-1ef8-49a2-b08d-3a82da514ade
-        Path: /managingup/overview.md       
-  -
     Title: Binary Search Trees
     Description: Binary Search Trees
     UID: fc8d8eae-2456-4b22-9213-127d6e83dd5e
@@ -103,20 +57,6 @@ Standards:
         Type: Checkpoint
         UID: bbf1e2a2-0d6e-4337-9b00-81216688e16a
         Path: /03-Binary-Search-Trees/02-Bst-checkpoint.md
-        
-  -
-  
-    Title: Self Care and Boundary Setting
-    Description: Taking care of yourself during internship
-    UID: 4661fd35-2ee4-4061-8b89-35b5385bd59c 
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
-      -
-        Type: Lesson
-        UID: efe4dd39-c552-4156-99c0-8943539bc46d 
-        Path: /selfcare/overview.md               
- 
   -
     Title: Stacks And Queues
     Description: Stacks And Queues
@@ -133,17 +73,6 @@ Standards:
         UID: 13fd1a26-237c-4d3c-884d-575408019668
         Path: /04-Stacks-And-Queues/02-stacks-and-queues-checkpoint.md
   -
-    Title: Preparing for Midpoint Reviews
-    Description: Keys to a successful midpoint review
-    UID: 73f47a05-d695-480e-8337-98cf0277fa9c
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
-      -
-        Type: Lesson
-        UID: a861d76a-0236-46ca-94a9-70093f15a522
-        Path: /prepping-for-midpoint-reviews/preparing-for-midpoint-reviews.md
-  -
     Title: Hash Tables
     Description: How hashes work
     UID: 0ae273c2-90b1-4ec0-9738-1296f9ccfe08
@@ -158,18 +87,6 @@ Standards:
         Type: Checkpoint
         UID: a39c4928-599f-43b9-9b01-9637439502bf
         Path: /05-hash-tables/02-hash-table-checkpoint.md      
-  -
-    Title: Managing Impostor Syndrome
-    Description: Recognizing and managing impostor syndrome 
-    UID: 4c56f3f6-1e51-4d41-a2ba-214e7f6612af 
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
-      -
-        Type: Lesson
-        UID: af1ac27e-d6b6-4622-93fc-d91f142c578f 
-        Path: /impostorsyndrome/overview.md
-  
   -
     Title: Heaps
     Description: An alternative binary tree
