@@ -21,7 +21,13 @@ Standards:
       -
         Type: Lesson
         UID: 1f06f3a5-dd8e-4535-939a-b217c7a752d0 
-        Path: /internshipexpectations/overview.md  
+        Path: /internshipexpectations/overview.md 
+      -   
+        Type: Lesson
+        UID: b31cfeb2-34d9-47ef-bb58-7ca99ef9806e 
+        Path: /internshipexpectations/lesson.md
+        
+
   -
     Title: Remote Internship Tips
     Description: Advice from Previous Cohorts
@@ -59,6 +65,7 @@ Standards:
         Type: Lesson
         UID: 04ef43e2-8d68-4689-9b43-569ff5d5b357
         Path: /internshippanel/overview.md
+        
   -
   
     Title: Linked Lists
