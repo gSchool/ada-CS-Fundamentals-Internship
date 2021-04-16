@@ -1,5 +1,8 @@
 ---
   :Course:
-  - :Section: Thursdays @ Ada
+  - :Section: CS Fundamentals
     :Repos:
     - :Url: https://github.com/Ada-Developers-Academy/ada-CS-Fundamentals-Internship
+ - :Section: Career Development
+    :Repos:
+    - :Url: https://github.com/Ada-Developers-Academy/career-development
