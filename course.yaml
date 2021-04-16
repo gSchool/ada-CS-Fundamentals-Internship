@@ -6,3 +6,9 @@
  - :Section: "Career Development"
     :Repos:
     - :Url: https://github.com/Ada-Developers-Academy/career-development
+ - :Section: "Unit 2"
+    :Repos:
+    - :Url: https://github.com/Ada-Developers-Academy/core-unit-2    
+ - :Section: "Projects"
+    :Repos:
+    - :Url: https://github.com/Ada-Developers-Academy/core-projects
