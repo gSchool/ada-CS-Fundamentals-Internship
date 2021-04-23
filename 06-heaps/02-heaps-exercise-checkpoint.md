@@ -20,7 +20,7 @@ By the end of this lesson you should be able to:
 * id: 5dd9df36-0742-4209-8031-2bae37597660
 * title: Heaps Practice
 * upstream: https://github.com/Ada-C14/heaps
-* validate_fork: true
+* validate_fork: false
 * points: 0
 * topics: heaps
 
@@ -94,7 +94,7 @@ Your PR link goes here.
 * id: 770e6706-7f39-4b44-99a4-88c563672c1c
 * title: Optional JavaScript Version
 * upstream: https://github.com/ada-c14/heaps-js
-* validate_fork: true
+* validate_fork: false
 * points: 0
 * topics: heaps
 
