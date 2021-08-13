@@ -47,6 +47,10 @@ Standards:
       - success criteria
     ContentFiles:
       -
+        Type: Instructor
+        UID: c498e182
+        Path: /02-linked-lists/linked-lists.instructor.md
+      -
         Type: Lesson
         UID: 99474aeb-183e-4f01-990b-0a689c022c30
         Path: /02-linked-lists/02-linked-lists.md

@@ -344,63 +344,49 @@ When designing a data structure like a Linked List, we typically design the data
 
 The node class encapsulates each element of the LinkedList..  It provides an attribute to store data and a node referencing the next node in the chain.  It provides an interface for our LinkedList to deal with the data and connect nodes.
 
-```ruby
+```python
 # Defines a node in the singly linked list
-class Node
-  attr_reader :data # allow external entities to read value but not write
-  attr_accessor :next # allow external entities to read or write next node
-
-  def initialize(value)
-    @data = value
-    @next = nil
-  end
-end
+class Node:
+    def __init__(self, value):
+        self.data = value
+        self.next = None
 ```
 
 ![Linked List Node](images/nodeLinkedList.png)
 
 ### Linked List Class
 
-```ruby
+```python
 # Defines the singly linked list
-class LinkedList
-  def initialize
-    @head = nil # keep the head private. Not accessible outside this class
-  end
-  
-  # method to add a new node with the specific data value in the linked list
-  # insert the new node at the beginning of the linked list
-  def add_first(value)
-    new_node = Node.new(value)
+class LinkedList:
+    def __init__(self):
+        self.head = None
 
-    # if the head is nil new_node becomes head
-    # Then head becomes the new node.
-  end
-  
-  # returns the value in the first node
-  # returns nil if the list is empty
-  def get_first
-    # return the value of the 1st node in the list
-  end
+    # Method. Adds a new node with the specific data value to the beginning of the linked list.
+    def add_first(self, value):
+        new_node = Node(value)
 
-  # method that returns the value of the last node in the linked list
-  # returns nil if the linked list is empty
-  def get_last
-    # return nil if the list is empty
-    # otherwise traverse the list to the end
-    # Then return the last node's value
-  end
-  
-  # method that returns the value at a given index in the linked list
-  # index count starts at 0
-  # returns nil if there are fewer nodes in the linked list than the index value
-  def get_at_index(index)
-    # traverse the list, 
-    #  index, number of times or
-    #  until the end is reach
-    #  Then return the current node's value
-  end
-end
+    # Method. Returns the value in the first node in the linked list.
+    # Returns None if the list is empty.
+    def get_first(self):
+        pass
+
+    # Method. Returns the value of the last node in the linked list. Returns None if the list is empty.
+    def get_last(self):
+        # Return None if the list is empty
+        # Otherwise, traverse the list to the end
+        # Then return the last node's value
+        pass
+
+    # Method. Returns the value at a given index in the linked list.
+    # Index count starts at 0.
+    # Returns None if there are fewer nodes in the linked list than the index value.
+    def get_at_index(self, index):
+        # Traverse the list
+        # <index> times
+        # or until the end is reached
+        # Then return the current node's value
+        pass
 ```
 
 ### Adding A Node
@@ -427,12 +413,11 @@ Step 4:
 
 ![add-first-4](images/add-first-4.png)
 
-```ruby
-def add_first(value)
-  new_node = Node.new(value, nil, nil)
-  new_node.next_node = @head
-  @head = new_node
-end
+```python
+def add_first(self, value):
+    new_node = Node(value)
+    new_node.next = self.head
+    self.head = new_node
 ```
 
 ### Removing a node at a specific index
@@ -444,27 +429,24 @@ To remove a node at a specific index, you first have to traverse the list until 
 ![remove a node #3](images/remove-node-3.png)
 ![remove a node #4](images/remove-node-4.png)
 
-```ruby
-def remove(index)
-  return if @head.nil?
+```python
+def remove(self, index):
+    if not self.head:
+        return
 
-  if index == 0
-    @head = head.next_node
-  else
+    if index == 0:
+        self.head = self.head.next
+
     # Traverse the list until you find the node at index -1
-    current = @head
+    current = self.head
     current_index = 0
-    while current.next_node != nil && current_index < index - 1
-      current = current.next_node
-      current_index += 1
-    end
+    while current.next and current_index < index - 1:
+        current = current.next
+        current_index += 1
 
-    # if the node exists
-    if !current.next.nil?
-      current.next_node = current.next_node.next_node
-    end
-  end
-end
+    # If the node exists
+    if current.next:
+        current.next = current.next.next
 ```
 
 ## Supplemental Concepts
@@ -501,17 +483,15 @@ Consider when a node is removed from a Linked List:
 
 When no variable refers to a node (holding 99 in the image above) the ruby garbage collector will eventually return the memory to the operating system.  
 
-```ruby
-def remove_first()
-  if @head == nil
-    return false
-  end
+```python
+def remove_first(self):
+    if not self.head:
+        return False
 
-  value = @head.value
-  head = head.next_node
+    value = self.head.value
+    self.head = self.head.next
 
-  return value;
-end
+    return value
 ```
 
 Some languages however, place memory management on the developer.  C is one such language.  These lower-level languages give a developer more flexibility and control over low-level operations, at the cost of more responsibility and a greater likelyhood of errors.
