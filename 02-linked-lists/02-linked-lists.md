@@ -455,7 +455,7 @@ def remove(self, index):
 
 You will often hear the terms _pointer_ and _reference_ in relation to dynamic data structures like LinkedLists.  Both terms refer to a variable which **points** to data in memory, or holds the address of another varaible in memory.  The concept is similar to a home.  The home is an object in memory, while the home's address is a _reference_ which indicates where to find the home.
 
-In some languages like C/C++ you can manipulate memory addresses and memory directly.  In other languages, like Ruby, you have references which refer to objects in memory, but you cannot directly work with the memory addresses.  
+In some languages like C/C++ you can manipulate memory addresses and memory directly.  In other languages, like Python, you have references which refer to objects in memory, but you cannot directly work with the memory addresses.
 
 An example in C++
 
@@ -465,7 +465,7 @@ An example in C++
   ptr_x = &x;  // Assign ptr_x the value of the memory address of x.
 ```
 
-We use references in Ruby whenever we use a Linked List since each node _refers_ to the next node in the chain and `head` refers to the 1st node in the chain.
+We use references in Python whenever we use a Linked List since each node _refers_ to the next node in the chain and `head` refers to the 1st node in the chain.
 
 ![Singly Linked List](images/singly-linked-list2.png)
 
@@ -473,7 +473,7 @@ We use references in Ruby whenever we use a Linked List since each node _refers_
 
 Is a bug in how a program manages memory.  A _memory leak_ occurs when memory that is no longer needed by the program is not released back to the operating system.  Over time, if memory is used, and not returned to the system less and less memory is available to other programs and eventually not enough memory is available to run applications.  Modern operating systems return all system memory allocated to a program when it ends.  Thus memory leaks in long-running processes like daemons can cause a system to run out of memory.
 
-In Ruby the ruby interpreter manages memory for developers.  Ruby uses a [garbage collection](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)) system which identifies memory no longer used by the application and returns it.
+In Python, the Python interpreter manages memory for developers.  Python uses a [garbage collection](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)) system which identifies memory no longer used by the application and returns it.
 
 Consider when a node is removed from a Linked List:
 
@@ -481,7 +481,7 @@ Consider when a node is removed from a Linked List:
 <!-- source:  https://stackoverflow.com/questions/41474163/singly-linked-list-remove -->
 
 
-When no variable refers to a node (holding 99 in the image above) the ruby garbage collector will eventually return the memory to the operating system.  
+When no variable refers to a node (holding 99 in the image above) the Python garbage collector will eventually return the memory to the operating system.
 
 ```python
 def remove_first(self):
