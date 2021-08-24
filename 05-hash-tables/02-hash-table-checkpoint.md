@@ -1,6 +1,6 @@
 # Hashtable Implementations
 
-* [Exercise](https://github.com/Ada-C14/hash-practice) 
+* [Exercise](https://github.com/Ada-C15/hash-practice) 
 
 In this exercise you will complete two coding problems using Hash Tables.
 
@@ -19,7 +19,7 @@ By the end of this exercise you should be able to:
 * type: testable-project
 * id: 5a4a64b1-a7c3-425a-b073-a093a4d47227
 * title: Hash Practice
-* upstream: https://github.com/Ada-C14/hash-practice
+* upstream: https://github.com/Ada-C15/hash-practice
 * validate_fork: false
 * points: 0
 * topics: hash-table
@@ -101,7 +101,7 @@ Your PR link goes here.
 
 ##### !question
 
-Optionally you can for the [JavaScript](https://github.com/Ada-C14/hash-practice-js) version and submit that instead.
+Optionally you can for the [JavaScript](https://github.com/Ada-C15/hash-practice-js) version and submit that instead.
 
 ##### !end-question
 

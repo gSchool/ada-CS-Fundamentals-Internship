@@ -1,6 +1,6 @@
 # List Implementations
 
-* [Exercise](https://github.com/Ada-C14/linked-list) 
+* [Exercise](https://github.com/Ada-C15/linked-list) 
 
 Using object oriented design constructs, define a Node class and LinkedList class for a singly linked list. Each node has integer data value and a link to the next node. The linked list class has a head node and the following methods defined.
 
@@ -17,7 +17,7 @@ There are a set of advanced methods you can choose to implement for additional p
 * type: testable-project
 * id: 4f3d244b-d34b-4e34-9a85-bce2232203e5
 * title: List Implementations
-* upstream: https://github.com/Ada-C14/linked-list
+* upstream: https://github.com/Ada-C15/linked-list
 * validate_fork: false
 * points: 0
 * topics: linked-lists
@@ -90,14 +90,14 @@ Your PR link goes here.
 * type: testable-project
 * id: 795b30c2-9d88-4480-8062-d0e5466a09eb
 * title: Optional JS Version
-* upstream: https://github.com/ada-c14/linked-list-js
+* upstream: https://github.com/Ada-C15/linked-list-js
 * validate_fork: false
 * points: 0
 * topics: linked-lists
 
 ##### !question
 
-Optionally you can submit a link to a fork of https://github.com/ada-c14/linked-list-js
+Optionally you can submit a link to a fork of https://github.com/Ada-C15/linked-list-js
 
 ##### !end-question
 

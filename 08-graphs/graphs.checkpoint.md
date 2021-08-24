@@ -10,14 +10,14 @@
 * type: testable-project
 * id: bae69d26-49ac-4750-b397-52003ac77257
 * title: Bipartition Graph Problem
-* upstream: https://github.com/Ada-C14/Bipartition-Graph
+* upstream: https://github.com/Ada-C15/Bipartition-Graph
 * validate_fork: true
 * points: 0
 * topics: graphs
 
 ##### !question
 
-Complete the [Bipartition Graph Problem](https://github.com/Ada-C14/Bipartition-Graph)
+Complete the [Bipartition Graph Problem](https://github.com/Ada-C15/Bipartition-Graph)
 
 ##### !end-question
 
