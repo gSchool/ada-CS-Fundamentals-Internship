@@ -1,9 +1,11 @@
 # Code Reviews
 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=db636763-2c2f-4969-b7a1-aaa80055e5fe&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ## Video Lesson & Exercises
 
 - [The Video for this lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=db636763-2c2f-4969-b7a1-aaa80055e5fe)
-- [Exercises](https://github.com/Ada-c14/code-reviews)
+- [Exercises](https://github.com/Ada-C15/code-reviews)
 
 ## Learning Goals
 

@@ -1,6 +1,6 @@
 # Heaps Exercise
 
-* [Exercise](https://github.com/Ada-C14/heaps) 
+* [Exercise](https://github.com/Ada-C15/heaps) 
 
 In this exercise you will create a min-heap and implement Heapsort.
 
@@ -19,7 +19,7 @@ By the end of this lesson you should be able to:
 * type: testable-project
 * id: 5dd9df36-0742-4209-8031-2bae37597660
 * title: Heaps Practice
-* upstream: https://github.com/Ada-C14/heaps
+* upstream: https://github.com/Ada-C15/heaps
 * validate_fork: false
 * points: 0
 * topics: heaps
@@ -93,14 +93,14 @@ Your PR link goes here.
 * type: testable-project
 * id: 770e6706-7f39-4b44-99a4-88c563672c1c
 * title: Optional JavaScript Version
-* upstream: https://github.com/ada-c14/heaps-js
+* upstream: https://github.com/Ada-C15/heaps-js
 * validate_fork: false
 * points: 0
 * topics: heaps
 
 ##### !question
 
-Add a link to your fork of the [JavaScript version](https://github.com/ada-c14/heaps-js)
+Add a link to your fork of the [JavaScript version](https://github.com/Ada-C15/heaps-js)
 
 ##### !end-question
 

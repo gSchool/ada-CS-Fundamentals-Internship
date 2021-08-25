@@ -23,14 +23,14 @@ In this exercise you will implement, in Ruby, several Tree methods.
 * type: testable-project
 * id: 0c95982f-80fb-4e1c-b052-18aae7bfcb98
 * title: Tree Implementations
-* upstream: https://github.com/Ada-C14/tree-practice
+* upstream: https://github.com/Ada-C15/tree-practice
 * validate_fork: false
 * points: 0
 * topics: binary-search-trees
 
 ##### !question
 
-Fork the [linked repo](https://github.com/Ada-C14/tree-practice) and submit your completed exercise.  **Then** on the next question submit your PR, so I can make PR comments.
+Fork the [linked repo](https://github.com/Ada-C15/tree-practice) and submit your completed exercise.  **Then** on the next question submit your PR, so I can make PR comments.
 
 ##### !end-question
 
@@ -95,7 +95,7 @@ Your PR link goes here.
 * type: testable-project
 * id: 9d78076f-8cd3-4574-9c31-01038b49f5a4
 * title: Binary Search Tree Practice - JS
-* upstream: https://github.com/Ada-C14/tree-practice-js
+* upstream: https://github.com/Ada-C15/tree-practice-js
 * validate_fork: false
 * points: 0
 * topics: binary-search-trees
