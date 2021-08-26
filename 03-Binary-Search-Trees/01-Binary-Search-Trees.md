@@ -179,6 +179,8 @@ Try this out on the [Binary Tree Visualizer](https://visualgo.net/en/bst).
 
 ## Finding A Node With Python
 
+![Finding a 29 in a tree visualization](./images/Binary-Search-Trees__find-value.gif)
+
 You can implement the `find` method in Python as follows:
 
 ```python
