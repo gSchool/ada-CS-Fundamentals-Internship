@@ -65,19 +65,14 @@ Our Linked Lists are a linear structure with each node linking to the next node 
 
 Our ListNode looked like this:
 
-```ruby
-class Node
-  attr_reader :data
-  attr_accessor :next
-
-  def initialize(value, next = nil)
-    @next = next
-    @data = value
-  end
-end
+```python
+class ListNode:
+    def __init__(self, value, next=None):
+        self.data = value
+        self.next = next
 ```
 
-The `ListNode` class was used in a larger `LinkedList` class which maintained a chain of `ListNode` objects starting with a node pointed to by an instance variable called `@head`.
+The `ListNode` class was used in a larger `LinkedList` class which maintained a chain of `ListNode` objects starting with a node pointed to by an instance variable called `head`.
 
 ### Consider A Nonlinear Structure...
 
@@ -90,32 +85,24 @@ In a _Binary Search Tree_ each node's left pointer points to all elements smalle
 
 Instead of a node with one link to a next node, we can create nodes with 2 pointers, left and right.  Since each node can have 2 successors or "children", it forms a binary structure as opposed to the linear structure of a Linked List.
 
-```ruby
-class TreeNode
-  attr_reader :key, :data
-  attr_accessor :left, :right
-
-  def initialize(data)
-    @data = data
-    @left = @right = nil
-  end
-end
+```python
+class TreeNode:
+    def __init__(self, value)
+        self.data  = value
+        self.left  = None
+        self.right = None
 ```
 
 ### The Tree Class
 
 Just like the `LinkedList` class discussed above, we can create a `Tree` class to represent the full data structure, using the `TreeNode` class to create nodes and build the tree.
 
-```ruby
-class Tree
-
-  def initialize
-    @root = nil # The root is the starting
+```python
+class Tree:
+  def __init__(self):
+      self.root = nil # The root is the starting
                 # node in the Tree
-  end
-
   # Tree methods go here...
-end
 ```
 
 **Exercise**
@@ -155,6 +142,50 @@ If the value is greater than the root return search on current node's right side
 Try this out on the [Binary Tree Visualizer](http://btv.melezinek.cz/binary-search-tree.html).
 
 **Question**:  If you have a tree of height 5, what's the worst-case for finding a value in the tree?  What affects the number of comparisons you need to make?
+
+## Finding A Node With Python
+
+You can implement the `find` method in Python as follows:
+
+```python
+class Tree:
+    def __init__(self):
+        self.root = None
+    
+    def find(self, value):
+        current = self.root
+        while current != None:
+            if current.data == value:
+                return True
+            elif value < current.data:
+                current = current.left
+            else:
+                current = current.right
+        
+        return False
+```
+
+### Recursive Find Method
+
+Because every node in a Binary Search Tree is the root of a subtree, you can take advantage of the recursive structure to write a recursive solution.
+
+```python
+class Tree:
+    def __init__(self):
+        self.root = None
+    
+    def find_helper(self, current, value):
+        if current == None:
+            return False
+        elif current.data == value:
+            return True
+        elif value < current.data:
+            return self.find_helper(current.left, value)
+        return self.find_helper(current.right, value)
+
+    def find(self, value):
+        return self.find_helper(self.root, value)
+```
 
 ## Balanced Trees & Unbalanced Trees
 
@@ -760,23 +791,6 @@ Otherwise return 1 plus the maximum of the heights of the right and left subtree
 
 This is a recursive solution because it treats the left and right sides of a node as trees.
 
-<!--
-## Exercises
-
-Design a recursive algorithm, deduce the space and time complexity and then, author functions to do the following. For each of the problems below, assume you are given a Binary Search Tree where each node contains an integer data and links to the left and right children nodes.
-
-  1. Search for a given integer value in the Binary Search Tree. Return true if the value is found, false otherwise.
-  2. Insert a given integer value in the Binary Search Tree.
-  3. Compute the height of the Binary Search Tree.
-  4. Print values in the Binary Search Tree in pre-order.
-  5. Print values in the Binary Search Tree in in-order.
-  6. Print values in the Binary Search Tree in post-order.
-  7. Print values in the Binary Search Tree in level-order. (Breadth-first traversal)
-  8. Delete a given value from the Binary Search Tree.
-
-Design an iterative algorithm for the first seven exercises above, deduce the space and time complexity and author the functions to implement them. You may use additional data structures.
- -->
-
 
 ## Summary
 
@@ -844,9 +858,3 @@ We will use the following terms in the lesson.
 - In "Cracking the Coding Interview" book, "Chapter 4: Trees and Graphs"
 - CareerCup [Trees and Graph Interview Questions](https://www.careercup.com/page?pid=trees-and-graphs-interview-questions) - scan and look for the tree interview questions.
 - Kal academy's problems on [Trees](https://drive.google.com/open?id=0BxHords9odw3b2d1ZTJtVkZZTkk)
-
-## Former Slide Deck
-
-- Former Slide Deck used in class</br>
-<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a href="https://drive.google.com/file/d/0B__DV26QHsH4SXFxN2JpS3RGRkE/view?usp=sharing">Binary Search Trees</a> and <a href="https://drive.google.com/file/d/0B__DV26QHsH4bWJmS1A0QXBad1U/view?usp=sharing">Introduction to Recursion</a></span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</br>
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
