@@ -1,8 +1,10 @@
 # Binary Search Trees
 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d9746397-8a10-43be-b1cc-aaaf00720b31&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ## Learning Goals
 
-By the end of this lesson you should be able to:
+Students should be able to:
 
 - Compare a Binary Tree to a Linked List
 - Explain how a Binary Search Tree differs from a generic Binary Tree
