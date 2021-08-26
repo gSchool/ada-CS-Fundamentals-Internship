@@ -504,7 +504,7 @@ Worst case you added 4 more levels 5 + 4 = 9, so 9 comparisons to find the value
 
 ##### !question
 
-Create a tree with one node.  Then double the number of nodes, but keep the tree balanced.  Then double the number of nodes again, maintaining balance.  The height changes
+Create a tree with one node.  Then double the number of nodes, **keeping the tree balanced.**  Then double the number of nodes again, maintaining balance.  Notice how the height changes.
 
 What standard Big-O time complexity does this match?
   
@@ -513,7 +513,7 @@ What standard Big-O time complexity does this match?
 
 ##### !placeholder
 
-Big O answer here
+O(?)
 
 ##### !end-placeholder
 
@@ -591,10 +591,6 @@ For the above Binary Search Tree
 - **In-Order**: [10, 25, 30, 50, 60, 75, 100]
 - **Post-Order**: [10, 30, 25, 60, 100, 75, 50]
 
-**Exercise**
-
-![bst3](images/bst3.png)
-
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
 
@@ -608,6 +604,8 @@ For the above Binary Search Tree
 * topics: bst
 
 ##### !question
+
+![bst3](images/bst3.png)
 
 What is the height of the above BST?
 
@@ -645,6 +643,8 @@ Number goes here
 * topics: bst
 
 ##### !question
+
+![bst3](images/bst3.png)
 
 Is the tree balanced?
 
@@ -691,6 +691,8 @@ In a balanced tree no sibling subtrees differ in height more than 1.  So no left
 
 ##### !question
 
+![bst3](images/bst3.png)
+
 In what order would you hit the nodes doing an inorder traversal
 
 ##### !end-question
@@ -733,6 +735,8 @@ In what order would you hit the nodes doing an inorder traversal
 
 ##### !question
 
+![bst3](images/bst3.png)
+
 In what order would you hit the nodes doing an preorder traversal
 
 ##### !end-question
@@ -774,6 +778,8 @@ In what order would you hit the nodes doing an preorder traversal
 * topics: bst, traversal
 
 ##### !question
+
+![bst3](images/bst3.png)
 
 In what order would you hit the nodes doing an postorder traversal
 
