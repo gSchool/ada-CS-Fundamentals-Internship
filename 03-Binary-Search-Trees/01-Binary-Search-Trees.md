@@ -107,13 +107,18 @@ In a Binary Search Tree:
 
 Instead of a node with one link to a next node, we can create nodes with 2 pointers, left and right.  Since each node can have 2 successors or "children", it forms a binary structure as opposed to the linear structure of a Linked List.
 
+This node stores both a key and value for each node.  The `Tree` class will compare keys to maintain node order.
+
 ```python
 class TreeNode:
-    def __init__(self, value)
-        self.data  = value
-        self.left  = None
-        self.right = None
-```
+    def __init__(self, key, val = None):
+        if val == None:
+            val = key
+
+        self.key = key
+        self.value = val
+        self.left = None
+        self.right = None```
 
 ### The Tree Class
 
@@ -122,7 +127,7 @@ Just like the `LinkedList` class discussed above, we can create a `Tree` class t
 ```python
 class Tree:
     def __init__(self):
-        self.root = nil # The root is the starting
+        self.root = None # The root is the starting
                   # node in the Tree
     # Tree methods go here...
 ```
@@ -188,17 +193,18 @@ class Tree:
     def __init__(self):
         self.root = None
     
-    def find(self, value):
+    def find(self, key):
         current = self.root
+
         while current != None:
-            if current.data == value:
-                return True
-            elif value < current.data:
+            if current.key == key:
+                return current.value
+            elif key < current.key:
                 current = current.left
             else:
                 current = current.right
-        
-        return False
+
+        return None
 ```
 
 ### Recursive Find Method
@@ -217,6 +223,7 @@ class Tree:
             return True
         elif value < current.data:
             return self.find_helper(current.left, value)
+
         return self.find_helper(current.right, value)
 
     def find(self, value):
