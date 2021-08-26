@@ -97,8 +97,11 @@ The `ListNode` class was used in a larger `LinkedList` class which maintained a 
 
 In a _Binary Search Tree_ each node's left pointer points to all elements smaller than or equal to the node's key.  The right pointer points to all nodes greater than the given node's key.   Each node can refer to other nodes.  A Tree is hierarchical with certain nodes acting as parents to others.  A node above another is the node's _parent_.  The node(s) below a node are it's _children_.  The topmost node in a tree is known as the _root_.  The nodes with no children are called _leaves_.
 
-![Binary Search Tree Vocabular](images/TreeVocabulary.png)
+In a Binary Search Tree:
+- Nodes with values less than any node are stored to the **left** of that node.
+- Nodes with values greater than any node are stored to the **right** of that node. 
 
+![Binary Search Tree Vocabular](images/TreeVocabulary.png)
 
 ### Binary Search Tree Node
 
@@ -141,7 +144,9 @@ Method add:
     otherwise make node's right be the result of calling add on node's right.
 ```
 
-You can observe this in the [Binary Tree Visualizer](http://btv.melezinek.cz/binary-search-tree.html)
+![Tree Insert operation visualization](./images/Binary-search-trees__insert-into-tree.gif)
+
+You can experiment with this in the [Binary Tree Visualizer](https://visualgo.net/en/bst)
 
 ## Finding a Value
 
