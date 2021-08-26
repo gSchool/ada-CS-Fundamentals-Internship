@@ -66,6 +66,10 @@ Standards:
       - success criteria
     ContentFiles:
       -
+        Type: Instructor
+        UID: e153ec41-477e-43fb-bf6d-0173e24aec85
+        Path: /03-Binary-Search-Trees/bst.instructor.md
+      -
         Type: Lesson
         UID: d363c5cb-af6d-45d1-8e98-eaf960f8fac9
         Path: /03-Binary-Search-Trees/01-Binary-Search-Trees.md
