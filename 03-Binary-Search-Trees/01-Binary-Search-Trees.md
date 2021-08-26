@@ -63,7 +63,7 @@ Our Linked Lists are a linear structure with each node linking to the next node 
 
 ![Linked List Diagram](images/linked-list-vocab.png)
 
-Our ListNode looked like this:
+Our Node class from the LinkedList topic, which will be referred to as `ListNode`, looked like this:
 
 ```python
 class ListNode:
@@ -99,10 +99,10 @@ Just like the `LinkedList` class discussed above, we can create a `Tree` class t
 
 ```python
 class Tree:
-  def __init__(self):
-      self.root = nil # The root is the starting
-                # node in the Tree
-  # Tree methods go here...
+    def __init__(self):
+        self.root = nil # The root is the starting
+                  # node in the Tree
+    # Tree methods go here...
 ```
 
 **Exercise**
