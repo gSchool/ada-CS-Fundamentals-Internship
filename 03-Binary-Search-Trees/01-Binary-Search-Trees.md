@@ -863,11 +863,6 @@ As you can see below a balanced Binary Search Tree provides good performance whi
 4|Binary Tree (balanced)|O(log n)|O(log n)|O(log n)|O(log n)|NA|NA
 5|Hash Table|O(1)|O(1)|O(1)|O(1)|NA|NA
 
-
-## Terminology
-
-We will use the following terms in the lesson.
-
 ## Additional Resources
 
 - Recursion
