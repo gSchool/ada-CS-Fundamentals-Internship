@@ -556,6 +556,17 @@ O(log n) when you double the number of nodes, the height increases by 1.
 
 Notice if a tree is balanced, when you move left or right, you eliminate half of the possible nodes.  This means you are essentially doing **binary search.**  If the tree is unbalanced, you are performing a linear search.
 
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-star
+
+## Balance is important in a tree's efficiency
+
+If a tree is _balanced_ then adding, finding, removing operations on a that tree perform in O(log n) time.  However if a tree becomes unbalanced the efficiency can approach O(n) time complexity.  
+
+For this reason, computer scientists spend a lot of time focusing on ways to maintain the balance of a Binary Search Tree.
+
+### !end-callout
+
 **Self-Balancing Trees** There are a lot of algorithms for [keeping a tree balanced](https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree).  The act of keeping a tree balanced is also O(log n), and so rebalancing a tree after an insertion or deletion doesn't significantly impact the runtime of a binary search tree.  These structures are wonderful things to learn, but beyond the scope of this class.  You **can** however rest assured that any library tree classes that you use will keep the tree balanced in such a manner.
 
 ## Traversals
