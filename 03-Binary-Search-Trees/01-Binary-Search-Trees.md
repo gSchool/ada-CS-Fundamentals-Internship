@@ -225,9 +225,9 @@ class Tree:
     
     def find_helper(self, current, value):
         if current == None:
-            return False
+            return None
         elif current.data == value:
-            return True
+            return current.value
         elif value < current.data:
             return self.find_helper(current.left, value)
 
