@@ -23,7 +23,24 @@ Students should be able to:
 - [Slide Deck](https://docs.google.com/presentation/d/1Fj0deIUswGZ3ooJMpgVUqPEaWHKTkQ1w2Ci-yf8v66M/edit#slide=id.p)
 - [BST Exercise](https://github.com/Ada-C13/tree-practice)
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d9746397-8a10-43be-b1cc-aaaf00720b31&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+## Vocabulary
+
+## Vocabulary and Synonyms
+
+| Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
+| -------------- | ------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
+| Linked List | a linear collection of data elements whose order is not given by their physical placement in memory.  Each element of the list contains a reference to the next element.     |       | "Because I wanted to add and remove elements to the front and rear, I used a linked list to store the data." |
+| Tree      | A widely used abstract data type that simulates a hierarchical tree structure, with a root value and subtrees of children with a parent node, represented as a set of linked nodes. |  | "I used a tree to store ordered data." |
+| Binary Tree      | A tree structure in which each node has at most two children, which are referred to as the _left child_ and _right child_. |  | "A Mathematical expression can be written as a binary tree where the leaves are values and the parent nodes are operators like +, -, *, and /." |
+| Binary Search Tree      | A specific type of Binary Tree which is a rooted binary tree data structure whose internal nodes each store a key greater than all the keys in the node’s left subtree and less than those in its right subtree. | Ordered Binary Tree | "Because 23 is less than the root, it can only be found in the left subtree of this binary search tree." |
+| Leaf      | A node in a tree with no descendants. |  | "Because the left and right subtrees of the current node were `None`, this node is a leaf." |
+| Parent      | A node with descendants. |  | "Because the left and right subtrees of the current node not `None`, this node is a parent and not a leaf." |
+| Unbalanced Tree 	|  A BST where each node has 0 or 1 children (it looks like a linked list) 	| | The tree was unbalanced so inserting new values too linear time. |
+| Balanced Tree 	| A tree where the the level of any two leaves differs by at most 1 node.	| | "Because my tree is balanced, it's quick to find values inside it."  |
+| Subtree | The tree which is a child of a node. Note: The name emphasizes that everything which is a descendant of a tree node is a tree, too, and is a subset of the larger tree.| | "The value I'm looking for is less than the current node, so I will continue searching in the left subtree." |
+| Traversal 	|  A method of visiting each node in a BST	| | "My method performs a traversal visiting each node in the tree, level-by-level." |
+| Depth-First Traversal 	|  An algorithm for traversing or searching a tree. The algorithm starts at the root node and explores as far as possible along each branch before backtracking.	| | A depth-first traversal looks like a mouse exploring a maze in that it goes as far down one path before backtracking when encountering dead ends. |
+| Breadth-first traversal 	|  An algorithm for searching a tree data structure for a node that satisfies a given property. It starts at the tree root and explores all nodes at the present depth prior to moving on to the nodes at the next depth level. 	| | I printed out the tree level-by-level so I had to perform a breadth-first traversal. |
 
 ## Sample Problem
 
@@ -816,20 +833,6 @@ As you can see below a balanced Binary Search Tree provides good performance whi
 ## Terminology
 
 We will use the following terms in the lesson.
-
-| Term 	| Definition 	|
-|---	|---	|
-| Tree Height 	| The maximum number of nodes to traverse to get from the root node to a leaf (bottom) node. 	|
-| Root Node |  The starting node in a Binary Search Tree 	|
-| Leaf Node |  A node in a binary search tree with no children (left & right are `nil`) 	|
-| Unbalanced Tree 	|  A BST where each node has 0 or 1 children (it looks like a linked list) 	|
-| Balanced Tree 	| A tree where the the level of any two leaves differs by at most 1 node.	|
-| Subtree | The tree which is a child of a node. Note: The name emphasizes that everything which is a descendant of a tree node is a tree, too, and is a subset of the larger tree.|
-| Traversal 	|  A method of visiting each node in a BST	|
-| Depth-First Traversal 	|  Explore the children and grandchildren nodes before moving to sibling nodes	|
-| Breadth-first traversal 	|  Explore in level order.   Hit nodes in the root level then all the root's children, then all their children etc. 	|
-| Parent Node | A node with references to one or more other nodes |
-| Child Node | A node which can be accessed through a parent node |
 
 ## Additional Resources
 
