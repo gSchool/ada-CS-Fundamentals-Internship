@@ -163,9 +163,19 @@ If the value is greater than the root return search on current node's right side
 
 **Exercise** 
 
-Try this out on the [Binary Tree Visualizer](http://btv.melezinek.cz/binary-search-tree.html).
+Try this out on the [Binary Tree Visualizer](https://visualgo.net/en/bst).
 
 **Question**:  If you have a tree of height 5, what's the worst-case for finding a value in the tree?  What affects the number of comparisons you need to make?
+
+<details style="max-width: 700px; margin: auto;">
+  <summary>
+    Open this to see our answer.
+  </summary>
+
+  Worst-case, you need to make comparisons to 5 nodes before inserting.  This occurs when you need to insert a new node into a leaf.
+
+  Worst-case:  O(h) comparisons where _h_ is the height of the tree
+</details>
 
 ## Finding A Node With Python
 
