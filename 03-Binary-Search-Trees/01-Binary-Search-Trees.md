@@ -162,10 +162,14 @@ You can try to search to find a value in a Binary Search Tree Like this:
 ```
 Start the current node at the root
 If the current node is nil return nil
-If the current node equals the value being searched for return the current node's data
+If the current node equals the value 
+    being searched for return the current
+    node's data
 
-If the value is less than the current node return search on current node's left side
-If the value is greater than the root return search on current node's right side
+If the value is less than the current node 
+    return search on current node's left side
+If the value is greater than the root 
+    return search on current node's right side
 ```
 
 **Exercise** 
