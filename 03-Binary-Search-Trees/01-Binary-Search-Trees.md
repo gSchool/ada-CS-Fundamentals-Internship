@@ -816,6 +816,16 @@ There are a few common use-cases for each of the depth-first traversals.
 - **In-Order**: If you need to print or otherwise visit all the nodes of a tree in order.
 - **Post-Order**: If you need to delete all the nodes in a BST.
 
+### !callout-info
+
+## Why are they all left-to-right?
+
+So why are all the traversals left-to-right instead of right-to-left?
+
+Computer Science was initially pioneered in western cultures where people read left-to-right and so their cultural bias lead to designing traversals in that manner.  There's nothing inherit in Binary Search Trees to require this.  You could create a right-to-left traversal, but for historical reasons, these are the standard Binary Search Tree traversals.
+
+### !end-callout
+
 ### Binary Expression Trees
 
 There is also a kind of tree called a [Binary Expression Tree](https://www.geeksforgeeks.org/expression-tree/), which is a type of tree used to represent an arithetic formula.  In order traversals allow you to present the formula in the traditional manner while the preorder (prefix) and postorder (postifx) traversals can make the order more clear to machines.
