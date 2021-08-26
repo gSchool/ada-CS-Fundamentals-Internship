@@ -29,7 +29,7 @@ Students should be able to:
 
 | Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
 | -------------- | ------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
-| Linked List | a linear collection of data elements whose order is not given by their physical placement in memory.  Each element of the list contains a reference to the next element.     |       | "Because I wanted to add and remove elements to the front and rear, I used a linked list to store the data." |
+| Linked List | A linear collection of data elements whose order is not given by their physical placement in memory.  Each element of the list contains a reference to the next element.     |       | "Because I wanted to add and remove elements to the front and rear, I used a linked list to store the data." |
 | Tree      | A widely used abstract data type that simulates a hierarchical tree structure, with a root value and subtrees of children with a parent node, represented as a set of linked nodes. |  | "I used a tree to store ordered data." |
 | Binary Tree      | A tree structure in which each node has at most two children, which are referred to as the _left child_ and _right child_. |  | "A Mathematical expression can be written as a binary tree where the leaves are values and the parent nodes are operators like +, -, *, and /." |
 | Binary Search Tree      | A specific type of Binary Tree which is a rooted binary tree data structure whose internal nodes each store a key greater than all the keys in the node’s left subtree and less than those in its right subtree. | Ordered Binary Tree | "Because 23 is less than the root, it can only be found in the left subtree of this binary search tree." |
@@ -151,6 +151,7 @@ Method add:
 ```
 
 ![Tree Insert operation visualization](./images/Binary-search-trees__insert-into-tree.gif)
+_Fig.  Visualization of inserting a value into a BST_
 
 You can experiment with this in the [Binary Tree Visualizer](https://visualgo.net/en/bst)
 
@@ -186,6 +187,7 @@ Try this out on the [Binary Tree Visualizer](https://visualgo.net/en/bst).
 ## Finding A Node With Python
 
 ![Finding a 29 in a tree visualization](./images/Binary-Search-Trees__find-value.gif)
+_Fig.  A visualization of finding a value in a BST._
 
 You can implement the `find` method in Python as follows:
 
