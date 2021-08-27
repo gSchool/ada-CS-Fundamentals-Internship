@@ -1,8 +1,10 @@
 # Binary Search Trees
 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d9746397-8a10-43be-b1cc-aaaf00720b31&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ## Learning Goals
 
-By the end of this lesson you should be able to:
+Students should be able to:
 
 - Compare a Binary Tree to a Linked List
 - Explain how a Binary Search Tree differs from a generic Binary Tree
@@ -21,7 +23,24 @@ By the end of this lesson you should be able to:
 - [Slide Deck](https://docs.google.com/presentation/d/1Fj0deIUswGZ3ooJMpgVUqPEaWHKTkQ1w2Ci-yf8v66M/edit#slide=id.p)
 - [BST Exercise](https://github.com/Ada-C13/tree-practice)
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d9746397-8a10-43be-b1cc-aaaf00720b31&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+## Vocabulary
+
+## Vocabulary and Synonyms
+
+| Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
+| -------------- | ------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
+| Linked List | A linear collection of data elements whose order is not given by their physical placement in memory.  Each element of the list contains a reference to the next element.     |       | "Because I wanted to add and remove elements to the front and rear, I used a linked list to store the data." |
+| Tree      | A widely used abstract data type that simulates a hierarchical tree structure, with a root value and subtrees of children with a parent node, represented as a set of linked nodes. |  | "I used a tree to store ordered data." |
+| Binary Tree      | A tree structure in which each node has at most two children, which are referred to as the _left child_ and _right child_. |  | "A Mathematical expression can be written as a binary tree where the leaves are values and the parent nodes are operators like +, -, *, and /." |
+| Binary Search Tree      | A specific type of Binary Tree which is a rooted binary tree data structure whose internal nodes each store a key greater than all the keys in the node’s left subtree and less than those in its right subtree. | Ordered Binary Tree | "Because 23 is less than the root, it can only be found in the left subtree of this binary search tree." |
+| Leaf      | A node in a tree with no descendants. |  | "Because the left and right subtrees of the current node were `None`, this node is a leaf." |
+| Parent      | A node with descendants. |  | "Because the left and right subtrees of the current node not `None`, this node is a parent and not a leaf." |
+| Unbalanced Tree 	|  A BST where each node has 0 or 1 children (it looks like a linked list) 	| | The tree was unbalanced so inserting new values too linear time. |
+| Balanced Tree 	| A tree where the the level of any two leaves differs by at most 1 node.	| | "Because my tree is balanced, it's quick to find values inside it."  |
+| Subtree | The tree which is a child of a node. Note: The name emphasizes that everything which is a descendant of a tree node is a tree, too, and is a subset of the larger tree.| | "The value I'm looking for is less than the current node, so I will continue searching in the left subtree." |
+| Traversal 	|  A method of visiting each node in a BST	| | "My method performs a traversal visiting each node in the tree, level-by-level." |
+| Depth-First Traversal 	|  An algorithm for traversing or searching a tree. The algorithm starts at the root node and explores as far as possible along each branch before backtracking.	| | A depth-first traversal looks like a mouse exploring a maze in that it goes as far down one path before backtracking when encountering dead ends. |
+| Breadth-first traversal 	|  An algorithm for searching a tree data structure for a node that satisfies a given property. It starts at the tree root and explores all nodes at the present depth prior to moving on to the nodes at the next depth level. 	| | I printed out the tree level-by-level so I had to perform a breadth-first traversal. |
 
 ## Sample Problem
 
@@ -63,59 +82,55 @@ Our Linked Lists are a linear structure with each node linking to the next node 
 
 ![Linked List Diagram](images/linked-list-vocab.png)
 
-Our ListNode looked like this:
+Our Node class from the LinkedList topic, which will be referred to as `ListNode`, looked like this:
 
-```ruby
-class Node
-  attr_reader :data
-  attr_accessor :next
-
-  def initialize(value, next = nil)
-    @next = next
-    @data = value
-  end
-end
+```python
+class ListNode:
+    def __init__(self, value, next=None):
+        self.data = value
+        self.next = next
 ```
 
-The `ListNode` class was used in a larger `LinkedList` class which maintained a chain of `ListNode` objects starting with a node pointed to by an instance variable called `@head`.
+The `ListNode` class was used in a larger `LinkedList` class which maintained a chain of `ListNode` objects starting with a node pointed to by an instance variable called `head`.
 
 ### Consider A Nonlinear Structure...
 
 In a _Binary Search Tree_ each node's left pointer points to all elements smaller than or equal to the node's key.  The right pointer points to all nodes greater than the given node's key.   Each node can refer to other nodes.  A Tree is hierarchical with certain nodes acting as parents to others.  A node above another is the node's _parent_.  The node(s) below a node are it's _children_.  The topmost node in a tree is known as the _root_.  The nodes with no children are called _leaves_.
 
-![Binary Search Tree Vocabular](images/TreeVocabulary.png)
+In a Binary Search Tree:
+- Nodes with values less than any node are stored to the **left** of that node.
+- Nodes with values greater than any node are stored to the **right** of that node. 
 
+![Binary Search Tree Vocabular](images/TreeVocabulary.png)
 
 ### Binary Search Tree Node
 
 Instead of a node with one link to a next node, we can create nodes with 2 pointers, left and right.  Since each node can have 2 successors or "children", it forms a binary structure as opposed to the linear structure of a Linked List.
 
-```ruby
-class TreeNode
-  attr_reader :key, :data
-  attr_accessor :left, :right
+This node stores both a key and value for each node.  The `Tree` class will compare keys to maintain node order.
 
-  def initialize(data)
-    @data = data
-    @left = @right = nil
-  end
-end
+```python
+class TreeNode:
+    def __init__(self, key, val = None):
+        if val == None:
+            val = key
+
+        self.key = key
+        self.value = val
+        self.left = None
+        self.right = None```
 ```
 
 ### The Tree Class
 
 Just like the `LinkedList` class discussed above, we can create a `Tree` class to represent the full data structure, using the `TreeNode` class to create nodes and build the tree.
 
-```ruby
-class Tree
-
-  def initialize
-    @root = nil # The root is the starting
-                # node in the Tree
-  end
-
-  # Tree methods go here...
-end
+```python
+class Tree:
+    def __init__(self):
+        self.root = None # The root is the starting
+                  # node in the Tree
+    # Tree methods go here...
 ```
 
 **Exercise**
@@ -135,7 +150,10 @@ Method add:
     otherwise make node's right be the result of calling add on node's right.
 ```
 
-You can observe this in the [Binary Tree Visualizer](http://btv.melezinek.cz/binary-search-tree.html)
+![Tree Insert operation visualization](./images/Binary-search-trees__insert-into-tree.gif)
+_Fig.  Visualization of inserting a value into a BST_
+
+You can experiment with this in the [Binary Tree Visualizer](https://visualgo.net/en/bst)
 
 ## Finding a Value
 
@@ -144,17 +162,80 @@ You can try to search to find a value in a Binary Search Tree Like this:
 ```
 Start the current node at the root
 If the current node is nil return nil
-If the current node equals the value being searched for return the current node's data
+If the current node equals the value 
+    being searched for return the current
+    node's data
 
-If the value is less than the current node return search on current node's left side
-If the value is greater than the root return search on current node's right side
+If the value is less than the current node 
+    return search on current node's left side
+If the value is greater than the root 
+    return search on current node's right side
 ```
 
 **Exercise** 
 
-Try this out on the [Binary Tree Visualizer](http://btv.melezinek.cz/binary-search-tree.html).
+Try this out on the [Binary Tree Visualizer](https://visualgo.net/en/bst).
 
 **Question**:  If you have a tree of height 5, what's the worst-case for finding a value in the tree?  What affects the number of comparisons you need to make?
+
+<details style="max-width: 700px; margin: auto;">
+  <summary>
+    Open this to see our answer.
+  </summary>
+
+  Worst-case, you need to make comparisons to 5 nodes before inserting.  This occurs when you need to insert a new node into a leaf.
+
+  Worst-case:  O(h) comparisons where _h_ is the height of the tree
+</details>
+
+## Finding A Node With Python
+
+![Finding a 29 in a tree visualization](./images/Binary-Search-Trees__find-value.gif)
+_Fig.  A visualization of finding a value in a BST._
+
+You can implement the `find` method in Python as follows:
+
+```python
+class Tree:
+    def __init__(self):
+        self.root = None
+    
+    def find(self, key):
+        current = self.root
+
+        while current != None:
+            if current.key == key:
+                return current.value
+            elif key < current.key:
+                current = current.left
+            else:
+                current = current.right
+
+        return None
+```
+
+### Recursive Find Method
+
+Because every node in a Binary Search Tree is the root of a subtree, you can take advantage of the recursive structure to write a recursive solution.
+
+```python
+class Tree:
+    def __init__(self):
+        self.root = None
+    
+    def find_helper(self, current, value):
+        if current == None:
+            return None
+        elif current.data == value:
+            return current.value
+        elif value < current.data:
+            return self.find_helper(current.left, value)
+
+        return self.find_helper(current.right, value)
+
+    def find(self, value):
+        return self.find_helper(self.root, value)
+```
 
 ## Balanced Trees & Unbalanced Trees
 
@@ -262,7 +343,8 @@ Number goes here
 
 ##### !question
 
-With the [Binary Tree Visualizer](http://btv.melezinek.cz/binary-search-tree.html), build a balanced tree with a height of 5 levels.  How many comparisons do you need to make to find a particular leaf node?
+With the [Binary Tree Visualizer](https://visualgo.net/en/bst), build a balanced tree with a height of 5 levels.  How many comparisons do you need to make to find a particular leaf node?
+
 ##### !end-question
 
 ##### !placeholder
@@ -436,7 +518,7 @@ Worst case you added 4 more levels 5 + 4 = 9, so 9 comparisons to find the value
 
 ##### !question
 
-Create a tree with one node.  Then double the number of nodes, but keep the tree balanced.  Then double the number of nodes again, maintaining balance.  The height changes
+Create a tree with one node.  Then double the number of nodes, **keeping the tree balanced.**  Then double the number of nodes again, maintaining balance.  Notice how the height changes.
 
 What standard Big-O time complexity does this match?
   
@@ -445,7 +527,7 @@ What standard Big-O time complexity does this match?
 
 ##### !placeholder
 
-Big O answer here
+O(?)
 
 ##### !end-placeholder
 
@@ -473,6 +555,17 @@ O(log n) when you double the number of nodes, the height increases by 1.
 <!-- ======================= END CHALLENGE ======================= -->
 
 Notice if a tree is balanced, when you move left or right, you eliminate half of the possible nodes.  This means you are essentially doing **binary search.**  If the tree is unbalanced, you are performing a linear search.
+
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-star
+
+## Balance is important in a tree's efficiency
+
+If a tree is _balanced_ then adding, finding, removing operations on a that tree perform in O(log n) time.  However if a tree becomes unbalanced the efficiency can approach O(n) time complexity.  
+
+For this reason, computer scientists spend a lot of time focusing on ways to maintain the balance of a Binary Search Tree.
+
+### !end-callout
 
 **Self-Balancing Trees** There are a lot of algorithms for [keeping a tree balanced](https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree).  The act of keeping a tree balanced is also O(log n), and so rebalancing a tree after an insertion or deletion doesn't significantly impact the runtime of a binary search tree.  These structures are wonderful things to learn, but beyond the scope of this class.  You **can** however rest assured that any library tree classes that you use will keep the tree balanced in such a manner.
 
@@ -523,10 +616,6 @@ For the above Binary Search Tree
 - **In-Order**: [10, 25, 30, 50, 60, 75, 100]
 - **Post-Order**: [10, 30, 25, 60, 100, 75, 50]
 
-**Exercise**
-
-![bst3](images/bst3.png)
-
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
 
@@ -540,6 +629,8 @@ For the above Binary Search Tree
 * topics: bst
 
 ##### !question
+
+![bst3](images/bst3.png)
 
 What is the height of the above BST?
 
@@ -577,6 +668,8 @@ Number goes here
 * topics: bst
 
 ##### !question
+
+![bst3](images/bst3.png)
 
 Is the tree balanced?
 
@@ -623,6 +716,8 @@ In a balanced tree no sibling subtrees differ in height more than 1.  So no left
 
 ##### !question
 
+![bst3](images/bst3.png)
+
 In what order would you hit the nodes doing an inorder traversal
 
 ##### !end-question
@@ -664,6 +759,8 @@ In what order would you hit the nodes doing an inorder traversal
 * topics: bst, traversal
 
 ##### !question
+
+![bst3](images/bst3.png)
 
 In what order would you hit the nodes doing an preorder traversal
 
@@ -707,6 +804,8 @@ In what order would you hit the nodes doing an preorder traversal
 
 ##### !question
 
+![bst3](images/bst3.png)
+
 In what order would you hit the nodes doing an postorder traversal
 
 ##### !end-question
@@ -742,6 +841,16 @@ There are a few common use-cases for each of the depth-first traversals.
 - **In-Order**: If you need to print or otherwise visit all the nodes of a tree in order.
 - **Post-Order**: If you need to delete all the nodes in a BST.
 
+### !callout-info
+
+## Why are they all left-to-right?
+
+So why are all the traversals left-to-right instead of right-to-left?
+
+Computer Science was initially pioneered in western cultures where people read left-to-right and so their cultural bias lead to designing traversals in that manner.  There's nothing inherit in Binary Search Trees to require this.  You could create a right-to-left traversal, but for historical reasons, these are the standard Binary Search Tree traversals.
+
+### !end-callout
+
 ### Binary Expression Trees
 
 There is also a kind of tree called a [Binary Expression Tree](https://www.geeksforgeeks.org/expression-tree/), which is a type of tree used to represent an arithetic formula.  In order traversals allow you to present the formula in the traditional manner while the preorder (prefix) and postorder (postifx) traversals can make the order more clear to machines.
@@ -759,23 +868,6 @@ Otherwise return 1 plus the maximum of the heights of the right and left subtree
 ```
 
 This is a recursive solution because it treats the left and right sides of a node as trees.
-
-<!--
-## Exercises
-
-Design a recursive algorithm, deduce the space and time complexity and then, author functions to do the following. For each of the problems below, assume you are given a Binary Search Tree where each node contains an integer data and links to the left and right children nodes.
-
-  1. Search for a given integer value in the Binary Search Tree. Return true if the value is found, false otherwise.
-  2. Insert a given integer value in the Binary Search Tree.
-  3. Compute the height of the Binary Search Tree.
-  4. Print values in the Binary Search Tree in pre-order.
-  5. Print values in the Binary Search Tree in in-order.
-  6. Print values in the Binary Search Tree in post-order.
-  7. Print values in the Binary Search Tree in level-order. (Breadth-first traversal)
-  8. Delete a given value from the Binary Search Tree.
-
-Design an iterative algorithm for the first seven exercises above, deduce the space and time complexity and author the functions to implement them. You may use additional data structures.
- -->
 
 
 ## Summary
@@ -795,25 +887,6 @@ As you can see below a balanced Binary Search Tree provides good performance whi
 3|Linked List|O(n)|O(n)|O(n)|O(n)|O(1)|O(1)
 4|Binary Tree (balanced)|O(log n)|O(log n)|O(log n)|O(log n)|NA|NA
 5|Hash Table|O(1)|O(1)|O(1)|O(1)|NA|NA
-
-
-## Terminology
-
-We will use the following terms in the lesson.
-
-| Term 	| Definition 	|
-|---	|---	|
-| Tree Height 	| The maximum number of nodes to traverse to get from the root node to a leaf (bottom) node. 	|
-| Root Node |  The starting node in a Binary Search Tree 	|
-| Leaf Node |  A node in a binary search tree with no children (left & right are `nil`) 	|
-| Unbalanced Tree 	|  A BST where each node has 0 or 1 children (it looks like a linked list) 	|
-| Balanced Tree 	| A tree where the the level of any two leaves differs by at most 1 node.	|
-| Subtree | The tree which is a child of a node. Note: The name emphasizes that everything which is a descendant of a tree node is a tree, too, and is a subset of the larger tree.|
-| Traversal 	|  A method of visiting each node in a BST	|
-| Depth-First Traversal 	|  Explore the children and grandchildren nodes before moving to sibling nodes	|
-| Breadth-first traversal 	|  Explore in level order.   Hit nodes in the root level then all the root's children, then all their children etc. 	|
-| Parent Node | A node with references to one or more other nodes |
-| Child Node | A node which can be accessed through a parent node |
 
 ## Additional Resources
 
@@ -844,9 +917,3 @@ We will use the following terms in the lesson.
 - In "Cracking the Coding Interview" book, "Chapter 4: Trees and Graphs"
 - CareerCup [Trees and Graph Interview Questions](https://www.careercup.com/page?pid=trees-and-graphs-interview-questions) - scan and look for the tree interview questions.
 - Kal academy's problems on [Trees](https://drive.google.com/open?id=0BxHords9odw3b2d1ZTJtVkZZTkk)
-
-## Former Slide Deck
-
-- Former Slide Deck used in class</br>
-<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a href="https://drive.google.com/file/d/0B__DV26QHsH4SXFxN2JpS3RGRkE/view?usp=sharing">Binary Search Trees</a> and <a href="https://drive.google.com/file/d/0B__DV26QHsH4bWJmS1A0QXBad1U/view?usp=sharing">Introduction to Recursion</a></span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</br>
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>

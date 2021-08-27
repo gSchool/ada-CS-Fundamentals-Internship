@@ -1,6 +1,6 @@
 # Tree Exercise
 
-In this exercise you will implement, in Ruby, several Tree methods.
+In this exercise you will implement, in Python, several Tree methods.
 
 - `add(value)` - This method adds a value to the Binary Search Tree
 - `find(value)` - This method returns true if the given value is in the tree and false otherwise.
@@ -11,7 +11,6 @@ In this exercise you will implement, in Ruby, several Tree methods.
 
 ## Optionals
 
-- `delete(value)` - This method removes a node from the tree.  Also add tests for the method.  
 - `bfs` - This method returns an array with the tree elements in a level-by-level order (see [Breadth-First traversal](https://www.cs.bu.edu/teaching/c/tree/breadth-first/))
 
 
