@@ -62,7 +62,7 @@ class Stack:
         return self.store.length() == 0
 ```
 
-You could later change the implementation of Stack to use an Array, but the users of the class would not need to change anything of their code.  This is because the implementation is hidden behind a public interface.  The top of the stack would reference the last element in the array.
+You could later change the implementation of Stack to use an Array, and the users of the class would not need to change anything of their code.  This is because the implementation is _hidden_ behind a public interface.  The top of the stack would reference the last element in the array.
 
 **Stack ADT**
 ![Stack ADT](images/stackADT.png)
