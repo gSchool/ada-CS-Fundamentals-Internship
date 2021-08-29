@@ -126,27 +126,22 @@ A Queue provides the following methods:
 
 Like a stack a queue can be implemented several ways and the implementation should be hidden from the user.  One way would be to implement a queue with a linked list like this:
 
-```ruby
-class Queue
+```python
+class Queue:
+    def __init__(self):
+        self.store = LinkedList.new
 
-  def initialize
-    @list = LinkedList.new
-  end
+    def enqueue(self, item):
+        self.store.add_last(item)
 
-  def enqueue(item)
-    @list.add_last(item)
-  end
+    def dequeue(self):
+        if self.is_empty():
+            return None
 
-  def dequeue
-    return nil if self.is_empty
+        self.store.remove_first()
 
-    return @list.remove_first
-  end
-
-  def is_empty
-    return @list.empty?
-  end
-end
+    def is_empty(self):
+        return self.store.empty()
 ```
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
