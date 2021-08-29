@@ -564,28 +564,44 @@ Note that 'A' and 'a' are treated as two different characters.
 Below would be a valid solution:
 
 ```ruby
-def frequency_sort(s)
-  counts = s.chars.reduce(Hash.new(0)) do |hash, character|
-    hash[character] += 1
-    hash
-  end
+def frequency_sort(s):
+    letters = list(s)
 
-  max_count = 0
+    # Get a dictionary with keys of
+    # each letter and values storing
+    # the count of each letter
+    letter_counts = {}
+    for letter in letters:
+        if not letter_counts.get(letter):
+            letter_counts[letter] = 1
+        else:
+            letter_counts[letter] += 1
+    
+    # Get a dictionary of with the keys being
+    # letter counts and the values being strings
+    # storing all the letters with that count 
+    # that many times
+    # Example:  { 3: 'ttteee' } for "etette"
+    max_count = 0
+    letter_strings = {}
+    for letter, count in letter_counts.items():
+        if letter_strings.get(count):
+            letter_strings[count] += letter * count
+        else:
+            letter_strings[count] = letter * count
+        
+        if max_count < count:
+            max_count = count
+    
 
-  letter_strings = Hash.new("")
-  counts.each do |letter, count|
-    letter_strings[count] += letter * count
-    max_count = max_count > count ? max_count : count
-  end
+    # Combine the letter strings in descending order
+    result = ""
+    while max_count > 0:
+        if letter_strings.get(max_count):
+            result += letter_strings[max_count]
+        max_count -= 1
 
-  return max_count.downto(1).reduce("") do |string, num|
-    if letter_strings[num]
-      string + letter_strings[num]
-    else
-      string
-    end
-  end
-end
+    return result
 ```
 
 ## Array, Linked List, Binary Search Tree or Hash Table
