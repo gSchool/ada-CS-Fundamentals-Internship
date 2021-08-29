@@ -333,20 +333,22 @@ Using a circular buffer overcomes some of the limitations of an array, and enabl
 
 Complete the following exercises with a partner.
 
-1. Given a Binary Search Tree where each node contains links to the left and right children and an integer value. Implement pre-order traversal for a binary search tree using an **iterative** approach.
+1. Given a Binary Search Tree where each node contains links to the left and right children and an integer value. Implement pre-order traversal for a binary search tree using an **iterative** approach.  **Hint** You will need to use a stack.
 
 Note the recursive solution to preorder is as follows:
 
-```ruby
-def preorder(current_node, list)
-  list << current_node.value
-  # Add the left node to the system stack and do preorder on the left
-  preorder(current_node.left, list) 
-  # Add the right node to the system stack and do preorder on the right
-  preorder(current_node.right, list)
+```python
+def preorder(current_node, list = None):
+    if list == None:
+        list = []
 
-  return list
-end
+    list.append(current_node.value)
+    # Add the left node to the system stack and do preorder on the left
+    preorder(current_node.left, list) 
+    # Add the right node to the system stack and do preorder on the right
+    preorder(current_node.right, list)
+
+    return list
 ```
 
 <details>
