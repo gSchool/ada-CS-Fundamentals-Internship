@@ -305,7 +305,7 @@ Since a fixed number of comamnds are executed no matter the size of the queue, t
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-This strategy of using floating front and rear references is known as a _circular buffer_.  It allows you to work around the need to shift elements left and right when adding and removing to the front of a list.  It can, however be more difficult to understand.  This kind of buffer is used for things like round-robin scheduling of tasks, like in the CPU and for storing in-memory logs.  
+This strategy of using floating front and rear references is known as a [_circular buffer_](https://en.wikipedia.org/wiki/Circular_buffer).  It allows you to work around the need to shift elements left and right when adding and removing to the front of a list.  It can, however be more difficult to understand.  This kind of buffer is used for things like round-robin scheduling of tasks, like in the CPU and for storing in-memory logs.
 
 **Try it Out!**
 
