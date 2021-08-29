@@ -22,6 +22,22 @@ By the end of this lesson you should be able to:
 - [Slide Deck](https://docs.google.com/presentation/d/1jUvHCeeqYVx_i8vHAfdGaGdkJEssEYZW1OBC2Heh44c/edit?usp=sharing)
 - [Exercises](https://github.com/Ada-C13/hash-practice)
 
+## Terms & Definitions
+
+| Term | Definition |
+|--- |--- |
+| **Bucket** | An space in the internal array used by a hash table. |
+| **Clustering** | When multiple elements are mapped to the same bucket in a hash table. |
+| **Collision** | When two keys are mapped to the same bucket in a hash table. |
+| **Double Hashing** | A strategy to handle collisions in a hash table where a secondary hash function is used when a collision occurs. |
+| **Hash Function** | A function used in a hash table to determine where to place an item into the internal array |
+| **Heuristic** | Any approach to problem solving or self-discovery that employs a practical method, not guaranteed to be optimal, perfect, or rational, but works well in practice. |
+| **Chaining** | A strategy to handle collisions where each element of a hash table's internal array serves as the head of a linked list.  This allows the same bucket to store multiple items.
+| **Linear Probing** | A strategy to handle collisions where if a collision occurs for the hash table to progress iteratively through the array until an empty element is encountered. |
+| **Quadratic Probing** | A strategy to handle collisions where if a collision occurs, a function is applied to determine the next index to attempt to place the item.  |
+| **Load Factor** | The number of elements in a hash divided by the number of buckets.  A lower load factor generally leads to better time efficiency at the expense of memory usage. |
+
+
 ## Introduction
 
 In practical programming we often spend much more time looking data up in a data structure as opposed to inserting or removing data.  A typical example is a grocery store.  At the checkout point we need to quickly recognize items and look up their prices in order to ring up a bill.  In ye olde days employees often had to memorize the prices of each item.  This worked in small shops, and was supplemented by price tags.  However stores have grown and price tags can fall off or prices change after an item is tagged.  Today most items have been given a unique key called a [Universal Product Code (UPC)](https://en.wikipedia.org/wiki/Universal_Product_Code).  The software at the point of sale regularly need to look up items from their UPC codes and retrieve the current price.  
