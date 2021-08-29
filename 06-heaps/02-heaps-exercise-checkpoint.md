@@ -1,16 +1,11 @@
 # Heaps Exercise
 
-* [Exercise](https://github.com/Ada-C15/heaps) 
-
-In this exercise you will create a min-heap and implement Heapsort.
-
-## Learning Goals
-
-By the end of this lesson you should be able to:
-
-* Implement a heap using an array as an internal data structure
-* Use a heap to sort an array
-* Correctly identify the space and time complexity of heap and heapsort methods
+| Logistics             | Details                                     |
+| --------------------- | ----------------------------------------    |
+| Project details       | https://github.com/Ada-C15/heaps            |
+| JS Version            | https://github.com/Ada-C15/heaps-js         |
+| Should you fork this? | Yes (Check project details)                 |
+| Submission method     | Learn                                       |
 
 ## Exercise
 

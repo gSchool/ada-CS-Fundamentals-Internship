@@ -1,15 +1,12 @@
 # Dynamic Programming Exercise
 
-* [Exercise](https://github.com/Ada-C15/dynamic-programming) 
+| Logistics             | Details                                         |
+| --------------------- | ----------------------------------------        |
+| Project details       | https://github.com/Ada-C15/dynamic-programming  |
+| JS Version            | https://github.com/Ada-C15/dynamic-programming-js  |
+| Should you fork this? | Yes (Check project details)                     |
+| Submission method     | Learn                                           |
 
-In this exercise you will practice using dynamic programming to solve some sample interview problems.
-
-## Learning Goals
-
-By the end of this lesson you should be able to:
-
-* Use dynamic programming to solve some example interview problems
-* Recognize places where dynamic programming approaches can work
 
 ## Exercise
 

@@ -1,5 +1,13 @@
 # Graphs Exercises
 
+| Logistics             | Details                                         |
+| --------------------- | ----------------------------------------        |
+| Project details       | https://github.com/Ada-C15/Bipartition-Graph    |
+| JS Version            | NA                                              |
+| Should you fork this? | Yes (Check project details)                     |
+| Submission method     | Learn                                           |
+
+
 ## Graph Traversal Problem
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->

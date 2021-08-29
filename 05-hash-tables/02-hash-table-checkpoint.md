@@ -1,15 +1,12 @@
 # Hashtable Implementations
 
-* [Exercise](https://github.com/Ada-C15/hash-practice) 
+| Logistics             | Details                                     |
+| --------------------- | ----------------------------------------    |
+| Project details       | https://github.com/Ada-C15/hash-practice    |
+| JS version            | https://github.com/Ada-C15/hash-practice-js |
+| Should you fork this? | Yes (Check project details)                 |
+| Submission method     | Learn                                       |
 
-In this exercise you will complete two coding problems using Hash Tables.
-
-## Learning Goals
-
-By the end of this exercise you should be able to:
-
-- Use a hash table to solve a coding problem
-- Identify how a hash table can produce a more attractive runtime over alternative solutions
 
 
 ## Exercise

@@ -1,16 +1,11 @@
 # List Implementations
 
-* [Exercise](https://github.com/Ada-C15/linked-list) 
-
-Using object oriented design constructs, define a Node class and LinkedList class for a singly linked list. Each node has integer data value and a link to the next node. The linked list class has a head node and the following methods defined.
-
-## Exercise
-
-Design and implement the classes and the methods. Implement the methods within the Linked List class that are currently raising NotImplementedError.
-
-### Going Further
-
-There are a set of advanced methods you can choose to implement for additional practice.
+| Logistics             | Details                                   |
+| --------------------- | ----------------------------------------  |
+| Project details       | https://github.com/Ada-C15/linked-list    |
+| JS Version            | https://github.com/Ada-C15/linked-list-js |
+| Should you fork this? | Yes (Check project details)               |
+| Submission method     | Learn                                     |
 
 ### !challenge
 

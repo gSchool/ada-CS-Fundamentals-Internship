@@ -1,7 +1,12 @@
 # Stacks & Queues Project
 
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
+| Logistics             | Details                                     |
+| --------------------- | ----------------------------------------    |
+| Project details       | https://github.com/Ada-C15/stacks-queues    |
+| JS Version            | https://github.com/Ada-C15/stacks-queues-js |
+| Should you fork this? | Yes (Check project details)                 |
+| Submission method     | Learn                                       |
+
 
 ### !challenge
 
@@ -88,7 +93,7 @@ Add your PR here
 
 ##### !question
 
-Optional:  Fork the [JavaScript version](https://github.com/Ada-C13/stacks-queues-js) of the project and submit it here.  
+Optional:  Fork the [JavaScript version](https://github.com/Ada-C15/stacks-queues-js) of the project and submit it here.  
 
 ##### !end-question
 
