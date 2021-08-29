@@ -273,10 +273,6 @@ As stated, Ruby uses the MurmurHash hashing algorithm internally.  It also uses 
 
 By limiting the density of the hash, Ruby guarantees the O(1) lookup time for adding elements to the hash.
 
-### Side Note
-
-Ruby actually [uses an array](https://launchschool.com/blog/how-the-hash-works-in-ruby#targetText=Conclusion,in%20Java%2C%20Python%20or%20Ruby) for hashes smaller than 6 items.  It has been found to be faster than using a more complicated data structure for small datasets.
-
 ## When To Use Hash Tables
 
 Now that we've had some theory, when would you expect to use a hash table?  In any problem where quick lookup of items is important, a hash table should be considered.  However a hash table depends on **unique keys**.  If a dataset cannot provide unique key values, a hash table may not be the best solution.  Instead a binary search tree or another data structure may be a better selection.
