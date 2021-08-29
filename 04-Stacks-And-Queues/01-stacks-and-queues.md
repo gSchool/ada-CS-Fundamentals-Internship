@@ -79,18 +79,16 @@ As methods get called in an application, the system stores the current instructi
 
 The diagram below shows the memory used by a running application.  At the top, the text in the application, and global variables are stored.  Below them is the dyanmic data allocated.  At the bottom the system stack stores the functions called.
 
-```ruby
-def function_a(x)
-{
-   y = 4
-   z = function_b(x, y)
-   puts “The number is #{z}"
-}
+```python
+def function_a(x):
+    y = 4
+    z = function_b(x, y)
+    print(f"The number is {z}")
 
-def function_b(int x, int y)
+
+def function_b(x, y):
   # pause application
-  return x + y;
-end
+    return x + y
 
 x = 3
 function_a(x)
@@ -109,6 +107,7 @@ When an error is raised, the stack is popped until the error is rescued in the c
 ## Queues
 
 A queue unlike a stack operates in a first-in-first out order.  Like a line of people at a concert, the first element to enter the queue is the first element removed.  
+
 ![Queue Diagram](images/queue.png)
 
 As shown above elements are added to the back of the queue in an operation called _enqueue_ and removed with an operation called _dequeue_.  
