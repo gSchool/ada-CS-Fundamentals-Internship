@@ -46,29 +46,20 @@ You can picture a Stack like a stack of plates where new plates can be added and
 
 You can use any linear data structure to implement a stack.  For example you could implement a `Stack` class like this:
 
-```ruby
-class Stack
+```python
+class Stack:
   
-  def initialize
-    @list = LinkedList.new
-  end
+    def __init__(self):
+        self.store = LinkedList()
 
-  def push(item)
-    @list.add_front(item)
-  end
+    def push(self, item):
+        self.store.add_first(item)
 
-  def pop()
-    return nil if self.empty?
+    def pop(self):
+      return self.store.remove_first()
 
-    item = list.remove_front
-
-    return item
-  end
-
-  def empty?()
-    return @list.empty?
-  end
-end
+    def empty(self):
+        return self.store.length() == 0
 ```
 
 You could later change the implementation of Stack to use an Array, but the users of the class would not need to change anything of their code.  This is because the implementation is hidden behind a public interface.  The top of the stack would reference the last element in the array.
