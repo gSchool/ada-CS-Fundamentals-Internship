@@ -220,7 +220,12 @@ There are **many** different ways to write a hash function.  There is not a math
 
 [Ruby uses the MurmurHash](https://sites.google.com/site/murmurhash/) hashing function internally.
 
-There was a time when Ruby used the **exact** same hash for every instance of running Ruby.  Then someone exploited a series of keys designed to result in a collision with each insertion into a hash.  This was used in a [denial of service](https://www.ruby-lang.org/en/news/2011/12/28/denial-of-service-attack-was-found-for-rubys-hash-algorithm-cve-2011-4815/) attack on Ruby on Rails.  There is another article on [Ars Technica](https://arstechnica.com/information-technology/2011/12/huge-portions-of-web-vulnerable-to-hashing-denial-of-service-attack/)
+There was a time when Ruby used the **exact** same hash for every instance of running Ruby.  Then someone exploited a series of keys designed to result in a collision with each insertion into a hash.  This was used in a [denial of service](https://www.ruby-lang.org/en/news/2011/12/28/denial-of-service-attack-was-found-for-rubys-hash-algorithm-cve-2011-4815/) attack on Ruby on Rails.  There is another article on [Ars Technica](https://arstechnica.com/information-technology/2011/12/huge-portions-of-web-vulnerable-to-hashing-denial-of-service-attack/).
+
+For Python, the hash function used depends on the object being used as a key.  Each class can define it's own `__hash__()` method and the value that it returns for a particular instance is used for the dictionary.  Python further "salts" it's hash values, so they differ from run to run to prevent the same denial of service attack Ruby servers experienced.
+
+You can read about how Python Dictionaries work on [this article](http://thepythoncorner.com/dev/hash-tables-understanding-dictionaries/).  Be aware the article has some formatting issues.
+
 
 ## Collision Handling
 
