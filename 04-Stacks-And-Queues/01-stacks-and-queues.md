@@ -1,6 +1,6 @@
 # Stacks & Queues
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=28f18a83-0f48-4350-a44e-aabc0138eb7d&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=b987fd8f-b63c-479a-a679-ad93018aecaa&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ## Learning Goals
 
@@ -13,8 +13,8 @@ By the end of this lesson you should be able to:
 
 ## Video Lesson & Slides
 
-- [Slides](https://docs.google.com/presentation/d/1aKqaO5q5gtuw31eGDvK47IleU5-XOCJKnbj4UjHmh9I/edit?usp=sharing)
-- [Stacks & Queues Exercise](https://github.com/Ada-C13/stacks-queues)
+- [Slides](https://docs.google.com/presentation/d/1tsxwSEJPHUphNznpSWcVilpuHgCgexaBUKYPKuKk8hk/edit#slide=id.p7)
+- [Stacks & Queues Exercise](https://github.com/Ada-C15/stacks-queues)
 
 ## Introduction
 

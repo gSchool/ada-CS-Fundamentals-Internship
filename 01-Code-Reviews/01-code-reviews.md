@@ -152,7 +152,7 @@ Code Reviews are a standard way to ensure code quality and share knowledge of th
 
 ## Exercises
 
-In class students will perform the [code review exercise](https://github.com/Ada-C13/code-reviews)
+In class students will perform the [code review exercise](https://github.com/Ada-C15/code-reviews)
 
 ## Sources For This Lesson
 
