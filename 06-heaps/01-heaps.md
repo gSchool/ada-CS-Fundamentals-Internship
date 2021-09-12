@@ -69,17 +69,16 @@ Pictured with an array it would look like this:
 
 The add method would look like this:
 
-```ruby
+```python
 # This heap is sorted by key-value pairs
-def add(key, value)
-  @store << HeapNode.new(key, value)
+def add(self, key, value)
+    self.store.append(HeapNode.new(key, value))
 
-  # Compare the new node with it's parent
-  # If they are out of order swap and heap-up
-  # using the parent's index number.
-  # Implementation not shown purposefully.
-  heap_up(@store.length - 1)
-end
+    # Compare the new node with it's parent
+    # If they are out of order swap and heap-up
+    # using the parent's index number.
+    # Implementation not shown purposefully.
+    self.heap_up(self.store.length - 1)
 ```
 
 **Exercise:** Write pseudocode for the heap-up method using an array implementation for a heap.  Then compare your steps with your neighbor.
@@ -111,29 +110,25 @@ Removing an element in some ways works in the opposite manner of adding an eleme
 
 So removing a node could be done with:
 
-```ruby
-def remove
-  if @store.empty?
-    return nil
-  end
+```python
+def remove(self):
+    if self.store.empty?
+      return nil
 
-  swap(0, @store.last - 1)
-  result = @store.pop
+    self.swap(0, self.store.last - 1)
+    result = self.store.pop()
 
   # heap_down is specifically not
   # implemented here
   # start heap_down with the root (index 0)
-  heap_down(0) unless @store.empty?
+  self.heap_down(0) unless self.store.empty?
   return result
-end
 
-private
 
-def swap(index_1, index_2)
-  temp = @store[index_1]
-  @store[index_1] = @store[index_2]
-  @store[index_2] = temp
-end
+def swap(self, index_1, index_2)
+    temp = self.store[index_1]
+    self.store[index_1] = self.store[index_2]
+    self.store[index_2] = temp
 ```
 
 Looking at it as an array:
