@@ -247,6 +247,15 @@ You can read about how Python Dictionaries work on [this article](http://thepyth
 
 All general-purpose hashing functions will encounter collisions.  When two keys are mapped to the same bucket something has to happen to manage it.  We will look at three methods: chaining, linear probing, quadratic probing and rehashing.
 
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
+
+## Python Dictionary Source Code
+
+If you are interested you can review how [dictionaries, including collision resolution are handled in Python](https://github.com/python/cpython/blob/main/Objects/dictobject.c).
+
+### !end-callout
+
 ### Chaining
 
 The first solution, as we discussed in the classroom portion of Ada, is to make each bucket of the hash table's internal array the head of a linked list.  Linked lists are quick to insert and remove items O(1) and can store an arbitrary number of elements.  Unfortunately if there are a high number of items in the same bucket, finding an element starts to approach O(n).  However if the hashing function does a good job of spreading elements out over different buckets, the linked lists will be small and the time to search for an item in the hash table approaches O(1).  
@@ -563,7 +572,7 @@ Note that 'A' and 'a' are treated as two different characters.
 
 Below would be a valid solution:
 
-```ruby
+```python
 def frequency_sort(s):
     letters = list(s)
 
@@ -771,6 +780,6 @@ There are many ways to structure a hash table.  One of the most common is simple
 
 - [Basecs on Hash Tables: Taking Hash Tables Off The Shelf](https://medium.com/basecs/taking-hash-tables-off-the-shelf-139cbf4752f0)
 - [Basecs: Hashing Out Hash Tables](https://medium.com/basecs/hashing-out-hash-functions-ea5dd8beb4dd)
-- [How the Hash works in Ruby](https://launchschool.com/blog/how-the-hash-works-in-ruby#targetText=Conclusion,in%20Java%2C%20Python%20or%20Ruby)
+- [How Dictionaries are implemented in Python](https://www.jessicayung.com/how-python-implements-dictionaries/)
 - [Hackerearth and hash tables](https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial)
 - [Visualizations of Hash Tables](https://visualgo.net/en/hashtable)
