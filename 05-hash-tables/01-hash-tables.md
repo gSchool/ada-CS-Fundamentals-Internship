@@ -1,6 +1,6 @@
 # Introduction to Hash Tables
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6dfc0f2a-8f7d-4fa6-be61-aac3003b4abf&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=0a1234b3-7734-4102-9313-ada2000f5f9f&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ## Learning Goals
 
@@ -18,8 +18,8 @@ By the end of this lesson you should be able to:
 
 ## Video Lecture & Lesson
 
-- [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6dfc0f2a-8f7d-4fa6-be61-aac3003b4abf)
-- [Slide Deck](https://docs.google.com/presentation/d/1jUvHCeeqYVx_i8vHAfdGaGdkJEssEYZW1OBC2Heh44c/edit?usp=sharing)
+- [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=0a1234b3-7734-4102-9313-ada2000f5f9f)
+- [Slide Deck](https://docs.google.com/presentation/d/1legEjSSNuLSagYaHxco_ZaO1oXzDUXXX-5ifqWOc2KE/edit#slide=id.p7)
 - [Exercises](https://github.com/Ada-C15/hash-practice)
 
 ## Terms & Definitions
@@ -246,6 +246,15 @@ You can read about how Python Dictionaries work on [this article](http://thepyth
 ## Collision Handling
 
 All general-purpose hashing functions will encounter collisions.  When two keys are mapped to the same bucket something has to happen to manage it.  We will look at three methods: chaining, linear probing, quadratic probing and rehashing.
+
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
+
+## Python Dictionary Source Code
+
+If you are interested you can review how [dictionaries, including collision resolution are handled in Python](https://github.com/python/cpython/blob/main/Objects/dictobject.c).
+
+### !end-callout
 
 ### Chaining
 
@@ -563,7 +572,7 @@ Note that 'A' and 'a' are treated as two different characters.
 
 Below would be a valid solution:
 
-```ruby
+```python
 def frequency_sort(s):
     letters = list(s)
 
@@ -771,6 +780,6 @@ There are many ways to structure a hash table.  One of the most common is simple
 
 - [Basecs on Hash Tables: Taking Hash Tables Off The Shelf](https://medium.com/basecs/taking-hash-tables-off-the-shelf-139cbf4752f0)
 - [Basecs: Hashing Out Hash Tables](https://medium.com/basecs/hashing-out-hash-functions-ea5dd8beb4dd)
-- [How the Hash works in Ruby](https://launchschool.com/blog/how-the-hash-works-in-ruby#targetText=Conclusion,in%20Java%2C%20Python%20or%20Ruby)
+- [How Dictionaries are implemented in Python](https://www.jessicayung.com/how-python-implements-dictionaries/)
 - [Hackerearth and hash tables](https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial)
 - [Visualizations of Hash Tables](https://visualgo.net/en/hashtable)
