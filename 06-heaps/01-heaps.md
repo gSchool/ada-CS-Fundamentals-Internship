@@ -1,6 +1,6 @@
 # Heaps
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=f431004b-8e00-442c-a7d3-aac9010f8654&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=608a709b-d0c2-4273-815d-ada2004e4e8d&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ## Learning Goals
 
@@ -12,8 +12,8 @@ By the end of this lesson you should be able to:
 
 ## Video Lesson & Slides
 
-- [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f431004b-8e00-442c-a7d3-aac9010f8654)
-- [Slide Deck](https://docs.google.com/presentation/d/11iEBrOn8HyXXaeYQLzilXt-k_qtxVtPJPgX3iHXEvso/edit#slide=id.p)
+- [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=608a709b-d0c2-4273-815d-ada2004e4e8d)
+- [Slide Deck](https://docs.google.com/presentation/d/1UojimxYNCm7r4lxs5owPuST-e26uwN_h5jLjTBdQzgs/edit#slide=id.p7)
 - [Heap Exercise](https://github.com/ada-c15/heaps)
 
 ## Introduction
@@ -40,8 +40,10 @@ While you **can** implement a heap with linked TreeNode objects, it can be **muc
 
 Consider if the root is at index 0, the left child could be at index 1, and right index 2.  The child of index 1 would be at index 3 and 4 while the children of index 2 are at 5 and 6... we could write a formula to find the children of a node at index _i_.
 
-`left_child = i * 2 + 1`
-`right_child = i * 2 + 2`
+```python
+left_child = i * 2 + 1
+right_child = i * 2 + 2
+```
 
 So this heap:
 
