@@ -266,29 +266,26 @@ A greedy algorithm is like a mouse moving through a maze.  At each step the mous
 
 One example of a greedy sorting algorithm is this `greedy_sort` method.  In this method any time it finds an element smaller than the current element, it will swap.  
 
-```ruby
-def greedy_sort(list)
-  list.length.times do |i|
-    (i+1...list.length).each do |j|
-      if(list[i] > list[j])
-        swap(list, i, j)
-end
+```python
+def greedy_sort(numbers):
+    for i in range(len(numbers)):
+        for j in range(i+1, len(numbers)):
+            if(numbers[i] > numbers[j]):
+                swap(numbers, i, j)
+    return numbers
 ```
 
 **Question** Compare the `greedy_sort` with `selection_sort` below.  Which will end up making fewer swaps?
 
-```ruby
-def selection_sort(list)
-  (list.length - 1).times do |i|
-    temp = i
-    ( (i + 1)...list.length).each do |j|
-      if list[temp] > list[j]
-        temp = j
-      end
-    end
-    swap(list, i, temp)
-  end
-end
+```python
+def selection_sort(numbers):
+    for i in range(len(numbers) - 1):
+        min = i
+        for j in range(i, len(numbers)):
+            if numbers[min] > numbers[j]:
+                min = j
+        swap(numbers, min, i)
+    return numbers
 ```
 
 #### Greedy Example 2 - Merging Sorted Lists
@@ -361,38 +358,38 @@ We have already seen the fibonacci sequence `fib(n) = fib(n-1) + fib(n-2)` for a
 
 We can solve that problem recursively like this:
 
-```ruby
-def fibonacci(n)
-  raise ArgumentError, "n must be >= 0" if n < 0
-  return 0 if n == 0
-  return 1 if n == 1
+```python
+def fibonacci(n):
+    if n < 0:
+        raise AttributeError("n must be >= 0")
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
 
-  return fibonacci(n-1) + fibonacci(n-2)
-end
+    return fibonacci(n-1) + fibonacci(n-2)
 ```
 
 However this solution, as we saw with recursion is wildly inefficient.  We can however write a dynamic programming solution which will solve all the subproblems and use them to solve the larger problem.
 
-```ruby
-def fibonacci(n)
-  raise ArgumentError, "n must be >= 0" if n < 0
+```python
+def fibonacci(n):
+    if n < 0:
+        raise AttributeError("n must be >= 0")
   
-  # Build a memo of subproblems
-  fib_numbers = Array.new(n)
-  # Fill in the base case for the memo
-  fib_numbers[0] = 0
-  fib_numbers[1] = 1
-
-  # Solve all the subproblems
-  num = 2
-  while num <= n
-    fib_numbers[num] = fib_numbers[num - 1] + fib_numbers[num - 2]
-    num += 1
-  end
-
-  # return the answer by using the memo
-  return fib_numbers[n]
-end
+    # Build a memo of subproblems
+    fib_numbers = [0] * (n+1) 
+    # Fill in the base case for the memo
+    fib_numbers[0] = 0
+    fib_numbers[1] = 1
+    # Solve all the subproblems
+    num = 2
+    while num <= n:
+        fib_numbers[num] = fib_numbers[num - 1] + fib_numbers[num - 2]
+        num += 1
+  
+    # return the answer by using the memo
+    return fib_numbers[n]
 ```
 
 This dynamic programming solution solves the larger problem by solving all the individual subproblems and recording their results in an array, which I will call a memo.  This transforms an O(2<sup>n</sup>) time complexity algorithm into an O(n) algorithm.
@@ -407,25 +404,24 @@ By recording solutions to subproblems for use later we are using a technique kno
 
 In the case of fibonacci, since you only need to remember the last two values of the sequence to solve for n, you could solve in this manner with an O(1) space complexity.  However this is still dynamic programming as you are memoizing subproblems for as long as you need them.
 
-```ruby
-def fibonacci(n)
-  raise ArgumentError, "n must be >= 0" if n < 0
-  return n if n < 2
+```python
+def fibonacci(n):
+    if n < 0:
+        raise AttributeError("n must be >= 0")
+    if n < 2:
+      return n
  
-  two_previous = 0
-  one_previous = 1
-  num = 2
+    two_previous = 0
+    one_previous = 1
+    num = 2
 
-  while num < n 
-    temp = one_previous + two_previous
-    two_previous = one_previous
-    one_previous = temp
-
-    num += 1
-  end
+    while num < n:
+      temp = one_previous + two_previous
+      two_previous = one_previous
+      one_previous = temp
+      num += 1
  
-  return one_previous + two_previous
-end
+    return one_previous + two_previous
 ```
 
 ## Summary
