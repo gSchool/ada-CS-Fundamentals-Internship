@@ -1,6 +1,6 @@
 # Introduction to Hash Tables
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6dfc0f2a-8f7d-4fa6-be61-aac3003b4abf&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=0a1234b3-7734-4102-9313-ada2000f5f9f&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ## Learning Goals
 
@@ -18,8 +18,8 @@ By the end of this lesson you should be able to:
 
 ## Video Lecture & Lesson
 
-- [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6dfc0f2a-8f7d-4fa6-be61-aac3003b4abf)
-- [Slide Deck](https://docs.google.com/presentation/d/1jUvHCeeqYVx_i8vHAfdGaGdkJEssEYZW1OBC2Heh44c/edit?usp=sharing)
+- [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=0a1234b3-7734-4102-9313-ada2000f5f9f)
+- [Slide Deck](https://docs.google.com/presentation/d/1legEjSSNuLSagYaHxco_ZaO1oXzDUXXX-5ifqWOc2KE/edit#slide=id.p7)
 - [Exercises](https://github.com/Ada-C15/hash-practice)
 
 ## Terms & Definitions
