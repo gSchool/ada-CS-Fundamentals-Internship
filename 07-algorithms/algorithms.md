@@ -12,7 +12,7 @@ By the end of this lesson you should be able to:
 
 ## Video Lesson
 
-- [Slide Deck used for the lesson](https://docs.google.com/presentation/d/1QaCSJfqcQNCqFHk0zFdAL5zZCi-O37mGuhOIYLKcf_Q/edit#slide=id.gc6f75fceb_0_0)
+- [Slide Deck used for the lesson](https://docs.google.com/presentation/d/1V4ycrfl3dbL0IbRHqK3ytU45VyMJQNHhyxpc3Ti2e28/edit?usp=sharing)
 - [Exercise](https://github.com/Ada-c15/dynamic-programming)
 
 ## What is an an algorithm
@@ -146,7 +146,7 @@ If you look at the diagram above we will divide and recombine a total of log n l
 
 ## Categories of Algorithms
 
-There are a [number of different categories of algorithms](http://www.cs.ukzn.ac.za/~hughm/ds/slides/32-algorithm-types.pdf).  Each category describes the general approach to the algorithm's use in solving its particular problem.  Categories are not exclusive; an algorithm can be a member of multiple categories.  For example QuickSort is both a divide-and-conquer algorithm and a randomized algorithm in that it picks a random element as a pivot to sort against.
+There are a [number of different categories of algorithms](https://s2.smu.edu/~vdebroy/cse3353/Lectures/Lecture-7/Algorithm-Types.pdf).  Each category describes the general approach to the algorithm's use in solving its particular problem.  Categories are not exclusive; an algorithm can be a member of multiple categories.  For example QuickSort is both a divide-and-conquer algorithm and a randomized algorithm in that it picks a random element as a pivot to sort against.
 
 In this lesson we will look at a few categories, specifically _divide and conquer_ algorithms, _greedy_ algorithms and _dynamic programming_ algorithms.
 
