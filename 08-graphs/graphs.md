@@ -15,7 +15,7 @@ By the end of this lesson we should be able to:
 
 - [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=09cd9474-04a2-4460-8eb8-aad8005b7065)
 - [Dijkstra's Algorithm Video](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9055aad9-f2ec-401b-abc0-ac4e01374f3f)
-- [Accompanying Slidedeck](https://docs.google.com/presentation/d/1Z_hHF3PPC9mO3W2hxcvcFZgEel0xUtGjDhKtGDKh9wQ/edit#slide=id.p)
+- [Accompanying Slidedeck](https://docs.google.com/presentation/d/1pIAhpb0QL7Pk93P3E-jIRbboz6UPRZOnJ2eyVU1Ga3Q/edit#slide=id.p7)
 - [Exercise](https://github.com/Ada-C15/Bipartition-Graph)
 
 ## Introduction
