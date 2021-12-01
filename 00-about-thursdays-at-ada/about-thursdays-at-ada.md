@@ -20,5 +20,5 @@ CS Fundamentals is taught in a [flipped-classroom](https://omerad.msu.edu/index.
 
 All the CS Fundamentals Online sessions are recorded in Panopto.
 
-- [CS Fundamentals Panopto Recordings](https://adaacademy.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=68179df6-b98d-4b12-8f68-ac32016bc0a0)
+- [CS Fundamentals Panopto Recordings](https://adaacademy.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%222887f2f4-b902-4379-8a39-adf101338f83%22)
 - [In Class Lesson recordings](https://adaacademy.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%22899c2cad-f750-4f8c-872b-ace9000dd97f%22)
