@@ -2,8 +2,8 @@
 
 | Logistics             | Details                                     |
 | --------------------- | ----------------------------------------    |
-| Project details       | https://github.com/Ada-C15/hash-practice    |
-| JS version            | https://github.com/Ada-C15/hash-practice-js |
+| Project details       | https://github.com/Ada-C16/hash-practice    |
+| JS version            | https://github.com/Ada-C16/hash-practice-js |
 | Should you fork this? | Yes (Check project details)                 |
 | Submission method     | Learn                                       |
 
@@ -16,7 +16,7 @@
 * type: testable-project
 * id: 5a4a64b1-a7c3-425a-b073-a093a4d47227
 * title: Hash Practice
-* upstream: https://github.com/Ada-C15/hash-practice
+* upstream: https://github.com/Ada-C16/hash-practice
 * validate_fork: false
 * points: 0
 * topics: hash-table
@@ -91,14 +91,14 @@ Your PR link goes here.
 * type: testable-project
 * id: 4d84719d-6907-4d5f-a686-ff363961e0c2
 * title: Optional JS version
-* upstream: https://github.com/Ada-C15/hash-practice-js
+* upstream: https://github.com/Ada-C16/hash-practice-js
 * validate_fork: false
 * points: 0
 * topics: hashes
 
 ##### !question
 
-Optionally you can for the [JavaScript](https://github.com/Ada-C15/hash-practice-js) version and submit that instead.
+Optionally you can for the [JavaScript](https://github.com/Ada-C16/hash-practice-js) version and submit that instead.
 
 ##### !end-question
 

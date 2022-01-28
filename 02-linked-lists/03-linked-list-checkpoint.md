@@ -2,8 +2,8 @@
 
 | Logistics             | Details                                   |
 | --------------------- | ----------------------------------------  |
-| Project details       | https://github.com/Ada-C15/linked-list    |
-| JS Version            | https://github.com/Ada-C15/linked-list-js |
+| Project details       | https://github.com/Ada-C16/linked-list    |
+| JS Version            | https://github.com/Ada-C16/linked-list-js |
 | Should you fork this? | Yes (Check project details)               |
 | Submission method     | Learn                                     |
 
@@ -12,7 +12,7 @@
 * type: testable-project
 * id: 4f3d244b-d34b-4e34-9a85-bce2232203e5
 * title: List Implementations
-* upstream: https://github.com/Ada-C15/linked-list
+* upstream: https://github.com/Ada-C16/linked-list
 * validate_fork: false
 * points: 0
 * topics: linked-lists
@@ -85,14 +85,14 @@ Your PR link goes here.
 * type: testable-project
 * id: 795b30c2-9d88-4480-8062-d0e5466a09eb
 * title: Optional JS Version
-* upstream: https://github.com/Ada-C15/linked-list-js
+* upstream: https://github.com/Ada-C16/linked-list-js
 * validate_fork: false
 * points: 0
 * topics: linked-lists
 
 ##### !question
 
-Optionally you can submit a link to a fork of https://github.com/Ada-C15/linked-list-js
+Optionally you can submit a link to a fork of https://github.com/Ada-C16/linked-list-js
 
 ##### !end-question
 

@@ -5,7 +5,7 @@
 ## Video Lesson & Exercises
 
 - [The Video for this lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=db636763-2c2f-4969-b7a1-aaa80055e5fe)
-- [Exercises](https://github.com/Ada-C15/code-reviews)
+- [Exercises](https://github.com/Ada-C16/code-reviews)
 
 ## Learning Goals
 
@@ -152,7 +152,7 @@ Code Reviews are a standard way to ensure code quality and share knowledge of th
 
 ## Exercises
 
-In class students will perform the [code review exercise](https://github.com/Ada-C15/code-reviews)
+In class students will perform the [code review exercise](https://github.com/Ada-C16/code-reviews)
 
 ## Sources For This Lesson
 

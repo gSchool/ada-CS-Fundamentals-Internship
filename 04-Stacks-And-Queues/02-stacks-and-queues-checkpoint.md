@@ -2,8 +2,8 @@
 
 | Logistics             | Details                                     |
 | --------------------- | ----------------------------------------    |
-| Project details       | https://github.com/Ada-C15/stacks-queues    |
-| JS Version            | https://github.com/Ada-C15/stacks-queues-js |
+| Project details       | https://github.com/Ada-C16/stacks-queues    |
+| JS Version            | https://github.com/Ada-C16/stacks-queues-js |
 | Should you fork this? | Yes (Check project details)                 |
 | Submission method     | Learn                                       |
 
@@ -13,14 +13,14 @@
 * type: testable-project
 * id: 66d53d48-ba26-4056-bd67-83d0b26806b8
 * title: Stacks & Queues Project
-* upstream: https://github.com/Ada-C15/stacks-queues
+* upstream: https://github.com/Ada-C16/stacks-queues
 * validate_fork: false
 * points: 0
 * topics: stacks, queues
 
 ##### !question
 
-Complete https://github.com/Ada-C15/stacks-queues and submit a link to your repository, **not** a PR.
+Complete https://github.com/Ada-C16/stacks-queues and submit a link to your repository, **not** a PR.
 
 ##### !end-question
 
@@ -86,14 +86,14 @@ Add your PR here
 * type: testable-project
 * id: 432457c4-46dd-4c99-bc43-0b98d4335f0f
 * title: JavaScript version of the project
-* upstream: https://github.com/Ada-C15/stacks-queues-js
+* upstream: https://github.com/Ada-C16/stacks-queues-js
 * validate_fork: false
 * points: 0
 * topics: stacks, queues, circular buffer
 
 ##### !question
 
-Optional:  Fork the [JavaScript version](https://github.com/Ada-C15/stacks-queues-js) of the project and submit it here.  
+Optional:  Fork the [JavaScript version](https://github.com/Ada-C16/stacks-queues-js) of the project and submit it here.  
 
 ##### !end-question
 

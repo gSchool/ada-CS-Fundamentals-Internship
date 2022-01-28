@@ -14,7 +14,7 @@ By the end of this lesson you should be able to:
 
 - [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=608a709b-d0c2-4273-815d-ada2004e4e8d)
 - [Slide Deck](https://docs.google.com/presentation/d/1UojimxYNCm7r4lxs5owPuST-e26uwN_h5jLjTBdQzgs/edit#slide=id.p7)
-- [Heap Exercise](https://github.com/ada-c15/heaps)
+- [Heap Exercise](https://github.com/ada-C16/heaps)
 
 ## Introduction
 
