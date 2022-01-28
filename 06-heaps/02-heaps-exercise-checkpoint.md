@@ -2,8 +2,8 @@
 
 | Logistics             | Details                                     |
 | --------------------- | ----------------------------------------    |
-| Project details       | https://github.com/Ada-C15/heaps            |
-| JS Version            | https://github.com/Ada-C15/heaps-js         |
+| Project details       | https://github.com/Ada-C16/heaps            |
+| JS Version            | https://github.com/Ada-C16/heaps-js         |
 | Should you fork this? | Yes (Check project details)                 |
 | Submission method     | Learn                                       |
 
@@ -14,7 +14,7 @@
 * type: testable-project
 * id: 5dd9df36-0742-4209-8031-2bae37597660
 * title: Heaps Practice
-* upstream: https://github.com/Ada-C15/heaps
+* upstream: https://github.com/Ada-C16/heaps
 * validate_fork: false
 * points: 0
 * topics: heaps
@@ -88,14 +88,14 @@ Your PR link goes here.
 * type: testable-project
 * id: 770e6706-7f39-4b44-99a4-88c563672c1c
 * title: Optional JavaScript Version
-* upstream: https://github.com/Ada-C15/heaps-js
+* upstream: https://github.com/Ada-C16/heaps-js
 * validate_fork: false
 * points: 0
 * topics: heaps
 
 ##### !question
 
-Add a link to your fork of the [JavaScript version](https://github.com/Ada-C15/heaps-js)
+Add a link to your fork of the [JavaScript version](https://github.com/Ada-C16/heaps-js)
 
 ##### !end-question
 

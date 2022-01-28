@@ -20,7 +20,7 @@ By the end of this lesson you should be able to:
 
 - [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=0a1234b3-7734-4102-9313-ada2000f5f9f)
 - [Slide Deck](https://docs.google.com/presentation/d/1legEjSSNuLSagYaHxco_ZaO1oXzDUXXX-5ifqWOc2KE/edit#slide=id.p7)
-- [Exercises](https://github.com/Ada-C15/hash-practice)
+- [Exercises](https://github.com/Ada-C16/hash-practice)
 
 ## Terms & Definitions
 

@@ -8,14 +8,14 @@
 * type: testable-project
 * id: 539dfc0a-a8d7-4e80-ba02-a8babb841cc1
 * title: Dijsktra's Algorithm
-* upstream: https://github.com/Ada-C15/dijkstra
+* upstream: https://github.com/Ada-C16/dijkstra
 * validate_fork: true
 * points: 0
 * topics: graphs
 
 ##### !question
 
-Complete the [Dijstra's Algorithm](https://github.com/Ada-C15/dijkstra) project.
+Complete the [Dijstra's Algorithm](https://github.com/Ada-C16/dijkstra) project.
 
 ##### !end-question
 

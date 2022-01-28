@@ -5,7 +5,7 @@
 ## Video Lesson
 
 - [Slides](https://docs.google.com/presentation/d/1UKi2M_V5wgIC9K_xfmtdBmeKokdKep1gRcnz0vLXNHk/edit?usp=sharing)
-- [Linked List Exercises](https://github.com/Ada-C15/linked-list)
+- [Linked List Exercises](https://github.com/Ada-C16/linked-list)
 
 ## Learning Goals
 

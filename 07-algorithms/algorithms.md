@@ -13,7 +13,7 @@ By the end of this lesson you should be able to:
 ## Video Lesson
 
 - [Slide Deck used for the lesson](https://docs.google.com/presentation/d/1V4ycrfl3dbL0IbRHqK3ytU45VyMJQNHhyxpc3Ti2e28/edit?usp=sharing)
-- [Exercise](https://github.com/Ada-c15/dynamic-programming)
+- [Exercise](https://github.com/Ada-c16/dynamic-programming)
 
 ## What is an an algorithm
 

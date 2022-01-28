@@ -5,7 +5,7 @@
 ## Video Lesson & Exercises
 
 - [The Video for this lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=db636763-2c2f-4969-b7a1-aaa80055e5fe)
-- [Exercises](https://github.com/Ada-C15/code-reviews)
+- [Exercises](https://github.com/Ada-C16/code-reviews)
 
 ## Learning Goals
 
@@ -40,7 +40,7 @@ There are several different ways to review code.
 
 ### Pull Requests
 
-Github and other version management software sytems provide methods to review suggested changes before accepting them into the master or main branch.  This is called a _Pull Request_ or PR.  A PR allows team members to comment on and propose changes on a branch before it is merged in.  
+Github and other version management software sytems provide methods to review suggested changes before accepting them into the main branch.  This is called a _Pull Request_ or PR.  A PR allows team members to comment on and propose changes on a branch before it is merged in.  
 
 ### Pair Programming
 
@@ -63,7 +63,7 @@ Much of the steps and etiquite of a code review apply across systems however.
 
 #### Requesting a PR
 
-As you begin working on a feature [start the feature on as branch](https://githowto.com/creating_a_branch).  It's also a good idea to check and make sure you are using linters and tools to help enforce your team's adopted style guide.  This will prevent stylelistic errors and help reviewers focus on what the code is doing.  You should also try to keep the changes as small and focused as possible.  It is much easier for reviewers to understand and evaluate changes when they are of modest size.
+As you begin working on a feature [start the feature on as branch](https://www.git-tower.com/learn/git/faq/create-branch).  It's also a good idea to check and make sure you are using linters and tools to help enforce your team's adopted style guide.  This will prevent stylelistic errors and help reviewers focus on what the code is doing.  You should also try to keep the changes as small and focused as possible.  It is much easier for reviewers to understand and evaluate changes when they are of modest size.
 
 Before you make a pull request make sure that:
 
@@ -119,7 +119,7 @@ In a code review you should be looking for:
     - Is there anything missing from the submission or functionality not found in the requirements?
 - Performance
   - Is this code efficient?
-  - Do you do performance testing?  Can you automate performance and load testing?
+  - Did you do performance testing?  Can you automate performance and load testing?
 - Security
   - Are there security advisories for libraries being used?
   - Does this safeguard data adequately?
@@ -152,7 +152,7 @@ Code Reviews are a standard way to ensure code quality and share knowledge of th
 
 ## Exercises
 
-In class students will perform the [code review exercise](https://github.com/Ada-C15/code-reviews)
+In class students will perform the [code review exercise](https://github.com/Ada-C16/code-reviews)
 
 ## Sources For This Lesson
 
