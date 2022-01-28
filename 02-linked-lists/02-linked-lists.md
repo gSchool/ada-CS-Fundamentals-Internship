@@ -13,7 +13,7 @@ By the end of this lesson students should be able to:
 
 - Describe the structure of a singly linked list, and doubly linked list
 - Compare and contrast the a advantages and disadvantages of singly and doubly linked lists.
-- Design an Object Oriented Singly Linked List
+- Implement an Object Oriented Singly Linked List
 - Write methods to perform a variety of tasks on a singly linked list
 
 ## Overview
