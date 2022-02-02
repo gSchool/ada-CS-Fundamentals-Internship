@@ -326,7 +326,7 @@ We are only interested in contiguous sublists, elements have to be next to one a
 
 The image below illustrates the sliding window technique.
 
-![Sliding Window Example](images/sliding-window-example.png)
+![Sliding Window Example](images/problem-solving__Sliding-Window.svg)
 *Fig. Sliding Window*
 
 In our refactor we can start by creating a window of size 1 from index 0 to index 1.  So our window's start index is 0 and end index is 1. Our current sum then is the value of the 1st element of the list.  Then we can repeat this algorithm.
