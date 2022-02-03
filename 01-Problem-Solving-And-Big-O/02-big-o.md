@@ -37,19 +37,10 @@ def add_from_1_to_n(n):
 ```
 *Code snippet: Using arithmetic*
 
-It may seem clear that the second approach is better, but how does it perform compared to the 1st implementation?  We can use Big O notation to answer this question.  Big O provides a precise language to describe how a function performs.
+<details style="max-width: 700px; margin: auto;">
+  <summary>How does the 2nd solution work?</summary>
 
-Generally when we evaluate an algorithm, or solution to a problem, we look at in in terms of:
-
-* How long does it take to run
-* How much memory does it take to run
-* How maintainable is the code
-  * Can it be tested throughly
-  * Can it be read easily
-
-### A Bit of Math
-
-How does the 2nd solution work?
+  How does the 2nd solution work?
 
 If we look at the loop based solution to the problem we can see that it will add up all the numbers from 1 to n.
 
@@ -71,6 +62,19 @@ n * (n+1)
 ```
 
 So `n * (n+1)` is twice the sum of all the numbers from 1 to n.  Thus the answer is `(n * (n+1)) / 2`
+</details>
+
+It may seem clear that the second approach is better, but how does it perform compared to the 1st implementation?  We can use Big O notation to answer this question.  Big O provides a precise language to describe how a function performs in terms of time the algorithm takes and memory used during execution.
+
+Generally when we evaluate an algorithm, or solution to a problem, we look at in in terms of:
+
+* How long does it take to run
+* How much memory does it take to run
+* How maintainable is the code
+  * Can it be tested throughly
+  * Can it be read easily
+
+The third criteria is often the most important. Development time is important and expensive,  however sometimes in mission critical application bottlenecks how fast an algorithm runs or memory consumption can be very important.
 
 ## Evaluating Time & Space Complexity
 
