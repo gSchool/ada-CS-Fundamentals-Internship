@@ -102,9 +102,9 @@ Looking at the timing results of the two functions we can see that the arithmeti
 
 However timing our code, while helpful, is not enough.  This is because:
 
-* Other programs can be running while our code executes, impacting the performance.
-* Computers vary in speed and accuracy, so timing our code is not always reliable.
-* Because of other factors outside of our code timing results can vary between executions.
+* Other programs can be running while our code executes, making our measurements less accurate
+* Computers vary in speed and accuracy, so the amount of time the program takes to run on one computer would be different from another.
+* Other factors outside of our code timing results can vary between executions.
 
 We could try to count the number of operations performed by our code, but high level languages often obscure the number of operations performed.  For example, in Python the number of operations performed by a function is not easily accessible.  
 
