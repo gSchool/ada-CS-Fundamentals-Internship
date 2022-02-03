@@ -116,7 +116,7 @@ Thus enters the field of time complexity.  Even inefficient algorithms can often
 
 * Formal definition of Time Complexity:
   * A theoretical measure of the execution of the time an algorithm needs, given the problem size n, which is usually the number of items.
-  * Informally, saying some equation f(n) = O(g(n)) means it is less than some constant multiple of g(n). The notation is read, "f of n is big oh of g of n".
+  * Informally, saying some equation f(n) = O(g(n)) means that the actual runtime is less than some constant multiple of g(n). The notation is read, "f of n is big oh of g of n".
 
 #### Constant Time Complexity
 
