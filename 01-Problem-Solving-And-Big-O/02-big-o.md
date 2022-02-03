@@ -131,7 +131,7 @@ So for these **constant time** algorithms we say the algorithm has a **constant 
 
 #### Linear Time Complexity
 
-On the other hand some algorithms will take a cooresponding long time to run as the size of the input increases.  A good example is our loop based solution.  If the input size doubles, the function will take roughly twice as long to run.  
+On the other hand some algorithms will take an amount of time proportional to changes in the size of the input.  A good example is our loop based function. If the input size doubles, the function will take roughly twice as long to run.  
 
 ```py
 def add_from_1_to_n(n):
