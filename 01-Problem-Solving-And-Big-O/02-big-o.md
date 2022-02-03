@@ -391,7 +391,7 @@ def count_up(n):
 
 This is because the Python interpreter needs to save every active function call on something called the *call stack* with all of it's local variables etc.
 
-![Call Stack diagram](images/problem-solving__call-stack.png)
+![Call Stack diagram](images/problem-solving__call-stack.svg)
 
 *Fig. Call stack diagram*
 
