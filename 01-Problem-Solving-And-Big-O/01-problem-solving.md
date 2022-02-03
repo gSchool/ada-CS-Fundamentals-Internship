@@ -322,11 +322,14 @@ The first big challenge in software development is to produce working code. Afte
 
 In the sample solution above we are using a nested loop and the loop repeatably traverses the list. Our code is not time efficient because we repeatably examine the same elements of the list repeatedly.
 
-We are only interested in contiguous sublists, elements have to be next to one another. This means we can apply a technique called a [sliding window](https://www.geeksforgeeks.org/window-sliding-technique/).  In this technique we slide a "window" across the list and keep track of the sum of the elements in the window.  If the sum of the elements in the window is equal to the target, we have found a contiguous sublist.  
+We are only interested in contiguous sublists, elements have to be next to one another. This means we can apply a technique called a [sliding window](https://www.geeksforgeeks.org/window-sliding-technique/).  A sliding window is a technique that creates a contiguous sublist of a the larger list and then iterates through adjusting the start and end indicies of the sublist.  So each iteration either the start index moves forward or the end index moves forward allowing us to have a "sliding" sublist that progresses through the original list.
+
+In this technique we slide a "window" across the list and track the sum of the elements within the window.  If the sum of the elements in the window is equal to the target, we have found a contiguous sublist.  
 
 The image below illustrates the sliding window technique.
 
 ![Sliding Window Example](images/problem-solving__Sliding-Window.svg)
+
 *Fig. Sliding Window*
 
 In our refactor we can start by creating a window of size 1 from index 0 to index 1.  So our window's start index is 0 and end index is 1. Our current sum then is the value of the 1st element of the list.  Then we can repeat this algorithm.
