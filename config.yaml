@@ -16,8 +16,8 @@ Standards:
         UID: bcc6309e-3453-4aea-9b22-ef8e09c2b09e
         Path: /00-about-thursdays-at-ada/norms.md
   -
-    Title: Problem Solving and Big O
-    Description: Code Reviews
+    Title: Approaching Problems
+    Description: Problem Solving, Big O Notation
     UID: 9141935e-3d6b-4f83-9eef-eca929c19ad6
     SuccessCriteria:
       - success criteria
