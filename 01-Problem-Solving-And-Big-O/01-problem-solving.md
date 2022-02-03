@@ -332,9 +332,21 @@ The image below illustrates the sliding window technique.
 
 *Fig. Sliding Window*
 
-In our refactor we can start by creating a window of size 1 from index 0 to index 1.  So our window's start index is 0 and end index is 1. Our current sum then is the value of the 1st element of the list.  Then we can repeat this algorithm.
+#### Implementing Our Refactor
 
-1.  If the current sum is equal to the target, we have found a contiguous sublist which adds up to target, and we if it is the smallest contiguous sublist we have found so far, we update the minimum length.
+In our refactor we can start by creating a window of size 1 from index 0 to index 1.  So our window's `start_index` is `0` and `end_index` is `1`. Our current sum then is the value of the 1st element of the list.
+
+We track the following values:
+
+* `start_index` - Where our window starts
+* `end_index` - Where our window ends
+* `current_sum` - The sum of the elements in the current window
+* `min_length` - The length of the smallest contiguous sublist found thus far.
+
+Then we can repeat this algorithm:
+
+1.  If the current sum is equal to the target, we have found a contiguous sublist which adds up to target, and if it is the smallest contiguous sublist we have found so far, we update the minimum length.
+  * We can also advance the window by incrementing the `start_index` by one.
 1.  If the current sum is greater than or equal to the target we can decrease the window size by adding one to the start index of the window.
 1.  If the current sum is less than the target we can increase the window size by adding one to the end index of the window.
 1.  We will repeat this algorithm until the end index has passed the end of the list.
@@ -380,7 +392,6 @@ In our refactor we can start by creating a window of size 1 from index 0 to inde
         return None
     return min_length_sublist
   ```
-
 </details>
 
 This solution now makes only one pass through the list meaning as the input array grows, the solution will perform better compared to our original solution.
