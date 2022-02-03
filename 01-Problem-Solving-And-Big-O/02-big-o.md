@@ -61,10 +61,10 @@ So we could get twice the sum by adding both versions together:
 n * (n+1)
 ```
 
-So `n * (n+1)` is twice the sum of all the numbers from 1 to n.  Thus the answer is `(n * (n+1)) / 2`
+So `n * (n+1)` is twice the sum of all the numbers from 1 to n. Thus the answer is `(n * (n+1)) / 2`
 </details>
 
-It may seem clear that the second approach is better, but how does it perform compared to the 1st implementation?  We can use Big O notation to answer this question.  Big O provides a precise language to describe how a function performs in terms of time the algorithm takes and memory used during execution.
+It may seem clear that the second approach is better, but how does it perform compared to the 1st implementation?  We can use Big O notation to answer this question. Big O provides a precise language to describe how a function performs in terms of time the algorithm takes and memory used during execution.
 
 Generally when we evaluate an algorithm, or solution to a problem, we look at in in terms of:
 
@@ -92,7 +92,7 @@ If we timed our code we could observe how long it takes to run.
 |   10000000	|   30.03s	|  ~0s     |
 
 
-Looking at the timing results of the two functions we can see that the arithmetic solution is *much* faster.  This is because the arithmetic solution performs much fewer operations and the number of operations does not change when `n` becomes large.  On the other hand the loop-based solution performs a coorespondingly larger number of operations as `n` increases.  Notice that as `n` increased tenfold, the number of seconds it took to run the loop-based solution increased by an approximate factor of ten.
+Looking at the timing results of the two functions we can see that the arithmetic solution is *much* faster. This is because the arithmetic solution performs much fewer operations and the number of operations does not change when `n` becomes large. On the other hand the loop-based solution performs a coorespondingly larger number of operations as `n` increases. Notice that as `n` increased tenfold, the number of seconds it took to run the loop-based solution increased by an approximate factor of ten.
 
 ![Loop based vs arithmetic solution chart](images/problem-solving__loop-based-vs-arithmetic-timing.svg)
 
@@ -100,19 +100,19 @@ Looking at the timing results of the two functions we can see that the arithmeti
 
 ### Why Timing Our Code Is Not Enough
 
-However timing our code, while helpful, is not enough.  This is because:
+However timing our code, while helpful, is not enough. This is because:
 
 * Other programs can be running while our code executes, making our measurements less accurate
 * Computers vary in speed and accuracy, so the amount of time the program takes to run on one computer would be different from another.
 * Other factors outside of our code timing results can vary between executions.
 
-We could try to count the number of operations performed by our code, but high level languages often obscure the number of operations performed.  For example, in Python the number of operations performed by a function is not easily accessible.  
+We could try to count the number of operations performed by our code, but high level languages often obscure the number of operations performed. For example, in Python the number of operations performed by a function is not easily accessible. 
 
 Instead as computer scientists we have developed Big O notation as a way to formalize a rough estimate of the number of how the number of operations change as the size of the input increases.
 
 ### Time Complexity
 
-Thus enters the field of time complexity.  Even inefficient algorithms can often perform well with small inputs.  But as the size of the input `n` increases, the number of operations performed by the algorithm increases.  **We care about how the trend in the number of operations changes with the size of the input**. We also attempt to estimate the worst-case scenario for the number of operations. Big O provides a way to measure and discuss how the worst-case scenario for the number of operations changes with the size of the input.
+Thus enters the field of time complexity. Even inefficient algorithms can often perform well with small inputs. But as the size of the input `n` increases, the number of operations performed by the algorithm increases. **We care about how the trend in the number of operations changes with the size of the input**. We also attempt to estimate the worst-case scenario for the number of operations. Big O provides a way to measure and discuss how the worst-case scenario for the number of operations changes with the size of the input.
 
 * Formal definition of Time Complexity:
   * A theoretical measure of the execution of the time an algorithm needs, given the problem size n, which is usually the number of items.
@@ -120,7 +120,7 @@ Thus enters the field of time complexity.  Even inefficient algorithms can often
 
 #### Constant Time Complexity
 
-Some algorithms will take essentially the same amount of time regardless of the size of the input.  A good example is our arithmetic solution from above.  It takes the same amount of time regardless of the size of the input.
+Some algorithms will take essentially the same amount of time regardless of the size of the input. A good example is our arithmetic solution from above. It takes the same amount of time regardless of the size of the input.
 
 ```py
 def add_from_1_to_n(n):
@@ -131,7 +131,7 @@ So for these **constant time** algorithms we say the algorithm has a **constant 
 
 #### Linear Time Complexity
 
-On the other hand some algorithms will take an amount of time proportional to changes in the size of the input.  A good example is our loop based function. If the input size doubles, the function will take roughly twice as long to run.  
+On the other hand some algorithms will take an amount of time proportional to changes in the size of the input. A good example is our loop based function. If the input size doubles, the function will take roughly twice as long to run. 
 
 ```py
 def add_from_1_to_n(n):
@@ -189,13 +189,13 @@ def minimum_sub_list_length(numbers, target):
     return min_length
 ```
 
-When we encounter nested loops, we multiply the time complexity of the inner loop by the time complexity of the outer loop.  So in this case, `O(n * (n-1))` = `O(n^2 - n)`, but we can drop the less significant term `n` because `n^2` will dominate the result.  We end up with a time complexity of `O(n^2)`.
+When we encounter nested loops, we multiply the time complexity of the inner loop by the number of iterations of the outer loop. So in this case, `O(n * (n-1))` = `O(n^2 - n)`, but we can drop the less significant term `n` because `n^2` will dominate the result. We end up with a time complexity of `O(n^2)`.
 
 This is called a **quadratic time complexity** or `O(n^2)`.
 
 #### Logorithms
 
-Sometimes algorithms may produce time complexities more sophisticated than quadratic or linear.  For example, the following function will take `O(log n)` time.
+Sometimes algorithms may produce time complexities more sophisticated than quadratic or linear. For example, the following function will take `O(log n)` time.
 
 ```py
 def binary_search(test_array, value):
@@ -220,7 +220,7 @@ def binary_search(test_array, value):
 
 A logarithm is a quantity representing the power to which a fixed number (the base) must be raised to produce a given number. For example the log with base 2 of 8 is 3 (2^3 = 8)  The log of base 10 of 10000 is 4 (10^4 = 10000).
 
-See below.  
+See below. 
 
 ![Log example](images/problem-solving__log-example.png)
 
@@ -259,7 +259,7 @@ If the input is eight elements [1, 2, 3, 4, 5, 6, 7, 8] and `value` is 2:
 * On the second iteration `low` remains 0 and `high` becomes 2 and `mid` becomes 1.
 * Then value is found in the list and the function returns 1.
 
-Notice with each iteration the size of the input involved in the search (`low` to `high`) is halved.  So worst-case a list of 8 items would take 3 iterations to find the value. We could double the size of `numbers` to 16 items and it would only take 4 iteration to find the value and for 32 items it would only take 5 iterations. Thus while the function *does* take longer as the input size increases it does not increase very rapidly.
+Notice with each iteration the size of the input involved in the search (`low` to `high`) is halved. So worst-case a list of 8 items would take 3 iterations to find the value. We could double the size of `numbers` to 16 items and it would only take 4 iteration to find the value and for 32 items it would only take 5 iterations. Thus while the function *does* take longer as the input size increases it does not increase very rapidly.
 
 In general:
 
@@ -268,7 +268,7 @@ In general:
 
 #### Other Time Complexities
 
-We will occassionally encounter algorithms that have other time complexities. Later in the course we will encounter algorithms which have exponential and factorial time complexities.  Algorithms with these time complexities run extremely slow at even moderate inputs and for large inputs are effectively useless.
+We will occassionally encounter algorithms that have other time complexities. Later in the course we will encounter algorithms which have exponential and factorial time complexities. Algorithms with these time complexities run extremely slow at even moderate inputs and for large inputs are effectively useless.
 
 [![Time complexity chart](images/problem-solving__big-o-cheat-sheet.png)](https://www.bigocheatsheet.com/)
 
@@ -298,7 +298,7 @@ def sum_up(numbers):
     return total
 ```
 
-This function requires 2 numeric variables to store the total and the current number.  We can say that the function requires 2 i.e. *constant space* to run or `O(1)`.  The amount of memory used does not change as the length of `numbers` increases.
+This function requires 2 numeric variables to store the total and the current number. We can say that the function requires 2 i.e. *constant space* to run or `O(1)`. The amount of memory used does not change as the length of `numbers` increases.
 
 On the other hand the following function requires a list to store double all the numbers.
 
@@ -309,7 +309,7 @@ def double_numbers(numbers):
     return doubled
 ```
 
-This function created a new list of numbers proportional in size to the input.  So the space complexity is `O(n)`.
+This function created a new list of numbers proportional in size to the input. So the space complexity is `O(n)`.
 
 Now try to estimate time time complexity for the following function.
 
