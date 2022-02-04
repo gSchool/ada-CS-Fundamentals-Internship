@@ -333,7 +333,7 @@ This solution works and is a relatively direct straight forward approach. This i
 
 ## Simplify/Refactor
 
-The first big challenge in software development is to produce working code. After code is working however the time comes to simplify or refactor (improve) the solution.
+The first big challenge in software development is to **produce working code**. After code is working however the time comes to simplify or refactor (improve) the solution.
 
 In the sample solution above we are using a nested loop and the loop repeatably traverses the list. Our code is not time efficient because we examine the same elements of the list repeatedly.
 
