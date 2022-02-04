@@ -409,7 +409,7 @@ This is because the Python interpreter needs to save every active function call 
 
 ## Summary
 
-Big O is a standard way to measure how much the time an algorithm takes to run as the input size increases. It is also a standard way to measure how much space an algorithm takes to run as the input size increases. This allows us to compare different solutions to measure them against each other.
+Big O is a standard way to measure how much the time an algorithm takes and how much memory an algorithm requires to run as the input size increases. This allows us to compare different solutions to measure them against each other. Big O is helpful in selecting the proper algorithm to use for a problem.
 
 Some general rules to use when thinking about time and space complexity:
 
@@ -418,8 +418,7 @@ Some general rules to use when thinking about time and space complexity:
 * Arithmetic operations are constant `O(1)`
 * Variable assignment is constant `O(1)`
 * Accessing an element in an array or a value in a dictionary by the key is constant `O(1)`
-* In a loop the time complexity is the length of the loop multiplied by the time complexity of the loop body
-
+* In a loop the time complexity is the length of the outer loop multiplied by the time complexity of the loop body
 
 ## Resources
 
