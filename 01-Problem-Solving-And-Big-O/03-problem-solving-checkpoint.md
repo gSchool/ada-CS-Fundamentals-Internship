@@ -482,19 +482,19 @@ import unittest
 from main import *
 
 class TestPython1(unittest.TestCase):
-    def test_example_1():
+    def test_example_1(self):
       self.assertEqual("aAa",longestNiceSubstring("YazaAay"))
 
-    def test_example_2():
+    def test_example_2(self):
       self.assertEqual("Bb",longestNiceSubstring("Bb"))
 
-    def test_example_3():
+    def test_example_3(self):
       self.assertEqual("",longestNiceSubstring("c"))
 
-    def test_example_empty_string():
+    def test_example_empty_string(self):
         self.assertEqual("",longestNiceSubstring(""))
 
-    def test_example_AaBbxcCdDaA():
+    def test_example_AaBbxcCdDaA(self):
         self.assertEqual("cCdDaA",longestNiceSubstring("AaBbxcCdDaA"))
 
 ```
