@@ -159,11 +159,11 @@ def count_up_and_down(n):
         print(i)
 ```
 
-So the above function has a **linear time complexity** or `O(n)`.
+So the above function also has a **linear time complexity** or `O(n)`.
 
 #### Quadratic Time Complexity
 
-Often we will have a function which involves nested loops. For example the code below will has a for loop which runs n times and a loop nested inside which runs, worst-case, n-1 times.
+Often we will have a function which involves nested loops. For example the code below contains a for loop which runs n times and a loop nested inside which runs, worst-case, n-1 times.
 
 ```py
 def minimum_sub_list_length(numbers, target):
@@ -191,7 +191,13 @@ def minimum_sub_list_length(numbers, target):
     return min_length
 ```
 
-When we encounter nested loops, we multiply the time complexity of the inner loop by the number of iterations of the outer loop. So in this case, `O(n * (n-1))` = `O(n^2 - n)`, but we can drop the less significant term `n` because `n^2` will dominate the result. We end up with a time complexity of `O(n^2)`.
+When we encounter nested loops, we multiply the time complexity of the inner loop by the number of iterations of the outer loop. 
+
+So in this case:
+
+* If we multiply the number of iteration on the outer loop by the inner loop: `(n * (n-1))` = `(n^2 - n)`
+* We can drop the less significant term `n` because `n^2` will dominate the result. 
+* We end up with a time complexity of `O(n^2)`.
 
 This is called a **quadratic time complexity** or `O(n^2)`.
 
