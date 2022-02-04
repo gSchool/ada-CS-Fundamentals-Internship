@@ -106,9 +106,11 @@ However timing our code, while helpful, is not enough. This is because:
 * Computers vary in speed and accuracy, so the amount of time the program takes to run on one computer would be different from another.
 * Other factors outside of our code timing results can vary between executions.
 
-We could try to count the number of operations performed by our code, but high level languages often obscure the number of operations performed. For example, in Python the number of operations performed by a function is not easily accessible. 
+We could try to count the number of operations performed by our code, but high level languages often obscure the number of operations performed. For example, in Python the number of operations performed by a library function is not easily accessible. 
 
-Instead as computer scientists we have developed Big O notation as a way to formalize a rough estimate of the number of how the number of operations change as the size of the input increases.
+Instead as computer scientists we have developed Big O notation as a way to formalize a rough estimate of the number of how the number of operations *change* as the size of the input increases.
+
+**Note:** We care about how the algorithm performance *changes* as the input size **increases**.
 
 ### Time Complexity
 
