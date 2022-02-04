@@ -398,3 +398,109 @@ Why?
 ##### !end-explanation
 
 ### !end-challenge
+
+
+## Bonus Exercise!
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 16992c53-2608-47bd-a3d5-d5c310250328
+* title: Using A sliding Window
+<!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
+<!-- * topics: [python, pandas] (optional the topics for analyzing points) -->
+
+##### !question
+
+The following solution **works**, but it is not efficient.  Try to improve it using the [sliding window](https://stackoverflow.com/questions/8269916/what-is-sliding-window-algorithm-examples) technique.
+
+A string s is nice if, for every letter of the alphabet that s contains, it appears both in uppercase and lowercase. For example, "abABB" is nice because 'A' and 'a' appear, and 'B' and 'b' appear. However, "abA" is not because 'b' appears, but 'B' does not.
+
+Given a string `s`, return the longest contiguous substring of `s` that is nice. If there are multiple, return the substring of the earliest occurrence. 
+
+If there are none, return an empty string.
+
+ 
+
+**Example 1:**
+
+```
+Input: s = "YazaAay"
+Output: "aAa"
+Explanation: "aAa" is a nice string because 'A/a' is the only letter of the alphabet in s, and both 'A' and 'a' appear.
+"aAa" is the longest nice substring.
+```
+
+**Example 2:**
+
+```
+Input: s = "Bb"
+Output: "Bb"
+Explanation: "Bb" is a nice string because both 'B' and 'b' appear. The whole string is a substring.
+```
+
+**Example 3:**
+
+```
+Input: s = "c"
+Output: ""
+Explanation: There are no nice substrings.
+```
+
+##### !end-question
+
+##### !placeholder
+
+```py
+def is_nice_string(string):
+    swapped = list(string.swapcase())
+    original = list(string)
+
+    for c in swapped:
+        if c not in original:
+            return False
+    return True
+
+def longestNiceSubstring(self, s: str) -> str:
+    longest_substring = ""
+    for i in range(len(s)):
+        for j in range(i+1,len(s)):
+            current_substring = s[i:j+1]
+            if is_nice_string(current_substring) and \
+                    len(current_substring) > len(longest_substring):
+                longest_substring = current_substring
+    return longest_substring
+```
+
+##### !end-placeholder
+
+##### !tests
+
+```py
+import unittest
+import * from main
+
+class TestPython1(unittest.TestCase):
+    def test_example_1():
+      self.assertEqual("aAa",longestNiceSubstring("YazaAay"))
+
+    def test_example_2():
+      self.assertEqual("Bb",longestNiceSubstring("Bb"))
+
+    def test_example_3():
+      self.assertEqual("",longestNiceSubstring("c"))
+
+    def test_example_empty_string():
+        self.assertEqual("",longestNiceSubstring(""))
+
+    def test_example_AaBbxcCdDaA():
+        self.assertEqual("cCdDaA",longestNiceSubstring("AaBbxcCdDaA"))
+
+```
+
+##### !end-tests
+
+### !end-challenge
+
+The Challenge problem was taken from [leetcode](https://leetcode.com/problems/longest-nice-substring/).
