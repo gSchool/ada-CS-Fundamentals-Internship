@@ -1,5 +1,7 @@
 # Problem Solving & Big O Exercise
 
+Answer the following questions.  **Pay particular attention when you are asked about either space or time complexity.**
+
 ### !challenge
 
 * type: short-answer
@@ -37,6 +39,93 @@ Why don't we just time our application, or count the number of operations a func
 Big O provides a standard and precise way to measure and compare how fast and memory intensive our code is.
 
 ##### !end-explanation
+
+### !end-challenge
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: 3f40c6ee-e651-4800-811a-46759ae9d5d0
+* title: Even Elements
+* points: 1
+* topics: Big-O, time-complexity
+
+##### !question
+
+What is the *time complexity* of the following function?
+
+```python
+def only_even_elements(array):
+    new_array = []
+    for i in range(0, len(array)):
+        if i % 2 == 0:
+            new_array.append(array[i])
+
+    return new_array
+```
+
+##### !end-question
+
+##### !options
+
+* O(1)
+* O(n)
+* O(log n)
+* O(n^2)
+
+##### !end-options
+
+##### !answer
+
+* O(n)
+
+##### !end-answer
+
+
+### !end-challenge
+
+### !challenge
+
+* type: multiple-choice
+* id: b6e79e12-0746-4852-b8f0-30b88d214aad
+* title: Even Elements
+* points: 1
+* topics: Big-O, space-complexity
+
+##### !question
+
+What is the *space complexity* of the following function?
+
+```python
+def only_even_elements(array):
+    new_array = []
+    for i in range(0, len(array)):
+        if i % 2 == 0:
+            new_array.append(array[i])
+
+    return new_array
+```
+
+##### !end-question
+
+##### !options
+
+* O(1)
+* O(n)
+* O(log n)
+* O(n^2)
+
+##### !end-options
+
+##### !answer
+
+* O(n)
+
+##### !end-answer
+
 
 ### !end-challenge
 
@@ -91,10 +180,101 @@ Because we *divide* n by 10 with each iteration of the loop the time complexity 
 
 ##### !end-explanation
 
+### !challenge
+
+* type: multiple-choice
+* id: a080d31c-03f6-46ff-9f4d-b601a5959730
+* title: Subtotal List time complexity
+* points: 1
+* topics: python, big-o, time-complexity
+
+##### !question
+
+What is the *time complexity* of the following function?
+
+```py
+def subtotals_list(numbers):
+    subtotals_list = []
+
+    for i in range(0, len(numbers)):
+        subtotal = 0
+        for j in range(0, i + 1):
+            subtotal += numbers[j]
+
+        subtotals_list.append(subtotal)
+
+    return subtotals_list
+```
+
+##### !end-question
+
+##### !options
+
+* O(1)
+* O(log n)
+* O(n)
+* O(n log n)
+* O(n^2)
+
+##### !end-options
+
+##### !answer
+
+* O(n^2)
+
+##### !end-answer
+
 ### !end-challenge
 
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
+### !end-challenge
+
+### !challenge
+
+* type: multiple-choice
+* id: a080d31c-03f6-46ff-9f4d-b601a5959730
+* title: Subtotal List space complexity
+* points: 1
+* topics: python, big-o, space-complexity
+
+##### !question
+
+What is the *space complexity* of the following function?
+
+```py
+def subtotals_list(numbers):
+    subtotals_list = []
+
+    for i in range(0, len(numbers)):
+        subtotal = 0
+        for j in range(0, i + 1):
+            subtotal += numbers[j]
+
+        subtotals_list.append(subtotal)
+
+    return subtotals_list
+```
+
+##### !end-question
+
+##### !options
+
+* O(1)
+* O(log n)
+* O(n)
+* O(n log n)
+* O(n^2)
+
+##### !end-options
+
+##### !answer
+
+* O(n)
+
+##### !end-answer
+
+### !end-challenge
+
+### !end-challenge
 
 ### !challenge
 
