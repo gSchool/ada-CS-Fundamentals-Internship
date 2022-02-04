@@ -180,6 +180,8 @@ Because we *divide* n by 10 with each iteration of the loop the time complexity 
 
 ##### !end-explanation
 
+### !end-challenge
+
 ### !challenge
 
 * type: multiple-choice
@@ -226,12 +228,10 @@ def subtotals_list(numbers):
 
 ### !end-challenge
 
-### !end-challenge
-
 ### !challenge
 
 * type: multiple-choice
-* id: a080d31c-03f6-46ff-9f4d-b601a5959730
+* id: 3ebc656a-17a4-4aca-aff0-35acbc5a4ba9
 * title: Subtotal List space complexity
 * points: 1
 * topics: python, big-o, space-complexity
@@ -271,8 +271,6 @@ def subtotals_list(numbers):
 * O(n)
 
 ##### !end-answer
-
-### !end-challenge
 
 ### !end-challenge
 

@@ -259,7 +259,7 @@ If the input is eight elements [1, 2, 3, 4, 5, 6, 7, 8] and `value` is 2:
 * On the second iteration `low` remains 0 and `high` becomes 2 and `mid` becomes 1.
 * Then value is found in the list and the function returns 1.
 
-|   n	|   number of iterations	|
+|   n	|   Number of iterations	|
 |---	|---	|
 |   8	|   3	|
 |   16	|   4	|
