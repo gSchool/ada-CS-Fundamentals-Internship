@@ -328,7 +328,7 @@ def isAnagram(self, s: str, t: str) -> bool:
     
     return True
 ```
-*Code Sample: Solution 1*
+*Code Sample: Solution 2*
 
 ##### !end-question
 
@@ -479,7 +479,7 @@ def longestNiceSubstring(self, s: str) -> str:
 
 ```py
 import unittest
-import * from main
+from main import *
 
 class TestPython1(unittest.TestCase):
     def test_example_1():
