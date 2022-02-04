@@ -21,7 +21,7 @@ User Story | User stories are a technique to gather gather requirements written 
 
 ## Steps in Problem Solving
 
-When we look at programming problems, wether interview problems, or problems encountered on the job we can approach it with these specific steps.  First trying to ensure we understand the problem, then break down a larger problem into smaller, more easily approached steps solving each one.  Then we can examine our solution, evaluate how effective it is and attempt to improve upon it.
+When we look at programming problems, either interview problems, or challenges encountered on the job we can approach it with these specific steps.  First trying to ensure we understand the problem, then break down a larger problem into smaller, more easily approached steps solving each one in turn.  Then we can examine our solution, evaluate how effective it is and attempt to improve upon it.
 
 Our steps are:
 
@@ -47,24 +47,25 @@ It should return the minimal length of a contiguous sublist of the given input l
 
 When we look at a given problem we need to understand what our code is expected to do.  Without solid understanding of our requirements we might write code which does not fully address the problem or even write a solution to a different problem entirely!
 
-With an industry problem, this may involve talking to "customers," which could be company clients, or members of our or another team which will use the code.  It could also involve talking through requirements with the team or a product manager.  This typically involves writing *user stories* which are a set of requirements for a given problem.  These user stories are often written in a language called *use case* which is a set of requirements for a given use case.  For example, a user story might be:
+With an industry problem, this may involve talking to "customers," which could be company clients, or members of our or another team which will use the code.  It could also involve talking through requirements with the team or a product manager.  This typically involves writing *user stories* which are a set of requirements for a given problem.  These user stories are often written in a language called *use case* which is a set of requirements for a given use case.  
 
-- As a user, I want to be able to click on a button to add a new item to my shopping cart in order to assemble an order.
+For example, a user story might be:
+
+* As a user, I want to be able to click on a button to add a new item to my shopping cart in order to assemble an order.
 
 Typically user stories are written in the template:  As a `<type of end user>` I want to be able to `<some sort of action>` in order to `<some kind of outcome>`.  This may also include a longer-term goal such as the above assembling of an order.
 
 These user stories allow us to assemble requirements to meet the needs of the end user and ensure that we know what our code must do.
 
-In an interview problem like the above, we would need to carefully examine the question and ask the interviewer followup questions to make sure we understand what is expected.
+In an interview problem like the above, we need to carefully examine the question and ask the interviewer followup questions to make sure we understand what is expected.
 
 In this interview problem we can examine the language and figure out that we need to:
 
-- Write a function named `minimum_sub_list_length`
-- The function should take in a list of positive numbers and an integer as parameters
-- The function should find the smallest length of a contiguous sublist of the given list which adds up to the given integer
+* Write a function named `minimum_sub_list_length`
+* The function should take in a list of positive numbers and an integer as parameters
+* The function should find the smallest length of a contiguous sublist of the given list which adds up to the given integer
 
 The 1st two points are clear, but the third is a little more tricky.  We need to understand some of the terminology used in the problem.  Using Google or your own knowledge answer the following.
-
 
 ### !challenge
 
@@ -76,8 +77,10 @@ The 1st two points are clear, but the third is a little more tricky.  We need to
 
 Explain the meaning of the following terms:
 
-- contiguous
-- sublist
+* contiguous
+* sublist
+
+Feel free to look up the terms in Google or use other resources.
 
 ##### !end-question
 
@@ -88,8 +91,8 @@ Explain the meaning of the following terms:
 
 ##### !explanation
 
-- contiguous: Elements of an array/list are contiguous if they are adjacent to each other in the list and maintain the same order.
-- sublist: A list is a sublist of another list if all the elements of the first list are contained in the second list.
+* contiguous: Elements of an array/list are contiguous if they are adjacent to each other in the list and maintain the same order.
+* sublist: A list is a sublist of another list if all the elements of the first list are contained in the second list.
 
 ##### !end-explanation
 
@@ -102,7 +105,7 @@ So in this problem we need to write a function `minimum_sub_list_length` which t
 
 ### Explore Examples
 
-Next to ensure we understand the problem we need to develop example inputs and determine what the output *should* be.  In industry this might involve drawing up mock-ups of the program and running through scenarios, or asking a customer or a team member to do so.  It could also involve generating sample input data and determining what the output should be.
+Next to ensure we understand the problem we need to develop example inputs and determine what the output *should* be for those given inputs.  In industry this might involve drawing up mock-ups of the program and running through scenarios, or asking a customer or a team member to do so.  It could also involve generating sample input data and determining what the output should be.
 
 In general it's most helpful to develop a few examples which will test the bounaries of what is possible for input.  These are called *edge-cases*.
 
@@ -171,9 +174,6 @@ Two subproblems could be:
 Once a problem is understood and broken into more manageable pieces we can then solve the problem.
 
 Write your solution and then look below to see a sample solution.
-
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -314,13 +314,13 @@ def minimum_sub_list_length(numbers, target):
   ```
 </details>
 
-This solution works and is a relatively straight forward approach. This is normally called a "brute force" solution.
+This solution works and is a relatively direct straight forward approach. This is often called a "brute force" solution.
 
 ### Simplify/Refactor
 
 The first big challenge in software development is to produce working code. After code is working however the time comes to simplify or refactor (improve) the solution.
 
-In the sample solution above we are using a nested loop and the loop repeatably traverses the list. Our code is not time efficient because we repeatably examine the same elements of the list repeatedly.
+In the sample solution above we are using a nested loop and the loop repeatably traverses the list. Our code is not time efficient because we examine the same elements of the list repeatedly.
 
 We are only interested in contiguous sublists, elements have to be next to one another. This means we can apply a technique called a [sliding window](https://www.geeksforgeeks.org/window-sliding-technique/).  A sliding window is a technique that creates a contiguous sublist of a the larger list and then iterates through adjusting the start and end indicies of the sublist.  So each iteration either the start index moves forward or the end index moves forward allowing us to have a "sliding" sublist that progresses through the original list.
 
