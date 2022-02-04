@@ -399,6 +399,35 @@ Why?
 
 ### !end-challenge
 
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: paragraph
+* id: 523a7217-6d47-4e80-8cff-01d4ec733b52
+* title: Improving isAnagram
+* points: 1
+* topics: python, big-o, time-complexity, space-complexity
+
+##### !question
+
+Can you think of any better solution to this problem?  
+
+What is the time complexity of the best solution you can devise?
+
+##### !end-question
+
+##### !placeholder
+
+Can you think of any better ways to solve the problem?
+
+Does the time/space complexity change with your solution?
+
+##### !end-placeholder
+
+
+### !end-challenge
 
 ## Bonus Exercise!
 
