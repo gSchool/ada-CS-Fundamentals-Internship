@@ -92,7 +92,7 @@ Explain the meaning of the following terms:
 * contiguous
 * sublist
 
-Feel free to look up the terms in Google or use other resources.
+Feel free to look up the terms in [Google](https://www.google.com/) or use other resources.
 
 ##### !end-question
 
