@@ -208,12 +208,12 @@ It should return the minimal length of a contiguous sublist of the given input l
 
 ```py
 def minimum_sub_list_length(numbers, target):
-  '''
-  INPUT: list of positive numbers, and target a positive integer
-  OUTPUT: the minimal length of a contiguous sublist of the given input 
-          list which adds up to the given integer.
-  Return true
-  '''
+    '''
+    INPUT: list of positive numbers, and target a positive integer
+    OUTPUT: the minimal length of a contiguous sublist of the given input list which adds up to the given integer.
+    Return the length of the smallest contiguous sublist which adds up to the given integer or 
+    return None if there is no such sublist.
+    '''
 
 ```
 
@@ -265,7 +265,8 @@ def minimum_sub_list_length(numbers, target):
     '''
     INPUT: list of positive numbers, and target a positive integer
     OUTPUT: the minimal length of a contiguous sublist of the given input list which adds up to the given integer.
-    Return true
+    Return the length of the smallest contiguous sublist which adds up to the given integer or 
+    return None if there is no such sublist.
     '''
     if target == 0:
         return 0
@@ -304,7 +305,8 @@ def minimum_sub_list_length(numbers, target):
     '''
     INPUT: list of positive numbers, and target a positive integer
     OUTPUT: the minimal length of a contiguous sublist of the given input list which adds up to the given integer.
-    Return true
+    Return the length of the smallest contiguous sublist which adds up to the given integer or 
+    return None if there is no such sublist.
     '''
     if target == 0:
         return 0
@@ -376,7 +378,8 @@ Then we can repeat this algorithm:
     '''
     INPUT: list of positive numbers, and target a positive integer
     OUTPUT: the minimal length of a contiguous sublist of the given input list which adds up to the given integer.
-    Return true
+    Return the length of the smallest contiguous sublist which adds up to the given integer or 
+    return None if there is no such sublist.
     '''
     if len(numbers) == 0:
         return None
