@@ -237,7 +237,11 @@ In a coding problem if we reduce the size of a problem by dividing the remaining
 Taking an [example from Stack Overflow](https://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly/2307314#2307314), a physical example of a logathmic algorithm is:
 
 ```
-Given a person's name, find the phone number by picking a random point about halfway through the part of the book you haven't searched yet, then checking to see whether the person's name is at that point. Then repeat the process about halfway through the part of the book where the person's name lies. (This is a binary search for a person's name.)
+Given a person's name, find the phone number by picking a random point 
+about halfway through the part of the book you haven't searched yet, 
+then checking to see whether the person's name is at that point. Then 
+repeat the process about halfway through the part of the book where 
+the person's name lies. (This is a binary search for a person's name.)
 ```
 
 The classical example of a logarithmic problem is binary search:
