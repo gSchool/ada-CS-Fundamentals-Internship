@@ -21,7 +21,7 @@ User Story | User stories are a technique to gather gather requirements written 
 
 ## Steps in Problem Solving
 
-When we look at programming problems, either interview problems, or challenges encountered on the job we can approach it with these specific steps.  First trying to ensure we understand the problem, then break down a larger problem into smaller, more easily approached steps solving each one in turn.  Then we can examine our solution, evaluate how effective it is and attempt to improve upon it.
+When we look at programming problems, either interview problems, or challenges encountered on the job we can approach the task systematically.  We will examine one particular strategy which involves first trying to ensure we understand the problem, then breaking down the larger problem into smaller, more easily approached steps solving each one in turn.  Then we can examine our solution, evaluate how effective it is and attempt to improve upon it.
 
 Our steps are:
 
