@@ -57,9 +57,17 @@ For example, a user story might be:
 
 * As a user, I want to be able to click on a button to add a new item to my shopping cart in order to assemble an order.
 
-Typically user stories are written in the template:  As a `<type of end user>` I want to be able to `<some sort of action>` in order to `<some kind of outcome>`.  This may also include a longer-term goal such as the above assembling of an order.
+Typically user stories are written in the template:  
 
-These user stories allow us to assemble requirements to meet the needs of the end user and ensure that we know what our code must do.
+* As a `<type of end user>` I want to be able to `<some sort of action>` in order to `<some kind of outcome>`.  
+
+This may also include a longer-term goal such as the above assembling of an order.
+
+**Why do we need user stories?**
+
+These user stories allow us to assemble requirements to meet the needs of the end user and ensure that we know what our code must do focusing on end-user needs.
+
+### Interview Problems
 
 In an interview problem like the above, we need to carefully examine the question and ask the interviewer followup questions to make sure we understand what is expected.
 
