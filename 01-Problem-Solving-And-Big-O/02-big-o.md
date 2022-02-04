@@ -114,9 +114,9 @@ Instead as computer scientists we have developed Big O notation as a way to form
 
 ### Time Complexity
 
-Thus enters the field of time complexity. Even inefficient algorithms can often perform well with small inputs. But as the size of the input `n` increases, the number of operations performed by the algorithm increases. **We care about how the trend in the number of operations changes with the size of the input**. We also attempt to estimate the worst-case scenario for the number of operations. Big O provides a way to measure and discuss how the worst-case scenario for the number of operations changes with the size of the input.
+Thus enters the field of time complexity. Even inefficient algorithms can often perform well with small inputs. But as the size of the input `n` increases, the number of operations performed by the algorithm often increases. **We care about how the trend in the number of operations changes with the size of the input**. We also attempt to estimate the worst-case scenario for the number of operations. Big O provides a way to measure and discuss how the worst-case scenario for the number of operations changes with the size of the input.
 
-* Formal definition of Time Complexity:
+* **Formal definition of Time Complexity:**
   * A theoretical measure of the execution of the time an algorithm needs, given the problem size n, which is usually the number of items.
   * Informally, saying some equation f(n) = O(g(n)) means that the actual runtime is less than some constant multiple of g(n). The notation is read, "f of n is big oh of g of n".
 
