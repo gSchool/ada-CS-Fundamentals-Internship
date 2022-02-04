@@ -246,6 +246,9 @@ class TestChallenge(unittest.TestCase):
 
     def test_with_1_3_4_and_target_5(self):
         self.assertEqual(2,minimum_sub_list_length([1, 3, 4], 7))
+
+    def test_with_1_2_3_4_5_and_target_5(self):
+        self.assertEqual(1,minimum_sub_list_length([1, 2, 3, 4, 5], 5))
 ```
 
 ##### !end-tests
