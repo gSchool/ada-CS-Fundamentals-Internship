@@ -287,7 +287,8 @@ Worst case the algorithm will take the following number of iterations given the 
 In general:
 
 * If the size of the input is *divided* by some value with each iteration, the time complexity involves a logarithm with a base equal to the divisor.
-* By far, the most common logarithmic base is 2 because our algorithms often, like binary search, divide the input size by two with each iteration.
+* By far, the most common logarithmic base is 2 because our algorithms often, like binary search, divide the input size by two with each iteration. 
+  * So often we drop the base of the logarithm on the assumption that it is 2.
 
 #### Other Time Complexities
 
