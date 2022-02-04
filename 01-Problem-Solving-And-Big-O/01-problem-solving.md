@@ -33,7 +33,7 @@ Our steps are:
 
 These steps are adapted from [George Pólya](https://en.wikipedia.org/wiki/George_P%C3%B3lya) a 20th century mathematician who wrote a book called [How to solve it](https://www.amazon.com/How-Solve-Aspect-Mathematical-Method/dp/4871878309/ref=sr_1_2?crid=GU4MZKCBYBLU&keywords=How+to+solve+George+P%C3%B3lya&qid=1643750753&sprefix=how+to+solve+george+p%C3%B3lya%2Caps%2C117&sr=8-2) about how to go about solving math problems.
 
-### Sample Problem
+## Sample Problem
 
 We will walk through the steps of solving a problem using the following sample.
 
@@ -101,11 +101,11 @@ Feel free to look up the terms in Google or use other resources.
 ### !end-challenge
 
 
-#### Our Understanding
+### Our Understanding
 
 So in this problem we need to write a function `minimum_sub_list_length` which takes in a list and an integer as parameters and will return the smallest number of contiguous elements, elements adjacent to one another, in the list which add up to the given integer.
 
-### Explore Examples
+## Explore Examples
 
 Next to ensure we understand the problem we need to develop example inputs and determine what the output *should* be for those given inputs.  In industry this might involve drawing up mock-ups of the program and running through scenarios, or asking a customer or a team member to do so.  It could also involve generating sample input data and determining what the output should be.
 
@@ -113,20 +113,20 @@ In general it's most helpful to develop a few examples which will test the bouna
 
 We should consider:
 
-* Positive Nominal Edge Cases
+* **Positive Nominal Edge Cases**
   * In this example we could give a list and number which does contain a contiguous sublist which adds up to the given number.
   * For example:  [1, 2, 3, 4] and 7 would return 2 because [1, 2] adds up to 7.
-* Negative Nominal Edge Case
+* **Negative Nominal Edge Case**
   * In this example we can give a list and a number in which the list does **not** contain a contiguous sublist which adds up to the given number.
   * For example: [1, 2, 3, 4] and 8 would need to return *something* to indicate that there is no contiguous sublist which adds up to the given number.
-* Positive Edge Case
+* **Positive Edge Case**
   * This would be an input on the edge of what is possible which returns a valid length of a contiguous sublist.
   * For example: [1] and 1 would return 1 because [1] is a contiguous sublist which adds up to 1.
-* Negative Edge Case
+* **Negative Edge Case**
   * This would be an input on the edge of what is possible which returns an indication that there is no valid sublist which adds up to the given value.
   * For example: [] and 1 would return *something* to indicate there is no contiguous sublist which adds up to the given number.
 
-#### Hey We Found a Problem!
+### Hey We Found a Problem!
 
 By looking at concrete sample input and output examples, we can see that our problem is not as simple as it seems.  We need to consider cases when the list does not contain a contiguous sublist which adds up to the given number.  We also need to consider cases when the list is empty or contains only one element.
 
@@ -134,7 +134,7 @@ These make **excellent** test cases to use when developing and verifying our cod
 
 For our purposes we will expect the function to return `None` if there is no contiguous sublist which adds up to the given number.  
 
-### Break Down the Problem
+## Break Down the Problem
 
 Big massive problems are *hard*.  As developers we often find it easier to break down the problem into smaller, easier to understand steps.  This also helps us make an application more modular, testable and maintainable.  Clearly not all problems need to be broken up, but most substantial problems in interviews and in the workplace do.
 
@@ -318,7 +318,7 @@ def minimum_sub_list_length(numbers, target):
 
 This solution works and is a relatively direct straight forward approach. This is often called a "brute force" solution.
 
-### Simplify/Refactor
+## Simplify/Refactor
 
 The first big challenge in software development is to produce working code. After code is working however the time comes to simplify or refactor (improve) the solution.
 
@@ -330,11 +330,11 @@ In this technique we slide a "window" across the list and track the sum of the e
 
 The image below illustrates the sliding window technique.
 
-![Sliding Window Example](images/problem-solving__Sliding-Window.svg)
+![Sliding Window Example](images/problem-solving__sliding-window.gif)
 
 *Fig. Sliding Window*
 
-#### Implementing Our Refactor
+### Implementing Our Refactor
 
 In our refactor we can start by creating a window of size 1 from index 0 to index 1.  So our window's `start_index` is `0` and `end_index` is `1`. Our current sum then is the value of the 1st element of the list.
 
