@@ -45,11 +45,13 @@ It should return the minimal length of a contiguous sublist of the given input
 list which adds up to the given integer.
 ```
 
-### Understand The Problem
+## Understand The Problem
 
 When we look at a given problem we need to understand what our code is expected to do.  Without solid understanding of our requirements we might write code which does not fully address the problem or even write a solution to a different problem entirely!
 
-With an industry problem, this may involve talking to "customers," which could be company clients, or members of our or another team which will use the code.  It could also involve talking through requirements with the team or a product manager.  This typically involves writing *user stories* which are a set of requirements for a given problem.  These user stories are often written in a language called *use case* which is a set of requirements for a given use case.  
+### User Stories
+
+With an industry problem, this may involve talking to "customers," which could be company clients, or members of our or another team which will use the code.  It could also involve talking through requirements with the team or a product manager.  This typically involves writing [*user stories*](https://www.atlassian.com/agile/project-management/user-stories) which are a set of requirements for a given problem.  These user stories are often written in a language called *use case* which is a set of requirements for a given use case.  
 
 For example, a user story might be:
 
