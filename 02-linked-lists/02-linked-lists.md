@@ -549,7 +549,7 @@ class ListNode:
         answer = []
         current = self
         while current is not None:
-            answer.append(current.value)
+            answer.append(f"{current.value}")
             current = current.next
         
         return "->".join(answer)
