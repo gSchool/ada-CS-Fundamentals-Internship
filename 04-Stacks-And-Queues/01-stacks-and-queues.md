@@ -298,13 +298,12 @@ What is the Big-O of each method?
 
 ##### !end-answer
 
-<!-- other optional sections -->
 ##### !hint 
 
 How or does the number of instructions executed change as the size of the queue changes?
 
 ##### !end-hint
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+
 ##### !explanation 
 
 Since a fixed number of comamnds are executed no matter the size of the queue, the Big-O of enqueue and dequeue are both O(1)
@@ -384,7 +383,6 @@ def preorder(current_node, list = None):
 2. Write a function to print all integer values in a binary tree in breadth first traversal iteratively. (Hint: Use a Queue.)
 3. Describe how you would implement a Queue using 2 Stacks.
 4. Describe how you would implement a Stack using 2 Queues.
-
 
 ## Summary
 
