@@ -250,8 +250,23 @@ Method dequeue
 end method
 ```
 
+### !callout-secondary
+
+## A Use for Modulus
+
+Remember that the modulus operator `%` returns the remainder of a division.  For example `5 % 2` returns `1` because `5` is the remainder of `5/2 = 2`.
+
+We could use this to implement the circular buffer.
+
+For enqueue we could simplify the function with this line:
+
+```python
+rear = (rear + 1) % size
+```
+
+### !end-callout
+
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
