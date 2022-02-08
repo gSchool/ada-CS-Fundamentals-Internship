@@ -4,7 +4,7 @@
 
 ## Learning Goals
 
-By the end of this lesson you should be able to:
+By the end of this lesson we should be able to:
 
 - Describe the Stack & Queue data structures
 - Explain the concept of an Abstract Data Type (ADT)
