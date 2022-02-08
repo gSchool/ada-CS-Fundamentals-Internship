@@ -67,11 +67,7 @@ You could later change the implementation of Stack to use an Array, and the user
 **Stack ADT**
 ![Stack ADT](images/stackADT.png)
 
-**Exercise**:  Implement a `top` method which returns the top of the stack without changing the stack.
-
-**Exercise**:  Write a method which takes a string as an argument.  Return the string reversed using a Stack.
-
-### The Function Stack
+### The Call Stack
 
 As methods get called in an application, the system stores the current instruction addresses, local variables etc on a stack known as the _system call stack_.  Then when a method ends, the topmost method is popped off the stack allowing the system to resume execution.
 
@@ -177,13 +173,12 @@ What would be the Big-O here of enqueue and dequeue?
 
 ##### !end-answer
 
-<!-- other optional sections -->
 ##### !hint
 
 Do all LinkedList implementation have the same time complexity for add_last and remove_first?
 
 ##### !end-hint
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+
 ##### !explanation
 
 If the Linked List has a tail reference, and is a doubly linked list, then both enqueue and dequeue can be done in O(1) time.  If there is no tail reference then enqueue should perform in O(n) time.
