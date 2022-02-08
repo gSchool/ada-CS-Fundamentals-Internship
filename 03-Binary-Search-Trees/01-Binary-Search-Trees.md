@@ -23,8 +23,6 @@ Students should be able to:
 - [Slide Deck](https://docs.google.com/presentation/d/1Fj0deIUswGZ3ooJMpgVUqPEaWHKTkQ1w2Ci-yf8v66M/edit#slide=id.p)
 - [BST Exercise](https://github.com/Ada-C16/tree-practice)
 
-## Vocabulary
-
 ## Vocabulary and Synonyms
 
 | Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
@@ -91,7 +89,12 @@ Likewise we could use a Linked List. We can also examine how well Linked Lists p
 
 **Insertion**  - O(n)
 
-Maintaining a list in order requires Ada's application to **find** the location in the list to do the insertion.  So while adjusting the links to insert a new node in a Linked List is O(1), finding the place to do the insertion would be O(n). So while the process of inserting a new node between two existing nodes in a linked list is O(1), finding the location to insert into is an O(n) operation.
+Maintaining a list in order requires Ada's application to:
+
+1. **find** the location in the list to do the insertion - O(n)
+1. Adjusting links to insert the new node - O(1)
+
+While adjusting the links to insert a new node in a Linked List is O(1), finding the place to do the insertion would be O(n). So while the process of inserting a new node between two existing nodes in a linked list very fast, finding the location to insert into is not resulting in an overall O(n) operation.
 
 **Deletion** - O(n)
 
@@ -105,7 +108,7 @@ Because we cannot perform a binary search on a linked list, we must instead perf
 
 To convert a linked list into a string or other data type suitable to write to another device we need to iterate through the list and access the value of each node. To visit each node requires O(n) operations and thus linear runtime.
 
-### The Need
+## The Need
 
 We want to maintain an ordered collection of data and outperform both arrays and linked lists in terms of insertion, deletion, searching and serialization, if possible.
 
@@ -124,6 +127,8 @@ Our Linked Lists are a linear structure with each node linking to the next node 
 
 ![Linked List Diagram](images/linked-list-vocab.png)
 
+*Fig. 1. Linked List Diagram*
+
 Our Node class from the LinkedList topic, which will be referred to as `ListNode`, looked like this:
 
 ```python
@@ -140,6 +145,7 @@ The `ListNode` class was used in a larger `LinkedList` class which maintained a 
 In a _Binary Search Tree_ each node's left pointer points to all elements smaller than or equal to the node's key.  The right pointer points to all nodes greater than the given node's key.   Each node can refer to other nodes.  A Tree is hierarchical with certain nodes acting as parents to others.  A node above another is the node's _parent_.  The node(s) below a node are it's _children_.  The topmost node in a tree is known as the _root_.  The nodes with no children are called _leaves_.
 
 In a Binary Search Tree:
+
 - Nodes with values less than any node are stored to the **left** of that node.
 - Nodes with values greater than any node are stored to the **right** of that node. 
 
@@ -189,6 +195,7 @@ Method add:
 ```
 
 ![Tree Insert operation visualization](./images/Binary-search-trees__insert-into-tree.gif)
+
 _Fig.  Visualization of inserting a value into a BST_
 
 You can experiment with this in the [Binary Tree Visualizer](https://visualgo.net/en/bst)
@@ -246,6 +253,7 @@ If the value is greater than the root
 ### Finding A Node With Python
 
 ![Finding a 29 in a tree visualization](./images/Binary-Search-Trees__find-value.gif)
+
 _Fig.  A visualization of finding a value in a BST._
 
 You can implement the `find` method in Python as follows:
@@ -882,12 +890,6 @@ Computer Science was initially pioneered in western cultures where people read l
 
 ### !end-callout
 
-### Binary Expression Trees
-
-There is also a kind of tree called a [Binary Expression Tree](https://www.geeksforgeeks.org/expression-tree/), which is a type of tree used to represent an arithmetic formula.  In order traversals allow you to present the formula in the traditional manner while the preorder (prefix) and postorder (postifx) traversals can make the order more clear to machines.
-
-![binary expression tree](images/binary-expression-tree.png)
-
 ## Finding the Height of a Binary Search Tree
 
 To find the height of a binary search tree you can do the following:
@@ -906,6 +908,11 @@ This is a recursive solution because it treats the left and right sides of a nod
 In this lesson we looked at the advantages a Binary Search Tree provides over a sorted array or LinkedList.  Binary Search trees provide an O(log n) time to add, remove and find elements because searching a tree performs a binary search.  This performance however depends on the tree being **balanced**.  A balanced tree has subtrees of height within 1 of each other.
 
 We also examined different methods to traverse a Tree.  Unlike a LinkedList where there is only one method to traverse a tree has multiple ways to traverse.
+
+In short we want to use a Binary Search Tree When:
+
+- Maintaining order is important
+- We want to maintain efficient search, insertion and deletion time complexities
 
 ## Big-O Comparison
 
