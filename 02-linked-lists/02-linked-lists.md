@@ -524,7 +524,10 @@ void removeFirst(struct node **headRef) {
 
 Write a `sorted_merge()` function that takes two lists, each of which is sorted in increasing order, and merges the two together into one list which is in increasing order. `sorted_merge()` should return the new list. The new list should be made by splicing together the nodes of the first two lists.
 
-For example if the first linked list `a` is 5->13->15 and the other linked list `b` is 6->9->20, then `sorted_merge()` should return a reference to the head node of the merged list 5->6->9->13->15->20.
+Example input and output:
+| input | output |
+|--|--|
+|`list_a = 5->13->15` <br> `list_b = 6->9->20` | `5->6->9->13->15->20`|
 
 There are many cases to deal with: 
 
