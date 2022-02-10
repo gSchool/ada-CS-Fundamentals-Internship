@@ -8,7 +8,7 @@ By the end of this lesson we should be able to:
 
 ## Introduction
 
-We have all felt it.  We sit down in front of a programming problem and... do not know what to do...  How do we approach solving a new, knotty problem?  This brief lesson describes  a systematic approach to problem solving.  We should notice a similarity to Problem Solving Exercises in the classroom component of Ada.  In followup lessons we will then practice using Big-O notation to compare multiple approaches to the same problem.
+We have all felt it.  We sit down in front of a programming problem and... do not know what to do...  How do we approach solving a new, knotty problem?  This lesson describes  a systematic approach to problem solving.  We should notice a similarity to Problem Solving Exercises in the classroom component of Ada.  In followup lessons we will then practice using Big-O notation to compare multiple approaches to the same problem.
 
 ## Vocabulary and Synonyms
 
