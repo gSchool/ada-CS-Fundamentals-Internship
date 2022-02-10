@@ -18,7 +18,6 @@ By the end of this lesson you should be able to:
 
 ## Video Lecture & Lesson
 
-- [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=0a1234b3-7734-4102-9313-ada2000f5f9f)
 - [Slide Deck](https://docs.google.com/presentation/d/1legEjSSNuLSagYaHxco_ZaO1oXzDUXXX-5ifqWOc2KE/edit#slide=id.p7)
 - [Exercises](https://github.com/Ada-C16/hash-practice)
 
@@ -126,7 +125,6 @@ So if:
 **Exercise** Assuming `A` is 0.71 and `m` = 100, answer the following
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -164,9 +162,10 @@ With
 
 `h(k)` = `floor(m * (k * A mod 1))` = `floor(100 * (15 * 0.71 mod 1))`
 
+Notice the `floor` you **must** round down to the nearest whole number.
+
 ##### !end-hint
 
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
 `floor(100 * (15 * 0.71 mod 1))` = 64
@@ -178,7 +177,6 @@ With
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -206,7 +204,6 @@ Answer with a number
 
 ##### !end-answer
 
-<!-- other optional sections -->
 ##### !hint
 
 With
@@ -218,7 +215,6 @@ With
 
 ##### !end-hint
 
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
 `h(k)` = `k % m = 15 % 100` = 15
@@ -228,7 +224,6 @@ With
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
-
 
 You are **not** expected to memorize these methods, but rather be able to see how they work to identify a bucket to find values in a hash table.
 
@@ -247,7 +242,6 @@ You can read about how Python Dictionaries work on [this article](http://thepyth
 
 All general-purpose hashing functions will encounter collisions.  When two keys are mapped to the same bucket something has to happen to manage it.  We will look at three methods: chaining, linear probing, quadratic probing and rehashing.
 
-<!-- available callout types: info, success, warning, danger, secondary, star  -->
 ### !callout-info
 
 ## Python Dictionary Source Code
@@ -309,7 +303,6 @@ Hash tables are a common, practical solution to a variety of programming problem
 Take a look at the problem below and answer:
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -338,13 +331,12 @@ Would a hash table be a good approach here?  Why or why not?
 
 ##### !end-placeholder
 
-<!-- other optional sections -->
 ##### !hint
 
 To solve this problem we need to store each letter and the number of occurences.  How does a hash compare to a linked list or other implementation?
 
 ##### !end-hint
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+
 ##### !explanation
 
  - To solve this problem we need to store each letter and the number of occurences. <br />
@@ -367,7 +359,6 @@ To solve this problem we need to store each letter and the number of occurences.
 You will review the following with a partner.
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -389,10 +380,6 @@ Clarifying questions
 
 ##### !end-placeholder
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
 
 ### !end-challenge
 
@@ -619,10 +606,6 @@ Hash tables are excellent for looking up data from a key.  Binary search trees a
 
 So, which would you use in these situations?
 
-
-<!-- source: http://www.cs.cmu.edu/~guna/15-123S11/Lectures/Lecture17.pdf -->
-<br />
-
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
 
@@ -771,10 +754,9 @@ Hashes are one of the most practically useful data structures you will encounter
 
 There are many ways to structure a hash table.  One of the most common is simple chaining with each element of the internal array or _bucket_ referencing the beginning of a linked list.  Alternative solutions include _dynamic arrays_ which use arrays to store the elements in each bucket and open addressing using either _linear probing_, _quadratic probing_ or _double hashing_.  It's also important to recognize that a hash table depends on **unique** keys.  If the keys for items are not unique there is no way to generate a unique hash result.
 
+![Big O Cheatsheet](images/big-o-cheatsheet.png)
 
 <!-- Image from: https://www.bigocheatsheet.com/ -->
-
-
 
 ## Resources
 
