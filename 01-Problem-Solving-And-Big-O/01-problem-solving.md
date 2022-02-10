@@ -8,7 +8,7 @@ By the end of this lesson we should be able to:
 
 ## Introduction
 
-We have all felt it.  We sit down in front of a programming problem and... do not know what to do...  How do we approach solving a new, knotty problem?  This brief lesson describes  a systematic approach to problem solving.  We should notice a similarity to Problem Solving Exercises in the classroom component of Ada.  In followup lessons we will then practice using Big-O notation to compare multiple approaches to the same problem.
+We have all felt it.  We sit down in front of a programming problem and... do not know what to do...  How do we approach solving a new, knotty problem?  This lesson describes  a systematic approach to problem solving.  We should notice a similarity to Problem Solving Exercises in the classroom component of Ada.  In followup lessons we will then practice using Big-O notation to compare multiple approaches to the same problem.
 
 ## Vocabulary and Synonyms
 
@@ -21,7 +21,7 @@ User Story | User stories are a technique to gather gather requirements written 
 
 ## Steps in Problem Solving
 
-When we look at programming problems, either interview problems, or challenges encountered on the job we can approach the task systematically.  We will examine one particular strategy which involves first trying to ensure we understand the problem, then breaking down the larger problem into smaller, more easily approached steps solving each one in turn.  Then we can examine our solution, evaluate how effective it is and attempt to improve upon it.
+When we look at programming problems, either interview problems, or challenges encountered on the job, we can approach the task systematically.  We will examine one particular strategy which involves first trying to ensure we understand the problem, then breaking down the larger problem into smaller, more approachable steps, solving each one in turn.  Then we will examine our solution, evaluate how effective it is and attempt to improve upon it.
 
 Our steps are:
 
@@ -35,15 +35,13 @@ These steps are adapted from [George Pólya](https://en.wikipedia.org/wiki/Georg
 
 ## Sample Problem
 
-We will walk through the steps of solving a problem using the following sample.
+We will walk through the steps of solving a problem using the following sample problem:
 
-```
-Write a function called minimum_sub_list_length that takes in a list of positive 
-numbers and a positive integer.  
+*Write a function called `minimum_sub_list_length` that takes in a list of positive 
+numbers and a positive integer.*  
 
-It should return the minimal length of a contiguous sublist of the given input 
-list which adds up to the given integer.
-```
+*It should return the minimum length of a contiguous sublist of the given input 
+list which adds up to the given integer.*
 
 ## Understand The Problem
 
