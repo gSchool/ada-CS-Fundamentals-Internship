@@ -313,7 +313,7 @@ The rules with regard to space complexity are:
 * Lists take up O(n) space where n is the list length
 * Dictionaries take up O(n) space where n is the number of key-value pairs
 
-So for example in the following function:
+Consider the following function:
 
 ```py
 def sum_up(numbers):
