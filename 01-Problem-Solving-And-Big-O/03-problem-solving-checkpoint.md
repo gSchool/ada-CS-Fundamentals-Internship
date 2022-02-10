@@ -491,7 +491,7 @@ def is_nice_string(string):
             return False
     return True
 
-def longestNiceSubstring(s: str) -> str:
+def longest_nice_substring(s: str) -> str:
     longest_substring = ""
     for i in range(len(s)):
         for j in range(i+1,len(s)):
