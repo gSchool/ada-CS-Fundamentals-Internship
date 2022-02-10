@@ -113,7 +113,7 @@ Feel free to look up the terms in [Google](https://www.google.com/) or use other
 
 So in this problem we need to write a function `minimum_sub_list_length` which takes in a list and an integer as parameters and will return the smallest number of contiguous elements, elements adjacent to one another, in the list which add up to the given integer.
 
-## Explore Examples
+## Explore Example Input/Output
 
 Next to ensure we understand the problem we need to develop example inputs and determine what the output *should* be for those given inputs.  In industry this might involve drawing up mock-ups of the program and running through scenarios, or asking a customer or a team member to do so.  It could also involve generating sample input data and determining what the output should be.
 
@@ -360,7 +360,7 @@ We track the following values:
 Then we can repeat this algorithm:
 
 1.  If the current sum is equal to the target, we have found a contiguous sublist which adds up to target, and if it is the smallest contiguous sublist we have found so far, we update the minimum length.
-  * We can also advance the window by incrementing the `start_index` by one.
+      * We can also advance the window by incrementing the `start_index` by one.
 1.  If the current sum is greater than or equal to the target we can decrease the window size by adding one to the start index of the window.
 1.  If the current sum is less than the target we can increase the window size by adding one to the end index of the window.
 1.  We will repeat this algorithm until the end index has passed the end of the list.
@@ -409,7 +409,7 @@ Then we can repeat this algorithm:
   ```
 </details>
 
-This solution now makes only one pass through the list meaning as the input array grows, the solution will perform better compared to our original solution.
+This solution now makes only one pass through the list, meaning as the input array grows, the solution will perform better compared to our original solution.
 
 ## Summary
 
