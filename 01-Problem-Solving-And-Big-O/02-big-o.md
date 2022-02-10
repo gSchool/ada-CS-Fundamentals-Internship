@@ -19,6 +19,8 @@ Write a function to add up all the numbers from 1 to n.
 
 We could solve the problem by iterating through the numbers from 1 to n and adding them all up.
 
+*Code snippet: Using a loop*
+
 ```python
 def add_from_1_to_n(n):
     total = 0
@@ -27,15 +29,15 @@ def add_from_1_to_n(n):
     
     return total
 ```
-*Code snippet: Using a loop*
 
 Or we could do arithmetic to solve the problem:
+
+*Code snippet: Using arithmetic*
 
 ```python
 def add_from_1_to_n(n):
     return (n * (n + 1)) / 2
 ```
-*Code snippet: Using arithmetic*
 
 <details style="max-width: 700px; margin: auto;">
   <summary>How does the 2nd solution work?</summary>
