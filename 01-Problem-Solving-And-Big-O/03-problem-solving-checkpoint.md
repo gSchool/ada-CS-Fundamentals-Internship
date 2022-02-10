@@ -286,6 +286,8 @@ def subtotals_list(numbers):
 
 Consider the following solutions to a problem.  Which one is the best?
 
+*Code Sample: Solution 1*
+
 ```py
 def isAnagram(self, s: str, t: str) -> bool:
     s_list = []
@@ -301,7 +303,8 @@ def isAnagram(self, s: str, t: str) -> bool:
     
     return len(t_list) == 0
 ```
-*Code Sample: Solution 1*
+
+*Code Sample: Solution 2*
 
 ```py
 def isAnagram(self, s: str, t: str) -> bool:
@@ -328,7 +331,6 @@ def isAnagram(self, s: str, t: str) -> bool:
     
     return True
 ```
-*Code Sample: Solution 2*
 
 ##### !end-question
 
