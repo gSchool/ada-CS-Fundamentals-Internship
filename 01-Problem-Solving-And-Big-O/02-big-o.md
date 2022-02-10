@@ -275,7 +275,7 @@ If the input is eight elements [1, 2, 3, 4, 5, 6, 7, 8] and `value` is 2:
 
 Notice with each iteration the size of the input involved in the search (`low` to `high`) is halved. So worst-case a list of 8 items would take 3 iterations to find the value. We could double the size of `numbers` to 16 items and it would only take 4 iteration to find the value and for 32 items it would only take 5 iterations. Thus while the function *does* take longer as the input size increases it does not increase very rapidly.
 
-Worst case the algorithm will take the following number of iterations given the input of size `n`.
+In the worst case scenario, the algorithm will take the following number of iterations given the input of size `n`:
 
 |   n	|   Number of iterations	|
 |---	|---	|
