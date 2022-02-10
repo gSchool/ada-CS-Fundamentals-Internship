@@ -11,21 +11,13 @@ Standards:
         Type: Lesson
         UID: d75af4a1-ff7d-46b9-988d-8fcda5d75bc5
         Path: /00-about-thursdays-at-ada/about-thursdays-at-ada.md
- 
-  -
-    Title: Thursdays at Ada Norms
-    Description: Expectations for our sessions
-    UID: 88fccfa1-fe50-4434-8834-6efdf422f247
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
       -
         Type: Lesson
-        UID: 9dda64ff-9362-46f2-8b09-d5843c7af04c
-        Path: /norms/overview.md
+        UID: bcc6309e-3453-4aea-9b22-ef8e09c2b09e
+        Path: /00-about-thursdays-at-ada/norms.md
   -
-    Title: Code Reviews
-    Description: Code Reviews
+    Title: Approaching Problems
+    Description: Problem Solving, Big O Notation
     UID: 9141935e-3d6b-4f83-9eef-eca929c19ad6
     SuccessCriteria:
       - success criteria
@@ -33,11 +25,15 @@ Standards:
       -
         Type: Lesson
         UID: 213deeac-736c-42e9-a774-1d904d87991e
-        Path: /01-Code-Reviews/01-code-reviews.md
+        Path: /01-Problem-Solving-And-Big-O/01-problem-solving.md
+      -
+        Type: Lesson
+        UID: 50bd3c42-38f2-461b-a832-9f79fa501d62
+        Path: /01-Problem-Solving-And-Big-O/02-big-o.md
       -
         Type: Checkpoint
-        UID: 8acf7333-842f-4c09-98ff-379f5163f27f
-        Path: /01-Code-Reviews/02-code-reviews-checkpoint.md
+        UID: 25f55d56-003a-4af1-b968-4bfc07888ad7
+        Path: /01-Problem-Solving-And-Big-O/03-problem-solving-checkpoint.md
   -
   
     Title: Linked Lists
