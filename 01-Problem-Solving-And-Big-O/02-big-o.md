@@ -406,7 +406,7 @@ Because the function only creates 3 "primitive" variables no matter the size of 
 
 **Note on Recursion**
 
-When we look at recursive functions, we also need to consider the call stack as part of the space complexity. For example the following function prints all the numbers from 1 to n, but because it makes another function call for each number from 1 to n it requires `O(n)` space.
+When we look at recursive functions, we also need to consider the call stack as part of the space complexity. For example the following function prints all the numbers from 1 to n, but because it makes another function call for each number from 1 to n, it requires `O(n)` space.
 
 ```py
 def count_up(n):
