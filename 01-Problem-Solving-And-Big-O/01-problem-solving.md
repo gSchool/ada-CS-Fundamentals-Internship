@@ -35,15 +35,13 @@ These steps are adapted from [George Pólya](https://en.wikipedia.org/wiki/Georg
 
 ## Sample Problem
 
-We will walk through the steps of solving a problem using the following sample.
+We will walk through the steps of solving a problem using the following sample problem:
 
-```
-Write a function called minimum_sub_list_length that takes in a list of positive 
-numbers and a positive integer.  
+*Write a function called `minimum_sub_list_length` that takes in a list of positive 
+numbers and a positive integer.*  
 
-It should return the minimal length of a contiguous sublist of the given input 
-list which adds up to the given integer.
-```
+*It should return the minimum length of a contiguous sublist of the given input 
+list which adds up to the given integer.*
 
 ## Understand The Problem
 
