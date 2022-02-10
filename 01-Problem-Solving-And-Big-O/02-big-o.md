@@ -324,7 +324,7 @@ def sum_up(numbers):
     return total
 ```
 
-This function requires 2 numeric variables to store the total and the current number. We can say that the function requires 2 i.e. *constant space* to run or `O(1)`. The amount of memory used does not change as the length of `numbers` increases.
+This function requires 2 numeric variables to store the total and the current number. We can say that the function requires 2 (i.e. *constant space*) to run or `O(1)`. The amount of memory used does not change as the length of `numbers` increases.
 
 On the other hand the following function requires a list to store double all the numbers.
 
