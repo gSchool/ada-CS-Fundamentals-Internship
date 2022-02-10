@@ -512,19 +512,19 @@ from main import *
 
 class TestPython1(unittest.TestCase):
     def test_example_1(self):
-      self.assertEqual("aAa",longestNiceSubstring("YazaAay"))
+      self.assertEqual("aAa",longest_nice_substring("YazaAay"))
 
     def test_example_2(self):
-      self.assertEqual("Bb",longestNiceSubstring("Bb"))
+      self.assertEqual("Bb",longest_nice_substring("Bb"))
 
     def test_example_3(self):
-      self.assertEqual("",longestNiceSubstring("c"))
+      self.assertEqual("",longest_nice_substring("c"))
 
     def test_example_empty_string(self):
-        self.assertEqual("",longestNiceSubstring(""))
+        self.assertEqual("",longest_nice_substring(""))
 
     def test_example_AaBbxcCdDaA(self):
-        self.assertEqual("cCdDaA",longestNiceSubstring("AaBbxcCdDaA"))
+        self.assertEqual("cCdDaA",longest_nice_substring("AaBbxcCdDaA"))
 
 ```
 
