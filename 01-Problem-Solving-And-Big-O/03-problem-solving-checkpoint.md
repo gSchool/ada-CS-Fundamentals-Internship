@@ -431,7 +431,7 @@ Does the time/space complexity change with your solution?
 
 ### !end-challenge
 
-## Bonus Exercise!
+## Optional Exercise!
 
 ### !challenge
 
@@ -451,8 +451,6 @@ A string s is nice if, for every letter of the alphabet that s contains, it appe
 Given a string `s`, return the longest contiguous substring of `s` that is nice. If there are multiple, return the substring of the earliest occurrence. 
 
 If there are none, return an empty string.
-
- 
 
 **Example 1:**
 
