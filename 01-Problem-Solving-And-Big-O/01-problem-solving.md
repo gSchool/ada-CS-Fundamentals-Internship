@@ -123,18 +123,17 @@ In general it's most helpful to develop a few examples which will test the bouna
 
 We should consider:
 
-* **Positive Nominal Edge Cases**
+* **Nominal Edge Cases**
   * In this example we could give a list and number which does contain a contiguous sublist which adds up to the given number.
   * For example:  [1, 2, 3, 4] and 7 would return 2 because [1, 2] adds up to 7.
-* **Negative Nominal Edge Case**
+* **Negative Edge Case**
   * In this example we can give a list and a number in which the list does **not** contain a contiguous sublist which adds up to the given number.
-  * For example: [1, 2, 3, 4] and 8 would need to return *something* to indicate that there is no contiguous sublist which adds up to the given number.
+    * For example: [1, 2, 3, 4] and 8 would need to return *something* to indicate that there is no contiguous sublist which adds up to the given number.
+  * Another Negative Edge Case input would be an array and given number for which there is no valid sublist which adds up to the given value.
+    * For example: [6, 7] and 1 would return *something* to indicate there is no contiguous sublist which adds up to the given number.
 * **Positive Edge Case**
   * This would be an input on the edge of what is possible which returns a valid length of a contiguous sublist.
   * For example: [1] and 1 would return 1 because [1] is a contiguous sublist which adds up to 1.
-* **Negative Edge Case**
-  * This would be an input on the edge of what is possible which returns an indication that there is no valid sublist which adds up to the given value.
-  * For example: [] and 1 would return *something* to indicate there is no contiguous sublist which adds up to the given number.
 
 ### Hey We Found a Problem!
 
