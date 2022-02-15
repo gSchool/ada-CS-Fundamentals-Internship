@@ -276,7 +276,7 @@ The first solution, as we discussed in the classroom portion of Ada, is to make 
 
 ### Linear Probing
 
-Chaining required a secondary data structure in the array.  Linear probling is instead rather simple.  When inserting a new element into the hash table, the hash function will return with an index number.  If the bucket at that index number is occupied (there's a collision), then the hash table checks the next element in the array, and the next and so on until an empty bucket is found.  
+Chaining required a secondary data structure in the array.  Linear probling is instead rather simple.  When inserting a new element into the hash table, the hash function will return with an index number.  If the bucket at that index number is occupied (there's a collision), then the hash table checks the next element in the array, and the next and so on until an empty bucket is found.  Incidentally, this is how Python dictionaries handle collisions.
 
 ![Linear Probing](images/linear-probing.png)
 
