@@ -620,9 +620,6 @@ A list of candidate records that need to be stored so that you can find the max 
 
 ##### !end-answer
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
 Hash tables are not good for maintaining ordered data.  Instead, a binary search tree (sorted by test scores) would serve better.
@@ -634,7 +631,6 @@ Hash tables are not good for maintaining ordered data.  Instead, a binary search
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -667,9 +663,6 @@ Fedex needs to provide quick access for customers to check the status of their p
 
 ##### !end-answer
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
 Since the tracking numbers are distinct and order is not important, a hash table makes the most sense because of its quick lookup time.
@@ -681,7 +674,6 @@ Since the tracking numbers are distinct and order is not important, a hash table
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -714,9 +706,6 @@ Postgres needs to keep track of fields in a table to output sorted data.  Items 
 
 ##### !end-answer
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
 Since order is important, maintaining a set of binary search trees would make a great deal of sense.  Postgres doesn't actually use a binary search tree, but it does use a similarly ordered data structure.
@@ -726,7 +715,6 @@ Since order is important, maintaining a set of binary search trees would make a 
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
-
 
 ## Summary
 
