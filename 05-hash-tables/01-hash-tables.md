@@ -66,7 +66,14 @@ Hash tables perform relatively well in terms of Big-O
 
 [![Big-O Cheatsheet](images/big-o-cheatsheet.png)](https://www.bigocheatsheet.com/#Common%20Data%20Structure%20Operations)
 
-Notice the linear worst-case performance of a hash table.  We will address this when we discuss the hashing function.
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
+
+## Notice The Linear Worst-Case Time Complexity
+
+This is because a hash table cannot *absolutely guarantee* an O(1) lookup time. However with a good hash function the worst-case runtime becomes extremely rare resulting in a *practical* time complexity of O(1) for lookup operations. We will address this when we discuss the hashing function.
+
+### !end-callout
 
 ## Hashing Functions
 
