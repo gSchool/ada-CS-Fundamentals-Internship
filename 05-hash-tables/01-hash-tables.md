@@ -578,7 +578,11 @@ def frequency_sort(s):
 
 ## Array, Linked List, Binary Search Tree or Hash Table
 
-Hash tables are excellent for looking up data from a key.  Binary search trees are excellent data structures for maintaining items in order while linked lists provide quick access to the front and rear and maintain a specific order.
+So when do you use each data structure?
+
+* Hash tables are excellent for looking up data from a unique key
+* Binary search trees are excellent data structures for maintaining items in order
+* Linked lists provide quick access to the front and rear and maintain a specific order
 
 So, which would you use in these situations?
 
