@@ -404,7 +404,6 @@ Clarifying questions
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -426,17 +425,11 @@ Assumptions
 
 ##### !end-placeholder
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -458,49 +451,14 @@ Sample input-output
 
 ##### !end-placeholder
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
-
-### !challenge
-
-* type: paragraph
-* id: 24eb6a09-5b98-429d-a873-ed9cd9c2630b
-* title: Subproblems
-* points: 1
-* topics: hash-table
-
-##### !question
-
-Break down the problem into at least 2 subproblems, more if you can.
-
-##### !end-question
-
-##### !placeholder
-
-Subproblems
-
-##### !end-placeholder
-
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
-### !end-challenge
-
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
