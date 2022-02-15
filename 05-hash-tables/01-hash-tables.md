@@ -304,11 +304,11 @@ Quadratic probing makes clustering less likely, although not impossible and it p
 
 A third solution to collision is to simply have a secondary hash function.  If there is a collision, then use the secondary hash function to find another bucket to use.  There will however be occasions where both hash functions produce a collision and then another collision resolution scheme would need to be used, like chaining or linear probing.  If the _load factor_ - the ratio of the number of elements to the number of buckets in the hash table - is low, then this occurs rarely, and the seconary hash function helps avoid clustering.  As a fun side-note, when you chain several hash functions together it's called [Cuckoo Hashing](https://en.wikipedia.org/wiki/Cuckoo_hashing)
 
-## Ruby & Hash Tables
+## Python Dictionaries
 
-As stated, Ruby uses the MurmurHash hashing algorithm internally.  It also uses the chaining method to resolve collisions.  To better guarantee performance, Ruby hashes also monitor the _density_ of the hash table.  This means it monitors the maximum number of records chained in a given bucket.  For example if the largest linked list in the hash table was of length 4, then the density would be 4.  Ruby sets a maximum density of 5.  When that density is exceeded, Ruby enlarges the internal array and recalculates the hash, placing the elements into new indexes.  
+Python uses *[open addressing*](https://stackoverflow.com/questions/21595048/how-python-dict-stores-key-value-when-collision-occurs#:~:text=Python%20dict%20uses%20open%20addressing,1)%20lookup%20by%20index))*, i.e. *linear probing* to handle collisions. When the dictionary's internal array is 2/3 full, it will double the size of the array and rehash all of the elements ensuring that the elements are spread evenly over the new array and making the internal array less densely populated.
 
-By limiting the density of the hash, Ruby guarantees the O(1) lookup time for adding elements to the hash.
+By limiting the density of the hash, Python guarantees the O(1) lookup time for adding elements to the hash.
 
 ## When To Use Hash Tables
 
