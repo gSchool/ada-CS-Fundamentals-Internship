@@ -4,7 +4,7 @@
 
 ## Learning Goals
 
-By the end of this lesson you should be able to:
+By the end of this lesson we should be able to:
 
 - Describe the Stack & Queue data structures
 - Explain the concept of an Abstract Data Type (ADT)
@@ -67,11 +67,7 @@ You could later change the implementation of Stack to use an Array, and the user
 **Stack ADT**
 ![Stack ADT](images/stackADT.png)
 
-**Exercise**:  Implement a `top` method which returns the top of the stack without changing the stack.
-
-**Exercise**:  Write a method which takes a string as an argument.  Return the string reversed using a Stack.
-
-### The Function Stack
+### The Call Stack
 
 As methods get called in an application, the system stores the current instruction addresses, local variables etc on a stack known as the _system call stack_.  Then when a method ends, the topmost method is popped off the stack allowing the system to resume execution.
 
@@ -177,13 +173,12 @@ What would be the Big-O here of enqueue and dequeue?
 
 ##### !end-answer
 
-<!-- other optional sections -->
 ##### !hint
 
 Do all LinkedList implementation have the same time complexity for add_last and remove_first?
 
 ##### !end-hint
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+
 ##### !explanation
 
 If the Linked List has a tail reference, and is a doubly linked list, then both enqueue and dequeue can be done in O(1) time.  If there is no tail reference then enqueue should perform in O(n) time.
@@ -255,8 +250,23 @@ Method dequeue
 end method
 ```
 
+### !callout-secondary
+
+## A Use for Modulus
+
+Remember that the modulus operator `%` returns the remainder of a division.  For example `5 % 2` returns `1` because `5` is the remainder of `5/2 = 2`.
+
+We could use this to implement the circular buffer.
+
+For enqueue we could simplify the function with this line:
+
+```python
+rear = (rear + 1) % size
+```
+
+### !end-callout
+
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -288,13 +298,12 @@ What is the Big-O of each method?
 
 ##### !end-answer
 
-<!-- other optional sections -->
 ##### !hint 
 
 How or does the number of instructions executed change as the size of the queue changes?
 
 ##### !end-hint
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+
 ##### !explanation 
 
 Since a fixed number of comamnds are executed no matter the size of the queue, the Big-O of enqueue and dequeue are both O(1)
@@ -374,7 +383,6 @@ def preorder(current_node, list = None):
 2. Write a function to print all integer values in a binary tree in breadth first traversal iteratively. (Hint: Use a Queue.)
 3. Describe how you would implement a Queue using 2 Stacks.
 4. Describe how you would implement a Stack using 2 Queues.
-
 
 ## Summary
 
