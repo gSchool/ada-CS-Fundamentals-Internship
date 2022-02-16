@@ -206,7 +206,7 @@ To delete a node from a binary search tree we must first find the node to delete
 
 ```
 Method delete(current_root, key):
-    if the root is nil return nil
+    if the root is none return none
   
     Otherwise, recur down the tree
         if the key is less than the root's key delete the node in the left subtree.
