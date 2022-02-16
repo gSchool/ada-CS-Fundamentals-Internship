@@ -219,7 +219,7 @@ Method delete(current_root, key):
         
             if the left child is nil
                 return current_root.right
-            otherwise if current_root.right == null
+            otherwise if current_root.right == none
                 return current_root.left;
 
             Otherwise find the minimum node in the right subtree
