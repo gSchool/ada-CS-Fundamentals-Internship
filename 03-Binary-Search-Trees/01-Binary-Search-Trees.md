@@ -217,7 +217,7 @@ Method delete(current_root, key):
 
         Otherwise if the current root is the node to be deleted
         
-            if the left child is nil
+            if the left child is none
                 return current_root.right
             otherwise if current_root.right == none
                 return current_root.left;
