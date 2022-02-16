@@ -332,7 +332,7 @@ On the other hand this is an unbalanced tree.
 
 ## Tree Balance & Time Complexity
 
-Given the Binary Search tree methods we have illustrated here.  If all the nodes were inserted in order, the worst case time complexity would be O(n) because every node except the root would be the left or right child of another node.  The tree would be **unbalanced**.  There are more advanced algorithms that can be used to create self-balancing trees.
+Assume that we are using the Binary Search tree methods as we have described them here.  If all the nodes were inserted in order, the worst case time complexity would be O(n) because each node except the root would be the left child of the previous nodes if the nodes were inserted in descending order, or the right child of the previous node if they were inserted in ascending order.  The tree would be **unbalanced**.  There are more advanced algorithms that can be used to create self-balancing trees.
 
 * If a tree is unbalanced it's time complexities for Insertion, Deletion, and searching approach O(n).
 * If a tree is balanced it's time complexities for Insertion, Deletion, and searching are O(log n).
