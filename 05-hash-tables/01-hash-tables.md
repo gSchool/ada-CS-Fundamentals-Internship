@@ -169,7 +169,7 @@ With
 
 `h(k)` = `floor(m * (k * A mod 1))` = `floor(100 * (15 * 0.71 mod 1))`
 
-Notice the `floor` you **must** round down to the nearest whole number.
+Notice the `floor`.  You **must** round down to the nearest whole number.
 
 ##### !end-hint
 
