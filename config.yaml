@@ -31,6 +31,14 @@ Standards:
         UID: 50bd3c42-38f2-461b-a832-9f79fa501d62
         Path: /01-Problem-Solving-And-Big-O/02-big-o.md
       -
+        Type: Instructor
+        UID: 82ebf9b5-71c2-4935-b81c-545187672ef9
+        Path: /01-Problem-Solving-And-Big-O/class-lesson.instructor.md
+      -
+        Type: Lesson
+        UID: d108fdc2-000e-493a-9120-fcdd7c6b4fb9
+        Path: /01-Problem-Solving-And-Big-O/04-in-class-problemset.md
+      -
         Type: Checkpoint
         UID: 25f55d56-003a-4af1-b968-4bfc07888ad7
         Path: /01-Problem-Solving-And-Big-O/03-problem-solving-checkpoint.md
