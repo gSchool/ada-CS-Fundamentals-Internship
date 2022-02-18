@@ -19,7 +19,16 @@ Then follow the 1st part of the [activity](./02-linked-list-activity.md) reviewi
 
 ## Livecode - 20 minutes
 
+In the livecode walk through:
 
+1.  Merge Sorted Lists from the text lesson
+1.  Setup the project and write 2 methods
+
+Remember to:
+
+- Try to get students to navigate as you type.  
+- Cause a bug, and try to promote student ideas to fix it.  
+- Model how to use the tests and print statements.
 
 ## Coding Activity - 60 minutes
 
