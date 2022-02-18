@@ -66,7 +66,7 @@ Remember to find an element by it's index in a linked list requires traversing t
 
 What type of data structure is the following linked list?
 
-![Linked List Example Drawing](.images/linkedlist.svg)
+![Linked List Example Drawing](./images/linkedlist.svg)
 
 ##### !end-question
 
