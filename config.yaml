@@ -57,7 +57,11 @@ Standards:
       -
         Type: Lesson
         UID: 99474aeb-183e-4f01-990b-0a689c022c30
-        Path: /02-linked-lists/02-linked-lists.md
+        Path: /02-linked-lists/01-linked-lists.md
+      -
+        Type: Lesson
+        UID: 99474aeb-183e-4f01-990b-0a689c022c30
+        Path: /02-linked-lists/02-linked-list-activity.md
       -
         Type: Checkpoint
         UID: e1d0e2c0-acb2-436a-b329-8c3da5155443
