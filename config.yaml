@@ -55,6 +55,10 @@ Standards:
         UID: c498e182
         Path: /02-linked-lists/linked-lists.instructor.md
       -
+        Type: Instructor
+        UID: ac3b6860-51fd-4d90-8a68-99875639af1d
+        Path: /02-linked-lists/class-lesson.instructor.md
+      -
         Type: Lesson
         UID: 99474aeb-183e-4f01-990b-0a689c022c30
         Path: /02-linked-lists/01-linked-lists.md
