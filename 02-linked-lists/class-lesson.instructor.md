@@ -19,6 +19,8 @@ Then follow the 1st part of the [activity](./02-linked-list-activity.md) reviewi
 
 ## Livecode - 20 minutes
 
+
+
 ## Coding Activity - 60 minutes
 
 Break students into breakout rooms to practice the replit. Optionally you can complete one exercise as a class before breaking the remainder into groups.
@@ -31,44 +33,38 @@ You can find a solution in [Chris' Replit](https://replit.com/@ChrisMcAnally/Lis
 
 *Code Snippet: Merge Sorted Lists*
 ```py
+from typing import Optional
+
 class ListNode:
     def __init__(self, value, next = None):
         self.value = value
         self.next = next
+    def __repr__(self):
+        return f"ListNode({self.value})"
 
-def add_to_rear_of_list(head, tail, new_node):
+def transform_to_doubly_linked_list(head: ListNode):
+    previous = None
+    current = head
+    while current is not None:
+        current.previous = previous
+        previous = current
+        current = current.next
+
+    return previous
+
+def is_palindrome(head: Optional[ListNode]) -> bool:
     if head is None:
-        head = tail = new_node
-        new_node.next = None
-    else:
-        tail.next = new_node
-        tail = tail.next
+        return True
+
+    tail = transform_to_doubly_linked_list(head)
+
+    while (head != tail):
+        if head.value != tail.value:
+            return False
+        head = head.next
+        tail = tail.previous
     
-    return (head, tail)
-
-
-def merge_sorted_lists(list_a: ListNode, list_b: ListNode):
-    current_a = list_a
-    current_b = list_b
-    head = tail = None
-
-    while current_a and current_b:
-        if current_a.value < current_b.value:
-            node_to_insert = current_a
-            current_a = current_a.next
-        else:
-            node_to_insert = current_b
-            current_b = current_b.next
-
-        (head, tail) = add_to_rear_of_list(head, tail, node_to_insert)
-    
-    if current_a is not None:
-        (head, tail) = add_to_rear_of_list(head, tail, current_a)
-    elif current_b is not None:
-        (head, tail) = add_to_rear_of_list(head, tail, current_b)
-    
-    return head
-        
+    return True
 ```
 
 *Code Snippet: Rotate Linked List*
