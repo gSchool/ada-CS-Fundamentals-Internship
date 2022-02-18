@@ -1,4 +1,4 @@
-# Instructor: Linked Lists
+# Instructor: Project Solution
 
 ## Simon's Final Implementation
 

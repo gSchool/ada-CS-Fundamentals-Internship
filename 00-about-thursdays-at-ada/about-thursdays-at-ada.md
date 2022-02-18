@@ -3,7 +3,7 @@
 In Computer Science fundamentals students learn the following concepts and data structures:
 
 - [Approaching Problems](../01-Problem-Solving-And-Big-O/01-problem-solving.md)
-- [Linked Lists](../02-linked-lists/02-linked-lists.md)
+- [Linked Lists](../02-linked-lists/01-linked-lists.md)
 - [Binary Search Trees](../03-Binary-Search-Trees/01-Binary-Search-Trees.md)
 - [Stacks](../04-Stacks-And-Queues/01-stacks-and-queues.md)
 - [Queues](../04-Stacks-And-Queues/01-stacks-and-queues.md)
