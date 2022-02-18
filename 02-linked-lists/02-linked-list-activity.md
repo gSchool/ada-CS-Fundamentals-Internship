@@ -56,6 +56,83 @@ Remember to find an element by it's index in a linked list requires traversing t
 
 ### !challenge
 
+* type: multiple-choice
+* id: a701574a-1eea-401a-b2d6-e59ab58b1c47
+* title: What type of Linked List is illustrated below?
+* points: 1
+* topics: python, linked-lists
+
+##### !question
+
+What type of data structure is the following linked list?
+
+![Linked List Example Drawing](.images/linkedlist.svg)
+
+##### !end-question
+
+##### !options
+
+* Singly Linked List
+* Doubly Linked List
+* Circular Linked List
+
+##### !end-options
+
+##### !answer
+
+* Doubly Linked List
+
+##### !end-answer
+
+##### !explanation
+
+A doubly linked list is a linked list in which each node has a pointer to the previous node as well as the next node.
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: paragraph
+* id: ab2f5a80-f005-43f1-8dbd-64c14a57380b
+* title: What is an advantage of using a doubly linked list?
+* points: 1
+* topics: python, linked-lists, doubly-linked-lists
+
+##### !question
+
+Why use a doubly linked list over a singly linked list?
+
+Are there any advantages to having a `tail` reference as well as the `head`?
+
+##### !end-question
+
+##### !placeholder
+
+Why use a doubly linked list?
+
+##### !end-placeholder
+
+##### !explanation
+
+A doubly linked list enables traversing the list in both directions and combined with a `tail` reference makes adding and removing nodes from the end of the list more efficient, `O(1)` instead of `O(n)`.
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+
+### !challenge
+
 * type: paragraph
 * id: 25d94120-fa67-472e-ae1f-3586ca79bf25
 * title: Explain in your own words
