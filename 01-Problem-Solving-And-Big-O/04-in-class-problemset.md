@@ -6,7 +6,7 @@ Our goal is to practice taking a problem, analyzing it, and then refactoring it 
 
 ## Activity Instructions
 
-- [Activity Replit](https://replit.com/@adadev/two-sum-II#main.py)
+- [Activity Replit](https://replit.com/@adadev/two-sum-II#README.md)
 
 ### Getting Started
 
@@ -61,10 +61,9 @@ Look at the `two_sum/two_sum.py` file.  What is the time complexity of the initi
 <!-- prettier-ignore -->
 ### !challenge
 * type: multiple-choice
-* id: 7785c9bb-d328-4325-a6d9-70a42e540bec
+* id: d55b51b1-29dc-47b9-83d7-5a7004bec8db
 * title: What is the *space* complexity of the initial solution?
-<!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
-<!-- * topics: [python, pandas] (optional the topics for analyzing points) -->
+* topics: python, big-o, space-complexity
 
 ##### !question
 
