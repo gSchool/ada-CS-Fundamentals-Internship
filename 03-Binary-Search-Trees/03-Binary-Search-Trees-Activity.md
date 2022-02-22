@@ -4,7 +4,7 @@
 
 Our goal is to practice using and manipulating `TreeNode` objects.
 
-## Review Linked List Lesson
+## Review Binary Search Trees Lesson
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 
@@ -12,7 +12,7 @@ Our goal is to practice using and manipulating `TreeNode` objects.
 
 * type: checkbox
 * id: e2bae5b6-597a-4f7d-b8c2-1bf859ef2ad2
-* title: Where are Linked Lists Optimal
+* title: Where are Binary Search Trees
 * points: 1
 * topics: binary-search-trees, big-o
 
@@ -54,7 +54,6 @@ This is also our first nonlinear data structure.
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -65,6 +64,8 @@ This is also our first nonlinear data structure.
 * topics: python, binary-search-trees
 
 ##### !question
+
+What is the height of the tree illustrated below?
 
 ![Unbalanced Binary Search Tree](./images/unbalanced-bst.png)
 
@@ -194,3 +195,11 @@ In small groups of 3-4, **one student** will *fork* the given replit and then sh
 As a team complete the method in the replit.
 
 If you finish early, you can depart the session or work on the project, with instructor support available.
+
+### !callout-secondary
+
+## Suggestion:  Start The Project Now
+
+It can be a *really* good idea to start the project with classmates and instructional staff around to ask questions of. Getting a solid start to a project makes the entire thing go easier.
+
+### !end-callout
