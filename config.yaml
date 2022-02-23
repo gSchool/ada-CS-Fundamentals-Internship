@@ -86,6 +86,14 @@ Standards:
         UID: d363c5cb-af6d-45d1-8e98-eaf960f8fac9
         Path: /03-Binary-Search-Trees/01-Binary-Search-Trees.md
       -
+        Type: Lesson
+        UID: d8ba7559-8171-4f02-8b9d-d4d32c098e72
+        Path: /03-Binary-Search-Trees/03-Binary-Search-Trees-Activity.md
+      -
+        Type: Instructor
+        UID: 9f53dd7f-7945-46b3-abe1-83a762e3e705
+        Path: /03-Binary-Search-Trees/class-lesson.instructor.md
+      -
         Type: Checkpoint
         UID: bbf1e2a2-0d6e-4337-9b00-81216688e16a
         Path: /03-Binary-Search-Trees/02-Bst-checkpoint.md
