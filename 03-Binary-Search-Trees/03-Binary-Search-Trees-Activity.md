@@ -1,4 +1,4 @@
-# Activity:  Problem Solving
+# Activity:  Binary Search Trees
 
 ## Goal
 
@@ -12,7 +12,7 @@ Our goal is to practice using and manipulating `TreeNode` objects.
 
 * type: checkbox
 * id: e2bae5b6-597a-4f7d-b8c2-1bf859ef2ad2
-* title: Where are Binary Search Trees
+* title: Where are Binary Search Trees useful?
 * points: 1
 * topics: binary-search-trees, big-o
 
