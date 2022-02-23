@@ -4,7 +4,7 @@ Binary Search Trees and trees in general are a core learning concept in computer
 
 In prior years more general tree information was presented, but it was knowledge-level material that was not relevant to interviews and was difficult to retain.  So this unit focuses on hands-on work with BSTs.
 
-Also the project does not involve removing an element from a tree.  It was removed to improve the submission rate on the project as this is the 1st really hard project.
+Also the project does not involve removing an element from a tree.  It was removed to improve the submission rate on the project as this is the 1st really hard project. Instead that's the livecode.
 
 ## Lesson Goals
 
@@ -60,4 +60,5 @@ Iterate through the breakout rooms answering questions as you go.
 Solutions:
 
 - [Solution to the project](https://github.com/adagold/tree-practice/tree/solution-python)
+  - There is also a [solution in the repo here](./bst.instructor.md) written by Simon
 - [Solution to delete_node](https://replit.com/@adadev/bst-practice-delete-solution)
