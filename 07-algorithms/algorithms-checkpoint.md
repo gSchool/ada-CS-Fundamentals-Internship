@@ -1,15 +1,12 @@
 # Dynamic Programming Exercise
 
-* [Exercise](https://github.com/Ada-C13/dynamic-programming) 
+| Logistics             | Details                                         |
+| --------------------- | ----------------------------------------        |
+| Project details       | https://github.com/Ada-C16/dynamic-programming  |
+| JS Version            | https://github.com/Ada-C16/dynamic-programming-js  |
+| Should you fork this? | Yes (Check project details)                     |
+| Submission method     | Learn                                           |
 
-In this exercise you will practice using dynamic programming to solve some sample interview problems.
-
-## Learning Goals
-
-By the end of this lesson you should be able to:
-
-* Use dynamic programming to solve some example interview problems
-* Recognize places where dynamic programming approaches can work
 
 ## Exercise
 
@@ -18,8 +15,8 @@ By the end of this lesson you should be able to:
 * type: testable-project
 * id: da54c4ff-3e53-47f0-a193-5a90bfb10f0c
 * title: Dynamic Programming
-* upstream: https://github.com/Ada-C13/dynamic-programming
-* validate_fork: true
+* upstream: https://github.com/Ada-C16/dynamic-programming
+* validate_fork: false
 * points: 0
 * topics: dynamic programming
 
@@ -92,14 +89,14 @@ Your PR link goes here.
 * type: testable-project
 * id: b80c955f-0cee-4508-948c-368d92463cac
 * title: Optional JavaScript Version
-* upstream: https://github.com/Ada-C13/dynamic-programming-js
+* upstream: https://github.com/Ada-C16/dynamic-programming-js
 * validate_fork: true
 * points: 0
 * topics: dynamic programming
 
 ##### !question
 
-Add a link to your fork of the [JavaScript version](https://github.com/Ada-C13/dynamic-programming-js)
+Add a link to your fork of the [JavaScript version](https://github.com/Ada-C16/dynamic-programming-js)
 
 ##### !end-question
 

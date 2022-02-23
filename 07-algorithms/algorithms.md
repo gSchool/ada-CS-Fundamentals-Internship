@@ -12,8 +12,8 @@ By the end of this lesson you should be able to:
 
 ## Video Lesson
 
-- [Slide Deck used for the lesson](https://docs.google.com/presentation/d/1QaCSJfqcQNCqFHk0zFdAL5zZCi-O37mGuhOIYLKcf_Q/edit#slide=id.gc6f75fceb_0_0)
-- [Exercise](https://github.com/Ada-C13/dynamic-programming)
+- [Slide Deck used for the lesson](https://docs.google.com/presentation/d/1V4ycrfl3dbL0IbRHqK3ytU45VyMJQNHhyxpc3Ti2e28/edit?usp=sharing)
+- [Exercise](https://github.com/Ada-c16/dynamic-programming)
 
 ## What is an an algorithm
 
@@ -53,55 +53,13 @@ The study of computer science is the study of algorithms.  Researchers in CS foc
   - We also _profile_ or conduct performance measurements by running the algorithm on sample data and measuring performance changes and memory usage.
     - If you have seen [leetcode](https://leetcode.com/), this site will take your solution to a common programming problem and compare it's performance to solutions from other developers.
 
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
-
-### !challenge
-
-* type: short-answer
-* id: 879e8f9c-1b42-4fab-9fea-6931c69d9176
-* title: Cheap Hardware
-* points: 1
-* topics: algorithms
-
-##### !question
-
-Now that hardware is so cheap and powerful and now that we have enormous cloud computing providers like AWS, is it worth wasting a programmer's valuable time trying to shave off seconds from the runtime of an algorithm?
-
-##### !end-question
-
-##### !placeholder
-
-Are efficient algorithms worthwhile?
-
-##### !end-placeholder
-
-##### !answer
-
-/.+/
-
-##### !end-answer
-
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-##### !explanation
-
-Because while hardware may have historically doubled in efficiency every 18 months, an algorithm's time complexity could grow even faster and the amount of data produced on the internet grows exponentially.
-
-##### !end-explanation
-
-### !end-challenge
-
-<!-- ======================= END CHALLENGE ======================= -->
-
 ## Analyzing Algorithms
 
-When we analyze an algorithm we generally do not care how an algorithm performs on a specific input size.  Instead we look at how the runtime and memory usage changes as the input size grows.  Looking at how an algorithm's runtime and memory usage increases with increasing input is called, _Asymptotic Analysis_.
+When we analyze an algorithm we generally do not care how an algorithm performs on a specific input size.  Instead we look at how the runtime and memory usage changes as the input size grows.  Looking at how an algorithm's runtime and memory usage increases with increasing input is called, _Asymptotic Analysis_, i.e. Big O.
 
-Why bother with asymptotic analysis?  Why bother with examining how an algorithm increases in runtime and memory usage as the input size increases?  This allows us to compare algorithms and select one over another.  It also allows us to judge if any algorithm will be able to solve a particular problem within a meaningful amount of time or the system's limited storage capacity.
+Why bother with asymptotic analysis?  Why bother with examining how an algorithm increases in runtime and memory usage as the input size increases?  Asymptotic analysis allows us to compare algorithms and select one over another.  It also allows us to judge if any algorithm will be able to solve a particular problem within a meaningful amount of time or the system's limited storage capacity.
 
-Most often we measure things in terms of _worst-case_ performance of an algorithm.  This is important when response time and memory usage is critical like in managing a self-driving car or autopilot system.  There are also times where the _average-case_ performance is important, especially where an algorithm is run often or in many instance, like an analysis program run regularly on a cloud platform.
+Most often we measure things in terms of _worst-case_ performance of an algorithm.  This is important when response time and memory usage is critical like in managing a self-driving car or autopilot system.  There are also times where the _average-case_ performance is important, especially where an algorithm is run often or across many instance, like an analysis program run regularly on a cloud platform. The average runtime (and standard deviation) can be important for a task run thousands of times an hour.
 
 | Big-O | English Term
 |--- |--- |
@@ -146,7 +104,7 @@ If you look at the diagram above we will divide and recombine a total of log n l
 
 ## Categories of Algorithms
 
-There are a [number of different categories of algorithms](http://www.cs.ukzn.ac.za/~hughm/ds/slides/32-algorithm-types.pdf).  Each category describes the general approach to the algorithm's use in solving its particular problem.  Categories are not exclusive; an algorithm can be a member of multiple categories.  For example QuickSort is both a divide-and-conquer algorithm and a randomized algorithm in that it picks a random element as a pivot to sort against.
+There are a [number of different categories of algorithms](https://s2.smu.edu/~vdebroy/cse3353/Lectures/Lecture-7/Algorithm-Types.pdf).  Each category describes the general approach to the algorithm's use in solving its particular problem.  Categories are not exclusive; an algorithm can be a member of multiple categories.  For example QuickSort can be both a divide-and-conquer algorithm and a randomized algorithm if it picks a random element as a pivot to sort against at each stage.
 
 In this lesson we will look at a few categories, specifically _divide and conquer_ algorithms, _greedy_ algorithms and _dynamic programming_ algorithms.
 
@@ -157,7 +115,6 @@ We have looked at a few examples of divide and conquer algorithms above with Mer
 **Questions**
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -185,15 +142,12 @@ Example divide & conquer algorithms
 
 ##### !end-answer
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
 Some example Divide & Conquer Algorithms are:
 
-1.  Binary Search
-1.  MergeSort
+1.  [Binary Search](https://www.geeksforgeeks.org/binary-search/)
+1.  [MergeSort](https://www.geeksforgeeks.org/merge-sort/)
 
 These algorithms break the problem into halves at each step in the process.
 
@@ -204,7 +158,6 @@ These algorithms break the problem into halves at each step in the process.
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -260,35 +213,32 @@ As you can see Quicksort divides the larger problem into two parts, and then sol
 
 ### Greedy
 
-A greedy algorithm is like a mouse moving through a maze.  At each step the mouse will move into the next room with the tastiest cheese at each step.  It does not look at the entire problem, but only the current values available.  In other words, at each step, take the best possible value at the moment without regard for future consequences.  Greedy algorithms _hope_ that by picking local optimimums at each step, they will arrive at an optimum solution for the larger problem.  
+A greedy algorithm is like a mouse moving through a maze.  At each step the mouse will move into the next room with the tastiest cheese at each step.  It does not look at the entire problem, but only the current values available.  In other words, at each step, take the best possible value at the moment without regard for future consequences.  Greedy algorithms _hope_ that by making a locally optimal choice at each step, they will arrive at an optimum solution for the larger problem.  
 
 #### Greedy Example 1 - Sorting
 
 One example of a greedy sorting algorithm is this `greedy_sort` method.  In this method any time it finds an element smaller than the current element, it will swap.  
 
-```ruby
-def greedy_sort(list)
-  list.length.times do |i|
-    (i+1...list.length).each do |j|
-      if(list[i] > list[j])
-        swap(list, i, j)
-end
+```python
+def greedy_sort(numbers):
+    for i in range(len(numbers)):
+        for j in range(i+1, len(numbers)):
+            if(numbers[i] > numbers[j]):
+                swap(numbers, i, j)
+    return numbers
 ```
 
 **Question** Compare the `greedy_sort` with `selection_sort` below.  Which will end up making fewer swaps?
 
-```ruby
-def selection_sort(list)
-  (list.length - 1).times do |i|
-    temp = i
-    ( (i + 1)...list.length).each do |j|
-      if list[temp] > list[j]
-        temp = j
-      end
-    end
-    swap(list, i, temp)
-  end
-end
+```python
+def selection_sort(numbers):
+    for i in range(len(numbers) - 1):
+        min = i
+        for j in range(i, len(numbers)):
+            if numbers[min] > numbers[j]:
+                min = j
+        swap(numbers, min, i)
+    return numbers
 ```
 
 #### Greedy Example 2 - Merging Sorted Lists
@@ -298,7 +248,6 @@ In this problem you are given `k` sorted arrays of varying lengths and asked to 
 For example, suppose you had arrays a, b, and c which have 30, 20 and 15 elements each.  The greedy approach would be to merge arrays b & c, which would take 35 iterations, then merge the result with array a, which would take 65 iterations, for a total of 100.  If you had merged arrays a and b first, that would take 50 iterations, and then merging array c would take 65, for a total of 115 iterations.  
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -326,13 +275,12 @@ Another approach
 
 ##### !end-answer
 
-<!-- other optional sections -->
 ##### !hint
 
 Could a heap be used?
 
 ##### !end-hint
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+
 ##### !explanation
 
 You could also use a heap to solve this by adding the 1st element of each list to a min-heap, then removing the root value from the min-heap and adding the next element in the list from which it came into the heap, and repeating until the heap is empty.  This can be done in O(n log k) time where n is the total number of elements in all of the arrays and k is the number of arrays.
@@ -361,38 +309,38 @@ We have already seen the fibonacci sequence `fib(n) = fib(n-1) + fib(n-2)` for a
 
 We can solve that problem recursively like this:
 
-```ruby
-def fibonacci(n)
-  raise ArgumentError, "n must be >= 0" if n < 0
-  return 0 if n == 0
-  return 1 if n == 1
+```python
+def fibonacci(n):
+    if n < 0:
+        raise AttributeError("n must be >= 0")
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
 
-  return fibonacci(n-1) + fibonacci(n-2)
-end
+    return fibonacci(n-1) + fibonacci(n-2)
 ```
 
 However this solution, as we saw with recursion is wildly inefficient.  We can however write a dynamic programming solution which will solve all the subproblems and use them to solve the larger problem.
 
-```ruby
-def fibonacci(n)
-  raise ArgumentError, "n must be >= 0" if n < 0
+```python
+def fibonacci(n):
+    if n < 0:
+        raise AttributeError("n must be >= 0")
   
-  # Build a memo of subproblems
-  fib_numbers = Array.new(n)
-  # Fill in the base case for the memo
-  fib_numbers[0] = 0
-  fib_numbers[1] = 1
-
-  # Solve all the subproblems
-  num = 2
-  while num <= n
-    fib_numbers[num] = fib_numbers[num - 1] + fib_numbers[num - 2]
-    num += 1
-  end
-
-  # return the answer by using the memo
-  return fib_numbers[n]
-end
+    # Build a memo of subproblems
+    fib_numbers = [0] * (n+1) 
+    # Fill in the base case for the memo
+    fib_numbers[0] = 0
+    fib_numbers[1] = 1
+    # Solve all the subproblems
+    num = 2
+    while num <= n:
+        fib_numbers[num] = fib_numbers[num - 1] + fib_numbers[num - 2]
+        num += 1
+  
+    # return the answer by using the memo
+    return fib_numbers[n]
 ```
 
 This dynamic programming solution solves the larger problem by solving all the individual subproblems and recording their results in an array, which I will call a memo.  This transforms an O(2<sup>n</sup>) time complexity algorithm into an O(n) algorithm.
@@ -405,27 +353,36 @@ Take a look below, see how many times you are solving the same subproblem?
 
 By recording solutions to subproblems for use later we are using a technique known as _memoization_.  This is a classic example of using space to save time.  We sacrifice a larger space complexity for the ability to look up solutions to subproblems rather than recalcualting them.
 
-In the case of fibonacci, since you only need to remember the last two values of the sequence to solve for n, you could solve in this manner with an O(1) space complexity.  However this is still dynamic programming as you are memoizing subproblems for as long as you need them.
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
 
-```ruby
-def fibonacci(n)
-  raise ArgumentError, "n must be >= 0" if n < 0
-  return n if n < 2
+## There is a better Fibonacci Solution
+
+In the case of fibonacci, since you only need to remember the last two values of the sequence to solve for n, you could solve in this manner with an O(1) space complexity.  
+
+However this is still dynamic programming as you are memoizing subproblems for as long as you need them.
+
+### !end-callout
+
+
+```python
+def fibonacci(n):
+    if n < 0:
+        raise AttributeError("n must be >= 0")
+    if n < 2:
+      return n
  
-  two_previous = 0
-  one_previous = 1
-  num = 2
+    two_previous = 0
+    one_previous = 1
+    num = 2
 
-  while num < n 
-    temp = one_previous + two_previous
-    two_previous = one_previous
-    one_previous = temp
-
-    num += 1
-  end
+    while num < n:
+      temp = one_previous + two_previous
+      two_previous = one_previous
+      one_previous = temp
+      num += 1
  
-  return one_previous + two_previous
-end
+    return one_previous + two_previous
 ```
 
 ## Summary

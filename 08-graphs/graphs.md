@@ -15,8 +15,8 @@ By the end of this lesson we should be able to:
 
 - [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=09cd9474-04a2-4460-8eb8-aad8005b7065)
 - [Dijkstra's Algorithm Video](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9055aad9-f2ec-401b-abc0-ac4e01374f3f)
-- [Accompanying Slidedeck](https://docs.google.com/presentation/d/1Z_hHF3PPC9mO3W2hxcvcFZgEel0xUtGjDhKtGDKh9wQ/edit#slide=id.p)
-- [Exercise](https://github.com/Ada-C13/Bipartition-Graph)
+- [Accompanying Slidedeck](https://docs.google.com/presentation/d/1pIAhpb0QL7Pk93P3E-jIRbboz6UPRZOnJ2eyVU1Ga3Q/edit#slide=id.p7)
+- [Exercise](https://github.com/Ada-C16/Bipartition-Graph)
 
 ## Introduction
 
@@ -56,37 +56,31 @@ As you may have noted, we have **already** worked with graphs before.  Both Link
 
 As stated above we have already worked with graphs before.  With both binary search trees & linked lists we created a node class and wrote traversals traveling from one node to the next.  An example `TreeNode` class is listed below.
 
-```ruby
-class TreeNode
-  attr_reader :key, :value
-  attr_accessor :left, :right
+```python
+class TreeNode:
 
-   def initialize(key, val)
-    @key = key
-    @value = val
-    @left = nil
-    @right = nil
-   end
-end
+   def __init__(self, key, val)
+      self.key = key
+      self.val = val
+      self.right = None
+      self.left = None
 ```
 
 In our methods we traversed the structure adding and removing elements by writing either iterative or recursive methods which jumped from one node to the next following the links between them.  We could write Node class for our graph algorithms like the example below.  In this example we have a potential `GraphNode`.  
 
-```ruby
-class GraphNode
-  attr_reader :key, :value
-  attr_accessor :edges
+```python
+class GraphNode:
 
-  def initialize(key, val, edges = [])
-    @key = key
-    @value = val
-    @edges = edges
-  end
+  def __init__(key, val, edges = None)
+      self.key = key
+      self.val = val
+      if not edges:
+          self.edges = []
+      else:
+          self.edges = edges
 
-  def add_connection(other_node)
-    edges.push(other_node)
-  end
-end
+  def add_connection(self, other_node):
+      self.edges.push(other_node)
 ```
 
 While this can work it leaves us with a problem.  Unlike a tree or a linked list, there is no starting node for a graph.  So instead we would need another way to store our graph, which provides a method to start with any node.
@@ -99,10 +93,10 @@ The most basic way to store a graph is simply to maintain a list of edges.  For 
 
 We could represent this graph with the following:
 
-```ruby
+```python
 sample_graph = [
-  [1, 2], [1, 3], [3, 4]
-]
+        [1, 2], [1, 3], [3, 4]
+    ]
 ```
 
 This representation has a couple of advantages it's simple and uses a minimum amount of space.  For a graph _G(N, E)_ where _N_ is the set of nodes and _E_ the set of edges, this representation has a space complexity of _O(E)_.
@@ -152,33 +146,33 @@ This adjacency list gives us:
 
 Generally adjacency lists give a good balance between time and space complexity and perform relatively well.  Below would be the adjacency list above in code:
 
-```ruby
+```python
 adjacency_list = [
-  [],
-  [2, 3],
-  [1],
-  [1, 4],
-  [3]
-]
+        [],
+        [2, 3],
+        [1],
+        [1, 4],
+        [3]
+    ]
 ```
 
-### Adjacency List With A Hash
+### Adjacency List With A Dictionary
 
-The examples we used above used numeric identifications for nodes.  What if you want to use other values, like strings or objects to represent nodes.  In that case we could use a hash table.
+The examples we used above used numeric identifications for nodes.  What if you want to use other values, like strings or objects to represent nodes.  In that case we could use a hash table (dictionary).
 
-```ruby
-adjacency_list_with_hash = {
-  "Seattle" => ["Los Angelos", "Topeka"],
-  "Los Angeles" => ["Seattle", "Denver", "San Diego"],
-  "Topeka" => ["Seattle"],
-  "Denver" => ["Los Angeles", "Dallas"],
-  "San Diego" => ["Los Angeles"],
-  "Dallas" => ["Denver"]
-}
+```python
+adjacency_list_with_dict = {
+        "Seattle": ["Los Angelos", "Topeka"],
+        "Los Angeles": ["Seattle", "Denver", "San Diego"],
+        "Topeka": ["Seattle"],
+        "Denver": ["Los Angeles", "Dallas"],
+        "San Diego": ["Los Angeles"],
+        "Dallas": ["Denver"]
+    }
 ```
 
 
-![Adjacency list diagram with a hash table](images/graphs-adjacency-list-cities.png)
+![Adjacency list diagram with a dictionary](images/graphs-adjacency-list-cities.png)
 
 This representation provides similar benefits to using an array for an adjacency list, but provides us more flexibility with keys.  We no longer need numeric ids for our nodes and the ids do not need to be consecutive.  For example, in the adjacency matrix and list above, there was no node 0, but we maintained space for a node with that id.
 
@@ -458,72 +452,69 @@ Dijkstra's algorithm is an algorithm which takes a weighted graph and computes *
 
 There are also many variants of Dijkstra's Algorithm.  One includes a Min-Heap in which elements whom have a distance value known are stored.  When you select the node not in `shortest_path_set` with the minimum distance, you can do so by removing elements from the heap.  
 
-Below is a Ruby implementation using an adjacency matrix.  You can see this code and accompanying tests on [AdaGold](https://github.com/AdaGold/dijkstra).
+Below is a python implementation using an adjacency matrix.  You can see this code and accompanying tests on [AdaGold](https://github.com/AdaGold/dijkstra).
 
-```ruby
-def dijkstra(adjacency_matrix, start_node)
-  num_nodes = adjacency_matrix.length
+```python
+def dijkstra(adjacency_matrix, start_node):
+    """ Dijkstra's algorithm for finding the shortest path from a start node 
+        to all other nodes in a graph.
+        adjacency_matrix:  An adjacency matrix representation of the graph.
+        start_node:        The node to start the algorithm from.
+    """
+    num_nodes = len(adjacency_matrix)
+    #  shortest_distances will hold the shortest distances from start_node to i
+    # it starts with infinity as the value
+    shortest_distances = [float('inf') for i in range(num_nodes)]
 
-  # shortest_distances will hold the shortest distances from start_node to i
-  # it starts with infinity as the value
-  shortest_distances = Array.new(num_nodes, Float::INFINITY)
+    # added[i] will be true if the path to i
+    # from the source has been found
+    added = [False for i in range(num_nodes)]
 
+    # Distance of source vertex from
+    # itself is always 0
+    shortest_distances[start_node] = 0
 
-  # added[i] will be true if the path to i
-  # from the source has been found
-  added = Array.new(num_nodes, false)
+    # parent array to store the shortest path tree
+    parents = [None for i in range(num_nodes)]
+    # no parent for the start node
+    parents[start_node] = None
 
+    # Find shortest path for all nodes
+    for i in range(num_nodes - 1):
 
-  # Distance of source vertex from
-  # itself is always 0
-  shortest_distances[start_node] = 0
-  
-  # parent array to store the shortest path tree
-  parents = Array.new(num_nodes)
-  # no parent for the start node
-  parents[start_node] = nil
+        # Pick the minimum distance vertex
+        # from the set of vertices not yet
+        # processed. nearest_node is
+        # always equal to start_node in
+        # first iteration.
+        nearest_node = -1
+        shortest_distance = float('inf')
+        for node_index in range(num_nodes):
+            if (not added[node_index] and
+                    shortest_distances[node_index] < shortest_distance):
 
+                nearest_node = node_index
+                shortest_distance = shortest_distances[node_index]
 
-  # Find shortest path for all nodes
-  (num_nodes - 1).times do
+        # Mark the picked vertex as visited
+        added[nearest_node] = True
+        # Update dist value of the
+        # adjacent nodes of the picked node.
+        for node_index in range(len(adjacency_matrix[nearest_node])):
+            edge_distance = adjacency_matrix[nearest_node][node_index]
 
-    # Pick the minimum distance vertex
-    # from the set of vertices not yet
-    # processed. nearest_node is  
-    # always equal to start_node in  
-    # first iteration.
-    nearest_node = -1
-    shortest_distance = Float::INFINITY
-    (0...num_nodes).each do |node_index|
-      if (!added[node_index] &&
-          shortest_distances[node_index] <  shortest_distance)  
-        nearest_node  = node_index
-        shortest_distance = shortest_distances[node_index]
-      end
-    end  
+            if (edge_distance > 0 and
+                ((shortest_distance + edge_distance) <
+                    shortest_distances[node_index])):
+                parents[node_index] = nearest_node
+                shortest_distances[node_index] = shortest_distance + \
+                    edge_distance
 
-    # Mark the picked vertex as visited
-    added[nearest_node] = true
-    # Update dist value of the
-    # adjacent nodes of the picked node.
-    (0...num_nodes).each do |node_index|
-      edge_distance = adjacency_matrix[nearest_node][node_index]
-
-      if (edge_distance > 0 && 
-          ((shortest_distance + edge_distance) <  
-              shortest_distances[node_index]))  
-        parents[node_index] = nearest_node
-        shortest_distances[node_index] = shortest_distance +  
-                                        edge_distance
-      end
-    end
-  end
-  return {  
-    start_node: start_node,
-    parent_list: parents,
-    shortest_distances: shortest_distances
-  }
-end
+    return {
+      "start_node": start_node, 
+      "parent_list": parents,
+      "shortest_distances": shortest_distances
+    }
 ```
 
 **Questions**
@@ -555,7 +546,6 @@ Is Dijkstra's Algorithm a greedy algorithm?
 * Yes
 * No
 
-
 ##### !end-options
 
 ##### !answer
@@ -586,7 +576,7 @@ Is Dijkstra's Algorithm a greedy algorithm?
 * id: 4175fd70-8f1b-4c2b-bcf1-80985a9d0159
 * title: Dijkstra's Algorithm Time complexity?
 * points: 1
-<!-- * topics: [python, pandas] (optional the topics for analyzing points) -->
+* topics: dijkstra, graphs, bigO
 
 ##### !question
 

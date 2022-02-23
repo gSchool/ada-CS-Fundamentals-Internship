@@ -1,10 +1,10 @@
 # Stacks & Queues
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=28f18a83-0f48-4350-a44e-aabc0138eb7d&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=b987fd8f-b63c-479a-a679-ad93018aecaa&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ## Learning Goals
 
-By the end of this lesson you should be able to:
+By the end of this lesson we should be able to:
 
 - Describe the Stack & Queue data structures
 - Explain the concept of an Abstract Data Type (ADT)
@@ -13,12 +13,14 @@ By the end of this lesson you should be able to:
 
 ## Video Lesson & Slides
 
-- [Slides](https://docs.google.com/presentation/d/1aKqaO5q5gtuw31eGDvK47IleU5-XOCJKnbj4UjHmh9I/edit?usp=sharing)
-- [Stacks & Queues Exercise](https://github.com/Ada-C13/stacks-queues)
+- [Slides](https://docs.google.com/presentation/d/1tsxwSEJPHUphNznpSWcVilpuHgCgexaBUKYPKuKk8hk/edit#slide=id.p7)
+- [Stacks & Queues Exercise](https://github.com/Ada-C16/stacks-queues)
 
 ## Introduction
 
-At Ada we have often talked about hiding implementation details behind a public interface.  In this lesson we will look at two common data types which can be implemented in a variety of ways, Stacks and Queues.  Both data structures are described by what they do, rather than how they are written.  This is different from a linked list in that they key feature of a linked list is that it is implemented by linking nodes together into a chain.  A Stack on the other hand is a set of methods and how they behave.  The internals of a stack can be done in any number of ways.  So this lesson could be called an introduction to abstract data types.  
+At Ada we have often talked about hiding implementation details behind a public interface.  In this lesson we will look at two common data types which can be implemented in a variety of ways, Stacks and Queues.  Both data structures described by what they do, rather than how they are written.  This is different from a linked list in that a key feature of a linked list is that it is implemented by linking nodes together into a chain.  
+
+A Stack or Queue on the other hand is a set of methods and how they behave.  The internals of a stack can be done in any number of ways.  So this lesson could be called an introduction to abstract data types.  
 
 ## Abstract Data Types (ADT)
 
@@ -44,41 +46,28 @@ You can picture a Stack like a stack of plates where new plates can be added and
 
 You can use any linear data structure to implement a stack.  For example you could implement a `Stack` class like this:
 
-```ruby
-class Stack
+```python
+class Stack:
   
-  def initialize
-    @list = LinkedList.new
-  end
+    def __init__(self):
+        self.store = LinkedList()
 
-  def push(item)
-    @list.add_front(item)
-  end
+    def push(self, item):
+        self.store.add_first(item)
 
-  def pop()
-    return nil if self.empty?
+    def pop(self):
+      return self.store.remove_first()
 
-    item = list.remove_front
-
-    return item
-  end
-
-  def empty?()
-    return @list.empty?
-  end
-end
+    def empty(self):
+        return self.store.length() == 0
 ```
 
-You could later change the implementation of Stack to use an Array, but the users of the class would not need to change anything of their code.  This is because the implementation is hidden behind a public interface.  The top of the stack would reference the last element in the array.
+You could later change the implementation of Stack to use an Array, and the users of the class would not need to change anything of their code.  This is because the implementation is _hidden_ behind a public interface.  The top of the stack would reference the last element in the array.
 
 **Stack ADT**
 ![Stack ADT](images/stackADT.png)
 
-**Exercise**:  Implement a `top` method which returns the top of the stack without changing the stack.
-
-**Exercise**:  Write a method which takes a string as an argument.  Return the string reversed using a Stack.
-
-### The Function Stack
+### The Call Stack
 
 As methods get called in an application, the system stores the current instruction addresses, local variables etc on a stack known as the _system call stack_.  Then when a method ends, the topmost method is popped off the stack allowing the system to resume execution.
 
@@ -86,18 +75,16 @@ As methods get called in an application, the system stores the current instructi
 
 The diagram below shows the memory used by a running application.  At the top, the text in the application, and global variables are stored.  Below them is the dyanmic data allocated.  At the bottom the system stack stores the functions called.
 
-```ruby
-def function_a(x)
-{
-   y = 4
-   z = function_b(x, y)
-   puts “The number is #{z}"
-}
+```python
+def function_a(x):
+    y = 4
+    z = function_b(x, y)
+    print(f"The number is {z}")
 
-def function_b(int x, int y)
+
+def function_b(x, y):
   # pause application
-  return x + y;
-end
+    return x + y
 
 x = 3
 function_a(x)
@@ -116,6 +103,7 @@ When an error is raised, the stack is popped until the error is rescued in the c
 ## Queues
 
 A queue unlike a stack operates in a first-in-first out order.  Like a line of people at a concert, the first element to enter the queue is the first element removed.  
+
 ![Queue Diagram](images/queue.png)
 
 As shown above elements are added to the back of the queue in an operation called _enqueue_ and removed with an operation called _dequeue_.  
@@ -134,27 +122,22 @@ A Queue provides the following methods:
 
 Like a stack a queue can be implemented several ways and the implementation should be hidden from the user.  One way would be to implement a queue with a linked list like this:
 
-```ruby
-class Queue
+```python
+class Queue:
+    def __init__(self):
+        self.store = LinkedList.new
 
-  def initialize
-    @list = LinkedList.new
-  end
+    def enqueue(self, item):
+        self.store.add_last(item)
 
-  def enqueue(item)
-    @list.add_last(item)
-  end
+    def dequeue(self):
+        if self.is_empty():
+            return None
 
-  def dequeue
-    return nil if self.is_empty
+        self.store.remove_first()
 
-    return @list.remove_first
-  end
-
-  def is_empty
-    return @list.empty?
-  end
-end
+    def is_empty(self):
+        return self.store.empty()
 ```
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
@@ -190,13 +173,12 @@ What would be the Big-O here of enqueue and dequeue?
 
 ##### !end-answer
 
-<!-- other optional sections -->
 ##### !hint
 
 Do all LinkedList implementation have the same time complexity for add_last and remove_first?
 
 ##### !end-hint
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+
 ##### !explanation
 
 If the Linked List has a tail reference, and is a doubly linked list, then both enqueue and dequeue can be done in O(1) time.  If there is no tail reference then enqueue should perform in O(n) time.
@@ -268,8 +250,23 @@ Method dequeue
 end method
 ```
 
+### !callout-secondary
+
+## A Use for Modulus
+
+Remember that the modulus operator `%` returns the remainder of a division.  For example `5 % 2` returns `1` because `5` is the remainder of `5/2 = 2`.
+
+We could use this to implement the circular buffer.
+
+For enqueue we could simplify the function with this line:
+
+```python
+rear = (rear + 1) % size
+```
+
+### !end-callout
+
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -301,13 +298,12 @@ What is the Big-O of each method?
 
 ##### !end-answer
 
-<!-- other optional sections -->
 ##### !hint 
 
 How or does the number of instructions executed change as the size of the queue changes?
 
 ##### !end-hint
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+
 ##### !explanation 
 
 Since a fixed number of comamnds are executed no matter the size of the queue, the Big-O of enqueue and dequeue are both O(1)
@@ -318,7 +314,7 @@ Since a fixed number of comamnds are executed no matter the size of the queue, t
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-This strategy of using floating front and rear references is known as a _circular buffer_.  It allows you to work around the need to shift elements left and right when adding and removing to the front of a list.  It can, however be more difficult to understand.  This kind of buffer is used for things like round-robin scheduling of tasks, like in the CPU and for storing in-memory logs.  
+This strategy of using floating front and rear references is known as a [_circular buffer_](https://en.wikipedia.org/wiki/Circular_buffer).  It allows you to work around the need to shift elements left and right when adding and removing to the front of a list.  It can, however be more difficult to understand.  This kind of buffer is used for things like round-robin scheduling of tasks, like in the CPU and for storing in-memory logs.
 
 **Try it Out!**
 
@@ -346,20 +342,22 @@ Using a circular buffer overcomes some of the limitations of an array, and enabl
 
 Complete the following exercises with a partner.
 
-1. Given a Binary Search Tree where each node contains links to the left and right children and an integer value. Implement pre-order traversal for a binary search tree using an **iterative** approach.
+1. Given a Binary Search Tree where each node contains links to the left and right children and an integer value. Implement pre-order traversal for a binary search tree using an **iterative** approach.  **Hint** You will need to use a stack.
 
 Note the recursive solution to preorder is as follows:
 
-```ruby
-def preorder(current_node, list)
-  list << current_node.value
-  # Add the left node to the system stack and do preorder on the left
-  preorder(current_node.left, list) 
-  # Add the right node to the system stack and do preorder on the right
-  preorder(current_node.right, list)
+```python
+def preorder(current_node, list = None):
+    if list == None:
+        list = []
 
-  return list
-end
+    list.append(current_node.value)
+    # Add the left node to the system stack and do preorder on the left
+    preorder(current_node.left, list) 
+    # Add the right node to the system stack and do preorder on the right
+    preorder(current_node.right, list)
+
+    return list
 ```
 
 <details>
@@ -385,7 +383,6 @@ end
 2. Write a function to print all integer values in a binary tree in breadth first traversal iteratively. (Hint: Use a Queue.)
 3. Describe how you would implement a Queue using 2 Stacks.
 4. Describe how you would implement a Stack using 2 Queues.
-
 
 ## Summary
 

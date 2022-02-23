@@ -1,12 +1,11 @@
 # Linked Lists
 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=b1664c7e-f95e-40f5-971f-ad9000fe85d8&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ## Video Lesson
 
-- [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=7d5d5d84-a85e-4c5d-aaab-aaa8016736aa)
-- [Slides](https://docs.google.com/presentation/d/1lJ8WJnA6qRlHAIaRAjim3kiL4nRBWT5qvFGQQIB4EL4/edit?usp=sharing)
-- [Linked List Exercises](https://github.com/Ada-C13/linked-list)
-
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=7d5d5d84-a85e-4c5d-aaab-aaa8016736aa&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+- [Slides](https://docs.google.com/presentation/d/1UKi2M_V5wgIC9K_xfmtdBmeKokdKep1gRcnz0vLXNHk/edit?usp=sharing)
+- [Linked List Exercises](https://github.com/Ada-C16/linked-list)
 
 ## Learning Goals
 
@@ -14,7 +13,7 @@ By the end of this lesson students should be able to:
 
 - Describe the structure of a singly linked list, and doubly linked list
 - Compare and contrast the a advantages and disadvantages of singly and doubly linked lists.
-- Design an Object Oriented Singly Linked List
+- Implement an Object Oriented Singly Linked List
 - Write methods to perform a variety of tasks on a singly linked list
 
 ## Overview
@@ -110,25 +109,11 @@ Suppose you have an online store and need to lookup and access product descripti
 
 ##### !end-answer
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-<!-- 
-<details>
-<summary>Suppose you have an online store and need to lookup and access product descriptions by an id (index) number.  What would you pick, LinkedList or Array?</summary>
-  
-An Array because looking up items by index is much faster O(1) vs O(n) with an Array.
-</details>
--->
-
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -344,63 +329,49 @@ When designing a data structure like a Linked List, we typically design the data
 
 The node class encapsulates each element of the LinkedList..  It provides an attribute to store data and a node referencing the next node in the chain.  It provides an interface for our LinkedList to deal with the data and connect nodes.
 
-```ruby
+```python
 # Defines a node in the singly linked list
-class Node
-  attr_reader :data # allow external entities to read value but not write
-  attr_accessor :next # allow external entities to read or write next node
-
-  def initialize(value)
-    @data = value
-    @next = nil
-  end
-end
+class Node:
+    def __init__(self, value):
+        self.data = value
+        self.next = None
 ```
 
 ![Linked List Node](images/nodeLinkedList.png)
 
 ### Linked List Class
 
-```ruby
+```python
 # Defines the singly linked list
-class LinkedList
-  def initialize
-    @head = nil # keep the head private. Not accessible outside this class
-  end
-  
-  # method to add a new node with the specific data value in the linked list
-  # insert the new node at the beginning of the linked list
-  def add_first(value)
-    new_node = Node.new(value)
+class LinkedList:
+    def __init__(self):
+        self.head = None
 
-    # if the head is nil new_node becomes head
-    # Then head becomes the new node.
-  end
-  
-  # returns the value in the first node
-  # returns nil if the list is empty
-  def get_first
-    # return the value of the 1st node in the list
-  end
+    # Method. Adds a new node with the specific data value to the beginning of the linked list.
+    def add_first(self, value):
+        new_node = Node(value)
 
-  # method that returns the value of the last node in the linked list
-  # returns nil if the linked list is empty
-  def get_last
-    # return nil if the list is empty
-    # otherwise traverse the list to the end
-    # Then return the last node's value
-  end
-  
-  # method that returns the value at a given index in the linked list
-  # index count starts at 0
-  # returns nil if there are fewer nodes in the linked list than the index value
-  def get_at_index(index)
-    # traverse the list, 
-    #  index, number of times or
-    #  until the end is reach
-    #  Then return the current node's value
-  end
-end
+    # Method. Returns the value in the first node in the linked list.
+    # Returns None if the list is empty.
+    def get_first(self):
+        pass
+
+    # Method. Returns the value of the last node in the linked list. Returns None if the list is empty.
+    def get_last(self):
+        # Return None if the list is empty
+        # Otherwise, traverse the list to the end
+        # Then return the last node's value
+        pass
+
+    # Method. Returns the value at a given index in the linked list.
+    # Index count starts at 0.
+    # Returns None if there are fewer nodes in the linked list than the index value.
+    def get_at_index(self, index):
+        # Traverse the list
+        # <index> times
+        # or until the end is reached
+        # Then return the current node's value
+        pass
 ```
 
 ### Adding A Node
@@ -427,12 +398,11 @@ Step 4:
 
 ![add-first-4](images/add-first-4.png)
 
-```ruby
-def add_first(value)
-  new_node = Node.new(value, nil, nil)
-  new_node.next_node = @head
-  @head = new_node
-end
+```python
+def add_first(self, value):
+    new_node = Node(value)
+    new_node.next = self.head
+    self.head = new_node
 ```
 
 ### Removing a node at a specific index
@@ -444,27 +414,24 @@ To remove a node at a specific index, you first have to traverse the list until 
 ![remove a node #3](images/remove-node-3.png)
 ![remove a node #4](images/remove-node-4.png)
 
-```ruby
-def remove(index)
-  return if @head.nil?
+```python
+def remove(self, index):
+    if not self.head:
+        return
 
-  if index == 0
-    @head = head.next_node
-  else
+    if index == 0:
+        self.head = self.head.next
+
     # Traverse the list until you find the node at index -1
-    current = @head
+    current = self.head
     current_index = 0
-    while current.next_node != nil && current_index < index - 1
-      current = current.next_node
-      current_index += 1
-    end
+    while current.next and current_index < index - 1:
+        current = current.next
+        current_index += 1
 
-    # if the node exists
-    if !current.next.nil?
-      current.next_node = current.next_node.next_node
-    end
-  end
-end
+    # If the node exists
+    if current.next:
+        current.next = current.next.next
 ```
 
 ## Supplemental Concepts
@@ -473,7 +440,7 @@ end
 
 You will often hear the terms _pointer_ and _reference_ in relation to dynamic data structures like LinkedLists.  Both terms refer to a variable which **points** to data in memory, or holds the address of another varaible in memory.  The concept is similar to a home.  The home is an object in memory, while the home's address is a _reference_ which indicates where to find the home.
 
-In some languages like C/C++ you can manipulate memory addresses and memory directly.  In other languages, like Ruby, you have references which refer to objects in memory, but you cannot directly work with the memory addresses.  
+In some languages like C/C++ you can manipulate memory addresses and memory directly.  In other languages, like Python, you have references which refer to objects in memory, but you cannot directly work with the memory addresses.
 
 An example in C++
 
@@ -483,7 +450,7 @@ An example in C++
   ptr_x = &x;  // Assign ptr_x the value of the memory address of x.
 ```
 
-We use references in Ruby whenever we use a Linked List since each node _refers_ to the next node in the chain and `head` refers to the 1st node in the chain.
+We use references in Python whenever we use a Linked List since each node _refers_ to the next node in the chain and `head` refers to the 1st node in the chain.
 
 ![Singly Linked List](images/singly-linked-list2.png)
 
@@ -491,7 +458,7 @@ We use references in Ruby whenever we use a Linked List since each node _refers_
 
 Is a bug in how a program manages memory.  A _memory leak_ occurs when memory that is no longer needed by the program is not released back to the operating system.  Over time, if memory is used, and not returned to the system less and less memory is available to other programs and eventually not enough memory is available to run applications.  Modern operating systems return all system memory allocated to a program when it ends.  Thus memory leaks in long-running processes like daemons can cause a system to run out of memory.
 
-In Ruby the ruby interpreter manages memory for developers.  Ruby uses a [garbage collection](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)) system which identifies memory no longer used by the application and returns it.
+In Python, the Python interpreter manages memory for developers.  Python uses a [garbage collection](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)) system which identifies memory no longer used by the application and returns it.
 
 Consider when a node is removed from a Linked List:
 
@@ -499,19 +466,17 @@ Consider when a node is removed from a Linked List:
 <!-- source:  https://stackoverflow.com/questions/41474163/singly-linked-list-remove -->
 
 
-When no variable refers to a node (holding 99 in the image above) the ruby garbage collector will eventually return the memory to the operating system.  
+When no variable refers to a node (holding 99 in the image above) the Python garbage collector will eventually return the memory to the operating system.
 
-```ruby
-def remove_first()
-  if @head == nil
-    return false
-  end
+```python
+def remove_first(self):
+    if not self.head:
+        return False
 
-  value = @head.value
-  head = head.next_node
+    value = self.head.value
+    self.head = self.head.next
 
-  return value;
-end
+    return value
 ```
 
 Some languages however, place memory management on the developer.  C is one such language.  These lower-level languages give a developer more flexibility and control over low-level operations, at the cost of more responsibility and a greater likelyhood of errors.
@@ -530,9 +495,161 @@ void removeFirst(struct node **headRef) {
 }
 ```
 
+## Challenge Problem
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: aadddd4b-2b3d-4c47-8f38-ec8f24f91d90
+* title: Merge Two Sorted Linked Lists
+* points: 1
+* topics: python, linked-list, interview-problem-easy
+
+##### !question
+
+Write a `sorted_merge()` function that takes two lists, each of which is sorted in increasing order, and merges the two together into one list which is in increasing order. `sorted_merge()` should return the new list. The new list should be made by splicing together the nodes of the first two lists.
+
+Example input and output:
+| input | output |
+|--|--|
+|`list_a = 5->13->15` <br> `list_b = 6->9->20` | `5->6->9->13->15->20`|
+
+There are many cases to deal with: 
+
+* Either `a` or `b` may be empty initially
+* During processing either `a` or `b` may run out first
+
+You may be destructive with the original two lists.
+
+##### !end-question
+
+##### !placeholder
+
+```py
+class ListNode:
+    def __init__(self, value, next = None):
+        self.value = value
+        self.next = next
+    
+    def __repr__(self):
+        return f"ListNode({self.value})"
+    def __str__(self):
+        answer = []
+        current = self
+        while current is not None:
+            answer.append(f"{current.value}")
+            current = current.next
+        
+        return "->".join(answer)
+
+def sorted_merge(list_a, list_b):
+    '''
+    INPUT: list_a: the head reference of a sorted linked list
+            list_b: the head reference of a sorted linked list
+    OUTPUT: the head reference of a sorted linked list that is the result of merging list_a and list_b
+    '''
+    pass
+```
+
+##### !end-placeholder
+
+##### !tests
+
+```py
+import unittest
+from main import *
+
+class TestSortedMerge(unittest.TestCase):
+    def test_two_empty_lists(self):
+        # Arrange
+        list_a = None
+        list_b = None
+        # Act
+        result = sorted_merge(list_a, list_b)
+
+        # Assert
+        self.assertEqual(result, None)
+
+    def test_one_empty_list(self):
+        # Arrange
+        list_a = ListNode(1)
+        list_a.next = ListNode(2)
+        list_b = None
+        # Act
+        result = sorted_merge(list_a, list_b)
+
+        # Assert
+        self.assertEqual(result.__str__(), "1->2")
+    
+    def test_another_one_empty_list(self):
+        # Arrange
+        list_b = ListNode(1)
+        list_b.next = ListNode(2)
+        list_a = None
+        # Act
+        result = sorted_merge(list_a, list_b)
+
+        # Assert
+        self.assertEqual(result.__str__(), "1->2")
+
+    def test_one_short_one_long_list(self):
+        # Arrange
+        list_a = ListNode(1)
+        list_a.next = ListNode(6)
+        list_b = ListNode(5)
+        list_b.next = ListNode(10)
+        list_b.next.next = ListNode(15)
+        # Act
+        result = sorted_merge(list_a, list_b)
+
+        # Assert
+        self.assertEqual(result.__str__(), "1->5->6->10->15")
+
+    def test_one_long_one_short_list(self):
+        # Arrange
+        list_b = ListNode(1)
+        list_b.next = ListNode(6)
+        list_a = ListNode(5)
+        list_a.next = ListNode(10)
+        list_a.next.next = ListNode(15)
+        # Act
+        result = sorted_merge(list_a, list_b)
+
+        # Assert
+        self.assertEqual(result.__str__(), "1->5->6->10->15")
+    
+
+    def test_two_longish_lists(self):
+        # Arrange
+        list_a = ListNode(1)
+        list_a.next = ListNode(6)
+        list_a.next.next = ListNode(27)
+        list_a.next.next.next = ListNode(30)
+        list_b = ListNode(5)
+        list_b.next = ListNode(10)
+        list_b.next.next = ListNode(15)
+        list_b.next.next.next = ListNode(29)
+        # Act
+        result = sorted_merge(list_a, list_b)
+
+        # Assert
+        self.assertEqual(result.__str__(), "1->5->6->10->15->27->29->30")
+```
+
+##### !end-tests
+
+##### !hint
+
+This is actually quite similar to [merging two sorted arrays](https://www.geeksforgeeks.org/merge-two-sorted-arrays/).  The only difference is that the two lists are linked lists.
+
+##### !end-hint
+
+### !end-challenge
+
+[Problem Source: mycodeschool](https://www.youtube.com/user/mycodeschool)
+
 ## Resources
 
-- [Current Slide Deck Used](https://docs.google.com/presentation/d/1lJ8WJnA6qRlHAIaRAjim3kiL4nRBWT5qvFGQQIB4EL4/edit?usp=sharing)
-- [Past Slide Deck Used In Class](https://drive.google.com/file/d/0B__DV26QHsH4bFczWXBXdGtHYkE/view?usp=sharing)
 - [Linked Lists from Geeks for Geeks](https://www.geeksforgeeks.org/data-structures/linked-list/) - Lots of articles & practice problems
 - [Stanford LinkedList Basics](http://cslibrary.stanford.edu/103/LinkedListBasics.pdf)

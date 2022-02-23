@@ -1,13 +1,9 @@
-# Thursdays at Ada
-
-While in Internship students return on Thursdays for additional learning on Computer Science Fundamentals and career development.
-
 ## CS Fundamentals
 
 In Computer Science fundamentals students learn the following concepts and data structures:
 
-- [Code Reviews](../01-Code-Reviews/01-code-reviews.md)
-- [Linked Lists](../02-linked-lists/02-linked-lists.md)
+- [Approaching Problems](../01-Problem-Solving-And-Big-O/01-problem-solving.md)
+- [Linked Lists](../02-linked-lists/01-linked-lists.md)
 - [Binary Search Trees](../03-Binary-Search-Trees/01-Binary-Search-Trees.md)
 - [Stacks](../04-Stacks-And-Queues/01-stacks-and-queues.md)
 - [Queues](../04-Stacks-And-Queues/01-stacks-and-queues.md)
@@ -18,11 +14,11 @@ In Computer Science fundamentals students learn the following concepts and data 
 
 ### Reverse Classroom
 
-CS Fundamentals is taught in a [flipped-classroom](https://omerad.msu.edu/teaching/teaching-strategies/27-teaching/162-what-why-and-how-to-implement-a-flipped-classroom-model) style.  Students are assigned a week prior to review a markdown lesson with accompanying video lesson and slides.  Then in class or online session students ask questions review concepts and work on exercises.  Students are also given time to work toward a weekly programming project.
+CS Fundamentals is taught in a [flipped-classroom](https://omerad.msu.edu/index.php?option=com_content&view=article&id=162:what-why-and-how-to-implement-a-flipped-classroom-model&catid=27:teaching) style.  Students are assigned a week prior to review a markdown lesson with accompanying video lesson and slides.  Then in class or online session students ask questions review concepts and work on exercises.  Students are also given time to work toward a weekly programming project.
 
 ### CS Fun Recorded Sessions
 
 All the CS Fundamentals Online sessions are recorded in Panopto.
 
-- [CS Fundamentals Panopto Recordings](https://adaacademy.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=68179df6-b98d-4b12-8f68-ac32016bc0a0)
-
+- [CS Fundamentals Panopto Recordings](https://adaacademy.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%222887f2f4-b902-4379-8a39-adf101338f83%22)
+- [In Class Lesson recordings](https://adaacademy.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%22899c2cad-f750-4f8c-872b-ace9000dd97f%22)

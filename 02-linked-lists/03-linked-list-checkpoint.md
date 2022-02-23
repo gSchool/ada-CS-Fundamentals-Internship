@@ -1,23 +1,18 @@
 # List Implementations
 
-* [Exercise](https://github.com/Ada-C13/linked-list) 
-
-Using object oriented design constructs, define a Node class and LinkedList class for a singly linked list. Each node has integer data value and a link to the next node. The linked list class has a head node and the following methods defined.
-
-## Exercise
-
-Design and implement the classes and the methods. Implement the methods within the Linked List class that are currently raising NotImplementedError.
-
-### Going Further
-
-There are a set of advanced methods you can choose to implement for additional practice.
+| Logistics             | Details                                   |
+| --------------------- | ----------------------------------------  |
+| Project details       | https://github.com/Ada-C16/linked-list    |
+| JS Version            | https://github.com/Ada-C16/linked-list-js |
+| Should you fork this? | Yes (Check project details)               |
+| Submission method     | Learn                                     |
 
 ### !challenge
 
 * type: testable-project
-* id: e43687d0-a809-44f8-af5d-3c1543f154e9
+* id: 4f3d244b-d34b-4e34-9a85-bce2232203e5
 * title: List Implementations
-* upstream: https://github.com/Ada-C13/linked-list
+* upstream: https://github.com/Ada-C16/linked-list
 * validate_fork: false
 * points: 0
 * topics: linked-lists
@@ -90,14 +85,14 @@ Your PR link goes here.
 * type: testable-project
 * id: 795b30c2-9d88-4480-8062-d0e5466a09eb
 * title: Optional JS Version
-* upstream: https://github.com/Ada-C13/linked-list-js
+* upstream: https://github.com/Ada-C16/linked-list-js
 * validate_fork: false
 * points: 0
 * topics: linked-lists
 
 ##### !question
 
-Optionally you can submit a link to a fork of https://github.com/Ada-C13/linked-list-js
+Optionally you can submit a link to a fork of https://github.com/Ada-C16/linked-list-js
 
 ##### !end-question
 

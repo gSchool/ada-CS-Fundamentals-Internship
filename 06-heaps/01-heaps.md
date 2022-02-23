@@ -1,6 +1,6 @@
 # Heaps
 
-<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=f431004b-8e00-442c-a7d3-aac9010f8654&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=608a709b-d0c2-4273-815d-ada2004e4e8d&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ## Learning Goals
 
@@ -12,9 +12,9 @@ By the end of this lesson you should be able to:
 
 ## Video Lesson & Slides
 
-- [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f431004b-8e00-442c-a7d3-aac9010f8654)
-- [Slide Deck](https://docs.google.com/presentation/d/11iEBrOn8HyXXaeYQLzilXt-k_qtxVtPJPgX3iHXEvso/edit#slide=id.p)
-- [Heap Exercise](https://github.com/ada-c13/heaps)
+- [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=608a709b-d0c2-4273-815d-ada2004e4e8d)
+- [Slide Deck](https://docs.google.com/presentation/d/1UojimxYNCm7r4lxs5owPuST-e26uwN_h5jLjTBdQzgs/edit#slide=id.p7)
+- [Heap Exercise](https://github.com/ada-C16/heaps)
 
 ## Introduction
 
@@ -34,14 +34,49 @@ This is also **not** a Max-Heap.  The last level is not full from left-to-right.
 
 ![Another Invalid Max-Heap](images/invalid-max-heap2.png)
 
+## Uses for Heaps
+
+There are times when you remove items from a data structure in a specific order. For example consider an employee has been given a list of tasks to complete. However they should be handled by priority. The most important jobs should be handled first. 
+
+We could use arrays or linked lists to store tasks, but that would entail `O(n)` time complexity for inserting and removing tasks.
+
+We could use a binary search tree to store the tasks. However, as we discovered, maintaining the balance of the tree is a very expensive and difficult operation. However, properly handled adding or removing tasks would be `O(log n)` time complexity. Unfortunately however writing the tree to a disk or external storage using a traversal would entail `O(n)` time complexity to convert the data structure to a list.
+
+Heaps provide a method of maintaining a balanced binary tree (but not a binary *search* tree) with O(log n) time complexity for adding and removing items, and maintain all elements in an internal array to allow faster transfer to external devices, like external storage.
+
+### Priority Queues
+
+What we have described is a _Priority Queue_.  A priority queue is an abstract data type, like a stack or a regular queue.  However, with a queue items are added and removed in a first-in-first-out (FIFO) order.  Priority queues remove items with the highest priority first.  By using a heap to implement a priority queue you can build a data structure to serve data by priority.  
+
+### Heapsort
+
+Since heaps allow you to extract elements in order, you can use them to sort an array.
+
+With an array of `n` elements, to perform Heapsort you can add the elements to the heap, an O(nlog n) operation.  Then you can remove the elements from the heap one-by-one placing them in the proper place in an array, also an O(nlog n) operation.
+
+It is possible to do this with O(1) space complexity using the original array to store the heap elements and a single temporary variable.
+
+So how does this compare?  Well, adding the elements to a heap and then placing them back in the array in order is O(nlog n + nlog n) = O(nlog n).  That's a pretty good sort.  On average it is not as fast as [QuickSort](https://www.geeksforgeeks.org/quick-sort/), but it has a **much** better worst-case time complexity, as QuickSort has a worst-case of O(n<sup>2</sup>).  It is also slower than [MergeSort](https://www.geeksforgeeks.org/merge-sort/), but has a better space complexity - O(1) compared to O(n).  
+
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-secondary
+
+## Dijkstra’s Algorithm
+
+We will later look at [Dijkstra’s algorithm](https://brilliant.org/wiki/dijkstras-short-path-finder/) to find the shortest path in a weighted graph from a starting node to all other points in a graph.
+
+### !end-callout
+
 ## Implementation
 
 While you **can** implement a heap with linked TreeNode objects, it can be **much** easier to implement a heap with an array.
 
 Consider if the root is at index 0, the left child could be at index 1, and right index 2.  The child of index 1 would be at index 3 and 4 while the children of index 2 are at 5 and 6... we could write a formula to find the children of a node at index _i_.
 
-`left_child = i * 2 + 1`
-`right_child = i * 2 + 2`
+```python
+left_child = i * 2 + 1
+right_child = i * 2 + 2
+```
 
 So this heap:
 
@@ -69,17 +104,16 @@ Pictured with an array it would look like this:
 
 The add method would look like this:
 
-```ruby
+```python
 # This heap is sorted by key-value pairs
-def add(key, value)
-  @store << HeapNode.new(key, value)
+def add(self, key, value)
+    self.store.append(HeapNode.new(key, value))
 
-  # Compare the new node with it's parent
-  # If they are out of order swap and heap-up
-  # using the parent's index number.
-  # Implementation not shown purposefully.
-  heap_up(@store.length - 1)
-end
+    # Compare the new node with it's parent
+    # If they are out of order swap and heap-up
+    # using the parent's index number.
+    # Implementation not shown purposefully.
+    self.heap_up(self.store.length - 1)
 ```
 
 **Exercise:** Write pseudocode for the heap-up method using an array implementation for a heap.  Then compare your steps with your neighbor.
@@ -108,32 +142,27 @@ Removing an element in some ways works in the opposite manner of adding an eleme
 
 ![Initial swap for remove](images/heap-remove-3.png)
 
-
 So removing a node could be done with:
 
-```ruby
-def remove
-  if @store.empty?
-    return nil
-  end
+```python
+def remove(self):
+    if self.store.empty?
+      return nil
 
-  swap(0, @store.last - 1)
-  result = @store.pop
+    self.swap(0, self.store.last - 1)
+    result = self.store.pop()
 
   # heap_down is specifically not
   # implemented here
   # start heap_down with the root (index 0)
-  heap_down(0) unless @store.empty?
+  self.heap_down(0) unless self.store.empty?
   return result
-end
 
-private
 
-def swap(index_1, index_2)
-  temp = @store[index_1]
-  @store[index_1] = @store[index_2]
-  @store[index_2] = temp
-end
+def swap(self, index_1, index_2)
+    temp = self.store[index_1]
+    self.store[index_1] = self.store[index_2]
+    self.store[index_2] = temp
 ```
 
 Looking at it as an array:
@@ -149,31 +178,14 @@ With the result:
 
 **Exercise:** Write pseudocode to implement the heap_down operation.  Note that you will need to verify that you may swap all the way down to a leaf node.
 
-## Uses for Heaps
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
 
-There are a number of practical uses for heaps in programming.  We will take a brief look at three.
-
-### Priority Queues
-
-One use for a heap is a _Priority Queue_.  A priority queue is an abstract data type, like a stack or a regular queue.  However, with a queue items are added and removed in a first-in-first-out (FIFO) order.  Priority queues remove items with the highest priority first.  By using a heap to implement a priority queue you can build a data structure to serve data by priority.  
-
-### Heapsort
-
-Since heaps allow you to extract elements in order, you can use them to sort an array.
-
-With an array of `n` elements, to perform Heapsort you can add the elements to the heap, an O(nlog n) operation.  Then you can remove the elements from the heap one-by-one placing them in the proper place in an array, also an O(nlog n) operation.
-
-It is possible to do this with O(1) space complexity using the original array to store the heap elements and a single temporary variable.
-
-So how does this compare?  Well, adding the elements to a heap and then placing them back in the array in order is O(nlog n + nlog n) = O(nlog n).  That's a pretty good sort.  On average it is not as fast as [QuickSort](https://www.geeksforgeeks.org/quick-sort/), but it has a **much** better worst-case time complexity, as QuickSort has a worst-case of O(n<sup>2</sup>).  It is also slower than [MergeSort](https://www.geeksforgeeks.org/merge-sort/), but has a better space complexity - O(1) compared to O(n).  
-
-### Dijkstra’s Algorithm
-
-We will later look at [Dijkstra’s algorithm](https://brilliant.org/wiki/dijkstras-short-path-finder/) to find the shortest path in a weighted graph from a starting node to all other points in a graph.
-
-## The System Heap
+## Sidenote: The System Heap
 
 When you allocate memory dynamically with `.new` or `malloc` in C, the operating system allocates the memory from something called [Heap Memory](https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/).  This is **not** the same as the heap data structure.  Instead it's considered a "heap" of memory, like clothes in the laundry basket is a heap of clothes.  
+
+### !end-callout
 
 ## Summary
 
