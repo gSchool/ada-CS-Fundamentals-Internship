@@ -2,10 +2,13 @@
 
 ## Goal
 
-Our goal is for students to be able to:
+Our goal is to be able to:
 
 - Use dictionaries and hash tables to solve coding problems
-- Explain how hash tables work
+- Explain how hash tables work including
+    - Collision resolution
+    - Hash Functions
+- Explain the uses for Hash Tables
 
 ## Review Hash Tables Lesson
 
@@ -161,11 +164,11 @@ In which situations would you **not** use a hash table/dictionary?
 ##### !answer
 
 * When order matters
+* When multiple items can have the same key
 * When memory consumption is important
 
 ##### !end-answer
 
-<!-- other optional sections -->
 ##### !hint
 
 Remember the hash function is a function that takes a key and returns a seemingly *arbitrary* index, so two elements with similar keys may end up in vastly dissimilar indicies in the internal array.
