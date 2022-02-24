@@ -130,7 +130,7 @@ Standards:
       -
         Type: Lesson
         UID: 69cc9cfc-ad29-4b4d-afe3-5c7b4786aa08
-        Path: /05/hash-tables/03-hash-tables-activity.md
+        Path: /05-hash-tables/03-hash-tables-activity.md
       -
         Type: Checkpoint
         UID: a39c4928-599f-43b9-9b01-9637439502bf
