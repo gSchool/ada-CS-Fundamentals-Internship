@@ -191,6 +191,10 @@ In the next activity we will practice an interview question using a dictionary.
 
 - [4 Sum](https://replit.com/@adadev/4Sum-II)
 
+Looking at the brute force solution would require iterating with nested loops through all 4 arrays resulting in O(n^4) time complexity. We can use a hash table to improve this result to O(n^2) time complexity by finding the sums for each element in the first two arrays and the sums of all the elements in the 2nd and 3rd array.
+
+Then we can find the inverse of the keys in one dictionary in the other dictionary.
+
 ## Activity - Group Practice
 
 - [Inflight Entertainment](https://replit.com/@adadev/Inflight-Entertainment)
