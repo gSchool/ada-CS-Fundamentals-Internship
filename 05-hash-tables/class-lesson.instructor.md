@@ -1,6 +1,6 @@
 # Lesson Plan
 
-Hash tables are a weird unit in that we don't expect students to *construct* a hash table, but instead to be able to use one. However students *do* need know understand the basic principles of how hash tables/dictionaries work. 
+Hash tables are a weird unit in that we don't expect students to *construct* a hash table, but instead to be able to use one. However students *do* need know understand the basic principles of how hash tables/dictionaries work.
 
 ## Lesson Goals
 
