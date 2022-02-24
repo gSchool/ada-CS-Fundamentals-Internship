@@ -29,7 +29,7 @@ Students can be a bit shy, but you can contact specific students ahead of time a
 
 ## Stacks & Queues Introduction - 10 minutes
 
-Then follow the 1st part of the [activity](./01-stacks-and-queues.md) reviewing where BSTs are useful).  
+Then follow the 1st part of the [activity](./01-stacks-and-queues.md) reviewing stacks & queues, abstract data types & the use of the modulus operator when traversing a list.  
 
 Specifically reinforce:
 
@@ -37,7 +37,7 @@ Specifically reinforce:
 - The core stack & queue functions
 - The use of the `%` operator to traverse a circular buffer
 
-## Livecode - 20 minutes
+## Livecodes - 20 minutes
 
 In the livecode walk through a sample stack coding problem and the constructor/`enqueue` method:
 
@@ -47,11 +47,19 @@ Remember to:
 - Cause a bug, and try to promote student ideas to fix it.
 - Model how to use the tests and print statements.
 
-## Coding Activity - 60 minutes
+### Reorder Linked List Problem - 15 minutes
 
-Break students into breakout rooms to practice the replit. Optionally you can talk through some pseudocode before students start working.
+After introducing the project and illustrating the `%` in the `enqueue` method, we can walk through a sample problem using a Stack and give students another chance for exposure to Linked Lists.
+
+- [Reordering a Linked List](https://replit.com/@adadev/reorderlinkedlist#reorder_linked_list/reorder_linked_list.py)
+
+## Coding Activity - 45 minutes
+
+Break students into breakout rooms to practice the replit. The replit has a suggested solution in pseudocode which is a good chance for students to discuss how to convert it to code.
 
 Iterate through the breakout rooms answering questions as you go.
+
+[Daily Temperatures](https://replit.com/@adadev/Daily-Temperatures-Solution#daily_temperatures/daily_temperatures.py)
 
 ## Solution Examples
 
