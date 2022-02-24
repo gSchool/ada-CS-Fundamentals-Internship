@@ -67,4 +67,4 @@ Solutions:
 
 - [The project](https://github.com/adagold/stacks-queues/tree/python-solution)
 - [Reorder Linked Lists](https://replit.com/@adadev/reorderlinkedlist-Solution)
-- [Daily Temperatures](https://replit.com/@adadev/Daily-Temperatures-Solution#main.py)
+- [Daily Temperatures](https://replit.com/@adadev/Daily-Temperatures-Solution)
