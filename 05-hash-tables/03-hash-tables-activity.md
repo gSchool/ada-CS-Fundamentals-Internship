@@ -92,7 +92,7 @@ When the key is `28` at what index will the key be inserted?
 
 Because the hash function 28 % 10 = 8, we have a collision.  Using linear probing we iterate through the array until we find an empty slot.
 
-##### !explanation
+##### !end-explanation
 
 ### !end-challenge
 
