@@ -66,7 +66,7 @@ Remember that a well-functioning hash table is one who's hash function executes 
 
 In the given Hash Table, the hash function is `h(key) = key % size`.  Where `size` is the length of the internal array and `key` is the key to be hashed.
 
-When the key is `28` at what index will the key be inserted?
+When the key is `28` at what index will the key be inserted assuming linear probing is the collision resolution method?
 
 ![Hash table example for linear probing question](./images/hash-table-linear-probing.svg)
 
