@@ -105,9 +105,17 @@ Standards:
       - success criteria
     ContentFiles:
       -
+        Type: Instructor
+        UID: 60bbfe2c-135a-48a7-bef9-a60bcbb1cd9a
+        Path: /04-Stacks-And-Queues/class-lesson.instructor.md
+      -
         Type: Lesson
         UID: 4710249d-f9f4-4943-ac42-7688a34232b3
         Path: /04-Stacks-And-Queues/01-stacks-and-queues.md
+      -
+        Type: Lesson
+        UID: f731d494-cbc8-45cc-8052-118521032d2d
+        Path: /04-Stacks-And-Queues/03-stacks-and-queues-activity.md
       -
         Type: Checkpoint
         UID: 13fd1a26-237c-4d3c-884d-575408019668
