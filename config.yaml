@@ -82,9 +82,17 @@ Standards:
         UID: e153ec41-477e-43fb-bf6d-0173e24aec85
         Path: /03-Binary-Search-Trees/bst.instructor.md
       -
+        Type: Instructor
+        UID: 9f53dd7f-7945-46b3-abe1-83a762e3e705
+        Path: /03-Binary-Search-Trees/class-lesson.instructor.md
+      -
         Type: Lesson
         UID: d363c5cb-af6d-45d1-8e98-eaf960f8fac9
         Path: /03-Binary-Search-Trees/01-Binary-Search-Trees.md
+      -
+        Type: Lesson
+        UID: d8ba7559-8171-4f02-8b9d-d4d32c098e72
+        Path: /03-Binary-Search-Trees/03-Binary-Search-Trees-Activity.md
       -
         Type: Checkpoint
         UID: bbf1e2a2-0d6e-4337-9b00-81216688e16a
@@ -127,9 +135,17 @@ Standards:
       - success criteria
     ContentFiles:
       -
+        Type: Instructor
+        UID: 629e6be6-fc8f-4da0-ac88-ac88cf4ab39a
+        Path: /06-heaps/class-lesson.instructor.md
+      -
         Type: Lesson
         UID: 4a7e9b34-203d-44c5-ae25-86f815f85576
         Path: /06-heaps/01-heaps.md
+      -
+        Type: Lesson
+        UID: bc09fa82-9c69-4783-bd1c-8361148f58d5
+        Path: /06-heaps/03-Heaps-Activity.md
       -
         Type: Checkpoint
         UID: 824d3954-8e7f-472e-9878-426197b86f6f
