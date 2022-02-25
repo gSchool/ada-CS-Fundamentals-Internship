@@ -36,6 +36,7 @@ Specifically reinforce:
 - The utility of Abstract Data Types
 - The core stack & queue functions
 - The use of the `%` operator to traverse a circular buffer
+    - Students have trouble understanding how to wrap around a list without using an `if` statement.  Instead of using `front = (front + 1) % size`, they will use an if statement.  It's not a huge deal, but can be helpful to simplify code.
 
 ## Livecodes - 20 minutes
 
