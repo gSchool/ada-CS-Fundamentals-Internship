@@ -129,6 +129,7 @@ We should consider:
     * For example: [1, 2, 3, 4] and 11 would need to return *something* to indicate that there is no contiguous sublist which adds up to the given number.
   * Another Negative Edge Case input would include an array of numbers all larger than the given positive integer.
     * For example: [6, 7] and 1 would return *something* to indicate there is no contiguous sublist which adds up to the given number.
+  * Yet another negative edge-case would consist of an empty list.
 * **Positive Edge Case**
   * This would be an input on the edge of what is possible which returns a valid length of a contiguous sublist.
   * For example: [1] and 1 would return 1 because [1] is a contiguous sublist which adds up to 1.
