@@ -128,9 +128,17 @@ Standards:
       - success criteria
     ContentFiles:
       -
+        Type: Instructor
+        UID: 7d6fef7e-76cf-4b9d-b36f-8e07df812c4b
+        Path: /05-hash-tables/class-lesson.instructor.md
+      -
         Type: Lesson
         UID: b1b69d98-9fb4-4b91-9eb1-2cfbcf4d1046
         Path: /05-hash-tables/01-hash-tables.md
+      -
+        Type: Lesson
+        UID: 69cc9cfc-ad29-4b4d-afe3-5c7b4786aa08
+        Path: /05-hash-tables/03-hash-tables-activity.md
       -
         Type: Checkpoint
         UID: a39c4928-599f-43b9-9b01-9637439502bf
