@@ -669,5 +669,6 @@ In weighted graphs, finding the shortest paths is a common problem.  One classic
 - [Coursera:  Algorithms on Graphs](https://www.coursera.org/lecture/algorithms-on-graphs/representing-graphs-c4W9f)
 - [Alternative video on Dijkstra's Algorithm](https://www.youtube.com/watch?v=ba4YGd7S-TY#action=share)
 - [Dijkstra's Algorithm Notes](https://www.codingame.com/playgrounds/1608/shortest-paths-with-dijkstras-algorithm/dijkstras-algorithm)
+- [Workshape.io a visual gide to graph traversal algorithms](https://workshape.github.io/visual-graph-algorithms/)
 
 <!-- Diagram sources:  https://drive.google.com/file/d/1bOXvfXdWi9pkKfmWnMZd9QK4zoG930c7/view?usp=sharing -->
