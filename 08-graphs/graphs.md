@@ -18,6 +18,21 @@ By the end of this lesson we should be able to:
 - [Accompanying Slidedeck](https://docs.google.com/presentation/d/1pIAhpb0QL7Pk93P3E-jIRbboz6UPRZOnJ2eyVU1Ga3Q/edit#slide=id.p7)
 - [Exercise](https://github.com/Ada-C16/Bipartition-Graph)
 
+## Terms & Definitions
+
+| Term | Definition |
+|--- |--- |
+| Graph | A data structure with two parts:  A limited set of verticies, called nodes, and a limited set of connections between nodes known as edges. |
+| Edge | A connection between two nodes in a graph. |
+| Node | The fundamental unit of a graph in computer science.  Each element of a graph, connected by edges. |
+| Sparse Graph | A graph with few edges when compared to nodes. |
+| Dense Graph | A graph with many more edges when compared to nodes.  A graph is considered _dense_ when it has close to the maximum number of possible edges. |
+| Directed Graph |  A graph where the edges connet in one direction.  For example an edge may conect nodes A -> B, but will not connect B -> A. |
+| Undirected Graph | A Graph in which each edge is bidirectional.  So an edge from A → B also connects B → A. |
+| Adjacency Matrix | A 2-dimensional array listing the connections between nodes in a graph. |
+| Adjacency List | A collection of unordered lists used to represent a graph.  Each list describes the neighors of a particular node.
+| Node Degree | The number of edges a particular node has. |
+
 ## Introduction
 
 Graphs are a data structure in computer science represented by a set of nodes connected by what are called edges.  Naturally graphs can be used to solve problems like finding the cheapest way to visit all the cities below.
@@ -95,7 +110,7 @@ We could represent this graph with the following:
 
 ```python
 sample_graph = [
-        [1, 2], [1, 3], [3, 4]
+        (1, 2), (1, 3), (3, 4)
     ]
 ```
 
@@ -525,7 +540,6 @@ def dijkstra(adjacency_matrix, start_node):
 </details>
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -646,21 +660,6 @@ There are a number of algorithms involving graphs in computer science.  To trave
 
 In weighted graphs, finding the shortest paths is a common problem.  One classic solution is Dijkstra's algorithm which is a good example of a greedy algorithm.
 
-## Terms & Definitions
-
-| Term | Definition |
-|--- |--- |
-| Graph | A data structure with two parts:  A limited set of verticies, called nodes, and a limited set of connections between nodes known as edges. |
-| Edge | A connection between two nodes in a graph. |
-| Node | The fundamental unit of a graph in computer science.  Each element of a graph, connected by edges. |
-| Sparse Graph | A graph with few edges when compared to nodes. |
-| Dense Graph | A graph with many more edges when compared to nodes.  A graph is considered _dense_ when it has close to the maximum number of possible edges. |
-| Directed Graph |  A graph where the edges connet in one direction.  For example an edge may conect nodes A -> B, but will not connect B -> A. |
-| Undirected Graph | A Graph in which each edge is bidirectional.  So an edge from A → B also connects B → A. |
-| Adjacency Matrix | A 2-dimensional array listing the connections between nodes in a graph. |
-| Adjacency List | A collection of unordered lists used to represent a graph.  Each list describes the neighors of a particular node.
-| Node Degree | The number of edges a particular node has. |
-
 ## Resources
 
 - [BaseCS on Graphs](https://medium.com/basecs/from-theory-to-practice-representing-graphs-cfd782c5be38)
@@ -669,5 +668,6 @@ In weighted graphs, finding the shortest paths is a common problem.  One classic
 - [Coursera:  Algorithms on Graphs](https://www.coursera.org/lecture/algorithms-on-graphs/representing-graphs-c4W9f)
 - [Alternative video on Dijkstra's Algorithm](https://www.youtube.com/watch?v=ba4YGd7S-TY#action=share)
 - [Dijkstra's Algorithm Notes](https://www.codingame.com/playgrounds/1608/shortest-paths-with-dijkstras-algorithm/dijkstras-algorithm)
+- [Workshape.io a visual gide to graph traversal algorithms](https://workshape.github.io/visual-graph-algorithms/)
 
 <!-- Diagram sources:  https://drive.google.com/file/d/1bOXvfXdWi9pkKfmWnMZd9QK4zoG930c7/view?usp=sharing -->

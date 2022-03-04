@@ -82,9 +82,17 @@ Standards:
         UID: e153ec41-477e-43fb-bf6d-0173e24aec85
         Path: /03-Binary-Search-Trees/bst.instructor.md
       -
+        Type: Instructor
+        UID: 9f53dd7f-7945-46b3-abe1-83a762e3e705
+        Path: /03-Binary-Search-Trees/class-lesson.instructor.md
+      -
         Type: Lesson
         UID: d363c5cb-af6d-45d1-8e98-eaf960f8fac9
         Path: /03-Binary-Search-Trees/01-Binary-Search-Trees.md
+      -
+        Type: Lesson
+        UID: d8ba7559-8171-4f02-8b9d-d4d32c098e72
+        Path: /03-Binary-Search-Trees/03-Binary-Search-Trees-Activity.md
       -
         Type: Checkpoint
         UID: bbf1e2a2-0d6e-4337-9b00-81216688e16a
@@ -97,9 +105,17 @@ Standards:
       - success criteria
     ContentFiles:
       -
+        Type: Instructor
+        UID: 60bbfe2c-135a-48a7-bef9-a60bcbb1cd9a
+        Path: /04-Stacks-And-Queues/class-lesson.instructor.md
+      -
         Type: Lesson
         UID: 4710249d-f9f4-4943-ac42-7688a34232b3
         Path: /04-Stacks-And-Queues/01-stacks-and-queues.md
+      -
+        Type: Lesson
+        UID: f731d494-cbc8-45cc-8052-118521032d2d
+        Path: /04-Stacks-And-Queues/03-stacks-and-queues-activity.md
       -
         Type: Checkpoint
         UID: 13fd1a26-237c-4d3c-884d-575408019668
@@ -112,9 +128,17 @@ Standards:
       - success criteria
     ContentFiles:
       -
+        Type: Instructor
+        UID: 7d6fef7e-76cf-4b9d-b36f-8e07df812c4b
+        Path: /05-hash-tables/class-lesson.instructor.md
+      -
         Type: Lesson
         UID: b1b69d98-9fb4-4b91-9eb1-2cfbcf4d1046
         Path: /05-hash-tables/01-hash-tables.md
+      -
+        Type: Lesson
+        UID: 69cc9cfc-ad29-4b4d-afe3-5c7b4786aa08
+        Path: /05-hash-tables/03-hash-tables-activity.md
       -
         Type: Checkpoint
         UID: a39c4928-599f-43b9-9b01-9637439502bf
@@ -127,9 +151,17 @@ Standards:
       - success criteria
     ContentFiles:
       -
+        Type: Instructor
+        UID: 629e6be6-fc8f-4da0-ac88-ac88cf4ab39a
+        Path: /06-heaps/class-lesson.instructor.md
+      -
         Type: Lesson
         UID: 4a7e9b34-203d-44c5-ae25-86f815f85576
         Path: /06-heaps/01-heaps.md
+      -
+        Type: Lesson
+        UID: bc09fa82-9c69-4783-bd1c-8361148f58d5
+        Path: /06-heaps/03-Heaps-Activity.md
       -
         Type: Checkpoint
         UID: 824d3954-8e7f-472e-9878-426197b86f6f
@@ -164,6 +196,14 @@ Standards:
         Type: Checkpoint
         UID: 8f80f1c3-71f9-42c7-b658-9720f6e3f5b1
         Path: /08-graphs/graphs.checkpoint.md
+      -
+        Type: Instructor
+        UID: 691410db-f727-4560-99bb-65def0775805
+        Path: /08-graphs/class-lesson.instructor.md
+      -
+        Type: Lesson
+        UID: 091176b0-1060-4bf5-9237-e5ff5c1878f1
+        Path: /08-graphs/03-graphs-activity.md
       -
         Type: Lesson
         UID: f0e4986d-dc1b-441d-8236-4c4de94c4422
