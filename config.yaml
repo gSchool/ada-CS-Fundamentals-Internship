@@ -197,6 +197,14 @@ Standards:
         UID: 8f80f1c3-71f9-42c7-b658-9720f6e3f5b1
         Path: /08-graphs/graphs.checkpoint.md
       -
+        Type: Instructor
+        UID: 691410db-f727-4560-99bb-65def0775805
+        Path: /08-graphs/class-lesson.instructor.md
+      -
+        Type: Lesson
+        UID: 091176b0-1060-4bf5-9237-e5ff5c1878f1
+        Path: /08-graphs/03-graphs-activity.md
+      -
         Type: Lesson
         UID: f0e4986d-dc1b-441d-8236-4c4de94c4422
         Path: /08-graphs/dijskstra.md
