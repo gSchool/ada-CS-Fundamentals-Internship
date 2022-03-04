@@ -18,6 +18,21 @@ By the end of this lesson we should be able to:
 - [Accompanying Slidedeck](https://docs.google.com/presentation/d/1pIAhpb0QL7Pk93P3E-jIRbboz6UPRZOnJ2eyVU1Ga3Q/edit#slide=id.p7)
 - [Exercise](https://github.com/Ada-C16/Bipartition-Graph)
 
+## Terms & Definitions
+
+| Term | Definition |
+|--- |--- |
+| Graph | A data structure with two parts:  A limited set of verticies, called nodes, and a limited set of connections between nodes known as edges. |
+| Edge | A connection between two nodes in a graph. |
+| Node | The fundamental unit of a graph in computer science.  Each element of a graph, connected by edges. |
+| Sparse Graph | A graph with few edges when compared to nodes. |
+| Dense Graph | A graph with many more edges when compared to nodes.  A graph is considered _dense_ when it has close to the maximum number of possible edges. |
+| Directed Graph |  A graph where the edges connet in one direction.  For example an edge may conect nodes A -> B, but will not connect B -> A. |
+| Undirected Graph | A Graph in which each edge is bidirectional.  So an edge from A → B also connects B → A. |
+| Adjacency Matrix | A 2-dimensional array listing the connections between nodes in a graph. |
+| Adjacency List | A collection of unordered lists used to represent a graph.  Each list describes the neighors of a particular node.
+| Node Degree | The number of edges a particular node has. |
+
 ## Introduction
 
 Graphs are a data structure in computer science represented by a set of nodes connected by what are called edges.  Naturally graphs can be used to solve problems like finding the cheapest way to visit all the cities below.
@@ -95,7 +110,7 @@ We could represent this graph with the following:
 
 ```python
 sample_graph = [
-        [1, 2], [1, 3], [3, 4]
+        (1, 2), (1, 3), (3, 4)
     ]
 ```
 
@@ -525,7 +540,6 @@ def dijkstra(adjacency_matrix, start_node):
 </details>
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -645,21 +659,6 @@ There are two main ways to represent a graph.  The first is using an adjacency m
 There are a number of algorithms involving graphs in computer science.  To traverse a graph you can either make a breadth-first-search or a depth-first-search.  In a breadth-first-search each node is investigated by it's proximity to the starting node.  In a depth-first-search a path is explored as far as it will go, and then the algorithm backs up until another subpath can be explored, like a mouse exploring a maze.
 
 In weighted graphs, finding the shortest paths is a common problem.  One classic solution is Dijkstra's algorithm which is a good example of a greedy algorithm.
-
-## Terms & Definitions
-
-| Term | Definition |
-|--- |--- |
-| Graph | A data structure with two parts:  A limited set of verticies, called nodes, and a limited set of connections between nodes known as edges. |
-| Edge | A connection between two nodes in a graph. |
-| Node | The fundamental unit of a graph in computer science.  Each element of a graph, connected by edges. |
-| Sparse Graph | A graph with few edges when compared to nodes. |
-| Dense Graph | A graph with many more edges when compared to nodes.  A graph is considered _dense_ when it has close to the maximum number of possible edges. |
-| Directed Graph |  A graph where the edges connet in one direction.  For example an edge may conect nodes A -> B, but will not connect B -> A. |
-| Undirected Graph | A Graph in which each edge is bidirectional.  So an edge from A → B also connects B → A. |
-| Adjacency Matrix | A 2-dimensional array listing the connections between nodes in a graph. |
-| Adjacency List | A collection of unordered lists used to represent a graph.  Each list describes the neighors of a particular node.
-| Node Degree | The number of edges a particular node has. |
 
 ## Resources
 
