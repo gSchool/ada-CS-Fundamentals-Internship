@@ -280,7 +280,7 @@ As a class lets follow breadth-first search on the following graph.
 
 **Question**:  Can DFS help us identify a cycle?
 
-## Livecode - Project Introduction
+## Project Introduction
 
 As a class we will check out  the [project](./graphs.checkpoint.md).  We will only review the project assignment.  The purpose is to gain familiarity with the project and to discuss how to implement either BFS or DFS.
 
@@ -292,11 +292,11 @@ Breadth-First-Search & Depth-First-Search are among the most common topics in in
 
 ### !end-callout
 
-### Leetcode Style Question
+## Leetcode Style Question
 
 In the next activity we will try solving a coding solution using BFS.
 
-- [Course Schedule](https://replit.com/@ChrisMcAnally/Course-Schedule)
+- [Course Schedule](https://replit.com/@adadev/Course-Schedule#main.py)
 
 This is a typical type of interview question where you need to identify if there are any cycles in a graph.  This problem is using a technique called, [Graph Labeling](https://en.wikipedia.org/wiki/Graph_labeling) to identify if there are cycles in the graph.  Once we encounter a node on a DFS traversal we label it with a "color," if deeper in the traversal, we encounter a node with that color we have a cycle.
 
