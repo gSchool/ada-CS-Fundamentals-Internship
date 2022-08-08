@@ -788,7 +788,7 @@ The space complexity will be O(1) or constant as we are not creating any new dat
 
 ### Removing a node at a specific index
 
-To remove a node at a specific index, we first have to traverse the list until we find the index before the node to delete.  If the node to remove is the head, then the head becomes the next element.  Then adjust the prior node's `next` reference to point **past** the node you are removing.  
+To remove a node at a specific index, we also have to traverse the list until we find the index before the node to delete. Remove also requires some more complex redirection of pointers. If the node to remove is the head, then the head becomes the next element. In all other cases for a singly linked list, we adjust the prior node's `next` reference to point **past** the node you are removing.  
 
 ![remove a node #1](images/remove-node-1.png)
 ![remove a node #2](images/remove-node-2.png)
