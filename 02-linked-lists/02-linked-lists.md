@@ -39,7 +39,9 @@ The linked list itself maintains a reference, typically called `head` to the fir
 
 ### Doubly Linked Lists
 
-A Doubly Linked List extends this by adding a `previous` reference to each node.  That `previous` reference points to the prior node.  The `head` node's `previous` field will be `nil` or `null`.
+A doubly linked list extends the structure of a singly linked list by adding a `previous` reference to each node. The `previous` reference points to the node in the list directly before it. The `head` node's `previous` field will be `null`.
+
+Doubly linked lists also typically maintain an explicit reference to the last node in the linked list, typically called the `tail`.
 
 ![Doubly Linked List](images/doubly-linked-list.png)
 
