@@ -303,7 +303,7 @@ Either could work as finding an element will take O(n) for an unordered list in 
 
 ##### !question
 
-You need to regularly look up students from an unordered list and remove them from the list.  What would you pick a LinkedList or an Array?
+Your low memory capacity smart lightbulb needs to store a list of data.  What would you pick, LinkedList or Array?
 
 ##### !end-question
 
