@@ -52,7 +52,7 @@ You can use a doubly or singly linked list in any place you could use an array, 
 
 ### Over Arrays
 
-Both Arrays & Linked Lists are linear data structures and both have a clearly defined order with first and last elements.  An array however has the ability to use an _index_ to select any element in constant time, while to find an arbitrary element in a linked list requires you to start at the head and iterate through the links until you find the element.  You can visualize and explore linked list operations on [visualgo.net](https://visualgo.net/en/list).
+Both Arrays & Linked Lists are linear data structures and both have a clearly defined order with first and last elements.  An array however has the ability to use an _index_ to select any element in constant time. In contrast, to find an arbitrary element in a linked list, we must start at the head node and iterate through the links until we find the desired element. To visualize and explore linked list operations, try out [visualgo.net](https://visualgo.net/en/list).
 
 Big-O For Linked Lists & Arrays
 
@@ -63,9 +63,11 @@ Big-O For Linked Lists & Arrays
 | insertion | O(1) | O(n) |
 | deletion | O(1) 	| O(1) |
 
-As you can see above, Linked Lists perform in constant time to insert values into or remove values from a list, because it only requires a few reference to be changed.  Arrays, on the other hand, can require shifting numerous elements into new indices with each insertion or deletion.
+On the other hand, as you can see above, linked lists perform in constant time to insert values into or remove values from a list, because they only require a few reference to be redirected toward different nodes.  In contrast, arrays can require shifting numerous elements into new indices with each insertion or deletion.
 
-Further most runtimes allocate more memory to an array than is being used because if the array grows, the interpreter needs to request new memory from the environment and copy the entire array into the new, larger, space.  By starting with extra space available an array can grow as required for some time.  A LinkedList by contrast only uses memory as required for the nodes available.  An array also requires each element to be adjacent in memory.  When available memory is limited, this can be problematic.  So in some memory restrictive environments a Linked List could be attractive. 
+Further, most runtimes allocate more memory to an array than is being used because if the array grows, the interpreter needs to request new memory from the environment and copy the entire array into the new, larger, space.  By starting with extra space available an array can grow as required for some time.  A linked list by contrast only uses memory as required for the nodes available.  
+
+An array also requires each element to be adjacent in memory.  When available memory is limited, this can be problematic.  So in some memory restrictive environments a linked list is attractive. 
 
 ### Doubly Linked Lists vs Singly Linked Lists
 
