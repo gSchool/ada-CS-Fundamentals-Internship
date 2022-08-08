@@ -56,6 +56,10 @@ Standards:
         Path: /02-linked-lists/02-linked-lists.md
       -
         Type: Lesson
+        UID: 0c78e210-d831-41dd-956b-973aa151d904
+        Path: /02-linked-lists/02-linked-lists-implementation.md
+      -
+        Type: Lesson
         UID: 0d3a9473-199c-430d-bc55-43fc09fd50ff
         Path: /02-linked-lists/02-linked-lists-supplemental-concepts.md
       -
