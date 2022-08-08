@@ -49,7 +49,6 @@ Doubly linked lists also typically maintain an explicit reference to the last no
 
 You can use a doubly or singly linked list in any place you could use an array, but they have specific advantages depending on the use-case.
 
-Doubly linked lists take up additional memory, due to the additional references, but it is possible to iterate through in reverse, and it can be a little easier to sort or add/remove elements in the middle of the list more easily.
 
 ### Over Arrays
 
@@ -66,7 +65,13 @@ Big-O For Linked Lists & Arrays
 
 As you can see above, Linked Lists perform in constant time to insert values into or remove values from a list, because it only requires a few reference to be changed.  Arrays, on the other hand, can require shifting numerous elements into new indices with each insertion or deletion.
 
-Further most runtimes allocate more memory to an array than is being used because if the array grows, the interpreter needs to request new memory from the environment and copy the entire array into the new, larger, space.  By starting with extra space available an array can grow as required for some time.  A LinkedList by contrast only uses memory as required for the nodes available.  An array also requires each element to be adjacent in memory.  When available memory is limited, this can be problematic.  So in some memory restrictive environments a Linked List could be attractive.  
+Further most runtimes allocate more memory to an array than is being used because if the array grows, the interpreter needs to request new memory from the environment and copy the entire array into the new, larger, space.  By starting with extra space available an array can grow as required for some time.  A LinkedList by contrast only uses memory as required for the nodes available.  An array also requires each element to be adjacent in memory.  When available memory is limited, this can be problematic.  So in some memory restrictive environments a Linked List could be attractive. 
+
+### Doubly Linked Lists vs Singly Linked Lists
+
+Doubly linked lists take up additional memory, due to the additional `previous` and `tail` references. However, the additional references also enable us to iterate through doubly linked lists in reverse. Further, it can be a little easier to sort or add/remove elements in the middle of the list more easily.
+
+## Summary
 
 Linked Lists have the following advantages:
 
