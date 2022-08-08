@@ -29,7 +29,9 @@ Similar to an array, a linked list is also a linear collection where one element
 
 ### Singly Linked Lists
 
-A Singly Linked List is the most basic form of a Linked List.  The data structure maintains a reference, typically called `head` which references the first node in a list.  That node maintains a field, typically called `next`, which reference the next node etc.  The last node in a linked list, sometimes called the `tail`, has `null` or `nil` as it's `next` reference.  
+A singly linked list is the most basic form of a linked list.  Each element of the linked list is itself a data structure called a node. Each node maintains two fields: a field typically called `value` to store the element's data and a field typically called `next` which stores a reference to the next node in the list. The last node in a linked list has `null` as it's `next` reference.  
+
+The linked list itself maintains a reference, typically called `head` to the first node in the list. 
 
 ![Singly Linked List](images/singly-linked-list2.png)
 
