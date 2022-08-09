@@ -263,29 +263,14 @@ Otherwise return 1 plus the maximum of the heights of the right and left subtree
 
 This is a recursive solution because it treats the left and right sides of a node as trees.
 
+## Breadth First Search Traversal
+
+<!--TODO: BFS walkthrough -->
+
 
 ## Summary
 
-In this lesson we looked at the advantages a Binary Search Tree provides over a sorted array or LinkedList.  Binary Search trees provide an O(log n) time to add, remove and find elements because searching a tree performs a binary search.  This performance however depends on the tree being **balanced**.  A balanced tree has subtrees of height within 1 of each other.
-
-We also examined different methods to traverse a Tree.  Unlike a LinkedList where there is only one method to traverse a tree has multiple ways to traverse.
-
-In short we want to use a Binary Search Tree When:
-
-- Maintaining order is important
-- We want to maintain efficient search, insertion and deletion time complexities
-
-## Big-O Comparison
-
-We can see below a balanced Binary Search Tree provides good performance while maintaining elements in order.  
-
-**#**|**Data Structure**|**Access By Key**|**Search**|**Insertion (Middle)**|**Deletion (Middle)**|**Add First**|**Add Last**
-:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
-1|Unsorted Array|O(1)|O(n)|O(n)|O(n)|O(n)|O(1)
-2|Sorted Array|O(1)|O(log n)|O(n)|O(n)|O(n)|O(1)
-3|Linked List|O(n)|O(n)|O(n)|O(n)|O(1)|O(1)
-4|Binary Tree (balanced)|O(log n)|O(log n)|O(log n)|O(log n)|NA|NA
-5|Hash Table|O(1)|O(1)|O(1)|O(1)|NA|NA
+In the lesson, we examined different methods to traverse a Tree.  Unlike a LinkedList where there is only one method to traverse a tree has multiple ways to traverse.
 
 ## Additional Resources
 
