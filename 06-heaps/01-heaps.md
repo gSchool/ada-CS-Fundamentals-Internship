@@ -34,6 +34,39 @@ This is also **not** a Max-Heap.  The last level is not full from left-to-right.
 
 ![Another Invalid Max-Heap](images/invalid-max-heap2.png)
 
+## Uses for Heaps
+
+There are times when you remove items from a data structure in a specific order. For example consider an employee has been given a list of tasks to complete. However they should be handled by priority. The most important jobs should be handled first. 
+
+We could use arrays or linked lists to store tasks, but that would entail `O(n)` time complexity for inserting and removing tasks.
+
+We could use a binary search tree to store the tasks. However, as we discovered, maintaining the balance of the tree is a very expensive and difficult operation. However, properly handled adding or removing tasks would be `O(log n)` time complexity. Unfortunately however writing the tree to a disk or external storage using a traversal would entail `O(n)` time complexity to convert the data structure to a list.
+
+Heaps provide a method of maintaining a balanced binary tree (but not a binary *search* tree) with O(log n) time complexity for adding and removing items, and maintain all elements in an internal array to allow faster transfer to external devices, like external storage.
+
+### Priority Queues
+
+What we have described is a _Priority Queue_.  A priority queue is an abstract data type, like a stack or a regular queue.  However, with a queue items are added and removed in a first-in-first-out (FIFO) order.  Priority queues remove items with the highest priority first.  By using a heap to implement a priority queue you can build a data structure to serve data by priority.  
+
+### Heapsort
+
+Since heaps allow you to extract elements in order, you can use them to sort an array.
+
+With an array of `n` elements, to perform Heapsort you can add the elements to the heap, an O(nlog n) operation.  Then you can remove the elements from the heap one-by-one placing them in the proper place in an array, also an O(nlog n) operation.
+
+It is possible to do this with O(1) space complexity using the original array to store the heap elements and a single temporary variable.
+
+So how does this compare?  Well, adding the elements to a heap and then placing them back in the array in order is O(nlog n + nlog n) = O(nlog n).  That's a pretty good sort.  On average it is not as fast as [QuickSort](https://www.geeksforgeeks.org/quick-sort/), but it has a **much** better worst-case time complexity, as QuickSort has a worst-case of O(n<sup>2</sup>).  It is also slower than [MergeSort](https://www.geeksforgeeks.org/merge-sort/), but has a better space complexity - O(1) compared to O(n).  
+
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-secondary
+
+## Dijkstra’s Algorithm
+
+We will later look at [Dijkstra’s algorithm](https://brilliant.org/wiki/dijkstras-short-path-finder/) to find the shortest path in a weighted graph from a starting node to all other points in a graph.
+
+### !end-callout
+
 ## Implementation
 
 While you **can** implement a heap with linked TreeNode objects, it can be **much** easier to implement a heap with an array.
@@ -109,7 +142,6 @@ Removing an element in some ways works in the opposite manner of adding an eleme
 
 ![Initial swap for remove](images/heap-remove-3.png)
 
-
 So removing a node could be done with:
 
 ```python
@@ -146,31 +178,14 @@ With the result:
 
 **Exercise:** Write pseudocode to implement the heap_down operation.  Note that you will need to verify that you may swap all the way down to a leaf node.
 
-## Uses for Heaps
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
 
-There are a number of practical uses for heaps in programming.  We will take a brief look at three.
-
-### Priority Queues
-
-One use for a heap is a _Priority Queue_.  A priority queue is an abstract data type, like a stack or a regular queue.  However, with a queue items are added and removed in a first-in-first-out (FIFO) order.  Priority queues remove items with the highest priority first.  By using a heap to implement a priority queue you can build a data structure to serve data by priority.  
-
-### Heapsort
-
-Since heaps allow you to extract elements in order, you can use them to sort an array.
-
-With an array of `n` elements, to perform Heapsort you can add the elements to the heap, an O(nlog n) operation.  Then you can remove the elements from the heap one-by-one placing them in the proper place in an array, also an O(nlog n) operation.
-
-It is possible to do this with O(1) space complexity using the original array to store the heap elements and a single temporary variable.
-
-So how does this compare?  Well, adding the elements to a heap and then placing them back in the array in order is O(nlog n + nlog n) = O(nlog n).  That's a pretty good sort.  On average it is not as fast as [QuickSort](https://www.geeksforgeeks.org/quick-sort/), but it has a **much** better worst-case time complexity, as QuickSort has a worst-case of O(n<sup>2</sup>).  It is also slower than [MergeSort](https://www.geeksforgeeks.org/merge-sort/), but has a better space complexity - O(1) compared to O(n).  
-
-### Dijkstra’s Algorithm
-
-We will later look at [Dijkstra’s algorithm](https://brilliant.org/wiki/dijkstras-short-path-finder/) to find the shortest path in a weighted graph from a starting node to all other points in a graph.
-
-## The System Heap
+## Sidenote: The System Heap
 
 When you allocate memory dynamically with `.new` or `malloc` in C, the operating system allocates the memory from something called [Heap Memory](https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/).  This is **not** the same as the heap data structure.  Instead it's considered a "heap" of memory, like clothes in the laundry basket is a heap of clothes.  
+
+### !end-callout
 
 ## Summary
 

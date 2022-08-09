@@ -28,8 +28,8 @@ class Tree:
                 return
             self.add_helper(current_node.right, new_node)
 
-    # Time Complexity: 
-    # Space Complexity: 
+    # Time Complexity: O(log n)
+    # Space Complexity: O(log n) (recursive, the iterative solution is O(1)).
     def add(self, key, value = None):
         if not self.root:
             self.root = TreeNode(key, value)
@@ -37,8 +37,8 @@ class Tree:
             new_node = TreeNode(key, value)
             self.add_helper(self.root, new_node)
 
-    # Time Complexity: 
-    # Space Complexity: 
+    # Time Complexity: O(log n)
+    # Space Complexity: O(1)
     def find(self, key):
         current = self.root
 
@@ -65,6 +65,8 @@ class Tree:
 
         return values
 
+    # Time Complexity: O(n)
+    # Space Complexity: O(n)
     def inorder(self):
         values = []
         return self.inorder_helper(self.root, values)
@@ -82,6 +84,8 @@ class Tree:
 
         return values
 
+    # Time Complexity: O(n)
+    # Space Complexity: O(n)
     def preorder(self):
         values = []
         return self.preorder_helper(self.root, values)
@@ -99,6 +103,8 @@ class Tree:
 
         return values
 
+    # Time Complexity: O(n)
+    # Space Complexity: O(n)
     def postorder(self):
         values = []
         return self.postorder_helper(self.root, values)
@@ -109,13 +115,15 @@ class Tree:
 
         return max(self.height_helper(current_node.left), self.height_helper(current_node.right)) + 1
     
+    # Time Complexity: O(h) or O(n) if the tree is unbalanced and O(log n) if balanced
+    # Space Complexity: O(h) or O(n) if the tree is unbalanced and O(log n) if balanced
     def height(self):
         return self.height_helper(self.root)
 
 
 #   # Optional Method
-#   # Time Complexity: 
-#   # Space Complexity: 
+#   # Time Complexity: O(n)
+#   # Space Complexity: O(n)
     def bfs(self):
         values = []
         queue = []

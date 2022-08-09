@@ -11,21 +11,13 @@ Standards:
         Type: Lesson
         UID: d75af4a1-ff7d-46b9-988d-8fcda5d75bc5
         Path: /00-about-thursdays-at-ada/about-thursdays-at-ada.md
- 
-  -
-    Title: Thursdays at Ada Norms
-    Description: Expectations for our sessions
-    UID: 88fccfa1-fe50-4434-8834-6efdf422f247
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
       -
         Type: Lesson
-        UID: 9dda64ff-9362-46f2-8b09-d5843c7af04c
-        Path: /norms/overview.md
+        UID: bcc6309e-3453-4aea-9b22-ef8e09c2b09e
+        Path: /00-about-thursdays-at-ada/norms.md
   -
-    Title: Code Reviews
-    Description: Code Reviews
+    Title: Approaching Problems
+    Description: Problem Solving, Big O Notation
     UID: 9141935e-3d6b-4f83-9eef-eca929c19ad6
     SuccessCriteria:
       - success criteria
@@ -33,11 +25,23 @@ Standards:
       -
         Type: Lesson
         UID: 213deeac-736c-42e9-a774-1d904d87991e
-        Path: /01-Code-Reviews/01-code-reviews.md
+        Path: /01-Problem-Solving-And-Big-O/01-problem-solving.md
+      -
+        Type: Lesson
+        UID: 50bd3c42-38f2-461b-a832-9f79fa501d62
+        Path: /01-Problem-Solving-And-Big-O/02-big-o.md
+      -
+        Type: Instructor
+        UID: 82ebf9b5-71c2-4935-b81c-545187672ef9
+        Path: /01-Problem-Solving-And-Big-O/class-lesson.instructor.md
+      -
+        Type: Lesson
+        UID: d108fdc2-000e-493a-9120-fcdd7c6b4fb9
+        Path: /01-Problem-Solving-And-Big-O/04-in-class-problemset.md
       -
         Type: Checkpoint
-        UID: 8acf7333-842f-4c09-98ff-379f5163f27f
-        Path: /01-Code-Reviews/02-code-reviews-checkpoint.md
+        UID: 25f55d56-003a-4af1-b968-4bfc07888ad7
+        Path: /01-Problem-Solving-And-Big-O/03-problem-solving-checkpoint.md
   -
   
     Title: Linked Lists
@@ -51,9 +55,17 @@ Standards:
         UID: c498e182
         Path: /02-linked-lists/linked-lists.instructor.md
       -
+        Type: Instructor
+        UID: ac3b6860-51fd-4d90-8a68-99875639af1d
+        Path: /02-linked-lists/class-lesson.instructor.md
+      -
         Type: Lesson
         UID: 99474aeb-183e-4f01-990b-0a689c022c30
-        Path: /02-linked-lists/02-linked-lists.md
+        Path: /02-linked-lists/01-linked-lists.md
+      -
+        Type: Lesson
+        UID: 8575a354-4072-4c26-8260-683af76c0ab1
+        Path: /02-linked-lists/02-linked-list-activity.md
       -
         Type: Lesson
         UID: 0c78e210-d831-41dd-956b-973aa151d904

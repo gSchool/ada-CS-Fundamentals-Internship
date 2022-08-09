@@ -1,4 +1,4 @@
-# Hashtable Implementations
+# Hashtable Exercises
 
 | Logistics             | Details                                     |
 | --------------------- | ----------------------------------------    |
