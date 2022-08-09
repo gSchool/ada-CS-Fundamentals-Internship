@@ -42,8 +42,6 @@ Students should be able to:
 
 ## Overview
 
-<!-- Should this be moved to the linked lists session? -->
-
 We commonly encounter problems which require us to maintain ordered collections of data. This could be a list of students by name, jobs to process by priority or a collection of accounts by username.
 
 When dealing with an ordered collection of data, we need to consider the time and space complexity of the following operations:
