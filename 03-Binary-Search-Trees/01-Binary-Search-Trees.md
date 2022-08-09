@@ -42,6 +42,8 @@ Students should be able to:
 
 ## Overview
 
+<!-- Should this be moved to the linked lists session? -->
+
 We commonly encounter problems which require us to maintain ordered collections of data. This could be a list of students by name, jobs to process by priority or a collection of accounts by username.
 
 When dealing with an ordered collection of data, we need to consider the time and space complexity of the following operations:
@@ -51,7 +53,16 @@ When dealing with an ordered collection of data, we need to consider the time an
 * **Searching** - Finding an element in the collection
 * **Serialization** - Converting the collection to an array or string to write to a file, network, or database
 
-Dictionaries are unordered and thus cannot be used to store ordered data, however we *could* use arrays or linked lists to store ordered data.
+Arrays and linked lists are two data structures that can be used to store ordered collections of data. Each has its respective advantages and disadvantages. Binary Search Trees are another data structure that we can consider.
+
+### !callout-info
+
+## What about dictionaries?
+
+Dictionaries are unordered and thus cannot be used to store ordered data.
+
+### !end-callout
+
 
 ### Using An Array for Ordered Data
 
