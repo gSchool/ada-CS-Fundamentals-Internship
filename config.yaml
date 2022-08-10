@@ -92,11 +92,23 @@ Standards:
       -
         Type: Lesson
         UID: d363c5cb-af6d-45d1-8e98-eaf960f8fac9
-        Path: /03-Binary-Search-Trees/01-Binary-Search-Trees.md
+        Path: /03-Binary-Search-Trees/01-Ordered-Collections-Of-Data.md
+      -
+        Type: Lesson
+        UID: 05732e84-1354-4349-8c71-173460093f9b
+        Path: /03-Binary-Search-Trees/02-Binary-Search-Trees.md
+      -
+        Type: Lesson
+        UID: 80747284-c3bb-4753-8c1b-9eb0bb834687
+        Path: /03-Binary-Search-Trees/03-Binary-Search-Trees-Traversal.md
       -
         Type: Checkpoint
         UID: bbf1e2a2-0d6e-4337-9b00-81216688e16a
-        Path: /03-Binary-Search-Trees/02-Bst-checkpoint.md
+        Path: /03-Binary-Search-Trees/04-Bst-checkpoint.md
+      -
+        Type: Activity
+        UID: 06dea201-6230-4967-b98f-2403ab11479a
+        Path: /03-Binary-Search-Trees/05-Binary-Search-Trees-Activity.md
   -
     Title: Stacks And Queues
     Description: Stacks And Queues
