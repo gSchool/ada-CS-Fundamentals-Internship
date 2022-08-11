@@ -802,6 +802,7 @@ def remove(self, index):
 
     if index == 0:
         self.head = self.head.next
+        return
 
     # Traverse the list until you find the node at index -1
     current = self.head
