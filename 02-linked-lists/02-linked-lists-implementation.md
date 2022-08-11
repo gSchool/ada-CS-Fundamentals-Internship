@@ -146,7 +146,70 @@ def add_first(self, value):
     self.head = new_node
 ```
 
-<!--TODO: Add challenge question adding node for a doubly linked list-->
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: e87b4a7d-9adb-4016-a0a1-da172492e17a
+* title: Doubly LinkedList Class Constructor
+* points: 1
+
+##### !question
+
+Above, we wrote the LinkedList class constructor for a singly linked list. Alter the code below to write a LinkedList class constructor for a doubly linked list.
+
+##### !end-question
+
+##### !placeholder
+```py
+class Node:
+    def __init__(self, value):
+        self.val = value
+        self.next = None
+        self.prev = None
+
+class LinkedList:
+    #write your code here
+    pass
+```
+
+##### !end-placeholder
+
+##### !tests
+
+```py
+import unittest
+from main import *
+
+class TestPython1(unittest.TestCase):
+  def test_one(self):
+    self.assertEqual(1,1)
+```
+
+##### !end-tests
+
+##### !hint
+In addition to a head pointer, doubly linked lists typically maintain a tail pointer.
+##### !end-hint
+
+##### !explanation 
+An example of a working implementation:
+
+```python
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+```
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
