@@ -1146,7 +1146,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def reverse(self, value):
+    def reverse(self):
         #write your code here
         pass
 ```
@@ -1155,7 +1155,6 @@ class LinkedList:
 
 ##### !tests
 
-[the unit tests below will run against the student submission]
 ```py
 import unittest
 from main import *
@@ -1190,7 +1189,7 @@ class TestPython1(unittest.TestCase):
     def test_reverse_empty_list(self):
         lst = LinkedListExtended()
 
-        self.assertEqual(None, self.get_at_index(0))
+        self.assertEqual(None, lst.get_at_index(0))
     
     def test_reverse_will_reverse_five_element_list(self):
         lst = LinkedListExtended()
