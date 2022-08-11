@@ -804,7 +804,7 @@ def remove(self, index):
         self.head = self.head.next
         return
 
-    # Traverse the list until you find the node at index -1
+    #Traverse the list until you find the node at the given index minus one
     current = self.head
     current_index = 0
     while current.next and current_index < index - 1:
