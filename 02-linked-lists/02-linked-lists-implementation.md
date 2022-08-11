@@ -324,9 +324,9 @@ The space complexity will be O(1) or constant as we are not creating any new dat
 <!-- ======================= END CHALLENGE ======================= -->
 
 ### Traversing Linked Lists
-Because linked lists are not stored in contiguous memory like arrays, most read and write operations will require us to traverse the list. With a singly linked list, we only maintain a reference to the `head` node, so all of our traversals will start at the `head` of the list.
+Because linked lists are not stored in contiguous memory, most read and write operations will require us to traverse the list. With a singly linked list, we only maintain a reference to the `head` node, so all of our traversals will start at the `head` of the list.
 
-Consider a `search` method which allows users to determine whether any nodes in the list have a specified value. The `search` method takes one parameter: a value to search for. The method should return `True` if a node with that value exists within 
+Consider a `search` method which allows users to determine whether any nodes in the list have a specified value. The `search` method takes one parameter: a value to search for. The method should return `True` if a node with that value exists within the linked list. 
 
 We can break down the `search` method as follows:
 
