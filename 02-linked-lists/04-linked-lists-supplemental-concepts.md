@@ -1,7 +1,7 @@
 
 # Supplemental Concepts
 
-### The Call Stack
+## The Call Stack
 
 As methods get called in an application, the system stores the current instruction addresses, local variables etc on a stack known as the _system call stack_.  Then when a method ends, the topmost method is popped off the stack allowing the system to resume execution.
 
@@ -35,7 +35,7 @@ As the application starts the system puts the main part of the application on th
 When an error is raised, the stack is popped until the error is rescued in the current method, or the application terminates and a trace of all the elements on the stack at the time of the error is reported.
 
 
-### Pointers & References
+## Pointers & References
 
 You will often hear the terms _pointer_ and _reference_ in relation to dynamic data structures like LinkedLists.  Both terms refer to a variable which **points** to data in memory, or holds the address of another varaible in memory.  The concept is similar to a home.  The home is an object in memory, while the home's address is a _reference_ which indicates where to find the home.
 
@@ -53,7 +53,7 @@ We use references in Python whenever we use a Linked List since each node _refer
 
 ![Singly Linked List](images/singly-linked-list2.png)
 
-### Memory Leaks
+## Memory Leaks
 
 Is a bug in how a program manages memory.  A _memory leak_ occurs when memory that is no longer needed by the program is not released back to the operating system.  Over time, if memory is used, and not returned to the system less and less memory is available to other programs and eventually not enough memory is available to run applications.  Modern operating systems return all system memory allocated to a program when it ends.  Thus memory leaks in long-running processes like daemons can cause a system to run out of memory.
 
