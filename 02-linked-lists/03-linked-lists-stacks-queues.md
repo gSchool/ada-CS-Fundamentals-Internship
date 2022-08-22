@@ -56,6 +56,9 @@ Linked lists are a popular choice for stack implementations because insertion an
 **Stack ADT**
 ![Stack ADT](images/stackADT.png)
 
+The implementation code in the diagram above could make use of any data structure - a linked list, array, or something else - so long as it implements the method to its specification.
+
+
 ## Queues
 
 A queue unlike a stack operates in a First-In-First-Out (FIFO) order.  Like a line of people at a concert, the first element to enter the queue is the first element removed.  
