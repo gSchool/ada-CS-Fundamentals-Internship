@@ -51,8 +51,7 @@ class Stack:
     def empty(self):
         return self.store.length() == 0
 ```
-
-Note that because a stack is an ADT, we could later change the implementation of a stack to use an array, and the users of the class would not need to change any of their code. This is because the implementation is _hidden_ behind a public interface. The top of the stack would reference the last element in the array.
+Linked lists are a popular choice for stack implementations because insertion and deletion, or `push` and `pop` in the case of our stack, are O(1) operations with linked lists. However, because a stack is an ADT, our `Stack` class doesn't _have_ to be implemented with a linked list. We could later change the implementation to use an array, and the users of the class would not need to change any of their code. This is because the implementation is _hidden_ behind a public interface. The top of the stack would reference the last element in the array. 
 
 **Stack ADT**
 ![Stack ADT](images/stackADT.png)
