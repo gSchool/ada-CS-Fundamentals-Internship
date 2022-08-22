@@ -30,7 +30,7 @@ A stack might also implement a `peek` method which returns, but does not remove 
 
 You can picture a stack like a stack of plates where new plates can be added and removed from the top, but cannot be removed from the middle or bottom of the structure.
 
-![Stack Diagram](images/stackADT.png)
+![Stack Diagram](images/stack.png)
 
 ### Implementation of a Stack
 
