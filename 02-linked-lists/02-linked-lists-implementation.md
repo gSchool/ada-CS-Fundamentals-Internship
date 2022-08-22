@@ -59,9 +59,11 @@ class TestPython1(unittest.TestCase):
 ##### !hint
 In addition to the `value` and `next` attributes, nodes in a doubly linked list should also maintain a reference to the _previous_ node in the list.
 
-##### !end-hint
+Feeling stuck? Check this video walkthrough of the solution.
 
-d-rubric (markdown, instructors can see while scoring a 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=57b9ed93-d9ca-4f09-a5aa-aef90130df5e&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
+##### !end-hint 
 
 ##### !explanation 
 
@@ -193,6 +195,11 @@ class TestPython1(unittest.TestCase):
 
 ##### !hint
 In addition to a head pointer, doubly linked lists typically maintain a tail pointer.
+
+Feeling stuck? Check this video walkthrough of the solution.
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ae392a8d-3aa1-4beb-9671-aef90132016d&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ##### !end-hint
 
 ##### !explanation 
