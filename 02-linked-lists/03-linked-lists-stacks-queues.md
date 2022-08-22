@@ -30,7 +30,7 @@ A stack might also implement a `peek` method which returns, but does not remove 
 
 You can picture a stack like a stack of plates where new plates can be added and removed from the top, but cannot be removed from the middle or bottom of the structure.
 
-![Stack Diagram](images/stack.png)
+![Stack Diagram](images/stackADT.png)
 
 ### Implementation of a Stack
 
@@ -59,15 +59,13 @@ You could later change the implementation of a stack to use an array, and the us
 
 ## Queues
 
-A queue unlike a stack operates in a first-in-first out order.  Like a line of people at a concert, the first element to enter the queue is the first element removed.  
+A queue unlike a stack operates in a First-In-First-Out (FIFO) order.  Like a line of people at a concert, the first element to enter the queue is the first element removed.  
 
 ![Queue Diagram](images/queue.png)
 
 As shown above elements are added to the back of the queue in an operation called _enqueue_ and removed with an operation called _dequeue_.  
 
 Queues are great for any operation that needs to work with data in a first-in-first-out order.  For example some systems have worker processes which can be assigned tasks to work on and these worker processes take on jobs assigned to them in the order they appeared, completing one before taking on the next.
-
-**Exercise**: With pseudocode implement a `front` method which returns the item at the front, but leaves the Queue unchanged without directly accessing any methods of the Queue except `dequeue`, `enqueue` and `empty?`.  Feel free to use any other data structures.
 
 A Queue provides the following methods:
 
@@ -77,7 +75,7 @@ A Queue provides the following methods:
 
 ### Queue Implementation Considerations
 
-Like a stack a queue can be implemented several ways and the implementation should be hidden from the user.  One way would be to implement a queue with a linked list like this:
+Like a stack, a queue can be implemented several ways and the implementation should be hidden from the user. One way would be to implement a queue with a linked list like this:
 
 ```python
 class Queue:
@@ -110,7 +108,7 @@ class Queue:
 
 ##### !question
 
-What would be the Big-O here of enqueue and dequeue?
+What would be the Big-O of enqueue and dequeue for the above queue implementation?
 
 ##### !end-question
 
@@ -133,24 +131,55 @@ What would be the Big-O here of enqueue and dequeue?
 <!-- other optional sections -->
 ##### !hint
 
-Do all LinkedList implementation have the same time complexity for add_last and remove_first?
+Do all LinkedList implementation have the same time complexity for add_last and remove_first? Do we know the internal implementation of the LinkedList class?
 
 ##### !end-hint
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
-If the Linked List has a tail reference, and is a doubly linked list, then both enqueue and dequeue can be done in O(1) time.  If there is no tail reference then enqueue should perform in O(n) time.
+If the Linked List has a tail reference and is a doubly linked list, then both enqueue and dequeue can be done in O(1) time.  If there is no tail reference then enqueue should perform in O(n) time.
 
 ##### !end-explanation
 
 ### !end-challenge
 
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: short-answer
+* id: 44b75a3a-ebb1-4b05-ba0e-39ecf8675e7e
+* title: Why might we prefer to implement a queue with a linked list instead of an array?
+* points: 1
+
+##### !question
+
+Why might we prefer to implement a queue with a linked list instead of an array?
+
+##### !end-question
+
+##### !placeholder
+
+
+
+##### !end-placeholder
+
+##### !answer
+
+With a doubly linked list that maintains a tail pointer, we can enqueue and dequeue elements from the queue in O(1) time. With an array, recall that inserting or removing an element of an array can be expensive as all items after the item inserted or removed need to be shifted over by 1. 
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
 <!-- ======================= END CHALLENGE ======================= -->
-
-This implementation has a number of advantages, it's easy to read, fairly performant, but the data is a bit fragmented.  If you had a queue with a fixed maximum size, how would you use an Array to implement it?
-
-
-## Abstract Data Types
+<!-- ======================= END CHALLENGE ======================= -->
 
 
 
