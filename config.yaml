@@ -53,19 +53,23 @@ Standards:
       -
         Type: Lesson
         UID: 99474aeb-183e-4f01-990b-0a689c022c30
-        Path: /02-linked-lists/02-linked-lists.md
+        Path: /02-linked-lists/01-linked-lists.md
       -
         Type: Lesson
         UID: 0c78e210-d831-41dd-956b-973aa151d904
         Path: /02-linked-lists/02-linked-lists-implementation.md
       -
         Type: Lesson
+        UID: 444cda30-ac77-4abd-858b-9db81b6f601d
+        Path: /02-linked-lists/03-linked-lists-stacks-queues.md
+      -
+        Type: Lesson
         UID: 0d3a9473-199c-430d-bc55-43fc09fd50ff
-        Path: /02-linked-lists/02-linked-lists-supplemental-concepts.md
+        Path: /02-linked-lists/04-linked-lists-supplemental-concepts.md
       -
         Type: Checkpoint
         UID: e1d0e2c0-acb2-436a-b329-8c3da5155443
-        Path: /02-linked-lists/03-linked-list-checkpoint.md
+        Path: /02-linked-lists/05-linked-list-checkpoint.md
   -
     Title: Binary Search Trees
     Description: Binary Search Trees
