@@ -2,8 +2,7 @@
 
 | Logistics             | Details                                   |
 | --------------------- | ----------------------------------------  |
-| Project details       | https://github.com/Ada-C16/linked-list    |
-| JS Version            | https://github.com/Ada-C16/linked-list-js |
+| Project details       | https://github.com/AdaGold/Intersection-Linked-List/tree/cm-intersection-project   |
 | Should you fork this? | Yes (Check project details)               |
 | Submission method     | Learn                                     |
 
@@ -12,7 +11,7 @@
 * type: testable-project
 * id: 4f3d244b-d34b-4e34-9a85-bce2232203e5
 * title: List Implementations
-* upstream: https://github.com/Ada-C16/linked-list
+* upstream: https://github.com/AdaGold/Intersection-Linked-List/tree/cm-intersection-project
 * validate_fork: false
 * points: 0
 * topics: linked-lists
@@ -66,41 +65,6 @@ Your PR link goes here.
 /.*/
 
 ##### !end-answer
-
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
-### !end-challenge
-
-<!-- ======================= END CHALLENGE ======================= -->
-
-
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
-
-### !challenge
-
-* type: testable-project
-* id: 795b30c2-9d88-4480-8062-d0e5466a09eb
-* title: Optional JS Version
-* upstream: https://github.com/Ada-C16/linked-list-js
-* validate_fork: false
-* points: 0
-* topics: linked-lists
-
-##### !question
-
-Optionally you can submit a link to a fork of https://github.com/Ada-C16/linked-list-js
-
-##### !end-question
-
-##### !placeholder
-
-Link to your repository here.
-
-##### !end-placeholder
 
 <!-- other optional sections -->
 <!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
