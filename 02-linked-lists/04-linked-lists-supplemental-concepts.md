@@ -30,7 +30,13 @@ For the code snippet above, the stack frame at the `# pause application` line wo
 
 <!-- Graphic saved at: https://drive.google.com/file/d/1SsxrrqIIw5oYonpKzwxvXAF3lTcQmB10/view?usp=sharing -->
 
-As the application starts the system puts the main part of the application on the stack, and then main calls `function_a`.  So the system saves the arguments to `function_a` onto the stack, the address to return to (Main) when the method is finished and the local variabes in `function_a`.  Then `function_b` is called and the system saves the arguments to `function_b` onto the stack, the return address (function_a) and any local variables in `function_b`.  When function_b finishes, it's stack frame is popped off the stack, and the return address is used to resume `function_a`.  When `function_a` finishes the same pop operation is performed and the application returns to main.  When the main part of the application is finished, it's stack frame is popped off and the application terminates.  
+- As the application starts the system puts the main part of the application on the stack, and then main calls `function_a`.  
+- The system saves the arguments to `function_a` onto the stack, the address to return to (Main) when the method is finished and the local variabes in `function_a`.  
+- `function_b` is called and the system saves the arguments to `function_b` onto the stack, the return address (`function_a`) and any local variables in `function_b`.  
+- When `function_b` finishes, its stack frame is popped off the stack, and the return address is used to resume `function_a`.  
+- When `function_a` finishes the same pop operation is performed and the application returns to main.  
+- When the main part of the application is finished, its stack frame is popped off and the application terminates.  
+
 
 When an error is raised, the stack is popped until the error is rescued in the current method, or the application terminates and a trace of all the elements on the stack at the time of the error is reported.
 
