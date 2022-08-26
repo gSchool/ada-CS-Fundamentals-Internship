@@ -59,9 +59,11 @@ class TestPython1(unittest.TestCase):
 ##### !hint
 In addition to the `value` and `next` attributes, nodes in a doubly linked list should also maintain a reference to the _previous_ node in the list.
 
-##### !end-hint
+Feeling stuck? Check this video walkthrough of the solution.
 
-d-rubric (markdown, instructors can see while scoring a 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=57b9ed93-d9ca-4f09-a5aa-aef90130df5e&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
+##### !end-hint 
 
 ##### !explanation 
 
@@ -193,6 +195,11 @@ class TestPython1(unittest.TestCase):
 
 ##### !hint
 In addition to a head pointer, doubly linked lists typically maintain a tail pointer.
+
+Feeling stuck? Check this video walkthrough of the solution.
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ae392a8d-3aa1-4beb-9671-aef90132016d&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ##### !end-hint
 
 ##### !explanation 
@@ -283,7 +290,8 @@ class TestPython1(unittest.TestCase):
 `self.head` is the first node in the list!
 
 Still feeling stuck? Check this video walkthrough of the solution.
-<!-- TODO: Add video walkthrough to explanation -->
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=23ebdac4-d6cb-4673-9467-aef3013568cd&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ### !end-hint
 
@@ -491,7 +499,8 @@ class TestPython1(unittest.TestCase):
 Create a `current` pointer that initially points to the `head` node to help you iterate through the list. You may also consider initializing an `index` variable that increments every time you look at a new node.
 
 Still feeling stuck? Check this video walkthrough of the solution.
-<!-- TODO: Add video walkthrough to explanation -->
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=4f88bc07-bed3-4720-85a2-aef601438444&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ##### !end-hint
 
@@ -741,7 +750,8 @@ In the nominal case, where the list already has some number of nodes, consider u
 
 
 Still feeling stuck? Check this video walkthrough of the solution.
-<!-- TODO: Add video walkthrough to explanation -->
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=60f22d0f-5fc5-4054-9cc0-aef6014384ac&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ##### !end-hint
 
@@ -984,7 +994,8 @@ class TestPython1(unittest.TestCase):
 Remember that doubly linked lists maintain a tail pointer!
 
 Still feeling stuck? Check this video walkthrough of the solution.
-<!-- TODO: Add video walkthrough to explanation -->
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=14965c22-76ad-4be8-985c-aef60143840c&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 ##### !end-hint
 
 ##### !explanation 
@@ -1215,7 +1226,8 @@ At each iteration:
 - Redirect both `previous` and `current` to point to their respective next nodes in the list
 
 Still feeling stuck? Check this video walkthrough of the solution.
-<!-- TODO: Add video walkthrough to explanation -->
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=cb846900-4327-4727-833d-aef601438473&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ##### !end-hint
 
