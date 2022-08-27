@@ -18,7 +18,7 @@ Our goal is to practice manipulating list nodes. We will work through the follow
 
 ##### !question
 
-In which scenarios are linked lists more time efficient than arrays?
+In which scenarios are singly linked lists more time efficient than arrays?
 
 ##### !end-question
 
