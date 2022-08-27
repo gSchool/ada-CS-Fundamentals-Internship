@@ -17,8 +17,7 @@ Our goal is to practice manipulating list nodes. We will work through the follow
 * topics: linked-lists, big-o
 
 ##### !question
-
-In which scenarios are linked lists more time efficient than arrays?
+In which scenarios are singly linked lists more time efficient than arrays?
 
 ##### !end-question
 
@@ -66,7 +65,11 @@ Remember to find an element by it's index in a linked list requires traversing t
 
 What type of data structure is the following linked list?
 
+<<<<<<< HEAD
 ![Linked List Example Drawing](./images/linkedlist.svg)
+=======
+![Linked List Example Drawing](./images/doubly-linked-list.png)
+>>>>>>> 9d75ac7a6a4d62314ceb2a41b07e11b2dc2fd332
 
 ##### !end-question
 
