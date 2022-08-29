@@ -2,7 +2,7 @@
 
 | Logistics             | Details                                   |
 | --------------------- | ----------------------------------------  |
-| Project details       | [https://github.com/AdaGold/Intersection-Linked-List/tree/cm-intersection-project](https://github.com/AdaGold/Intersection-Linked-List)  |
+| Project details       | [https://github.com/AdaGold/Intersection-Linked-List](https://github.com/AdaGold/Intersection-Linked-List)  |
 | Should you fork this? | Yes (Check project details)               |
 | Submission method     | Learn                                     |
 
