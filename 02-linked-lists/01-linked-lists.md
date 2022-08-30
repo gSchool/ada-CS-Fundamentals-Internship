@@ -11,25 +11,34 @@
 
 By the end of this lesson students should be able to:
 
+<<<<<<< HEAD:02-linked-lists/02-linked-lists.md
+- Describe the structure of a singly linked list and doubly linked list
+- Compare and contrast the advantages and disadvantages of singly and doubly linked lists.
+- Design an object oriented singly linked list
+- Write methods to perform a variety of tasks on singly and doubly linked lists
+=======
 - Describe the structure of a singly linked list, and doubly linked list
 - Compare and contrast the a advantages and disadvantages of singly and doubly linked lists.
 - Implement an Object Oriented Singly Linked List
 - Write methods to perform a variety of tasks on a singly linked list
+>>>>>>> ccc1666e8bcd9c4a320f6fbd34a71d67987197c3:02-linked-lists/01-linked-lists.md
 
 ## Overview
 
-An Array is an ordered, linear collection of data where each element sits next to the previous element.  Because each element is of uniform size, and adjacent to it's neighboring elements, with some basic math, the interpreter or compiler can jump to any element in the array immediately.  The interpreter takes the memory address of the 1st element of the array and adds the size of each element plus the index number of the sought element.  
+Before diving into linked lists, let's remind ourselves how arrays work. An array is an ordered, linear collection of data where each element sits next to the previous element in memory.  Because each element is of uniform size and adjacent to its neighboring element, with some basic math, the interpreter or compiler can jump to any element in the array immediately:  The interpreter takes the memory address of the element at index 0 of the array and adds the size of each element plus the index number of the sought element.  
 
 ![ Array ](images/array.png)
 
-A Linked List is also a linear collection where one element is first, another second etc, but each element instead contans a _reference_ to the next element in the list.  In that manner you could say that an element _points_ to the next item.  A Linked List forms a series of nodes linked together like a chain in memory.  
+Similar to an array, a linked list is also a linear collection where one element is first, another second, etc. The difference between a linked list and an array is how each element is stored in meory. Elements of a linked list are not necessarily stored in contiguous memory locations. Instead, in addition to the data it stores, each element contains a _reference_ to the next element in the list.  In that manner we could say that an element _points_ to the nextelement in the linked list.  Through these references, a linked list forms a series of nodes linked together like a chain in memory.  
 
 ![Linked List Image](images/singly-linked-list.png)
 <!-- Image from https://en.wikipedia.org/wiki/Linked_list -->
 
 ### Singly Linked Lists
 
-A Singly Linked List is the most basic form of a Linked List.  The data structure maintains a reference, typically called `head` which references the first node in a list.  That node maintains a field, typically called `next`, which reference the next node etc.  The last node in a linked list, sometimes called the `tail`, has `null` or `nil` as it's `next` reference.  
+A singly linked list is the most basic form of a linked list.  Each element of the linked list is itself a data structure called a node. Each node maintains two fields: a field typically called `value` to store the element's data and a field typically called `next` which stores a reference to the next node in the list. The last node in a linked list has `null` as it's `next` reference.  
+
+The linked list itself maintains a reference, typically called `head` to the first node in the list. 
 
 ![Singly Linked List](images/singly-linked-list2.png)
 
@@ -37,7 +46,9 @@ A Singly Linked List is the most basic form of a Linked List.  The data structur
 
 ### Doubly Linked Lists
 
-A Doubly Linked List extends this by adding a `previous` reference to each node.  That `previous` reference points to the prior node.  The `head` node's `previous` field will be `nil` or `null`.
+A doubly linked list extends the structure of a singly linked list by adding a `previous` reference to each node. The `previous` reference points to the node in the list directly before it. The `head` node's `previous` field will be `null`.
+
+Doubly linked lists also typically maintain an explicit reference to the last node in the linked list, typically called the `tail`.
 
 ![Doubly Linked List](images/doubly-linked-list.png)
 
@@ -45,11 +56,10 @@ A Doubly Linked List extends this by adding a `previous` reference to each node.
 
 You can use a doubly or singly linked list in any place you could use an array, but they have specific advantages depending on the use-case.
 
-Doubly linked lists take up additional memory, due to the additional references, but it is possible to iterate through in reverse, and it can be a little easier to sort or add/remove elements in the middle of the list more easily.
 
 ### Over Arrays
 
-Both Arrays & Linked Lists are linear data structures and both have a clearly defined order with first and last elements.  An array however has the ability to use an _index_ to select any element in constant time, while to find an arbitrary element in a linked list requires you to start at the head and iterate through the links until you find the element.  You can visualize and explore linked list operations on [visualgo.net](https://visualgo.net/en/list).
+Both Arrays & Linked Lists are linear data structures and both have a clearly defined order with first and last elements.  An array however has the ability to use an _index_ to select any element in constant time. In contrast, to find an arbitrary element in a linked list, we must start at the head node and iterate through the links until we find the desired element. To visualize and explore linked list operations, try out [visualgo.net](https://visualgo.net/en/list).
 
 Big-O For Linked Lists & Arrays
 
@@ -60,9 +70,17 @@ Big-O For Linked Lists & Arrays
 | insertion | O(1) | O(n) |
 | deletion | O(1) 	| O(1) |
 
-As you can see above, Linked Lists perform in constant time to insert values into or remove values from a list, because it only requires a few reference to be changed.  Arrays, on the other hand, can require shifting numerous elements into new indices with each insertion or deletion.
+On the other hand, as you can see above, linked lists perform in constant time to insert values into or remove values from a list, because they only require a few reference to be redirected toward different nodes.  In contrast, arrays can require shifting numerous elements into new indices with each insertion or deletion.
 
-Further most runtimes allocate more memory to an array than is being used because if the array grows, the interpreter needs to request new memory from the environment and copy the entire array into the new, larger, space.  By starting with extra space available an array can grow as required for some time.  A LinkedList by contrast only uses memory as required for the nodes available.  An array also requires each element to be adjacent in memory.  When available memory is limited, this can be problematic.  So in some memory restrictive environments a Linked List could be attractive.  
+Further, most runtimes allocate more memory to an array than is being used because if the array grows, the interpreter needs to request new memory from the environment and copy the entire array into the new, larger, space.  By starting with extra space available an array can grow as required for some time.  A linked list by contrast only uses memory as required for the nodes available.  
+
+An array also requires each element to be adjacent in memory.  When available memory is limited, this can be problematic.  So in some memory restrictive environments a linked list is attractive. 
+
+### Doubly Linked Lists vs Singly Linked Lists
+
+Doubly linked lists take up additional memory, due to the additional `previous` and `tail` references. However, the additional references also enable us to iterate through doubly linked lists in reverse. Further, it can be a little easier to sort or add/remove elements in the middle of the list more easily.
+
+## Summary
 
 Linked Lists have the following advantages:
 
@@ -280,7 +298,7 @@ Either could work as finding an element will take O(n) for an unordered list in 
 
 ##### !question
 
-You need to regularly look up students from an unordered list and remove them from the list.  What would you pick a LinkedList or an Array?
+Your low memory capacity smart lightbulb needs to store a list of data.  What would you pick, LinkedList or Array?
 
 ##### !end-question
 
@@ -318,6 +336,8 @@ A Linked List because it does not require the items to be adjacent and will only
 A Linked List because it does not require the items to be adjacent and will only use as much memory as it requires in the moment.
 </details>
 -->
+<<<<<<< HEAD:02-linked-lists/02-linked-lists.md
+=======
 
 ## Object Oriented Design of a Linked List
 
@@ -653,3 +673,4 @@ This is actually quite similar to [merging two sorted arrays](https://www.geeksf
 
 - [Linked Lists from Geeks for Geeks](https://www.geeksforgeeks.org/data-structures/linked-list/) - Lots of articles & practice problems
 - [Stanford LinkedList Basics](http://cslibrary.stanford.edu/103/LinkedListBasics.pdf)
+>>>>>>> ccc1666e8bcd9c4a320f6fbd34a71d67987197c3:02-linked-lists/01-linked-lists.md
