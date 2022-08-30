@@ -2,8 +2,7 @@
 
 | Logistics             | Details                                   |
 | --------------------- | ----------------------------------------  |
-| Project details       | https://github.com/Ada-C16/linked-list    |
-| JS Version            | https://github.com/Ada-C16/linked-list-js |
+| Project details       | [https://github.com/AdaGold/Intersection-Linked-List](https://github.com/AdaGold/Intersection-Linked-List)  |
 | Should you fork this? | Yes (Check project details)               |
 | Submission method     | Learn                                     |
 
@@ -12,7 +11,7 @@
 * type: testable-project
 * id: 4f3d244b-d34b-4e34-9a85-bce2232203e5
 * title: List Implementations
-* upstream: https://github.com/Ada-C16/linked-list
+* upstream: https://github.com/AdaGold/Intersection-Linked-List
 * validate_fork: false
 * points: 0
 * topics: linked-lists
@@ -76,34 +75,71 @@ Your PR link goes here.
 
 <!-- ======================= END CHALLENGE ======================= -->
 
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: short-answer
+* id: c2735bca-226b-4c2f-b2c9-636331c7e677
+* title: Time complexity
+<!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
+<!-- * topics: [python, pandas] (Checkpoints only, optional the topics for analyzing points) -->
+
+##### !question
+
+What is the time complexity of your solution? Remember to define your variables.
+
+##### !end-question
+
+##### !placeholder
+
+
+##### !end-placeholder
+
+##### !answer
+Optimal solution is O(m + n)
+
+##### !end-answer
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
-* type: testable-project
-* id: 795b30c2-9d88-4480-8062-d0e5466a09eb
-* title: Optional JS Version
-* upstream: https://github.com/Ada-C16/linked-list-js
-* validate_fork: false
-* points: 0
-* topics: linked-lists
+* type: short-answer
+* id: 92baf44f-9ec9-4a83-af9a-191b281988fa
+* title: space complexity
+<!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
+<!-- * topics: [python, pandas] (Checkpoints only, optional the topics for analyzing points) -->
 
 ##### !question
 
-Optionally you can submit a link to a fork of https://github.com/Ada-C16/linked-list-js
+What is the space complexity of your solution? Remember to define your variables.
 
 ##### !end-question
 
 ##### !placeholder
 
-Link to your repository here.
-
 ##### !end-placeholder
 
+##### !answer
+
+Optimal solution is O(1)
+
+##### !end-answer
+
 <!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 <!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
 

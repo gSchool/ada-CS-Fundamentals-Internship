@@ -59,9 +59,11 @@ class TestPython1(unittest.TestCase):
 ##### !hint
 In addition to the `value` and `next` attributes, nodes in a doubly linked list should also maintain a reference to the _previous_ node in the list.
 
-##### !end-hint
+Feeling stuck? Check this video walkthrough of the solution.
 
-d-rubric (markdown, instructors can see while scoring a 
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=57b9ed93-d9ca-4f09-a5aa-aef90130df5e&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
+##### !end-hint 
 
 ##### !explanation 
 
@@ -146,7 +148,75 @@ def add_first(self, value):
     self.head = new_node
 ```
 
-<!--TODO: Add challenge question adding node for a doubly linked list-->
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: e87b4a7d-9adb-4016-a0a1-da172492e17a
+* title: Doubly LinkedList Class Constructor
+* points: 1
+
+##### !question
+
+Above, we wrote the LinkedList class constructor for a singly linked list. Alter the code below to write a LinkedList class constructor for a doubly linked list.
+
+##### !end-question
+
+##### !placeholder
+```py
+class Node:
+    def __init__(self, value):
+        self.val = value
+        self.next = None
+        self.prev = None
+
+class LinkedList:
+    #write your code here
+    pass
+```
+
+##### !end-placeholder
+
+##### !tests
+
+```py
+import unittest
+from main import *
+
+class TestPython1(unittest.TestCase):
+  def test_one(self):
+    self.assertEqual(1,1)
+```
+
+##### !end-tests
+
+##### !hint
+In addition to a head pointer, doubly linked lists typically maintain a tail pointer.
+
+Feeling stuck? Check this video walkthrough of the solution.
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ae392a8d-3aa1-4beb-9671-aef90132016d&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
+##### !end-hint
+
+##### !explanation 
+An example of a working implementation:
+
+```python
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+```
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
@@ -220,7 +290,8 @@ class TestPython1(unittest.TestCase):
 `self.head` is the first node in the list!
 
 Still feeling stuck? Check this video walkthrough of the solution.
-<!-- TODO: Add video walkthrough to explanation -->
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=23ebdac4-d6cb-4673-9467-aef3013568cd&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ### !end-hint
 
@@ -324,9 +395,9 @@ The space complexity will be O(1) or constant as we are not creating any new dat
 <!-- ======================= END CHALLENGE ======================= -->
 
 ### Traversing Linked Lists
-Because linked lists are not stored in contiguous memory like arrays, most read and write operations will require us to traverse the list. With a singly linked list, we only maintain a reference to the `head` node, so all of our traversals will start at the `head` of the list.
+Because linked lists are not stored in contiguous memory, most read and write operations will require us to traverse the list. With a singly linked list, we only maintain a reference to the `head` node, so all of our traversals will start at the `head` of the list.
 
-Consider a `search` method which allows users to determine whether any nodes in the list have a specified value. The `search` method takes one parameter: a value to search for. The method should return `True` if a node with that value exists within 
+Consider a `search` method which allows users to determine whether any nodes in the list have a specified value. The `search` method takes one parameter: a value to search for. The method should return `True` if a node with that value exists within the linked list. 
 
 We can break down the `search` method as follows:
 
@@ -428,7 +499,8 @@ class TestPython1(unittest.TestCase):
 Create a `current` pointer that initially points to the `head` node to help you iterate through the list. You may also consider initializing an `index` variable that increments every time you look at a new node.
 
 Still feeling stuck? Check this video walkthrough of the solution.
-<!-- TODO: Add video walkthrough to explanation -->
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=4f88bc07-bed3-4720-85a2-aef601438444&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ##### !end-hint
 
@@ -553,7 +625,7 @@ The space complexity will be O(1) or constant as we are not creating any new dat
   
 ##### !question
 
-Implement a method `add_last` that inserts a new node with a given value as the new last node of the linked list.
+Implement a method `add_last` that inserts a new node with a given value as the new last node of the singly linked list.
 
 ##### !end-question
 
@@ -589,7 +661,7 @@ class LinkedListExtended(LinkedList):
     
     def get_first(self):
         if self.head:
-            return self.head.value
+            return self.head.val
         return None
 
     def get_at_index(self, index):
@@ -619,7 +691,7 @@ class LinkedListExtended(LinkedList):
         current = self.head
         while current.next:
             current = current.next
-        return current.value
+        return current.val
         
 
 class TestPython1(unittest.TestCase):
@@ -652,17 +724,17 @@ class TestPython1(unittest.TestCase):
     def test_add_last_adds_new_item_to_back_of_list(self):
         lst = LinkedListExtended()
 
-        self.add_last(3)
-        self.assertEqual(3, self.get_last())
-        self.assertEqual(3, self.get_first())
+        lst.add_last(3)
+        self.assertEqual(3, lst.get_last())
+        self.assertEqual(3, lst.get_first())
 
-        self.add_last(2)
-        self.assertEqual(2, self.get_last())
-        self.assertEqual(3, self.get_first())
+        lst.add_last(2)
+        self.assertEqual(2, lst.get_last())
+        self.assertEqual(3, lst.get_first())
 
-        self.add_last(1)
-        self.assertEqual(1, self.get_last())
-        self.assertEqual(3, self.get_first())
+        lst.add_last(1)
+        self.assertEqual(1, lst.get_last())
+        self.assertEqual(3, lst.get_first())
 ```
 
 ##### !end-tests
@@ -678,7 +750,8 @@ In the nominal case, where the list already has some number of nodes, consider u
 
 
 Still feeling stuck? Check this video walkthrough of the solution.
-<!-- TODO: Add video walkthrough to explanation -->
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=60f22d0f-5fc5-4054-9cc0-aef6014384ac&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ##### !end-hint
 
@@ -775,8 +848,6 @@ e| O(n^2)
 a|
 
 ##### !end-answer
-
-
 ##### !explanation
 The space complexity will be O(1) or constant as we are not creating any new data structures or call stacks whose size are proportional to the length of our list.
 
@@ -786,6 +857,246 @@ The space complexity will be O(1) or constant as we are not creating any new dat
 
 <!-- ======================= END CHALLENGE ======================= -->
 
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 10523d72-e7ee-4a81-bfa3-4883aed1e459
+* title: add_last for a doubly linked list
+* points: 1
+
+
+##### !question
+
+Would anything change if we implemented `add_last` for a doubly linked list? Implement a method `add_last` that inserts a new node with a given value as the new last node of the doubly linked list.
+
+##### !end-question
+
+##### !placeholder
+```py
+class Node:
+    def __init__(self, value):
+        self.val = value
+        self.prev = None
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def add_first(self, value):
+        new_node = Node(value)
+        if not self.head:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
+
+    def add_last(self, value):
+        #write your code here
+        pass
+
+```
+
+##### !end-placeholder
+
+##### !tests
+```py
+import unittest
+from main import *
+
+class LinkedListExtended(LinkedList):
+    
+    def get_first(self):
+        if self.head:
+            return self.head.val
+        return None
+
+    def get_at_index(self, index):
+        current_index = 0
+        current = self.head
+
+        while current_index < index and current:
+            current_index += 1
+            current = current.next
+
+        if current_index == index and current:
+            return current.val
+        return None
+    
+    def length(self):
+        count = 0
+        current = self.head
+        while current:
+            count += 1
+            current = current.next
+        return count
+
+    def get_last(self):
+        if not self.head:
+            return None
+        return self.tail.val
+        
+
+class TestPython1(unittest.TestCase): 
+
+    def test_add_last_on_empty_list(self):
+        lst = LinkedListExtended()
+        lst.add_last(1)
+        self.assertEqual(1, lst.get_at_index(0))
+
+    def test_add_last_on_empty_lst_head_is_tail(self):
+        lst = LinkedListExtended()
+        lst.add_last(1)
+        self.assertEqual(1, lst.get_last())
+        self.assertEqual(1, lst.get_first())
+    
+    def test_add_last_increases_length(self):
+        lst = LinkedListExtended()
+        
+        self.assertEqual(0, lst.length())
+
+        lst.add_last(5)
+        self.assertEqual(1, lst.length())
+
+        lst.add_last(4)
+        self.assertEqual(2, lst.length())
+
+        lst.add_last(3)
+        self.assertEqual(3, lst.length())
+
+    def test_add_last_adds_new_item_to_back_of_list(self):
+        lst = LinkedListExtended()
+
+        lst.add_last(3)
+        self.assertEqual(3, lst.get_last())
+        self.assertEqual(3, lst.get_first())
+
+        lst.add_last(2)
+        self.assertEqual(2, lst.get_last())
+        self.assertEqual(3, lst.get_first())
+
+        lst.add_last(1)
+        self.assertEqual(1, lst.get_last())
+        self.assertEqual(3, lst.get_first())
+```
+
+##### !end-tests
+
+<!-- other optional sections -->
+##### !hint
+Remember that doubly linked lists maintain a tail pointer!
+
+Still feeling stuck? Check this video walkthrough of the solution.
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=14965c22-76ad-4be8-985c-aef60143840c&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+##### !end-hint
+
+##### !explanation 
+An example of a working implementation:
+
+```py
+    def add_last(self, value):
+        if not self.head:
+            self.add_first(value)
+        else:
+            new_node = Node(value)
+            new_node.prev = self.tail
+            self.tail.next = new_node
+            self.tail = new_node
+```
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: ea39d52f-d938-4ce2-9272-604b65b345e7
+* title: add_last Time Complexity for Doubly Linked List
+* points: 1
+
+##### !question
+
+What is the time complexity of `add_last` in a doubly linked list?
+
+##### !end-question
+
+##### !options
+
+a| O(1)
+b| O(log n)
+c| O(n log n)
+d| O(n)
+e| O(n^2)
+
+##### !end-options
+
+##### !answer
+
+a|
+
+##### !end-answer
+
+
+##### !explanation
+The time complexity will be O(1) or constant because we now just need to access the `tail` attribute and redirect our pointers which are all O(1) operations.
+
+##### !end-explanation
+
+### !end-challenge
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+
+### !challenge
+
+* type: multiple-choice
+* id: 300d829b-11ae-4e6d-be15-b03368735705
+* title: add_last Space Complexity for a Doubly Linked List
+* points: 1
+
+##### !question
+
+What is the space complexity of `add_last` in a doubly linked list?
+
+##### !end-question
+
+##### !options
+
+a| O(1)
+b| O(log n)
+c| O(n log n)
+d| O(n)
+e| O(n^2)
+
+##### !end-options
+
+##### !answer
+
+a|
+
+##### !end-answer
+##### !explanation
+The space complexity will be O(1) or constant as we are not creating any new data structures or call stacks whose size are proportional to the length of our list.
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 ### Removing a node at a specific index
 
 To remove a node at a specific index, we also have to traverse the list until we find the index before the node to delete. Remove also requires some more complex redirection of pointers. If the node to remove is the head, then the head becomes the next element. In all other cases for a singly linked list, we adjust the prior node's `next` reference to point **past** the node you are removing.  
@@ -802,8 +1113,9 @@ def remove(self, index):
 
     if index == 0:
         self.head = self.head.next
+        return
 
-    # Traverse the list until you find the node at index -1
+    #Traverse the list until you find the node at the given index minus one
     current = self.head
     current_index = 0
     while current.next and current_index < index - 1:
@@ -845,7 +1157,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def reverse(self, value):
+    def reverse(self):
         #write your code here
         pass
 ```
@@ -854,7 +1166,6 @@ class LinkedList:
 
 ##### !tests
 
-[the unit tests below will run against the student submission]
 ```py
 import unittest
 from main import *
@@ -889,7 +1200,7 @@ class TestPython1(unittest.TestCase):
     def test_reverse_empty_list(self):
         lst = LinkedListExtended()
 
-        self.assertEqual(None, self.get_at_index(0))
+        self.assertEqual(None, lst.get_at_index(0))
     
     def test_reverse_will_reverse_five_element_list(self):
         lst = LinkedListExtended()
@@ -915,7 +1226,8 @@ At each iteration:
 - Redirect both `previous` and `current` to point to their respective next nodes in the list
 
 Still feeling stuck? Check this video walkthrough of the solution.
-<!-- TODO: Add video walkthrough to explanation -->
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=cb846900-4327-4727-833d-aef601438473&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 ##### !end-hint
 
