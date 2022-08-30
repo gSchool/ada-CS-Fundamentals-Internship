@@ -34,7 +34,7 @@ When dealing with an ordered collection of data, we need to consider the time an
 * **Searching** - Finding an element in the collection
 * **Serialization** - Converting the collection to an array or string to write to a file, network, or database
 
-Arrays and linked lists are two data structures that can be used to store ordered collections of data. Each has its respective advantages and disadvantages. Binary Search Trees are another data structure that we can consider.
+Arrays and linked lists are two data structures that can be used to store ordered collections of data. Each has its respective advantages and disadvantages. 
 
 ### !callout-info
 
@@ -119,4 +119,4 @@ The key requirements are:
 1. Find elements with an O(log n) time
 1. Serialize the list into a string or another data type that can be written to a file, network, or database in O(n) time or better.
 
-If need 1 & 2 are maintained an array will struggle to add and delete items, and a Linked List will require O(n) for all operations because you have to traverse the sorted list to do anything. So another data structure is needed.
+If need 1 & 2 are maintained an array will struggle to add and delete items. A linked list will require O(n) for all 4 operations because it has to traverse the sorted list to do anything. Binary Search Trees are another data structure, that can provide a more optimal solution.
