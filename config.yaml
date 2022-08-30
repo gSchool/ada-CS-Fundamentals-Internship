@@ -109,6 +109,10 @@ Standards:
         Type: Lesson
         UID: 06dea201-6230-4967-b98f-2403ab11479a
         Path: /03-Binary-Search-Trees/05-Binary-Search-Trees-Activity.md
+      -
+        Type: Lesson
+        UID: 1f189042-63dd-4075-9de9-4ca60a3fa5aa
+        Path: /03-Binary-Search-Trees/05-Binary-Search-Trees-Activity.md
   -
     Title: Stacks And Queues
     Description: Stacks And Queues
