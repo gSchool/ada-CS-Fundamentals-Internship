@@ -58,13 +58,6 @@ Standards:
         Type: Lesson
         UID: 99474aeb-183e-4f01-990b-0a689c022c30
         Path: /02-linked-lists/01-linked-lists.md
-<<<<<<< HEAD
-      -
-        Type: Lesson
-        UID: 8575a354-4072-4c26-8260-683af76c0ab1
-        Path: /02-linked-lists/02-linked-list-activity.md
-=======
->>>>>>> 35fb14d8058aceed57f697f68485da7fce17e7aa
       -
         Type: Lesson
         UID: 0c78e210-d831-41dd-956b-973aa151d904
