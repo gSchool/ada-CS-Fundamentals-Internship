@@ -11,6 +11,7 @@
 
 By the end of this lesson students should be able to:
 
+
 - Describe the structure of a singly linked list and doubly linked list
 - Compare and contrast the advantages and disadvantages of singly and doubly linked lists.
 - Design an object oriented singly linked list
@@ -120,25 +121,11 @@ Suppose you have an online store and need to lookup and access product descripti
 
 ##### !end-answer
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
 
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-<!-- 
-<details>
-<summary>Suppose you have an online store and need to lookup and access product descriptions by an id (index) number.  What would you pick, LinkedList or Array?</summary>
-  
-An Array because looking up items by index is much faster O(1) vs O(n) with an Array.
-</details>
--->
-
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 

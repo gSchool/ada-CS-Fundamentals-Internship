@@ -18,7 +18,6 @@ By the end of this lesson you should be able to:
 
 ## Video Lecture & Lesson
 
-- [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=0a1234b3-7734-4102-9313-ada2000f5f9f)
 - [Slide Deck](https://docs.google.com/presentation/d/1legEjSSNuLSagYaHxco_ZaO1oXzDUXXX-5ifqWOc2KE/edit#slide=id.p7)
 - [Exercises](https://github.com/Ada-C16/hash-practice)
 
@@ -67,13 +66,20 @@ Hash tables perform relatively well in terms of Big-O
 
 [![Big-O Cheatsheet](images/big-o-cheatsheet.png)](https://www.bigocheatsheet.com/#Common%20Data%20Structure%20Operations)
 
-Notice the linear worst-case performance of a hash table.  We will address this when we discuss the hashing function.
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
+
+## Notice The Linear Worst-Case Time Complexity
+
+This is because a hash table cannot *absolutely guarantee* an O(1) lookup time. However with a good hash function the worst-case runtime becomes extremely rare resulting in a *practical* time complexity of O(1) for lookup operations. We will address this when we discuss the hashing function.
+
+### !end-callout
 
 ## Hashing Functions
 
 The key, no pun intended, to a hash table is the hashing function.  The hashing function is used to convert any key to a number.  That number can then be used to find an index in the internal array used by the hash table.
 
-To be useful a hash function must satisfy a few criteria:
+To be useful in a hash table, the function must satisfy a few criteria:
 
 - **The hash function must be consistent.** - If the hash function of key k, `h(k)` results in a number, it should always result in the same number.
 - **The hash function should (mostly) map different keys to different values** - We want to avoid situations where two keys map to the same index in the array.
@@ -126,7 +132,6 @@ So if:
 **Exercise** Assuming `A` is 0.71 and `m` = 100, answer the following
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -164,9 +169,10 @@ With
 
 `h(k)` = `floor(m * (k * A mod 1))` = `floor(100 * (15 * 0.71 mod 1))`
 
+Notice the `floor`.  You **must** round down to the nearest whole number.
+
 ##### !end-hint
 
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
 `floor(100 * (15 * 0.71 mod 1))` = 64
@@ -178,7 +184,6 @@ With
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -206,7 +211,6 @@ Answer with a number
 
 ##### !end-answer
 
-<!-- other optional sections -->
 ##### !hint
 
 With
@@ -218,7 +222,6 @@ With
 
 ##### !end-hint
 
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
 `h(k)` = `k % m = 15 % 100` = 15
@@ -229,25 +232,34 @@ With
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-
 You are **not** expected to memorize these methods, but rather be able to see how they work to identify a bucket to find values in a hash table.
 
 There are **many** different ways to write a hash function.  There is not a mathematically provable perfect solution, in the general case.  Instead developers use statistical analysis with experimental data to judge the performance of a given hashing function.  When evaluating a hashing function developers want a function which is easy to compute, maps any given input to valid buckets, and minimizes collisions.
 
 [Ruby uses the MurmurHash](https://sites.google.com/site/murmurhash/) hashing function internally.
 
+### !callout-info
+
+## Sidenote: A Hash Function Can Be A Vulnerability
+
 There was a time when Ruby used the **exact** same hash for every instance of running Ruby.  Then someone exploited a series of keys designed to result in a collision with each insertion into a hash.  This was used in a [denial of service](https://www.ruby-lang.org/en/news/2011/12/28/denial-of-service-attack-was-found-for-rubys-hash-algorithm-cve-2011-4815/) attack on Ruby on Rails.  There is another article on [Ars Technica](https://arstechnica.com/information-technology/2011/12/huge-portions-of-web-vulnerable-to-hashing-denial-of-service-attack/).
+
+### !end-callout
 
 For Python, the hash function used depends on the object being used as a key.  Each class can define it's own `__hash__()` method and the value that it returns for a particular instance is used for the dictionary.  Python further "salts" it's hash values, so they differ from run to run to prevent the same denial of service attack Ruby servers experienced.
 
+### !callout-info
+
+## If You Want To Know More About Python Internals
+
 You can read about how Python Dictionaries work on [this article](http://thepythoncorner.com/dev/hash-tables-understanding-dictionaries/).  Be aware the article has some formatting issues.
 
+### !end-callout
 
 ## Collision Handling
 
 All general-purpose hashing functions will encounter collisions.  When two keys are mapped to the same bucket something has to happen to manage it.  We will look at three methods: chaining, linear probing, quadratic probing and rehashing.
 
-<!-- available callout types: info, success, warning, danger, secondary, star  -->
 ### !callout-info
 
 ## Python Dictionary Source Code
@@ -264,7 +276,7 @@ The first solution, as we discussed in the classroom portion of Ada, is to make 
 
 ### Linear Probing
 
-Chaining required a secondary data structure in the array.  Linear probling is instead rather simple.  When inserting a new element into the hash table, the hash function will return with an index number.  If the bucket at that index number is occupied (there's a collision), then the hash table checks the next element in the array, and the next and so on until an empty bucket is found.  
+Chaining required a secondary data structure in the array.  Linear probling is instead rather simple.  When inserting a new element into the hash table, the hash function will return with an index number.  If the bucket at that index number is occupied (there's a collision), then the hash table checks the next element in the array, and the next and so on until an empty bucket is found.  Incidentally, this is how Python dictionaries handle collisions.
 
 ![Linear Probing](images/linear-probing.png)
 
@@ -292,11 +304,11 @@ Quadratic probing makes clustering less likely, although not impossible and it p
 
 A third solution to collision is to simply have a secondary hash function.  If there is a collision, then use the secondary hash function to find another bucket to use.  There will however be occasions where both hash functions produce a collision and then another collision resolution scheme would need to be used, like chaining or linear probing.  If the _load factor_ - the ratio of the number of elements to the number of buckets in the hash table - is low, then this occurs rarely, and the seconary hash function helps avoid clustering.  As a fun side-note, when you chain several hash functions together it's called [Cuckoo Hashing](https://en.wikipedia.org/wiki/Cuckoo_hashing)
 
-## Ruby & Hash Tables
+## Python Dictionaries
 
-As stated, Ruby uses the MurmurHash hashing algorithm internally.  It also uses the chaining method to resolve collisions.  To better guarantee performance, Ruby hashes also monitor the _density_ of the hash table.  This means it monitors the maximum number of records chained in a given bucket.  For example if the largest linked list in the hash table was of length 4, then the density would be 4.  Ruby sets a maximum density of 5.  When that density is exceeded, Ruby enlarges the internal array and recalculates the hash, placing the elements into new indexes.  
+Python uses *[open addressing*](https://stackoverflow.com/questions/21595048/how-python-dict-stores-key-value-when-collision-occurs#:~:text=Python%20dict%20uses%20open%20addressing,1)%20lookup%20by%20index))*, i.e. *linear probing* to handle collisions. When the dictionary's internal array is 2/3 full, it will double the size of the array and rehash all of the elements ensuring that the elements are spread evenly over the new array and making the internal array less densely populated.
 
-By limiting the density of the hash, Ruby guarantees the O(1) lookup time for adding elements to the hash.
+By limiting the density of the hash, Python guarantees the O(1) lookup time for adding elements to the hash.
 
 ## When To Use Hash Tables
 
@@ -309,7 +321,6 @@ Hash tables are a common, practical solution to a variety of programming problem
 Take a look at the problem below and answer:
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -338,13 +349,12 @@ Would a hash table be a good approach here?  Why or why not?
 
 ##### !end-placeholder
 
-<!-- other optional sections -->
 ##### !hint
 
 To solve this problem we need to store each letter and the number of occurences.  How does a hash compare to a linked list or other implementation?
 
 ##### !end-hint
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+
 ##### !explanation
 
  - To solve this problem we need to store each letter and the number of occurences. <br />
@@ -367,7 +377,6 @@ To solve this problem we need to store each letter and the number of occurences.
 You will review the following with a partner.
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -389,17 +398,12 @@ Clarifying questions
 
 ##### !end-placeholder
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
 
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -421,17 +425,11 @@ Assumptions
 
 ##### !end-placeholder
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -453,49 +451,14 @@ Sample input-output
 
 ##### !end-placeholder
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
-
-### !challenge
-
-* type: paragraph
-* id: 24eb6a09-5b98-429d-a873-ed9cd9c2630b
-* title: Subproblems
-* points: 1
-* topics: hash-table
-
-##### !question
-
-Break down the problem into at least 2 subproblems, more if you can.
-
-##### !end-question
-
-##### !placeholder
-
-Subproblems
-
-##### !end-placeholder
-
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
-### !end-challenge
-
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -615,13 +578,13 @@ def frequency_sort(s):
 
 ## Array, Linked List, Binary Search Tree or Hash Table
 
-Hash tables are excellent for looking up data from a key.  Binary search trees are excellent data structures for maintaining items in order while linked lists provide quick access to the front and rear and maintain a specific order.
+So when do you use each data structure?
+
+* Hash tables are excellent for looking up data from a unique key
+* Binary search trees are excellent data structures for maintaining items in order
+* Linked lists provide quick access to the front and rear and maintain a specific order
 
 So, which would you use in these situations?
-
-
-<!-- source: http://www.cs.cmu.edu/~guna/15-123S11/Lectures/Lecture17.pdf -->
-<br />
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
@@ -657,9 +620,6 @@ A list of candidate records that need to be stored so that you can find the max 
 
 ##### !end-answer
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
 Hash tables are not good for maintaining ordered data.  Instead, a binary search tree (sorted by test scores) would serve better.
@@ -671,7 +631,6 @@ Hash tables are not good for maintaining ordered data.  Instead, a binary search
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -704,9 +663,6 @@ Fedex needs to provide quick access for customers to check the status of their p
 
 ##### !end-answer
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
 Since the tracking numbers are distinct and order is not important, a hash table makes the most sense because of its quick lookup time.
@@ -718,7 +674,6 @@ Since the tracking numbers are distinct and order is not important, a hash table
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -751,9 +706,6 @@ Postgres needs to keep track of fields in a table to output sorted data.  Items 
 
 ##### !end-answer
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
 Since order is important, maintaining a set of binary search trees would make a great deal of sense.  Postgres doesn't actually use a binary search tree, but it does use a similarly ordered data structure.
@@ -764,17 +716,15 @@ Since order is important, maintaining a set of binary search trees would make a 
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-
 ## Summary
 
 Hashes are one of the most practically useful data structures you will encounter.  They make a great many problems easier and with lower time complexity.  You will also likely **never** have to create a hash table data structure yourself, but you will need to know their practical applications and be able to discuss how they function.
 
 There are many ways to structure a hash table.  One of the most common is simple chaining with each element of the internal array or _bucket_ referencing the beginning of a linked list.  Alternative solutions include _dynamic arrays_ which use arrays to store the elements in each bucket and open addressing using either _linear probing_, _quadratic probing_ or _double hashing_.  It's also important to recognize that a hash table depends on **unique** keys.  If the keys for items are not unique there is no way to generate a unique hash result.
 
+![Big O Cheatsheet](images/big-o-cheatsheet.png)
 
 <!-- Image from: https://www.bigocheatsheet.com/ -->
-
-
 
 ## Resources
 

@@ -23,8 +23,6 @@ Students should be able to:
 - [Slide Deck](https://docs.google.com/presentation/d/1Fj0deIUswGZ3ooJMpgVUqPEaWHKTkQ1w2Ci-yf8v66M/edit#slide=id.p)
 - [BST Exercise](https://github.com/Ada-C16/tree-practice)
 
-## Vocabulary
-
 ## Vocabulary and Synonyms
 
 | Vocab          | Definition                                                    | Synonyms  | How to Use in a Sentence                                                      |
@@ -42,45 +40,105 @@ Students should be able to:
 | Depth-First Traversal 	|  An algorithm for traversing or searching a tree. The algorithm starts at the root node and explores as far as possible along each branch before backtracking.	| | A depth-first traversal looks like a mouse exploring a maze in that it goes as far down one path before backtracking when encountering dead ends. |
 | Breadth-first traversal 	|  An algorithm for searching a tree data structure for a node that satisfies a given property. It starts at the tree root and explores all nodes at the present depth prior to moving on to the nodes at the next depth level. 	| | I printed out the tree level-by-level so I had to perform a breadth-first traversal. |
 
-## Sample Problem
+## Overview
 
-Ada is working on software powering an online store.  Their application needs to maintian a list of products in memory and maintain them in order by price.  The app should be able to list all the products sorted by price, and look up individual items at a particular price.  The application will also need to add products as they are added to inventory and remove them when they are sold out.
+<!-- Should this be moved to the linked lists session? -->
 
-They could maintain a sorted array.  It's very quick to find individual elements by executing a binary search O(log n), and because the list is in order, simply traversing the array will display the items sorted by price.
+We commonly encounter problems which require us to maintain ordered collections of data. This could be a list of students by name, jobs to process by priority or a collection of accounts by username.
 
-However removing an element requires all the elements to the right of the deleted item to be shifted left one position.  This means that deleting an element requires a time complexity of O(n).
+When dealing with an ordered collection of data, we need to consider the time and space complexity of the following operations:
 
-![Deleting an element from an array](images/deleting-array-element.png)
+* **Insertion** - Adding elements to the collection
+* **Deletion** - Removing elements from the collection
+* **Searching** - Finding an element in the collection
+* **Serialization** - Converting the collection to an array or string to write to a file, network, or database
 
-<!-- Image at:  https://drive.google.com/file/d/1PeYa3z7mgVxy6jOPqS7brL09u2Vq_nFW/view?usp=sharing -->
+Arrays and linked lists are two data structures that can be used to store ordered collections of data. Each has its respective advantages and disadvantages. Binary Search Trees are another data structure that we can consider.
 
-Adding an element to a sorted list similarly requires each item to be shifted before a new item can be inserted.  
+### !callout-info
+
+## What about dictionaries?
+
+Dictionaries are unordered and thus cannot be used to store ordered data.
+
+### !end-callout
+
+
+### Using An Array for Ordered Data
+
+If we maintain an ordered array of data we can examine these 4 operations.
+
+**Insertion** - O(n)
+
+Adding an element to a sorted list requires us to first find the index in which to insert the new value and then each subsequent item must be shifted before a new item can be inserted.
+
+Finding an item is an O(log n) operation because we can use binary search to find the index to insert into.  Then shifting each element over to the right is an O(n) operation.  Because the larger term dominates insertion is an O(n) operation.
 
 ![Adding an element to a sorted array](images/adding-sorted-array-element.png)
 
 <!-- Image source:  https://www.draw.io/#G1j_vbvEN5UgNSszrKSPgwA7agvgQdhs1r -->
 
+**Deletion** - O(n)
+
+Similarly to remove an element from an ordered array, we must first find the index of the element to delete and then shift each subsequent element over to the left.
+
+![Deleting an element from an array](images/deleting-array-element.png)
+
+<!-- Image at:  https://drive.google.com/file/d/1PeYa3z7mgVxy6jOPqS7brL09u2Vq_nFW/view?usp=sharing -->
+
+**Searching** - O(log n)
+
+To find an element in an ordered array, we can use [binary search](https://www.geeksforgeeks.org/python-program-for-binary-search/) to find the index of the given element.  Because binary search is an O(log n) operation, finding an element in an ordered array is an O(log n) operation.
+
+**Serialization** - O(n)
+
+Serialization is a process of converting the data into a format that can be stored in a file, network, or database. In languages like Python this is often done by converting the data into a string.  You can do so using the `JSON.dumps()` function.  This function iterates through the list and converts each element into a string.  This is an O(n) operation.
+
 ### What About a Linked List
 
-Likewise we could use a Linked List, but we cannot do a binary search on a Linked List.  Any search in a Linked List requires a time complexity of O(n).
+Likewise we could use a Linked List. We can also examine how well Linked Lists perform these operations.
 
-Further maintaining a list in order requires Ada's application to **find** the location in the list to do the insertion.  So while adjusting the links to insert a new node in a Linked List is O(1), finding the place to do the insertion would be O(n).  **Doh!**
+**Insertion**  - O(n)
 
-So while we want to:
+Maintaining a list in order requires Ada's application to:
+
+1. **find** the location in the list to do the insertion - O(n)
+1. Adjusting links to insert the new node - O(1)
+
+While adjusting the links to insert a new node in a Linked List is O(1), finding the place to do the insertion would be O(n). So while the process of inserting a new node between two existing nodes in a linked list very fast, finding the location to insert into is not resulting in an overall O(n) operation.
+
+**Deletion** - O(n)
+
+Again to delete a specific node from a linked list requires us to first **find** it. To find the node we must traverse the list until we find the node prior to the node we want to delete.  This is an O(n) operation.
+
+**Searching** - O(n)
+
+Because we cannot perform a binary search on a linked list, we must instead perform a linear search which runs in O(n) time.
+
+**Serialization** - O(n)
+
+To convert a linked list into a string or other data type suitable to write to another device we need to iterate through the list and access the value of each node. To visit each node requires O(n) operations and thus linear runtime.
+
+## The Need
+
+We want to maintain an ordered collection of data and outperform both arrays and linked lists in terms of insertion, deletion, searching and serialization, if possible.
+
+The key requirements are:
 
 1. Maintain a list of items in order.
 1. Add and delete elements in better than O(n) time
 1. Find elements with an O(log n) time
+1. Serialize the list into a string or another data type that can be written to a file, network, or database in O(n) time or better.
 
-If need 1 is maintained an array will struggle to add and delete items, and a Linked List will require O(n) for all operations because you have to traverse the sorted list to do anything. 
-
-So is Ada stuck with O(n) operations?  No!  Enter Binary Search Trees!
+If need 1 & 2 are maintained an array will struggle to add and delete items, and a Linked List will require O(n) for all operations because you have to traverse the sorted list to do anything. So another data structure is needed.
 
 ## Enter Binary Trees
 
 Our Linked Lists are a linear structure with each node linking to the next node in the structure.
 
 ![Linked List Diagram](images/linked-list-vocab.png)
+
+*Fig. 1. Linked List Diagram*
 
 Our Node class from the LinkedList topic, which will be referred to as `ListNode`, looked like this:
 
@@ -93,11 +151,12 @@ class ListNode:
 
 The `ListNode` class was used in a larger `LinkedList` class which maintained a chain of `ListNode` objects starting with a node pointed to by an instance variable called `head`.
 
-### Consider A Nonlinear Structure...
+### Consider A Nonlinear Structure
 
 In a _Binary Search Tree_ each node's left pointer points to all elements smaller than or equal to the node's key.  The right pointer points to all nodes greater than the given node's key.   Each node can refer to other nodes.  A Tree is hierarchical with certain nodes acting as parents to others.  A node above another is the node's _parent_.  The node(s) below a node are it's _children_.  The topmost node in a tree is known as the _root_.  The nodes with no children are called _leaves_.
 
 In a Binary Search Tree:
+
 - Nodes with values less than any node are stored to the **left** of that node.
 - Nodes with values greater than any node are stored to the **right** of that node. 
 
@@ -133,11 +192,7 @@ class Tree:
     # Tree methods go here...
 ```
 
-**Exercise**
-
-Given the following values draw a binary search tree:
-
-"Ringo", "John", "Paul", "George" sorted alphabetically.
+### Insertion - O(log n)
 
 The _root_ is where the tree begins, the topmost node.  New nodes as they are added are placed to the left or a given node, if they are less than or equal to the current node, and to the right if they are greater than the current node.  This is a natually recursive process.
 
@@ -151,11 +206,45 @@ Method add:
 ```
 
 ![Tree Insert operation visualization](./images/Binary-search-trees__insert-into-tree.gif)
+
 _Fig.  Visualization of inserting a value into a BST_
 
 You can experiment with this in the [Binary Tree Visualizer](https://visualgo.net/en/bst)
 
-## Finding a Value
+### Deletion - O(log n)
+
+To delete a node from a binary search tree we must first find the node to delete.  This is an O(log n) operation.  Once we find the node we can delete it by changing the references.
+
+```
+Method delete(current_root, key):
+    if the root is none return none
+  
+    Otherwise, recur down the tree
+        if the key is less than the root's key delete the node in the left subtree.
+            current_root.left = delete(current_root.left, key);
+        otherwise if the key is greater than root's key delete the node in the right subtree.
+            current_root.right = delete(current_root.right, key);
+
+
+        Otherwise if the current root is the node to be deleted
+        
+            if the left child is none
+                return current_root.right
+            otherwise if current_root.right == none
+                return current_root.left;
+
+            Otherwise find the minimum node in the right subtree
+            smallest_node_on_right = min_node(root.right);
+            current_root.key = smallest_node_on_right.key;
+            current_root.value = smallest_node_on_right.value;
+
+            // Delete the inorder successor
+            root.right = delete(root.right, root.key);
+
+    return current_root;
+```
+
+### Searching - O(log n)
 
 You can try to search to find a value in a Binary Search Tree Like this:
 
@@ -172,25 +261,10 @@ If the value is greater than the root
     return search on current node's right side
 ```
 
-**Exercise** 
-
-Try this out on the [Binary Tree Visualizer](https://visualgo.net/en/bst).
-
-**Question**:  If you have a tree of height 5, what's the worst-case for finding a value in the tree?  What affects the number of comparisons you need to make?
-
-<details style="max-width: 700px; margin: auto;">
-  <summary>
-    Open this to see our answer.
-  </summary>
-
-  Worst-case, you need to make comparisons to 5 nodes before inserting.  This occurs when you need to insert a new node into a leaf.
-
-  Worst-case:  O(h) comparisons where _h_ is the height of the tree
-</details>
-
-## Finding A Node With Python
+### Finding A Node With Python
 
 ![Finding a 29 in a tree visualization](./images/Binary-Search-Trees__find-value.gif)
+
 _Fig.  A visualization of finding a value in a BST._
 
 You can implement the `find` method in Python as follows:
@@ -237,6 +311,22 @@ class Tree:
         return self.find_helper(self.root, value)
 ```
 
+### Exercise
+
+Try this out on the [Binary Tree Visualizer](https://visualgo.net/en/bst).
+
+**Question**:  If you have a tree of height 5, what's the worst-case for finding a value in the tree?  What affects the number of comparisons you need to make?
+
+<details style="max-width: 700px; margin: auto;">
+  <summary>
+    Open this to see our answer.
+  </summary>
+
+  Worst-case, you need to make comparisons to 5 nodes before inserting.  This occurs when you need to insert a new node into a leaf.
+
+  Worst-case:  O(h) comparisons where _h_ is the height of the tree
+</details>
+
 ## Balanced Trees & Unbalanced Trees
 
 A tree is considered **balanced** if the levels of any two leaves differ by at most 1.  In this way the nodes in the tree must be spread fairly evenly.
@@ -249,9 +339,18 @@ On the other hand this is an unbalanced tree.
 
 ![unbalanced bst](images/unbalanced-bst.png)
 
+### !callout-warning
 
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
+## Tree Balance & Time Complexity
+
+Assume that we are using the Binary Search tree methods as we have described them here.  If all the nodes were inserted in order, the worst case time complexity would be O(n) because each node except the root would be the left child of the previous nodes if the nodes were inserted in descending order, or the right child of the previous node if they were inserted in ascending order.  The tree would be **unbalanced**.  There are more advanced algorithms that can be used to create self-balancing trees.
+
+* If a tree is unbalanced it's time complexities for Insertion, Deletion, and searching approach O(n).
+* If a tree is balanced it's time complexities for Insertion, Deletion, and searching are O(log n).
+
+Therefore it is very important that a tree **remain balanced**.
+
+### !end-callout
 
 ### !challenge
 
@@ -280,17 +379,12 @@ put a number in here
 
 ##### !end-answer
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
 
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -319,10 +413,6 @@ Number goes here
 
 ##### !end-answer
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
 
 ### !end-challenge
 
@@ -330,7 +420,6 @@ Number goes here
 
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -343,7 +432,7 @@ Number goes here
 
 ##### !question
 
-With the [Binary Tree Visualizer](https://visualgo.net/en/bst), build a balanced tree with a height of 5 levels.  How many comparisons do you need to make to find a particular leaf node?
+With the [Binary Tree Visualizer](https://visualgo.net/en/bst), build a **balanced** tree with a height of 5 levels.  How many comparisons do you need to make to find a particular leaf node?
 
 ##### !end-question
 
@@ -359,17 +448,11 @@ Number goes here
 
 ##### !end-answer
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -404,15 +487,12 @@ Number goes here
 How many levels does adding 5 nodes add, if you maintain balance?
 
 ##### !end-hint
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
 
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -425,7 +505,7 @@ How many levels does adding 5 nodes add, if you maintain balance?
 
 ##### !question
 
-Build a completely unbalanced tree with 5 levels.  How many comparisons to find a leaf node?
+Build a **completely unbalanced** tree with 5 levels.  How many comparisons to find a leaf node?
 
 ##### !end-question
 
@@ -494,7 +574,7 @@ Number goes here
 If you have 5 levels and add 4 more nodes, how many levels do you gain if the tree is totally unbalanced?
 
 ##### !end-hint
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+
 ##### !explanation
 
 Worst case you added 4 more levels 5 + 4 = 9, so 9 comparisons to find the value.
@@ -506,7 +586,6 @@ Worst case you added 4 more levels 5 + 4 = 9, so 9 comparisons to find the value
 <!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
 
 ### !challenge
 
@@ -569,316 +648,18 @@ For this reason, computer scientists spend a lot of time focusing on ways to mai
 
 **Self-Balancing Trees** There are a lot of algorithms for [keeping a tree balanced](https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree).  The act of keeping a tree balanced is also O(log n), and so rebalancing a tree after an insertion or deletion doesn't significantly impact the runtime of a binary search tree.  These structures are wonderful things to learn, but beyond the scope of this class.  You **can** however rest assured that any library tree classes that you use will keep the tree balanced in such a manner.
 
-## Traversals
-
-A _traversal_ is an action visiting each node in a graph such as a tree.  There are several kinds of traversals, Breadth First Traversals which visit each node level, by level and Depth First Traversals which visit a node's children before it's siblings.
-
-### Depth First Traversals
-
-Unlike linear data structures like arrays or linked list which have only one logical way to traverse them, trees can be traversed in different ways.  In a _Depth-first traversal_ you explore the children and grandchildren of a node before moving to it's sibling.
-
-There are three standard types of depth-first traversals:
-
-- **Pre-Order**:  Current, Left, Right
-- **In-Order**: Left, Current, Right
-- **Post-Order**: Left, Right, Current
-
-In a **Pre-Order** traversal you execute the algorithm in this manner:
-
-```
-visit the current node
-traverse the left subtree
-traverse the right subtree
-```
-
-In a **In-Order** traversal you execute the algorithm in this manner:
-
-```
-traverse the left subtree
-visit the current node
-traverse the right subtree
-```
-
-In a **Post-Order** traversal you execute the algorithm in this manner:
-
-```
-traverse the left subtree
-traverse the right subtree
-visit the current node
-```
-
-Notice that all of the algorithms are recursive in structure because each node can be treated as it's own subtree.
-
-![Binary Search Tree 2](images/bst2.png)
-
-For the above Binary Search Tree
-- **Pre-Order**:  [50, 25, 10, 30, 75, 60, 100]
-- **In-Order**: [10, 25, 30, 50, 60, 75, 100]
-- **Post-Order**: [10, 30, 25, 60, 100, 75, 50]
-
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
-
-### !challenge
-
-* type: number
-* id: 83e29c11-66b7-4b74-a85b-4fe936c92fa2
-* title: Height of a tree
-* decimal: 0
-* points: 1
-* topics: bst
-
-##### !question
-
-![bst3](images/bst3.png)
-
-What is the height of the above BST?
-
-##### !end-question
-
-##### !placeholder
-
-Number goes here
-
-##### !end-placeholder
-
-##### !answer
-
-3
-##### !end-answer
-
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
-### !end-challenge
-
-<!-- ======================= END CHALLENGE ======================= -->
-
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
-
-### !challenge
-
-* type: multiple-choice
-* id: a1703f9c-c97c-4b7a-86cf-cadb8780c77f
-* title: Balanced
-* points: 1
-* topics: bst
-
-##### !question
-
-![bst3](images/bst3.png)
-
-Is the tree balanced?
-
-##### !end-question
-
-##### !options
-
-* Yes
-* No
-* Huh?
-
-##### !end-options
-
-##### !answer
-
-* Yes
-
-##### !end-answer
-
-<!-- other optional sections -->
-##### !hint
-
-In a balanced tree no sibling subtrees differ in height more than 1.  So no left-right subtrees differ in height by 1.
-
-##### !end-hint
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
-### !end-challenge
-
-<!-- ======================= END CHALLENGE ======================= -->
-
-
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
-
-### !challenge
-
-* type: multiple-choice
-* id: e755df96-56ec-4d50-a336-3834838abb96
-* title: Inorder
-* points: 1
-* topics: bst, traversal
-
-##### !question
-
-![bst3](images/bst3.png)
-
-In what order would you hit the nodes doing an inorder traversal
-
-##### !end-question
-
-##### !options
-
-* [17, 14, 20, 19, 52]
-* [14, 17, 19, 20, 52]
-* [14, 19, 52, 20, 17]
-
-##### !end-options
-
-##### !answer
-
-* [14, 17, 19, 20, 52]
-
-##### !end-answer
-
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
-### !end-challenge
-
-<!-- ======================= END CHALLENGE ======================= -->
-
-
-
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
-
-### !challenge
-
-* type: multiple-choice
-* id: 08e94a48-fc15-4d95-8a47-d8ed9e199b34
-* title: Preorder
-* points: 1
-* topics: bst, traversal
-
-##### !question
-
-![bst3](images/bst3.png)
-
-In what order would you hit the nodes doing an preorder traversal
-
-##### !end-question
-
-##### !options
-
-* [17, 14, 20, 19, 52]
-* [14, 17, 19, 20, 52]
-* [14, 19, 52, 20, 17]
-
-##### !end-options
-
-##### !answer
-
-* [17, 14, 20, 19, 52]
-
-##### !end-answer
-
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
-### !end-challenge
-
-<!-- ======================= END CHALLENGE ======================= -->
-
-
-
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
-
-### !challenge
-
-* type: multiple-choice
-* id: c6009e6c-5717-459a-ae66-4570918271b9
-* title: Postorder
-* points: 1
-* topics: bst, traversal
-
-##### !question
-
-![bst3](images/bst3.png)
-
-In what order would you hit the nodes doing an postorder traversal
-
-##### !end-question
-
-##### !options
-
-* [17, 14, 20, 19, 52]
-* [14, 17, 19, 20, 52]
-* [14, 19, 52, 20, 17]
-
-##### !end-options
-
-##### !answer
-
-* [14, 19, 52, 20, 17]
-
-##### !end-answer
-
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
-### !end-challenge
-
-<!-- ======================= END CHALLENGE ======================= -->
-
-### Why Do Traversals
-
-There are a few common use-cases for each of the depth-first traversals.
-
-- **Pre-order** If you need to save a tree data structure to disk, or send it across the network and maintain the structure, pre-order traversals can be useful.
-- **In-Order**: If you need to print or otherwise visit all the nodes of a tree in order.
-- **Post-Order**: If you need to delete all the nodes in a BST.
-
-### !callout-info
-
-## Why are they all left-to-right?
-
-So why are all the traversals left-to-right instead of right-to-left?
-
-Computer Science was initially pioneered in western cultures where people read left-to-right and so their cultural bias lead to designing traversals in that manner.  There's nothing inherit in Binary Search Trees to require this.  You could create a right-to-left traversal, but for historical reasons, these are the standard Binary Search Tree traversals.
-
-### !end-callout
-
-### Binary Expression Trees
-
-There is also a kind of tree called a [Binary Expression Tree](https://www.geeksforgeeks.org/expression-tree/), which is a type of tree used to represent an arithmetic formula.  In order traversals allow you to present the formula in the traditional manner while the preorder (prefix) and postorder (postifx) traversals can make the order more clear to machines.
-
-![binary expression tree](images/binary-expression-tree.png)
-
-## Finding the Height of a Binary Search Tree
-
-To find the height of a binary search tree you can do the following:
-
-```
-If the current node is nil return 0
-
-Otherwise return 1 plus the maximum of the heights of the right and left subtrees
-```
-
-This is a recursive solution because it treats the left and right sides of a node as trees.
-
-
 ## Summary
 
 In this lesson we looked at the advantages a Binary Search Tree provides over a sorted array or LinkedList.  Binary Search trees provide an O(log n) time to add, remove and find elements because searching a tree performs a binary search.  This performance however depends on the tree being **balanced**.  A balanced tree has subtrees of height within 1 of each other.
 
-We also examined different methods to traverse a Tree.  Unlike a LinkedList where there is only one method to traverse a tree has multiple ways to traverse.
+In short we want to use a Binary Search Tree When:
+
+- Maintaining order is important
+- We want to maintain efficient search, insertion and deletion time complexities
 
 ## Big-O Comparison
 
-As you can see below a balanced Binary Search Tree provides good performance while maintaining elements in order.  
+We can see below a balanced Binary Search Tree provides good performance while maintaining elements in order.  
 
 **#**|**Data Structure**|**Access By Key**|**Search**|**Insertion (Middle)**|**Deletion (Middle)**|**Add First**|**Add Last**
 :-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
@@ -887,28 +668,3 @@ As you can see below a balanced Binary Search Tree provides good performance whi
 3|Linked List|O(n)|O(n)|O(n)|O(n)|O(1)|O(1)
 4|Binary Tree (balanced)|O(log n)|O(log n)|O(log n)|O(log n)|NA|NA
 5|Hash Table|O(1)|O(1)|O(1)|O(1)|NA|NA
-
-## Additional Resources
-
-- Recursion
-  - Khan Academy on [Recursion](https://www.khanacademy.org/computing/computer-science/algorithms#recursive-algorithms)
-  - Cornell CS211 Lecture Notes on [Recursion](http://www.cs.cornell.edu/info/courses/spring-98/cs211/lecturenotes/07-recursion.pdf)
-- Trees
-  - Read about [Tree Traversals](http://www.geeksforgeeks.org/618/) and watch videos on GeeksForGeeks
-  - Read about [Binary Tree Introduction](http://quiz.geeksforgeeks.org/binary-tree-set-1-introduction/) on GeeksForGeeks
-  - Read about [Binary Tree Properties](http://quiz.geeksforgeeks.org/binary-tree-set-2-properties/) on GeeksForGeeks
-  - Read about [Types of Binary Tree](http://quiz.geeksforgeeks.org/binary-tree-set-3-types-of-binary-tree/) on GeeksForGeeks
-  - Stanford CS Education Library material on [Binary Trees](http://cslibrary.stanford.edu/110/)
-  - Stanford CS Education Library material on [Tree List Recursion Problem](http://cslibrary.stanford.edu/109/)
-  - Cornell CS211 Lecture Notes on [Lists, Priority Queues and Binary Search Trees](http://www.cs.cornell.edu/info/courses/spring-98/cs211/lecturenotes/06-ListsPQsBSTs.pdf)
-  - MIT Open Courseware on [Breadth First Search](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/lecture-13-breadth-first-search-bfs/)
-  - MIT Open Courseware on [Depth First Search](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/lecture-14-depth-first-search-dfs-topological-sort/)
-  - MIT Open Courseware on [Binary Search Trees, BST Sort](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/lecture-5-binary-search-trees-bst-sort/)
-
-## Optional offline Problem Sets
-
-- Convert a given integer array e.g. {5,2,1,6,7,3,4} to a Binary Search Tree.
-- Find the height of a BST using an iterative solution.
-- Given 2 Binary Trees (not BST), return true if both trees have the same in-order else return false. Note: You can save in-order from both trees and compare in the end (try implementing this as well). Can you inorder traverse them parallely and stop the traversal on a mismatch to return false instead?
-- In "Cracking the Coding Interview" book, "Chapter 4: Trees and Graphs"
-- CareerCup [Trees and Graph Interview Questions](https://www.careercup.com/page?pid=trees-and-graphs-interview-questions) - scan and look for the tree interview questions.

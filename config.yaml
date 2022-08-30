@@ -9,11 +9,11 @@ Standards:
     ContentFiles:
       -
         Type: Lesson
-        UID: 9dda64ff-9362-46f2-8b09-d5843c7af04c
-        Path: /norms/overview.md
+        UID: bcc6309e-3453-4aea-9b22-ef8e09c2b09e
+        Path: /00-about-thursdays-at-ada/norms.md
   -
-    Title: Code Reviews
-    Description: Code Reviews
+    Title: Approaching Problems
+    Description: Problem Solving, Big O Notation
     UID: 9141935e-3d6b-4f83-9eef-eca929c19ad6
     SuccessCriteria:
       - success criteria
@@ -21,11 +21,23 @@ Standards:
       -
         Type: Lesson
         UID: 213deeac-736c-42e9-a774-1d904d87991e
-        Path: /01-Code-Reviews/01-code-reviews.md
+        Path: /01-Problem-Solving-And-Big-O/01-problem-solving.md
+      -
+        Type: Lesson
+        UID: 50bd3c42-38f2-461b-a832-9f79fa501d62
+        Path: /01-Problem-Solving-And-Big-O/02-big-o.md
+      -
+        Type: Instructor
+        UID: 82ebf9b5-71c2-4935-b81c-545187672ef9
+        Path: /01-Problem-Solving-And-Big-O/class-lesson.instructor.md
+      -
+        Type: Lesson
+        UID: d108fdc2-000e-493a-9120-fcdd7c6b4fb9
+        Path: /01-Problem-Solving-And-Big-O/04-in-class-problemset.md
       -
         Type: Checkpoint
-        UID: 8acf7333-842f-4c09-98ff-379f5163f27f
-        Path: /01-Code-Reviews/02-code-reviews-checkpoint.md
+        UID: 25f55d56-003a-4af1-b968-4bfc07888ad7
+        Path: /01-Problem-Solving-And-Big-O/03-problem-solving-checkpoint.md
   -
   
     Title: Linked Lists
@@ -38,6 +50,10 @@ Standards:
         Type: Instructor
         UID: c498e182
         Path: /02-linked-lists/linked-lists.instructor.md
+      -
+        Type: Instructor
+        UID: ac3b6860-51fd-4d90-8a68-99875639af1d
+        Path: /02-linked-lists/class-lesson.instructor.md
       -
         Type: Lesson
         UID: 99474aeb-183e-4f01-990b-0a689c022c30
@@ -76,11 +92,23 @@ Standards:
       -
         Type: Lesson
         UID: d363c5cb-af6d-45d1-8e98-eaf960f8fac9
-        Path: /03-Binary-Search-Trees/01-Binary-Search-Trees.md
+        Path: /03-Binary-Search-Trees/01-Ordered-Collections-Of-Data.md
+      -
+        Type: Lesson
+        UID: 05732e84-1354-4349-8c71-173460093f9b
+        Path: /03-Binary-Search-Trees/02-Binary-Search-Trees.md
+      -
+        Type: Lesson
+        UID: 80747284-c3bb-4753-8c1b-9eb0bb834687
+        Path: /03-Binary-Search-Trees/03-Binary-Search-Trees-Traversal.md
       -
         Type: Checkpoint
         UID: bbf1e2a2-0d6e-4337-9b00-81216688e16a
-        Path: /03-Binary-Search-Trees/02-Bst-checkpoint.md
+        Path: /03-Binary-Search-Trees/04-Bst-Checkpoint.md
+      -
+        Type: Lesson
+        UID: 06dea201-6230-4967-b98f-2403ab11479a
+        Path: /03-Binary-Search-Trees/05-Binary-Search-Trees-Activity.md
   -
     Title: Stacks And Queues
     Description: Stacks And Queues
