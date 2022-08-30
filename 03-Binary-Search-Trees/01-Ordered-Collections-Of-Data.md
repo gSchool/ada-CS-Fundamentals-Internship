@@ -76,6 +76,14 @@ Finding an item is an O(log n) operation because we can use binary search to fin
 
 <!-- Image source:  https://www.draw.io/#G1j_vbvEN5UgNSszrKSPgwA7agvgQdhs1r -->
 
+### !callout-info
+
+## Binary Search v Binary Search Trees
+
+Note that _binary search_ is different than a _binary search tree_. Binary search is an algorithm that can be used to find an element in a sorted array. A binary search tree is a specific type of tree data structure with special properties maintained for each of its subtrees.
+
+### !end-callout
+
 **Deletion** - O(n)
 
 Similarly to remove an element from an ordered array, we must first find the index of the element to delete and then shift each subsequent element over to the left.
