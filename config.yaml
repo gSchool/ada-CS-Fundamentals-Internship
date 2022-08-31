@@ -102,13 +102,17 @@ Standards:
         UID: 80747284-c3bb-4753-8c1b-9eb0bb834687
         Path: /03-Binary-Search-Trees/03-Binary-Search-Trees-Traversal.md
       -
+        Type: Lesson
+        UID: 1f189042-63dd-4075-9de9-4ca60a3fa5aa
+        Path: /03-Binary-Search-Trees/04-Binary-Search-Trees-Vocab.md
+      -
         Type: Checkpoint
         UID: bbf1e2a2-0d6e-4337-9b00-81216688e16a
-        Path: /03-Binary-Search-Trees/04-Bst-Checkpoint.md
+        Path: /03-Binary-Search-Trees/05-Bst-Checkpoint.md
       -
         Type: Lesson
         UID: 06dea201-6230-4967-b98f-2403ab11479a
-        Path: /03-Binary-Search-Trees/05-Binary-Search-Trees-Activity.md
+        Path: /03-Binary-Search-Trees/06-Binary-Search-Trees-Activity.md
   -
     Title: Stacks And Queues
     Description: Stacks And Queues
