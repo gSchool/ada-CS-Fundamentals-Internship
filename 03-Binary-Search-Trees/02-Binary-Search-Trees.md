@@ -110,6 +110,41 @@ _Fig.  Visualization of inserting a value into a BST_
 You can experiment with this in the [Binary Tree Visualizer](https://visualgo.net/en/bst)
 
 
+Implemented fully, the recursive implementation of `add` might look like this.
+
+```python
+    # helper function handles the recursive case
+    def add_helper(self, current_node, new_node):
+
+        # if new node should be in left subtree (less than current node)
+        if new_node.key < current_node.key: 
+            # if current node is a leaf
+            if not current_node.left:
+                # make new node left child of current node
+                current_node.left = new_node
+                return
+            # Otherwise, recurse through left subtree of current node
+            self.add_helper(current_node.left, new_node)
+        # if new node should be in right subtree 
+        # (greater than or equal to current node)
+        else:
+            # if current node is a leaf
+            if not current_node.right:
+                # make new node right child of current node
+                current_node.right = new_node
+                return
+            # Otherwise, recurse through right subtree of current node
+            self.add_helper(current_node.right, new_node)
+
+    def add(self, key, value = None):
+        # base case
+        if not self.root:
+            self.root = TreeNode(key, value)
+        # recursive case
+        else:
+            new_node = TreeNode(key, value)
+            self.add_helper(self.root, new_node)
+```
 
 ### Deletion - O(log n)
 
@@ -144,35 +179,6 @@ Method delete(current_root, key):
     return current_root;
 ```
 
-Implemented fully, the recursive implementation of `add` might look like this.
-
-```python
-    # helper function handles the recursive case
-    def add_helper(self, current_node, new_node):
-
-        if new_node.key < current_node.key: 
-            
-            if not current_node.left: # if the current node is a leaf
-                # Insert new node as left child of current node
-                current_node.left = new_node
-                return
-            # If current node has children, recurse through its left subtree
-            self.add_helper(current_node.left, new_node)
-        else:
-            #if node should be a part of right subtree
-            if not current_node.right:
-                current_node.right = new_node
-                return
-            self.add_helper(current_node.right, new_node)
-
-    def add(self, key, value = None):
-        # base case
-        if not self.root:
-            self.root = TreeNode(key, value)
-        else:
-            new_node = TreeNode(key, value)
-            self.add_helper(self.root, new_node)
-```
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
 
