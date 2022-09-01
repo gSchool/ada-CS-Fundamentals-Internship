@@ -2,13 +2,13 @@
 
 ## Overview
 
-Our Linked Lists are a linear structure with each node linking to the next node in the structure.
+The data structures we've reviewed thus far are all examples of a _linear structure_. Linked lists are a linear structure, with each node directly linking to exactly one other node in the structure (the next node).
 
 ![Linked List Diagram](images/linked-list-vocab.png)
 
 *Fig. 1. Linked List Diagram*
 
-Our Node class from the LinkedList topic, which will be referred to as `ListNode`, looked like this:
+Recall that our Node class from the [Linked List Topic](../02-linked-lists/01-linked-lists.md), which we will refer to here as `ListNode`, looked like this:
 
 ```python
 class ListNode:
@@ -21,18 +21,45 @@ The `ListNode` class was used in a larger `LinkedList` class which maintained a 
 
 ### Consider A Nonlinear Structure
 
-In a _Binary Search Tree_ each node's left pointer points to all elements smaller than or equal to the node's key.  The right pointer points to all nodes greater than the given node's key.   Each node can refer to other nodes.  A Tree is hierarchical with certain nodes acting as parents to others.  A node above another is the node's _parent_.  The node(s) below a node are it's _children_.  The topmost node in a tree is known as the _root_.  The nodes with no children are called _leaves_.
+Binary search trees have a _non-linear structure_. In a binary search tree each node has pointers to two other nodes in the data structure. We refer to these pointers collectively as the _child_ nodes of the original _parent_ node. We label each of the parent node's two children as the `left` and `right` children or pointers. 
 
-In a Binary Search Tree:
+A binary search tree's `left` and `right` child nodes must maintain special properties. The `left` child must have a `key` that is less than or equal to the `key` of its parent node. The `right` child must have a `key`  that is greater than or equal to that of its parent node.
 
-- Nodes with values less than any node are stored to the **left** of that node.
-- Nodes with values greater than any node are stored to the **right** of that node. 
+### !callout-info
 
-![Binary Search Tree Vocabular](images/TreeVocabulary.png)
+## Keys vs Values
+
+Nodes can store a `value` or piece of data that is not a number. For example a node can have a string as a `value`. When our nodes store non-numerical data we still need a way to determine whether a node is less than or greater than another node. This can be done by assigning each node a separate numerical `key`. 
+
+### !end-callout
+
+
+Each node in a binary search tree can refer to other nodes. Like a real person, a node can be both a parent _and_ a child. The topmost node in a tree is known as the _root_. The root has no parent node. Nodes with no children are called _leaves_.
+
+When we draw a binary search tree, parent nodes are always drawn above children nodes with the root node at the very top. 
+ 
+
+![Binary Search Tree Vocabulary](images/TreeVocabulary.png)
+
+In summary, in a Binary Search Tree:
+
+- Nodes with keys/values less than any node are stored to the **left** of that node.
+- Nodes with keys/values greater than any node are stored to the **right** of that node.
+
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
+
+## Tree Data Structure
+
+A binary search tree is a subtype of a more general data type: a _tree_. Trees are always both non-linear and hierarchical, meaning that they are always a collection of nodes where each node points to a series of other _child_ nodes. 
+
+Different types of trees will maintain different properties including but not limited to the number of children nodes each parent has and the values children nodes can have in relation to their parent node.
+
+### !end-callout
 
 ### Binary Search Tree Node
 
-Instead of a node with one link to a next node, we can create nodes with 2 pointers, left and right.  Since each node can have 2 successors or "children", it forms a binary structure as opposed to the linear structure of a Linked List.
+Instead of a node with one `next` pointer, we can create nodes with 2 pointers, `left` and `right`.  Since each node can have 2 successors or _children_, it forms a _non-linear_ binary structure as opposed to the linear structure of a linked list.
 
 This node stores both a key and value for each node.  The `Tree` class will compare keys to maintain node order.
 
@@ -45,7 +72,7 @@ class TreeNode:
         self.key = key
         self.value = val
         self.left = None
-        self.right = None```
+        self.right = None
 ```
 
 ### The Tree Class
@@ -59,18 +86,21 @@ class Tree:
                   # node in the Tree
     # Tree methods go here...
 ```
+How do the same operations we looked at with arrays and linked lists work with a binary search tree?
 
 ### Insertion - O(log n)
 
-The _root_ is where the tree begins, the topmost node.  New nodes as they are added are placed to the left or a given node, if they are less than or equal to the current node, and to the right if they are greater than the current node.  This is a natually recursive process.
+The root is where the tree begins; the topmost node. New nodes as they are added are placed to the left of a given node if they are less than or equal to the current node, and to the right if they are greater than the current node. This is a natually recursive process. We can outline a recursive insertion implementation as follows:
 
 ```
 Method add:
-  if the root is nil set the root to be a new node with the given value and return the node.
+    Base Case:
+        If the root is None set the root to be a new node with the given value and return the node.
 
-  Otherwise:
-    if the value is less than or equal to the current node's value, make the current node's left be the result of calling add on root's left.
-    otherwise make node's right be the result of calling add on node's right.
+    Recursive Case:
+        Otherwise:
+            If the value is less than or equal to the current node's value, make the current node's left be the result of calling add on the node's left.
+            Otherwise make node's right be the result of calling add on node's right.
 ```
 
 ![Tree Insert operation visualization](./images/Binary-search-trees__insert-into-tree.gif)
@@ -78,6 +108,8 @@ Method add:
 _Fig.  Visualization of inserting a value into a BST_
 
 You can experiment with this in the [Binary Tree Visualizer](https://visualgo.net/en/bst)
+
+
 
 ### Deletion - O(log n)
 
@@ -112,6 +144,135 @@ Method delete(current_root, key):
     return current_root;
 ```
 
+Implemented fully, the recursive implementation of `add` might look like this.
+
+```python
+    # helper function handles the recursive case
+    def add_helper(self, current_node, new_node):
+
+        if new_node.key < current_node.key: 
+            
+            if not current_node.left: # if the current node is a leaf
+                # Insert new node as left child of current node
+                current_node.left = new_node
+                return
+            # If current node has children, recurse through its left subtree
+            self.add_helper(current_node.left, new_node)
+        else:
+            #if node should be a part of right subtree
+            if not current_node.right:
+                current_node.right = new_node
+                return
+            self.add_helper(current_node.right, new_node)
+
+    def add(self, key, value = None):
+        # base case
+        if not self.root:
+            self.root = TreeNode(key, value)
+        else:
+            new_node = TreeNode(key, value)
+            self.add_helper(self.root, new_node)
+```
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 39be2c02-aef0-481f-91e6-7778420bc737
+* title: Binary Search Tree Iterative Insertion
+* points: 1
+<!-- * topics: [python, pandas] (Checkpoints only, optional the topics for analyzing points) -->
+
+##### !question
+
+Now that you have seen the recursive solution, see if you can implement the same `add` method iteratively.
+
+##### !end-question
+
+##### !placeholder
+
+```py
+class TreeNode:
+    def __init__(self, key, val = None):
+        if val == None:
+            val = key
+
+        self.key = key
+        self.value = val
+        self.left = None
+        self.right = None
+
+class Tree:
+    def __init__(self):
+        self.root = None # The root is the starting
+                  # node in the Tree
+    
+    def add(self, key, value = None):
+        pass
+```
+
+##### !end-placeholder
+
+##### !tests
+
+```py
+import unittest
+from main import *
+
+class TestPython1(unittest.TestCase):
+#   def setUp(self) -> None:
+#     self.empty_tree = Tree()
+#     # self.tree_with_nodes = tree_with_nodes(self.empty_tree)
+
+#     # def tree_with_nodes(empty_tree) -> Tree():
+#     #     empty_tree.add(5, "Peter")
+#     #     empty_tree.add(3, "Paul")
+#     #     empty_tree.add(1, "Mary")
+#     #     empty_tree.add(10, "Karla")
+#     #     empty_tree.add(15, "Ada")
+#     #     empty_tree.add(25, "Kari")
+#     #     return emtpy_tree
+
+  def test_add_node_to_empty_tree(self):
+    #Arrange
+    t = Tree()
+
+    #Act
+    t.add(5, "Peter")
+
+    #Assert
+    self.assertEqual(5, t.root.key)
+    self.assertEqual("Peter", t.root.value)
+    self.assertEqual(None, t.root.left)
+    self.assertEqual(None, t.root.right)
+
+```
+
+##### !end-tests
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+
+```python
+    def add(self, key, value = None):
+        if not self.root:
+            self.root = TreeNode(key, value)
+            return
+        current = self.root
+        while current:
+            if key < current.key:
+                if current
+```
+
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 ### Searching - O(log n)
 
 You can try to search to find a value in a Binary Search Tree Like this:
