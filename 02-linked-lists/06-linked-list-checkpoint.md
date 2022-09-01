@@ -2,7 +2,7 @@
 
 | Logistics             | Details                                   |
 | --------------------- | ----------------------------------------  |
-| Project details       | [https://github.com/AdaGold/Intersection-Linked-List](https://github.com/AdaGold/Intersection-Linked-List)  |
+| Project details       | [https://github.com/ada-c17/Intersection-Linked-List](https://github.com/ada-c17/Intersection-Linked-List)  |
 | Should you fork this? | Yes (Check project details)               |
 | Submission method     | Learn                                     |
 
@@ -11,7 +11,7 @@
 * type: testable-project
 * id: 4f3d244b-d34b-4e34-9a85-bce2232203e5
 * title: List Implementations
-* upstream: https://github.com/AdaGold/Intersection-Linked-List
+* upstream: https://github.com/ada-c17/Intersection-Linked-List
 * validate_fork: false
 * points: 0
 * topics: linked-lists
