@@ -149,6 +149,115 @@ We can see a full recursive implementation of find below:
 
 You can implement the `find` method in Python as follows:
 
+
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 377c6818-080d-42c1-b3b6-6e82cd52da44
+* title: Binary Search Tree Iterative Search
+* points: 1
+  
+##### !question
+
+Now that you have seen `find` implemented recursively, try implementing the same function iteratively. The function takes in a root 'root'
+
+##### !end-question
+
+##### !placeholder
+```py
+class TreeNode:
+    def __init__(self, key, val = None):
+        if val == None:
+            val = key
+
+        self.key = key
+        self.value = val
+        self.left = None
+        self.right = None
+
+class Tree:
+    def __init__(self):
+        self.root = None
+    
+    def find(self, key):
+        pass
+```
+
+##### !end-placeholder
+
+##### !tests
+
+```py
+import unittest
+from main import *
+
+class TreeExtended(Tree):
+
+    def add_helper(self, current_node, new_node):
+        if new_node.key  < current_node.key:
+            if not current_node.left:
+                current_node.left = new_node
+                return
+            self.add_helper(current_node.left, new_node)
+        else:
+            if not current_node.right:
+                current_node.right = new_node
+                return
+            self.add_helper(current_node.right, new_node)
+
+    def add(self, key, value = None):
+        if not self.root:
+            self.root = TreeNode(key, value)
+        else:
+            new_node = TreeNode(key, value)
+            self.add_helper(self.root, new_node)
+
+    def inorder_helper(self, current_node, values):
+        if not current_node:
+            return values
+
+        self.inorder_helper(current_node.left, values)
+        values.append({ 
+            "key": current_node.key,
+            "value": current_node.value
+        })
+        self.inorder_helper(current_node.right, values)
+
+        return values
+
+    def inorder(self):
+        values = []
+        return self.inorder_helper(self.root, values)
+
+class TestPython1(unittest.TestCase):
+    def setUp(self) -> None:
+        self.empty_tree = Tree()
+        self.tree_with_nodes = tree_with_nodes(self.empty_tree)
+
+    def tree_with_nodes(empty_tree) -> Tree():
+        empty_tree.add(5, "Peter")
+        empty_tree.add(3, "Paul")
+        empty_tree.add(1, "Mary")
+        empty_tree.add(10, "Karla")
+        empty_tree.add(15, "Ada")
+        empty_tree.add(25, "Kari")
+        return emtpy_tree
+
+    def test_returns_none_for_empty_tree(self):
+        self.empty
+    
+```
+
+##### !end-tests
+##### !hint 
+
+##### !end-hint 
+##### !explanation 
 ```python
 class Tree:
     def __init__(self):
@@ -167,6 +276,11 @@ class Tree:
 
         return None
 ```
+##### !end-explanation 
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 ### Insertion
 
@@ -275,18 +389,6 @@ import unittest
 from main import *
 
 class TestPython1(unittest.TestCase):
-#   def setUp(self) -> None:
-#     self.empty_tree = Tree()
-#     # self.tree_with_nodes = tree_with_nodes(self.empty_tree)
-
-#     # def tree_with_nodes(empty_tree) -> Tree():
-#     #     empty_tree.add(5, "Peter")
-#     #     empty_tree.add(3, "Paul")
-#     #     empty_tree.add(1, "Mary")
-#     #     empty_tree.add(10, "Karla")
-#     #     empty_tree.add(15, "Ada")
-#     #     empty_tree.add(25, "Kari")
-#     #     return emtpy_tree
 
     def test_add_node_to_empty_tree(self):
         #Arrange
