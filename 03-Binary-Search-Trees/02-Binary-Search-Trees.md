@@ -88,6 +88,74 @@ class Tree:
 ```
 How do the same operations we looked at with arrays and linked lists work with a binary search tree?
 
+### Searching
+
+You can try to search to find a value in a Binary Search Tree Like this:
+
+```
+Method Find: 
+    Start the current node at the root
+    If the current node is nil return nil
+    If the current node equals the value 
+        being searched for return the current
+        node's data
+
+If the value is less than the current node 
+    return search on current node's left side
+If the value is greater than the root 
+    return search on current node's right side
+```
+
+### Finding A Node With Python
+
+![Finding a 29 in a tree visualization](./images/Binary-Search-Trees__find-value.gif)
+
+_Fig.  A visualization of finding a value in a BST._
+
+You can implement the `find` method in Python as follows:
+
+```python
+class Tree:
+    def __init__(self):
+        self.root = None
+    
+    def find(self, key):
+        current = self.root
+
+        while current != None:
+            if current.key == key:
+                return current.value
+            elif key < current.key:
+                current = current.left
+            else:
+                current = current.right
+
+        return None
+```
+
+### Recursive Find Method
+
+Because every node in a Binary Search Tree is the root of a subtree, you can take advantage of the recursive structure to write a recursive solution.
+
+```python
+class Tree:
+    def __init__(self):
+        self.root = None
+    
+    def find_helper(self, current, value):
+        if current == None:
+            return None
+        elif current.data == value:
+            return current.value
+        elif value < current.data:
+            return self.find_helper(current.left, value)
+
+        return self.find_helper(current.right, value)
+
+    def find(self, value):
+        return self.find_helper(self.root, value)
+```
+
 ### Insertion
 
 The root is where the tree begins; the topmost node. New nodes as they are added are placed to the left of a given node if they are less than or equal to the current node, and to the right if they are greater than the current node. This is a natually recursive process. We can outline a recursive insertion implementation as follows:
@@ -434,70 +502,5 @@ class TestPython1(unittest.TestCase):
 
 
 
-### Searching - O(log n)
 
-You can try to search to find a value in a Binary Search Tree Like this:
-
-```
-Start the current node at the root
-If the current node is nil return nil
-If the current node equals the value 
-    being searched for return the current
-    node's data
-
-If the value is less than the current node 
-    return search on current node's left side
-If the value is greater than the root 
-    return search on current node's right side
-```
-
-### Finding A Node With Python
-
-![Finding a 29 in a tree visualization](./images/Binary-Search-Trees__find-value.gif)
-
-_Fig.  A visualization of finding a value in a BST._
-
-You can implement the `find` method in Python as follows:
-
-```python
-class Tree:
-    def __init__(self):
-        self.root = None
-    
-    def find(self, key):
-        current = self.root
-
-        while current != None:
-            if current.key == key:
-                return current.value
-            elif key < current.key:
-                current = current.left
-            else:
-                current = current.right
-
-        return None
-```
-
-### Recursive Find Method
-
-Because every node in a Binary Search Tree is the root of a subtree, you can take advantage of the recursive structure to write a recursive solution.
-
-```python
-class Tree:
-    def __init__(self):
-        self.root = None
-    
-    def find_helper(self, current, value):
-        if current == None:
-            return None
-        elif current.data == value:
-            return current.value
-        elif value < current.data:
-            return self.find_helper(current.left, value)
-
-        return self.find_helper(current.right, value)
-
-    def find(self, value):
-        return self.find_helper(self.root, value)
-```
 
