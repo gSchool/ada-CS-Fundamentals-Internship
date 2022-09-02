@@ -99,7 +99,7 @@ Method add:
 
     Recursive Case:
         Otherwise:
-            If the value is less than or equal to the current node's value, make the current node's left be the result of calling add on the node's left.
+            If the value is less than the current node's value, make the current node's left be the result of calling add on the node's left.
             Otherwise make node's right be the result of calling add on node's right.
 ```
 
@@ -146,39 +146,6 @@ Implemented fully, the recursive implementation of `add` might look like this.
             self.add_helper(self.root, new_node)
 ```
 
-### Deletion - O(log n)
-
-To delete a node from a binary search tree we must first find the node to delete.  This is an O(log n) operation.  Once we find the node we can delete it by changing the references.
-
-```
-Method delete(current_root, key):
-    if the root is none return none
-  
-    Otherwise, recur down the tree
-        if the key is less than the root's key delete the node in the left subtree.
-            current_root.left = delete(current_root.left, key);
-        otherwise if the key is greater than root's key delete the node in the right subtree.
-            current_root.right = delete(current_root.right, key);
-
-
-        Otherwise if the current root is the node to be deleted
-        
-            if the left child is none
-                return current_root.right
-            otherwise if current_root.right == none
-                return current_root.left;
-
-            Otherwise find the minimum node in the right subtree
-            smallest_node_on_right = min_node(root.right);
-            current_root.key = smallest_node_on_right.key;
-            current_root.value = smallest_node_on_right.value;
-
-            // Delete the inorder successor
-            root.right = delete(root.right, root.key);
-
-    return current_root;
-```
-
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
 
@@ -193,7 +160,7 @@ Method delete(current_root, key):
 
 ##### !question
 
-Now that you have seen the recursive solution, see if you can implement the same `add` method iteratively.
+Now that you have seen the recursive solution, see if you can implement the same `add` method iteratively. An node with a value equal to that of its parent should be added to the parent's right subtree.
 
 ##### !end-question
 
@@ -241,37 +208,131 @@ class TestPython1(unittest.TestCase):
 #     #     empty_tree.add(25, "Kari")
 #     #     return emtpy_tree
 
-  def test_add_node_to_empty_tree(self):
-    #Arrange
-    t = Tree()
+    def test_add_node_to_empty_tree(self):
+        #Arrange
+        t = Tree()
 
-    #Act
-    t.add(5, "Peter")
+        #Act
+        t.add(5, "Peter")
 
-    #Assert
-    self.assertEqual(5, t.root.key)
-    self.assertEqual("Peter", t.root.value)
-    self.assertEqual(None, t.root.left)
-    self.assertEqual(None, t.root.right)
+        #Assert
+        self.assertEqual(5, t.root.key)
+        self.assertEqual("Peter", t.root.value)
+        self.assertEqual(None, t.root.left)
+        self.assertEqual(None, t.root.right)
 
+    def test_add_node_left_child(self):
+
+        #Arrange
+        t = Tree()
+
+        #Act
+        t.add(5, "Peter")
+        t.add(3, "Paul")
+
+        #Assert
+        self.assertEqual(5, t.root.key)
+        self.assertEqual("Peter", t.root.value)
+        self.assertEqual(3, t.root.left.key)
+        self.assertEqual("Paul", t.root.left.value)
+        self.assertEqual(None, t.root.right)
+
+    def test_add_node_right_child(self):
+        #Arrange
+        t = Tree()
+
+        #Act
+        t.add(5, "Peter")
+        t.add(10, "Kara")
+
+        #Assert
+        self.assertEqual(5, t.root.key)
+        self.assertEqual("Peter", t.root.value)
+        self.assertEqual(None, t.root.left)
+        self.assertEqual(10, t.root.right.key)
+        self.assertEqual("Kara", t.root.right.value)
+
+    def test_duplicate_key_added_to_right(self):
+        #Arrange
+        t = Tree()
+
+        #Act
+        t.add(5, "Peter")
+        t.add(5, "Peter's twin")
+
+        #Assert
+        self.assertEqual(5, t.root.key)
+        self.assertEqual("Peter", t.root.value)
+        self.assertEqual(None, t.root.left)
+        self.assertEqual(5, t.root.right.key)
+        self.assertEqual("Peter's twin", t.root.right.value)
+
+    def test_add_large_tree(self):
+        #Arrange
+        t = Tree()
+
+        #Act
+        t.add(5, "Peter")
+        t.add(3, "Paul")
+        t.add(1, "Mary")
+        t.add(10,"Karla")
+        t.add(9, "Char")
+        t.add(15, "Ada")
+        t.add(25, "Kari")
+
+        #Assert
+        self.assertEqual(5, t.root.key)
+        self.assertEqual("Peter", t.root.value)
+        self.assertEqual(3, t.root.left.key)
+        self.assertEqual("Paul", t.root.left.value)
+        self.assertEqual(1, t.root.left.left.key)
+        self.assertEqual("Mary", t.root.left.left.value)
+
+        self.assertEqual(10, t.root.right.key)
+        self.assertEqual("Karla", t.root.right.value)
+        self.assertEqual(9, t.root.right.left.key)
+        self.assertEqual("Char", t.root.right.left.value)
+        self.assertEqual(15, t.root.right.right.key)
+        self.assertEqual("Ada", t.root.right.right.value)
+        self.assertEqual(25, t.root.right.right.right.key)
+        self.assertEqual("Kari", t.root.right.right.right.value)
 ```
 
 ##### !end-tests
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !hint 
+
+Look back at the [Linked Lists Problem Set](../02-linked-lists/02-linked-lists-implementation.md) to see how you iteravely stepped through a linked list. 
+
+Look at the recursive solution and try to translate each step into your iterative solution.
+
+Still feeling stuck? Check this video walkthrough of the solution.
+
+<!-- ADD VIDEO WALKTHROUGH -->
+##### !end-hint 
+
 ##### !explanation
+
+An example of a working implementation:
 
 ```python
     def add(self, key, value = None):
+        new_node = TreeNode(key, value)
         if not self.root:
-            self.root = TreeNode(key, value)
+            self.root = new_node
             return
         current = self.root
         while current:
             if key < current.key:
-                if current
+                if not current.left:
+                    current.left = new_node
+                    return
+                current = current.left
+            else:
+                if not current.right:
+                    current.right = new_node
+                    return
+                current = current.right
 ```
 
 ##### !end-explanation
@@ -279,6 +340,41 @@ class TestPython1(unittest.TestCase):
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
+
+
+### Deletion - O(log n)
+
+To delete a node from a binary search tree we must first find the node to delete.  This is an O(log n) operation.  Once we find the node we can delete it by changing the references.
+
+```
+Method delete(current_root, key):
+    if the root is none return none
+  
+    Otherwise, recur down the tree
+        if the key is less than the root's key delete the node in the left subtree.
+            current_root.left = delete(current_root.left, key);
+        otherwise if the key is greater than root's key delete the node in the right subtree.
+            current_root.right = delete(current_root.right, key);
+
+
+        Otherwise if the current root is the node to be deleted
+        
+            if the left child is none
+                return current_root.right
+            otherwise if current_root.right == none
+                return current_root.left;
+
+            Otherwise find the minimum node in the right subtree
+            smallest_node_on_right = min_node(root.right);
+            current_root.key = smallest_node_on_right.key;
+            current_root.value = smallest_node_on_right.value;
+
+            // Delete the inorder successor
+            root.right = delete(root.right, root.key);
+
+    return current_root;
+```
+
 ### Searching - O(log n)
 
 You can try to search to find a value in a Binary Search Tree Like this:
