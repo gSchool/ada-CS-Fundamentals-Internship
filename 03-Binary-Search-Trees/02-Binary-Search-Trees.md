@@ -248,8 +248,8 @@ class TestPython1(unittest.TestCase):
         empty_tree.add(25, "Kari")
         return emtpy_tree
 
-    def test_returns_none_for_empty_tree(self):
-        self.empty
+    def test_find_returns_none_for_empty_tree(self):
+        self.assertEqual(None, self.empty_tree.find(5)xs)
     
 ```
 
