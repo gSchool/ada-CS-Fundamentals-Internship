@@ -88,7 +88,7 @@ class Tree:
 ```
 How do the same operations we looked at with arrays and linked lists work with a binary search tree?
 
-### Insertion - O(log n)
+### Insertion
 
 The root is where the tree begins; the topmost node. New nodes as they are added are placed to the left of a given node if they are less than or equal to the current node, and to the right if they are greater than the current node. This is a natually recursive process. We can outline a recursive insertion implementation as follows:
 
@@ -342,38 +342,97 @@ An example of a working implementation:
 <!-- ======================= END CHALLENGE ======================= -->
 
 
-### Deletion - O(log n)
+### Deletion
 
-To delete a node from a binary search tree we must first find the node to delete.  This is an O(log n) operation.  Once we find the node we can delete it by changing the references.
+To delete a node from a binary search tree we must first find the node to delete. To find the node, we can use the same recursive technique to traverse the root node's subtrees. Once we find the node we can delete it by changing the parent and child nodes' references.
 
 ```
-Method delete(current_root, key):
-    if the root is none return none
+Method delete:
+    Base Case:
+        If the root is None, return None
   
-    Otherwise, recur down the tree
-        if the key is less than the root's key delete the node in the left subtree.
-            current_root.left = delete(current_root.left, key);
-        otherwise if the key is greater than root's key delete the node in the right subtree.
-            current_root.right = delete(current_root.right, key);
+    Recursive Case:
+        Otherwise, recur down the tree:
+            If the key is less than the current node's key, call the delete function on current node's left subtree.
 
+            If the key is greater than the current node's key, call the delete function on current node's right subtree.
 
-        Otherwise if the current root is the node to be deleted
-        
-            if the left child is none
-                return current_root.right
-            otherwise if current_root.right == none
-                return current_root.left;
-
-            Otherwise find the minimum node in the right subtree
-            smallest_node_on_right = min_node(root.right);
-            current_root.key = smallest_node_on_right.key;
-            current_root.value = smallest_node_on_right.value;
-
-            // Delete the inorder successor
-            root.right = delete(root.right, root.key);
-
-    return current_root;
+            If the current node is the node to be deleted:
+                If current node's left child is None:
+                    return the right child
+                If current node's right child is None:
+                    return the left child
+                Otherwise:
+                    Find the minimum node in the right subtree
+                    Set the current node equal to the minimum node
+        Return the current node
 ```
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: e6e5ea66-d55f-4fc0-bc6f-eeda3f8106bd
+* title: Binary Search Tree Recursive Removal
+* points: 1
+
+##### !question
+
+Implement `delete` recursively for a binary search tree. The current_root 
+
+##### !end-question
+
+##### !placeholder
+
+```py
+class TreeNode:
+    def __init__(self, key, val = None):
+        if val == None:
+            val = key
+
+        self.key = key
+        self.value = val
+        self.left = None
+        self.right = None
+
+class Tree:
+    def __init__(self):
+        self.root = None # The root is the starting
+                  # node in the Tree
+    
+    def delete(self, current_root, key):
+        pass
+```
+
+##### !end-placeholder
+
+##### !tests
+
+[the unit tests below will run against the student submission]
+```py
+import unittest
+import main as p
+import numpy as np
+
+class TestPython1(unittest.TestCase):
+  def test_one(self):
+    self.assertEqual(1,p.doSomething())
+```
+
+##### !end-tests
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+
 
 ### Searching - O(log n)
 
