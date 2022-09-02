@@ -185,6 +185,7 @@ class Tree:
         self.root = None
     
     def find(self, key):
+        # implement using iteration
         pass
 ```
 
@@ -325,18 +326,7 @@ Still feeling stuck? Check this video walkthrough of the solution.
 
 ### Insertion
 
- New nodes as they are added are placed to the left of a given node if they are less than or equal to the current node, and to the right if they are greater than the current node. This is a natually recursive process. We can outline a recursive insertion implementation as follows:
-
-```
-Method add:
-    Base Case:
-        If the root is None set the root to be a new node with the given value and return the node.
-
-    Recursive Case:
-        Otherwise:
-            If the value is less than the current node's value, make the current node's left be the result of calling add on the node's left.
-            Otherwise make node's right be the result of calling add on node's right.
-```
+ New nodes as they are added are placed to the left of a given node if they are less than or equal to the current node, and to the right if they are greater than the current node. 
 
 ![Tree Insert operation visualization](./images/Binary-search-trees__insert-into-tree.gif)
 
@@ -347,39 +337,6 @@ You can experiment with this in the [Binary Tree Visualizer](https://visualgo.ne
 
 Implemented fully, the recursive implementation of `add` might look like this.
 
-```python
-    # helper function handles the recursive case
-    def add_helper(self, current_node, new_node):
-
-        # if new node should be in left subtree (less than current node)
-        if new_node.key < current_node.key: 
-            # if current node is a leaf
-            if not current_node.left:
-                # make new node left child of current node
-                current_node.left = new_node
-                return
-            # Otherwise, recurse through left subtree of current node
-            self.add_helper(current_node.left, new_node)
-        # if new node should be in right subtree 
-        # (greater than or equal to current node)
-        else:
-            # if current node is a leaf
-            if not current_node.right:
-                # make new node right child of current node
-                current_node.right = new_node
-                return
-            # Otherwise, recurse through right subtree of current node
-            self.add_helper(current_node.right, new_node)
-
-    def add(self, key, value = None):
-        # base case
-        if not self.root:
-            self.root = TreeNode(key, value)
-        # recursive case
-        else:
-            new_node = TreeNode(key, value)
-            self.add_helper(self.root, new_node)
-```
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
@@ -391,11 +348,10 @@ Implemented fully, the recursive implementation of `add` might look like this.
 * id: 39be2c02-aef0-481f-91e6-7778420bc737
 * title: Binary Search Tree Iterative Insertion
 * points: 1
-<!-- * topics: [python, pandas] (Checkpoints only, optional the topics for analyzing points) -->
 
 ##### !question
 
-Now that you have seen the recursive solution, see if you can implement the same `add` method iteratively. An node with a value equal to that of its parent should be added to the parent's right subtree.
+Implement the `add` method iteratively. The method takes in a `key` and an optional `value` parameter that represent the key and value of the node the user would like to insert. A node with a value equal to that of its parent should be added to the parent's right subtree.
 
 ##### !end-question
 
@@ -414,10 +370,10 @@ class TreeNode:
 
 class Tree:
     def __init__(self):
-        self.root = None # The root is the starting
-                  # node in the Tree
+        self.root = None
     
     def add(self, key, value = None):
+        # implement using iteration
         pass
 ```
 
@@ -525,9 +481,7 @@ class TestPython1(unittest.TestCase):
 
 ##### !hint 
 
-Look back at the [Linked Lists Problem Set](../02-linked-lists/02-linked-lists-implementation.md) to see how you iteravely stepped through a linked list. 
-
-Look at the recursive solution and try to translate each step into your iterative solution.
+The `add` method is similar to the the `find` method - but your new node will always be the child of a node that is currently a leaf in the existing tree!
 
 Still feeling stuck? Check this video walkthrough of the solution.
 
@@ -562,6 +516,196 @@ An example of a working implementation:
 
 ### !end-challenge
 
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: c3f11a44-9eaf-48c9-8e18-64ac380cf987
+* title: Binary Search Tree Recursive Insertion
+* points: 1
+
+##### !question
+
+Now implement the same `add` function recursively. The method takes in a `key` and an optional `value` parameter that represent the key and value of the node the user would like to insert. A node with a value equal to that of its parent should be added to the parent's right subtree.
+
+##### !end-question
+
+##### !placeholder
+```py
+class TreeNode:
+    def __init__(self, key, val = None):
+        if val == None:
+            val = key
+
+        self.key = key
+        self.value = val
+        self.left = None
+        self.right = None
+
+class Tree:
+    def __init__(self):
+        self.root = None
+    
+    def add(self, key, value = None):
+        # implement using recursion
+        pass
+```
+
+##### !end-placeholder
+
+##### !tests
+
+```py
+import unittest
+from main import *
+
+class TestPython1(unittest.TestCase):
+
+    def test_add_node_to_empty_tree(self):
+        #Arrange
+        t = Tree()
+
+        #Act
+        t.add(5, "Peter")
+
+        #Assert
+        self.assertEqual(5, t.root.key)
+        self.assertEqual("Peter", t.root.value)
+        self.assertEqual(None, t.root.left)
+        self.assertEqual(None, t.root.right)
+
+    def test_add_node_left_child(self):
+
+        #Arrange
+        t = Tree()
+
+        #Act
+        t.add(5, "Peter")
+        t.add(3, "Paul")
+
+        #Assert
+        self.assertEqual(5, t.root.key)
+        self.assertEqual("Peter", t.root.value)
+        self.assertEqual(3, t.root.left.key)
+        self.assertEqual("Paul", t.root.left.value)
+        self.assertEqual(None, t.root.right)
+
+    def test_add_node_right_child(self):
+        #Arrange
+        t = Tree()
+
+        #Act
+        t.add(5, "Peter")
+        t.add(10, "Kara")
+
+        #Assert
+        self.assertEqual(5, t.root.key)
+        self.assertEqual("Peter", t.root.value)
+        self.assertEqual(None, t.root.left)
+        self.assertEqual(10, t.root.right.key)
+        self.assertEqual("Kara", t.root.right.value)
+
+    def test_duplicate_key_added_to_right(self):
+        #Arrange
+        t = Tree()
+
+        #Act
+        t.add(5, "Peter")
+        t.add(5, "Peter's twin")
+
+        #Assert
+        self.assertEqual(5, t.root.key)
+        self.assertEqual("Peter", t.root.value)
+        self.assertEqual(None, t.root.left)
+        self.assertEqual(5, t.root.right.key)
+        self.assertEqual("Peter's twin", t.root.right.value)
+
+    def test_add_large_tree(self):
+        #Arrange
+        t = Tree()
+
+        #Act
+        t.add(5, "Peter")
+        t.add(3, "Paul")
+        t.add(1, "Mary")
+        t.add(10,"Karla")
+        t.add(9, "Char")
+        t.add(15, "Ada")
+        t.add(25, "Kari")
+
+        #Assert
+        self.assertEqual(5, t.root.key)
+        self.assertEqual("Peter", t.root.value)
+        self.assertEqual(3, t.root.left.key)
+        self.assertEqual("Paul", t.root.left.value)
+        self.assertEqual(1, t.root.left.left.key)
+        self.assertEqual("Mary", t.root.left.left.value)
+
+        self.assertEqual(10, t.root.right.key)
+        self.assertEqual("Karla", t.root.right.value)
+        self.assertEqual(9, t.root.right.left.key)
+        self.assertEqual("Char", t.root.right.left.value)
+        self.assertEqual(15, t.root.right.right.key)
+        self.assertEqual("Ada", t.root.right.right.value)
+        self.assertEqual(25, t.root.right.right.right.key)
+        self.assertEqual("Kari", t.root.right.right.right.value)
+```
+
+##### !end-tests
+
+<!-- other optional sections -->
+##### !hint 
+The `add` method is similar to the the `find` method - but your new node will always be the child of a node that is currently a leaf in the existing tree!
+
+Try identifying your base and recursive cases in the iterative solution you just wrote.
+
+Still feeling stuck? Check this video walkthrough of the solution.
+
+<!-- ADD VIDEO WALKTHROUGH -->
+##### !end-hint
+##### !explanation 
+An example of a working implementation:
+```python
+    # helper function handles the recursion
+    def add_helper(self, current_node, new_node):
+
+        # if new node should be in left subtree (less than current node)
+        if new_node.key < current_node.key: 
+            # if current node is a leaf
+            if not current_node.left:
+                # make new node left child of current node
+                current_node.left = new_node
+                return
+            # Otherwise, recurse through left subtree of current node
+            self.add_helper(current_node.left, new_node)
+        # if new node should be in right subtree 
+        # (greater than or equal to current node)
+        else:
+            # if current node is a leaf
+            if not current_node.right:
+                # make new node right child of current node
+                current_node.right = new_node
+                return
+            # Otherwise, recurse through right subtree of current node
+            self.add_helper(current_node.right, new_node)
+
+    def add(self, key, value = None):
+        # If tree is empty
+        if not self.root:
+            # Make new node the root
+            self.root = TreeNode(key, value)
+        # Otherwise, initiate tree traversal by calling add on root
+        else:
+            new_node = TreeNode(key, value)
+            self.add_helper(self.root, new_node)
+```
+
+##### !end-explanation
+
+### !end-challenge
 <!-- ======================= END CHALLENGE ======================= -->
 
 
