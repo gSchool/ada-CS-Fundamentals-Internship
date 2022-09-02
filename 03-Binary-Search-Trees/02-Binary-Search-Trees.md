@@ -236,20 +236,59 @@ class TreeExtended(Tree):
 
 class TestPython1(unittest.TestCase):
     def setUp(self) -> None:
-        self.empty_tree = Tree()
-        self.tree_with_nodes = tree_with_nodes(self.empty_tree)
 
-    def tree_with_nodes(empty_tree) -> Tree():
-        empty_tree.add(5, "Peter")
-        empty_tree.add(3, "Paul")
-        empty_tree.add(1, "Mary")
-        empty_tree.add(10, "Karla")
-        empty_tree.add(15, "Ada")
-        empty_tree.add(25, "Kari")
-        return emtpy_tree
+        def tree_with_nodes() -> TreeExtended():
+            t = TreeExtended()
+            t.add(5, "Peter")
+            t.add(3, "Paul")
+            t.add(1, "Mary")
+            t.add(10, "Karla")
+            t.add(9, "Mae")
+            t.add(8, "Angela")
+            t.add(15, "Ada")
+            t.add(25, "Kari")
+            return t
 
+        def tree_with_dupe() -> TreeExtended():
+            t = TreeExtended()
+            t.add(5, "Peter")
+            t.add(3, "Paul")
+            t.add(1, "Mary")
+            t.add(5, "Peter's Twin")
+            return t
+        
+        self.empty_tree = TreeExtended()
+        self.tree_with_nodes = tree_with_nodes()
+        self.tree_with_dupe = tree_with_dupe()
+    
+    def tearDown(self) -> None:
+        self.empty_tree = TreeExtended()
+    
     def test_find_returns_none_for_empty_tree(self):
-        self.assertEqual(None, self.empty_tree.find(5)xs)
+        self.assertEqual(None, self.empty_tree.find(5))
+
+    def test_can_find_single_root_node(self):
+        self.empty_tree.add(25, "Kari")
+        
+        self.assertEqual("Kari", self.empty_tree.find(25))
+
+    def test_can_find_large_tree(self):
+        
+        self.assertEqual("Peter", self.tree_with_nodes.find(5))
+        self.assertEqual("Ada", self.tree_with_nodes.find(15))
+        self.assertEqual("Paul", self.tree_with_nodes.find(3))
+        self.assertEqual("Mae", self.tree_with_nodes.find(9))
+
+    def test_finds_first_node_in_tree_with_dupes(self):
+        self.assertEqual("Peter", self.tree_with_dupe.find(5))
+
+    def test_can_find_leaf_nodes(self):
+        self.assertEqual("Mary", self.tree_with_nodes.find(1))
+        self.assertEqual("Angela", self.tree_with_nodes.find(8))
+        self.assertEqual("Kari", self.tree_with_nodes.find(25))
+
+    def test_find_returns_none_for_values_not_in_tree(self):
+        self.assertEqual(None, self.tree_with_nodes.find(6))
     
 ```
 
@@ -259,10 +298,6 @@ class TestPython1(unittest.TestCase):
 ##### !end-hint 
 ##### !explanation 
 ```python
-class Tree:
-    def __init__(self):
-        self.root = None
-    
     def find(self, key):
         current = self.root
 
