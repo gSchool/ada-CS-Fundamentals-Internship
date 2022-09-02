@@ -294,7 +294,13 @@ class TestPython1(unittest.TestCase):
 
 ##### !end-tests
 ##### !hint 
+Look back at the [Linked Lists Problem Set](../02-linked-lists/02-linked-lists-implementation.md) to see how you iteravely stepped through a linked list. 
 
+Look at the recursive solution and try to translate each step into your iterative solution.
+
+Still feeling stuck? Check this video walkthrough of the solution.
+
+<!-- ADD VIDEO WALKTHROUGH -->
 ##### !end-hint 
 ##### !explanation 
 ```python
