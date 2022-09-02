@@ -94,9 +94,10 @@ You can try to search to find a value in a Binary Search Tree Like this:
 
 ```
 Method Find: 
-    Start the current node at the root
-    If the current node is nil return nil
-    If the current node equals the value 
+    Set the current node 
+    If the current node is None
+        Return None
+    If the current node equals the value we are searching for
         being searched for return the current
         node's data
 
@@ -112,25 +113,7 @@ If the value is greater than the root
 
 _Fig.  A visualization of finding a value in a BST._
 
-You can implement the `find` method in Python as follows:
 
-```python
-class Tree:
-    def __init__(self):
-        self.root = None
-    
-    def find(self, key):
-        current = self.root
-
-        while current != None:
-            if current.key == key:
-                return current.value
-            elif key < current.key:
-                current = current.left
-            else:
-                current = current.right
-
-        return None
 ```
 
 ### Recursive Find Method
@@ -155,6 +138,26 @@ class Tree:
     def find(self, value):
         return self.find_helper(self.root, value)
 ```
+
+You can implement the `find` method in Python as follows:
+
+```python
+class Tree:
+    def __init__(self):
+        self.root = None
+    
+    def find(self, key):
+        current = self.root
+
+        while current != None:
+            if current.key == key:
+                return current.value
+            elif key < current.key:
+                current = current.left
+            else:
+                current = current.right
+
+        return None
 
 ### Insertion
 
