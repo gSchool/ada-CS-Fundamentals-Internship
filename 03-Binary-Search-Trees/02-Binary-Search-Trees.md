@@ -90,22 +90,13 @@ How do the same operations we looked at with arrays and linked lists work with a
 
 ### Searching
 
-You can try to search to find a value in a Binary Search Tree Like this:
+When we search for a node in a linked list, we start at our traversal at the head of the list. In a binary search tree, the equivalent of the head of the list is the root of the tree. The root is where the tree begins; the topmost node. Thus, when we search for a node in a binary search tree, we will always start our traversal at the root of the tree.
 
-```
-Method Find: 
-    Set the current node 
-    If the current node is None
-        Return None
-    If the current node equals the value we are searching for
-        being searched for return the current
-        node's data
+Our search method will find the first node in the tree with a given key. Unlike a linked list, we won't have to search the entire tree to find the node we are looking for. Because the left subtree of a given node will only hold nodes with keys less than the given node, and the right subtree will only hold nodes with keys greater than or equal to the given node, we have to search through at most one of the root node's subtrees to find our node.
 
-If the value is less than the current node 
-    return search on current node's left side
-If the value is greater than the root 
-    return search on current node's right side
-```
+We can then look at the root of the relevant subtree and make the same decision about which of its own subtrees we should next traverse. 
+
+Notice that this is a naturally recursive process: We can call search on each subtree until we find the node we are searching for or reach a leaf in the tree. If we reach a leaf (our base case - a tree with a single node) and still haven't found the node we are searching for, we return None. 
 
 ### Finding A Node With Python
 
@@ -114,29 +105,46 @@ If the value is greater than the root
 _Fig.  A visualization of finding a value in a BST._
 
 
+We can outline a recursive implementation of `find` as follows:
+
+```
+Method Find:
+
+Base Case(s):
+    If the current root's key equals the given key:
+        Return current root's value
+
+    If the current root is None:
+        Return None
+
+Recursive Case:
+    If the given key is less than current root's key:
+        Return search on current node's left child
+    If the given key is greater than current root's key:
+        Return search on current node's right child
 ```
 
-### Recursive Find Method
-
-Because every node in a Binary Search Tree is the root of a subtree, you can take advantage of the recursive structure to write a recursive solution.
+We can see a full recursive implementation of find below:
 
 ```python
-class Tree:
-    def __init__(self):
-        self.root = None
-    
-    def find_helper(self, current, value):
-        if current == None:
+
+    def find_helper(self, current, key):
+        # base case - reached a leaf
+        if not current:
             return None
-        elif current.data == value:
+        # base case - found what we are looking for
+        elif key == current.key:
             return current.value
-        elif value < current.data:
-            return self.find_helper(current.left, value)
+        # recursive case - key is less than current root's key
+        elif key < current.key:
+            # call find on left subtree
+            return self.find_helper(current.left, key)
+        # recursive case - key must be greater than current root's key
+        # call find on right subtree
+        return self.find_helper(current.right, key)
 
-        return self.find_helper(current.right, value)
-
-    def find(self, value):
-        return self.find_helper(self.root, value)
+    def find(self, key):
+        return self.find_helper(self.root, key)
 ```
 
 You can implement the `find` method in Python as follows:
@@ -158,10 +166,11 @@ class Tree:
                 current = current.right
 
         return None
+```
 
 ### Insertion
 
-The root is where the tree begins; the topmost node. New nodes as they are added are placed to the left of a given node if they are less than or equal to the current node, and to the right if they are greater than the current node. This is a natually recursive process. We can outline a recursive insertion implementation as follows:
+ New nodes as they are added are placed to the left of a given node if they are less than or equal to the current node, and to the right if they are greater than the current node. This is a natually recursive process. We can outline a recursive insertion implementation as follows:
 
 ```
 Method add:
