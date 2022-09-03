@@ -829,14 +829,27 @@ class TestPython1(unittest.TestCase):
         self.empty_tree = TreeExtended()
 
     def test_returns_none_for_empty_tree(self):
-        self.assertEqual(None, self.empty_tree.delete(5))
+        self.empty_tree.delete(5)
+        self.assertEqual([], self.empty_tree.inorder())
     
     def test_can_remove_single_root_node(self):
         self.empty_tree.add(5, "Peter")
+        self.empty_tree.delete(5)
 
-        result = self.empty_tree.delete(5)
+        self.assertEqual([], self.empty_tree.inorder())
 
-        self.assertEqual([], result.inorder())
+    def test_can_remove_left_leaf(self):
+        self.empty_tree.add(5, "Peter")
+        self.empty_tree.add(3, "Mary")
+
+        expected = [{
+            'key': 5,
+            'value': 'Peter'
+        }]
+
+        self.empty_tree.delete(3)
+
+        self.assertEqual(expected, self.empty_tree.inorder())
 
 ```
 
@@ -858,7 +871,7 @@ An example of a working implementation:
 ```py
 
 #Helper function to find the minimum node in a tree
-def min_node(root):
+def min_node(self, root):
     min_key = root.key
 
     while root.left:
@@ -868,22 +881,22 @@ def min_node(root):
 
 def delete_helper(self, current_root, key):
     if key < current_root.key:
-        current_root.left = delete_helper(current_root.left, key)
-    else if key > current_root.key:
-        current_root.right = delete_helper(current_root.right, key)
+        current_root.left = self.delete_helper(current_root.left, key)
+    elif key > current_root.key:
+        current_root.right = self.delete_helper(current_root.right, key)
     else:
         if not current_root.left:
             return current_root.right
-        else if not current_root.right:
+        elif not current_root.right:
             return current_root.left
-        current_root.key = min_node(current_root.right)
-        current_root.right = delete_helper(current_root.right, current_root.key)
+        current_root.key = self.min_node(current_root.right)
+        current_root.right = self.delete_helper(current_root.right, current_root.key)
     return current_root
 
 def delete(self, key):
     if not self.root:
-        return self.root
-    return delete_helper(self.root, key)
+        return
+    self.root = self.delete_helper(self.root, key)
 
 ```
 
