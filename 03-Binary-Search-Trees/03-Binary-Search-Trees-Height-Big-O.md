@@ -1,11 +1,12 @@
 ## Binary Search Trees Big O
 
 ### Overview
-Before we move on to serialization of binary search trees, let's take a moment to discuss . To do that, we must first understand how we calculate height and balancing of trees. 
+Before we move on to serialization of binary search trees, let's take a moment to discuss the time and space complexity of searching, insertion, and deletion. To fully understand that, we must first talk about _balancing_. 
+
 
 ### Exercise
 
-Try this out on the [Binary Tree Visualizer](https://visualgo.net/en/bst).
+Try this exercise out on the [Binary Tree Visualizer](https://visualgo.net/en/bst).
 
 **Question**:  If you have a tree of height 5, what's the worst-case for finding a value in the tree?  What affects the number of comparisons you need to make?
 
@@ -21,13 +22,13 @@ Try this out on the [Binary Tree Visualizer](https://visualgo.net/en/bst).
 
 ## Balanced Trees & Unbalanced Trees
 
-A tree is considered **balanced** if the levels of any two leaves differ by at most 1.  In this way the nodes in the tree must be spread fairly evenly.
+A tree is considered _balanced_ if the levels of any two leaves differ by at most 1.  In this way the nodes in the tree must be spread fairly evenly.
 
 This is an example of a balanced tree.
 
 ![balanced bst](images/balanced-bst.png)
 
-On the other hand this is an unbalanced tree.
+On the other hand, this is an example of an unbalanced tree.
 
 ![unbalanced bst](images/unbalanced-bst.png)
 
