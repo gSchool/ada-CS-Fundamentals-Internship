@@ -21,7 +21,7 @@ The `ListNode` class was used in a larger `LinkedList` class which maintained a 
 
 ### Consider A Nonlinear Structure
 
-Binary search trees have a _non-linear structure_. In a binary search tree each node has pointers to two other nodes in the data structure. We refer to these pointers collectively as the _child_ nodes of the original _parent_ node. We label each of the parent node's two children as the `left` and `right` children or pointers. 
+Binary search trees have a _non-linear structure_. In a binary search tree each node has pointers to two other nodes in the data structure. We refer to these pointers as the _child_ nodes of the original _parent_ node. We label each of the parent node's two children as the `left` and `right` children or pointers. Collectively, we can refer to a parent node's children as _siblings_.
 
 A binary search tree's `left` and `right` child nodes must maintain special properties. The `left` child must have a `key` that is less than or equal to the `key` of its parent node. The `right` child must have a `key`  that is greater than or equal to that of its parent node.
 
@@ -34,9 +34,11 @@ Nodes can store a `value` or piece of data that is not a number. For example a n
 ### !end-callout
 
 
-Each node in a binary search tree can refer to other nodes. Like a real person, a node can be both a parent _and_ a child. The topmost node in a tree is known as the _root_. The root has no parent node. Nodes with no children are called _leaves_.
+Each node in a binary search tree can refer to other nodes. Like a real person, a node can be both a parent _and_ a child. Notice that we could consider a child node and any of its descendants its own tree. We refer to these trees as _subtrees_ of the parent node. A parent node can have both a left and right subtree.
 
-When we draw a binary search tree, parent nodes are always drawn above children nodes with the root node at the very top. 
+The topmost node in a tree is known as the _root_. The root has no parent node. Nodes with no children are called _leaves_. 
+
+When we draw a binary search tree, parent nodes are always drawn above children nodes with the root node at the very top. We sometimes refer to the links or pointers between a parent and child node as an _edge_ between the parent and child. The _height_ of a node is the maximum number of edges it takes to travel from one of the leaves in the node's subtrees to the node itself. The height of the tree overall is the the height of the root node.
  
 
 ![Binary Search Tree Vocabulary](images/TreeVocabulary.png)

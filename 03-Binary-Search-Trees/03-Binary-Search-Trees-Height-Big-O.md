@@ -1,3 +1,8 @@
+## Binary Search Trees Big O
+
+### Overview
+Before we move on to serialization of binary search trees, let's take a moment to discuss . To do that, we must first understand how we calculate height and balancing of trees. 
+
 ### Exercise
 
 Try this out on the [Binary Tree Visualizer](https://visualgo.net/en/bst).
