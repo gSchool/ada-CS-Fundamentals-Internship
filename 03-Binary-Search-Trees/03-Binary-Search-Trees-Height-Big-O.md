@@ -32,37 +32,28 @@ On the other hand, this is an example of an unbalanced tree.
 
 ![unbalanced bst](images/unbalanced-bst.png)
 
-### !callout-warning
+The time and space complexity of operations such as search, insert, and delete depend on whether a tree is balanced or unbalanced. 
 
-## Tree Balance & Time Complexity
-
-Assume that we are using the Binary Search tree methods as we have described them here.  If all the nodes were inserted in order, the worst case time complexity would be O(n) because each node except the root would be the left child of the previous nodes if the nodes were inserted in descending order, or the right child of the previous node if they were inserted in ascending order.  The tree would be **unbalanced**.  There are more advanced algorithms that can be used to create self-balancing trees.
-
-* If a tree is unbalanced it's time complexities for Insertion, Deletion, and searching approach O(n).
-* If a tree is balanced it's time complexities for Insertion, Deletion, and searching are O(log n).
-
-Therefore it is very important that a tree **remain balanced**.
-
-### !end-callout
+Refer to the examples of balanced and unbalanced trees above to answer the following questions. You may also find it helpful to draw out the scenarios posed in the questions.
 
 ### !challenge
 
 * type: number
 * id: 476cab10-a81f-4877-aad3-682602a3c30d
-* title: How many nodes do you need to examine to find 5, in the 1st example?
+* title: How many nodes do you need to examine to find 5, in the balanced example?
 * decimal: 0
 * points: 1
 * topics: bst
 
 ##### !question
 
-How many nodes do you need to examine to find 5, in the 1st example?
+How many nodes do you need to examine to find 5, in the balanced example?
 
 ##### !end-question
 
 ##### !placeholder
 
-put a number in here
+Number goes here
 
 ##### !end-placeholder
 
@@ -83,14 +74,14 @@ put a number in here
 
 * type: number
 * id: 5a4ce281-7f17-47e5-961e-a582171eb3be
-* title: How many nodes to check in the 2nd example?
+* title: How many nodes do you need to examine to find 5 in the unbalanced example?
 * decimal: 0
 * points: 1
 * topics: bst
 
 ##### !question
 
-How many in the 2nd?
+How many nodes do you need to examine to find 5 in the unbalanced example?
 
 ##### !end-question
 
@@ -217,7 +208,7 @@ Number here
 <!-- other optional sections -->
 ##### !hint
 
-What's the worst case?
+What's the worst case time complexity?
 
 ##### !end-hint
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
@@ -326,7 +317,21 @@ O(log n) when you double the number of nodes, the height increases by 1.
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-Notice if a tree is balanced, when you move left or right, you eliminate half of the possible nodes.  This means you are essentially doing **binary search.**  If the tree is unbalanced, you are performing a linear search.
+
+
+## Tree Balance & Time Complexity
+
+Looking at the answers to the questions above, notice that if a tree is balanced, when you move left or right, you eliminate half of the possible nodes. This means you are essentially doing **binary search.**  If the tree is unbalanced, you are performing a linear search.
+
+Assume that we are using the Binary Search tree methods as we have described in the above unbalanced tree example. If all the nodes were inserted in order, the worst case time complexity would be O(n) because each node except the root would be the left child of the previous nodes if the nodes were inserted in descending order, or the right child of the previous node if they were inserted in ascending order.  The tree would be **unbalanced**.  
+
+When a tree is balanced, each time you because you choose to only traverse one subtree, or approximately half of the original tree. 
+
+* If a tree is unbalanced it's time complexities for searching, insertion, and deletion approach O(n).
+* If a tree is balanced it's time complexities for searching, insertion, and deletion are O(log n).
+
+Therefore it is very important that a tree **remain balanced**. 
+
 
 <!-- available callout types: info, success, warning, danger, secondary, star  -->
 ### !callout-star
