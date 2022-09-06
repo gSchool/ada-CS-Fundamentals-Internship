@@ -357,7 +357,7 @@ In contrast, the iterative solutions make only a single call to the method regar
 
 ## Summary
 
-In this lesson we looked at some of the advantages a binary search tree provides over a sorted array or linked list.  Binary search trees provide an O(log n) time to add, remove and find elements because searching a tree performs a binary search.  This performance, however, depends on the tree being **balanced**.  A balanced tree has subtrees of height within 1 of each other.
+In this lesson we looked at some of the advantages a binary search tree provides over a sorted array or linked list and how to find the height of a binary search tree..  Binary search trees provide an O(log n) time to add, remove and find elements because searching a tree performs a binary search.  This performance, however, depends on the tree being **balanced**.  A balanced tree has subtrees of height within 1 of each other.
 
 In short we want to use a Binary Search Tree When:
 
