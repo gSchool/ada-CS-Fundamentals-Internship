@@ -20,8 +20,8 @@ Students should be able to:
 ## Video Lesson & Exercises
 
 - [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d9746397-8a10-43be-b1cc-aaaf00720b31)
-- [Slide Deck](https://docs.google.com/presentation/d/1Fj0deIUswGZ3ooJMpgVUqPEaWHKTkQ1w2Ci-yf8v66M/edit#slide=id.p)
-- [BST Exercise](https://github.com/Ada-C16/tree-practice)
+- [C16 Slide Deck](https://docs.google.com/presentation/d/1Fj0deIUswGZ3ooJMpgVUqPEaWHKTkQ1w2Ci-yf8v66M/edit#slide=id.p)
+- [BST Exercise](https://github.com/ada-c17/Sorted-Array-to-BST)
 
 ## Overview
 
