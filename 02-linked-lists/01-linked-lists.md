@@ -4,8 +4,8 @@
 
 ## Video Lesson
 
-- [Slides](https://docs.google.com/presentation/d/1UKi2M_V5wgIC9K_xfmtdBmeKokdKep1gRcnz0vLXNHk/edit?usp=sharing)
-- [Linked List Exercises](https://github.com/Ada-C16/linked-list)
+- [Slides](https://docs.google.com/presentation/d/1wWrcROp6MX57lSyZOLjlxBXoWGJbV43WWE_Ub-GxStk/edit?usp=sharing  )
+- [Linked List Exercises](https://github.com/ada-c17/Intersection-Linked-List)
 
 ## Learning Goals
 
@@ -57,14 +57,14 @@ Both Arrays & Linked Lists are linear data structures and both have a clearly de
 
 Big-O For Linked Lists & Arrays
 
-| Operation 	| Linked Lists 	|  Array 	|
-|---	|---	|---	|
-| access | O(n) | O(1) |
-| search | O(n) | O(n) |
-| insertion | O(1) | O(n) |
-| deletion | O(1) 	| O(1) |
+**#**|**Data Structure**|**Access**|**Search**|**Insertion (Middle)**|**Deletion (Middle)**|**Add First**|**Add Last**|**Delete First**|**Delete Last**
+:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+1|Unsorted Array|O(1)|O(n)|O(n)|O(n)|O(n)|O(1)|O(n)|O(1)|
+2|Sorted Array|O(1)|O(log n)|O(n)|O(n)|O(n)|O(1)|O(n)|O(1)|
+3|Singly Linked List| O(n)| O(n)| O(n)| O(n)|O(1)|O(n)|O(1)|O(n)|
+4|Doubly Linked List|O(n)|O(n)|O(n)|O(n)|O(1)|O(1)|O(1)|O(1)|
 
-On the other hand, as you can see above, linked lists perform in constant time to insert values into or remove values from a list, because they only require a few reference to be redirected toward different nodes.  In contrast, arrays can require shifting numerous elements into new indices with each insertion or deletion.
+On the other hand, as you can see above, doubly linked lists perform in constant time to insert values into or remove values from the ends of a list, because they only require a few reference to be redirected toward different nodes. In contrast, arrays can require shifting numerous elements into new indices with each insertion or deletion.
 
 Further, most runtimes allocate more memory to an array than is being used because if the array grows, the interpreter needs to request new memory from the environment and copy the entire array into the new, larger, space.  By starting with extra space available an array can grow as required for some time.  A linked list by contrast only uses memory as required for the nodes available.  
 
