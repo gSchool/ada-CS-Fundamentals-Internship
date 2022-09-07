@@ -68,7 +68,7 @@ This node stores both a key and value for each node.  The `Tree` class will comp
 ```python
 class TreeNode:
     def __init__(self, key, val = None):
-        if not value:
+        if val == None:
             val = key
 
         self.key = key

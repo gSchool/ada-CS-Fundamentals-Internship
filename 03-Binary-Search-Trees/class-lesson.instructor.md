@@ -38,7 +38,7 @@ Do a problem set review for any challenge questions posed in [Ordered Collection
 Focus on space complexity of recursive implementations vs iterative solutions, strategies for implementing recursive solutions and why recursion can still be useful given the bigger space complexity, and DFS/BFS. 
 
 Part of the goal of this lesson is to set them up to understand graphing algorithms, particularly DFS and BFS. 
-
+git restore
 Specifically reinforce:
 
 - BSTs are great when order needs to be maintained with good insertion, deletion, and lookup times.
