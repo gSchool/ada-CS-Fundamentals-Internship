@@ -252,18 +252,6 @@ Computer Science was initially pioneered in western cultures where people read l
 
 ### !end-callout
 
-## Finding the Height of a Binary Search Tree
-
-To find the height we need to count how many levels of 
-
-```
-If the current node is nil return 0
-
-Otherwise return 1 plus the maximum of the heights of the right and left subtrees
-```
-
-This is a recursive solution because it treats the left and right sides of a node as trees.
-
 ## Breadth First Search Traversal
 
 A breadth first search traversal, like depth first search traversals, begins at the root node of the tree. It then examines each node level by level, meaning the root's direct children are examined, then the root's grandchildren, and so on and so forth.  
@@ -310,3 +298,4 @@ In the lesson, we examined different methods to traverse a tree.  Unlike a linke
 * [MIT Open Courseware on Binary Search Trees](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/lecture-5-binary-search-trees-bst-sort/)
 * [FreeCodeCamp Binary Search Tree Algorithms for JavaScript Beginners](https://www.freecodecamp.org/news/binary-tree-algorithms-for-javascript-beginners/)
 * [Geeks for Geeks on Self-Balancing-Binary-Search-Trees](https://www.geeksforgeeks.org/self-balancing-binary-search-trees-comparisons/)
+*[Dev Genius Depth First Search Tree Traversals](https://blog.devgenius.io/dfs-depth-first-search-traversal-techniques-short-and-sweet-1e4c134babcf)
