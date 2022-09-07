@@ -34,7 +34,7 @@ On the other hand, this is an example of an unbalanced tree.
 
 The time and space complexity of operations such as search, insert, and delete depend on whether a tree is balanced or unbalanced. 
 
-Refer to the examples of balanced and unbalanced trees above to answer the following questions. You may also find it helpful to draw out the scenarios posed in the questions.=
+Refer to the examples of balanced and unbalanced trees above to answer the following questions. You may also find it helpful to draw out the scenarios posed in the questions.
 
 ### !challenge
 
@@ -514,4 +514,4 @@ We can see below a balanced Binary Search Tree provides good performance while m
 2|Sorted Array|O(1)|O(log n)|O(n)|O(n)|O(n)|O(1)
 3|Linked List|O(n)|O(n)|O(n)|O(n)|O(1)|O(1)
 4|Binary Tree (balanced)|O(log n)|O(log n)|O(log n)|O(log n)|NA|NA
-5|Hash Table|O(1)|O(1)|O(1)|O(1)|NA|NA]
+5|Hash Table|O(1)|O(1)|O(1)|O(1)|NA|NA
