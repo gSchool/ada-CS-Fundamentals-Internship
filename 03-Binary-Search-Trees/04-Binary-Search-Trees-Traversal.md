@@ -1,12 +1,13 @@
-## Serialization - O(n)
+## Serialization
 
 To serialize a tree, we need to traverse the tree.  This means we need to visit each node and add it to a string or array. There are several ways to do this.
 
-A _traversal_ is an action visiting each node in a graph such as a tree.  There are several kinds of traversals, Breadth First Traversals which visit each node level, by level and Depth First Traversals which visit a node's children before it's siblings.
+A _traversal_ is an action visiting each node in a data structure such as a tree.  There are several kinds of traversals, Breadth First Traversals which visit each node level, by level and Depth First Traversals which visit a node's children before it's siblings.
+
 
 ### Depth First Traversals
 
-Unlike linear data structures like arrays or linked list which have only one logical way to traverse them, trees can be traversed in different ways.  In a _Depth-first traversal_ you explore the children and grandchildren of a node before moving to it's sibling.
+Unlike linear data structures like arrays or linked list which have only one logical way to traverse them, trees can be traversed in different ways.  In a _depth first traversal_ you explore the children, grandchildren, and any further descendants of a node before moving to its sibling and traversing the sibling's descendants.
 
 There are three standard types of depth-first traversals:
 
@@ -247,30 +248,50 @@ Traversals can be very useful to serialize our data structure into a format that
 
 So why are all the traversals left-to-right instead of right-to-left?
 
-Computer Science was initially pioneered in western cultures where people read left-to-right and so their cultural bias lead to designing traversals in that manner.  There's nothing inherit in Binary Search Trees to require this.  You could create a right-to-left traversal, but for historical reasons, these are the standard Binary Search Tree traversals.
+Computer Science was initially pioneered in western cultures where people read left-to-right and so their cultural bias lead to designing traversals in that manner.  There's no inherent characteristics of binary search trees which require a left-to-right traversal.  You could create a right-to-left traversal, but for historical reasons, these are the standard binary search tree traversals.
 
 ### !end-callout
 
-## Finding the Height of a Binary Search Tree
-
-To find the height of a binary search tree you can do the following:
-
-```
-If the current node is nil return 0
-
-Otherwise return 1 plus the maximum of the heights of the right and left subtrees
-```
-
-This is a recursive solution because it treats the left and right sides of a node as trees.
-
 ## Breadth First Search Traversal
 
-<!--TODO: BFS walkthrough -->
+A breadth first search traversal, like depth first search traversals, begins at the root node of the tree. It then examines each node level by level, meaning the root's direct children are examined, then the root's grandchildren, and so on and so forth.  
 
+To implement breadth first search, we use a [queue](../02-linked-lists/03-linked-lists-stacks-queues.md), which is a linear ordered collection of data which adds and removes elements according to a first-in first-out (FIFO) principle similar to a queue or line of people in real life: the first element added to the queue is the first to be removed from the queue.
+
+Pseudocode for the algorithm is as follows:
+
+```
+Create an empty queue
+Create an empty list to store the explored nodes
+
+Add the root into the queue
+
+While the queue is not empty:
+    Pop the next node off the queue and add its children to the queue
+    Add the popped node to the list of explored nodes
+```
+
+### !callout-info
+
+## Deque
+
+[`deque`](https://docs.python.org/3/library/collections.html#collections.deque) from the `collections` module is commonly used to create queues in Python. 
+
+### !end-callout
+
+## Serialization Big O
+
+Serialization algorithms are O(n) in both time and space complexity. Both breadth first search and depth first search algorithms visit each node in the array exactly once, giving O(n) time complexity where n is the number of nodes in the tree. They also both create an array to store each explored node giving O(n) space complexity.
+
+If we were to just perform a traversal using either breadth first or depth first search without storing the explored nodes in an array or other auxiliary data structure, the space complexity would be slightly different.
+
+With depth first search algorithms, we need to consider how many recursive calls would be on the call stack at any given time. The maximum number of recursive calls would be the height of the tree since depth first search algorithms go as deep as they can into the tree before turning back and exploring other subtrees. So we can say the space complexity is O(h) where h is the height of the tree.
+
+With breadth first search, we need to consider the maximum number of nodes that would be in our queue at any given time. Since breadth first search adds all the nodes in a level to the queue before starting to pop them off, the space complexity would be O(b) where b is the breadth (the number of nodes on the level with the greatest number of nodes) of the tree.
 
 ## Summary
 
-In the lesson, we examined different methods to traverse a Tree.  Unlike a LinkedList where there is only one method to traverse a tree has multiple ways to traverse.
+In the lesson, we examined different methods to traverse a tree.  Unlike a linked list where there is only one possible traversal method, a tree has multiple ways to traverse.
 
 ## Additional Resources
 
