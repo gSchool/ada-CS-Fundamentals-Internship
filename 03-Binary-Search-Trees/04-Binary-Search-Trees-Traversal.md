@@ -1,3 +1,5 @@
+# Traversals
+
 ## Serialization
 
 To serialize a tree, we need to traverse the tree.  This means we need to visit each node and add it to a string or array. There are several ways to do this.
