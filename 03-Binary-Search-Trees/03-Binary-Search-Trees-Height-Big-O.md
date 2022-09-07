@@ -34,7 +34,7 @@ On the other hand, this is an example of an unbalanced tree.
 
 The time and space complexity of operations such as search, insert, and delete depend on whether a tree is balanced or unbalanced. 
 
-Refer to the examples of balanced and unbalanced trees above to answer the following questions. You may also find it helpful to draw out the scenarios posed in the questions.
+Refer to the examples of balanced and unbalanced trees above to answer the following questions. You may also find it helpful to draw out the scenarios posed in the questions.=
 
 ### !challenge
 
@@ -236,7 +236,7 @@ Worst-case you have to travel to the last node in the chain and since there are 
 
 ##### !question
 
-What if you added 4 nodes and kept the tree unbalanced. How many more comparisons would you need to make?
+What if you added 4 nodes and kept the tree unbalanced. How many comparisons would you need to make?
 
 ##### !end-question
 
@@ -338,7 +338,7 @@ Therefore it is very important that a tree **remain balanced**.
 
 ## Balance is important in a tree's efficiency
 
-If a tree is _balanced_ then adding, finding, removing operations on a that tree perform in O(log n) time.  However if a tree becomes unbalanced the efficiency can approach O(n) time complexity.  
+If a tree is _balanced_ then the adding, finding, and removing operations on that tree perform in O(log n) time.  However if a tree becomes unbalanced the efficiency can approach O(n) time complexity.  
 
 For this reason, computer scientists spend a lot of time focusing on ways to maintain the balance of a Binary Search Tree.
 
