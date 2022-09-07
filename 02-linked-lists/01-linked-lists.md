@@ -57,12 +57,12 @@ Both Arrays & Linked Lists are linear data structures and both have a clearly de
 
 Big-O For Linked Lists & Arrays
 
-**#**|**Data Structure**|**Access**|**Search**|**Insertion (Middle)**|**Deletion (Middle)**|**Add First**|**Add Last**
-:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
-1|Unsorted Array|O(1)|O(n)|O(n)|O(n)|O(n)|O(1)
-2|Sorted Array|O(1)|O(log n)|O(n)|O(n)|O(n)|O(1)
-3|Singly Linked List| O(n)| O(n)| O(n)| O(n)|O(1)|O(n)
-4|Doubly Linked List|O(n)|O(n)|O(n)|O(n)|O(1)|O(1)
+**#**|**Data Structure**|**Access**|**Search**|**Insertion (Middle)**|**Deletion (Middle)**|**Add First**|**Add Last**|**Delete First**|**Delete Last**
+:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+1|Unsorted Array|O(1)|O(n)|O(n)|O(n)|O(n)|O(1)|O(n)|O(1)|
+2|Sorted Array|O(1)|O(log n)|O(n)|O(n)|O(n)|O(1)|O(n)|O(1)|
+3|Singly Linked List| O(n)| O(n)| O(n)| O(n)|O(1)|O(n)|O(1)|O(n)|
+4|Doubly Linked List|O(n)|O(n)|O(n)|O(n)|O(1)|O(1)|O(1)|O(1)|
 
 On the other hand, as you can see above, doubly linked lists perform in constant time to insert values into or remove values from the ends of a list, because they only require a few reference to be redirected toward different nodes. In contrast, arrays can require shifting numerous elements into new indices with each insertion or deletion.
 
