@@ -166,7 +166,7 @@ You can implement the `find` method in Python as follows:
   
 ##### !question
 
-Now that you have seen `find` implemented recursively, try implementing the same function iteratively. The function takes in a root 'root'
+Now that you have seen `find` implemented recursively, try implementing the same function iteratively. The function takes in a key 'key'
 
 ##### !end-question
 
@@ -692,7 +692,7 @@ An example of a working implementation:
 
 
 ### Deletion
-Deleting a node froma binary search tree is a little more complex than either searching for or inserting a node, because we need to ensure that when we remove the node the resulting tree still maintains the property that all left children are smaller than their parent nodes and all right children are larger than their parent nodes.
+Deleting a node from a binary search tree is a little more complex than either searching for or inserting a node, because we need to ensure that when we remove the node the resulting tree still maintains the property that all left children are smaller than their parent nodes and all right children are larger than their parent nodes.
 
 To delete a node from a binary search tree we must first find the node to delete. To find the node, we can use the same recursive technique we've used with `find` and `add` to traverse the root node's subtrees. Once we find the node we can delete it by changing the parent and child nodes' references.
 
