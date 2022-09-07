@@ -1,6 +1,12 @@
+## Binary Search Trees Big O
+
+### Overview
+Before we move on to serialization of binary search trees, let's take a moment to discuss the time and space complexity of searching, insertion, and deletion. To fully understand that, we must first talk about _balancing_. 
+
+
 ### Exercise
 
-Try this out on the [Binary Tree Visualizer](https://visualgo.net/en/bst).
+Try this exercise out on the [Binary Tree Visualizer](https://visualgo.net/en/bst).
 
 **Question**:  If you have a tree of height 5, what's the worst-case for finding a value in the tree?  What affects the number of comparisons you need to make?
 
@@ -16,47 +22,40 @@ Try this out on the [Binary Tree Visualizer](https://visualgo.net/en/bst).
 
 ## Balanced Trees & Unbalanced Trees
 
-A tree is considered **balanced** if the levels of any two leaves differ by at most 1.  In this way the nodes in the tree must be spread fairly evenly.
+A tree is considered _balanced_ if the levels of any two leaves differ by at most 1.  In this way the nodes in the tree must be spread fairly evenly.
 
 This is an example of a balanced tree.
 
 ![balanced bst](images/balanced-bst.png)
 
-On the other hand this is an unbalanced tree.
+On the other hand, this is an example of an unbalanced tree.
 
 ![unbalanced bst](images/unbalanced-bst.png)
 
-### !callout-warning
+The time and space complexity of operations such as search, insert, and delete depend on whether a tree is balanced or unbalanced. 
 
-## Tree Balance & Time Complexity
 
-Assume that we are using the Binary Search tree methods as we have described them here.  If all the nodes were inserted in order, the worst case time complexity would be O(n) because each node except the root would be the left child of the previous nodes if the nodes were inserted in descending order, or the right child of the previous node if they were inserted in ascending order.  The tree would be **unbalanced**.  There are more advanced algorithms that can be used to create self-balancing trees.
+Refer to the examples of balanced and unbalanced trees above to answer the following questions. You may also find it helpful to draw out the scenarios posed in the questions.
 
-* If a tree is unbalanced its time complexities for Insertion, Deletion, and searching approach O(n).
-* If a tree is balanced its time complexities for insertion, deletion, and searching are O(log n).
-
-Therefore it is very important that a tree **remain balanced**.
-
-### !end-callout
 
 ### !challenge
 
 * type: number
 * id: 476cab10-a81f-4877-aad3-682602a3c30d
-* title: How many nodes do you need to examine to find 5, in the 1st example?
+* title: How many nodes do you need to examine to find 5, in the balanced example?
 * decimal: 0
 * points: 1
 * topics: bst
 
 ##### !question
 
-How many nodes do you need to examine to find 5, in the 1st example?
+How many nodes do you need to examine to find 5, in the balanced example?
 
 ##### !end-question
 
 ##### !placeholder
 
-put a number in here
+Number goes here
 
 ##### !end-placeholder
 
@@ -77,14 +76,14 @@ put a number in here
 
 * type: number
 * id: 5a4ce281-7f17-47e5-961e-a582171eb3be
-* title: How many nodes to check in the 2nd example?
+* title: How many nodes do you need to examine to find 5 in the unbalanced example?
 * decimal: 0
 * points: 1
 * topics: bst
 
 ##### !question
 
-How many in the 2nd?
+How many nodes do you need to examine to find 5 in the unbalanced example?
 
 ##### !end-question
 
@@ -211,7 +210,7 @@ Number here
 <!-- other optional sections -->
 ##### !hint
 
-What's the worst case?
+What's the worst case time complexity?
 
 ##### !end-hint
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
@@ -320,7 +319,21 @@ O(log n) when you double the number of nodes, the height increases by 1.
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-Notice if a tree is balanced, when you move left or right, you eliminate half of the possible nodes.  This means you are essentially doing **binary search.**  If the tree is unbalanced, you are performing a linear search.
+
+
+## Tree Balance & Time Complexity
+
+Looking at the answers to the questions above, notice that if a tree is balanced, when you move left or right, you eliminate half of the possible nodes. This means you are essentially doing **binary search.**  If the tree is unbalanced, you are performing a linear search.
+
+Assume that we are using the binary search tree methods as we have described in the above unbalanced tree example. If all the nodes were inserted in order, the worst case time complexity for search, insertion, or deletion would be O(n) where n is the number of nodes in the tree because each node except the root would be the left child of the previous node. 
+
+When a tree is balanced, because with each step you choose to only traverse one subtree or approximately half of the original tree, the same methods would have O(log n) time complexity.
+
+* If a tree is unbalanced it's time complexities for searching, insertion, and deletion approach O(n).
+* If a tree is balanced it's time complexities for searching, insertion, and deletion are O(log n).
+
+Therefore it is very important that a tree **remain balanced**. 
+
 
 <!-- available callout types: info, success, warning, danger, secondary, star  -->
 ### !callout-star
@@ -333,11 +346,20 @@ For this reason, computer scientists spend a lot of time focusing on ways to mai
 
 ### !end-callout
 
-**Self-Balancing Trees** There are a lot of algorithms for [keeping a tree balanced](https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree).  The act of keeping a tree balanced is also O(log n), and so rebalancing a tree after an insertion or deletion doesn't significantly impact the runtime of a binary search tree.  These structures are wonderful things to learn, but beyond the scope of this class.  You **can** however rest assured that any library tree classes that you use will keep the tree balanced in such a manner.
+**Self-Balancing Trees** There are a lot of algorithms for [keeping a tree balanced](https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree).  The act of keeping a tree balanced is also O(log n) so rebalancing a tree after an insertion or deletion doesn't significantly impact the runtime of a binary search tree.  These structures are wonderful things to learn, but beyond the scope of this class.  You **can** however rest assured that any library tree classes that you use will keep the tree balanced in such a manner.
+
+
+## Recursion & Space Complexity
+
+The recursive solutions to search, insertion, and deletion all have a space complexity of O(log n) for a balanced tree while the iterative implementations all have a space complexity of O(1).
+
+This is because with the recursive solutions, each recursive call of the methods adds a frame to the system's [call stack](../02-linked-lists//04-linked-lists-supplemental-concepts.md). With each of these operations, we make a recursive call each time we choose to traverse a new subtree which we do O(log n) times. 
+
+In contrast, the iterative solutions make only a single call to the method regardless of the size of the tree. We don't create any additional data structures that vary with the size of the tree in any of the operations, thus time complexity is constant or O(1).
 
 ## Summary
 
-In this lesson we looked at the advantages a Binary Search Tree provides over a sorted array or LinkedList.  Binary Search trees provide an O(log n) time to add, remove and find elements because searching a tree performs a binary search.  This performance however depends on the tree being **balanced**.  A balanced tree has subtrees of height within 1 of each other.
+In this lesson we looked at some of the advantages a binary search tree provides over a sorted array or linked list.  Binary search trees provide an O(log n) time to add, remove and find elements because searching a tree performs a binary search.  This performance, however, depends on the tree being **balanced**.  A balanced tree has subtrees of height within 1 of each other.
 
 In short we want to use a Binary Search Tree When:
 
