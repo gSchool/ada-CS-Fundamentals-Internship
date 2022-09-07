@@ -4,8 +4,8 @@
 
 ## Video Lesson
 
-- [Slides](https://docs.google.com/presentation/d/1UKi2M_V5wgIC9K_xfmtdBmeKokdKep1gRcnz0vLXNHk/edit?usp=sharing)
-- [Linked List Exercises](https://github.com/Ada-C16/linked-list)
+- [Slides](https://docs.google.com/presentation/d/1wWrcROp6MX57lSyZOLjlxBXoWGJbV43WWE_Ub-GxStk/edit?usp=sharing  )
+- [Linked List Exercises](https://github.com/ada-c17/Intersection-Linked-List)
 
 ## Learning Goals
 
