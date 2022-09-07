@@ -359,6 +359,11 @@ In contrast, the iterative solutions make only a single call to the method regar
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
 
+We can see that tree balancing and tree height have a close relationship. 
+
+To find the height we need to count how many levels of nodes there are in a tree. 
+
+
 ### !challenge
 
 * type: code-snippet
@@ -369,44 +374,122 @@ In contrast, the iterative solutions make only a single call to the method regar
 
 ##### !question
 
-Implement a recursive for binary search tree. 
+Implement a recursive `height` function for a binary search tree. The function should return the height of the tree.
 
 ##### !end-question
 
 ##### !placeholder
 
-[the code below is the starting code in the web editor]
 ```py
-def doSomething():
-  '''
-  INPUT: 2 dimensional numpy array
-  OUTPUT: boolean
-  Return true
-  '''
-#   return 1
+class TreeNode:
+    def __init__(self, key, val = None):
+        if val == None:
+            val = key
+
+        self.key = key
+        self.value = val
+        self.left = None
+        self.right = None
+
+class Tree:
+    def __init__(self):
+        self.root = None
+    
+    def height(self):
+        # implement using recursion
+        pass
 ```
 
 ##### !end-placeholder
 
 ##### !tests
-
-[the unit tests below will run against the student submission]
 ```py
 import unittest
-import main as p
-import numpy as np
+from main import *
+
+class TreeExtended(Tree):
+
+    def add_helper(self, current_node, new_node):
+        if new_node.key  < current_node.key:
+            if not current_node.left:
+                current_node.left = new_node
+                return
+            self.add_helper(current_node.left, new_node)
+        else:
+            if not current_node.right:
+                current_node.right = new_node
+                return
+            self.add_helper(current_node.right, new_node)
+
+    def add(self, key, value = None):
+        if not self.root:
+            self.root = TreeNode(key, value)
+        else:
+            new_node = TreeNode(key, value)
+            self.add_helper(self.root, new_node)
 
 class TestPython1(unittest.TestCase):
-  def test_one(self):
-    self.assertEqual(1,p.doSomething())
+  def setUp(self) -> None:
+
+    def tree_with_nodes() -> TreeExtended():
+        t = TreeExtended()
+        t.add(5, "Peter")
+        t.add(3, "Paul")
+        t.add(1, "Mary")
+        t.add(10, "Karla")
+        t.add(15, "Ada")
+        t.add(25, "Kari")
+        return t
+    
+    self.empty_tree = TreeExtended()
+    self.tree_with_nodes = tree_with_nodes()
+    
+  def tearDown(self) -> None:
+      self.empty_tree = TreeExtended()
+
+  def test_height_of_empty_tree_is_zero(self):
+    self.assertEqual(0,self.empty_tree.height())
+  
+  def test_height_of_one_node_tree_is_one(self):
+    self.empty_tree.add(5, "Peter")
+
+    self.assertEqual(1, self.empty_tree.height())
+
+  def test_height_of_many_node_tree(self):
+    self.assertEqual(4, self.tree_with_nodes.height())
+
+    self.tree_with_nodes.add(2, "pasta")
+    self.tree_with_nodes.add(2.5, "bread")
+    self.assertEqual(5, self.tree_with_nodes.height())
+
 ```
 
 ##### !end-tests
 
 <!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+##### !hint
+Pseudocode:
+```
+If the current node is nil return 0
+
+Otherwise return 1 plus the maximum of the heights of the right and left subtrees
+```
+##### !end-hint
+##### !explanation 
+An example of a working implementation:
+```py
+    def height_helper(self, current_node):
+        if not current_node:
+            return 0
+
+        return max(self.height_helper(current_node.left), self.height_helper(current_node.right)) + 1
+    
+    def height(self):
+        return self.height_helper(self.root)
+```
+
+##### !end-explanation
+
 
 ### !end-challenge
 
