@@ -80,7 +80,7 @@ Your PR link goes here.
 
 ### !challenge
 
-* type: short-answer
+* type: paragraph
 * id: c2735bca-226b-4c2f-b2c9-636331c7e677
 * title: Time complexity
 <!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
@@ -97,15 +97,12 @@ What is the time complexity of your solution? Remember to define your variables.
 
 ##### !end-placeholder
 
-##### !answer
-Optimal solution is O(m + n)
-
-##### !end-answer
-
 <!-- other optional sections -->
 <!-- !hint - !end-hint (markdown, hidden, students click to view) -->
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+##### !explanation 
+Optimal solution is O(m + n)
+##### !end-explanation
 
 ### !end-challenge
 
@@ -116,7 +113,7 @@ Optimal solution is O(m + n)
 
 ### !challenge
 
-* type: short-answer
+* type: paragraph
 * id: 92baf44f-9ec9-4a83-af9a-191b281988fa
 * title: space complexity
 <!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
@@ -132,16 +129,12 @@ What is the space complexity of your solution? Remember to define your variables
 
 ##### !end-placeholder
 
-##### !answer
-
-Optimal solution is O(1)
-
-##### !end-answer
-
 <!-- other optional sections -->
 <!-- !hint - !end-hint (markdown, hidden, students click to view) -->
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+##### !explanation 
+Optimal solution is O(1)
+##### !end-explanation
 
 ### !end-challenge
 
