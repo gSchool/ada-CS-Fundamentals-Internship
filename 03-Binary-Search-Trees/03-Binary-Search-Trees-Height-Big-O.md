@@ -327,7 +327,7 @@ Notice if a tree is balanced, when you move left or right, you eliminate half of
 
 ## Balance is important in a tree's efficiency
 
-If a tree is _balanced_ then adding, finding, removing operations on a that tree perform in O(log n) time.  However if a tree becomes unbalanced the efficiency can approach O(n) time complexity.  
+If a tree is _balanced_ then the adding, finding, and removing operations on that tree perform in O(log n) time.  However if a tree becomes unbalanced the efficiency can approach O(n) time complexity.  
 
 For this reason, computer scientists spend a lot of time focusing on ways to maintain the balance of a Binary Search Tree.
 
