@@ -254,7 +254,7 @@ Computer Science was initially pioneered in western cultures where people read l
 
 ## Finding the Height of a Binary Search Tree
 
-To find the height of a binary search tree you can do the following:
+To find the height we need to count how many levels of 
 
 ```
 If the current node is nil return 0
@@ -263,62 +263,6 @@ Otherwise return 1 plus the maximum of the heights of the right and left subtree
 ```
 
 This is a recursive solution because it treats the left and right sides of a node as trees.
-
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-<!-- Replace everything in square brackets [] and remove brackets  -->
-
-### !challenge
-
-* type: code-snippet
-* language: python3.6
-* id: a8078856-e772-4e3f-9267-6bbeb006ee5d
-* title: Binary Search Tree Recursive Height
-* points: 1
-
-##### !question
-
-[markdown, your question]
-
-##### !end-question
-
-##### !placeholder
-
-[the code below is the starting code in the web editor]
-```py
-def doSomething():
-  '''
-  INPUT: 2 dimensional numpy array
-  OUTPUT: boolean
-  Return true
-  '''
-#   return 1
-```
-
-##### !end-placeholder
-
-##### !tests
-
-[the unit tests below will run against the student submission]
-```py
-import unittest
-import main as p
-import numpy as np
-
-class TestPython1(unittest.TestCase):
-  def test_one(self):
-    self.assertEqual(1,p.doSomething())
-```
-
-##### !end-tests
-
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
-
-### !end-challenge
-
-<!-- ======================= END CHALLENGE ======================= -->
 
 ## Breadth First Search Traversal
 

@@ -355,6 +355,63 @@ This is because with the recursive solutions, each recursive call of the methods
 
 In contrast, the iterative solutions make only a single call to the method regardless of the size of the tree. We don't create any additional data structures that vary with the size of the tree in any of the operations, thus time complexity is constant or O(1).
 
+## Height
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: a8078856-e772-4e3f-9267-6bbeb006ee5d
+* title: Binary Search Tree Recursive Height
+* points: 1
+
+##### !question
+
+Implement a recursive for binary search tree. 
+
+##### !end-question
+
+##### !placeholder
+
+[the code below is the starting code in the web editor]
+```py
+def doSomething():
+  '''
+  INPUT: 2 dimensional numpy array
+  OUTPUT: boolean
+  Return true
+  '''
+#   return 1
+```
+
+##### !end-placeholder
+
+##### !tests
+
+[the unit tests below will run against the student submission]
+```py
+import unittest
+import main as p
+import numpy as np
+
+class TestPython1(unittest.TestCase):
+  def test_one(self):
+    self.assertEqual(1,p.doSomething())
+```
+
+##### !end-tests
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
 ## Summary
 
 In this lesson we looked at some of the advantages a binary search tree provides over a sorted array or linked list and how to find the height of a binary search tree..  Binary search trees provide an O(log n) time to add, remove and find elements because searching a tree performs a binary search.  This performance, however, depends on the tree being **balanced**.  A balanced tree has subtrees of height within 1 of each other.
