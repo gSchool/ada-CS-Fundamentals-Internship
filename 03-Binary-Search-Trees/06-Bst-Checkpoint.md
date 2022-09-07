@@ -2,7 +2,7 @@
 
 | Logistics             | Details                                           |
 | --------------------- | ----------------------------------------------    |
-| Project details       | https://github.com/ada-c17/Sorted-Array-to-BST    |
+| Project details       | [https://github.com/ada-c17/Sorted-Array-to-BST] (https://github.com/ada-c17/Sorted-Array-to-BST)   |
 | Should you fork this? | Yes (Check project details)                       |
 | Submission method     | Learn                                             |
 
