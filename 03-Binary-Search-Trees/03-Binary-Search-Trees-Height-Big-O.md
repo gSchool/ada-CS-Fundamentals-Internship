@@ -376,4 +376,4 @@ We can see below a balanced Binary Search Tree provides good performance while m
 2|Sorted Array|O(1)|O(log n)|O(n)|O(n)|O(n)|O(1)
 3|Linked List|O(n)|O(n)|O(n)|O(n)|O(1)|O(1)
 4|Binary Tree (balanced)|O(log n)|O(log n)|O(log n)|O(log n)|NA|NA
-5|Hash Table|O(1)|O(1)|O(1)|O(1)|NA|NA]
+5|Hash Table|O(1)|O(1)|O(1)|O(1)|NA|NA
