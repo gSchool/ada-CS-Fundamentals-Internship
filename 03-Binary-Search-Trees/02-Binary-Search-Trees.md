@@ -164,7 +164,7 @@ You can implement the `find` method in Python as follows:
   
 ##### !question
 
-Now that you have seen `find` implemented recursively, try implementing the same function iteratively. The function takes in a root 'root'
+Now that you have seen `find` implemented recursively, try implementing the same function iteratively. The function takes in a key 'key'
 
 ##### !end-question
 
