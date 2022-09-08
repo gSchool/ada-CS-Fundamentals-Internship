@@ -150,7 +150,7 @@ If the Linked List has a tail reference and is a doubly linked list, then both e
 
 ### !challenge
 
-* type: short-answer
+* type: paragraph
 * id: 44b75a3a-ebb1-4b05-ba0e-39ecf8675e7e
 * title: Why might we prefer to implement a queue with a linked list instead of an array?
 * points: 1
@@ -166,17 +166,13 @@ Why might we prefer to implement a queue with a linked list instead of an array?
 
 
 ##### !end-placeholder
-
-##### !answer
-
-With a doubly linked list that maintains a tail pointer, we can enqueue and dequeue elements from the queue in O(1) time. With an array, recall that inserting or removing an element of an array can be expensive as all items after the item inserted or removed need to be shifted over by 1. 
-
-##### !end-answer
-
 <!-- other optional sections -->
 <!-- !hint - !end-hint (markdown, hidden, students click to view) -->
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+##### !explanation
+With a doubly linked list that maintains a tail pointer, we can enqueue and dequeue elements from the queue in O(1) time. With an array, recall that inserting or removing an element of an array can be expensive as all items after the item inserted or removed need to be shifted over by 1. 
+
+##### !end-explanation 
 
 ### !end-challenge
 
