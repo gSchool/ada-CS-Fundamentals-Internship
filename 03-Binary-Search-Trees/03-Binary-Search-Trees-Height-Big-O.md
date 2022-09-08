@@ -1,4 +1,4 @@
-## Balancing Trees
+# Balancing Trees
 
 ### Overview
 Before we move on to serialization of binary search trees, let's take a moment to discuss the time and space complexity of searching, insertion, and deletion. To fully understand that, we must first talk about _balancing_. 
