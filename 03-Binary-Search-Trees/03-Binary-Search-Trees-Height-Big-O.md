@@ -1,4 +1,4 @@
-## Binary Search Trees Big O
+# Balancing Trees
 
 ### Overview
 Before we move on to serialization of binary search trees, let's take a moment to discuss the time and space complexity of searching, insertion, and deletion. To fully understand that, we must first talk about _balancing_. 
@@ -34,9 +34,7 @@ On the other hand, this is an example of an unbalanced tree.
 
 The time and space complexity of operations such as search, insert, and delete depend on whether a tree is balanced or unbalanced. 
 
-
 Refer to the examples of balanced and unbalanced trees above to answer the following questions. You may also find it helpful to draw out the scenarios posed in the questions.
-
 
 ### !challenge
 
