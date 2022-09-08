@@ -1,6 +1,5 @@
 # Traversals
 
-
 ## Serialization
 
 To serialize a tree, we need to traverse the tree.  This means we need to visit each node and add it to a string or array. There are several ways to do this.
@@ -295,10 +294,3 @@ With breadth first search, we need to consider the maximum number of nodes that 
 ## Summary
 
 In the lesson, we examined different methods to traverse a tree.  Unlike a linked list where there is only one possible traversal method, a tree has multiple ways to traverse.
-
-## Additional Resources
-
-* [MIT Open Courseware on Binary Search Trees](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/lecture-5-binary-search-trees-bst-sort/)
-* [FreeCodeCamp Binary Search Tree Algorithms for JavaScript Beginners](https://www.freecodecamp.org/news/binary-tree-algorithms-for-javascript-beginners/)
-* [Geeks for Geeks on Self-Balancing-Binary-Search-Trees](https://www.geeksforgeeks.org/self-balancing-binary-search-trees-comparisons/)
-*[Dev Genius Depth First Search Tree Traversals](https://blog.devgenius.io/dfs-depth-first-search-traversal-techniques-short-and-sweet-1e4c134babcf)
