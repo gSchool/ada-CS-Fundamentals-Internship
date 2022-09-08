@@ -102,7 +102,7 @@ Notice that this is a naturally recursive process: We can call search on each su
 
 ### Finding A Node With Python
 
-![Finding a 29 in a tree visualization](./images/Binary-Search-Trees__find-value.gif)
+![Finding a 29 in a tree visualization](./images/bst-find.gif)
 
 _Fig.  A visualization of finding a value in a BST._
 
