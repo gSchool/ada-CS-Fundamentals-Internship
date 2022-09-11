@@ -170,6 +170,6 @@ In small groups of 3-4, **one student** will *fork* the given replit and then sh
 
 ### Exercise
 
-As a team complete the `is_palindrome` function in `palindrome_linked_list.py` of the linked replit.
+As a team complete the `has_cycle` function in `cycle_linked_list.py` of the linked replit.
 
 If you finish early, you can take an early break or work on the project, with instructor support available.
