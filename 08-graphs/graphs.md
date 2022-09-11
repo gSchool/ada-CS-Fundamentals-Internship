@@ -662,10 +662,7 @@ In weighted graphs, finding the shortest paths is a common problem.  One classic
 ## Resources
 
 - [BaseCS on Graphs](https://medium.com/basecs/from-theory-to-practice-representing-graphs-cfd782c5be38)
-- [Wikipedia: Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 - [Geeks for Geeks: Graphs and it's representations](https://www.geeksforgeeks.org/graph-and-its-representations/)
 - [Coursera:  Algorithms on Graphs](https://www.coursera.org/lecture/algorithms-on-graphs/representing-graphs-c4W9f)
-- [Alternative video on Dijkstra's Algorithm](https://www.youtube.com/watch?v=ba4YGd7S-TY#action=share)
-- [Dijkstra's Algorithm Notes](https://www.codingame.com/playgrounds/1608/shortest-paths-with-dijkstras-algorithm/dijkstras-algorithm)
 
 <!-- Diagram sources:  https://drive.google.com/file/d/1bOXvfXdWi9pkKfmWnMZd9QK4zoG930c7/view?usp=sharing -->
