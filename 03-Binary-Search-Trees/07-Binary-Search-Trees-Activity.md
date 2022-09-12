@@ -154,52 +154,22 @@ Why BSTs?
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-## Livecode - Project Introduction
+## Livecode - Breadth First Search (BFS)
 
-As a class we will check out  the [project](./02-Bst-checkpoint.md) and work through a couple of the methods.  The purpose is to gain familiarity with the project and to learn how to write Binary Search Tree code.
+As a class we will walk through an implementation of Breadth First Search.
 
-Walkthrough with:
+If you would like to follow along the live code, you can fork the Repl here: [Breadth First Search](https://replit.com/@adadev/bst-dfs-practice#binary_search_trees/bfs.py)
 
-- Constructor
-- Add Node (recursive & Iterative)
-- Inorder Traversal
+### Breakout Rooms - Depth First Search (DFS)
 
-### Leetcode Style Question
+In small groups of 3-4 students, you will work to implement inorder, preorder, and postorder traversals of a BST. 
 
-In the next activity we will examine deleting a node in a BST.
+**One student** should *fork* the following Repl and share the collaboration link with the rest of the team. [BST Activity Repl](https://replit.com/@adadev/bst-dfs-practice#binary_search_trees/dfs.py)
 
-Use drawings to illustrate the 4 scenarios.
 
-1.  The Tree is empty (root is None).
-  - return None
-1.  The node to delete is the root
-  - Insert the right subtree into the left subtree
-  - Return the left subtree
-1.  The node to delete is less than the root
-  - root.left = delete_node on left subtree
-1.  The node to delete is greater than the root
-  - root.right = delete_node on right subtree
-
-- [Delete Node](https://replit.com/@adadev/bst-practice-delete#README.md)
-
-## Activity - Group Work Linked List Methods
-
-- [Activity Replit](https://replit.com/@adadev/bst-practice#binary_search_trees/kth_smallest.py)
-
-### Getting Started
-
-In small groups of 3-4, **one student** will *fork* the given replit and then share a collaboration link with the rest of the team.
-
-### Exercise
+#### Exercise
 
 As a team complete the method in the replit.
 
-If you finish early, you can depart the session or work on the project, with instructor support available.
+If you finish early, you can take an early break or get started on the project with instructor support in the main room available.
 
-### !callout-secondary
-
-## Suggestion:  Start The Project Now
-
-It can be a *really* good idea to start the project with classmates and instructional staff around to ask questions of. Getting a solid start to a project makes the entire thing go easier.
-
-### !end-callout
