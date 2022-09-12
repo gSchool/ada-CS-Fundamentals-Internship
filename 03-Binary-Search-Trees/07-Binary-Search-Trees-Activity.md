@@ -169,7 +169,7 @@ In small groups of 3-4 students, you will work to implement inorder, preorder, a
 
 #### Exercise
 
-As a team complete the method in the replit.
+As a team complete the pre-order, in-order, and post-order methods in the replit.
 
 If you finish early, you can take an early break or get started on the project with instructor support in the main room available.
 
