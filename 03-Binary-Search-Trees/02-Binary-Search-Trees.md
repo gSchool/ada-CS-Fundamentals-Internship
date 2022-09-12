@@ -286,7 +286,7 @@ Look at the recursive solution and try to translate each step into your iterativ
 
 Still feeling stuck? Check this video walkthrough of the solution.
 
-<!-- ADD VIDEO WALKTHROUGH -->
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=7667104b-4c67-4d78-8f0d-af0e01444c23&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 ##### !end-hint 
 ##### !explanation 
 ```python
@@ -467,7 +467,7 @@ The `add` method is similar to the the `find` method - but your new node will al
 
 Still feeling stuck? Check this video walkthrough of the solution.
 
-<!-- ADD VIDEO WALKTHROUGH -->
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=c6c5c389-4ef4-48d5-bcb3-af0e0141616e&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 ##### !end-hint 
 
 ##### !explanation
@@ -646,7 +646,7 @@ Try identifying your base and recursive cases in the iterative solution you just
 
 Still feeling stuck? Check this video walkthrough of the solution.
 
-<!-- ADD VIDEO WALKTHROUGH -->
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=52a6dcd4-2dda-4a78-b7b6-af0e0142b465&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 ##### !end-hint
 ##### !explanation 
 An example of a working implementation:
@@ -961,7 +961,7 @@ Consider creating a helper function to find the minimum node in a tree.
 
 Still feeling stuck? Check this video walkthrough of the solution.
 
-<!-- ADD VIDEO WALKTHROUGH -->
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=5e4deb73-094d-4c97-b2db-af0e0148f7f9&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 ##### !end-hint
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation 
