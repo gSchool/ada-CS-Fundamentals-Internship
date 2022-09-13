@@ -38,7 +38,7 @@ All the CS Fundamentals and Career Services online sessions are recorded in Pano
 
 
 #### Office Hours
-- [Seattle Office Hours](https://calendar.google.com/calendar/embed?src=c_uaq8jpkddnnq12uof9733jhpn0%40group.calendar.google.com&ctz=America%2FLos_Angeles)
+- [Seattle Office Hours](https://calendar.google.com/calendar/embed?src=c_cm98vq3aobh8vjgsvjofbojs40%40group.calendar.google.com&ctz=America%2FLos_Angeles)
 - [Digital Office Hours](https://calendar.google.com/calendar/embed?src=c_uaq8jpkddnnq12uof9733jhpn0%40group.calendar.google.com&ctz=America%2FLos_Angeles)
 
 
