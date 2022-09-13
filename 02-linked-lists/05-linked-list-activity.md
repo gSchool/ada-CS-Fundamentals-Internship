@@ -158,11 +158,9 @@ Why linked lists?
 
 Together as a class, we will work through a livecode writing a method to rotate a linked list.
 
-- [Activity Replit](https://replit.com/@adadev/linked-list-practice#README.md)
+## Activity - Group Work Linked List 
 
-## Activity - Group Work Linked List Methods
-
-After the class livecode working on rotating a linked list, we will break into groups to work on the Palindrome Linked List method.
+After the class livecode working on rotating a linked list, we will break into groups to work on a linked list interview problem.
 
 ### Getting Started
 
@@ -170,6 +168,12 @@ In small groups of 3-4, **one student** will *fork* the given replit and then sh
 
 ### Exercise
 
+**Section A**
+As a team complet the `is_palindrome` function in `palindrome_linked_list.py` of the linked replit.
+- [Activity Replit](https://replit.com/@adadev/linked-list-practice-section-a)
+
+**Section B**
 As a team complete the `has_cycle` function in `cycle_linked_list.py` of the linked replit.
+- [Activity Replit](https://replit.com/@adadev/linked-list-practice-section-b)
 
 If you finish early, you can take an early break or work on the project, with instructor support available.
