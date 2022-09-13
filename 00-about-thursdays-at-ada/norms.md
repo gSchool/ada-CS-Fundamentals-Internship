@@ -5,7 +5,7 @@
   * We understand that sometimes things come up and external circumstances may cause you to miss part of or the entirety of a session. If you need to miss a CS Fundamentals or Career Services session, please send an email to [absent_internship@adadevelopersacademy.org
   ](mailto:absent_internship@adadevelopersacademy.org
   ) in advance when possible.
-  * Up to two excused absences are permitted throughout the course of Thursdays at Ada. This is across both career developement and CS Fundamentals sessions.
+  * Up to two excused absences are permitted throughout the course of Thursdays at Ada. This is across both Career Development and CS Fundamentals sessions.
 * CS Fundamentals assignments are a required part of your continuing education and graduation requirements. 
   * **You need to complete 80% of all assigned work for CS Fundamentals**. 
   * New topics and problem sets are released two weeks before they are due
