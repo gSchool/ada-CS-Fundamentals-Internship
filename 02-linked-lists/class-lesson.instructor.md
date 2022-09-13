@@ -11,9 +11,16 @@ We want students to:
   - Manipulating them to add and remove nodes
   - Identify the time complexity of methods involving linked lists
 
-## Lesson Introduction - 10 minutes
+## Lesson Introduction - 30 minutes
 
-Start off the lesson by welcoming students to the class and note attendance. You can use the Airtable to record attendance The [C16 Airtable](https://airtable.com/appkfPQ769uxQLSei/tbl6oiA8ZG1wKUonM/viwgf4wesbLFMlg1L?blocks=hide) is linked.
+Start off the lesson by welcoming students to the class and note attendance. You can use the Google Form  The [C17 Attendance Tracking](https://forms.gle/UcN9UnhMjeKve6SB6) is linked.
+
+Given that this is the first CS Fundamentals session, spend some time motivating CS Fundamentals content (how does it assist their job search and complement internship learning?) and going over logistics - attendance, feedback, learning plans, etc.
+
+## Problem Set Review - 45 mintues
+
+
+Conduct a problem set review. Students can ask general questions about lesson content as well as request review of specific problems in the problem set. 
 
 Then follow the 1st part of the [activity](./05-linked-list-activity.md) reviewing where linked lists are useful (when you need to add/remove to the front/rear of a list).  
 
@@ -30,7 +37,7 @@ Remember to:
 - Cause a bug, and try to promote student ideas to fix it.  
 - Model how to use the tests and print statements.
 
-## Coding Activity - 60 minutes
+## Coding Activity - 40 minutes
 
 Break students into breakout rooms to practice the replit. Optionally you can complete one exercise as a class before breaking the remainder into groups.
 
@@ -40,7 +47,7 @@ Iterate through the breakout rooms answering questions as you go.
 
 You can find a solution in [Chris' Replit](https://replit.com/@ChrisMcAnally/List-Practice-Solution#).
 
-*Code Snippet: Merge Sorted Lists*
+*Code Snippet: is_palindrome*
 ```py
 from typing import Optional
 
@@ -116,7 +123,6 @@ def rotate_list(head: ListNode, k: int) -> ListNode:
 
     return head
 ```
-
 ### !callout-secondary
 
 ## This isn't efficient
@@ -124,4 +130,27 @@ def rotate_list(head: ListNode, k: int) -> ListNode:
 This is **not** an efficient solution.  To do this more efficiently (not O(nk) time), we would potentially need to transform this into a doubly linked list or copy it into an array, or calculate the length of the list and a way to rotate in reverse to get a similar outcome.
 
 ### !end-callout
+
+
+*Code Snippet: Has Cycle*
+```py
+def has_cycle(head: Optional[ListNode]) -> bool:
+    if not head:
+        return False
+
+    current = head
+    trailing = head
+
+    while current:
+        current = current.next
+        if current:
+            current = current.next
+        trailing = trailing.next
+
+        if current and current == trailing:
+            return True
+    return False
+
+```
+
 
