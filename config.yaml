@@ -100,15 +100,19 @@ Standards:
       -
         Type: Lesson
         UID: 43ec38b5-3ce1-4882-b709-ca99d4b702c1
-        Path: /08-graphs/graphs.md
+        Path: /08-graphs/01-graphs.md
+      -
+        Type: Lesson
+        UID: 03e6f633-d414-4277-bcf3-9cd40eb766ce
+        Path: /08-graphs/02-graphs-algorithms.md
+      -
+        Type: Lesson
+        UID: 03e6f633-d414-4277-bcf3-9cd40eb766ce
+        Path: /08-graphs/03-graphs-resources.md
       -
         Type: Checkpoint
         UID: 8f80f1c3-71f9-42c7-b658-9720f6e3f5b1
-        Path: /08-graphs/graphs.checkpoint.md
-      -
-        Type: Lesson
-        UID: f0e4986d-dc1b-441d-8236-4c4de94c4422
-        Path: /08-graphs/dijskstra.md   
+        Path: /08-graphs/04-graphs.checkpoint.md 
   -
     Title: Algorithms
     Description: Divide & Conquer, Greedy and Dynamic Programming
