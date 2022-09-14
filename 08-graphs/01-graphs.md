@@ -22,6 +22,11 @@ Graphs are a linked abstract data structure in computer science represented by a
 
 Another difference between graphs and linked lists and binary search trees is that graphs do not have a set 'start' node. When we traverse a list, we always start at the `head` node. When we traverse a binary search tree, we always start at the `root` node. With a graph traversals can start and end at any node in the data structure.
 
+We may think of nodes in a graph as representing some chosen entity and edges in the graphs as representing relationships between those entities. Graphs lend themselves naturally to problems like finding the cheapest way to visit all the cities below.
+
+Each city is a node in the graph. The edges represent flights between those cities.
+
+
 Naturally graphs can be used to solve problems like finding the cheapest way to visit all the cities below.
 
 ![Graphs Demo 1](images/graphs1.png)
