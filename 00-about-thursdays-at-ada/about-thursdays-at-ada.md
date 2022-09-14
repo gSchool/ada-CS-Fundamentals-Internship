@@ -10,7 +10,7 @@ In Computer Science fundamentals students learn the following concepts and data 
 
 ### Reverse Classroom
 
-CS Fundamentals is taught in a [flipped-classroom](https://omerad.msu.edu/index.php?option=com_content&view=article&id=162:what-why-and-how-to-implement-a-flipped-classroom-model&catid=27:teaching) style.  Students are assigned a week prior to review a markdown lesson with accompanying video lesson and slides.  Then in class or online session students ask questions review concepts and work on exercises and .  Students are also given time to work toward a weekly programming project.
+CS Fundamentals is taught in a [flipped-classroom](https://omerad.msu.edu/index.php?option=com_content&view=article&id=162:what-why-and-how-to-implement-a-flipped-classroom-model&catid=27:teaching) style. Students are assigned a week prior to review a markdown lesson with accompanying video lesson and slides. In class students are expected to ask questions, review concepts, and work on exercises in groups. Students are also given time to engage in a mock interview with a peer.
 
 ### CS Fun Recorded Sessions
 
@@ -38,7 +38,7 @@ All the CS Fundamentals and Career Services online sessions are recorded in Pano
 
 
 #### Office Hours
-- [Seattle Office Hours](https://calendar.google.com/calendar/embed?src=c_uaq8jpkddnnq12uof9733jhpn0%40group.calendar.google.com&ctz=America%2FLos_Angeles)
+- [Seattle Office Hours](https://calendar.google.com/calendar/embed?src=c_cm98vq3aobh8vjgsvjofbojs40%40group.calendar.google.com&ctz=America%2FLos_Angeles)
 - [Digital Office Hours](https://calendar.google.com/calendar/embed?src=c_uaq8jpkddnnq12uof9733jhpn0%40group.calendar.google.com&ctz=America%2FLos_Angeles)
 
 
