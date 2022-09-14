@@ -91,66 +91,6 @@ Standards:
         UID: 06dea201-6230-4967-b98f-2403ab11479a
         Path: /03-Binary-Search-Trees/07-Binary-Search-Trees-Activity.md
   -
-    Title: Stacks And Queues
-    Description: Stacks And Queues
-    UID: 48065b1f-127a-4434-8029-d3e8f2098694
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
-      -
-        Type: Lesson
-        UID: 4710249d-f9f4-4943-ac42-7688a34232b3
-        Path: /04-Stacks-And-Queues/01-stacks-and-queues.md
-      -
-        Type: Checkpoint
-        UID: 13fd1a26-237c-4d3c-884d-575408019668
-        Path: /04-Stacks-And-Queues/02-stacks-and-queues-checkpoint.md
-  -
-    Title: Hash Tables
-    Description: How hashes work
-    UID: 0ae273c2-90b1-4ec0-9738-1296f9ccfe08
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
-      -
-        Type: Lesson
-        UID: b1b69d98-9fb4-4b91-9eb1-2cfbcf4d1046
-        Path: /05-hash-tables/01-hash-tables.md
-      -
-        Type: Checkpoint
-        UID: a39c4928-599f-43b9-9b01-9637439502bf
-        Path: /05-hash-tables/02-hash-table-checkpoint.md      
-  -
-    Title: Heaps
-    Description: An alternative binary tree
-    UID: 544bdf6a-3e48-48e6-8434-414e21b26fd7
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
-      -
-        Type: Lesson
-        UID: 4a7e9b34-203d-44c5-ae25-86f815f85576
-        Path: /06-heaps/01-heaps.md
-      -
-        Type: Checkpoint
-        UID: 824d3954-8e7f-472e-9878-426197b86f6f
-        Path: /06-heaps/02-heaps-exercise-checkpoint.md
-  -
-    Title: Algorithms
-    Description: Divide & Conquer, Greedy and Dynamic Programming
-    UID: ccdccab2-b7f3-42d8-977d-955a58ce9d05
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
-      -
-        Type: Lesson
-        UID: a76dfc02-3b54-459c-bf72-66a072b26119
-        Path: /07-algorithms/algorithms.md
-      -
-        Type: Checkpoint
-        UID: 92514af3-c487-40cb-acbc-8b62d864be82
-        Path: /07-algorithms/algorithms-checkpoint.md
-  -
     Title: Graphs
     Description: Graph Data Structures & Algorithms
     UID: b0d74464-2678-44a8-a4ff-dc74350e7114
@@ -168,5 +108,20 @@ Standards:
       -
         Type: Lesson
         UID: f0e4986d-dc1b-441d-8236-4c4de94c4422
-        Path: /08-graphs/dijskstra.md
-  
+        Path: /08-graphs/dijskstra.md   
+  -
+    Title: Algorithms
+    Description: Divide & Conquer, Greedy and Dynamic Programming
+    UID: ccdccab2-b7f3-42d8-977d-955a58ce9d05
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: a76dfc02-3b54-459c-bf72-66a072b26119
+        Path: /07-algorithms/algorithms.md
+      -
+        Type: Checkpoint
+        UID: 92514af3-c487-40cb-acbc-8b62d864be82
+        Path: /07-algorithms/algorithms-checkpoint.md
+
