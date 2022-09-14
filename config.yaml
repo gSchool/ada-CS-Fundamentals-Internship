@@ -8,9 +8,17 @@ Standards:
       - success criteria
     ContentFiles:
       -
+        Type: Instructor
+        UID: 560d5d4e-4c3d-438b-8b52-7bbb2b209d4c
+        Path: /00-about-thursdays-at-ada/thursdays-at-ada.instructor.md
+      -
         Type: Lesson
         UID: bcc6309e-3453-4aea-9b22-ef8e09c2b09e
         Path: /00-about-thursdays-at-ada/norms.md
+      -
+        Type: Lesson
+        UID: 0d492a6b-c9d8-492d-910e-219ff5ea80ae
+        Path: /00-about-thursdays-at-ada/about-thursdays-at-ada.md
   -
   
     Title: Linked Lists
@@ -100,15 +108,19 @@ Standards:
       -
         Type: Lesson
         UID: 43ec38b5-3ce1-4882-b709-ca99d4b702c1
-        Path: /08-graphs/graphs.md
-      -
-        Type: Checkpoint
-        UID: 8f80f1c3-71f9-42c7-b658-9720f6e3f5b1
-        Path: /08-graphs/graphs.checkpoint.md
+        Path: /08-graphs/01-graphs.md
       -
         Type: Lesson
-        UID: f0e4986d-dc1b-441d-8236-4c4de94c4422
-        Path: /08-graphs/dijskstra.md   
+        UID: ded0323a-9111-4ec9-984f-999abf6a0028
+        Path: /08-graphs/02-graphs-algorithms.md
+      -
+        Type: Lesson
+        UID: 8f80f1c3-71f9-42c7-b658-9720f6e3f5b1
+        Path: /08-graphs/03-graphs-resources.md
+      -
+        Type: Checkpoint
+        UID: 69125c14-dc13-4099-a556-bc5c360fcf19
+        Path: /08-graphs/04-graphs.checkpoint.md
   -
     Title: Algorithms
     Description: Divide & Conquer, Greedy and Dynamic Programming
