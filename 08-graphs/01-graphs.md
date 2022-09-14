@@ -26,9 +26,6 @@ We may think of nodes in a graph as representing some chosen entity and edges in
 
 Each city is a node in the graph. The edges represent flights between those cities.
 
-
-Naturally graphs can be used to solve problems like finding the cheapest way to visit all the cities below.
-
 ![Graphs Demo 1](images/graphs1.png)
 
 They can also be used to solve problems like this.  Fairaday Academy is planning to host exams.  They have a number of classes and a number of students.  However they want to schedule exams in such a manner that no student is scheduled to take two exams a the same time.  There are `m` exam slots.
