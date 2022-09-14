@@ -18,7 +18,11 @@ By the end of this lesson we should be able to:
 
 ## Introduction
 
-Graphs are a data structure in computer science represented by a set of nodes connected by what are called edges.  Naturally graphs can be used to solve problems like finding the cheapest way to visit all the cities below.
+Graphs are a linked abstract data structure in computer science represented by a set of nodes connected by what are called edges. Like binary search trees, graphs are a non-linear data structure. Unlike binary search trees where each node can be connected to at most three other nodes (its parent node and at most two children), in a graph each node can be connected to any number of nodes. 
+
+Another difference between graphs and linked lists and binary search trees is that graphs do not have a set 'start' node. When we traverse a list, we always start at the `head` node. When we traverse a binary search tree, we always start at the `root` node. With a graph traversals can start and end at any node in the data structure.
+
+Naturally graphs can be used to solve problems like finding the cheapest way to visit all the cities below.
 
 ![Graphs Demo 1](images/graphs1.png)
 
