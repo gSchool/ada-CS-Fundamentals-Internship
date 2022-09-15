@@ -37,15 +37,34 @@ In the example above, each node represents a different course at Fairaday Academ
 
 Many, many problems can be represented by graphs even those not involving geographic or navigational problems.  Studying graph problems gives us another way to solve a broad sector of difficult problems.
 
+### Directed vs Undirected Graphs
+
+Graphs can be _directed_ or _undirected_.
+
 **Directed Graph**
+
+In a directed graph, each edge is unidirectional. For any two nodes A and B, an edge from node A to B does not imply that there is an edge going from node B to node A.
+
+As depicted in the example graph below, we use arrows to depict the edges of directed graphs.
 
 ![Example Directed Graph](images/directed-graph.png)
 
-On the other hand, in an undirected graph, each edge is bidirectional.  In other words in the example graph below you can travel from Ada to Babbage and from Babbage to Ada.
+Directed graphs can be useful to represent one-way relationships. For example, imagine the graph below depicts available flights for an airline. We can see that is a flight available from Mexico City to Lima, but there is no available flight from Lima back to Mexico City. 
+
+Directed graphs can still show bidirectional relationships. For example, the graph also shows that there is a flight from Mexico City to Paris and back from Paris to Mexico City. 
+
+<!-- Add in diagram here -->
 
 **Undirected Graph**
 
+On the other hand, in an undirected graph, every edge is bidirectional. In other words, if we can travel from node A to node B, we can assume that we can also travel from node B to node A. 
+
+Undirected graphs use lines without arrows to depict edges between nodes. In the example graph below, the connection between Ada shows that we cna travel from Ada to Babbage and from Babbage back to Ada.
+
 ![Example Undirected Graph](images/undirected-graph.png)
+
+
+### Weighted vs Unweighted Graphs
 
 Graphs can also be either _weighted graphs_ or _unweighted graphs_.  In a weighted graph, each edge is assigned a numeric cost or weight.  A weighted graph can either be directed or undirected.  
 
