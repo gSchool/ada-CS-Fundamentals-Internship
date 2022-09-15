@@ -18,25 +18,28 @@ By the end of this lesson we should be able to:
 
 ## Introduction
 
-Graphs are a linked abstract data structure in computer science represented by a set of nodes connected by what are called edges. Like binary search trees, graphs are a non-linear data structure. Unlike binary search trees where each node can be connected to at most three other nodes (its parent node and at most two children), in a graph each node can be connected to any number of nodes. 
+Graphs are a linked abstract data structure in computer science represented by a set of _nodes_ connected by what are called _edges_. Like binary search trees, graphs are a non-linear data structure. Unlike binary search trees where each node can have an edge to a most two other child nodes, in a graph each node can be connected to any number of nodes. Not every node in the graph has to have the same number of edges.
 
-Another difference between graphs and linked lists and binary search trees is that graphs do not have a set 'start' node. When we traverse a list, we always start at the `head` node. When we traverse a binary search tree, we always start at the `root` node. With a graph traversals can start and end at any node in the data structure.
+Another change with graphs is that graphs do not have a set 'start' node. When we traverse a list, we always start at the `head` node. When we traverse a binary search tree, we always start at the `root` node. With a graph traversals can start and end at any node in the data structure.
 
 We may think of nodes in a graph as representing some chosen entity and edges in the graphs as representing relationships between those entities. Graphs lend themselves naturally to problems like finding the cheapest way to visit all the cities below.
 
-Each city is a node in the graph. The edges represent flights between those cities.
+In the graph below, each node represents a city. The edges represent flights between those cities. We can traverse different paths along the graph to search for the cheapest flight from City A to City B. 
 
-![Graphs Demo 1](images/graphs1.png)
+![flight paths between cities graph](images/graphs1.png)
 
-They can also be used to solve problems like this.  Fairaday Academy is planning to host exams.  They have a number of classes and a number of students.  However they want to schedule exams in such a manner that no student is scheduled to take two exams a the same time.  There are `m` exam slots.
+
+They can also be used to solve problems like exam or class scheduling. For example, say Fairaday Academy is planning to host exams. They have a number of classes and a number of students.  However they want to schedule exams in such a manner that no student is scheduled to take two exams a the same time.  There are `m` exam slots.
 
 ![Student Exam Graph Example](images/graphs2.png)
 
-In the example above, each course is represented by nodes, and students which take both courses represent an edge between two nodes.  To solve the problem you would look for a way to assign courses to slots which are not directly connected by an edge.  Many many problems can be represented by graphs even those not involving geographic or navigational problems.  Studying graph problems gives us another way to solve a broad sector of difficult problems.
+In the example above, each node represents a different course at Fairaday Academy. The edges represent a student taking both courses linked by the edge. To solve the problem, we would look for a way to assign courses to exam slots which are not directly connected by an edge.  
 
-## Graph Description
+Many, many problems can be represented by graphs even those not involving geographic or navigational problems.  Studying graph problems gives us another way to solve a broad sector of difficult problems.
 
-A graph is a data structure in computer science, consisting of a finite collection of _nodes_, also called _verticies_, and a collection of connections between nodes known as _edges_.  A graph can be either a _directed graph_, or an _undirected graph_.  In a directed graph, edges are not bidirectional.  So in the example below you travel from node A to node B, but not from node B to node A.
+## Graph Definition
+
+A graph is a data structure consisting of a finite collection of _nodes_, also called _vertices_, and a collection of connections between nodes known as _edges_.  A graph can be either a _directed graph_, or an _undirected graph_.  In a directed graph, edges are not bidirectional.  So in the example below you travel from node A to node B, but not from node B to node A.
 
 **Directed Graph**
 
