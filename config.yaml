@@ -8,9 +8,17 @@ Standards:
       - success criteria
     ContentFiles:
       -
+        Type: Instructor
+        UID: 560d5d4e-4c3d-438b-8b52-7bbb2b209d4c
+        Path: /00-about-thursdays-at-ada/thursdays-at-ada.instructor.md
+      -
         Type: Lesson
         UID: bcc6309e-3453-4aea-9b22-ef8e09c2b09e
         Path: /00-about-thursdays-at-ada/norms.md
+      -
+        Type: Lesson
+        UID: 0d492a6b-c9d8-492d-910e-219ff5ea80ae
+        Path: /00-about-thursdays-at-ada/about-thursdays-at-ada.md
   -
   
     Title: Linked Lists
