@@ -88,7 +88,7 @@ We can see that it costs more travel from Seattle to Beijing directly than if we
 
 ## How To Represent A Graph
 
-As stated above we have already worked with graphs before.  With both binary search trees & linked lists we created a node class and wrote traversals traveling from one node to the next.  An example `TreeNode` class is listed below.
+As called out above, we have already worked with graphs before.  With both binary search trees and linked lists we created a node class with pointers to represent the edges from one node to the next. An example `TreeNode` class is listed below.
 
 ```python
 class TreeNode:
@@ -100,7 +100,9 @@ class TreeNode:
       self.left = None
 ```
 
-In our methods we traversed the structure adding and removing elements by writing either iterative or recursive methods which jumped from one node to the next following the links between them.  We could write Node class for our graph algorithms like the example below.  In this example we have a potential `GraphNode`.  
+In our methods we traversed the structure by writing either iterative or recursive methods which jumped from one node to the next following the links between them using the pointers.
+
+We could represent a graph in a similar way. For example, we could implement a `GraphNode` class as follows:
 
 ```python
 class GraphNode:
@@ -117,7 +119,13 @@ class GraphNode:
       self.edges.push(other_node)
 ```
 
-While this can work it leaves us with a problem.  Unlike a tree or a linked list, there is no starting node for a graph.  So instead we would need another way to store our graph, which provides a method to start with any node.
+Since each node can have any number of edges, we can represent the edges as a list of other `GraphNode` instances.
+
+To add an edge between two nodes, we can use the `add_connection` method to push node B onto node A's list of edges.
+
+While this could work, it leaves us with a problem. With linked lists and binary search trees, we created a second class in addition to the node class to represent the overall data structure, for example the `Tree` class, which stored the node at which we would start any traversal.  
+
+There is no starting node for a graph. This makes it difficult to follow the same pattern of setting up a `Graph` class that we have used for linked lists and binary search trees. Instead, we need another way to store our graph, which provides an easy way for us to start with any node.
 
 ### List of Edges
 
