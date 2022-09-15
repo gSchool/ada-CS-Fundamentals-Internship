@@ -180,7 +180,7 @@ adjacency_list_with_dict = {
 This representation provides similar benefits to using an array for an adjacency list, but provides us more flexibility with keys.  We no longer need numeric ids for our nodes and the ids do not need to be consecutive.  For example, in the adjacency matrix and list above, there was no node 0, but we maintained space for a node with that id.
 
 
-## Graph Definition
+## Summary
 
 A graph is a data structure consisting of a finite collection of _nodes_, also called _vertices_, and a collection of connections between nodes known as _edges_.  A graph can be either a _directed graph_, or an _undirected graph_.  In a directed graph, edges are not bidirectional.  So in the example below you travel from node A to node B, but not from node B to node A.
 
