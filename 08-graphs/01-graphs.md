@@ -129,7 +129,7 @@ There is no starting node for a graph. This makes it difficult to follow the sam
 
 ### List of Edges
 
-The most basic way to store a graph is simply to maintain a list of edges.  For example for the graph with numbers representing the nodes.
+The most basic way to store a graph is simply to maintain a list of edges for each node.  For example for the graph with numbers representing the nodes.
 
 ![Example graph for an edge list](images/graph-edge-list.png)
 
@@ -140,6 +140,13 @@ sample_graph = [
         [1, 2], [1, 3], [3, 4]
     ]
 ```
+<!-- Insert video exemplifying how we draw the graph using this representation? -->
+
+In the above representation, the graph as a whole is represented by a list. Each element of that list is another list with exactly two elements representing an edge between the two elements. 
+
+For example the list of index 0 of the outer list `[1, 2]` represents the edge between nodes 1 and 2 that we can see reflected in the diagram above.
+
+<!--- START WORK -->
 
 This representation has a couple of advantages it's simple and uses a minimum amount of space.  For a graph _G(N, E)_ where _N_ is the set of nodes and _E_ the set of edges, this representation has a space complexity of _O(E)_.
 
