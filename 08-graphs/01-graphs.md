@@ -18,9 +18,9 @@ By the end of this lesson we should be able to:
 
 ## Introduction
 
-Graphs are a linked abstract data structure in computer science represented by a set of _nodes_ connected by what are called _edges_. Like binary search trees, graphs are a non-linear data structure. Unlike binary search trees where each node can have an edge to a most two other child nodes, in a graph each node can be connected to any number of nodes. Not every node in the graph has to have the same number of edges.
+Graphs are a linked abstract data structure in computer science represented by a set of _nodes_ connected by what are called _edges_. Like binary search trees, graphs are a non-linear data structure. However, graphs are more general than linked lists or binary search trees. Unlike binary search trees where each node can have an edge to a most two other child nodes, in a graph each node can be connected to any number of nodes. Not every node in the graph has to have the same number of edges.
 
-Another change with graphs is that graphs do not have a set 'start' node. When we traverse a list, we always start at the `head` node. When we traverse a binary search tree, we always start at the `root` node. With a graph traversals can start and end at any node in the data structure.
+Another difference with graphs is that graphs do not have a set 'start' node. When we traverse a list, we always start at the `head` node. When we traverse a binary search tree, we always start at the `root` node. With a graph traversals can start and end at any node in the data structure.
 
 We may think of nodes in a graph as representing some chosen entity and edges in the graphs as representing relationships between those entities. Graphs lend themselves naturally to problems like finding the cheapest way to visit all the cities below.
 
@@ -36,6 +36,14 @@ They can also be used to solve problems like exam or class scheduling. For examp
 In the example above, each node represents a different course at Fairaday Academy. The edges represent a student taking both courses linked by the edge. To solve the problem, we would look for a way to assign courses to exam slots which are not directly connected by an edge.  
 
 Many, many problems can be represented by graphs even those not involving geographic or navigational problems.  Studying graph problems gives us another way to solve a broad sector of difficult problems.
+
+### !callout-info
+
+## Binary Search Trees, Linked Lists, and Graphs
+
+Binary search trees and linked lists are actually just subtypes of graphs! They are both collections of nodes with edges between them. There are just more specifications about the number and direction of edges allowed to be connected to a single node than there are with a general graph data strucutre.
+
+### !end-callout
 
 ### Directed vs Undirected Graphs
 
@@ -70,9 +78,13 @@ Graphs can also be either _weighted graphs_ or _unweighted graphs_.  In a weight
 
 **Weighted & Undirected Graph**
 
-![Example Weighted Graph](images/weighted-graph.png)
+![Example Weighted and Undirected Graph](images/weighted-graph.png)
 
-As you may have noted, we have **already** worked with graphs before.  Both Linked Lists & Binary Search Trees are specific types of graphs.  In this lesson we will explore more generic graph algorithms and look at a few classic problems.
+Weighted graphs can be useful for assigning a cost to taking one path from a node over another. For example, in the graph below, the weight associated with each edge is the cost of a flight from one city to another. 
+
+We can see that it costs more travel from Seattle to Beijing directly than if we first travel from Seattle to Nagasaki and then from Nagasaki to Beijing. 
+
+<!-- Insert diagram here -->
 
 ## How To Represent A Graph
 
