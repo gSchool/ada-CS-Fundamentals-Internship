@@ -156,6 +156,8 @@ Other implementations, such as the adjacency matrix we will look at next, can im
 
 ### Adjacency Matrix
 
+<!-- Insert video to explain adjacency matrices? -->
+
 Let's look at the same graph again.  Instead of maintaining a list of edges we could instead create a 2-dimensional matrix with _N_ rows and _N_ columns where _N_ is the number of nodes in the matrix. Each row-column intersection indicates whether an edge exists between two nodes.
 
 ![Example graph for an edge list](images/graph-edge-list.png)
@@ -176,9 +178,40 @@ In Python, the same adjacency matrix would be represented as:
         [False, False, False, True, False]
     ]
 ```
-<!-- Insert video to explain adjacency matrices? -->
 
-Notice a couple of things:
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: paragraph
+* id: 1fabf01a-31a0-40ed-949f-d505768e0d1e
+* title: In an adjacency matrix `adj_matrix`, what would a value of `False` for `adj_matrix[0][0]` indicate?
+* points: 1
+
+##### !question
+
+In an adjacency matrix `adj_matrix`, what would a value of `False` for `adj_matrix[0][0]` indicate?
+
+##### !end-question
+
+##### !placeholder
+
+##### !end-placeholder
+
+##### !explanation 
+
+The 0th node in the graph represented by `adj_matrix` does not have an edge with itself. 
+
+##### !end-explanation
+
+### !end-challenge
+
+
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+We can notice a couple of things about adjacency matrices:
 
 
 - Unless a node has an edge with itself the diagonal from [0][0] to [n-1][n-1] will be `False`
