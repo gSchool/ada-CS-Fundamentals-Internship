@@ -169,6 +169,7 @@ Below is an example matrix for the above graph:
 In the adjacency matrix above, if two nodes matched by the row-column intersection share an edge, that value in the matrix is `True`.  If they do not share an edge, the value is `False`.  
 
 In Python, the same adjacency matrix would be represented as:
+
 ```py
     adj_matrix = [
         [False, False, False, False, False],
@@ -178,6 +179,10 @@ In Python, the same adjacency matrix would be represented as:
         [False, False, False, True, False]
     ]
 ```
+
+With an adjacency matrix, we take advantage of list indices and use them to represent the nodes in the graph. For example, in the above graph, the `True` value at `adj_matrix[1][2]` (row index 1 and column index 2) indicates that there is an edge between node 1 and node 2. 
+
+Notice that this means that each node in an adjacency matrix is represented by an integer. However, graph nodes often need to encapsulate more information than just an integer. For example, if each node in the graph represented a city, we may want the node to store the city name. As a result, when we use an adjacency matrix to represent a graph, we often need some way to convert or assign each node in the graph to a number. How we encapsulate or convert this data is beyond the scope of this class, but we encourage you to follow your curiosity if this topic interests you. 
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
