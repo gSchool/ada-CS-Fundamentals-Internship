@@ -250,9 +250,7 @@ In an undirected graph, if `adj_matrix[1][2]` is `True`, what does that imply ab
 ##### !end-hint 
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation 
-If the graph is undirected, the entries across the central diagonal will be the same. 
-    - If `adj_matrix[1][2]` is `True`, then `adj_matrix[2][1]` must also be `True`
-    - Conversely, if `adj_matrix[1][2]` is `False`, then `adj_matrix[2][1] ` must also be `False`
+If the graph is undirected, the entries across the central diagonal will be the same. That is to say, if `adj_matrix[1][2]` is `True`, then `adj_matrix[2][1]` must also be `True`. Conversely, if `adj_matrix[1][2]` is `False`, then `adj_matrix[2][1] ` must also be `False`
 ##### !end-explanation
 
 ### !end-challenge
@@ -264,7 +262,7 @@ Based upon our observations from the above questions, we can notice a couple of 
 - Unless a node has an edge with itself the diagonal from [0][0] to [n-1][n-1] will be `False`
 - If the graph is undirected the, entries across the central diagonal will be mirror images
   - if (1, 2) is `True`, then (2, 1) must also be `True`
-- We use the indices each row  would need some way to convert a node in the graph to a number
+- We need some way to convert a node in the graph to an integer
 
 #### Adjacency Matrix Big O
 
