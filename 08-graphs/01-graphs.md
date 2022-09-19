@@ -278,7 +278,7 @@ In the example above, we used a matrix of booleans where true indicates an exist
 
 ### Adjacency List
 
-An Adjacency List provides a bit of a middle ground between a list of edges and an adjacency matrix.  In an adjacency list, you have an array with each index representing a node and the content an unordered list of neighboring nodes.  The list can be an array or a linked list.
+An adjacency list provides a bit of a middle ground between a list of edges and an adjacency matrix.  Like an adjacency matrix, an adjacency list is a list of lists where each index of the outer list represents a node. However, the value at each index is an unordered list of neighboring nodes. The adjacency list can be an array or a linked list.
 
 ![Adjacency List Example](images/graph-adjacency-list.png)
 
