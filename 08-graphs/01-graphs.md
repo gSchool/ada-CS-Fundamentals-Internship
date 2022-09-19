@@ -146,6 +146,8 @@ In the above representation, the graph as a whole is represented by a list. Each
 
 For example the list of index 0 of the outer list `[1, 2]` represents the edge between nodes 1 and 2 that we can see reflected in the diagram above.
 
+#### List of Edges Big O
+
 This representation has a couple of advantages it's simple and uses a minimum amount of space.  For a graph _G(N, E)_ where _N_ is the set of nodes and _E_ the set of edges, this representation has a space complexity of _O(E)_.
 
 It does have a major downside: to find out if any particular pair of nodes are connected by an edge, you must traverse the entire list.  This means that the time complexity to find out of any two nodes are connected is _O(E)_ as well.  
@@ -258,13 +260,13 @@ If the graph is undirected, the entries across the central diagonal will be the 
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-We can notice a couple of things about adjacency matrices:
-
-
+Based upon our observations from the above questions, we can notice a couple of things about adjacency matrices:
 - Unless a node has an edge with itself the diagonal from [0][0] to [n-1][n-1] will be `False`
 - If the graph is undirected the, entries across the central diagonal will be mirror images
   - if (1, 2) is `True`, then (2, 1) must also be `True`
 - We use the indices each row  would need some way to convert a node in the graph to a number
+
+#### Adjacency Matrix Big O
 
 For a graph _G(N, E)_, where _N_ is the number of nodes and _E_ the number of edges, this solution provides:
 
@@ -272,9 +274,9 @@ For a graph _G(N, E)_, where _N_ is the number of nodes and _E_ the number of ed
 - **O(N<sup>2</sup>)** space complexity to store this representation
 - **O(N)** time complexity for getting a list of all the neighbors of a node `n` because you need to read the entire row or column.
 
-This method provides a very fast lookup time and not terrible space complexity if the graph is a _dense graph_, in other words if there are a large number of edges compared to nodes.
+This method provides a very fast lookup time and not terrible space complexity if the graph is a _dense graph_ which is a graph where there are a large number of edges compared to nodes.
 
-In the example above we used a matrix of booleans where true indicates an existing edge and false indicates no edge exists connecting the two nodes.  You will often see this represented as a matrix of ones and zeroes where zero indicates no edge exists and 1 indicates it does.  This has the advantage of only requiring one bit per matrix cell.  There are [some strategies](https://github.com/javolio/Bitwise-Adjacency-Matrix) to use this fact to compress the space requirements.  
+In the example above, we used a matrix of booleans where true indicates an existing edge and false indicates no edge exists connecting the two nodes. You will often see this represented as a matrix of ones and zeroes where zero indicates no edge exists and 1 indicates it does.  This has the advantage of only requiring one bit per matrix cell.  There are [some strategies](https://github.com/javolio/Bitwise-Adjacency-Matrix) to use this fact to compress the space requirements.  
 
 ### Adjacency List
 
