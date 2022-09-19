@@ -193,7 +193,7 @@ Notice that this means that each node in an adjacency matrix is represented by a
 
 * type: paragraph
 * id: 1fabf01a-31a0-40ed-949f-d505768e0d1e
-* title: In an adjacency matrix `adj_matrix`, what would a value of `False` for `adj_matrix[0][0]` indicate?
+* title: What would a value of `False` for `adj_matrix[0][0]` indicate?
 * points: 1
 
 ##### !question
