@@ -257,7 +257,7 @@ Depth-First-Search has a number of applications in graph problems including:
 
 ##### !question
 
-Write a function returning a list of elements representing a depth first search of the items in `self.adjacency_dict`
+Write a function returning a list of elements representing a depth first search of the items in `self.adjacency_dict`. Please write the function iteratively, i.e. without using recursion.
 
 ##### !end-question
 
@@ -359,6 +359,118 @@ def dfs(self):
     return visited
 ```
 ### !end-explanation
+
+### !end-challenge
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 243eaf9a-e87e-48f6-bfa0-9df10c5b15d2
+* title: Recursive Depth First Search
+* points: 1
+
+##### !question
+
+Write a function returning a list of elements representing a depth first search of the items in `self.adjacency_dict`. Please write the function recursively.
+
+##### !end-question
+
+##### !placeholder
+
+```py
+class Graph:
+    
+    # The graph is stored in an adjacency dictionary where each key 
+    # represents an item in the graph and each value in the dictionary
+    # corresponds to a list of edges from the key
+    def __init__(self, adjacency_dict = {}):
+        self.adjacency_dict = adjacency_dict
+
+    def dfs(self):
+        pass
+```
+
+##### !end-placeholder
+
+##### !tests
+```py
+import unittest
+from main import *
+
+class TestPython1(unittest.TestCase):
+    def test_dfs(self):
+        adjacency_dict = {
+            "Seattle": ["Chicago", "Portland"],
+            "Chicago": ["Seattle", "New York"],
+            "Portland": ["Seattle", "Honolulu"],
+            "New York": ["Chicago"],
+            "Juneau": ["Honolulu"],
+            "Honolulu": ["Portland", "Juneau"]
+        }
+
+        g = Graph(adjacency_dict)
+
+        answer = ["Seattle", "Chicago", "New York", "Portland", "Honolulu", "Juneau"]
+        self.assertEqual(answer, g.dfs())
+
+    def test_dfs_empty_graph(self):
+        g = Graph()
+        self.assertEqual([], g.dfs())
+
+    def test_dfs_one_item(self):
+        adjacency_dict = {
+            "Seattle": []
+        }
+        g = Graph(adjacency_dict)
+        self.assertEqual(["Seattle"], g.dfs())
+```
+
+##### !end-tests
+
+##### !hint
+**Pseudocode**
+1. For base function:
+    1. Create empty list called `visited`
+    1. Grab the first item in the adjacency graph `first_item`
+    1. Call helper function with `visited`, `self.adjacency_dict`, and `first_item`
+    1. Return `visited`
+
+1. For helper function (takes in `visited`, `graph`, and `node`):
+    1. If `node` is not in `visited`:
+        1. Append `node` to `visited`
+        1. For each `neighbor` of the `node`:
+            1. Call helper with `visited`, `graph`, and the `neighbor`
+<br>
+What we're essentially doing here is replacing the explicit creation of a stack and taking advantage of the recursive call stack.
+
+##### !end-hint 
+
+##### !explanation
+An example of a working implementation:
+
+```python
+def dfs_helper(self, visited, graph, node):
+    if node not in visited:
+        visited.append(node)
+        for neighbor in graph[node]:
+            self.dfs_helper(visited, graph, neighbor)
+
+def dfs_recursive(self):
+    graph = self.adjacency_dict
+    if len(graph) == 0:
+        return []
+        
+    visited = []
+    first_item = list(graph.keys())[0]
+
+    self.dfs_helper(visited, graph, first_item)
+    return visited
+```
+
+##### !end-explanation 
 
 ### !end-challenge
 
