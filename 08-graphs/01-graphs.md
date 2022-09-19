@@ -156,20 +156,35 @@ Other implementations, such as the adjacency matrix we will look at next, can im
 
 ### Adjacency Matrix
 
-Lets look at the same graph again.  Instead of maintaining a list of edges we could instead create a matrix where each row-column intersection indicates a potential edge between two nodes.
+Let's look at the same graph again.  Instead of maintaining a list of edges we could instead create a 2-dimensional matrix with _N_ rows and _N_ columns where _N_ is the number of nodes in the matrix. Each row-column intersection indicates whether an edge exists between two nodes.
 
 ![Example graph for an edge list](images/graph-edge-list.png)
 
-Below is an example matrix:
+Below is an example matrix for the above graph:
 
 ![Example Adjacency matrix](images/graph-adjacency-matrix.png)
 
-In the adjacency matrix above if two nodes matched by the row-column intersection share an edge, that entry in the matrix is true.  If they do not share an edge that entry is false.  Notice a couple of things:
+In the adjacency matrix above, if two nodes matched by the row-column intersection share an edge, that value in the matrix is `True`.  If they do not share an edge, the value is `False`.  
 
-- Unless a node has an edge with itself the diagonal from [0][0] to [n-1][n-1] will be false
-- If the graph is undirected the entries across the central diagonal will be mirror images
-  - if (1, 2) is true, then (2, 1) must also be true
-- We would need some way to convert a node in the graph to a number
+In Python, the same adjacency matrix would be represented as:
+```py
+    adj_matrix = [
+        [False, False, False, False, False],
+        [False, False, True, True, False],
+        [False, True, False, False, False],
+        [False, True, False, False, True],
+        [False, False, False, True, False]
+    ]
+```
+<!-- Insert video to explain adjacency matrices? -->
+
+Notice a couple of things:
+
+
+- Unless a node has an edge with itself the diagonal from [0][0] to [n-1][n-1] will be `False`
+- If the graph is undirected the, entries across the central diagonal will be mirror images
+  - if (1, 2) is `True`, then (2, 1) must also be `True`
+- We use the indices each row  would need some way to convert a node in the graph to a number
 
 For a graph _G(N, E)_, where _N_ is the number of nodes and _E_ the number of edges, this solution provides:
 
