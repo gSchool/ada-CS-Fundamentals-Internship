@@ -199,6 +199,12 @@ In an adjacency matrix `adj_matrix`, what would a value of `False` for `adj_matr
 
 ##### !end-placeholder
 
+##### !hint
+
+The value at `adj_matrix[0][0]` indicates whether there is a node from Node 0 to Node 0.
+
+##### !end-hint
+
 ##### !explanation 
 
 The 0th node in the graph represented by `adj_matrix` does not have an edge with itself. 
@@ -207,6 +213,42 @@ The 0th node in the graph represented by `adj_matrix` does not have an edge with
 
 ### !end-challenge
 
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: paragraph
+* id: 4f55b006-9931-474c-9c13-19a7747ec68f
+* title: How could we represent an undirected graph using an adjacency matrix?
+* points: 1
+
+##### !question
+
+How could we represent an undirected graph using an adjacency matrix?
+
+##### !end-question
+
+##### !placeholder
+
+##### !end-placeholder
+
+<!-- other optional sections -->
+##### !hint 
+
+In an undirected graph, if `adj_matrix[1][2]` is `True`, what does that imply about `adj_matrix[2][1]`?
+
+##### !end-hint 
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation 
+If the graph is undirected, the entries across the central diagonal will be the same. 
+    - If `adj_matrix[1][2]` is `True`, then `adj_matrix[2][1]` must also be `True`
+    - Conversely, if `adj_matrix[1][2]` is `False`, then `adj_matrix[2][1] ` must also be `False`
+##### !end-explanation
+
+### !end-challenge
 
 
 <!-- ======================= END CHALLENGE ======================= -->
