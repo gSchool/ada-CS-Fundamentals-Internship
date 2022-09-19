@@ -298,20 +298,11 @@ adjacency_list = [
     ]
 ```
 
-#### Adjacency List Big O
-Generally adjacency lists give a good balance between time and space complexity and perform relatively well. 
-- **O(d)** lookup time to find out if any two nodes share an edge, where _d_ is the _degree_ of a node meaning the number of edges the node has
-  - The maximum value of d would be the case where a node is connected to every other node (assuming no duplicate edges) which is _N_ - 1 where _N_ is the total number of nodes in the graph.
-  - When _d_ begins to approach _N_ for the majority of nodes - in other words, when we have a dense graph - we start to see the advantages of using an adjacency matrix with O(1) lookup time over an adjacency list
-- O(2E) = **O(E)** space complexity to store this representation because each element of the array stores a list of the edges a node has
-  -  Each edge is stored twice in the case of an undirected graph
-- **O(1)** time complexity to find all the neighbors of a particular node because it is an O(1) operation to lookup a node by its index and the list at that location is a list of all the node's neighbors.
-
-
-
 #### Adjacency List With A Dictionary
 
-The examples we used above used numeric identifications for nodes.  What if you want to use other values, like strings or objects to represent nodes.  In that case we could use a hash table (dictionary).
+The examples we used above used numeric identifications for nodes. But what if we want to use other values like strings or objects to represent nodes?  In that case we could use a hash table (dictionary).
+
+![Adjacency list diagram with a dictionary](images/graphs-adjacency-list-cities.png)
 
 ```python
 adjacency_list_with_dict = {
@@ -324,10 +315,20 @@ adjacency_list_with_dict = {
     }
 ```
 
-
-![Adjacency list diagram with a dictionary](images/graphs-adjacency-list-cities.png)
-
 This representation provides similar benefits to using an array for an adjacency list, but provides us more flexibility with keys.  We no longer need numeric ids for our nodes and the ids do not need to be consecutive.  For example, in the adjacency matrix and list above, there was no node 0, but we maintained space for a node with that id.
+
+#### Adjacency List Big O
+Generally adjacency lists give a good balance between time and space complexity and perform relatively well. 
+- **O(d)** lookup time to find out if any two nodes share an edge, where _d_ is the _degree_ of a node meaning the number of edges the node has
+  - The maximum value of d would be the case where a node is connected to every other node (assuming no duplicate edges) which is _N_ - 1 where _N_ is the total number of nodes in the graph.
+  - When _d_ begins to approach _N_ for the majority of nodes - in other words, when we have a dense graph - we start to see the advantages of using an adjacency matrix with O(1) lookup time over an adjacency list
+- O(2E) = **O(E)** space complexity to store this representation because each element of the array stores a list of the edges a node has
+  -  Each edge is stored twice in the case of an undirected graph
+- **O(1)** time complexity to find all the neighbors of a particular node because it is an O(1) operation to lookup a node by its index and the list at that location is a list of all the node's neighbors.
+
+
+
+
 
 
 ## Summary
