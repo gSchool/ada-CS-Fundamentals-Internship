@@ -24,12 +24,17 @@ Another difference with graphs is that graphs do not have a set 'start' node. Wh
 
 We may think of nodes in a graph as representing some chosen entity and edges in the graphs as representing relationships between those entities. Graphs lend themselves naturally to problems like finding the cheapest way to visit all the cities below.
 
-In the graph below, each node represents a city. The edges represent flights between those cities. We can traverse different paths along the graph to search for the cheapest flight from City A to City B. 
+In the graph below, each node represents a city. The edges represent flights between those cities. Notice each edge has a cost associated with it. We can traverse different paths along the graph to search for the cheapest flight from City A to City B. 
 
 ![flight paths between cities graph](images/graphs1.png)
 
 
-They can also be used to solve problems like exam or class scheduling. For example, say Fairaday Academy is planning to host exams. They have a number of classes and a number of students.  However they want to schedule exams in such a manner that no student is scheduled to take two exams a the same time.  There are `m` exam slots.
+In this graph, each node represents an Australian state. The edges represent whether or not it is possible to drive from one state to another. Notice that the edges in the graph don't have a cost associated with them. Additionally notice that the node reprsenting Tasmania is _unconnected_ to the rest of the graph, that is to say it does not have any edges. This is because Tasmania is an island! It's not possible to drive there from another Australian state. 
+
+![australian states graph](images/australia-graph.png)
+
+
+Graphs can also be used to solve problems like exam or class scheduling. For example, say Fairaday Academy is planning to host exams. They have a number of classes and a number of students.  However they want to schedule exams in such a manner that no student is scheduled to take two exams a the same time.  There are `m` exam slots.
 
 ![Student Exam Graph Example](images/graphs2.png)
 
@@ -315,7 +320,7 @@ adjacency_list_with_dict = {
     }
 ```
 
-This representation provides similar benefits to using an array for an adjacency list, but provides us more flexibility with keys.  We no longer need numeric ids for our nodes and the ids do not need to be consecutive.  For example, in the adjacency matrix and list above, there was no node 0, but we maintained space for a node with that id.
+This representation provides similar benefits to using an array for an adjacency list, but provides us more flexibility with keys.  We no longer need numeric IDs for our nodes and the IDs do not need to be consecutive.  For example, in the adjacency matrix and list above, there was no node 0, but we maintained space for a node with that id.
 
 #### Adjacency List Big O
 Generally adjacency lists give a good balance between time and space complexity and perform relatively well. 
@@ -324,16 +329,17 @@ Generally adjacency lists give a good balance between time and space complexity 
   - When _d_ begins to approach _N_ for the majority of nodes - in other words, when we have a dense graph - we start to see the advantages of using an adjacency matrix with O(1) lookup time over an adjacency list
 - O(2E) = **O(E)** space complexity to store this representation because each element of the array stores a list of the edges a node has
   -  Each edge is stored twice in the case of an undirected graph
-- **O(1)** time complexity to find all the neighbors of a particular node because it is an O(1) operation to lookup a node by its index and the list at that location is a list of all the node's neighbors.
-
-
-
-
-
+- **O(1)** time complexity to get all the neighbors of a particular node because it is an O(1) operation to lookup a node by its index and the list at that location is a list of all the node's neighbors.
 
 ## Summary
 
-A graph is a data structure consisting of a finite collection of _nodes_, also called _vertices_, and a collection of connections between nodes known as _edges_.  A graph can be either a _directed graph_, or an _undirected graph_.  In a directed graph, edges are not bidirectional.  So in the example below you travel from node A to node B, but not from node B to node A.
+A graph is a data structure consisting of a finite collection of _nodes_, also called _vertices_, and a collection of connections between nodes known as _edges_.  A graph can be either a _directed graph_, or an _undirected graph_.  In a directed graph, edges are not bidirectional: we may be able to travel from node A to node B, but not from node B to node A. Graphs can also have _weighted_ or _unweighted_ edges. Weighteds graphs have some cost or weight assigned to each edge, making it so that the shortest, most direct path from Node A to Node B may not be the cheapest.
+
+Because graphs are non-hierarchical and do not have a set start node, it is difficult to represent graphs in the same way we usually represent linked lists and trees. Instead, there are two common methods for representing a graph data structure:
+- Adjacency matrix
+- Adjacency list
+
+An adjacency matrix has a fast lookup time of O(1) to see if two nodes are connected by an edge, but it can be relatively expensive in terms of space complexity and the time it takes to find all the neighbors of a particular node. An adjacency list, has a better balance between time and space complexity, but the lookup time of O(d) to find if two nodes share an edge can be expensive when a graph is dense.
 
 
 <!-- Diagram sources:  https://drive.google.com/file/d/1bOXvfXdWi9pkKfmWnMZd9QK4zoG930c7/view?usp=sharing -->
