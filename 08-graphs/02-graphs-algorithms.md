@@ -572,7 +572,7 @@ In the worst-case you will need to add each node to the Stack, so the space comp
 
 ## Summary
 
-In this lesson we have looked at the Graph data structure. A graph is a collection of `nodes` and the connections between nodes called `edges`. Binary search trees and linked lists are both subsets of graphs.  
+In this lesson we have looked at the Graph data structure. A graph is a collection of `nodes` and the connections between nodes are called `edges`. Binary search trees and linked lists are both subsets of graphs.  
 
 Here are some other facts about graphs:
 - A graph can have both unweighted and weighted edges.  In a weighted graph, each connection is assigned a cost or weight. 
