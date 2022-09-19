@@ -1,6 +1,6 @@
 ## Graph Algorithms
 
-There are a huge [class of problems](https://en.wikipedia.org/wiki/Category:Graph_algorithms) involving graphs.  We will look at a few as a sample.  
+There are a huge [class of algorithms](https://en.wikipedia.org/wiki/Category:Graph_algorithms) involving graphs.  We will look at two of the most common algorithms as a sample.  
 
 ### Breadth-First-Search
 
@@ -9,6 +9,14 @@ Like in a Binary Search Tree a breadth-first-search in a graph is performed with
 In breadth-first-search we start with a particular node and visit each node connected to the starting point in the graph starting with the closest node to the starting point and expanding outward.
 
 We do so by adding each of the neighbors of the starting node to a Queue and then loop through the Queue removing an element and repeating the process with the neighbors of the current node.
+
+You can see breadth-first-search animated on [HackerEarth](https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/visualize/)
+
+Breadth first search is a solution in a variety of problems including:
+
+- Finding the shortest path in a graph/maze
+- Solving puzzle games like a [Rubik's Cube](https://www.quora.com/How-can-solving-a-Rubiks-Cube-be-framed-as-a-graph-problem)
+- Checking to see if a graph is connected
 
 **Pseudocode**
 
@@ -22,15 +30,74 @@ We do so by adding each of the neighbors of the starting node to a Queue and the
     1. Loop through each of `current`'s neighbors
         1. If the neighbor is not `true` in `visited` add it to `q`
 
-You can see breadth-first-search animated on [HackerEarth](https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/visualize/)
-
-Breadth first search is a solution in a variety of problems including:
-
-- Finding the shortest path in a graph/maze
-- Solving puzzle games like a [Rubik's Cube](https://www.quora.com/How-can-solving-a-Rubiks-Cube-be-framed-as-a-graph-problem)
-- Checking to see if a graph is connected
-
 **Questions**
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 3398d942-7078-4567-9b81-67bb6c38d104
+* title: Iterative Breadth First Search
+* points: 1
+
+##### !question
+
+Write a function returning a list of elements which represent a breadth first search of the items in the `adjacency_dict`.
+
+##### !end-question
+
+##### !placeholder
+
+```py
+class Graph:
+    
+    # The graph is stored in an adjacency dictionary where each key 
+    # represents an item in the graph and each value in the dictionary
+    # corresponds to a list of edges from the key
+    def __init__(self, adjacency_dict = {}):
+        self.adjacency_dict = adjacency_dict
+
+    def bfs(self):
+        pass
+```
+
+##### !end-placeholder
+
+##### !tests
+```py
+import unittest
+from main import *
+
+class TestPython1(unittest.TestCase):
+    def test_bfs_one(self):
+        adjacency_dict = {
+            "Seattle": ["Portland", "Chicago"],
+            "Portland": ["Seattle", "Hawaii"],
+            "Chicago": ["Seattle"],
+            "Hawaii": ["Portland"]
+        }
+
+        g = Graph(adjacency_dict)
+
+        answer = ["Seattle", "Portland", "Chicago", "Hawaii"]
+        self.assertEqual(answer, g.bfs())
+
+    def test_bfs_empty_graph(self):
+        g = Graph()
+        self.assertEqual([], g.bfs())
+```
+
+##### !end-tests
+
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
