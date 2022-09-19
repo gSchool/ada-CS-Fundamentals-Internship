@@ -1,6 +1,6 @@
 ## Graph Algorithms
 
-There are a huge [class of algorithms](https://en.wikipedia.org/wiki/Category:Graph_algorithms) involving graphs.  We will look at two of the most common algorithms as a sample.  
+There are a huge [class of algorithms](https://en.wikipedia.org/wiki/Category:Graph_algorithms) involving graphs.  We will look at two of the most common graph algorithms as a sample.  
 
 ### Breadth-First-Search
 
@@ -17,18 +17,6 @@ Breadth first search is a solution in a variety of problems including:
 - Finding the shortest path in a graph/maze
 - Solving puzzle games like a [Rubik's Cube](https://www.quora.com/How-can-solving-a-Rubiks-Cube-be-framed-as-a-graph-problem)
 - Checking to see if a graph is connected
-
-**Pseudocode**
-
-1. Start with a graph adjacency list and a specific node called `start_node`
-1. Create a list of nodes called `visited` and mark each element `false`
-1. Create an empty queue `q`
-1. Add `start_node` to `q`
-1. While `q` is not empty
-    1. Remove an element from `q` and store it in `current`
-    1. Mark `current` as `true` in the list `visited`
-    1. Loop through each of `current`'s neighbors
-        1. If the neighbor is not `true` in `visited` add it to `q`
 
 **Questions**
 
@@ -92,8 +80,52 @@ class TestPython1(unittest.TestCase):
 
 ##### !end-tests
 
-<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
-<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+##### !hint
+
+**Pseudocode**
+
+1. Start by grabbing the first item in the adjacency dictionary `start_node`
+1. Create a list of nodes called `visited`
+1. Create an empty queue `q`
+1. Add `start_node` to `q` and `visited`
+1. While `q` is not empty:
+    1. Remove an element from `q` and store it in `current`
+    1. Loop through each of `current`'s neighbors:
+        1. If the neighbor is not in `visited`:
+            1. Add the neighbor to `visited`
+            1. Add the neighbor to `q`
+<br>
+Still feeling stuck? Check this video walkthrough of the solution.
+
+<!-- Insert link to video explanation here -->
+
+### !end-hint
+
+### !explanation 
+An example of a working implementation:
+
+```python
+def bfs(self):
+    graph = self.adjacency_dict
+    
+    if len(graph) == 0:
+        return []
+        
+    first_item = list(graph.keys())[0]
+    queue = [first_item]
+    visited = [first_item]
+        
+    while queue:
+        current = queue.pop(0)
+        
+        for neighbor in graph[current]:
+            if neighbor not in visited:
+                visited.append(neighbor)
+                queue.append(neighbor)
+                
+    return visited
+```
+### !end-explanation
 
 ### !end-challenge
 
