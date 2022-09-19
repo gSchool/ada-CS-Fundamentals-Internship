@@ -33,7 +33,7 @@ Breadth first search is a solution in a variety of problems including:
 
 ##### !question
 
-Write a function returning a list of elements which represent a breadth first search of the items in the `adjacency_dict`.
+Write a function returning a list of elements representing a breadth first search of the items in `self.adjacency_dict`.
 
 ##### !end-question
 
@@ -60,11 +60,11 @@ import unittest
 from main import *
 
 class TestPython1(unittest.TestCase):
-    def test_bfs_one(self):
+    def test_bfs(self):
         adjacency_dict = {
             "Seattle": ["Portland", "Chicago"],
-            "Portland": ["Seattle", "Hawaii"],
             "Chicago": ["Seattle"],
+            "Portland": ["Seattle", "Hawaii"],
             "Hawaii": ["Portland"]
         }
 
@@ -76,6 +76,13 @@ class TestPython1(unittest.TestCase):
     def test_bfs_empty_graph(self):
         g = Graph()
         self.assertEqual([], g.bfs())
+
+    def test_bfs_one_item(self):
+        adjacency_dict = {
+            "Seattle": []
+        }
+        g = Graph(adjacency_dict)
+        self.assertEqual(["Seattle"], g.dfs())
 ```
 
 ##### !end-tests
@@ -85,7 +92,7 @@ class TestPython1(unittest.TestCase):
 **Pseudocode**
 
 1. Start by grabbing the first item in the adjacency dictionary `start_node`
-1. Create a list of nodes called `visited`
+1. Create an empty list called `visited`
 1. Create an empty queue `q`
 1. Add `start_node` to `q` and `visited`
 1. While `q` is not empty:
@@ -94,6 +101,7 @@ class TestPython1(unittest.TestCase):
         1. If the neighbor is not in `visited`:
             1. Add the neighbor to `visited`
             1. Add the neighbor to `q`
+1. Return `visited`
 <br>
 Still feeling stuck? Check this video walkthrough of the solution.
 
@@ -164,9 +172,6 @@ What is the time complexity of Breadth-First-Search with N nodes and E edges.
 
 ##### !end-answer
 
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
 Since you will visit each node once, and loop through each of the edges in each node the Big-O of this algorithm is O(N + E) where `N` is the number of nodes in the graph and `E` is the number of edges since each node and each edge will be explored.
@@ -229,22 +234,135 @@ In the worst-case you will need to add each node to the Queue, so the space comp
 
 Where breadth-first-search spreads out from a starting node in order of distance from the starting node, depth first search follows each path as far as possible before backing up and following the next closest path.
 
-**Pseudocode**
+[HackerEarth](https://www.hackerearth.com/practice/algorithms/graphs/depth-first-search/visualize/) has an excellent description and visualization of the algorithm.
 
-1. Starting with a graph's adjacency list and a starting node `s`
-1. Create a Stack called `stack`
-1. Create a list of nodes called `visited` and mark each element `false`
-1. Push `s` into `stack`
-1. mark `s` as `true` in `visited`
-1. while `stack` is not empty
-    1. Remove an element from `stack` and store it in `current_node`
-    1. Loop through all the neighbors of `current_node`
-        1. If they are not marked as `true` in `visited`
-            1. Push the neighbor into `stack`
-            1. Mark the neighbor as `true` in `visited`
+Depth-First-Search has a number of applications in graph problems including:
 
+- Detecting a cycle in a graph
+- Finding a path in a maze where there is only one correct path
+- Scheduling jobs based on dependencies on other jobs
 
 **Questions**
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: ce448643-59d9-44a8-b2c6-ba4a8a2227e5
+* title: Iterative Depth First Search
+* points: 1
+
+##### !question
+
+Write a function returning a list of elements representing a depth first search of the items in `self.adjacency_dict`
+
+##### !end-question
+
+##### !placeholder
+
+```py
+class Graph:
+    
+    # The graph is stored in an adjacency dictionary where each key 
+    # represents an item in the graph and each value in the dictionary
+    # corresponds to a list of edges from the key
+    def __init__(self, adjacency_dict = {}):
+        self.adjacency_dict = adjacency_dict
+
+    def dfs(self):
+        pass
+```
+
+##### !end-placeholder
+
+##### !tests
+
+```py
+import unittest
+from main import *
+
+class TestPython1(unittest.TestCase):
+    def test_dfs(self):
+        adjacency_dict = {
+            "Seattle": ["Chicago", "Portland"],
+            "Chicago": ["Seattle"],
+            "Portland": ["Seattle", "Hawaii"],
+            "Hawaii": ["Portland", "Juneau"],
+            "Juneau": ["Hawaii"]
+        }
+
+        g = Graph(adjacency_dict)
+
+        answer = ["Seattle", "Portland", "Hawaii", "Juneau", "Chicago"]
+        self.assertEqual(answer, g.dfs())
+
+    def test_dfs_empty_graph(self):
+        g = Graph()
+        self.assertEqual([], g.dfs())
+
+    def test_dfs_one_item(self):
+        adjacency_dict = {
+            "Seattle": []
+        }
+        g = Graph(adjacency_dict)
+        self.assertEqual(["Seattle"], g.dfs())
+```
+
+##### !end-tests
+
+### !hint
+**Pseudocode**
+
+1. Start by grabbing the first item in the adjacency dictionary `start_node`
+1. Create a Stack called `stack`
+1. Create an empty list called `visited`
+1. Push `start_node` onto `stack`
+1. while `stack` is not empty
+    1. Pop the stack and store it in `current`
+    1. Add `current` to `visited`
+    1. Loop through all the neighbors of `current`
+        1. If they are not in `visited`
+            1. Push the neighbor onto `stack`
+1. Return `visited`
+<br>
+Still feeling stuck? Check this video walkthrough of the solution.
+
+<!-- Insert link to video explanation here -->
+
+### !end-hint 
+
+### !explanation
+An example of a working implementation:
+
+```python
+def dfs(self):
+    graph = self.adjacency_dict
+    
+    if len(graph) == 0:
+        return []
+        
+    first_item = list(graph.keys())[0]
+    stack = [first_item]
+    visited = []
+
+    while stack:
+        current = stack.pop()
+        visited.append(current)
+
+        for neighbor in graph[current]:
+            if neighbor not in visited:
+                stack.append(neighbor)
+
+    return visited
+```
+### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
@@ -338,14 +456,6 @@ In the worst-case you will need to add each node to the Stack, so the space comp
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
-
-[HackerEarth](https://www.hackerearth.com/practice/algorithms/graphs/depth-first-search/visualize/) has an excellent description and visualization of the algorithm.
-
-Depth-First-Search has a number of applications in graph problems including:
-
-- Detecting a cycle in a graph
-- Finding a path in a maze where there is only one correct path
-- Scheduling jobs based on dependencies on other jobs
 
 
 ## Summary
