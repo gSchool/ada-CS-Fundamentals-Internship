@@ -62,17 +62,17 @@ As depicted in the example graph below, we use arrows to depict the edges of dir
 
 ![Example Directed Graph](images/directed-graph.png)
 
-Directed graphs can be useful to represent one-way relationships. For example, imagine the graph below depicts available flights for an airline. We can see that is a flight available from Mexico City to Lima, but there is no available flight from Lima back to Mexico City. 
+Directed graphs can be useful to represent one-way relationships. For example, imagine the graph below depicts available flights for an airline. We can see that there is a flight available from Mexico City to Lima, but there is no available flight from Lima back to Mexico City. Likewise, there is a flight from Paris to Istanbul, but no flight from Istanbul to Paris.
 
 Directed graphs can still show bidirectional relationships. For example, the graph also shows that there is a flight from Mexico City to Paris and back from Paris to Mexico City. 
 
-<!-- Add in diagram here -->
+![Example Directed Graph Airline Flights](images/directed-graph-flights.png)
 
 **Undirected Graph**
 
 On the other hand, in an undirected graph, every edge is bidirectional. In other words, if we can travel from node A to node B, we can assume that we can also travel from node B to node A. 
 
-Undirected graphs use lines without arrows to depict edges between nodes. In the example graph below, the connection between Ada shows that we cna travel from Ada to Babbage and from Babbage back to Ada.
+Undirected graphs use lines without arrows to depict edges between nodes. In the example graph below, the connection between Ada shows that we can travel from Ada to Babbage and from Babbage back to Ada.
 
 ![Example Undirected Graph](images/undirected-graph.png)
 
@@ -85,9 +85,9 @@ Graphs can also be either _weighted graphs_ or _unweighted graphs_.  In a weight
 
 ![Example Weighted and Undirected Graph](images/weighted-graph.png)
 
-Weighted graphs can be useful for assigning a cost to taking one path from a node over another. For example, in the graph below, the weight associated with each edge is the cost of a flight from one city to another. 
+Weighted graphs can be useful for assigning a cost to taking one path from a node over another. For example, in the graph below, the weight associated with each edge is the cost of the flight from City A to City B. 
 
-We can see that it costs more travel from Seattle to Beijing directly than if we first travel from Seattle to Nagasaki and then from Nagasaki to Beijing. 
+We can see that it costs more to travel from Seattle to Beijing directly ($1500) than if we first travel from Seattle to Incheon and then from Incheon to Beijing ($800 + $200 = $1000). 
 
 <!-- Insert diagram here -->
 
