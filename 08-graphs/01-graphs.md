@@ -81,15 +81,13 @@ Undirected graphs use lines without arrows to depict edges between nodes. In the
 
 Graphs can also be either _weighted graphs_ or _unweighted graphs_.  In a weighted graph, each edge is assigned a numeric cost or weight.  A weighted graph can either be directed or undirected.  
 
-**Weighted & Undirected Graph**
-
 ![Example Weighted and Undirected Graph](images/weighted-graph.png)
 
 Weighted graphs can be useful for assigning a cost to taking one path from a node over another. For example, in the graph below, the weight associated with each edge is the cost of the flight from City A to City B. 
 
 We can see that it costs more to travel from Seattle to Beijing directly ($1500) than if we first travel from Seattle to Incheon and then from Incheon to Beijing ($800 + $200 = $1000). 
 
-<!-- Insert diagram here -->
+![Example Weighted Directed Graph Airline Flights](images/weighted-graph-flights.png)
 
 ## How To Represent A Graph
 
