@@ -48,7 +48,7 @@ Many, many problems can be represented by graphs even those not involving geogra
 
 ## Binary Search Trees, Linked Lists, and Graphs
 
-Binary search trees and linked lists are actually just subtypes of graphs! They are both collections of nodes with edges between them. There are just more specifications about the number and direction of edges allowed to be connected to a single node than there are with a general graph data strucutre.
+Binary search trees and linked lists are actually just subtypes of graphs! They are both collections of nodes with edges between them. There are just more specifications about the number and direction of edges allowed to be connected to a single node than there are with a general graph data structure.
 
 ### !end-callout
 
