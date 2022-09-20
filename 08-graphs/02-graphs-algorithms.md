@@ -4,7 +4,16 @@ There are a huge [class of algorithms](https://en.wikipedia.org/wiki/Category:Gr
 
 ### Breadth-First-Search
 
-Like in a Binary Search Tree a breadth-first-search in a graph is performed with a queue.  However because a graph can, and likely will have a cycle, unlike a tree we need to keep track of the nodes we have visited.  
+Like in a binary search tree a breadth-first-search in a graph is performed with a queue.  However, unlike trees, graphs often have cycles so we will need to keep track of the nodes we have visited.
+
+### !callout-info
+
+## Cycles in Graphs
+In graph theory, a path that starts from a given node and ends at that same node is called a *cycle*. In the graph below, there is a cycle starting from node A -> node B -> node C -> node A.
+
+![graph with cycle](images/directed-graph.png)
+
+### !end-callout
 
 In breadth-first-search we start with a particular node and visit each node connected to the starting point in the graph starting with the closest node to the starting point and expanding outward.
 
@@ -159,6 +168,7 @@ What is the time complexity of Breadth-First-Search with N nodes and E edges.
 ##### !options
 
 * O(N)
+* O(N^2)
 * O(E)
 * O(NE)
 * O(N + E)
@@ -174,7 +184,9 @@ What is the time complexity of Breadth-First-Search with N nodes and E edges.
 
 ##### !explanation
 
-Since you will visit each node once, and loop through each of the edges in each node the Big-O of this algorithm is O(N + E) where `N` is the number of nodes in the graph and `E` is the number of edges since each node and each edge will be explored.
+Since we will visit each node once, and loop through each of the edges in each node the Big-O of this algorithm is O(N + E) where `N` is the number of nodes in the graph and `E` is the number of edges since each node and each edge will be explored.
+
+O(N + E) is different from O(NE) because O(NE) implies that we visit each node `E` times. On the contrary, we visit each node at most one time O(N). We examine the edges adjacent to a node only when we visit the node, so each edge is examined at most two times, once for each of the nodes to which it is connected. This gives us a Big-O of O(2E) = O(E). Put together O(N) + O(E) and we get O(N + E).
 
 ##### !end-explanation
 
