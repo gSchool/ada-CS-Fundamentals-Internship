@@ -156,15 +156,13 @@ This representation has a couple of advantages it's simple and uses a minimum am
 
 It does have a major downside: to find out if any particular pair of nodes are connected by an edge, you must traverse the entire list.  This means that the time complexity to find out of any two nodes are connected is _O(E)_ as well.  
 
-<!-- Insert video to further explain time and space complexity? -->
-
 Other implementations, such as the adjacency matrix we will look at next, can improve on this time complexity.
 
 ### Adjacency Matrix
 
-<!-- Insert video to explain adjacency matrices? -->
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=a1caaf2a-92aa-4f38-b112-af16014a7337&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
-Let's look at the same graph again.  Instead of maintaining a list of edges we could instead create a 2-dimensional matrix with _N_ rows and _N_ columns where _N_ is the number of nodes in the matrix. Each row-column intersection indicates whether an edge exists between two nodes.
+Let's look at the same graph again.  Instead of maintaining a list of edges we could instead create a 2-dimensional matrix with _N_ rows and _N_ columns where _N_ is the number of nodes in the graph. Each row-column intersection indicates whether an edge exists between two nodes.
 
 ![Example graph for an edge list](images/graph-edge-list.png)
 
