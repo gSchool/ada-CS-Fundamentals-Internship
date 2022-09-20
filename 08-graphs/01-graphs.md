@@ -132,18 +132,19 @@ There is no starting node for a graph. This makes it difficult to follow the sam
 
 ### List of Edges
 
-The most basic way to store a graph is simply to maintain a list of edges for each node.  For example for the graph with numbers representing the nodes.
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=f67555ac-7850-47a2-ab66-af16013cca1a&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
+The most basic way to store a graph is simply to maintain a list of edges for each node.  For example for the following graph that uses integers to represent each node:
 
 ![Example graph for an edge list](images/graph-edge-list.png)
 
-We could represent this graph with the following:
+We could represent the graph as a list of edges with the following:
 
 ```python
 sample_graph = [
         [1, 2], [1, 3], [3, 4]
     ]
 ```
-<!-- Insert video exemplifying how we draw the graph using this representation? -->
 
 In the above representation, the graph as a whole is represented by a list. Each element of that list is another list with exactly two elements representing an edge between the two elements. 
 
