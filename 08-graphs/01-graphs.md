@@ -20,7 +20,7 @@ By the end of this lesson we should be able to:
 
 ## Introduction
 
-Graphs are a linked abstract data structure in computer science represented by a set of _nodes_ connected by what are called _edges_. Like binary search trees, graphs are a non-linear data structure. However, graphs are more general than linked lists or binary search trees. Unlike binary search trees where each node can have an edge to a most two other child nodes, in a graph each node can be connected to any number of nodes. Not every node in the graph has to have the same number of edges.
+Graphs are a linked abstract data structure in computer science represented by a set of _nodes_ connected by what are called _edges_. Like binary search trees, graphs are a non-linear data structure. However, graphs are more general than linked lists or binary search trees. Unlike binary search trees where each node can have an edge to at most two other child nodes, in a graph each node can be connected to any number of nodes. Not every node in the graph has to have the same number of edges.
 
 Another difference with graphs is that graphs do not have a set 'start' node. When we traverse a list, we always start at the `head` node. When we traverse a binary search tree, we always start at the `root` node. With a graph traversals can start and end at any node in the data structure.
 
