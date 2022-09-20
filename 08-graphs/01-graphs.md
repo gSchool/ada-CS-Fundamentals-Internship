@@ -156,7 +156,7 @@ For example the list of index 0 of the outer list `[1, 2]` represents the edge b
 
 This representation has a couple of advantages it's simple and uses a minimum amount of space.  For a graph _G(N, E)_ where _N_ is the set of nodes and _E_ the set of edges, this representation has a space complexity of _O(E)_.
 
-It does have a major downside: to find out if any particular pair of nodes are connected by an edge, you must traverse the entire list.  This means that the time complexity to find out of any two nodes are connected is _O(E)_ as well.  
+It does have a major downside: to find out if any particular pair of nodes are connected by an edge, you must traverse the entire list.  This means that the time complexity to find out if any two nodes are connected is _O(E)_ as well.  
 
 Other implementations, such as the adjacency matrix we will look at next, can improve on this time complexity.
 
