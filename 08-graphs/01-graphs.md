@@ -2,6 +2,8 @@
 
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=09cd9474-04a2-4460-8eb8-aad8005b7065&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
+Please note that this recording is from C16 and the Graphs topic has been restructured since then. We are providing this as a resource that overviews Graphs, Breadth First Search, and Depth First Search, but it does not align perfectly with the lesson content below. There are updated mini video lessons embedded for the major subtopics at the beginning of each subtopic.
+
 ## Learning Goals
 
 By the end of this lesson we should be able to:
@@ -12,7 +14,7 @@ By the end of this lesson we should be able to:
 
 ## Video Lesson
 
-- [Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=09cd9474-04a2-4460-8eb8-aad8005b7065)
+- [C16 Video Lesson](https://adaacademy.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=09cd9474-04a2-4460-8eb8-aad8005b7065)
 - [Accompanying Slidedeck](https://docs.google.com/presentation/d/1pIAhpb0QL7Pk93P3E-jIRbboz6UPRZOnJ2eyVU1Ga3Q/edit#slide=id.p7)
 - [Exercise](https://github.com/ada-c17/Bipartition-Graph)
 
@@ -280,6 +282,9 @@ In the example above, we used a matrix of booleans where true indicates an exist
 
 ### Adjacency List
 
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=c50cc66a-5630-471c-a3b6-af16016041ae&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 An adjacency list provides a bit of a middle ground between a list of edges and an adjacency matrix.  Like an adjacency matrix, an adjacency list is a list of lists where each index of the outer list represents a node. However, the value at each index is an unordered list of neighboring nodes. The adjacency list can be an array or a linked list.
 
 We can craft an adjacency list for the same graph we've been looking at like so:
@@ -301,6 +306,7 @@ adjacency_list = [
 ```
 
 #### Adjacency List With A Dictionary
+
 
 The examples we used above used numeric identifications for nodes. But what if we want to use other values like strings or objects to represent nodes?  In that case we could use a hash table (dictionary).
 
