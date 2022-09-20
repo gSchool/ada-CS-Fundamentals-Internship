@@ -264,7 +264,7 @@ If the graph is undirected, the entries across the central diagonal will be the 
 
 Based upon our observations from the above questions, we can notice a couple of things about adjacency matrices:
 - Unless a node has an edge with itself the diagonal from [0][0] to [n-1][n-1] will be `False`
-- If the graph is undirected the, entries across the central diagonal will be mirror images
+- If the graph is undirected, the entries across the central diagonal will be mirror images
   - if (1, 2) is `True`, then (2, 1) must also be `True`
 - We need some way to convert a node in the graph to an integer
 
