@@ -249,7 +249,7 @@ In the worst-case you will need to add each node to the Queue, so the space comp
 
 ### Depth-First-Search
 
-Where breadth-first-search spreads out from a starting node in order of distance from the starting node, depth-first-search follows each path as far as possible before backing up and following the next closest path.
+Where breadth-first-search spreads out from a starting node in order of distance from the starting node, depth-first-search follows each path as far as possible before backing up and following the next closest path. For this reason we refer to depth-first-search as a _backtracking_ algorithm.
 
 **Depth First Search Pseudocode Walkthrough**
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=8e2085ff-4dd1-46aa-a961-af170141a92a&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
@@ -596,7 +596,7 @@ In the worst-case you will need to add each node to the Stack, so the space comp
 
 ## Summary
 
-Two popular graph traversal algorithms are breadth-first-search (BFS) and depth-first-search (DFS). Both algorithms will visit each node and edge in the graph, but they have different methods of performing the traversal. The difference determines which is better suited for specific purposes. 
+Two popular graph traversal algorithms are breadth-first-search (BFS) and depth-first-search (DFS). Both algorithms will visit each node and edge in the graph, but they have different methods of performing the traversal. In most cases, both BFS and DFS can be used to solve a problem. However, there are instances in which the differences in approach make one a better choice than the other. The most common use cases for each are listed below. 
 
 Breadth-first-search processes nodes by visiting all neighboring nodes before moving on to nodes that are neighbors of its neighbors and so-on.
 Depth-first-search processes nodes by following a path as deep as it can before backing up and following another path.
