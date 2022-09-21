@@ -17,7 +17,9 @@ In graph theory, a path that starts from a given node and ends at that same node
 
 In breadth-first-search we start with a particular node and visit each node connected to the starting point in the graph starting with the closest node to the starting point and expanding outward.
 
-We do so by adding each of the neighbors of the starting node to a Queue and then loop through the Queue removing an element and repeating the process with the neighbors of the current node.
+We do so by adding each of the neighbors of the starting node to a queue. Then we loop through the queue, removing the first element in the queue and adding each of its unvisited neighbors to the queue. We repeat this process until the queue is empty. 
+
+Once the queue is empty we know we have visited all nodes in the graph that are possible to reach from the starting node.
 
 **Breadth First Search Pseudocode Walkthrough**
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=493ecb29-6431-4e61-b918-af170141a8da&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
@@ -55,8 +57,8 @@ Write a function returning a list of elements representing a breadth first searc
 class Graph:
     
     # The graph is stored in an adjacency dictionary where each key 
-    # represents an item in the graph and each value in the dictionary
-    # corresponds to a list of edges from the key
+    # represents a node in the graph and each value in the dictionary
+    # represents the corresponding key's list of edges
     def __init__(self, adjacency_dict = {}):
         self.adjacency_dict = adjacency_dict
 
@@ -94,7 +96,7 @@ class TestPython1(unittest.TestCase):
             "Seattle": []
         }
         g = Graph(adjacency_dict)
-        self.assertEqual(["Seattle"], g.dfs())
+        self.assertEqual(["Seattle"], g.bfs())
 ```
 
 ##### !end-tests
@@ -247,7 +249,7 @@ In the worst-case you will need to add each node to the Queue, so the space comp
 
 ### Depth-First-Search
 
-Where breadth-first-search spreads out from a starting node in order of distance from the starting node, depth first search follows each path as far as possible before backing up and following the next closest path.
+Where breadth-first-search spreads out from a starting node in order of distance from the starting node, depth-first-search follows each path as far as possible before backing up and following the next closest path.
 
 **Depth First Search Pseudocode Walkthrough**
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=8e2085ff-4dd1-46aa-a961-af170141a92a&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
@@ -480,7 +482,7 @@ def dfs_helper(self, visited, graph, node):
         for neighbor in graph[node]:
             self.dfs_helper(visited, graph, neighbor)
 
-def dfs_recursive(self):
+def dfs(self):
     graph = self.adjacency_dict
     if len(graph) == 0:
         return []
