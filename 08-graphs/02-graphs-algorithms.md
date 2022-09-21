@@ -186,7 +186,7 @@ What is the time complexity of Breadth-First-Search with N nodes and E edges.
 
 Since we will visit each node once, and loop through each of the edges in each node the Big-O of this algorithm is O(N + E) where `N` is the number of nodes in the graph and `E` is the number of edges since each node and each edge will be explored.
 
-O(N + E) is different from O(NE) because O(NE) implies that we visit each node `E` times. On the contrary, we visit each node at most one time O(N). We examine the edges adjacent to a node only when we visit the node, so each edge is examined at most two times, once for each of the nodes to which it is connected. This gives us a Big-O of O(2E) = O(E). Put together O(N) + O(E) and we get O(N + E).
+O(N + E) is different from O(NE) because O(NE) implies that we visit each node `E` times. On the contrary, we visit each node at most one time, which is a set of operations resulting in a Big-O of O(N). We examine the edges adjacent to a node only when we visit the node, so each edge is examined at most two times, once for each of the nodes to which it is connected. This gives us a Big-O of O(2E) = O(E). Put together O(N) + O(E) and we get O(N + E).
 
 ##### !end-explanation
 
@@ -375,6 +375,10 @@ def dfs(self):
 ### !end-challenge
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+
+### Stacks and recursion
+
+Whenever we deploy the use of a stack to solve a problem, the problem may typically be solved using recursion as well, especially if we are doing the same operation repeatedly. We can use the program's call stack to replace the explicit creation of a stack by using a recursive call. The next challenge will ask you to convert the iterative depth first search function you worked on previously to a recursive function.
 
 ### !challenge
 
@@ -584,17 +588,19 @@ In the worst-case you will need to add each node to the Stack, so the space comp
 
 ## Summary
 
-In this lesson we have looked at the Graph data structure. A graph is a collection of `nodes` and the connections between nodes are called `edges`. Binary search trees and linked lists are both subsets of graphs.  
+Two popular graph traversal algorithms are breadth-first-search (BFS) and depth-first-search (DFS). Both algorithms will visit each node and edge in the graph, but they have different methods of performing the traversal. The difference determines which is better suited for specific purposes. 
 
-Here are some other facts about graphs:
-- A graph can have both unweighted and weighted edges.  In a weighted graph, each connection is assigned a cost or weight. 
-- A graph can be directed or undirected.  In a directed graph an edge is *not* bidirectional.  
+Breadth-first-search processes nodes by visiting all neighboring nodes before moving on to nodes that are neighbors of its neighbors and so-on.
+Depth-first-search processes nodes by following a path as deep as it can before backing up and following another path.
 
-There are a few main ways to represent a graph:
-1. Using an adjacency dictionary, which represents the nodes as keys and the edges are represented in a list as the value of the key. This method has an O(1) time complexity to look up the neighbors of the node. We used this representation in the challenges above.
-1. Using an adjacency matrix which is a 2-dimensional array where each entry represents an edge between the nodes indicated by it's row and column indices.  An adjacency matrix is very quick to lookup a connection between two nodes.  On the other hand retrieving a list of all the edges a node has has a time complexity of O(N) where `N` is the number of nodes.  It also require O(N<sup>2</sup>) space complexity.  
-1. Another method of representing a graph involves an adjacency list, which is an array of lists of neighbors.  This method has an O(1) time complexity to look up all the neighbors of a node, but O(d) to lookup a particular connection where `d` is the degree of the node, or the number of neighbors it has.  It also requires less space complexity.
+**Breadth-first-search**|**Depth-first-search**|
+:-----:|:-----:|
+Typically implemented using a queue|Typically implemented using a stack|
+Generally requires more memory than DFS|Generally requires less memory than BFS|
+Optimal for finding the shortest distance of a path|Not optimal for finding the shortest distance|
 
-There are a number of algorithms involving graphs in computer science.  To traverse a graph you can either make a breadth-first-search or a depth-first-search.  In a breadth-first-search each node is investigated by it's proximity to the starting node.  In a depth-first-search a path is explored as far as it will go, and then the algorithm backs up until another subpath can be explored, like a mouse exploring a maze.
-
-In weighted graphs, finding the shortest paths is a common problem.  One classic solution is Dijkstra's algorithm which is a good example of a greedy algorithm. We'll learn more about Dijkstra's algorithm in our next Graph lesson.
+**BFS Use Cases**|**DFS Use Cases**|
+:-----:|:-----:|
+Shortest path between two nodes|Detecting cycles in a graph|
+Testing if a graph is bipartite|Problems that require graph backtracking|
+Find all connected nodes in a graph|Topological sorting|
