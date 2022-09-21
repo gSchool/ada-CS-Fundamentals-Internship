@@ -118,9 +118,13 @@ Standards:
         UID: 8f80f1c3-71f9-42c7-b658-9720f6e3f5b1
         Path: /08-graphs/03-graphs-resources.md
       -
+        Type: Lesson
+        UID: 96fcef62-30b0-4be7-8a63-c4002a53b0e2
+        Path: /08-graphs/04-graphs-activity.md
+      -
         Type: Checkpoint
         UID: 69125c14-dc13-4099-a556-bc5c360fcf19
-        Path: /08-graphs/04-graphs.checkpoint.md
+        Path: /08-graphs/05-graphs.checkpoint.md
   -
     Title: Algorithms
     Description: Divide & Conquer, Greedy and Dynamic Programming
