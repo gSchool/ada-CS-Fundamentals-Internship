@@ -80,3 +80,65 @@ PR Link goes here
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: paragraph
+* id: 2fa2535d-f9b5-4dc6-99bb-34452726d7e2
+* title: Time Complexity
+* points: 1
+<!-- * topics: [python, pandas] (Checkpoints only, optional the topics for analyzing points) -->
+
+##### !question
+
+What is the time complexity of your solution? Remember to define your variables. 
+
+##### !end-question
+
+##### !placeholder
+
+
+##### !end-placeholder
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: paragraph
+* id: ad0136be-6d75-492f-8768-3595d91acbce
+* title: Space Complexity
+ * points: 1
+<!-- * topics: [python, pandas] (Checkpoints only, optional the topics for analyzing points) -->
+
+##### !question
+
+What is the space complexity of your solution? Remember to define your variables. 
+
+##### !end-question
+
+##### !placeholder
+
+
+##### !end-placeholder
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
