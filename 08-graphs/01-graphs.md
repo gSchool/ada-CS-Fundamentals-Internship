@@ -20,7 +20,7 @@ By the end of this lesson we should be able to:
 
 ## Introduction
 
-Graphs are a linked abstract data structure in computer science represented by a set of _nodes_ connected by what are called _edges_. Like binary search trees, graphs are a non-linear data structure. However, graphs are more general than linked lists or binary search trees. Unlike binary search trees where each node can have an edge to a most two other child nodes, in a graph each node can be connected to any number of nodes. Not every node in the graph has to have the same number of edges.
+Graphs are a linked abstract data structure in computer science represented by a set of _nodes_ connected by what are called _edges_. Like binary search trees, graphs are a non-linear data structure. However, graphs are more general than linked lists or binary search trees. Unlike binary search trees where each node can have an edge to at most two other child nodes, in a graph each node can be connected to any number of nodes. Not every node in the graph has to have the same number of edges.
 
 Another difference with graphs is that graphs do not have a set 'start' node. When we traverse a list, we always start at the `head` node. When we traverse a binary search tree, we always start at the `root` node. With a graph traversals can start and end at any node in the data structure.
 
@@ -31,7 +31,7 @@ In the graph below, each node represents a city. The edges represent flights bet
 ![flight paths between cities graph](images/graphs1.png)
 
 
-In this graph, each node represents an Australian state. The edges represent whether or not it is possible to drive from one state to another. Notice that the edges in the graph don't have a cost associated with them. Additionally notice that the node reprsenting Tasmania is _unconnected_ to the rest of the graph, that is to say it does not have any edges. This is because Tasmania is an island! It's not possible to drive there from another Australian state. 
+In the graph below, each node represents an Australian state. The edges represent whether or not it is possible to drive from one state to another. Notice that the edges in the graph don't have a cost associated with them. Additionally notice that the node reprsenting Tasmania is _unconnected_ to the rest of the graph, that is to say it does not have any edges. This is because Tasmania is an island! It's not possible to drive there from another Australian state. 
 
 ![australian states graph](images/australia-graph.png)
 
@@ -48,7 +48,7 @@ Many, many problems can be represented by graphs even those not involving geogra
 
 ## Binary Search Trees, Linked Lists, and Graphs
 
-Binary search trees and linked lists are actually just subtypes of graphs! They are both collections of nodes with edges between them. There are just more specifications about the number and direction of edges allowed to be connected to a single node than there are with a general graph data strucutre.
+Binary search trees and linked lists are actually just subtypes of graphs! They are both collections of nodes with edges between them. There are just more specifications about the number and direction of edges allowed to be connected to a single node than there are with a general graph data structure.
 
 ### !end-callout
 
@@ -156,7 +156,7 @@ For example the list of index 0 of the outer list `[1, 2]` represents the edge b
 
 This representation has a couple of advantages it's simple and uses a minimum amount of space.  For a graph _G(N, E)_ where _N_ is the set of nodes and _E_ the set of edges, this representation has a space complexity of _O(E)_.
 
-It does have a major downside: to find out if any particular pair of nodes are connected by an edge, you must traverse the entire list.  This means that the time complexity to find out of any two nodes are connected is _O(E)_ as well.  
+It does have a major downside: to find out if any particular pair of nodes are connected by an edge, you must traverse the entire list.  This means that the time complexity to find out if any two nodes are connected is _O(E)_ as well.  
 
 Other implementations, such as the adjacency matrix we will look at next, can improve on this time complexity.
 
@@ -264,7 +264,7 @@ If the graph is undirected, the entries across the central diagonal will be the 
 
 Based upon our observations from the above questions, we can notice a couple of things about adjacency matrices:
 - Unless a node has an edge with itself the diagonal from [0][0] to [n-1][n-1] will be `False`
-- If the graph is undirected the, entries across the central diagonal will be mirror images
+- If the graph is undirected, the entries across the central diagonal will be mirror images
   - if (1, 2) is `True`, then (2, 1) must also be `True`
 - We need some way to convert a node in the graph to an integer
 
@@ -336,7 +336,7 @@ Generally adjacency lists give a good balance between time and space complexity 
 
 ## Summary
 
-A graph is a data structure consisting of a finite collection of _nodes_, also called _vertices_, and a collection of connections between nodes known as _edges_.  A graph can be either a _directed graph_, or an _undirected graph_.  In a directed graph, edges are not bidirectional: we may be able to travel from node A to node B, but not from node B to node A. Graphs can also have _weighted_ or _unweighted_ edges. Weighteds graphs have some cost or weight assigned to each edge, making it so that the shortest, most direct path from Node A to Node B may not be the cheapest.
+A graph is a data structure consisting of a finite collection of _nodes_, also called _vertices_, and a collection of connections between nodes known as _edges_.  A graph can be either a _directed graph_, or an _undirected graph_.  In a directed graph, edges are not bidirectional: we may be able to travel from node A to node B, but not from node B to node A. Graphs can also have _weighted_ or _unweighted_ edges. Weighted graphs have some cost or weight assigned to each edge, making it so that the shortest, most direct path from Node A to Node B may not be the cheapest.
 
 Because graphs are non-hierarchical and do not have a set start node, it is difficult to represent graphs in the same way we usually represent linked lists and trees. Instead, there are two common methods for representing a graph data structure:
 - Adjacency matrix
