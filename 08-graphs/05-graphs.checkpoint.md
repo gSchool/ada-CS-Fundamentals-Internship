@@ -2,7 +2,7 @@
 
 | Logistics             | Details                                         |
 | --------------------- | ----------------------------------------        |
-| Project details       | https://github.com/Ada-C16/Bipartition-Graph    |
+| Project details       | https://github.com/ada-c17/Bipartition-Graph    |
 | Should you fork this? | Yes (Check project details)                     |
 | Submission method     | Learn                                           |
 
@@ -17,14 +17,14 @@
 * type: testable-project
 * id: bae69d26-49ac-4750-b397-52003ac77257
 * title: Bipartition Graph Problem
-* upstream: https://github.com/Ada-C16/Bipartition-Graph
+* upstream: https://github.com/ada-c17/Bipartition-Graph
 * validate_fork: true
 * points: 0
 * topics: graphs
 
 ##### !question
 
-Complete the [Bipartition Graph Problem](https://github.com/Ada-C16/Bipartition-Graph)
+Complete the [Bipartition Graph Problem](https://github.com/ada-c17/Bipartition-Graph)
 
 ##### !end-question
 
