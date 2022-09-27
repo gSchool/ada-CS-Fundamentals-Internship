@@ -25,6 +25,8 @@ Binary search trees have a _non-linear structure_. In a binary search tree each 
 
 A binary search tree's `left` and `right` child nodes must maintain special properties. The `left` child must have a `key` that is less than the `key` of its parent node. The `right` child must have a `key`  that is greater than or equal to that of its parent node.
 
+Quick note for when a new node's `key` is equal to a `key` already present in the binary search tree: the person(s) who implemented the binary search tree has the choice to decide which subtree (`left` or `right`) to add the new node. The most important consideration here is _consistency_. In this lesson, please assume when a new node has a `key` equal to a `key` already present in the binary search tree then that new node is added to the *right* subtree of the node with which it shares a `key`.
+
 ### !callout-info
 
 ## Keys vs Values
