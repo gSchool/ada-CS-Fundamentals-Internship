@@ -1,4 +1,4 @@
-# Optional Dijstra's Problem
+# Dijkstra's Algorithm
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
