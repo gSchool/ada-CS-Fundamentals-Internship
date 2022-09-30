@@ -21,3 +21,6 @@ Because of the change in how we calculate shortest paths when weighted edges exi
 Dijkstra's algorithm takes a weighted graph and determines the cost to get from a specified start node to every other _reachable_ node in the graph.
 
 
+## Limitations of Dijkstra's
+
+Dijkstra's _does not work_ for graphs with negative weights. To find the shortest path in a graph with negative weights we can use the [Bellman Ford algorithm](https://www.programiz.com/dsa/bellman-ford-algorithm). This algorithm is outside the scope of our curriculum and appears only very occasionally in interviews for SDE1 positions, but we encourage you to follow your curiosity.
