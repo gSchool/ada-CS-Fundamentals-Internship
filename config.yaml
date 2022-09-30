@@ -125,8 +125,8 @@ Standards:
         Type: Checkpoint
         UID: 69125c14-dc13-4099-a556-bc5c360fcf19
         Path: /08-graphs/05-graphs.checkpoint.md
-
-      Title: Graphs
+  -
+    Title: Graphs Continued
     Description: Graph Data Structures & Algorithms - Dijkstra's
     UID: 37e5c085-d3c7-4905-867e-90bd70a14ceb
     SuccessCriteria:
