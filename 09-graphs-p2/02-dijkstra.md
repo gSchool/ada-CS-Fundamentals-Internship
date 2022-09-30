@@ -17,8 +17,25 @@ However, in the weighted graph, we the shortest path from Node B to Node D trave
 Because of the change in how we calculate shortest paths when weighted edges exist, we are not able to use breadth first search to find the shortest path in weighted graphs. We need a new algorithm: Dijkstra's. 
 
 ## Dijkstra's Algorithm
+<!-- Video -->
 
 Dijkstra's algorithm takes a weighted graph and determines the cost to get from a specified start node to every other _reachable_ node in the graph.
+
+Dijkstra's algorithm works by initially overestimating the distance between the start node and every other node in the graph. It then operates similarly to breadth first search. Starting at the given start node, Dijkstra's algorithm visits each direct neighbor of the current node. As it visits new nodes, the algorithm uses the weights of the corresponding edges to adjust the original estimated distance to each neighbor. 
+
+
+
+### Backtracking
+
+### Pseudocode
+
+### Challenge
+
+### Dijkstra's with a priority queue
+
+We can improve the performance of Dijkstra's by using a priority queue instead of a regular first-in-first-out queue. 
+
+
 
 
 ## Limitations of Dijkstra's
