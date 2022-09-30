@@ -16,5 +16,8 @@ However, in the weighted graph, we the shortest path from Node B to Node D trave
 
 Because of the change in how we calculate shortest paths when weighted edges exist, we are not able to use breadth first search to find the shortest path in weighted graphs. We need a new algorithm: Dijkstra's. 
 
+## Dijkstra's Algorithm
+
+Dijkstra's algorithm takes a weighted graph and determines the cost to get from a specified start node to every other _reachable_ node in the graph.
 
 
