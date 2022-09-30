@@ -23,7 +23,20 @@ Dijkstra's algorithm takes a weighted graph and determines the cost to get from 
 
 Dijkstra's algorithm works by initially overestimating the distance between the start node and every other node in the graph. It then operates similarly to breadth first search. Starting at the given start node, Dijkstra's algorithm visits each direct neighbor of the current node. As it visits new nodes, the algorithm uses the weights of the corresponding edges to adjust the original estimated distance to each neighbor. 
 
+We can see how it works in more detail with an example.
 
+![Dijkstra's Walkthrough Part 0](./images/dijkstras-0.png)
+![Dijkstra's Walkthrough Part 1](./images/dijkstras-1.png)
+![Dijkstra's Walkthrough Part 2](./images/dijkstras-2.png)
+![Dijkstra's Walkthrough Part 3](./images/dijkstras-3.png)
+![Dijkstra's Walkthrough Part 4](./images/dijkstras-4.png)
+![Dijkstra's Walkthrough Part 5](./images/dijkstras-5.png)
+![Dijkstra's Walkthrough Part 6](./images/dijkstras-6.png)
+![Dijkstra's Walkthrough Part 7](./images/dijkstras-7.png)
+
+```
+pseudocode
+```
 
 ### Backtracking
 
