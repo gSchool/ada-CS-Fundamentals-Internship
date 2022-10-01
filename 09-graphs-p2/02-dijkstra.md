@@ -19,28 +19,94 @@ Because of the change in how we calculate shortest paths when weighted edges exi
 ## Dijkstra's Algorithm
 <!-- Video -->
 
-Dijkstra's algorithm takes a weighted graph and determines the cost to get from a specified start node to every other _reachable_ node in the graph.
+Dijkstra's algorithm takes a weighted graph and determines the least costly path from a specified start node to every other _reachable_ node in the graph.
 
-Dijkstra's algorithm works by initially overestimating the distance between the start node and every other node in the graph. It then operates similarly to breadth first search. Starting at the given start node, Dijkstra's algorithm visits each direct neighbor of the current node. As it visits new nodes, the algorithm uses the weights of the corresponding edges to adjust the original estimated distance to each neighbor. 
 
-We can see how it works in more detail with an example.
+Dijkstra's algorithm works by initially overestimating the cost to travel from the start node to every other node in the graph. It then operates similarly to breadth first search. Beginning at the given start node, Dijkstra's algorithm visits each direct neighbor of the current node. As it visits new nodes, the algorithm uses the weights of the corresponding edges to adjust the original estimated cost to each neighbor. 
+
+We can see how it works in more detail with an example. The video walkthrough of this example is included at the top of this section.
 
 ![Dijkstra's Walkthrough Part 0](./images/dijkstras-0.png)
+Step 0. We start with a weighted graph. 
+
 ![Dijkstra's Walkthrough Part 1](./images/dijkstras-1.png)
+Step 1. We identify our start node, in this example Node A, and set the cost to travel from the start node to all nodes except itself to infinity, an obvious overestimation. The distance of the start node to itself is set to 0.
+
+In the diagram above, the costs are denoted in magenta. 
+
+```
+current: A
+
+costs/distances:
+    - A: 0
+    - B: ∞
+    - C: ∞
+    - D: ∞
+    - E: ∞
+    - F: ∞
+```
 ![Dijkstra's Walkthrough Part 2](./images/dijkstras-2.png)
+Step 2. We look at each of the edges of the start node, Node A. For each of Node A's edges, we check if the cost to travel along that edge to its neighbor is less than the current estimate of the cost to reach that neighbor. If so, we reset the distance of that neighbor to be equal to the weight of the edge. Since at this point in our traversal, all of the nodes have an estimated cost of infinity, the cost of travelling to each of Node A's neighbors will decrease.
+
+For example, in the diagram above the edge from Node A to Node B has a weight of 10. 10 is clearly less than our current estimate of the cost from Node A to B, infinity, so we reset the cost of travelling from Node A to Node B to 10. 
+
+We add our start node to a list of visited nodes, and the neighbors of our start node to the queue of nodes that still need to be visited. 
+
+In the diagram above, visited nodes and edges are identified in teal. 
+
+```
+current: A 
+
+queue: B, D, E
+
+visited nodes: A
+
+costs/distances:
+    - A: 0
+    - B: 10
+    - C: ∞
+    - D: 3
+    - E: 6
+    - F: ∞
+```
 ![Dijkstra's Walkthrough Part 3](./images/dijkstras-3.png)
+Step 3. We visit the next node in the queue, B. Exactly the same as step 2, we look at Node B's edges.
+
+Node B's only edge is to Node C. Notice that Node C is not a direct neighbor of our start node, Node A. Because we are interested in calculating the minimum cost to get from Node A to Node C, when considering whether we should revise our current estimation of the cost, we need to sum the cost of the edge from Node B to Node C and whatever the cost to get from Node A to node B is. 
+
+From the work we did in Step 2, we know the cost to get to node B is 10. The weight of the dedge from Node B to C is 2. 10 + 2 = 12 which is less than the current estimate of infinity so we revise our estimate of the minimum cost to travel from Node A to Node C to be 12. 
+
+
+We update the queue, list of visited nodes, and list of distances as needed.
+
+```
+current: B 
+
+queue: D, E, C
+
+visited nodes: A, B
+
+distances:
+    - A: 0
+    - B: 10
+    - C: 12
+    - D: 3
+    - E: 6
+    - F: ∞
+```
 ![Dijkstra's Walkthrough Part 4](./images/dijkstras-4.png)
 ![Dijkstra's Walkthrough Part 5](./images/dijkstras-5.png)
 ![Dijkstra's Walkthrough Part 6](./images/dijkstras-6.png)
 ![Dijkstra's Walkthrough Part 7](./images/dijkstras-7.png)
 
-```
-pseudocode
-```
 
 ### Backtracking
 
 ### Pseudocode
+```
+pseudocode
+```
+
 
 ### Challenge
 
