@@ -70,14 +70,14 @@ costs/distances:
     - F: ∞
 ```
 ![Dijkstra's Walkthrough Part 3](./images/dijkstras-3.png)
-Step 3. We visit the next node in the queue, B. Exactly the same as step 2, we look at Node B's edges.
+Step 3. We visit the next node in the queue, B. Exactly the same as step 2, we look at Node B's _untravelled_ edges.
 
-Node B's only edge is to Node C. Notice that Node C is not a direct neighbor of our start node, Node A. Because we are interested in calculating the minimum cost to get from Node A to Node C, when considering whether we should revise our current estimation of the cost, we need to sum the cost of the edge from Node B to Node C and whatever the cost to get from Node A to node B is. 
+Node B's only unvisited edge is to Node C. Notice that Node C is not a direct neighbor of our start node, Node A. Because we are interested in calculating the minimum cost to get from Node A to Node C, when considering whether we should revise our current estimation of the cost, we need to sum the cost of the edge from Node B to Node C and whatever the cost to get from Node A to node B is. 
 
 From the work we did in Step 2, we know the cost to get to node B is 10. The weight of the dedge from Node B to C is 2. 10 + 2 = 12 which is less than the current estimate of infinity so we revise our estimate of the minimum cost to travel from Node A to Node C to be 12. 
 
 
-We update the queue, list of visited nodes, and list of distances as needed.
+We add Node B to the list of visited nodes and update the queue with all Node B's unvisited neighbors.
 
 ```
 current: B
@@ -86,7 +86,7 @@ visited nodes: A, B
 
 queue: D, E, C
 
-distances:
+costs/distances:
     - A: 0
     - B: 10
     - C: 12
@@ -95,20 +95,147 @@ distances:
     - F: ∞
 ```
 ![Dijkstra's Walkthrough Part 4](./images/dijkstras-4.png)
-Step 4. 
+Step 4. Now we look at the next node in the queue, Node D. 
+
+Node D has two unvisited neighbors, Nodes C and F. Following the same logic as in Step 3, we sum the cost of to travel from the start node to Node D, 3, with the sum of the edge from Node D to each of its neighbors. In this case, each of those sums is less than the current estimates so we revise our list of estimated costs accordingly.
+
+As before, we update the queue and list of visited nodes as needed.
+
+```
+current: D
+
+visited nodes: A, B, D 
+
+queue: E, C, C, F
+
+costs/distances:
+    - A: 0
+    - B: 10
+    - C: 12
+    - D: 3
+    - E: 6
+    - F: 15
+```
+
 ![Dijkstra's Walkthrough Part 5](./images/dijkstras-5.png)
-Step 5.
+Step 5. We move on to the next node in the queue, Node E. 
+
+Node E's only unvisited neighbor is Node F. The minimum cost to travel from Node A to Node F is currently estimated to be 15 via the path from Node A -> Node D -> Node F. 
+
+The sum of the cost to travel from Node A to Node E plus the cost to travel along Node E to Node F is 8. The cost of this new path 8 is less than that of the previously found path 15, so we revise our costs/distances list to reflect our new minimum cost.
+
+We add Node E to the list of visited nodes, and its unvisited neighbor, Node F, to the queue.
+
+```
+current: E
+
+visited nodes: A, B, D, E 
+
+queue: C, C, F, F
+
+costs/distances:
+    - A: 0
+    - B: 10
+    - C: 12
+    - D: 3
+    - E: 6
+    - F: 15
+```
+
 ![Dijkstra's Walkthrough Part 6](./images/dijkstras-6.png)
-Step 6.
+Step 6. We move on to the next node in the queue, Node C. 
+
+Node C's neighbors Node B and Node D have already been visited, so we do not need to perform any other further calculations.
+
+We add Node C to the list of visited nodes. Node C has no unvisited neighbors so we do not need to add anything to the queue.
+
+In fact, we can move on to the next node in the queue. Notice that the next node in the queue is also Node C. Because Node C has now also been visit it, we are free to skip over it and move on to the next node in the queue, Node F.
+
+```
+current: C
+
+visited nodes: A, B, D, E, C 
+
+queue: C, F, F
+
+costs/distances:
+    - A: 0
+    - B: 10
+    - C: 12
+    - D: 3
+    - E: 6
+    - F: 15
+```
+
 ![Dijkstra's Walkthrough Part 7](./images/dijkstras-7.png)
-Step 7.
+Step 7. Now we are visiting our final unvisited node, F. Like Node C, Node F has no unvisited neighbors. 
 
+We are free to pop it off the queue and move on. 
+```
+current: F
 
-### Backtracking
+visited nodes: A, B, D, E, C, F
+
+queue: F
+
+costs/distances:
+    - A: 0
+    - B: 10
+    - C: 12
+    - D: 3
+    - E: 6
+    - F: 15
+```
+
+Like Node C, Node F was in the queue twice. By looking at the list of visited nodes above, we can observe that we have visited all nodes in the given graph. We pop this second instance of Node F and have our final list of costs/distances. Dijkstra's algorithm is complete!
+
+```
+Minimum costs/distances from Node A to each node in the graph:
+    - A: 0
+    - B: 10
+    - C: 12
+    - D: 3
+    - E: 6
+    - F: 15
+```
 
 ### Pseudocode
+The process outlined above can be generalized as pseudocode.
+
+Before jumping into the pseudocode, observe that to find the cost of a path from Node A to a non-neighboring node D, we needed to know the cost of travelling from Node A to Node D's direct neighbor along that path.
+
+In the example below, say we want to find the cost of the path from Node A to Node D. Node D's neighbor along that path is Node C. We could also say that Node C is the _previous_ node along that path. 
+
+Observe that the cost to get from Node A to Node D is the cost to get from Node A to Node C plus the cost to get from Node D to Node C. 
+
+![Previous Node in a Graph Example](./images/dijkstra-subpath.png)
+
+This observation illustrates that when calculating the costs of a path between two non-neighboring nodes as we may need to do in Djikstra's requires us to know the previous node of the end node in the path that we are looking at. As a result, when implementing Djikstra's algorithm it can be useful for us to keep track of each node's previous node along its minimum cost path.
+
+
+The following pseudocode implementation of Djikstra's assumes that we are provided with a graph g and a starting node.
 ```
-pseudocode
+- Create three lists, each equal in length to the number of nodes in the graph
+    - distances: minimum distances from the start node to each node in the graph
+    - visited: tracks which nodes in the graph have been visited
+    - previous: tracks the previous node for each node's shortest/minimum cost path]
+- Initialize each value in the distances list to infinity.
+- Set distances[start_node] to zero.
+- Initialize each value in the visited list to False (since none have been visited yet)]
+- Initialize each value in the previous list to None (since we have not yet traversed any paths)
+- Initialize a queue. Add the start node to the queue.
+- While the queue is not empty:
+    - loop through all the current node's neighbors
+        - if the neighbor has not yet been visited:
+            - set that node to visited
+            - temp_distance = distance[previous[neighbor]] + graph[current node][neighbor]
+            - if temp_distance < distance[neighbor]
+                - distance[neighbor] = temp_distance
+                - parent[neighbor] = current_node
+            - queue.append(neighbor)
+    - visited[current_node] = True
+- Return the distances list
+
 ```
 
 
