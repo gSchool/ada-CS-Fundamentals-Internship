@@ -55,11 +55,11 @@ We add our start node to a list of visited nodes, and the neighbors of our start
 In the diagram above, visited nodes and edges are identified in teal. 
 
 ```
-current: A 
+current: A
+
+visited nodes: A 
 
 queue: B, D, E
-
-visited nodes: A
 
 costs/distances:
     - A: 0
@@ -80,11 +80,11 @@ From the work we did in Step 2, we know the cost to get to node B is 10. The wei
 We update the queue, list of visited nodes, and list of distances as needed.
 
 ```
-current: B 
+current: B
+
+visited nodes: A, B 
 
 queue: D, E, C
-
-visited nodes: A, B
 
 distances:
     - A: 0
@@ -95,9 +95,13 @@ distances:
     - F: ∞
 ```
 ![Dijkstra's Walkthrough Part 4](./images/dijkstras-4.png)
+Step 4. 
 ![Dijkstra's Walkthrough Part 5](./images/dijkstras-5.png)
+Step 5.
 ![Dijkstra's Walkthrough Part 6](./images/dijkstras-6.png)
+Step 6.
 ![Dijkstra's Walkthrough Part 7](./images/dijkstras-7.png)
+Step 7.
 
 
 ### Backtracking
