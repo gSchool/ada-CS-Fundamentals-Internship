@@ -278,8 +278,125 @@ from main import *
 
 class TestPython1(unittest.TestCase):
 
-  def test_with_sample_matrix()
+    def test_with_sample_matrix(self):
+        adjacency_matrix = [
+            [ 0, 4, 0, 0, 0, 0, 0, 8, 0 ], 
+            [ 4, 0, 8, 0, 0, 0, 0, 11, 0 ], 
+            [ 0, 0, 7, 0, 9, 14, 0, 0, 0 ], 
+            [ 0, 8, 0, 7, 0, 4, 0, 0, 2 ], 
+            [ 0, 0, 0, 9, 0, 10, 0, 0, 0 ], 
+            [ 0, 0, 4, 14, 10, 0, 2, 0, 0 ], 
+            [ 0, 0, 0, 0, 0, 2, 0, 1, 6 ], 
+            [ 8, 11, 0, 0, 0, 0, 1, 0, 7 ], 
+            [ 0, 0, 2, 0, 0, 0, 6, 7, 0 ] 
+        ]
+        expected = {
+            'previous': [None, 0, 1, 2, 5, 6, 7, 0, 2],
+            'distances': [0, 4,12,19, 21, 11, 9, 8, 14]
+        }
 
+        answer = dijkstra(adjacency_matrix, 0)
+
+        self.assertEqual(answer, expected)
+
+    def test_dijkstra_with_small_graph():
+        #Arrange
+        adjacency_matrix =[ 
+            [0, 4, 0, 0],
+            [4, 0, 12, 6],
+            [0, 12, 0, 0],
+            [0,  6, 0, 0]
+        ]
+
+        expected = {
+            'previous': [None, 0, 1, 1],
+            'distances': [0, 4, 16, 10]
+        }
+
+        # Act
+        answer = dijkstra(adjacency_matrix, 0)
+
+        #Assert
+        self.assertEqual(answer, expected)
+    
+    def test_dijkstra_with_unconnected_graph(self):
+        #Arrange
+        adjacency_matrix =[ 
+            [0, 4, 0, 0],
+            [4, 0, 12, 0],
+            [0, 12, 0, 0],
+            [0,  0, 0, 0]
+        ]
+
+        expected = {
+            'previous': [None, 0, 1, None],
+            'distances': [0,4,15,float('inf')]
+        }
+
+        # Act
+        answer = dijkstra(adjacency_matrix, 0)
+        
+        #Assert
+        self.assertEqual(answer, expected)
+
+    def test_dijkstra_with_starting_node_other_than_zero(self):
+        adjacency_matrix = [
+            [0, 4, 0, 0],
+            [4, 0, 12, 0],
+            [0, 12, 0, 0],
+            [0,  0, 0, 0]
+        ]
+
+        expected = {
+            'previous': [1, 2, None, None],
+            'distances': [16, 12, 0, float('inf')]
+        }
+
+        #Act
+        answer = dijkstra(adjacency_matrix, 2)
+
+        #Assert
+        self.assertEqual(answer, expected)
+    
+    def test_dijkstra_will_report_no_connections_for_starting_at_unconnected_node(self):
+        # Arrange
+        adjacency_matrix =[ 
+            [0, 4, 0, 0],
+            [4, 0, 12, 0],
+            [0, 12, 0, 0],
+            [0,  0, 0, 0]
+        ]
+
+        expected = {
+            'previous': [None, None, None, None],
+            'distances': [float('inf'), float('inf'), float('inf'), 0]
+        }
+
+        # Act
+        answer = dijkstra(adjacency_matrix, 3)
+
+        #Assert
+        self.assertEqual(answer, expected)
+
+    def test_dijkstra_will_return_empty_for_empty_graph(self):
+        adjacency_matrix = []
+
+        expected = {
+            'previous': [],
+            'distances': []
+        }
+
+        #Act
+        answer = dijkstra(adjacency_matrix, 0)
+
+        #Assert
+        self.assertEqual(answer, expected)
+
+    def test_dijkstra_with_unweighted_graph(self):
+        pass
+
+    def test_dijkstra_with_directed_graph(self):
+        pass
 ```
 
 ##### !end-tests
