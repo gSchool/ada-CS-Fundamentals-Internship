@@ -170,7 +170,7 @@ costs/distances:
     - F: 8
 ```
 
-### !callout-info
+
 
 
 ### Pseudocode
@@ -213,14 +213,17 @@ The following pseudocode implementation of Dijkstra's assumes that we are provid
 
 ```
 
-<!-- available callout types: info, success, warning, danger, secondary, star  -->
 ### !callout-info
+
 
 ## Representing Infinity in Python
 
 We can represent infinity in Python with   `float(inf)`
 
 ### !end-callout
+
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
 
 ## Priority Queues
 You may recall that when we first introduced [queues](../02-linked-lists/03-linked-lists-stacks-queues.md), we said queues remove elements in first-in-first-out (FIFO) order. 
