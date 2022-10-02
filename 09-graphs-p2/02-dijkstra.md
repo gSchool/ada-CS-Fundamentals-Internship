@@ -152,35 +152,22 @@ costs/distances:
 ```
 
 ![Dijkstra's Walkthrough Part 7](./images/dijkstras-7.png)
-Step 7. Now we are visiting our final unvisited node, F. Like Node C, Node F has no unvisited neighbors. 
+Step 7. Now we are visiting our final unvisited node, F. Like Node C, Node F has no unvisited neighbors.
 
-We are free to pop it off the queue and move on. 
+We simply mark it as visited and are done! Our list of costs/distances now represents the minimum cost to travel from Node A to every node in the graph.
+
 ```
 current: F
 
 visited nodes: A, B, D, E, C, F
 
-queue: F
-
 costs/distances:
     - A: 0
-    - B: 10
-    - C: 12
+    - B: 8
+    - C: 6
     - D: 3
     - E: 6
-    - F: 15
-```
-
-Like Node C, Node F was in the queue twice. By looking at the list of visited nodes above, we can observe that we have visited all nodes in the given graph. We pop this second instance of Node F and have our final list of costs/distances. Dijkstra's algorithm is complete!
-
-```
-Minimum costs/distances from Node A to each node in the graph:
-    - A: 0
-    - B: 10
-    - C: 12
-    - D: 3
-    - E: 6
-    - F: 15
+    - F: 8
 ```
 
 ### !callout-info
