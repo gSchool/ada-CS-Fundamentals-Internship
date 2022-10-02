@@ -125,36 +125,30 @@ visited nodes: A, D, C, E
 
 costs/distances:
     - A: 0
-    - B: 10
-    - C: 12
+    - B: 8
+    - C: 6
     - D: 3
     - E: 6
-    - F: 15
+    - F: 8
 ```
 
 ![Dijkstra's Walkthrough Part 6](./images/dijkstras-6.png)
-Step 6. We move on to the next node in the queue, Node C. 
+Step 6. Once again, we have a tie for the unvisited node that is the least far from the start node, Node A. Node B and Node F have equivalent listed cost/distance of 8 from Node A. Let's choose to visit Node B.
 
-Node C's neighbors Node B and Node D have already been visited, so we do not need to perform any other further calculations.
-
-We add Node C to the list of visited nodes. Node C has no unvisited neighbors so we do not need to add anything to the queue.
-
-In fact, we can move on to the next node in the queue. Notice that the next node in the queue is also Node C. Because Node C has now also been visit it, we are free to skip over it and move on to the next node in the queue, Node F.
+Node B has no unvisited neighbors, so we so we do not need to perform any further calculations. 
 
 ```
-current: C
+current: B
 
-visited nodes: A, B, D, E, C 
-
-queue: C, F, F
+visited nodes: A, D, C, E, B
 
 costs/distances:
     - A: 0
-    - B: 10
-    - C: 12
+    - B: 8
+    - C: 6
     - D: 3
     - E: 6
-    - F: 15
+    - F: 8
 ```
 
 ![Dijkstra's Walkthrough Part 7](./images/dijkstras-7.png)
