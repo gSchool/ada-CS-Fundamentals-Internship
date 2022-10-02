@@ -237,9 +237,66 @@ The following pseudocode implementation of Djikstra's assumes that we are provid
 - Return the distances list
 
 ```
-
-
 ### Challenge
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: ea30a148-cce4-458e-a2f0-9f39de10e354
+* title: Dijkstra's
+* points: 1
+<!-- * topics: [python, pandas] (Checkpoints only, optional the topics for analyzing points) -->
+
+##### !question
+
+Given a graph `g` and a start node `s` implement Dijkstra's Algorithm. 
+
+The graph `g` is given as an adjacency matrix where `adj_matrix[i][j]` has a value equal to the weight of the edg between nodes `i` and `j`. A value of zero indicates that there is no edge between node `i` and `j`. The start node `s` is the index of the node. 
+
+Return a dictionary that has two keys:
+  - `previous` whose value is a list of the previous nodes in the shortest path from node `s` to the `i`th node
+  - `distances` whose value is the distance/cost of the shortest path from node `s` to e in the the graph `g`.
+
+##### !end-question
+
+##### !placeholder
+```py
+def dijkstra(g, s):
+    pass
+```
+
+##### !end-placeholder
+
+##### !tests
+
+```py
+import unittest
+from main import *
+
+class TestPython1(unittest.TestCase):
+
+  def test_with_sample_matrix()
+
+```
+
+##### !end-tests
+
+<!-- other optional sections -->
+##### !hint 
+
+Still feeling stuck? Watch the video solution walkthrough below. 
+<!-- Add video walkthrough -->
+##### !end-hint
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation 
+##### !end-explanation
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 ### Dijkstra's with a priority queue
 
