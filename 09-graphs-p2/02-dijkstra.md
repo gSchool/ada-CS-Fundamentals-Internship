@@ -50,16 +50,14 @@ Step 2. We look at each of the edges of the start node, Node A. For each of Node
 
 For example, in the diagram above the edge from Node A to Node B has a weight of 10. 10 is clearly less than our current estimate of the cost to travel from Node A to B, infinity, so we update the cost of traveling from Node A to Node B to be the lesser value of 10. 
 
-We add our start node to a list of visited nodes, and the neighbors of our start node to the queue of nodes that still need to be visited. 
+We add our start node to a list of visited nodes.
 
 In the diagram above, visited nodes and edges are identified in teal. 
 
 ```
 current: A
 
-visited nodes: A 
-
-queue: B, D, E
+visited nodes: A
 
 costs/distances:
     - A: 0
@@ -70,7 +68,10 @@ costs/distances:
     - F: ∞
 ```
 ![Dijkstra's Walkthrough Part 3](./images/dijkstras-3.png)
-Step 3. We visit the next node in the queue, B. Exactly the same as step 2, we look at Node B's _untravelled_ edges.
+Step 3. Next, we look at the unvisited 
+
+
+. Exactly the same as step 2, we look at Node B's _untravelled_ edges.
 
 Node B's only unvisited edge is to Node C. Notice that Node C is not a direct neighbor of our start node, Node A. Because we are interested in calculating the minimum cost to get from Node A to Node C, when considering whether we should revise our current estimation of the cost, we need to sum the cost of the edge from Node B to Node C and whatever the cost to get from Node A to node B is. 
 
