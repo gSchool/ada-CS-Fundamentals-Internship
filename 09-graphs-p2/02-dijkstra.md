@@ -110,7 +110,7 @@ costs/distances:
 ```
 
 ![Dijkstra's Walkthrough Part 5](./images/dijkstras-5.png)
-Step 5. We move on to the next node in the queue, Node E. 
+Step 5. Now Node E is the next as yet unvisited node that is closest to our starting point, Node A.
 
 Node E's only unvisited neighbor is Node F. The minimum cost to travel from Node A to Node F is currently estimated to be 15 via the path from Node A -> Node D -> Node F. 
 
@@ -121,9 +121,7 @@ We add Node E to the list of visited nodes, and its unvisited neighbor, Node F, 
 ```
 current: E
 
-visited nodes: A, B, D, E 
-
-queue: C, C, F, F
+visited nodes: A, D, C, E 
 
 costs/distances:
     - A: 0
