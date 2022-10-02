@@ -199,6 +199,18 @@ Minimum costs/distances from Node A to each node in the graph:
     - F: 15
 ```
 
+### !callout-info
+
+## Priority Queues
+You may recall that when we first introduced [queues](../02-linked-lists/03-linked-lists-stacks-queues.md), we said queues remove elements in first-in-first-out (FIFO) order. 
+
+<break>
+
+However, in our walkthrough above, we prioritized removing elements from the queue based on minimum cost. This is a special type of queue called a **minimum priority queue**. There are also maximum priority queues where elements are removed in order of maximum cost/priority. 
+<break> 
+We will use the [`heapq`](https://docs.python.org/3/library/heapq.html) module in Python as our priority queue when we implement Dijkstra's. The internals of implementing a priority queue, also called a heap, are beyond the scope of this course, but we encourage you to follow your curiosity!
+### !end-callout
+
 ### Pseudocode
 The process outlined above can be generalized as pseudocode.
 
@@ -292,7 +304,7 @@ class TestPython1(unittest.TestCase):
         ]
         expected = {
             'previous': [None, 0, 1, 2, 5, 6, 7, 0, 2],
-            'distances': [0, 4,12,19, 21, 11, 9, 8, 14]
+            'distances': [0, 4, 12, 19, 21, 11, 9, 8, 14]
         }
 
         answer = dijkstra(adjacency_matrix, 0)
@@ -393,10 +405,41 @@ class TestPython1(unittest.TestCase):
         self.assertEqual(answer, expected)
 
     def test_dijkstra_with_unweighted_graph(self):
-        pass
+        adjacency_matrix = [
+            [0, 1, 1],
+            [1, 0, 1],
+            [1, 1, 0]
+        ]
+        expected = {
+            'previous': [None, None, None],
+            'distances': [1, 0, 1]
+        }
 
-    def test_dijkstra_with_directed_graph(self):
-        pass
+        #Act
+        answer = dijkstra(adjacency_matrix, 1)
+
+        #Assert
+        self.assertEqual(answer, expected)
+
+    def test_dijkstra_with_weighted_graph(self):
+        adjacency_matrix = [
+            [0, 10, 1],
+            [10, 0, 1],
+            [1, 1, 0]
+        ]
+
+        expected = {
+            'previous': [2, None, None],
+            'distances': [2, 0, 1]
+        }
+
+        #Act
+        answer = dijkstra(adjacency_matrix, 1)
+
+        #Assert
+        self.assertEqual(answer, expected)
+
+
 ```
 
 ##### !end-tests
