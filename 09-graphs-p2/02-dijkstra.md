@@ -206,8 +206,10 @@ You may recall that when we first introduced [queues](../02-linked-lists/03-link
 
 <break>
 
-However, in our walkthrough above, we prioritized removing elements from the queue based on minimum cost. This is a special type of queue called a **minimum priority queue**. There are also maximum priority queues where elements are removed in order of maximum cost/priority. 
+However, in our walkthrough above, we prioritized removing elements from the queue in order of minimum cost. This is a special type of queue called a **minimum priority queue**. There are also maximum priority queues where elements are removed in order of maximum cost/priority. 
+
 <break> 
+
 We will use the [`heapq`](https://docs.python.org/3/library/heapq.html) module in Python as our priority queue when we implement Dijkstra's. The internals of implementing a priority queue, also called a heap, are beyond the scope of this course, but we encourage you to follow your curiosity!
 ### !end-callout
 
@@ -222,10 +224,10 @@ Observe that the cost to get from Node A to Node D is the cost to get from Node 
 
 ![Previous Node in a Graph Example](./images/dijkstra-subpath.png)
 
-This observation illustrates that when calculating the costs of a path between two non-neighboring nodes as we may need to do in Djikstra's requires us to know the previous node of the end node in the path that we are looking at. As a result, when implementing Djikstra's algorithm it can be useful for us to keep track of each node's previous node along its minimum cost path.
+This observation illustrates that when calculating the costs of a path between two non-neighboring nodes as we may need to do in Dijkstra's requires us to know the previous node of the end node in the path that we are looking at. As a result, when implementing Djikstra's algorithm it can be useful for us to keep track of each node's previous node along its minimum cost path.
 
 
-The following pseudocode implementation of Djikstra's assumes that we are provided with a graph g and a starting node.
+The following pseudocode implementation of Dijkstra's assumes that we are provided with a graph g and a starting node.
 ```
 - Create three lists, each equal in length to the number of nodes in the graph
     - distances: minimum distances from the start node to each node in the graph
@@ -237,6 +239,7 @@ The following pseudocode implementation of Djikstra's assumes that we are provid
 - Initialize each value in the previous list to None (since we have not yet traversed any paths)
 - Initialize a queue. Add the start node to the queue.
 - While the queue is not empty:
+    - Set current as the item in the queue with minimum cost
     - loop through all the current node's neighbors
         - if the neighbor has not yet been visited:
             - set that node to visited
