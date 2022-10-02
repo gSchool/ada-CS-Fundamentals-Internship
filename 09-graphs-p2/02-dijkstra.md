@@ -90,23 +90,20 @@ costs/distances:
     - F: 15
 ```
 ![Dijkstra's Walkthrough Part 4](./images/dijkstras-4.png)
-Step 4. Now we look at the next node in the queue, Node D. 
+Step 4. Of the unvisited nodes in the graph, there is a tie for the node with minimum listed distance from our start node, Node A. Both Node C and Node E have a cost/distance of 6. We can choose either. Let's visit C next. 
 
-Node D has two unvisited neighbors, Nodes C and F. Following the same logic as in Step 3, we sum the cost of to travel from the start node to Node D, 3, with the sum of the edge from Node D to each of its neighbors. In this case, each of those sums is less than the current estimates so we revise our list of estimated costs accordingly.
-
-As before, we update the queue and list of visited nodes as needed.
+Node C's only unvisited neighbor is Node B. Following the same logic as in Step 3, we sum the cost of travelling from our start node Node A to Node C with the sum of the edge from Node C to Node B. 
+6 + 2 = 8 which is less than the currently listed cost of travel from Node A to Node B, 10 so we update our cost/distances list with our newly found minimum cost.
 
 ```
-current: D
+current: C
 
-visited nodes: A, B, D 
-
-queue: E, C, C, F
+visited nodes: A, D, C
 
 costs/distances:
     - A: 0
-    - B: 10
-    - C: 12
+    - B: 8
+    - C: 6
     - D: 3
     - E: 6
     - F: 15
