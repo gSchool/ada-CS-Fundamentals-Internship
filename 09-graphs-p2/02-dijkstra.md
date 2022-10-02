@@ -46,9 +46,9 @@ costs/distances:
     - F: ∞
 ```
 ![Dijkstra's Walkthrough Part 2](./images/dijkstras-2.png)
-Step 2. We look at each of the edges of the start node, Node A. For each of Node A's edges, we check if the cost to travel along that edge to its neighbor is less than the current estimate of the cost to reach that neighbor. If so, we reset the distance of that neighbor to be equal to the weight of the edge. Since at this point in our traversal, all of the nodes have an estimated cost of infinity, the cost of travelling to each of Node A's neighbors will decrease.
+Step 2. We look at each of the edges of the start node, Node A. For each of Node A's edges, we check if the cost to travel along that edge to its neighbor is less than the current estimate of the cost to reach that neighbor. If so, we reset the distance of that neighbor to be equal to the weight of the edge. Since at this point in our traversal, all of the nodes have an estimated cost of infinity, the cost of traveling to each of Node A's neighbors will decrease.
 
-For example, in the diagram above the edge from Node A to Node B has a weight of 10. 10 is clearly less than our current estimate of the cost from Node A to B, infinity, so we reset the cost of travelling from Node A to Node B to 10. 
+For example, in the diagram above the edge from Node A to Node B has a weight of 10. 10 is clearly less than our current estimate of the cost to travel from Node A to B, infinity, so we update the cost of traveling from Node A to Node B to be the lesser value of 10. 
 
 We add our start node to a list of visited nodes, and the neighbors of our start node to the queue of nodes that still need to be visited. 
 
