@@ -187,31 +187,40 @@ Observe that the cost to get from Node A to Node D is the cost to get from Node 
 This observation illustrates that when calculating the costs of a path between two non-neighboring nodes as we may need to do in Dijkstra's requires us to know the previous node of the end node in the path that we are looking at. As a result, when implementing Djikstra's algorithm it can be useful for us to keep track of each node's previous node along its minimum cost path.
 
 
-The following pseudocode implementation of Dijkstra's assumes that we are provided with a graph g and a starting node.
+The following pseudocode implementation of Dijkstra's assumes that we are provided with a graph and a starting node.
 ```
-- Create three lists, each equal in length to the number of nodes in the graph
-    - distances: minimum distances from the start node to each node in the graph
-    - visited: tracks which nodes in the graph have been visited
-    - previous: tracks the previous node for each node's shortest/minimum cost path]
-- Initialize each value in the distances list to infinity.
-- Set distances[start_node] to zero.
-- Initialize each value in the visited list to False (since none have been visited yet)]
-- Initialize each value in the previous list to None (since we have not yet traversed any paths)
-- Initialize a queue. Add the start node to the queue.
+- Create a distances list equal in length to the number of nodes in the graph
+    - Tracks the minimum cost/distance from start node to each node in graph
+    - Initialize each value to infinity
+    - Initialize distances[start_node] to zero
+- Create a previous list equal in length to the number of nodes in the graph
+    - Tracks the previous node in each node's shortest/minimum cost path
+    - Initialize each value to None since we have not yet traversed any paths
+- Create a visited list to track which nodes have already been visited
+- Create a priority queue and add the start node to it
 - While the queue is not empty:
-    - Set current as the item in the queue with minimum cost
+    - Set current as node in the queue with minimum cost
     - Add current to the list of visited nodes
     - loop through all the current node's neighbors
         - if the neighbor has not yet been visited:
             - set that node to visited
-            - temp_distance = distance[previous[neighbor]] + graph[current node][neighbor]
-            - if temp_distance < distance[neighbor]
-                - distance[neighbor] = temp_distance
-                - parent[neighbor] = current_node
+            - calculate distance from start node to neighbor via current node
+            - If calculated distance < distance[neighbor]
+                - distance[neighbor] = caclulated distance
+                - previous[neighbor] = current_node
             - queue.append(neighbor)
-- Return the distances list
+- Return the previous and distances list
 
 ```
+
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
+
+## Representing Infinity in Python
+
+We can represent infinity in Python with   `float(inf)`
+
+### !end-callout
 
 ## Priority Queues
 You may recall that when we first introduced [queues](../02-linked-lists/03-linked-lists-stacks-queues.md), we said queues remove elements in first-in-first-out (FIFO) order. 
@@ -248,10 +257,13 @@ Return a dictionary that has two keys:
   - `previous` whose value is a list of the previous nodes in the shortest path from node `s` to the `i`th node
   - `distances` whose value is the distance/cost of the shortest path from node `s` to e in the the graph `g`.
 
+
 ##### !end-question
 
 ##### !placeholder
 ```py
+import heapq
+
 def dijkstra(g, s):
     pass
 ```
