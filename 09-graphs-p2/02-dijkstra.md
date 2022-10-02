@@ -172,17 +172,6 @@ costs/distances:
 
 ### !callout-info
 
-## Priority Queues
-You may recall that when we first introduced [queues](../02-linked-lists/03-linked-lists-stacks-queues.md), we said queues remove elements in first-in-first-out (FIFO) order. 
-
-<break>
-
-However, in our walkthrough above, we prioritized removing elements from the queue in order of minimum cost. This is a special type of queue called a **minimum priority queue**. There are also maximum priority queues where elements are removed in order of maximum cost/priority. 
-
-<break> 
-
-We will use the [`heapq`](https://docs.python.org/3/library/heapq.html) module in Python as our priority queue when we implement Dijkstra's. The internals of implementing a priority queue, also called a heap, are beyond the scope of this course, but we encourage you to follow your curiosity!
-### !end-callout
 
 ### Pseudocode
 The process outlined above can be generalized as pseudocode.
@@ -211,6 +200,7 @@ The following pseudocode implementation of Dijkstra's assumes that we are provid
 - Initialize a queue. Add the start node to the queue.
 - While the queue is not empty:
     - Set current as the item in the queue with minimum cost
+    - Add current to the list of visited nodes
     - loop through all the current node's neighbors
         - if the neighbor has not yet been visited:
             - set that node to visited
@@ -219,10 +209,22 @@ The following pseudocode implementation of Dijkstra's assumes that we are provid
                 - distance[neighbor] = temp_distance
                 - parent[neighbor] = current_node
             - queue.append(neighbor)
-    - visited[current_node] = True
 - Return the distances list
 
 ```
+
+## Priority Queues
+You may recall that when we first introduced [queues](../02-linked-lists/03-linked-lists-stacks-queues.md), we said queues remove elements in first-in-first-out (FIFO) order. 
+
+<break>
+
+However, in our pseudocode above, we remove elements from the queue in order of minimum cost. This is a special type of queue called a **minimum priority queue**. There are also maximum priority queues where elements are removed in order of maximum cost/priority. 
+
+<break> 
+
+We will use the [`heapq`](https://docs.python.org/3/library/heapq.html) module in Python as our priority queue when we implement Dijkstra's. The internals of implementing a priority queue, also called a heap, are beyond the scope of this course, but we encourage you to follow your curiosity!
+### !end-callout
+
 ### Challenge
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
