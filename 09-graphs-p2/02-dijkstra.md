@@ -17,7 +17,7 @@ However, in the weighted graph, we the shortest path from Node B to Node D trave
 Because of the change in how we calculate shortest paths when weighted edges exist, we are not able to use breadth first search to find the shortest path in weighted graphs. We need a new algorithm: Dijkstra's. 
 
 ## Dijkstra's Algorithm
-<!-- Video -->
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=be4c815b-3566-474e-abc3-af2300403866&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
 Dijkstra's algorithm takes a weighted graph and determines the least costly path from a specified start node to every other _reachable_ node in the graph.
 
@@ -154,7 +154,7 @@ costs/distances:
 ![Dijkstra's Walkthrough Part 7](./images/dijkstras-7.png)
 Step 7. Now we are visiting our final unvisited node, F. Like Node C, Node F has no unvisited neighbors.
 
-We simply mark it as visited and are done! Our list of costs/distances now represents the minimum cost to travel from Node A to every node in the graph.
+We simply mark it as visited and then we are done! Our list of costs/distances now represents the minimum cost to travel from Node A to every node in the graph.
 
 ```
 current: F
@@ -169,7 +169,15 @@ costs/distances:
     - E: 6
     - F: 8
 ```
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-warning
 
+## Limitations of Dijkstra's
+
+There are limitations to Dijkstra's algorithm. Dijkstra's _does not work_ for graphs with negative weights. To find the shortest path in a graph with negative weights we can use the [Bellman Ford algorithm](https://www.programiz.com/dsa/bellman-ford-algorithm). This algorithm is outside the scope of our curriculum and appears only very occasionally in interviews for SDE1 positions, but we encourage you to follow your curiosity.
+
+
+### !end-callout
 
 
 
@@ -528,8 +536,3 @@ def dijkstra(g, s):
 <!-- ======================= END CHALLENGE ======================= -->
 
 
-
-
-## Limitations of Dijkstra's
-
-Dijkstra's _does not work_ for graphs with negative weights. To find the shortest path in a graph with negative weights we can use the [Bellman Ford algorithm](https://www.programiz.com/dsa/bellman-ford-algorithm). This algorithm is outside the scope of our curriculum and appears only very occasionally in interviews for SDE1 positions, but we encourage you to follow your curiosity.
