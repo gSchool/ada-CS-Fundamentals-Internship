@@ -181,7 +181,7 @@ There are limitations to Dijkstra's algorithm. Dijkstra's _does not work_ for gr
 
 
 
-### Pseudocode
+## Pseudocode
 The process outlined above can be generalized as pseudocode.
 
 Before jumping into the pseudocode, observe that to find the cost of a path from Node A to a non-neighboring node D, we needed to know the cost of travelling from Node A to Node D's direct neighbor along that path.
@@ -468,6 +468,7 @@ When pushing an item to `heapq`, use a tuple of the form `(priority, node_index)
 
 Still feeling stuck? Watch the video solution walkthrough below. 
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d511a32d-c85c-4994-9e73-af23004ca554&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ##### !end-hint
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
@@ -535,10 +536,52 @@ def dijkstra(g, s):
 
 <!-- ======================= END CHALLENGE ======================= -->
 
+## Time and Space Complexity
+
+### Time Complexity
+
+The time complexity of Dijkstra's algorithm depends on how the graph given is represented. 
+
+When we use an adjacency matrix as above, the input is of size O(N^2) where N is the number of nodes in the graph. In the solution above, notice that overall the priority queue we loop over should hold each of the nodes in the graph once for an overall time complexity of O(N). 
+
+Inside the while loop, we have an inner for loop to help us access the current node's neighbors.Because the graph is an adjacency matrix, the for loop needs to loop through all N nodes and check if each is a neighbor of the current node. The loop therefore has a time complexity of O(N) making the overall time complexity O(N^2).
+
+You may notice that inside the inner for loop there is a `heappush` operation that happens to be an O(logN) operation. However, because of the conditional this operation is contained within, we only actually execute `heappush` about once per node in the graph so it doesn't increase our overall time complexity. 
+
+If the graph is instead provided as an adjacency list, then it is no longer necessary to loop through each node in the graph every time we want to find the neighbors of a particular node. The neighbors can be accessed in O(1) time with `adjacency_list[node_index]`. As a result, the overall traversal is O(N+E) where N is the number of nodes in the graph and E is the number of edges. For each edge we may do our `heappush` operation which is O(log n), so the overall time complexity is O((N+E)logN)
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-secondary
+
+## Why are heapq operations O(logn)?
+
+A priority queue or heap is a type of binary tree, somewhat similar to a binary search tree but with different properties to organize nodes. Each time we perform a `heappop` or `heappush` operation, the methods traverse the tree. At each node they decide to look at either the left or right subtree, halving the remaining section of the tree they need to traverse making it an O(logN) operation.
+
+<break>
+
+If interested, you can read more about the time complexity of the `heapq` module [here](https://medium.com/plain-simple-software/python-heapq-use-cases-and-time-complexity-ee7cbb60420f)
+### !end-callout
+
+
+### Space Complexity 
+Regardless of how the graph is represented, our `previous`, `distances`, and `visited` lists will remain the same. Each will hold at most N elements where N is the number of nodes in the graph. As a result, the overall space complexity of Dijkstra's is O(N).
+
+
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
+
+## Using V to define time and space complexity
+
+When referencing outside resources, we may see time and space complexity of graph algorithms defined in terms of V instead of N. V stands for vertex which is another name for node. Both V & N, are valid so long as you remember to define your variables! For clarity, we usually choose to use either V or N consistently across our definitions.
+
+<break>
+
+For example, if we say the time complexity of Dijkstra's is O(V), we would say the space complexity is O(V), not O(N).
+
+### !end-callout
+
 ## Summary
 
 Dijkstra's algorithm allows us to find the shortest distance path also known as the minimum cost path from any given start node to all other reachable nodes in the graph. Dijkstra's algorithm works on weighted graphs with non-negative edges. 
 
 The algorithm works by first overestimating the cost of reaching all nodes from the start node, and then iteratively relaxing those costs as it traverses each node in the graph. Its traversal prioritizes visiting nodes in the graph that are closer to the start node over nodes that are of a further distance to the start node.
-
 
