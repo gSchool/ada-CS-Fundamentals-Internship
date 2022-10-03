@@ -213,15 +213,6 @@ The following pseudocode implementation of Dijkstra's assumes that we are provid
 
 ```
 
-### !callout-info
-
-
-## Representing Infinity in Python
-
-We can represent infinity in Python with   `float(inf)`
-
-### !end-callout
-
 <!-- available callout types: info, success, warning, danger, secondary, star  -->
 ### !callout-info
 
@@ -266,9 +257,14 @@ Return a dictionary that has two keys:
 ##### !placeholder
 ```py
 import heapq
-
 def dijkstra(g, s):
+    # Hint: Use float('inf') to represent infinity
+    # Hint: use heapq to implement a priority queue
     pass
+                
+
+        
+
 ```
 
 ##### !end-placeholder
@@ -294,15 +290,15 @@ class TestPython1(unittest.TestCase):
             [ 0, 0, 2, 0, 0, 0, 6, 7, 0 ] 
         ]
         expected = {
-            'previous': [None, 0, 1, 2, 5, 6, 7, 0, 2],
-            'distances': [0, 4, 12, 19, 21, 11, 9, 8, 14]
+            'previous': [None, 0, 1, 5, 5, 6, 7, 0, 7],
+            'distances': [0, 4, 12, 25, 21, 11, 9, 8, 15]
         }
 
         answer = dijkstra(adjacency_matrix, 0)
 
         self.assertEqual(answer, expected)
 
-    def test_dijkstra_with_small_graph():
+    def test_dijkstra_with_small_graph(self):
         #Arrange
         adjacency_matrix =[ 
             [0, 4, 0, 0],
@@ -333,7 +329,7 @@ class TestPython1(unittest.TestCase):
 
         expected = {
             'previous': [None, 0, 1, None],
-            'distances': [0,4,15,float('inf')]
+            'distances': [0,4,16,float('inf')]
         }
 
         # Act
@@ -402,7 +398,7 @@ class TestPython1(unittest.TestCase):
             [1, 1, 0]
         ]
         expected = {
-            'previous': [None, None, None],
+            'previous': [1, None, 1],
             'distances': [1, 0, 1]
         }
 
@@ -420,7 +416,7 @@ class TestPython1(unittest.TestCase):
         ]
 
         expected = {
-            'previous': [2, None, None],
+            'previous': [2, None, 1],
             'distances': [2, 0, 1]
         }
 
@@ -429,29 +425,86 @@ class TestPython1(unittest.TestCase):
 
         #Assert
         self.assertEqual(answer, expected)
-
-
 ```
 
 ##### !end-tests
 
 <!-- other optional sections -->
-##### !hint 
+##### !hint
+
+Use the pseudocode in the section above to guide your implementation.
+
+When pushing an item to `heapq`, use a tuple of the form `(priority, node_index)`. The node's cost/distance should be  
 
 Still feeling stuck? Watch the video solution walkthrough below. 
 <!-- Add video walkthrough -->
 ##### !end-hint
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-##### !explanation 
+##### !explanation
+An example of a working implementation:
+```py
+def dijkstra(g, s):
+    #create a list to store the shortest paths
+    distances = []
+    #create a list to store the previous node in the shortest path to each node
+    previous = []
+    #create a set to store nodes already visited
+    visited = set()
+
+    #create an empty priority queue
+    pq = []
+
+    #initialize each node in distances and previous to infinity/None
+    for node in g:
+        distances.append(float('inf'))
+        previous.append(None)
+
+    #if the graph is not empty
+    if g:
+        #Add the start node to the priority queue
+        heapq.heappush(pq, (0, s))
+        
+        #Set the distance of the start node to itself to zero
+        distances[s] = 0
+    
+    #while the priority queue is not empty
+    while len(pq) > 0:
+
+        #pop the minimum node off of the priority queue
+        #_ is the distance to the minimum node, current is the node's index
+        _, current = heapq.heappop(pq)
+        #add current to visited
+        visited.add(current)
+        #loop through current's neighbors
+        #note since g is an adjacency matrix, we are actually looping through all nodes here
+        # we will find the actual neighbors inside the for loop
+        for neighbor in range(len(g[current])):
+            #get the weight of the edge from current -> neighbor
+            edge_weight = g[current][neighbor]
+            #if there is actually an edge between current & neighbor
+            #and the neighbor has not yet been visited
+            if edge_weight > 0 and neighbor not in visited:
+                #calculate the cost of path from start node -> neighbor via current node
+                temp_distance = distances[current] + edge_weight
+                #if calculated distance is less than current listed distance for neighbor
+                if temp_distance < distances[neighbor]:
+                    #set new minimum distance to temp_distance
+                    distances[neighbor] = temp_distance
+                    #set previous node in new minimum path to current
+                    previous[neighbor] = current
+                    #add neighbor to priority queue setting its distance as its priority
+                    heapq.heappush(pq, (distances[neighbor], neighbor))
+    #return dictionary with list of previous nodes and minimum distances
+    return {
+        'previous': previous,
+        'distances': distances
+    }
+```
 ##### !end-explanation
 
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
-
-### Dijkstra's with a priority queue
-
-We can improve the performance of Dijkstra's by using a priority queue instead of a regular first-in-first-out queue. 
 
 
 
