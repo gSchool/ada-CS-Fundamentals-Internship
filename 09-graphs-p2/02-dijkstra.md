@@ -535,4 +535,10 @@ def dijkstra(g, s):
 
 <!-- ======================= END CHALLENGE ======================= -->
 
+## Summary
+
+Dijkstra's algorithm allows us to find the shortest distance path also known as the minimum cost path from any given start node to all other reachable nodes in the graph. Dijkstra's algorithm works on weighted graphs with non-negative edges. 
+
+The algorithm works by first overestimating the cost of reaching all nodes from the start node, and then iteratively relaxing those costs as it traverses each node in the graph. Its traversal prioritizes visiting nodes in the graph that are closer to the start node over nodes that are of a further distance to the start node.
+
 
