@@ -251,6 +251,28 @@ Return a dictionary that has two keys:
   - `previous` whose value is a list of the previous nodes in the shortest path from node `s` to the `i`th node
   - `distances` whose value is the distance/cost of the shortest path from node `s` to e in the the graph `g`.
 
+Example:
+Input:
+```python
+    g = [
+        [0, 4, 0, 0],
+        [4, 0, 12, 0],
+        [0, 12, 0, 0],
+        [0,  0, 0, 0]
+        ]
+    s = 0
+```
+![Dijkstra challenge example](./images/dijkstra-challenge-example.png)
+
+Output:
+```py
+    {
+        'previous': [None, 0, 1, None],
+        'distances': [0,4,16,float('inf')]
+    }
+```
+
+
 
 ##### !end-question
 
@@ -434,7 +456,7 @@ class TestPython1(unittest.TestCase):
 
 Use the pseudocode in the section above to guide your implementation.
 
-When pushing an item to `heapq`, use a tuple of the form `(priority, node_index)`. The node's cost/distance should be  
+When pushing an item to `heapq`, use a tuple of the form `(priority, node_index)`. The node's cost/distance should be  the priority. 
 
 Still feeling stuck? Watch the video solution walkthrough below. 
 <!-- Add video walkthrough -->
@@ -469,7 +491,6 @@ def dijkstra(g, s):
     
     #while the priority queue is not empty
     while len(pq) > 0:
-
         #pop the minimum node off of the priority queue
         #_ is the distance to the minimum node, current is the node's index
         _, current = heapq.heappop(pq)
