@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Overview of Graphs
 In the previous lesson, we talked about graphs, how to represent them, and a couple algorithms for traversing graphs. In this lesson, we'll go over a quick review of some of the learnings from the last lesson and introduce a new algorithm that can be used to solve a multitude of graph problems.
 
@@ -331,3 +332,6 @@ The correct answer is C because either algorithm can be used to find all of the 
 As mentioned earlier, a modified version of BFS only allows us to find the shortest path between two nodes in an unweighted graph. One way to further modify the BFS algorithm to find the shortest distance between two nodes is by implementing what is called Dijkstra's Algorithm. 
 
 We will learn more about Dijkstra's Algorithm in the following lesson.
+=======
+# Graphs Review
+>>>>>>> b0e6281197c52c7fabc2a143484474dbf70f115c
