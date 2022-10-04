@@ -231,17 +231,21 @@ The DFS algorithm requires the use of a stack. The stack is used to further proc
 #### DFS Visualization
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=757ce80b-3cc5-4ae0-bdf1-af240146d5a0&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
+### Why BFS (kinda) allows for shortest path of an unweighted graph
+
+By itself, BFS does *not* allow for finding the shortest path of an unweighted graph. In order to retrieve the shortest path using the BFS algorithm, one would need to modify the algorithm to store the current shortest distance to the target node as well as the preceding node in the shortest path. This is essentially what Dijkstra's algorithm does, which we will learn more about in the next section. 
+
+Again, you may recall BFS visits nodes based on *proximity*. It starts by visiting nodes one edge away (its neighbors). Then visits its neighbor's neighbors (nodes that are two edges away from the starting node), and etc. Therefore, the BFS algorithm can be modified to record the smallest path from an initial node to any other connected node in the graph. The big difference between Dijkstra's Algorithm and BFS is that Dijkstra's uses the *weights* of the edges to determine the next node to consider rather than just the number of edges. Again, we'll talk about Dijkstra's algorithm more in the next section.
+
 ### Why DFS does not find shortest path
 
 The main reason the DFS algorithm is not typically used to find the shortest path is because DFS is not a "greedy" algorithm. The algorithm is not designed to account for changes in logic based on the data it encounters, which is what is needed for finding the shortest path in a graph.
 
+The DFS algorithm does not take a nodes' proximity into consideration when making its traversal, so it's not useful for tracking the distance between nodes.
+
 ## !callout
 A greedy algorithm is an approach for solving a problem by selecting the best option available at the moment. A greedy algorithm never reverses the earlier decision even if the choise is wrong. An algorithm which is considered greedy may not produce the best result for all problems.
 ## !end-callout
-
-### Why BFS (kinda) allows for shortest path of an unweighted graph
-
-By itself, BFS does *not* allow for finding the shortest path of an unweighted graph. In order to retrieve the shortest path using the BFS algorithm, one would need to modify the algorithm to store the current shortest distance to the target node as well as the preceding node in the shortest path. This is essentially what Djikstra's algorithm does, which we will learn more about in the next section.
 
 ## BFS, DFS, or Either
 
@@ -308,15 +312,13 @@ d| Neither
 
 ##### !answer
 
-a|
+c|
 
 ##### !end-answer
 
 ##### !explanation
 
-The correct answer is A because BFS allows us to find which nodes are connected to one another in an efficient manner. We would not necessarily want to use DFS to find all connected nodes because the algorithm does not lend itself to finding connected nodes efficiently. 
-
-For instance, if we are looking to see if a node 2 levels away from the starting node is connected, the DFS algorithm may need to run for a much longer time to find that connected node that is placed nearby in the graph in comparison to the BFS algorithm which will find the connected node much sooner.
+The correct answer is C because either algorithm can be used to find all of the connected nodes in a graph. They both have similar time complexity with DFS being only slightly faster on average.
 
 ##### !end-explanation 
 
@@ -324,8 +326,8 @@ For instance, if we are looking to see if a node 2 levels away from the starting
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-## Introduction to Djikstra's Algorithm
+## Introduction to Dijkstra's Algorithm
 
-As mentioned earlier, BFS does not allow for finding the shortest path between two nodes without some additional modifications. One way to utilize the BFS algorithm to find the shortest distance between two nodes is by implementing what is called Djikstra's Algorithm. 
+As mentioned earlier, BFS does not allow for finding the shortest path between two nodes without some additional modifications. One way to utilize the BFS algorithm to find the shortest distance between two nodes is by implementing what is called Dijkstra's Algorithm. 
 
-We will learn more about Djikstra's Algorithm in the following lesson.
+We will learn more about Dijkstra's Algorithm in the following lesson.
