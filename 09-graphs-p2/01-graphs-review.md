@@ -328,6 +328,6 @@ The correct answer is C because either algorithm can be used to find all of the 
 
 ## Introduction to Dijkstra's Algorithm
 
-As mentioned earlier, BFS does not allow for finding the shortest path between two nodes without some additional modifications. One way to utilize the BFS algorithm to find the shortest distance between two nodes is by implementing what is called Dijkstra's Algorithm. 
+As mentioned earlier, a modified version of BFS only allows us to find the shortest path between two nodes in an unweighted graph. One way to further modify the BFS algorithm to find the shortest distance between two nodes is by implementing what is called Dijkstra's Algorithm. 
 
 We will learn more about Dijkstra's Algorithm in the following lesson.
