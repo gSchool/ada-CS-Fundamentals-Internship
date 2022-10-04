@@ -211,7 +211,6 @@ The following pseudocode implementation of Dijkstra's assumes that we are provid
     - Add current to the list of visited nodes
     - loop through all the current node's neighbors
         - if the neighbor has not yet been visited:
-            - set that node to visited
             - calculate distance from start node to neighbor via current node
             - If calculated distance < distance[neighbor]
                 - distance[neighbor] = caclulated distance
