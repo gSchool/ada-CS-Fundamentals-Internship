@@ -259,8 +259,7 @@ Return a dictionary that has two keys:
   - `previous` whose value is a list of the previous nodes in the shortest path from node `s` to the `i`th node
   - `distances` whose value is the distance/cost of the shortest path from node `s` to e in the the graph `g`.
 
-Example:
-Input:
+Example Input:
 ```python
     g = [
         [0, 4, 0, 0],
