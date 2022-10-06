@@ -117,7 +117,7 @@ What is the time complexity of your solution? Remember to define your variables.
 ### !challenge
 
 * type: paragraph
-* id: 92baf44f-9ec9-4a83-af9a-191b281988fa
+* id: 12a00b6c-9623-443b-9a1e-cd06d7538f93
 * title: space complexity
 <!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
 <!-- * topics: [python, pandas] (Checkpoints only, optional the topics for analyzing points) -->
