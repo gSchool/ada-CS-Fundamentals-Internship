@@ -2,8 +2,7 @@
 
 | Logistics             | Details                                         |
 | --------------------- | ----------------------------------------        |
-| Project details       | https://github.com/ada-c17/Minimum-Effort-Path  |
-| JS Version            | NA                                              |
+| Project details       | [https://github.com/ada-c17/Minimum-Effort-Path](https://github.com/ada-c17/Minimum-Effort-Path)  |
 | Should you fork this? | Yes (Check project details)                     |
 | Submission method     | Learn                                           |
 
