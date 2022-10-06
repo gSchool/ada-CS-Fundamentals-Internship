@@ -15,7 +15,7 @@
 ### !challenge
 
 * type: testable-project
-* id: bae69d26-49ac-4750-b397-52003ac77257
+* id: 2a826e8d-ad74-43eb-953d-9757727cfac5
 * title: Minimum Effort Path Problem
 * upstream: https://github.com/ada-c17/Minimum-Effort-Path
 * validate_fork: true
@@ -49,7 +49,7 @@ Your repo link goes here.
 ### !challenge
 
 * type: short-answer
-* id: 5167a605-d381-441d-8ec5-4063533f3600
+* id: 8912d2bc-9b8c-41a9-889e-310da2319cbe
 * title: Minimum Effort Path PR
 * points: 2
 * topics: graphs
@@ -87,7 +87,7 @@ PR Link goes here
 ### !challenge
 
 * type: paragraph
-* id: c2735bca-226b-4c2f-b2c9-636331c7e677
+* id: 3c4015df-9440-4b03-813d-412ff551f40a
 * title: Time complexity
 <!-- * points: [1] (optional, the number of points for scoring as a checkpoint) -->
 <!-- * topics: [python, pandas] (Checkpoints only, optional the topics for analyzing points) -->
