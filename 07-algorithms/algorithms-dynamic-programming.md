@@ -1,101 +1,3 @@
-## Dynamic Programming
-
-_Dynamic programming_, which is also sometimes referred to as _dynamic optimization_, is an approach to solving complicated problems by breaking them down into their smaller parts, and storing the results to these subproblems so that they only need to be computed once.  So any time you take a big problem and break it down into component parts and save the results from each part to use in solving the larger problem, you are doing dynamic programming.  
-
-We looked earlier at greedy algorithms.  In a greedy algorithm the program makes the best looking choice in the moment and never revisits it's decisions to look back for a more optimal choice.  Often this method works, but even more often a greedy algorithm will find a solution that is not the most optimal.  The greedy sort we looked at above operates in this fashion.  It makes swaps in the moment, but never considers which element should end up in a specific index and ends up making more swaps than a selection sort.  However both greedy and dynamic programming approaches have to make choices at each step.  Both approaches attempt to make the best choice in very different ways.  Greedy algorithms make the best choice at each stage solving one subproblem at each step on the path to solving the larger problem.  Dynamic programming on the other hand tries to solve **all** the subproblems and then choose the best option from all the subproblems.  So a dynamic programming algorithm will look at all the possible subproblems before choosing a solution and a greedy algorithms only look through one subproblem.  This means that a dynamic programming solution is more thorough.
-
-We have also looked at divide and conquer algorithms and there are a lot of overlapping ideas here, as divide and conquer algorithms also break a problem down into subproblems. However the subproblems in a dynamic algorithm can overlap and repeat whereas a divide and conquer algorithm's subproblems do not overlap.  
-
-You can think of it like this.  You have 5<sup>4</sup> and know that this is 625.  When you are asked to find 5<sup>5</sup>, you could re-do 5\*5\*5\*5\*5 to calculate the answer or you could just multiply 5<sup>4</sup> by 5 and since you already have 625, the problem is easier to solve.
-
-This is easier to explain with an example:
-
-#### Dynamic Programming Example - Fibonacci
-
-We have already seen the fibonacci sequence `fib(n) = fib(n-1) + fib(n-2)` for all n > 0 and `fib(1) = 1` and `fib(0) = 0`.  
-
-We can solve that problem recursively like this:
-
-```python
-def fibonacci(n):
-    if n < 0:
-        raise AttributeError("n must be >= 0")
-    if n == 0:
-        return 0
-    if n == 1:
-        return 1
-
-    return fibonacci(n-1) + fibonacci(n-2)
-```
-
-However this solution, as we saw with recursion is wildly inefficient.  We can however write a dynamic programming solution which will solve all the subproblems and use them to solve the larger problem.
-
-```python
-def fibonacci(n):
-    if n < 0:
-        raise AttributeError("n must be >= 0")
-  
-    # Build a memo of subproblems
-    fib_numbers = [0] * (n+1) 
-    # Fill in the base case for the memo
-    fib_numbers[0] = 0
-    fib_numbers[1] = 1
-    # Solve all the subproblems
-    num = 2
-    while num <= n:
-        fib_numbers[num] = fib_numbers[num - 1] + fib_numbers[num - 2]
-        num += 1
-  
-    # return the answer by using the memo
-    return fib_numbers[n]
-```
-
-This dynamic programming solution solves the larger problem by solving all the individual subproblems and recording their results in an array, which I will call a memo.  This transforms an O(2<sup>n</sup>) time complexity algorithm into an O(n) algorithm.
-
-The power of dynamic programming is that we never have to repeat the overlapping subproblems.  In Fibonacci if you calculate the algorithm manually, you will end-up calculating `fibonacci(2)` quite a lot.  By recording the results of that value in a memo, you avoid having to duplicate that work.
-
-Take a look below, see how many times you are solving the same subproblem?
-
-![fibonacci example](images/fibonacci.png)
-
-By recording solutions to subproblems for use later we are using a technique known as _memoization_.  This is a classic example of using space to save time.  We sacrifice a larger space complexity for the ability to look up solutions to subproblems rather than recalcualting them.
-
-<!-- available callout types: info, success, warning, danger, secondary, star  -->
-### !callout-info
-
-## There is a better Fibonacci Solution
-
-In the case of fibonacci, since you only need to remember the last two values of the sequence to solve for n, you could solve in this manner with an O(1) space complexity.  
-
-However this is still dynamic programming as you are memoizing subproblems for as long as you need them.
-
-### !end-callout
-
-
-```python
-def fibonacci(n):
-    if n < 0:
-        raise AttributeError("n must be >= 0")
-    if n < 2:
-      return n
- 
-    two_previous = 0
-    one_previous = 1
-    num = 2
-
-    while num < n:
-      temp = one_previous + two_previous
-      two_previous = one_previous
-      one_previous = temp
-      num += 1
- 
-    return one_previous + two_previous
-```
-
-## Summary
-
-In this lesson we looked at what an algorithm is: a series of finite steps to solve a particular problem.  We also looked at how we analyze algorithms in terms of time and space complexity.  Lastly we looked at three categories of algorithms: greedy, divide and conquer, and dynamic programming.  Greedy algorithms attempt to solve a large problem by making locally optimal choices at each step, with the hope of solving a larger  problem.  Divide and conquer algorithms attempt to solve a big problem by repeatably breaking it into smaller subproblems until the subproblems become small enough to solve directly and then combining the results to solve the larger problem.  Dynamic programming also divides the problem into smaller subproblems, but it memoizes the results of the subproblems and uses the stored results to solve the larger problem.  These strategies are commonly used in writing useful algorithms.
-
 # Dynamic Programming
 
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=06de5ab7-88ef-495d-a313-ad440033b00c&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
@@ -112,11 +14,19 @@ In this lesson we looked at what an algorithm is: a series of finite steps to so
 
 The key concept of dynamic programming is to recognize subproblems we solve again and again, and store the solutions to those problems. This is called _memoizing_. Then we use the stored solutions to help solve the larger problems.
 
+### !callout-info
+
+## Caching
+
+You may also hear dynamic programming and memoizing referred to as _caching_.
+
+### !end-callout
+
 Dynamic programming is in some ways similar to divide and conquer.
 
-A dynamic-programming problem breaks the problem into subproblems and saves the solutions to those subproblems. The key difference is that in dynamic programming the subproblems are often overlapping, such that we need the solution to a particular subproblem multiple times.
+A dynamic-programming problem breaks the problem into subproblems and saves the solutions to those subproblems. The key difference is that in dynamic programming the subproblems are often *overlapping*, such that we need the solution to a particular subproblem multiple times.
 
-In a divide-and-conquer problem the larger problem is divided into several non-overlapping subproblems and the solutions to each subproblem is used to solve the larger problem.
+In a divide-and-conquer problem the larger problem is divided into several *non-overlapping* subproblems and the solutions to each subproblem is used to solve the larger problem.
 
 ## Terms
 
@@ -163,9 +73,10 @@ def fibonacci(n):
     return fibonacci(n - 1) + fibonacci(n - 2)
 ```
 
-However this is wildly inefficient!
+However, this is wildly inefficient!
 
-![fibonacci(5) calls fibonacci(4)(a) and fibonacci(3)(b). fibonacci(4)(a) calls fibonacci(3)(c) and fibonacci(2)(d). fibonacci(3)(c) calls fibonacci(2)(e) and fibonacci(1)(f). fibonacci(2)(e) calls fibonacci(1)(g) and fibonacci(0)(h). fibonacci(2)(d) calls fibonacci(1)(i) and fibonacci(0)(j). fibonacci(3)(b) calls fibonacci(2)(k) and fibonacci(1)(l). fibonacci(2)(k) calls fibonacci(1)(m) and fibonacci(0)(n).](../assets/algorithmic-strategies_dynamic-programming_fibonacci-inefficient.png)  
+![fibonacci(5) calls fibonacci(4)(a) and fibonacci(3)(b). fibonacci(4)(a) calls fibonacci(3)(c) and fibonacci(2)(d). fibonacci(3)(c) calls fibonacci(2)(e) and fibonacci(1)(f). fibonacci(2)(e) calls fibonacci(1)(g) and fibonacci(0)(h). fibonacci(2)(d) calls fibonacci(1)(i) and fibonacci(0)(j). fibonacci(3)(b) calls fibonacci(2)(k) and fibonacci(1)(l). fibonacci(2)(k) calls fibonacci(1)(m) and fibonacci(0)(n).](images/algorithmic-strategies_dynamic-programming_fibonacci-inefficient.png)
+<br>
 _Fig. Fibonacci of 5. Notice how the same subproblems are repeatedly called!_
 
 For the Fibonacci of 5, `fibonacci(2)` is called 3 times, and `fibonacci(1)` is called 5 times. As \(n\) grows larger, this will occur more and more often. For any \(n > 1\), we end up making \(2^n\) method calls!
@@ -244,14 +155,6 @@ def fibonacci_recursive(n, solutions=None):
 
 To really appreciate the improvements that dynamic programming can bring, we can try running `fibonacci(40)` with the original, recursive implementation and note how long this takes to run. If we then run _any_ of the versions that use dynamic-programming techniques, we should see a significant improvement!
 
-### !callout-info
-
-## Fibonacci Challenges
-
-Notice how when solving `fibonacci(n)`, the only solutions we need are `fibonacci(n-1)` and `fibonacci(n-2)`. Using this observation, can we reduce our space complexity from \(O(n)\) to \(O(1)\) for the iterative solution? Are we able to apply this strategy to the recursive version of that solution?
-
-### !end-callout
-
 ## Example: Longest Common Subsequence
 
 Let's create a function named `lcs`, which stands for "longest common subsequence."
@@ -280,9 +183,16 @@ The longest common subsequence problem is relevant to a lot of different subject
 
 One approach we might take to solve this problem is at each position, to consider the current letter in each string and the remaining portion of each string. If the current characters match, they contribute one matched character count to our total length, plus however many matches there are in the remainders of the strings.
 
-But maybe we can get a better alignment (a longer subsequence) if we don't take the current pair of characters as part of the subsequence. What if we advanced the first string, looking for a better place to start the match. Or what if we advanced the second string? And what if this wasn't a match in the first place? We can advance both strings. For any of these cases, the current characters don't add anything to the overall length of the subsequence. The final length would be the maximum of those three options.
+It may be possible we can get a better alignment (a longer subsequence) if we don't take the current pair of characters as part of the subsequence.
 
-And how do we find the maximum subsequence of the remaining strings? Why with recursion!
+There are three routes we can take:
+- Advance the first string, looking for a better place to start the match
+- Advanced the second string, again looking for a better place to start the match
+- And if this wasn't a match in the first place, then we can advance both strings
+
+For any of these cases, the current characters don't add anything to the overall length of the subsequence. The final length would be the maximum of those three options.
+
+And how do we find the maximum subsequence of the remaining strings? We can do so with recursion.
 
 ```python
 def lcs(str1, str2):
@@ -303,9 +213,9 @@ def lcs(str1, str2):
 
     # the result for this position is the max of the current score
     # and each of the maxes from the three possibilities:
-    # 1. advance both characters (adding to score if a match)
-    # 2. advance only the first character
-    # 3. advance only the second character
+    # 1. advance both characters (adding the current score which will be 1 if they matched and 0 if they did not)
+    # 2. advance only the first string of characters (str1)
+    # 3. advance only the second string of characters (str2)
     result = max(
         current_score + lcs(rest1, rest2),
         lcs(rest1, str2),
@@ -317,7 +227,7 @@ def lcs(str1, str2):
 
 And let's visualize this solution in a diagram. In this example, we're finding the longest common subsequence for the strings "ace" and "ae." When we illustrate the number of function calls needed, we see there are _a lot_.
 
-![The call tree for finding the longest common subsequence for the strings "ace" and "ae". Because there are three branches at each level, it spreads very quickly. There are large repeated sections of the call tree.](../assets/algorithmic-strategies_dynamic-programming_lcs.png)  
+![The call tree for finding the longest common subsequence for the strings "ace" and "ae". Because there are three branches at each level, it spreads very quickly. There are large repeated sections of the call tree.](images//algorithmic-strategies_dynamic-programming_lcs.png)  
 _Fig. If the recursive explosion of Fibonacci seemed bad, get a load of this! Crossed-out nodes indicate calls that result in a 0 length due to at least one of the input strings being empty. The numbers indicate the maximum value being returned back from a particular branch of execution. Repeated regions are outlined in yellow._
 
 The explosion of calls in this diagram puts Fibonacci to shame! But for small examples, like in the example table above, this recursive implementation might be manageable.
@@ -373,36 +283,156 @@ def lcs(str1, str2, memo=None):
 
 </details>
 
+## Check for Understanding - Kadane's Algorithm
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: 0a6e11c8-ba9b-40cb-8085-84b42e8de0df
+* title: Maximum Contiguous Array Sum
+
+##### !question
+
+Write a method to find the contiguous subarray in a 1-dimensional array with the largest sum.
+
+![Image of Array with Largest Contiguous Sum Subarray Highlighted](images/kadane-Algorithm.png)
+
+In the image above, the largest contiguous sum subarray is the subarray from index 2 to index 6. The elements add up to 7, which would be the output of the algorithm given the above array.
+
+##### !end-question
+
+##### !placeholder
+```py
+def max_contiguous_sum(arr):
+  '''
+  INPUT: 1-dimensional array with integers which can be either positive or negative
+  OUTPUT: int, which is the maximum contiguous subarray sum
+
+  Example input:
+  [-2, -3, 4, -1, -2, 1, 5, -3]
+
+  Example output:
+  7 (image above shows which elements add up to this sum)
+  '''
+  pass
+```
+
+##### !end-placeholder
+
+##### !tests
+```py
+import unittest
+import main as p
+
+class TestPython1(unittest.TestCase):
+    def test_one(self):
+        # Arrange
+        arr = [-2, -3, 4, -1, -2, 1, 5, -3]
+        # Act
+        max_sum = p.max_contiguous_sum(arr)
+        # Assert
+        self.assertEqual(7, max_sum)
+
+    def test_two(self):
+        # Arrange
+        arr = [-2,1,-3,4,-1,2,1,-5,4]
+        # Act
+        max_sum = p.max_contiguous_sum(arr)
+        # Assert
+        self.assertEqual(6, max_sum)
+
+    def test_three(self):
+        # Arrange
+        arr = [1]
+        # Act
+        max_sum = p.max_contiguous_sum(arr)
+        # Assert
+        self.assertEqual(1, max_sum)
+
+    def test_four(self):
+        # Arrange
+        arr = [5,4,-1,7,8]
+        # Act
+        max_sum = p.max_contiguous_sum(arr)
+        # Assert
+        self.assertEqual(23, max_sum)
+
+    def test_empty_arr(self):
+         # Arrange
+        arr = []
+        # Act
+        max_sum = p.max_contiguous_sum(arr)
+        # Assert
+        self.assertEqual(0, max_sum)
+
+```
+
+##### !end-tests
+
+##### !hint
+Pseudocode:
+```
+Initialize:
+    max_so_far = INT_MIN
+    max_ending_here = 0
+
+for each element in the array:
+  (a) max_ending_here = max_ending_here + arr[i]
+  (b) if(max_so_far < max_ending_here)
+            max_so_far = max_ending_here
+  (c) if(max_ending_here < 0)
+            max_ending_here = 0
+return max_so_far
+```
+
+One can use float('-inf') for INT_MIN.
+
+Still feeling stuck? Watch a video explanation of the solution below.
+<!-- Insert link to video explanation here -->
+##### !end-hint
+
+##### !explanation
+An example solution is detailed below:
+```py
+def max_contiguous_sum(arr):
+  if len(arr) == 0:
+    return 0
+
+  max_so_far = float('-inf')
+  max_ending_here = 0
+
+  size = len(arr)
+
+  for i in range(0, size):
+    max_ending_here = max_ending_here + arr[i]
+    if (max_so_far < max_ending_here):
+      max_so_far = max_ending_here
+      
+    if max_ending_here < 0:
+      max_ending_here = 0
+        
+  return max_so_far
+```
+##### !end-explanation 
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
+Kadane's Algorithm is an example of a dynamic programming algorithm because the maximum subarray sum for arr[0:n] is calculated by using the previous maximum subarray of arr[0:n-1]. The runtime of this algorithm is O(N).
+
 ## Summary
 
-Dynamic programming is an algorithmic strategy which involves breaking down a large problem into easier-to-solve subproblems.
+Dynamic programming is an algorithmic strategy which involves breaking down a large problem into easier-to-solve subproblems. This algorithmic strategy is most useful when subproblems overlap. Stated another way, this algorithmic strategy is best used when subproblems have the same input over and over again that result in the same output.
 
 In a dynamic-programming approach, the solved subproblems are saved for use in solving larger instances of the problem. In this manner we exchange larger space complexity for smaller time complexity.
 
-## Resources
+## Additional Resources
 
 - [Geeks for Geeks: Dynamic Programming](https://www.geeksforgeeks.org/dynamic-programming/)
 - [Geeks for Geeks: Ugly Number Problem](https://www.geeksforgeeks.org/ugly-numbers/)
 - [Quora: How should I explain dynamic programming to a 4-year-old?](https://www.quora.com/How-should-I-explain-dynamic-programming-to-a-4-year-old/answer/Jonathan-Paulson)
 - [Medium: Dynamic Programming an Induction Approach](https://medium.com/@tiagot/dynamic-programming-an-induction-approach-b5c5e73c4a19)
-
-## Check for Understanding
-
-<!-- Question Takeaway -->
-<!-- prettier-ignore-start -->
-### !challenge
-* type: paragraph
-* id: 78c6c09f
-* title: Dynamic Programming
-##### !question
-
-What was your biggest takeaway from this lesson? Feel free to answer in 1-2 sentences, draw a picture and describe it, or write a poem, an analogy, or a story.
-
-##### !end-question
-##### !placeholder
-
-My biggest takeaway from this lesson is...
-
-##### !end-placeholder
-### !end-challenge
-<!-- prettier-ignore-end -->
