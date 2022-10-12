@@ -391,7 +391,8 @@ return max_so_far
 One can use float('-inf') for INT_MIN.
 
 Still feeling stuck? Watch a video explanation of the solution below.
-<!-- Insert link to video explanation here -->
+<br>
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=1f7a10e8-5716-4020-8ade-af2c015c715c&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 ##### !end-hint
 
 ##### !explanation
@@ -422,7 +423,7 @@ def max_contiguous_sum(arr):
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-Kadane's Algorithm is an example of a dynamic programming algorithm because the maximum subarray sum for arr[0:n] is calculated by using the previous maximum subarray of arr[0:n-1]. The runtime of this algorithm is O(N).
+Kadane's Algorithm is an example of a dynamic programming algorithm because the maximum subarray sum for `arr[0:n]` is calculated by using the previous maximum subarray of `arr[0:n-1]`. The runtime of this algorithm is `O(N)`. The space complexity is `O(1)`.
 
 ## Summary
 
