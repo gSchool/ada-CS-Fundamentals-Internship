@@ -91,3 +91,7 @@ Could a heap be used?
 ##### !explanation
 
 You could also use a heap to solve this by adding the 1st element of each list to a min-heap, then removing the root value from the min-heap and adding the next element in the list from which it came into the heap, and repeating until the heap is empty.  This can be done in O(n log k) time where n is the total number of elements in all of the arrays and k is the number of arrays.
+
+##### !end-explanation
+
+### !end-challenge

@@ -213,9 +213,6 @@ As you can see Quicksort divides the larger problem into two parts, and then sol
 
 
 
-##### !end-explanation
-
-### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
 
