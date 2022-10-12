@@ -160,6 +160,10 @@ Standards:
         UID: a76dfc02-3b54-459c-bf72-66a072b26119
         Path: /07-algorithms/01-algorithms.md
       -
+        Type: Lesson
+        UID: 7ea64175-a181-4cb6-9782-481c78c1dbb4
+        Path: /07-algorithms/03-greedy-algorithms.md
+      -
         Type: Checkpoint
         UID: 92514af3-c487-40cb-acbc-8b62d864be82
         Path: /07-algorithms/algorithms-checkpoint.md

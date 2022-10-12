@@ -1,6 +1,26 @@
-# Greedy Algorithms
+# The Greedy Approach
 
-A greedy algorithm is like a mouse moving through a maze.  At each step the mouse will move into the next room with the tastiest cheese at each step.  It does not look at the entire problem, but only the current values available.  In other words, at each step, take the best possible value at the moment without regard for future consequences.  Greedy algorithms _hope_ that by making a locally optimal choice at each step, they will arrive at an optimum solution for the larger problem.  
+<!-- Definition -->
+<!-- The algorithm makes the optional s-->
+<!-- Greedy algorithms -->
+
+## Introduction
+The divide and conquer approach won't help us solve all problems so it is useful to be familiar with additional techniques we can use to develop algorithms. **Greedy Algorithms** or the greedy approach is another handy strategy and is often used to solve optimization problems.
+
+We can think of a greedy algorithm as a mouse moving through a maze filled with cheese. At each decision point in the maze, the mouse will choose the path that provides the tastiest cheese. The mouse can't see the entire problem, it chooses its path using only the information available at the moment (which fork in the road offers the tastier cheese?)
+without regard for future consequences. Greedy algorithms _hope_ that by making a locally optimal choice at each step, they arrive at an optimum solution for the larger problem, but it does not always work out.
+
+In the diagram below, we can see that the mouse successfully makes it out of the maze by using the greedy approach. 
+
+[Greedy Algorithm - Mouse Analogy Visualization](images/greedy-mouse-maze.png)
+
+However, if a maze route that ended in a dead-end offered tastier cheese, the mouse could just as easily end up lost in the maze!
+
+[Unsuccessful Greedy Algorithm - Mouse Analogy Visualization](images/greedy-mouse-maze.png)
+
+## Applications of Greedy Algorithms
+
+
 
 #### Greedy Example 1 - Sorting
 
