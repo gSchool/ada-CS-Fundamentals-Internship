@@ -24,9 +24,9 @@ You may also hear dynamic programming and memoizing referred to as _caching_.
 
 Dynamic programming is in some ways similar to divide and conquer.
 
-A dynamic-programming problem breaks the problem into subproblems and saves the solutions to those subproblems. The key difference is that in dynamic programming the subproblems are often *overlapping*, such that we need the solution to a particular subproblem multiple times.
+Like divide and conquer, a dynamic programming problem breaks the problem into subproblems and saves the solutions to those subproblems. The key difference is that in dynamic programming the subproblems are often *overlapping*, such that we need to know the solution to a particular subproblem multiple times.
 
-In a divide-and-conquer problem the larger problem is divided into several *non-overlapping* subproblems and the solutions to each subproblem is used to solve the larger problem.
+In a divide and conquer problem the larger problem is divided into several *non-overlapping* subproblems and the solutions to each subproblem are used to solve the larger problem.
 
 ## Terms
 
@@ -55,7 +55,7 @@ To paraphrase a great discussion that can be found on Quora (link in the referen
 
 ## Example: Fibonacci
 
-Let's consider how to create a solution for the Fibonacci sequence that uses dynamic programming.
+Let's consider how to create an algorithm for the Fibonacci sequence using dynamic programming.
 
 Let's recall what the Fibonacci sequence is `fibonacci(n)`:
 
@@ -181,7 +181,7 @@ The longest common subsequence problem is relevant to a lot of different subject
 
 ### !end-callout
 
-One approach we might take to solve this problem is at each position, to consider the current letter in each string and the remaining portion of each string. If the current characters match, they contribute one matched character count to our total length, plus however many matches there are in the remainders of the strings.
+One approach we might take to solve this problem is to consider the current letter in each string and the remaining portion of each string at each position. If the current characters match, they contribute one matched character count to our total length, plus however many matches there are in the remainders of the strings.
 
 It may be possible we can get a better alignment (a longer subsequence) if we don't take the current pair of characters as part of the subsequence.
 
@@ -232,9 +232,9 @@ _Fig. If the recursive explosion of Fibonacci seemed bad, get a load of this! Cr
 
 The explosion of calls in this diagram puts Fibonacci to shame! But for small examples, like in the example table above, this recursive implementation might be manageable.
 
-But increasing the input size by even a little bit can slow things down significantly! If we try using the strings `"tagacgttagtc"` and `"qaqaqgqtqgqc"` as input to our current implementation, even though they are only 12 characters long each, it will take a noticeable amount of time to run! What if we were using this to align genes, which can often span tens of thousands of characters?
+But increasing the input size by even a little bit can slow things down significantly! If we try using the strings `"tagacgttagtc"` and `"qaqaqgqtqgqc"` as input to our current implementation,  it will take a noticeable amount of time to run even though they are only 12 characters long each! What if we were using this to align genes which can often span tens of thousands of characters?
 
-From the example call diagram, if we notice that there are many repeated sub-trees (especially the calls to `lcs("ce", "e")`, outlined in yellow), we might think about applying dynamic programming practices to reuse these calculations.
+From the example call diagram, notice that there are many repeated sub-trees (especially the calls to `lcs("ce", "e")`, outlined in yellow). This is a great indicator that dynamic programming can be applied to reuse these calculations.
 
 To add memoization to the Fibonacci algorithm, we only had to check whether a single value had been calculated before. But for the longest common subsequence we need to look up a result based on two inputs.
 
@@ -423,7 +423,7 @@ def max_contiguous_sum(arr):
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-Kadane's Algorithm is an example of a dynamic programming algorithm because the maximum subarray sum for `arr[0:n]` is calculated by using the previous maximum subarray of `arr[0:n-1]`. The runtime of this algorithm is `O(N)`. The space complexity is `O(1)`.
+The solution for this problem, also known as Kadane's Algorithm, is an example of a dynamic programming algorithm because the maximum subarray sum for `arr[0:n]` is calculated by using the previous maximum subarray of `arr[0:n-1]`. The runtime of this algorithm is `O(N)`. The space complexity is `O(1)`.
 
 ## Summary
 
