@@ -1,0 +1,173 @@
+---
+Standards:
+  -
+    Title: Thursdays at Ada Norms
+    Description: Expectations for our sessions
+    UID: 88fccfa1-fe50-4434-8834-6efdf422f247
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Instructor
+        UID: 560d5d4e-4c3d-438b-8b52-7bbb2b209d4c
+        Path: /00-about-thursdays-at-ada/thursdays-at-ada.instructor.md
+      -
+        Type: Lesson
+        UID: bcc6309e-3453-4aea-9b22-ef8e09c2b09e
+        Path: /00-about-thursdays-at-ada/norms.md
+      -
+        Type: Lesson
+        UID: 0d492a6b-c9d8-492d-910e-219ff5ea80ae
+        Path: /00-about-thursdays-at-ada/about-thursdays-at-ada.md
+  -
+  
+    Title: Linked Lists
+    Description: Linked Lists
+    UID: 8e6f54bf-41e8-41d6-9a03-dca103bf15ed
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Instructor
+        UID: c498e182
+        Path: /02-linked-lists/linked-lists.instructor.md
+      -
+        Type: Instructor
+        UID: ac3b6860-51fd-4d90-8a68-99875639af1d
+        Path: /02-linked-lists/class-lesson.instructor.md
+      -
+        Type: Lesson
+        UID: 99474aeb-183e-4f01-990b-0a689c022c30
+        Path: /02-linked-lists/01-linked-lists.md
+      -
+        Type: Lesson
+        UID: 0c78e210-d831-41dd-956b-973aa151d904
+        Path: /02-linked-lists/02-linked-lists-implementation.md
+      -
+        Type: Lesson
+        UID: 444cda30-ac77-4abd-858b-9db81b6f601d
+        Path: /02-linked-lists/03-linked-lists-stacks-queues.md
+      -
+        Type: Lesson
+        UID: 0d3a9473-199c-430d-bc55-43fc09fd50ff
+        Path: /02-linked-lists/04-linked-lists-supplemental-concepts.md
+      -
+        Type: Lesson
+        UID: 330c92d7-3591-4a85-a290-ae522fc31621
+        Path: /02-linked-lists/05-linked-list-activity.md
+      -
+        Type: Checkpoint
+        UID: e1d0e2c0-acb2-436a-b329-8c3da5155443
+        Path: /02-linked-lists/06-linked-list-checkpoint.md
+  -
+    Title: Binary Search Trees
+    Description: Binary Search Trees
+    UID: fc8d8eae-2456-4b22-9213-127d6e83dd5e
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Instructor
+        UID: e153ec41-477e-43fb-bf6d-0173e24aec85
+        Path: /03-Binary-Search-Trees/bst.instructor.md
+      -
+        Type: Lesson
+        UID: d363c5cb-af6d-45d1-8e98-eaf960f8fac9
+        Path: /03-Binary-Search-Trees/01-Ordered-Collections-Of-Data.md
+      -
+        Type: Lesson
+        UID: 05732e84-1354-4349-8c71-173460093f9b
+        Path: /03-Binary-Search-Trees/02-Binary-Search-Trees.md
+      -
+        Type: Lesson
+        UID: c7d8f1dc-2d74-4892-a2ab-69fbd3418ee3
+        Path: /03-Binary-Search-Trees/03-Binary-Search-Trees-Height-Big-O.md
+      -
+        Type: Lesson
+        UID: 80747284-c3bb-4753-8c1b-9eb0bb834687
+        Path: /03-Binary-Search-Trees/04-Binary-Search-Trees-Traversal.md
+      -
+        Type: Lesson
+        UID: 1f189042-63dd-4075-9de9-4ca60a3fa5aa
+        Path: /03-Binary-Search-Trees/05-Binary-Search-Trees-Vocab.md
+      -
+        Type: Checkpoint
+        UID: bbf1e2a2-0d6e-4337-9b00-81216688e16a
+        Path: /03-Binary-Search-Trees/06-Bst-Checkpoint.md
+      -
+        Type: Lesson
+        UID: 06dea201-6230-4967-b98f-2403ab11479a
+        Path: /03-Binary-Search-Trees/07-Binary-Search-Trees-Activity.md
+  -
+    Title: Graphs
+    Description: Graph Data Structures & Algorithms - Breadth First Search & Depth First Search
+    UID: b0d74464-2678-44a8-a4ff-dc74350e7114
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: 43ec38b5-3ce1-4882-b709-ca99d4b702c1
+        Path: /08-graphs/01-graphs.md
+      -
+        Type: Lesson
+        UID: 2c83a545-e3fb-4f7f-bd88-3493883e9fa0
+        Path: /08-graphs/02-graphs-algorithms.md
+      -
+        Type: Lesson
+        UID: b7554bcb-53aa-4db8-b447-1c2e4145b1e0
+        Path: /08-graphs/03-graphs-resources.md
+      -
+        Type: Lesson
+        UID: 96fcef62-30b0-4be7-8a63-c4002a53b0e2
+        Path: /08-graphs/04-graphs-activity.md
+      -
+        Type: Checkpoint
+        UID: 69125c14-dc13-4099-a556-bc5c360fcf19
+        Path: /08-graphs/05-graphs.checkpoint.md
+  -
+    Title: Graphs Continued
+    Description: Graph Data Structures & Algorithms - Dijkstra's
+    UID: 37e5c085-d3c7-4905-867e-90bd70a14ceb
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: a1c9e6cf-0bb8-4d02-bd5e-bda148023dd9
+        Path: /09-graphs-p2/01-graphs-review.md
+      -
+        Type: Lesson
+        UID: a0b4d6af-65fb-4d82-bd37-0f952f9c3b92
+        Path: /09-graphs-p2/02-dijkstra.md
+      -
+        Type: Lesson
+        UID: b11a0602-959e-42a2-9670-e7d126e9d98c
+        Path: /09-graphs-p2/03-graphs-2-activity.md
+      -
+        Type: Checkpoint
+        UID: 8c91fa27-f355-4db9-90f4-7082611d9a54
+        Path: /09-graphs-p2/04-graphs-2.checkpoint.md
+  -
+    Title: Algorithms
+    Description: Divide & Conquer, Greedy and Dynamic Programming
+    UID: ccdccab2-b7f3-42d8-977d-955a58ce9d05
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: a76dfc02-3b54-459c-bf72-66a072b26119
+        Path: /07-algorithms/algorithms.md
+      -
+        Type: Lesson
+        UID: 6947d7af-8dc3-41c1-ba5b-35e0cb93add3
+        Path: /07-algorithms/algorithms-divide-conquer.md
+      -
+        Type: Lesson
+        UID: 459262ad-6cf7-4d22-bb72-a8495d031266
+        Path: /07-algorithms/algorithms-dynamic-programming.md
+      -
+        Type: Checkpoint
+        UID: 92514af3-c487-40cb-acbc-8b62d864be82
+        Path: /07-algorithms/algorithms-checkpoint.md
