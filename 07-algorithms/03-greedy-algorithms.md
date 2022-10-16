@@ -20,13 +20,15 @@ However, if a maze route that ended in a dead-end offered tastier cheese, the mo
 
 ## Applications of Greedy Algorithms
 
-Although greedy algorithms don't always provide the most optimal or even correct solution there are cases where they do!
+Although greedy algorithms don't always provide the most optimal or even correct solution there are many cases where they do!
 
-We have actually already seen a greedy algorithm in practice. [Dijkstra's Algorithm](./../09-graphs-p2/02-dijkstra.md) uses a greedy approach and is proven to always return the shortest path between two connected nodes in any graph with non-negative weights.
+We have actually already seen a successful greedy algorithm in practice. [Dijkstra's Algorithm](./../09-graphs-p2/02-dijkstra.md) uses a greedy approach and is proven to always return the shortest path between two connected nodes in any graph with non-negative weights.
 
 ### Dijkstra's as a Greedy Algorithm
 
-Why is Dijkstra's a greedy algorithm? Let's revisit the pseudocode for Dijkstra's. 
+Why is Dijkstra's a greedy algorithm? Recall that overall, Dijkstra's works by initially overestimating the distance from the start node to every other node in the graph. Then, as the algorithm traverses the graph, it uses the weight of each edge it traverses to check if it should revise its estimate for the shortest distance from the start node to the node at the end of its current path.
+
+Let's give ourselves a more detailed reminder by looking at the pseudocode below.
 
 ```
 - Create a distances list equal in length to the number of nodes in the graph
@@ -45,19 +47,17 @@ Why is Dijkstra's a greedy algorithm? Let's revisit the pseudocode for Dijkstra'
         - if the neighbor has not yet been visited:
             - calculate distance from start node to neighbor via current node
             - If calculated distance < distance[neighbor]
-                - distance[neighbor] = caclulated distance
+                - distance[neighbor] = calculated distance
                 - previous[neighbor] = current_node
             - queue.append(neighbor)
 - Return the previous and distances list
 ```
 
-A few observations we can make about Dijkstra's:
-- Once a node has been marked as visited, we never recalculate the distance to that node. We assume that 
+The reason Dijkstra's is a greedy algorithm is because of the order in which it conducts its traversal. Notice the order in which Dijkstra chooses which node to visit or traverse next. Dijkstra's chooses to visit the node which is _currently least expensive to visit_. Since we are trying to find the minimum cost path, this is the optimal choice at that point. At each step in the traversal, Dijkstra's doesn't necessarily have all information about the weights of every edge in the graph and all possible paths to each node, making its choices locally optimal decisions.
 
+Dijkstra's operates on the **optimal substructure** assumption. This assumption states that the optimal solution to the overall problem is made up of the optimal solution to each of its subproblems. For Dijkstra's we can observe that the optimal path between two nodes is made up of optimal paths between any intermediary nodes. 
 
-After visiting the start node, Dijkstra's determines the next node to visit by choosing the next closest node in the queue that it has found so far! It does not find the locally optimal solution for the lists. 
-
-
+![optimal substructure in Dijkstra's](./images/optimal-path.png)
 
 #### Greedy Sort
 
