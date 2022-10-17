@@ -1,143 +1,3 @@
-### Analyzing Binary Search Trees
-
-In a _balanced_ binary search tree, finding a particular node has an asymptotic complexity of O(log<sub>2</sub> n), because at each step we cut the number of possible nodes by half.  This type of algorithm is called a _divide and conquer_ algorithm.
-
-In this Divide & Conquer Algorithm we:
-
-- Divide by splitting the remaining nodes into a left and right subtrees
-- Conquer by continuing the search on the subtree which may contain the element
-
-In a divide and conquer algorithm we reduce a large problem into smaller subproblems, which are the same problem, but in a smaller scale until we reach a base-case.  In this example, when we reach the node being searched for or a leaf node.
-
-Because we will continually divide our list of potential nodes in half until we reach a leaf node, or the item searched for, this algorithm is O(log n) for time complexity.
-
-![Balanced Binary Search Tree](images/bst-divide-and-conquer.png)
-
-### Mergesort
-
-Mergesort is another classic divide and conquer algorithm.  In mergesort, if our list has a size greater than 1, we divide our list into two halves conduct a mergesort on each half and merge the sorted lists together.
-
-![Example MergeSort Diagram](images/MergeSort.png)
-
-#### Analysis of Mergesort
-
-If the Time complexity of mergesort is `T(n)` we can determine the time complexity of mergesort as follows.
-
-**Dividing** When we divide the list into two sublists this takes `O(1)` as it just calculates the middle of the sub-array.
-**Conquer**  We then recursively sort each half, which is of size n/2.  You can then say that the time complexity of both halves is `2 * T(n/2)`.
-**Combining** The merge method into an n-element subarray is `O(n)`.  
-
-If you look at the diagram above we will divide and recombine a total of log n levels, just like a binary tree.  At each level of the merging step we will be merging a total of `n` elements.  Since we will have log n levels and at each level we merge n elements, this algorithm is `O(n log n)`
-
-## Categories of Algorithms
-
-There are a [number of different categories of algorithms](https://s2.smu.edu/~vdebroy/cse3353/Lectures/Lecture-7/Algorithm-Types.pdf).  Each category describes the general approach to the algorithm's use in solving its particular problem.  Categories are not exclusive; an algorithm can be a member of multiple categories.  For example QuickSort can be both a divide-and-conquer algorithm and a randomized algorithm if it picks a random element as a pivot to sort against at each stage.
-
-In this lesson we will look at a few categories, specifically _divide and conquer_ algorithms, _greedy_ algorithms and _dynamic programming_ algorithms.
-
-### Divide & Conquer
-
-We have looked at a few examples of divide and conquer algorithms above with Mergesort and finding an element in binary search tree.  In a divide and conquer algorithm you divide the problem into smaller subproblems and solve the subproblems.  Then you combine the subproblem solutions to solve the larger problem.  Very often divide and conquer algorithms are done recursively because their nature makes writing recursive implementations easier.
-
-**Questions**
-
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-
-### !challenge
-
-* type: short-answer
-* id: 045f08a3-03cb-4fc9-8c56-938b5862e969
-* title: What are some divide and conquer algorithms you have used?
-* points: 1
-* topics: algorithms, divide and conquer
-
-##### !question
-
-What are some divide and conquer algorithms you have used?
-
-##### !end-question
-
-##### !placeholder
-
-Example divide & conquer algorithms
-
-##### !end-placeholder
-
-##### !answer
-
-/.+/
-
-##### !end-answer
-
-##### !explanation
-
-Some example Divide & Conquer Algorithms are:
-
-1.  [Binary Search](https://www.geeksforgeeks.org/binary-search/)
-1.  [MergeSort](https://www.geeksforgeeks.org/merge-sort/)
-
-These algorithms break the problem into halves at each step in the process.
-
-##### !end-explanation
-
-### !end-challenge
-
-<!-- ======================= END CHALLENGE ======================= -->
-
-<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
-
-### !challenge
-
-* type: short-answer
-* id: f7a45db5-f74f-435c-8b4b-7c60b13f5d7c
-* title: Is Heapsort a divide and conquer algorithm?  Why or why not?
-* points: 1
-* topics: Algorithms, Divide and conquer, Heapsort
-
-##### !question
-
-Is Heapsort a divide and conquer algorithm?  Why or why not?
-
-##### !end-question
-
-##### !placeholder
-
-Heapsort a divide and conquer algorithm????
-
-##### !end-placeholder
-
-##### !answer
-
-/.+/
-
-##### !end-answer
-
-<!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, users can see after a failed attempt) -->
-<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
-##### !explanation
-
-Heapsort is **not** a divide and conquer algorithm.  Instead of dividing the problem into halves and tackling each half, it puts the entire data structure into a heap and then extracts them from the heap.  
-
-##### !end-explanation
-
-### !end-challenge
-
-<!-- ======================= END CHALLENGE ======================= -->
-
-#### Example - Quicksort
-
-One divide and conquer algorithm is Quicksort.  Quicksort works by:
-
-- Take the array and the start and end indices
-- If the start and end indices are the same, you have one element and are done
-- Select a random element in the array, called the `pivot`
-- Move all the elements less than or equal to the `pivot` to the left side of the array and the elements greater than the pivot to the right side, with the `pivot` between them
-- Now you have two parts to the array - the elements smaller than the pivot and the elements greater than the pivot
-- Call Quicksort on the side smaller than the pivot and on the side greater than the pivot, to sort each side
-
-As you can see Quicksort divides the larger problem into two parts, and then solves the two subproblems.  The time and space complexity of Quick Sort is an interesting problem as its worst-case is O(n<sup>2</sup>), but this worst-case is very unlikely as for that to occur the worst possible pivot would need to be used with each iteration.  You can read more about the time complexity of Quick sort on [Geeks for Geeks](https://www.geeksforgeeks.org/quick-sort/)
-
 # Divide and Conquer
 
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=04387545-7ced-4c84-9ce4-ad44002bde36&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
@@ -188,7 +48,7 @@ Here's a description of the binary search algorithm:
 1. If at any point, we end up with an empty range, we know the value was not in the array, and we can return a result indicating the value was not found, such as `None`. Other variations of binary search may return the index of where the value _should_ have been, but as a negative value to indicate that it was missing.
 1. Each recursion divides the array in half and performs the binary search on a smaller subproblem.
 
-![Performing binary search for the value 5 in the sorted list (1, 2, 3, 5, 6, 7, 8, 9). Looking for 5. Check the value at the midway index (s=0, m=4, e=8). 5 is less than 6. Adjust the ending index to rule out the right half. Check the value at the updated midway index (s=0, m=2, e=4). 5 is greater than 3. ADjust the starting index to rule out the left half. Check the value at the updated midway index (s=3, m=3, e=4). The value, 5, was found. Return the position, 3.](../assets/algorithmic-strategies_divide-and-conquer_binary-search.png)  
+![Performing binary search for the value 5 in the sorted list (1, 2, 3, 5, 6, 7, 8, 9). Looking for 5. Check the value at the midway index (s=0, m=4, e=8). 5 is less than 6. Adjust the ending index to rule out the right half. Check the value at the updated midway index (s=0, m=2, e=4). 5 is greater than 3. ADjust the starting index to rule out the left half. Check the value at the updated midway index (s=3, m=3, e=4). The value, 5, was found. Return the position, 3.](images/algorithmic-strategies_divide-and-conquer_binary-search.png)  
 _Fig. Looking for the position of the value 5 in a sorted array using binary search._
 
 <br />
@@ -228,7 +88,7 @@ QuickSort is an algorithm which takes a divide-and-conquer approach to sorting a
 1. Move all elements smaller than the pivot to the left and all elements larger than the pivot to the right. Note that the pivot is now in the correct index. Picking a pivot and rearranging the elements is referred to as _partitioning_.
 1. Perform QuickSort on the left and right sides of the pivot.
 
-![QuickSorting the array (7, 3, 9, 1, 6, 8, 2, 5) where the pivot is chosen by taking the last element in the array. The first pivot is 5, which after rearranging gives the array (3, 1, 2, 5, 6, 8, 9, 7). The left array (3, 1, 2) and right array (6, 8, 9, 7) are QuickSorted. 2 is selected as the pivot, and after rearranging, the left array becomes (1, 2, 3). The left and right arrays are (1) and (3), which are both 1 element, meaning they are sorted. Returning to (6, 8, 9, 7), 7 is picked as the pivot. After rearranging, the array becomes (6, 7, 9, 8). The left array is (6), which is sorted. The right array is (9, 8). 8 is selected as the pivot. After rearranging, the array becomes (8, 9). There is no left array, and the right is (9), which is sorted. All subarrays have been sorted, meaning the whole array is sorted, having become (1, 2, 3, 5, 6, 7, 8, 9).](../assets/algorithmic-strategies_divide-and-conquer_quick-sort.png)  
+![QuickSorting the array (7, 3, 9, 1, 6, 8, 2, 5) where the pivot is chosen by taking the last element in the array. The first pivot is 5, which after rearranging gives the array (3, 1, 2, 5, 6, 8, 9, 7). The left array (3, 1, 2) and right array (6, 8, 9, 7) are QuickSorted. 2 is selected as the pivot, and after rearranging, the left array becomes (1, 2, 3). The left and right arrays are (1) and (3), which are both 1 element, meaning they are sorted. Returning to (6, 8, 9, 7), 7 is picked as the pivot. After rearranging, the array becomes (6, 7, 9, 8). The left array is (6), which is sorted. The right array is (9, 8). 8 is selected as the pivot. After rearranging, the array becomes (8, 9). There is no left array, and the right is (9), which is sorted. All subarrays have been sorted, meaning the whole array is sorted, having become (1, 2, 3, 5, 6, 7, 8, 9).](images/algorithmic-strategies_divide-and-conquer_quick-sort.png)  
 _Fig. Tracing through an application of QuickSort in which the final element in a subarray is chosen as the pivot._
 
 In terms of divide and conquer, we pick a pivot and move smaller elements to the left, and larger elements to the right. This leaves us with two smaller subproblems: sorting the elements on the left, and those on the right. We call QuickSort on each side.
@@ -316,7 +176,7 @@ Merge sort is another divide-and-conquer algorithm. It involves the following th
 
 This process is usually done by keeping track of three indices in the array: _starting index_, _ending index_ and _midway index_ as shown in the image below.
 
-![Merge sort example. The list starts with the values (7, 2, 8, 1, 6, 5, 3, 9) (s=0, m=4, e=8). This is split into to lists with one having (7, 2, 8, 1) (s=0, m=2, e=4), and the other having (6, 5, 3, 9) (s=4, m=6, e=8). Each list of four values is split into two lists of 2 value, resulting in 4 total lists. (7, 2) (s=0, m=1, e=2), (8, 1) (s=2, m=3, e=4), (6, 5) (s=4, m=5, e=6), and (3, 9) (s=6, m=7, e=8). Finally, each list of two is split into two single item lists for a total of 8 single item lists. (7) (s=0, e=1), (2) (s=1, e=2), (8) (s=2, e=3), (1) (s=3, e=4), (6) (s=4, e=5), (5) (s=5, e=6), (3) (s=6, e=7), (9) (s=7, e=8). Now each array has only a single value, making it implicitly sorted. The individual subarrays are merged so that they preserve their sorted property by combining them into a temporary array, then copying the sorted values over the merged range until the entire array becomes sorted.](../assets/algorithmic-strategies_divide-and-conquer_merge-sort.png)  
+![Merge sort example. The list starts with the values (7, 2, 8, 1, 6, 5, 3, 9) (s=0, m=4, e=8). This is split into to lists with one having (7, 2, 8, 1) (s=0, m=2, e=4), and the other having (6, 5, 3, 9) (s=4, m=6, e=8). Each list of four values is split into two lists of 2 value, resulting in 4 total lists. (7, 2) (s=0, m=1, e=2), (8, 1) (s=2, m=3, e=4), (6, 5) (s=4, m=5, e=6), and (3, 9) (s=6, m=7, e=8). Finally, each list of two is split into two single item lists for a total of 8 single item lists. (7) (s=0, e=1), (2) (s=1, e=2), (8) (s=2, e=3), (1) (s=3, e=4), (6) (s=4, e=5), (5) (s=5, e=6), (3) (s=6, e=7), (9) (s=7, e=8). Now each array has only a single value, making it implicitly sorted. The individual subarrays are merged so that they preserve their sorted property by combining them into a temporary array, then copying the sorted values over the merged range until the entire array becomes sorted.](images/algorithmic-strategies_divide-and-conquer_merge-sort.png)  
 _Fig. Example run of merge sort showing the index calculations used to split and merge the arrays. Note the convention used of the end index being exclusive._
 
 As we can see in the image above, in the first _divide_ step, the original array of size eight gets divided into two subarrays of size four each. This is done by setting the _starting index_ to _0_, the index of the first element in the array, and the _ending index_ is set to one past the last element in the array, using the convention of the ending index being exclusive. The _midway index_ is then computed using the formula:
@@ -426,6 +286,91 @@ def merge(array, low, mid, high):
 
 </details>
 
+## Check for Understanding
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: 645bad5d-af5f-42a9-a7e4-c70412972ab1
+* title: Time Complexity of Quicksort
+
+##### !question
+
+What is the *Worst-Case* time complexity for Quicksort?
+
+##### !end-question
+
+##### !options
+
+a| O(NlogN)
+b| O(N)
+c| O(N<sup>2</sup>)
+
+##### !end-options
+
+##### !answer
+
+c|
+
+##### !end-answer
+
+
+##### !explanation
+
+The worst-case time complexity for Quicksort is O(N<sup>2</sup>) because picking the worst pivot (e.g. the smallest or biggest remaining element) for each step will result in one array of size n-1 as opposed to two arrays that are approximately n/2 in length.
+
+##### !end-explanation 
+
+### !end-challenge
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: checkbox
+* id: 25522151-56d9-4495-9691-da53700f896e
+* title: Divide and Conquer Algorithms
+
+##### !question
+
+Select all of the following which would be considered Divide and Conquer algorithms.
+
+##### !end-question
+
+##### !options
+
+a| Mergesort
+b| Dijkstra's Algorithm
+c| Kadane's Algorithm
+d| Quicksort
+e| Binary Search
+
+##### !end-options
+
+##### !answer
+
+a|
+d|
+e|
+
+##### !end-answer
+
+#### !explanation
+
+Dijkstra's Algorithm is not considered a divide and conquer algorithm because at no point are we breaking the problem into subproblems of the same type and recursively solving the subproblems.
+
+Similarly, Kadane's Algorithm is not considered a divide and conquer because we are not breaking the problem into subproblems, but rather using previously calculated results to calculate the overall solution.
+
+#### !end-explanation 
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+
 ## Summary
 
 Divide and conquer is an algorithmic strategy which involves breaking down a large problem into easier-to-solve subproblems.
@@ -438,24 +383,3 @@ In a divide and conquer solution we break a large problem into one or more small
 - [Daniel Liang's Binary Search Animation](https://yongdanielliang.github.io/animation/web/BinarySearchNew.html)
 - [Geeks for Geeks: Python Program for QuickSort](https://www.geeksforgeeks.org/python-program-for-quicksort/)
 - [hackerearth: QuickSort Animation](https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/visualize/)
-
-## Check for Understanding
-
-<!-- Question Takeaway -->
-<!-- prettier-ignore-start -->
-### !challenge
-* type: paragraph
-* id: 3f147ff7
-* title: Divide & Conquer
-##### !question
-
-What was your biggest takeaway from this lesson? Feel free to answer in 1-2 sentences, draw a picture and describe it, or write a poem, an analogy, or a story.
-
-##### !end-question
-##### !placeholder
-
-My biggest takeaway from this lesson is...
-
-##### !end-placeholder
-### !end-challenge
-<!-- prettier-ignore-end -->
