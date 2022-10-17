@@ -2,6 +2,8 @@
 
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=2619c3c1-e6d5-48a1-a199-aad7014dcc4e&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
+**Note** This video lesson covers algorithms content as it was written for cohorts C16 and prior. Significant changes have been made, and the above videos do not fully align with the updated lesson content. However, they do provide a good general overview of divide and conquer, greedy, and dynamic programming for those who prefer video lessons.
+
 ## Learning Goals
 
 By the end of this lesson you should be able to:
@@ -13,16 +15,15 @@ By the end of this lesson you should be able to:
 ## Video Lesson
 
 - [Slide Deck used for C16](https://docs.google.com/presentation/d/1V4ycrfl3dbL0IbRHqK3ytU45VyMJQNHhyxpc3Ti2e28/edit?usp=sharing)
-- [Exercise](https://github.com/Ada-c16/dynamic-programming)
 
 ## What is an an algorithm
 
-So what is an algorithm?  An _algorithm_ is a finite set of instructions that, if followed, accomplishes a particular task.  You can think of it as a series of steps to accomplish a task.  For example Google maps has an algorithm to calculate the best route to drive between any two points on map.  
+So what is an algorithm?  An **algorithm** is a finite set of instructions that, if followed, accomplishes a particular task.  We can think of it as a series of steps to accomplish a task.  For example Google maps has an algorithm to calculate the best route to drive between any two points on map.  
 
 All algorithms must have:
 
 - Input
-  - An Algorithm may accept zero or more inputs
+  - An algorithm may accept zero or more inputs
 - Output
   - An algorithm should produce some result
 - Clarity
@@ -47,7 +48,7 @@ The study of computer science is the study of algorithms.  Researchers in CS foc
   - This is very similar to a mathematical proof
 - **Analyzing** algorithms
   - This is identifying the time and space complexity of an algorithm
-- **Testing** Algorithms
+- **Testing** algorithms
   - When we test an algorithm we are really debugging it.  
   - When we test an algorithm we run it on sample data and try to determine if it failed and if so correct the error.
   - We also _profile_ or conduct performance measurements by running the algorithm on sample data and measuring performance changes and memory usage.
@@ -59,7 +60,7 @@ When we analyze an algorithm we generally do not care how an algorithm performs 
 
 Why bother with asymptotic analysis?  Why bother with examining how an algorithm increases in runtime and memory usage as the input size increases?  Asymptotic analysis allows us to compare algorithms and select one over another.  It also allows us to judge if any algorithm will be able to solve a particular problem within a meaningful amount of time or the system's limited storage capacity.
 
-Most often we measure things in terms of _worst-case_ performance of an algorithm.  This is important when response time and memory usage is critical like in managing a self-driving car or autopilot system.  There are also times where the _average-case_ performance is important, especially where an algorithm is run often or across many instance, like an analysis program run regularly on a cloud platform. The average runtime (and standard deviation) can be important for a task run thousands of times an hour.
+Most often, we measure things in terms of _worst-case_ performance of an algorithm.  This is important when response time and memory usage is critical like in managing a self-driving car or autopilot system.  There are also times where the _average-case_ performance is important, especially where an algorithm is run often or across many instance, like an analysis program run regularly on a cloud platform. The average runtime (and standard deviation) can be important for a task run thousands of times an hour.
 
 | Big-O | English Term
 |--- |--- |
@@ -73,9 +74,9 @@ Most often we measure things in terms of _worst-case_ performance of an algorith
 
 ### Analyzing Binary Search Trees
 
-In a _balanced_ binary search tree, finding a particular node has an asymptotic complexity of O(log<sub>2</sub> n), because at each step we cut the number of possible nodes by half.  This type of algorithm is called a _divide and conquer_ algorithm.
+In a _balanced_ binary search tree, finding a particular node has an asymptotic complexity of O(log<sub>2</sub> n), because at each step we cut the number of possible nodes by half.  This type of algorithm is called a **divide and conquer** algorithm and will be discussed in more detail further on in the lesson.
 
-In this Divide & Conquer Algorithm we:
+In this divide and conquer algorithm we:
 
 - Divide by splitting the remaining nodes into a left and right subtrees
 - Conquer by continuing the search on the subtree which may contain the element
@@ -104,27 +105,8 @@ If you look at the diagram above we will divide and recombine a total of log n l
 
 ## Categories of Algorithms
 
-There are a [number of different categories of algorithms](https://s2.smu.edu/~vdebroy/cse3353/Lectures/Lecture-7/Algorithm-Types.pdf).  Each category describes the general approach to the algorithm's use in solving its particular problem.  Categories are not exclusive; an algorithm can be a member of multiple categories.  For example QuickSort can be both a divide-and-conquer algorithm and a randomized algorithm if it picks a random element as a pivot to sort against at each stage.
+There are a [number of different categories of algorithms](https://s2.smu.edu/~vdebroy/cse3353/Lectures/Lecture-7/Algorithm-Types.pdf).  Each category describes the general approach to the algorithm's use in solving its particular problem.  Categories are not exclusive; an algorithm can be a member of multiple categories.  For example QuickSort can be both a divide and conquer algorithm and a randomized algorithm if it picks a random element as a pivot to sort against at each stage.
 
 In this lesson we will look at a few categories, specifically _divide and conquer_ algorithms, _greedy_ algorithms and _dynamic programming_ algorithms.
 
 
-
-## Terms & Definitions
-
-| Term | Definition |
-|--- |--- |
-| Greedy Algorithm | A greedy algorithm is an algorithmic strategy that follows the problem solving strategy of making the locally optimal choice at each stage with the intent of finding an optimal solution to a larger problem. |
-| Dynamic Programming | A dynamic programming algorithm is an algorithmic strategy which solves and stores subproblems which repeatably occur within a larger problem with the goal of using these saved results to optimize a solution to the larger problem.  |
-| Divide and Conquer | A divide and conquer algorithm tries to solve a large problem by repeatably dividing it into smaller subproblems until the problems become small enough to be solved directly and then combining the results to solve the larger problem. |
-| Memoization | In computer science  memoization is an optimization technique used to speed up computer programs by storing the results of expensive function calls and saving the results to use when those method calls occur again.  |
-| asymptotic analysis | A mathematical method of examining programs which describes how the program performs as the input size grows. |
-| profile | In engineering, profiling is a form of analysis which measures the space and time complexities of a program.  This tends to be more a practical and statistical analysis as compared to asympototic analysis. |
-
-## Resources
-
-- [Geeks for Geeks: Greedy Algorithms and the Knapsack problem](https://www.geeksforgeeks.org/greedy-algorithms/)
-- [HackerEarth: Basics of Greedy Algorithms](https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/tutorial/)
-- [BaseCS: Less Repetition, More Dynamic Programming](https://medium.com/basecs/less-repetition-more-dynamic-programming-43d29830a630)
-
-<!-- Diagram source https://drive.google.com/file/d/1UtfvVBsu6yAte1KftYjBhUwH8dCvjq33/view?usp=sharing -->
