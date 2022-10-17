@@ -127,7 +127,7 @@ Now, think about how we may solve this problem in real life. If we are asked to 
 
 Notice that the above approach is greedy! At each step, it chooses the maximum or best value available at the moment. After choosing the biggest coin still under the target sum, we have a new sub-target: the original target sum minus the chosen coin value. We continue choosing the biggest coin available under our sub-target until our sub-target reaches 0 or there are no available coins less than (our target is impossible to reach with the available coins).
 
-At each step, we're folloiwng the greedy choice property, making the optimal choice for the local sub-problem without considering future subproblems, and it seems like this is an optimal substructure problem. The optimal list of coins to achieve any sub-target will make up the optimal solution to the overall target sum.
+At each step, we're following the greedy choice property, making the optimal choice for the local sub-problem without considering future subproblems, and it seems like this is an optimal substructure problem. The optimal list of coins to achieve any sub-target will make up the optimal solution to the overall target sum.
 
 
 Now we can develop this into pseudocode:
