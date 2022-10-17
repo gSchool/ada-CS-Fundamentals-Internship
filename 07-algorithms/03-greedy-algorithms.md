@@ -110,6 +110,7 @@ Say we have some set of different coin types and infinite supply of each coin ty
 
 ##### Example Input 1
 ![Coin Change Nominal Example](./images/coin-change-example-1.png)
+<br>
 Input: `coins = [1, 2, 4, 25, 50, 100]`, `target_sum = 156`
 Output: `[100, 50, 4, 2]`
 
