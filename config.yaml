@@ -161,6 +161,10 @@ Standards:
         Path: /07-algorithms/01-algorithms.md
       -
         Type: Lesson
+        UID: d623f94b-71bc-414b-b138-a4b0264aefcf
+        Path: /07-algorithms/04-sliding-window.md
+      -
+        Type: Lesson
         UID: e7ac6f0e-1186-4060-8be5-29e46b2fe352
         Path: /07-algorithms/06-algorithms-supplemental-resources.md
       -
