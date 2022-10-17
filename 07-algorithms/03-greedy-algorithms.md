@@ -413,7 +413,7 @@ In an interview setting, it is often easier to come up with counterexamples to d
 
 ## Mathematical Proof
 
-THe optimal greedy algorithms is a proof by induction. This is beyond the scope of this course, but if you are curious, the proof for Dijkstra's can be [viewed here](https://web.engr.oregonstate.edu/~glencora/wiki/uploads/dijkstra-proof.pdf).
+The optimal greedy algorithms is a proof by induction. This is beyond the scope of this course, but if you are curious, the proof for Dijkstra's can be [viewed here](https://web.engr.oregonstate.edu/~glencora/wiki/uploads/dijkstra-proof.pdf).
 ### !end-callout
 
 ## Summary
