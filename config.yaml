@@ -159,6 +159,18 @@ Standards:
         Type: Lesson
         UID: a76dfc02-3b54-459c-bf72-66a072b26119
         Path: /07-algorithms/01-algorithms.md
+      # -
+      #   Type: Lesson
+      #   UID: 1609881b-773a-41e3-aee7-c23c66e20d29
+      #   Path: /07-algorithms/02-algorithms-divide-conquer.md
+      -
+        Type: Lesson
+        UID: 7ea64175-a181-4cb6-9782-481c78c1dbb4
+        Path: /07-algorithms/03-greedy-algorithms.md
+      -
+        Type: Lesson
+        UID: 54496b4c-78bc-46ba-92b4-53ccee97e41f
+        Path: /07-algorithms/05-algorithms-dynamic-programming.md
       -
         Type: Lesson
         UID: d623f94b-71bc-414b-b138-a4b0264aefcf
