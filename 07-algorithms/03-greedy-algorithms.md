@@ -115,6 +115,7 @@ Output: `[100, 50, 4, 2]`
 
 ##### Example Input 2
 ![Coin Change Impossible Sum Example](./images/coin-change-example-2.png)
+<br>
 Input: `coins = [25, 2, 5]`, `target_sum = 3`
 Output: `[]`
 
