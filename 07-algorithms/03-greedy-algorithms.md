@@ -87,7 +87,7 @@ In the visualization of Dijkstra's below, observe that the distance to a node do
 ![Paths to visited nodes are set](./images/dijkstras-example.gif)
 
 ### Optimal Substructures
-Most algorithms where the optimal solution is greedy will be **optimal substructure** problems. A problem with an optimal substructures is one in which the optimal solution to the overall problem is made up of the optimal solution to each of its subproblems.
+Most algorithms where the optimal solution is greedy will be **optimal substructure** problems. A problem with an optimal substructure is one in which the optimal solution to the overall problem is made up of the optimal solution to each of its subproblems.
 
 For Dijkstra's, observe that the optimal path between two nodes is made up of optimal paths between any intermediary nodes. 
 
