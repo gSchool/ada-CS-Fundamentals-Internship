@@ -362,6 +362,7 @@ e|
 #### !explanation
 
 Dijkstra's Algorithm is not considered a divide and conquer algorithm because at no point are we breaking the problem into subproblems of the same type and recursively solving the subproblems.
+<br>
 
 Similarly, Kadane's Algorithm is not considered a divide and conquer because we are not breaking the problem into subproblems, but rather using previously calculated results to calculate the overall solution.
 
