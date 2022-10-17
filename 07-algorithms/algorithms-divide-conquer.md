@@ -36,49 +36,6 @@ For example, if we are working with a list and are only able to remove a single 
 | Divide and Conquer | An algorithm design strategy based on multi-branched recursion. We recursively break down a problem into two or more subproblems of the same or related type, until these become simple enough to be solved directly. The solutions to the subproblems are then combined to give a solution to the original problem. | "If multiple subproblems can be combined to solve a larger problem, we might try to apply a divide-and-conquer solution." |
 | Pivot              | An element used in QuickSort to divide the array into two sections, one section less than the pivot and the other greater than the pivot. The choice of the pivot has enormous implications for the efficiency of QuickSort.                                                                                            | "We should be careful about how we pick the pivot so that we avoid worst-case performance for our typical inputs."                                  |
 
-## Example: Binary Search
-
-Binary search can be considered a divide-and-conquer algorithm because it divides the array in half with each step. No matter how large the original array was, at each step we'll be able to discard half the remaining data from consideration!
-
-Here's a description of the binary search algorithm:
-
-1. Starting with a sorted array, we check whether it contains a particular value by comparing the search value with the element in the middle of the array.
-1. If we find the value we return the position where it was found.
-1. If we don't find the value, we determine whether it would be in the left or right half of the array by seeing whether it is smaller or larger than the middle element. Remember, we can make this decision because _we assume the array is sorted!_ Then we perform a binary search on the selected half.
-1. If at any point, we end up with an empty range, we know the value was not in the array, and we can return a result indicating the value was not found, such as `None`. Other variations of binary search may return the index of where the value _should_ have been, but as a negative value to indicate that it was missing.
-1. Each recursion divides the array in half and performs the binary search on a smaller subproblem.
-
-![Performing binary search for the value 5 in the sorted list (1, 2, 3, 5, 6, 7, 8, 9). Looking for 5. Check the value at the midway index (s=0, m=4, e=8). 5 is less than 6. Adjust the ending index to rule out the right half. Check the value at the updated midway index (s=0, m=2, e=4). 5 is greater than 3. ADjust the starting index to rule out the left half. Check the value at the updated midway index (s=3, m=3, e=4). The value, 5, was found. Return the position, 3.](images/algorithmic-strategies_divide-and-conquer_binary-search.png)  
-_Fig. Looking for the position of the value 5 in a sorted array using binary search._
-
-<br />
-
-<details>
-
-<summary>We can view a recursive implementation of binary search by expanding this section.</summary>
-
-```python
-def recursive_binary_search(array, to_find, low=0, high=None):
-    if high is None:
-        high = len(array)
-
-    if high <= low:
-        return None
-
-    mid = (high + low) // 2
-
-    if array[mid] == to_find:
-        return mid
-    elif array[mid] > to_find:
-        high = mid
-    else:
-        low = mid + 1
-
-    return recursive_binary_search(array, to_find, low, high)
-```
-
-</details>
-
 ## Example: QuickSort
 
 QuickSort is an algorithm which takes a divide-and-conquer approach to sorting an array by using the following steps:
@@ -286,6 +243,51 @@ def merge(array, low, mid, high):
 
 </details>
 
+## Example: Binary Search (Decrease-and-Conquer)
+
+Binary search can be considered a decrease-and-conquer algorithm because it decreases the size of the array by half with each step. No matter how large the original array was, at each step we'll be able to discard half the remaining data from consideration! The half-sized array will then be analyzed with the same step as the full-sized array.
+
+Binary search is technically not considered a divide-and-conquer algorithm but instead a decrease-and-conquer algorithm because divide-and-conquer algorithms typically have *two or more* subproblems which are generated from the main problem. In contrast, the binary search algorithm decreases to one sub-problem.
+
+Here's a description of the binary search algorithm:
+
+1. Starting with a sorted array, we check whether it contains a particular value by comparing the search value with the element in the middle of the array.
+1. If we find the value we return the position where it was found.
+1. If we don't find the value, we determine whether it would be in the left or right half of the array by seeing whether it is smaller or larger than the middle element. Remember, we can make this decision because _we assume the array is sorted!_ Then we perform a binary search on the selected half.
+1. If at any point, we end up with an empty range, we know the value was not in the array, and we can return a result indicating the value was not found, such as `None`. Other variations of binary search may return the index of where the value _should_ have been, but as a negative value to indicate that it was missing.
+1. Each recursion divides the array in half and performs the binary search on a smaller subproblem.
+
+![Performing binary search for the value 5 in the sorted list (1, 2, 3, 5, 6, 7, 8, 9). Looking for 5. Check the value at the midway index (s=0, m=4, e=8). 5 is less than 6. Adjust the ending index to rule out the right half. Check the value at the updated midway index (s=0, m=2, e=4). 5 is greater than 3. ADjust the starting index to rule out the left half. Check the value at the updated midway index (s=3, m=3, e=4). The value, 5, was found. Return the position, 3.](images/algorithmic-strategies_divide-and-conquer_binary-search.png)  
+_Fig. Looking for the position of the value 5 in a sorted array using binary search._
+
+<br />
+
+<details>
+
+<summary>We can view a recursive implementation of binary search by expanding this section.</summary>
+
+```python
+def recursive_binary_search(array, to_find, low=0, high=None):
+    if high is None:
+        high = len(array)
+
+    if high <= low:
+        return None
+
+    mid = (high + low) // 2
+
+    if array[mid] == to_find:
+        return mid
+    elif array[mid] > to_find:
+        high = mid
+    else:
+        low = mid + 1
+
+    return recursive_binary_search(array, to_find, low, high)
+```
+
+</details>
+
 ## Check for Understanding
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
@@ -337,7 +339,7 @@ The worst-case time complexity for Quicksort is O(N<sup>2</sup>) because picking
 
 ##### !question
 
-Select all of the following which would be considered Divide and Conquer algorithms.
+Select all of the following which would be considered Divide/Decrease and Conquer algorithms.
 
 ##### !end-question
 
