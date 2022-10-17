@@ -16,7 +16,7 @@ This is called the sliding window technique because it mimics sliding a window o
 
 ![Sliding Window with an Array](images/sliding-window.png)
 
-We can make our window as small or large as we , but we must be interested in looking at contiguous - meaning adjacent - subsections of the array. Observe that if we try to make the array to large. 
+We can make our window as small or large as we , but we must be interested in looking at contiguous - meaning adjacent - subsections of the array. The window by its very
 
 
 ### What Kinds of D
