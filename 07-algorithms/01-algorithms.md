@@ -2,7 +2,9 @@
 
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=2619c3c1-e6d5-48a1-a199-aad7014dcc4e&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 
+
 **Note** This video lesson covers algorithms content as it was written for cohorts C16 and prior. Significant changes have been made, and the above videos do not fully align with the updated lesson content. However, they do provide a good general overview of divide and conquer, greedy, and dynamic programming for those who prefer video lessons.
+
 
 ## Learning Goals
 
@@ -13,6 +15,7 @@ By the end of this lesson you should be able to:
 - Explain three categories of algorithms _greedy_, _divide and conquer_ and _dynamic programming_
 
 ## Video Lesson
+
 
 - [Slide Deck used for C16](https://docs.google.com/presentation/d/1V4ycrfl3dbL0IbRHqK3ytU45VyMJQNHhyxpc3Ti2e28/edit?usp=sharing)
 
@@ -62,6 +65,7 @@ Why bother with asymptotic analysis?  Why bother with examining how an algorithm
 
 Most often, we measure things in terms of _worst-case_ performance of an algorithm.  This is important when response time and memory usage is critical like in managing a self-driving car or autopilot system.  There are also times where the _average-case_ performance is important, especially where an algorithm is run often or across many instance, like an analysis program run regularly on a cloud platform. The average runtime (and standard deviation) can be important for a task run thousands of times an hour.
 
+
 | Big-O | English Term
 |--- |--- |
 | O(1) | Constant |
@@ -77,7 +81,6 @@ Most often, we measure things in terms of _worst-case_ performance of an algorit
 In a _balanced_ binary search tree, finding a particular node has an asymptotic complexity of O(log<sub>2</sub> n), because at each step we cut the number of possible nodes by half.  This type of algorithm is called a **divide and conquer** algorithm and will be discussed in more detail further on in the lesson.
 
 In this divide and conquer algorithm we:
-
 - Divide by splitting the remaining nodes into a left and right subtrees
 - Conquer by continuing the search on the subtree which may contain the element
 
@@ -108,5 +111,4 @@ If you look at the diagram above we will divide and recombine a total of log n l
 There are a [number of different categories of algorithms](https://s2.smu.edu/~vdebroy/cse3353/Lectures/Lecture-7/Algorithm-Types.pdf).  Each category describes the general approach to the algorithm's use in solving its particular problem.  Categories are not exclusive; an algorithm can be a member of multiple categories.  For example QuickSort can be both a divide and conquer algorithm and a randomized algorithm if it picks a random element as a pivot to sort against at each stage.
 
 In this lesson we will look at a few categories, specifically _divide and conquer_ algorithms, _greedy_ algorithms and _dynamic programming_ algorithms.
-
 
