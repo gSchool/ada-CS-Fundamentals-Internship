@@ -45,19 +45,19 @@ In order for the sliding window technique to be applicable, the problem must als
 
 For example, say you are given an array of integers and asked to find all adjacent pairs of integers in the list that add up to a given sum. This could be solved using the sliding window technique. Our window would be of size two and we can check each adjacent pair by starting the left end of the window at index 0 and shifting our window by one each iteration until the right end of the window is at the last index in the array.
 
-<!-- Insert example image here -->
+![Sliding Window on Adjacent Pair Sum Problem Animation](./images/sliding-integer-adjacent-pair-sum.gif)
 
 
 However, if the problem were changed slightly and we were asked to instead find all  pairs of numbers in an array that add up to a given sum, adjacent or not, we could not use the sliding window technique. The elements we want to look at together wouldn't necessarily fit inside of a window.
 
-<!-- Insert example image here -->
+![Sliding Window on Non-Adjacent Pair Sum Problem Animation](./images/sliding-integer-nonadjacent-pair-sum.gif)
 
 #### Dynamic Programming Problem
 Recall that the sliding window technique is used to solve a subset of dynamic programming problems. This means that problems solved with the sliding window technique should be optimization problems that maintain the optimal substructure property **and** have overlapping subproblems. 
 
-The overlapping subproblems can be seen simply by observing the way we slide the window. Observe that when we shift the window, some of the elementsin the previous window remain in the current window.
+The overlapping subproblems can be seen simply by observing the way we slide the window. Observe that when we shift the window in the array below, element 3 from the previous window is also in the new window. 
 
-<!-- Insert image here -->
+![Element 3 Shared Between Windows](./images/overlapping-subproblem.png)
 
 To determine whether the problem is composed of optimal substructures, consider whether the optimal overall solution is comprised of the optimal solution for its smallest subproblems for some sample inputs.
 
