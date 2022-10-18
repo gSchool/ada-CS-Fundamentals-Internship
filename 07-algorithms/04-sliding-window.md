@@ -8,7 +8,7 @@ One useful strategy is called the **sliding window technique**. The sliding wind
 
 ## Understanding the Sliding Window Technique
 
-Say we have some sequence of data that we want to examine. We can create a 'window' that allows us to look at some contiguous subsection of the data. Then, we then shift our window repeatedly in one direction so that we can look at every contiguous subsection one at a time. 
+Say we have some sequence of data that we want to examine. We can create a 'window' that allows us to look at some contiguous subsection of the data. Then we iterate through the remainder of the data by adjusting the start and end indices of the subsequence or window.  Each iteration either the start index, end index, or both indices move forward so that we have a  "sliding" subsequences that progresses through the original sequence until we have looked at every part of the original sequence.
 
 ![Sliding Window](images/sliding-window.png)
 
@@ -16,7 +16,7 @@ This is called the sliding window technique because it mimics sliding a window o
 
 ![Sliding Window with an Array](images/sliding-window-array.png)
 
-We can make our window as small or large as we would like to solve a problem, but we must be interested in looking at contiguous - meaning adjacent - subsections of the sequence. If we are interested in combining non-adjacent sections of the larger sequence into a subsequence, we need to use a different strategy. To accommodate noncontiguous subsequences, we would need to split our window and in most cases it would be difficult to know when we had examined all the subsequences we were interested in.
+We can make our window as small or large as we would like to solve a problem, but we must be interested in looking at contiguous - meaning adjacent and maintaining order - subsections of the sequence. If we are interested in combining non-adjacent sections of the larger sequence into a subsequence, we need to use a different strategy. To accommodate noncontiguous subsequences, we would need to split our window and in most cases it would be difficult to know when we had examined all the subsequences we were interested in.
 
 ![Comparing Contiguous and NonContiguous Subsequences](images/contiguous-v-noncontiguous.png)
 
@@ -72,10 +72,166 @@ As always, there are some edge cases that may seem like sliding window problems 
 
 Now that we understand what the sliding window technique is, let's apply the technique to an example problem. 
 
+#### Maximum Subarray of Size K
+Consider the following problem:
 
+*Given an array of integers `numbers` and an integer `k`, return the sum of the minimum sum subarray of size `k`.*
+
+In other words, given the array of integers `numbers`, calculate the minimum sum of `k` consecutive elements in the array.
+
+#### Brute Force Solution
+Before we jump into solving this problem with the sliding window technique, let's look at how we could solve the problem without this new technique. We might develop the following solution: 
+```py
+def min_sum(numbers, k):
+
+    # initially overestimate what the minimum sum of any k consecutive elements in the array is 
+    min_sum = float('inf')
+
+    nums_len = len(numbers)
+
+    for i in range(nums_len - k + 1):
+        current_sum = 0
+        for j in range(k):
+            current_sum = current_sum + numbers[i + j]
+        
+        min_sum = min(current_sum, min_sum)
+
+    return min_sum
+
+
+```
 ### Dynamic Sliding Window
 
 We can modify the sliding window technique by shifting the left and right edges of our windows at different rates. 
+
+#### Minimum Sublist
+Say we are asked to solve the following problem:
+
+*Write a function called `minimum_sub_list_length` that takes in a list of positive 
+numbers and a positive integer.*  
+
+*It should return the minimum length of a contiguous sublist of the given input 
+list which adds up to the given integer.*
+
+#### Brute Force Solution
+
+Before we jump into solving this problem with the sliding window technique, let's look at how we could solve the problem without this new technique. We might develop the following solution: 
+
+  ```py
+  def minimum_sub_list_length(numbers, target):
+    '''
+    INPUT: list of positive numbers, and target a positive integer
+    OUTPUT: the minimal length of a contiguous sublist of the given input list which adds up to the given integer.
+    Return the length of the smallest contiguous sublist which adds up to the given integer or 
+    return None if there is no such sublist.
+    '''
+    # if the target sum is 0, we can reach the sum simply by not adding any elements to the sublist
+    if target == 0:
+        # so we return that the length of the minimum sublist is 0 (an empty list)
+        return 0
+    
+    # initialize the minimum length to be the length of the initial length plus one
+    min_length = len(numbers) + 1
+  
+    for index in range(0, len(numbers)):
+        current_sum = numbers[index]
+        current_index = index + 1
+        while current_index < len(numbers) and \
+                current_sum + numbers[current_index] <= target:
+            current_sum += numbers[current_index]
+            current_index += 1
+        
+        if current_sum == target and current_index - index < min_length:
+            min_length = current_index - index
+    
+    if min_length == len(numbers) + 1:
+        return None
+    
+    return min_length
+  ```
+
+This solution works and is a relatively direct straight forward approach. This is often called a brute force solution. Notice the nested for loops. In the worst case, this solution would have time complexity of O(n^2). 
+
+## Simplify/Refactor
+
+The first big challenge in software development is to **produce working code**. After code is working however the time comes to simplify or refactor (improve) the solution.
+
+In the sample solution above we are using a nested loop and the loop repeatably traverses the list. Our code is not time efficient because we examine the same elements of the list repeatedly.
+
+We are only interested in contiguous sublists, elements have to be next to one another. This means we can apply a technique called a [sliding window](https://www.geeksforgeeks.org/window-sliding-technique/).   
+
+In this technique we slide a "window" across the list and track the sum of the elements within the window.  If the sum of the elements in the window is equal to the target, we have found a contiguous sublist.  
+
+The image below illustrates the sliding window technique.
+
+![Sliding Window Example](images/problem-solving__sliding-window.gif)
+
+*Fig. Sliding Window*
+
+### Implementing Our Refactor
+
+In our refactor we can start by creating a window of size 1 from index 0 to index 1.  So our window's `start_index` is `0` and `end_index` is `1`. Our current sum then is the value of the 1st element of the list.
+
+We track the following values:
+
+* `start_index` - Where our window starts
+* `end_index` - Where our window ends
+* `current_sum` - The sum of the elements in the current window
+* `min_length` - The length of the smallest contiguous sublist found thus far.
+
+Then we can repeat this algorithm:
+
+1.  If the current sum is equal to the target, we have found a contiguous sublist which adds up to target, and if it is the smallest contiguous sublist we have found so far, we update the minimum length.
+      * We can also advance the window by incrementing the `start_index` by one.
+1.  If the current sum is greater than or equal to the target we can decrease the window size by adding one to the start index of the window.
+1.  If the current sum is less than the target we can increase the window size by adding one to the end index of the window.
+1.  We will repeat this algorithm until the end index has passed the end of the list.
+
+**Practice**:  Go back to the exercise above and try to implement the refactor.  Spend no more than 15 minutes on it.
+
+<details style="max-width: 700px; margin: auto;">
+  <summary>Click here to see a sample solution</summary>
+
+  ```py
+  def minimum_sub_list_length(numbers, target):
+    '''
+    INPUT: list of positive numbers, and target a positive integer
+    OUTPUT: the minimal length of a contiguous sublist of the given input list which adds up to the given integer.
+    Return the length of the smallest contiguous sublist which adds up to the given integer or 
+    return None if there is no such sublist.
+    '''
+    if len(numbers) == 0:
+        return None
+          
+    start_index = 0
+    end_index = 1
+    current_sum = numbers[0]
+    min_length_sublist = len(numbers) + 1
+  
+    while end_index < len(numbers) + 1:
+
+        if current_sum == target:
+            min_length_sublist = min(min_length_sublist, end_index - start_index)
+
+            current_sum -= numbers[start_index]
+            start_index += 1
+
+        elif current_sum < target:
+            if end_index < len(numbers):
+                current_sum += numbers[end_index]
+            end_index += 1
+            
+        elif current_sum > target:
+            current_sum -= numbers[start_index]
+            start_index += 1
+
+    if min_length_sublist == len(numbers) + 1:
+        return None
+    return min_length_sublist
+  ```
+</details>
+
+This solution now makes only one pass through the list, meaning as the input array grows, the solution will perform better compared to our original solution.
 
 
 
