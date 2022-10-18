@@ -347,7 +347,7 @@ Select all of the following which would be considered Divide/Decrease and Conque
 
 a| Mergesort
 b| Dijkstra's Algorithm
-c| Kadane's Algorithm
+c| Insertion sort
 d| Quicksort
 e| Binary Search
 
@@ -366,7 +366,7 @@ e|
 Dijkstra's Algorithm is not considered a divide and conquer algorithm because at no point are we breaking the problem into subproblems of the same type and recursively solving the subproblems.
 <br>
 
-Similarly, Kadane's Algorithm is not considered a divide and conquer because we are not breaking the problem into subproblems, but rather using previously calculated results to calculate the overall solution.
+Similarly, <a href="https://www.geeksforgeeks.org/insertion-sort/">Insertion Sort</a> is not a divide and conquer algorithm because the algorithm does not involve breaking down the problem into subproblems.
 
 #### !end-explanation 
 
