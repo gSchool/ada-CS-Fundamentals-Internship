@@ -72,12 +72,49 @@ As always, there are some edge cases that may seem like sliding window problems 
 
 Now that we understand what the sliding window technique is, let's apply the technique to an example problem. 
 
-#### Maximum Subarray of Size K
+#### Minimum Sum Subarray of Size K
 Consider the following problem:
 
 *Given an array of integers `numbers` and an integer `k`, return the sum of the minimum sum subarray of size `k`.*
 
 In other words, given the array of integers `numbers`, calculate the minimum sum of `k` consecutive elements in the array.
+
+To 
+```py
+def min_sum(numbers, k):
+
+    #find the length of the given array
+    nums_len = len(numbers)
+
+    # if the subarray is longer than the original array, raise an error
+    if nums_len < k:
+        raise ValueError("k must be an integer between 0 and len(numbers)")
+
+    # get the sum of the first window
+    window_sum = sum(numbers[:k])
+    
+    # initialize the minimum overall sum to the sum of the first window
+    min_sum = window_sum
+
+    # our for loop will be the start index of each window
+    # our last window will start at nums_len - k
+    for i in range(nums_len - k):
+        # to shift the window, subtract the value at the window's current starting index from its sum
+        window_sum -= numbers[i] 
+        # shift the window to the right by adding the value at the k + ith index to replace the value just removed
+        window_sum += numbers[k + i]
+        # set the overall minimum subarray sum to either the sum of the new window
+        # or the minimum subarray sum calculated so far, whichever is smaller
+        min_sum = min(window_sum, min_sum)
+    
+    # return the minimum sum
+    return min_sum
+
+```
+
+We can visualize what this looks like below:
+
+
 
 #### Brute Force Solution
 Before we jump into solving this problem with the sliding window technique, let's look at how we could solve the problem without this new technique. We might develop the following solution: 
@@ -89,17 +126,29 @@ def min_sum(numbers, k):
 
     nums_len = len(numbers)
 
+    # the outer loop will be the start index of each subarray we look at
+    # Our last possible subarray will start at with the nums_len - k element
+    # since range is exclusive we add 1
     for i in range(nums_len - k + 1):
+        # variable to hold the sum of the subarray we are looking at
         current_sum = 0
+        # we want our subarray to go from numbers[i:(i+k)]
+        # so our inner loop repeats k times so we can access the value at numbers[i]... numbers[i+k]
         for j in range(k):
+            # add the value of each element in subarray to current_sum
             current_sum = current_sum + numbers[i + j]
         
+        # set min_sum to whichever is smaller: 
+            # sum of current subarray current_sum or the min_sum found so far
         min_sum = min(current_sum, min_sum)
 
+    # return the result once we've checked all subarrays
     return min_sum
-
-
 ```
+
+We can see that the time complexity of this solution would be O(k*n) where n is the length of the array `numbers` because of the nested loop.
+
+This is the reason the sliding window technique is useful. It will allow us to 
 ### Dynamic Sliding Window
 
 We can modify the sliding window technique by shifting the left and right edges of our windows at different rates. 
@@ -113,42 +162,45 @@ numbers and a positive integer.*
 *It should return the minimum length of a contiguous sublist of the given input 
 list which adds up to the given integer.*
 
-#### Brute Force Solution
+#### Comparison with Brute Force Solution
 
-Before we jump into solving this problem with the sliding window technique, let's look at how we could solve the problem without this new technique. We might develop the following solution: 
+Without the sliding window technique, how could we implement this problem? We would have to maintain two nested loops and . 
 
-  ```py
-  def minimum_sub_list_length(numbers, target):
-    '''
-    INPUT: list of positive numbers, and target a positive integer
-    OUTPUT: the minimal length of a contiguous sublist of the given input list which adds up to the given integer.
-    Return the length of the smallest contiguous sublist which adds up to the given integer or 
-    return None if there is no such sublist.
-    '''
-    # if the target sum is 0, we can reach the sum simply by not adding any elements to the sublist
-    if target == 0:
-        # so we return that the length of the minimum sublist is 0 (an empty list)
-        return 0
-    
-    # initialize the minimum length to be the length of the initial length plus one
-    min_length = len(numbers) + 1
-  
-    for index in range(0, len(numbers)):
-        current_sum = numbers[index]
-        current_index = index + 1
-        while current_index < len(numbers) and \
-                current_sum + numbers[current_index] <= target:
-            current_sum += numbers[current_index]
-            current_index += 1
+<details style="max-width: 700px; margin: auto;">
+  <summary>Click here to see a sample solution</summary>
+    ```py
+    def minimum_sub_list_length(numbers, target):
+        '''
+        INPUT: list of positive numbers, and target a positive integer
+        OUTPUT: the minimal length of a contiguous sublist of the given input list which adds up to the given integer.
+        Return the length of the smallest contiguous sublist which adds up to the given integer or 
+        return None if there is no such sublist.
+        '''
+        # if the target sum is 0, we can reach the sum simply by not adding any elements to the sublist
+        if target == 0:
+            # so we return that the length of the minimum sublist is 0 (an empty list)
+            return 0
         
-        if current_sum == target and current_index - index < min_length:
-            min_length = current_index - index
+        # initialize the minimum length to be the length of the initial length plus one
+        min_length = len(numbers) + 1
     
-    if min_length == len(numbers) + 1:
-        return None
-    
-    return min_length
-  ```
+        for index in range(0, len(numbers)):
+            current_sum = numbers[index]
+            current_index = index + 1
+            while current_index < len(numbers) and \
+                    current_sum + numbers[current_index] <= target:
+                current_sum += numbers[current_index]
+                current_index += 1
+            
+            if current_sum == target and current_index - index < min_length:
+                min_length = current_index - index
+        
+        if min_length == len(numbers) + 1:
+            return None
+        
+        return min_length
+    ```
+</details>
 
 This solution works and is a relatively direct straight forward approach. This is often called a brute force solution. Notice the nested for loops. In the worst case, this solution would have time complexity of O(n^2). 
 
