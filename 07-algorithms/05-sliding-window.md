@@ -8,7 +8,7 @@ One useful strategy is called the **sliding window technique**. The sliding wind
 
 ## Understanding the Sliding Window Technique
 
-Say we have some sequence of data that we want to examine. We can create a 'window' that allows us to look at some contiguous subsection of the data. Then we iterate through the remainder of the data by adjusting the start and end indices of the subsequence or window.  Each iteration either the start index, end index, or both indices move forward so that we have a  "sliding" subsequences that progresses through the original sequence until we have looked at every part of the original sequence.
+Say we have some sequence of data that we want to examine. We can create a 'window' that allows us to look at some contiguous subsection of the data. Then we iterate through the remainder of the data by adjusting the start and end indices of the subsequence or window.  Each iteration either the start index, end index, or both indices move forward so that we have a  "sliding" subsequence that progresses through the original sequence until we have looked at every part of the original sequence.
 
 ![Sliding Window](images/sliding-window.png)
 
