@@ -99,7 +99,7 @@ Input:
 `numbers = [1,2,3]`
 `k = 4`
 Output: `ValueError`
-    - the sub
+- the subarray must be shorter than the length of the original array
 
 ```py
 def min_sum(numbers, k):
