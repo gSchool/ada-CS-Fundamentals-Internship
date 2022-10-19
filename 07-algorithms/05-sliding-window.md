@@ -177,7 +177,7 @@ The time complexity is O(n) because if k is 1, we will loop through our for loop
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-Without the sliding window technique, how could we implement this problem? We could implement a solution two nested loops, each maintaining a pointer for the start and end of our current subarray. Take a look at the solution in full detail below. 
+Without the sliding window technique, how could we implement this problem? We could implement a solution with two nested loops, each maintaining a pointer for the start and end of our current subarray. Take a look at the solution in full detail below. 
 
 ```py
 def min_sum(numbers, k):
