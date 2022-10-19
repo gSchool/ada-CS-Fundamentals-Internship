@@ -74,7 +74,7 @@ Node D has two unvisited edges, one to Node C and one to Node F. Notice that bot
 
 For example, from the work we did in Step 2, we know the cost to get from our start node to node D is 3. The weight of the edge from Node D to C is also 3. 3 + 3 = 6 which is less than the current estimate of infinity so we revise our estimate of the minimum cost to travel from Node A to Node C to be 6. 
 
-We add Node B to the list of visited nodes and update the queue with all Node B's unvisited neighbors.
+We add Node D to the list of visited nodes and update the queue with all Node D's unvisited neighbors.
 
 ```
 current: D
