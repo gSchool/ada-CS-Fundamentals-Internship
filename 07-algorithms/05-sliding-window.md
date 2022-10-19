@@ -428,4 +428,4 @@ It is possible to modify the sliding window technique to work with non-positives
 
 The sliding window technique is a useful technique that helps us solve optimization problems that ask us to find a contiguous subsequence within a larger sequence. Note that the dynamic sliding window technique often doesn't work in problems where sums and negative numbers are involved.
 
-Our sliding window can be static means that it stays a fixed size as it progresses through the sequence or dynamic meaning that the right and left edges of our window can progress at different rates.
+Our sliding window can be static meaning that it stays a fixed size as it progresses through the sequence or dynamic meaning that the right and left edges of our window can progress at different rates.
