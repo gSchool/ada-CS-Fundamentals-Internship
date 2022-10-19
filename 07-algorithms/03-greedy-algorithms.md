@@ -273,7 +273,8 @@ class TestPython1(unittest.TestCase):
 In a sorted list the largest coin will be at index -1. Start there and work your way backwards! 
 
 Still feeling stuck? Watch this video walkthrough of the solution.
-<!-- Insert video walkthrough of the solution -->
+<br>
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=cf6f6fa0-a470-49ad-911b-af32015c19cd&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 ##### !end-hint
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation 
