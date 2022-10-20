@@ -8,7 +8,7 @@ One useful strategy is called the **sliding window technique**. The sliding wind
 
 ## Understanding the Sliding Window Technique
 
-Say we have some sequence of data that we want to examine. We can create a 'window' that allows us to look at some contiguous subsection of the data. Then we iterate through the remainder of the data by adjusting the start and end indices of the subsequence or window.  Each iteration either the start index, end index, or both indices move forward so that we have a  "sliding" subsequences that progresses through the original sequence until we have looked at every part of the original sequence.
+Say we have some sequence of data that we want to examine. We can create a 'window' that allows us to look at some contiguous subsection of the data. Then we iterate through the remainder of the data by adjusting the start and end indices of the subsequence or window.  Each iteration either the start index, end index, or both indices move forward so that we have a  "sliding" subsequence that progresses through the original sequence until we have looked at every part of the original sequence.
 
 ![Sliding Window](images/sliding-window.png)
 
@@ -30,11 +30,11 @@ For example, we could perform the sliding window technique on an array, because 
 
 In the example below, the input array is `arr = [4, 3, 12, 4, -1]`
 
-Our window is initally `window = [4, 3, 12]` or `window = [0:2]`. If we use variables to store where the array slice should start and stop, each time we want to slide our window, all we need to do is increment each our start and stop variables by 1. 
+Our window is initally `window = [4, 3, 12]` or `window = [0:2]`. If we use variables to store where the array slice should start and stop, each time we want to slide our window, all we need to do is increment each of our start and stop variables by 1. 
 
 ![Sliding Window with an Integer Array](images/sliding-window-integer-array.png)
 
-We could do the same thing with a string using string slicing. In fact, most problems that can be will involve either a string or an array. 
+We could do the same thing with a string using string slicing. In fact, most problems that can be solved with the sliding window technique will involve either a string or an array. 
 
 It is also possible with some slight adjustments to perform the sliding window technique on a data structure such as a hashmap or a linked list, but accessing and storing values within the window may not be as straightforward because (at least in Python) we cannot slice a dictionary or linked list in the same way that we can a string or an array.
 
@@ -178,7 +178,7 @@ The time complexity is O(n) because if k is 1, we will loop through our for loop
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-Without the sliding window technique, how could we implement this problem? We could implement a solution two nested loops, each maintaining a pointer for the start and end of our current subarray. Take a look at the solution in full detail below. 
+Without the sliding window technique, how could we implement this problem? We could implement a solution with two nested loops, each maintaining a pointer for the start and end of our current subarray. Take a look at the solution in full detail below. 
 
 ```py
 def min_sum(numbers, k):
@@ -426,6 +426,6 @@ It is possible to modify the sliding window technique to work with non-positives
 
 ## Summary
 
-The sliding window technique is a useful technique that helps us solve optimization problems that ask us to find a contiguous subsequence within a larger sequence. Note that the dynamic sliding window technique often doesn't work in problems where sums and negative numbers are involved.
+The sliding window technique is a useful technique that helps us solve optimization problems that ask us to find a contiguous subsequence within a larger sequence. Note that the dynamic sliding window technique often doesn't work on problems where sums and negative numbers are involved.
 
 Our sliding window can be static meaning that it stays a fixed size as it progresses through the sequence or dynamic meaning that the right and left edges of our window can progress at different rates.
