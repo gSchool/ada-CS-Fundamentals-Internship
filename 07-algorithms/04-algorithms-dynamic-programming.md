@@ -302,6 +302,8 @@ Write a method to find the contiguous subarray in a 1-dimensional array with the
 
 In the image above, the largest contiguous sum subarray is the subarray from index 2 to index 6. The elements add up to 7, which would be the output of the algorithm given the above array.
 
+**Try implementing the algorithm below. Spend no more than 15 minutes on this**
+
 ##### !end-question
 
 ##### !placeholder

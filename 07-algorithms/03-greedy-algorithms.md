@@ -141,6 +141,7 @@ Now we can develop this into pseudocode:
 - If the pending amount is less than the smallest coin, return an empty list
 ```
 
+**Try implementing the algorithm below. Spend no more than 15 minutes on this**
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
 
