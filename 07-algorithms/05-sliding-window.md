@@ -30,7 +30,7 @@ For example, we could perform the sliding window technique on an array, because 
 
 In the example below, the input array is `arr = [4, 3, 12, 4, -1]`
 
-Our window is initally `window = [4, 3, 12]` or `window = [0:2]`. If we use variables to store where the array slice should start and stop, each time we want to slide our window, all we need to do is increment each our start and stop variables by 1. 
+Our window is initally `window = [4, 3, 12]` or `window = [0:2]`. If we use variables to store where the array slice should start and stop, each time we want to slide our window, all we need to do is increment each of our start and stop variables by 1. 
 
 ![Sliding Window with an Integer Array](images/sliding-window-integer-array.png)
 
