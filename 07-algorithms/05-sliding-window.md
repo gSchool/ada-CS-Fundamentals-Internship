@@ -1,4 +1,4 @@
-# Sliding Window Technique
+# Optional: Sliding Window Technique
 
 ## Overview
 
@@ -65,6 +65,8 @@ Some example questions we could solve with the sliding window technique include:
 - [Given an array of integers, find the maximum sum subarray of a given size](https://www.geeksforgeeks.org/find-maximum-minimum-sum-subarray-size-k/)
 - [Given an array of 0s and 1s, find the maximum sequence of continuous 1s that can be made by flipping at most k 0s to 1s](https://www.geeksforgeeks.org/find-zeroes-to-be-flipped-so-that-number-of-consecutive-1s-is-maximized/)
 - [Given two strings, find the shortest substring in the first string that contains all the characters in the second string](https://leetcode.com/problems/minimum-window-substring/)
+
+Some of these problems are very difficult! We expect that it will take time to work up to solving these problems independently and do not expect you to solve them as part of this lesson!
 
 As always, there are some edge cases that may seem like sliding window problems but have other, more optimal solutions. However, in general, this is a good place to start. We will discuss at least one edge case in further detail later on in the lesson.
 
@@ -144,7 +146,6 @@ We can visualize what the above code looks like below:
 * type: multiple-choice
 * id: 00a787a2-56b8-48d6-b638-8aff766deedf
 * title: Minimum Sum Subarray Time Complexity
-* points: 1
 <!-- * topics: [python, pandas] (Checkpoints only. optional the topics for analyzing points) -->
 
 ##### !question
@@ -260,7 +261,6 @@ Then we can repeat this algorithm:
 * language: python3.6
 * id: 28bb873d-ec9b-4158-87ba-b466e382749e
 * title: Smallest Contiguous Sublist Problem
-* points: 1
 * topics: python, lists, sliding-window
 
 ##### !question
@@ -428,4 +428,4 @@ It is possible to modify the sliding window technique to work with non-positives
 
 The sliding window technique is a useful technique that helps us solve optimization problems that ask us to find a contiguous subsequence within a larger sequence. Note that the dynamic sliding window technique often doesn't work in problems where sums and negative numbers are involved.
 
-Our sliding window can be static means that it stays a fixed size as it progresses through the sequence or dynamic meaning that the right and left edges of our window can progress at different rates.
+Our sliding window can be static meaning that it stays a fixed size as it progresses through the sequence or dynamic meaning that the right and left edges of our window can progress at different rates.
