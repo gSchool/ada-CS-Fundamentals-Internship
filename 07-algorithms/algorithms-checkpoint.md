@@ -2,7 +2,7 @@
 
 | Logistics             | Details                                         |
 | --------------------- | ----------------------------------------        |
-| Project details       | https://github.com/ada-c17/Newman-Conway-Sequence  |
+| Project details       | [https://github.com/ada-c17/Newman-Conway-Sequence](https://github.com/ada-c17/Newman-Conway-Sequence)  |
 | Should you fork this? | Yes (Check project details)                     |
 | Submission method     | Learn                                           |
 
