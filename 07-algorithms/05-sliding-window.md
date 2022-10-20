@@ -34,7 +34,7 @@ Our window is initally `window = [4, 3, 12]` or `window = [0:2]`. If we use vari
 
 ![Sliding Window with an Integer Array](images/sliding-window-integer-array.png)
 
-We could do the same thing with a string using string slicing. In fact, most problems that can be will involve either a string or an array. 
+We could do the same thing with a string using string slicing. In fact, most problems that can be solved with the sliding window technique will involve either a string or an array. 
 
 It is also possible with some slight adjustments to perform the sliding window technique on a data structure such as a hashmap or a linked list, but accessing and storing values within the window may not be as straightforward because (at least in Python) we cannot slice a dictionary or linked list in the same way that we can a string or an array.
 
