@@ -188,9 +188,10 @@ As a class, we will pick 1-2 problems to solve (as time allows).
 
 We will first attempt to solve the problems as a small group, then come back to talk through any sticking points and work through possible solutions as a class. 
 
-[gas station](https://replit.com/@adadev/gas-station#main.py)
-[shortest common supersequence](https://replit.com/@adadev/shortest-common-supersequence#main.py)
-[find the first and last position of an element](https://replit.com/@adadev/first-and-last#main.py)
+[Section A: Gas Station](https://replit.com/@adadev/gas-station#main.py) <br>
+[Section B: Minimum Operations](https://replit.com/@adadev/minimum-operations#README.md) <br>
+[Shortest Common Supersequence](https://replit.com/@adadev/shortest-common-supersequence#main.py)
+[Find the First and Last Position of an Element](https://replit.com/@adadev/first-and-last#main.py)
 
 ### Small Group Work
 
