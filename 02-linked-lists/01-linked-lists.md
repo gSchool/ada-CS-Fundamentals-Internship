@@ -24,14 +24,14 @@ Before diving into linked lists, let's remind ourselves how arrays work. An arra
 
 ![ Array ](images/array.png)
 
-Similar to an array, a linked list is also a linear collection where one element is first, another second, etc. The difference between a linked list and an array is how each element is stored in memory. Elements of a linked list are not necessarily stored in contiguous memory locations. Instead, in addition to the data it stores, each element contains a _reference_ to the next element in the list.  In that manner we could say that an element _points_ to the next ,element in the linked list.  Through these references, a linked list forms a series of nodes linked together like a chain in memory.  
+Similar to an array, a linked list is also a linear collection where one element is first, another second, etc. The difference between a linked list and an array is how each element is stored in memory. Elements of a linked list are not necessarily stored in contiguous memory locations. Instead, in addition to the data it stores, each element contains a _reference_ to the next element in the list.  In that manner we could say that an element _points_ to the next element in the linked list.  Through these references, a linked list forms a series of nodes linked together like a chain in memory.  
 
 ![Linked List Image](images/singly-linked-list.png)
 <!-- Image from https://en.wikipedia.org/wiki/Linked_list -->
 
 ### Singly Linked Lists
 
-A singly linked list is the most basic form of a linked list.  Each element of the linked list is itself a data structure called a node. Each node maintains two fields: a field typically called `value` to store the element's data and a field typically called `next` which stores a reference to the next node in the list. The last node in a linked list has `null` as it's `next` reference.  
+A singly linked list is the most basic form of a linked list.  Each element of the linked list is itself a data structure called a node. Each node maintains two fields: a field typically called `value` to store the element's data and a field typically called `next` which stores a reference to the next node in the list. The last node in a linked list has `null` as its `next` reference.  
 
 The linked list itself maintains a reference, typically called `head` to the first node in the list. 
 
@@ -49,12 +49,12 @@ Doubly linked lists also typically maintain an explicit reference to the last no
 
 ## Advantages & Disadvantages
 
-You can use a doubly or singly linked list in any place you could use an array, but they have specific advantages depending on the use-case.
+You can use a doubly or singly linked list in any place you could use an array, but they have specific advantages depending on the use case.
 
 
 ### Over Arrays
 
-Both Arrays & Linked Lists are linear data structures and both have a clearly defined order with first and last elements.  An array however has the ability to use an _index_ to select any element in constant time. In contrast, to find an arbitrary element in a linked list, we must start at the head node and iterate through the links until we find the desired element. To visualize and explore linked list operations, try out [visualgo.net](https://visualgo.net/en/list).
+Both arrays and linked lists are linear data structures and both have a clearly defined order with first and last elements.  An array however has the ability to use an _index_ to select any element in constant time. In contrast, to find an arbitrary element in a linked list, we must start at the head node and iterate through the links until we find the desired element. To visualize and explore linked list operations, try out [visualgo.net](https://visualgo.net/en/list).
 
 Big-O For Linked Lists & Arrays
 
@@ -65,11 +65,11 @@ Big-O For Linked Lists & Arrays
 3|Singly Linked List| O(n)| O(n)| O(n)| O(n)|O(1)|O(n)|O(1)|O(n)|
 4|Doubly Linked List|O(n)|O(n)|O(n)|O(n)|O(1)|O(1)|O(1)|O(1)|
 
-On the other hand, as you can see above, doubly linked lists perform in constant time to insert values into or remove values from the ends of a list, because they only require a few reference to be redirected toward different nodes. In contrast, arrays can require shifting numerous elements into new indices with each insertion or deletion.
+On the other hand, as you can see above, doubly linked lists perform in constant time to insert values into or remove values from the ends of a list, because they only require a few references to be redirected toward different nodes. In contrast, arrays can require shifting numerous elements into new indices with each insertion or deletion.
 
 Further, most runtimes allocate more memory to an array than is being used because if the array grows, the interpreter needs to request new memory from the environment and copy the entire array into the new, larger, space.  By starting with extra space available an array can grow as required for some time.  A linked list by contrast only uses memory as required for the nodes available.  
 
-An array also requires each element to be adjacent in memory.  When available memory is limited, this can be problematic.  So in some memory restrictive environments a linked list is attractive. 
+An array also requires each element to be adjacent in memory.  When available memory is limited, this can be problematic.  As a result, in some memory restrictive environments a linked list is attractive. 
 
 ### Doubly Linked Lists vs Singly Linked Lists
 
@@ -85,7 +85,7 @@ Linked Lists have the following advantages:
 
 Arrays have the following advantages:
 
-- **Random Access** Using by using the index you can quickly access any element in an array, O(1).  A Linked List requires you to traverse the list until you find the element, O(n).
+- **Random Access** Using the index we can quickly access any element in an array, O(1).  A Linked List requires us to traverse the list until we find the element, O(n).
 - **No next/previous References** Each node in a Linked List requires, at least, a reference to the next node.  This is an additional complication and a bit of extra memory usage.
 - **Caching** Because the memory is colocated, it's easier to move an array into faster system cache memory.
 
