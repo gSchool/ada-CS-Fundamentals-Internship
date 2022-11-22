@@ -12,6 +12,7 @@
 By the end of this lesson students should be able to:
 
 
+
 - Describe the structure of a singly linked list and doubly linked list
 - Compare and contrast the advantages and disadvantages of singly and doubly linked lists.
 - Design an object oriented singly linked list
@@ -23,7 +24,7 @@ Before diving into linked lists, let's remind ourselves how arrays work. An arra
 
 ![ Array ](images/array.png)
 
-Similar to an array, a linked list is also a linear collection where one element is first, another second, etc. The difference between a linked list and an array is how each element is stored in meory. Elements of a linked list are not necessarily stored in contiguous memory locations. Instead, in addition to the data it stores, each element contains a _reference_ to the next element in the list.  In that manner we could say that an element _points_ to the nextelement in the linked list.  Through these references, a linked list forms a series of nodes linked together like a chain in memory.  
+Similar to an array, a linked list is also a linear collection where one element is first, another second, etc. The difference between a linked list and an array is how each element is stored in memory. Elements of a linked list are not necessarily stored in contiguous memory locations. Instead, in addition to the data it stores, each element contains a _reference_ to the next element in the list.  In that manner we could say that an element _points_ to the next ,element in the linked list.  Through these references, a linked list forms a series of nodes linked together like a chain in memory.  
 
 ![Linked List Image](images/singly-linked-list.png)
 <!-- Image from https://en.wikipedia.org/wiki/Linked_list -->
