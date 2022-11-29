@@ -34,6 +34,8 @@ class Node:
 
 Above, we wrote the Node class constructor for a singly linked list. Alter the code below to write a Node class constructor for a doubly linked list.
 
+Spend no more then 5 minutes working through this independently. Use the hints below or reach out for help if you are still feeling stuck after 5 minutes.
+
 ##### !end-question
 
 ##### !placeholder
@@ -163,6 +165,8 @@ def add_first(self, value):
 
 Above, we wrote the LinkedList class constructor for a singly linked list. Alter the code below to write a LinkedList class constructor for a doubly linked list.
 
+Spend no more then 5 minutes working through this independently. Use the hints below or reach out for help if you are still feeling stuck after 5 minutes.
+
 ##### !end-question
 
 ##### !placeholder
@@ -232,6 +236,8 @@ class LinkedList:
 ##### !question
 
 Now that we have implemented `add_first` together, try implementing `get_first` on your own. `get_first` should return the value of the first node in the linked list. If the list is empty, `get_first` should return `None`. 
+
+Spend no more then 10 minutes working through this independently. Use the hints below or reach out for help if you are still feeling stuck after 10 minutes.
 
 ##### !end-question
 
@@ -435,6 +441,8 @@ Creating a `current` pointer to help iterate through the nodes in a linked list 
 
 Write a `get_at_index` method for a singly linked list that returns the value at a given index in the linked list. The index count should begin at 0 and the function should return `None` if there are fewer nodes in the linked list than the given index value.
 
+Spend no more then 15 minutes working through this independently. Use the hints below or reach out for help if you are still feeling stuck after 15 minutes.
+
 ##### !end-question
 
 ##### !placeholder
@@ -626,6 +634,8 @@ The space complexity will be O(1) or constant as we are not creating any new dat
 ##### !question
 
 Implement a method `add_last` that inserts a new node with a given value as the new last node of the singly linked list.
+
+Spend no more then 15 minutes working through this independently. Use the hints below or reach out for help if you are still feeling stuck after 15 minutes
 
 ##### !end-question
 
@@ -873,6 +883,8 @@ The space complexity will be O(1) or constant as we are not creating any new dat
 
 Would anything change if we implemented `add_last` for a doubly linked list? Implement a method `add_last` that inserts a new node with a given value as the new last node of the doubly linked list.
 
+Spend no more then 10 minutes working through this independently. Use the hints below or reach out for help if you are still feeling stuck after 10 minutes
+
 ##### !end-question
 
 ##### !placeholder
@@ -1108,21 +1120,70 @@ To remove a node at a specific index, we also have to traverse the list until we
 
 ```python
 def remove(self, index):
+    # if the list is empty there is nothing to remove
     if not self.head:
-        return
+        # exit the function early
+        return 
 
+    # if we want to remove the first node in the list
     if index == 0:
+        # reset the linked list's head attribute to the current second node in the list
         self.head = self.head.next
+        # exit the function early
         return
 
-    #Traverse the list until you find the node at the given index minus one
+    # Traverse the list until you find the node at the given index minus one
+    # initialize current to the head node
     current = self.head
+    # initialize the index of the current node to list
     current_index = 0
+    # while there are still another node to traverse
+    # and we have not yet reached the node before the one we want to remove
     while current.next and current_index < index - 1:
+        # reset current to the next node in the list
         current = current.next
+        # increment the index of the current node
         current_index += 1
 
-    # If the node exists
+    # If the node with the given index exists
     if current.next:
+        # redirect the node at the preceding index
+        # to point at the node after the one we want to remove
         current.next = current.next.next
 ```
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: paragraph
+* id: 7ad34ca8-7504-42cc-afc8-612cfd708d36
+* title: OOP Linked Lists Reflection
+* points: 1
+<!-- * topics: [python, pandas] (Checkpoints only, optional the topics for analyzing points) -->
+
+##### !question
+
+Take 5 minutes to review the above lesson and write down any questions you still have about the material. Is there anything that needs more clarification or you would like to go over again?
+
+Bring these questions to class! If reviewing this material after class, bring these questions to the #study-hall Slack channel or ask in office hours.
+
+##### !end-question
+
+##### !placeholder
+
+Ex. I'm still not understanding how the solution to `add_last` works.
+
+Ex. When should my while loop condition should be `while current` vs `while current.next`?
+
+##### !end-placeholder
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
