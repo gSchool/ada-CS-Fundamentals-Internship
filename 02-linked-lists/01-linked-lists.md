@@ -329,3 +329,39 @@ A Linked List because it does not require the items to be adjacent and will only
 A Linked List because it does not require the items to be adjacent and will only use as much memory as it requires in the moment.
 </details>
 -->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: paragraph
+* id: 614d90e1-6305-4eab-a57d-c46202da0c7e
+* title: OOP Linked Lists Reflection
+* points: 1
+<!-- * topics: [python, pandas] (Checkpoints only, optional the topics for analyzing points) -->
+
+##### !question
+
+Take 5 minutes to review the above lesson and write down any questions you still have about the material. Is there anything that needs more clarification or you would like to go over again?
+
+Bring these questions to class! If reviewing this material after class, bring these questions to the #study-hall Slack channel or ask in office hours.
+
+##### !end-question
+
+##### !placeholder
+
+Ex. I'm still not understanding why you would use a linked list over an array.
+
+Ex. When would you use a doubly linked list vs a singly linked list?
+
+##### !end-placeholder
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+<!-- !explanation - !end-explanation (markdown, students can see after answering correctly) -->
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
