@@ -22,10 +22,13 @@ Before diving into linked lists, let's remind ourselves how arrays work. An arra
 
 ![ Array ](images/array.png)
 
-Similar to an array, a linked list is also a linear collection where one element is first, another second, etc. The difference between a linked list and an array lies in how each element is stored in memory. Elements of a linked list are not necessarily stored in contiguous memory locations. Instead, in addition to the data it stores, each element contains a _reference_ to the next element in the list.  In that manner we could say that an element _points_ to the next element in the linked list.  Through these references, a linked list forms a series of nodes linked together like a chain in memory.  
+For example, in the list pictured above, if we wanted to find the element at index of 4 the array the interpreter could easily access the element by adding 200, the memory address of index 0, with the index value of 4 and then looking to see what value is stored at memory address 204. 
+
+Similar to an array, a linked list is also a linear collection where one element is first, another second, etc. The difference between a linked list and an array lies in how each element is stored in memory. Elements of a linked list, also called nodes, are not necessarily stored in contiguous memory locations. Instead, in addition to the data it stores, each element contains a _reference_ to the next element in the list.  In that manner we could say that an element _points_ to the next element in the linked list.  Through each node's references, a linked list forms a series of elements linked together like a chain in memory. 
 
 ![Linked List Image](images/singly-linked-list.png)
-<!-- Image from https://en.wikipedia.org/wiki/Linked_list -->
+
+The above image  represented as a linked list. Elements are not stored in contiguous memory. For example, the node at index 0 has a memory address of 200 while the next node in the list at index 1 has a memory address of 512. Each element or node stores not only its data but also a reference to the next node. For example, the node at index 0 stores a value of `U` and a reference, represented by the arrow, to the node at index 1. In actuality, the reference is to the memory location of the node object at index 1, 512. 
 
 ### Singly Linked Lists
 
@@ -365,3 +368,4 @@ Ex. When would you use a doubly linked list vs a singly linked list?
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
+
