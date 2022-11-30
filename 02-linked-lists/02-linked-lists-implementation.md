@@ -21,27 +21,37 @@ class Node:
 We can create a new node element by passing in the data we want to store to the `Node` class constructor as follows.
 
 ```python
-new_node = Node(42)
+node = Node(42)
 ```
 
-
 ![Linked List Node](images/node-linked-list.png)
-
 
 Notice that with our implementation, the `next` attribute for a new node is set to `None` by default. This indicates that our node doesn't reference or link to another node.
 
 We can change `new_node` to a second node by updating the value of its `next` attribute to reference the second node.
 
 ```python
-second_node = Node(84)
-new_node.next = second_node
+node_two = Node(84)
+node.next = node_two
 ```
+![Two Linked List Nodes](images/two-nodes-singly-linked-list.png)
 
 Similarly, we can update the value of a node by updating its `val` attribute.
 ```python
-new_node.val = "cat"
+node.val = "cat"
 ```
 
+![Linked List with Updated Value](images/two-nodes-singly-linked-list-updated-value.png)
+
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-info
+
+## Modifying the Node Class
+
+There is no reason our `Node` class can't contain attributes and/or methods other than `val` and `next`. 
+For example, we might also give each node an index with an `index` attribute or create a method to print out the value of a node. 
+
+### !end-callout
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 
 ### !challenge
@@ -109,9 +119,9 @@ You might also consider passing in default values for `next` and `prev`.
 
 ### LinkedList Class
 
-The LinkedList class has a single attribute `head` which stores a reference to the first node in the list. Our constructor initializes `head` to `None` so that when a new LinkedList is initialized, we are creating an empty list.  
+Now that we have the `Node` class to represent individual elements of a linked list, we need a `LinkedList` class to represent an entire list. The  `LinkedList` class has a single attribute `head` which stores a reference to the first node in the list. Our constructor initializes `head` to `None` so that when a new `LinkedList` instance is instantiated, we are creating an empty list.  
 
-The LinkedList class also has several methods which will allow users to perform operations on or pull information out of the linked list. Below we provide function stubs for several possible methods a LinkedList class may have. Other LinkedList classes may choose to extend this functionality with additional methods. For example, the designer could add a `reverse` method to reverse the linked list or a `search` method to find the first element with a specified value in the linked list.
+The LinkedList class also has several methods which will allow users to perform operations on or pull information out of the linked list. Below we provide function stubs for several possible methods a `LinkedList` class may have. Other `LinkedList` classes may choose to extend this functionality with additional methods. For example, the designer could add a `reverse` method to reverse the linked list or a `search` method to find the first element with a specified value in the linked list.
 
 ```python
 # Defines the singly linked list
