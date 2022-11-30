@@ -8,7 +8,7 @@ Encapsulation also enables us to design our data structure as __abstract__, mean
 
 ### Node Class
 
-The Node class encapsulates each individual element of the linked list. It is comprised of an attribute that stores data and an attribute that stores the next node in the chain. It provides an interface for the LinkedList class we will create to handle the data and link nodes together.
+Because there is no built in data type that will store an element's data with a reference to the next element, we need to build our own using a class. The `Node` class encapsulates each individual element of the linked list. It is comprised of an attribute that stores data and an attribute that stores the next node in the chain. We will also create a `LinkedList` class that links individual `Node` objects together.
 
 ```python
 # Defines a node in the singly linked list
@@ -18,7 +18,29 @@ class Node:
         self.next = None
 ```
 
-![Linked List Node](images/nodeLinkedList.png)
+We can create a new node element by passing in the data we want to store to the `Node` class constructor as follows.
+
+```python
+new_node = Node(42)
+```
+
+
+![Linked List Node](images/node-linked-list.png)
+
+
+Notice that with our implementation, the `next` attribute for a new node is set to `None` by default. This indicates that our node doesn't reference or link to another node.
+
+We can change `new_node` to a second node by updating the value of its `next` attribute to reference the second node.
+
+```python
+second_node = Node(84)
+new_node.next = second_node
+```
+
+Similarly, we can update the value of a node by updating its `val` attribute.
+```python
+new_node.val = "cat"
+```
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 
