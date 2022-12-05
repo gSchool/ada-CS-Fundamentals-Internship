@@ -6,19 +6,19 @@ When designing a data structure like a linked list, we typically want our design
 
 Encapsulation also enables us to design our data structure as __abstract__, meaning that the implementation of the data structure is hidden. This allows the internal implementation of the data structure to change without affecting user functionality. As a result, the designer could switch a linked list into an array list without the user needing to know. They could also transition from a singly linked list into a doubly linked list without impacting users. 
 
-### Node Class
+## Node Class
 
-Because there is no built in data type that will store an element's data with a reference to the next element, we need to build our own using a class. The `Node` class encapsulates each individual element of the linked list. It is comprised of an attribute that stores data and an attribute that stores the next node in the chain. We will also create a `LinkedList` class that links individual `Node` objects together.
+Because there is no built in data type that will store a piece of data alongside a reference to where the next piece of data is stored, we need to use a class to build our own. The `Node` class encapsulates each individual element of the linked list. It is comprised of an attribute that stores data and an attribute that stores a reference to the next node in the chain. A separate `LinkedList` class will be created later to allow us to link individual `Node` objects together.
 
 ```python
-# Defines a node in the singly linked list
+# Defines a node in a singly linked list
 class Node:
     def __init__(self, value):
         self.val = value
         self.next = None
 ```
 
-We can create a new node element by passing in the data we want to store to the `Node` class constructor as follows.
+Notice that with our implementation, the `next` attribute for a new node is set to `None` by default. This indicates that our node doesn't reference or link to another node. We can create a new node element by passing in the data we want to store to the `Node` class constructor as follows.
 
 ```python
 node = Node(42)
@@ -26,9 +26,7 @@ node = Node(42)
 
 ![Linked List Node](images/node-linked-list.png)
 
-Notice that with our implementation, the `next` attribute for a new node is set to `None` by default. This indicates that our node doesn't reference or link to another node.
-
-We can change `new_node` to a second node by updating the value of its `next` attribute to reference the second node.
+We can update `new_node` to instead point at a second node by updating the value of its `next` attribute to reference the second node.
 
 ```python
 node_two = Node(84)
@@ -41,7 +39,7 @@ Similarly, we can update the value of a node by updating its `val` attribute.
 node.val = "cat"
 ```
 
-![Linked List with Updated Value](images/two-nodes-singly-linked-list-updated-value.png)
+![Linked List with Updated Value for First Node](images/two-nodes-singly-linked-list-updated-value.png)
 
 <!-- available callout types: info, success, warning, danger, secondary, star  -->
 ### !callout-info
@@ -49,7 +47,10 @@ node.val = "cat"
 ## Modifying the Node Class
 
 There is no reason our `Node` class can't contain attributes and/or methods other than `val` and `next`. 
-For example, we might also give each node an index with an `index` attribute or create a method to print out the value of a node. 
+
+<break>
+
+For example, we might also track node indices with an `index` attribute or create a method to print out the value of a node. 
 
 ### !end-callout
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
@@ -64,7 +65,7 @@ For example, we might also give each node an index with an `index` attribute or 
 
 ##### !question
 
-Above, we wrote the Node class constructor for a singly linked list. Alter the code below to write a Node class constructor for a doubly linked list.
+Above, we wrote the Node class constructor for a singly linked list. Below, write a Node class constructor for a doubly linked list.
 
 Spend no more then 5 minutes working through this independently. Use the hints below or reach out for help if you are still feeling stuck after 5 minutes.
 
@@ -110,76 +111,22 @@ class Node:
         self.next = None
         self.prev = None
 ```
-You might also consider passing in default values for `next` and `prev`. 
+You might also consider giving users the option to pass in a value for `next` and `prev`. 
 ##### !end-explanation
 
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
 
-### LinkedList Class
+## LinkedList Class
 
-Now that we have the `Node` class to represent individual elements of a linked list, we need a `LinkedList` class to represent an entire list. The  `LinkedList` class has a single attribute `head` which stores a reference to the first node in the list. Our constructor initializes `head` to `None` so that when a new `LinkedList` instance is instantiated, we are creating an empty list.  
-
-The LinkedList class also has several methods which will allow users to perform operations on or pull information out of the linked list. Below we provide function stubs for several possible methods a `LinkedList` class may have. Other `LinkedList` classes may choose to extend this functionality with additional methods. For example, the designer could add a `reverse` method to reverse the linked list or a `search` method to find the first element with a specified value in the linked list.
+Now that we have the `Node` class to represent individual elements of a linked list, we can create a `LinkedList` class to represent an entire list. The  `LinkedList` class has a single attribute `head` which stores a reference to the first node in the list. Our constructor initializes `head` to `None` so that when a new `LinkedList` instance is instantiated, we are creating an empty list.  
 
 ```python
 # Defines the singly linked list
 class LinkedList:
     def __init__(self):
         self.head = None
-
-    # Method. Adds a new node with the specific data value to the beginning of the linked list.
-    def add_first(self, value):
-        pass
-
-    # Method. Returns the value in the first node in the linked list.
-    # Returns None if the list is empty.
-    def get_first(self):
-        pass
-
-    # Method. Returns the value of the last node in the linked list. Returns None if the list is empty.
-    def get_last(self):
-        pass
-
-    # Method. Returns the value at a given index in the linked list.
-    # Index count starts at 0.
-    # Returns None if there are fewer nodes in the linked list than the index value.
-    def get_at_index(self, index):c
-        pass
-```
-
-### Adding A Node
-
-Adding a node to the front of the LinkedList class above is relatively straightforward. The steps are as follows:
-
-1. Create a new Node object
-2.  Set the new node's next field to the current `head` of the list
-3. Set the `head` to become the new node
-
-We can visualize the above steps with this example linked list:
-
-![add-first-1](images/add-first-1.png)
-
-Step 1. Create a new Node object:
-
-![add-first-2](images/add-first-2.png)
-
-Step 2. Set the new node's next field:
-
-![add-first-3](images/add-first-3.png)
-
-Step 3. Set the head node as the new node:
-
-![add-first-4](images/add-first-4.png)
-
-We can write this method in Python as:
-
-```python
-def add_first(self, value):
-    new_node = Node(value)
-    new_node.next = self.head
-    self.head = new_node
 ```
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
@@ -195,7 +142,7 @@ def add_first(self, value):
 
 ##### !question
 
-Above, we wrote the LinkedList class constructor for a singly linked list. Alter the code below to write a LinkedList class constructor for a doubly linked list.
+Above, we wrote the `LinkedList` class constructor for a singly linked list. Alter the code below to write a `LinkedList` class constructor for a doubly linked list.
 
 Spend no more then 5 minutes working through this independently. Use the hints below or reach out for help if you are still feeling stuck after 5 minutes.
 
@@ -253,6 +200,71 @@ class LinkedList:
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
+
+## Linked List Methods
+
+Just as with standard Python lists, it is useful for the `LinkedList` class to also include several methods which allow users to perform operations on or pull information out of the linked list. Below we provide function stubs for several possible methods our class may have. Other `LinkedList` classes may choose to extend this functionality with additional methods. For example, the designer could add a `reverse` method to reverse the linked list or a `search` method to find the first element with a specified value in the linked list.
+
+```py
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    # Method. Adds a new node with the specific data value to the beginning of the linked list.
+    def add_first(self, value):
+        pass
+
+    # Method. Returns the value in the first node in the linked list.
+    # Returns None if the list is empty.
+    def get_first(self):
+        pass
+
+    # Method. Returns the value of the last node in the linked list. Returns None if the list is empty.
+    def get_last(self):
+        pass
+
+    # Method. Returns the value at a given index in the linked list.
+    # Index count starts at 0.
+    # Returns None if there are fewer nodes in the linked list than the index value.
+    def get_at_index(self, index):
+        pass
+```
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-star
+
+## Linked Lists in Technical Interviews
+
+Solving many technical interview questions about linked lists requires using the same techniques used to implement the methods for a `LinkedList` class. We recommend paying particular attention to traversing a linked list (traveling from node to node) and manipulating the `next` and/or `prev` references of linked list nodes.
+
+### !end-callout
+
+### Adding A Node
+
+Inserting a new node at the front of the `LinkedList` class is relatively straightforward. The steps are as follows:
+
+![add-first-0](images/add-first-step-0.png)
+
+1. Create a new `Node` object
+![add-first-1](images/add-first-step-1.png)
+2. Set the new node's `next` field
+![add-first-2](images/add-first-step-2.png)
+3. Update the linked list's `head` field to point at the new node.
+![add-first-3](images/add-first-step-3.png)
+
+We can write this method in Python as:
+
+```python
+def add_first(self, value):
+    new_node = Node(value)
+    new_node.next = self.head
+    self.head = new_node
+```
+
+Notice that because we are adding to the front of the list, the new node's `next` attribute should always point to the current (soon to be former) head of the list.
+
+We cannot set the new node as the head of the list before linking it to the rest of the list. In a singly linked list, the `head` reference is the only route through which we can access nodes in the list. If we redirect the `head` to point at an unconnected node, we lose access to all nodes except that unconnected node.
+
+![head node points to unconnected node](images/head-unconnected-node.png)
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
@@ -433,17 +445,23 @@ The space complexity will be O(1) or constant as we are not creating any new dat
 <!-- ======================= END CHALLENGE ======================= -->
 
 ### Traversing Linked Lists
-Because linked lists are not stored in contiguous memory, most read and write operations will require us to traverse the list. With a singly linked list, we only maintain a reference to the `head` node, so all of our traversals will start at the `head` of the list.
+Because linked lists are not stored in contiguous memory, most read and write operations will require us to traverse the list. This means we must follow the pointers to travel from one node to the next. With a singly linked list, we only maintain a reference to the `head` node, so all of our traversals will start at the `head` of the list.
 
 Consider a `search` method which allows users to determine whether any nodes in the list have a specified value. The `search` method takes one parameter: a value to search for. The method should return `True` if a node with that value exists within the linked list. 
 
 We can break down the `search` method as follows:
 
-- Create a current pointer and point it to the head of the list
-- While there are nodes we haven't looked at yet:
-  - Return `True` if the current node has the specified value
-  - Otherwise, redirect current to reference the next node in the list
-- Return `False` if we have looked at all nodes and still have not found any nodes that have the specified value
+1. Create a variable `current` and set it to reference (point to) the head of the list
+2. While there are nodes we haven't looked at yet:
+  1. Return `True` if the current node has the specified value
+  2. Otherwise, redirect `current` to reference the next node in the list
+3. Return `False` if we have looked at all nodes and still have not found any nodes that have the specified value
+
+We can visualize using this algorithm to determine whether a node with the value `19750` exists in the example list below. 
+
+![Search returns True in Singly Linked List](images/linked-list-search.gif)
+
+Our pseudocode can be translated to Python as follows:
 
 ```python
    def search(self, value):
@@ -456,8 +474,9 @@ We can break down the `search` method as follows:
     
     return False
 ```
+Notice that our loop condition checks whether `current` is truthy or falsy - a `Node` instance or `None`. If we were to search for a value that does not exist within our linked list, `current` would eventually hold the tail of our list and then get updated to hold the tail's `next` attribute, `None`. At this point, our loop condition would become falsy, and we would exit the loop and return `False`.
 
-Creating a `current` pointer to help iterate through the nodes in a linked list is a useful strategy that cna be applied in many similar linked list applications.
+Creating a `current` pointer to help iterate through the nodes in a linked list is a useful strategy that can be applied in many similar linked list applications. 
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 
@@ -782,6 +801,8 @@ class TestPython1(unittest.TestCase):
 ##### !end-tests
 
 ##### !hint
+This method will require us to combine our skills of traversing linked lists with redirecting some of the nodes' pointers. 
+
 Start by creating the new node with the `value` passed in.
 
 The ultimate goal for this function is to redirect the current last node in the list to point at the new node last node in the list.
@@ -1035,7 +1056,7 @@ class TestPython1(unittest.TestCase):
 
 <!-- other optional sections -->
 ##### !hint
-Remember that doubly linked lists maintain a tail pointer!
+Remember that doubly linked lists maintain a tail pointer! How can we use the tail reference to avoid the need to traverse the linked list?
 
 Still feeling stuck? Check this video walkthrough of the solution.
 
@@ -1143,47 +1164,111 @@ The space complexity will be O(1) or constant as we are not creating any new dat
 <!-- ======================= END CHALLENGE ======================= -->
 ### Removing a node at a specific index
 
-To remove a node at a specific index, we also have to traverse the list until we find the index before the node to delete. Remove also requires some more complex redirection of pointers. If the node to remove is the head, then the head becomes the next element. In all other cases for a singly linked list, we adjust the prior node's `next` reference to point **past** the node you are removing.  
+Removing a node at a specific index also requires list traversal. We traverse the list until we find the index before the node to delete. Remove also requires some more complex redirection of pointers. 
 
-![remove a node #1](images/remove-node-1.png)
-![remove a node #2](images/remove-node-2.png)
-![remove a node #3](images/remove-node-3.png)
-![remove a node #4](images/remove-node-4.png)
+We can pseudocode the following algorithm:
+
+1. If the list is empty, return as there are no nodes to remove
+2. If the given index is 0, redirect `head` to point at the second node in the list and return to exit the function
+3. Initialize a `current` pointer to `head`. We will use `current` to store whichever node we are currently iterating over
+4. Initialize an index variable to track the index of the node we are currently iterating over
+5. While we have neither reached the end of the list nor found the node prior to the one we are looking to remove
+   1. Redirect `current` to point at the next node in the list
+   2. Increment `index` by one
+6. If there is a node after `current`, remove that node by updating `current`'s next to point at the next node's `next`  
+
+Below, we can see how our algorithm would remove the node at index 2 from the depicted list.
+
+![Remove Node from Linked List](images/remove.gif)
+
+We can translate our pseudocode into Python as follows:
 
 ```python
 def remove(self, index):
-    # if the list is empty there is nothing to remove
     if not self.head:
-        # exit the function early
         return 
 
-    # if we want to remove the first node in the list
     if index == 0:
-        # reset the linked list's head attribute to the current second node in the list
         self.head = self.head.next
-        # exit the function early
         return
 
-    # Traverse the list until you find the node at the given index minus one
-    # initialize current to the head node
     current = self.head
-    # initialize the index of the current node to list
     current_index = 0
-    # while there are still another node to traverse
-    # and we have not yet reached the node before the one we want to remove
     while current.next and current_index < index - 1:
-        # reset current to the next node in the list
         current = current.next
-        # increment the index of the current node
         current_index += 1
 
-    # If the node with the given index exists
     if current.next:
-        # redirect the node at the preceding index
-        # to point at the node after the one we want to remove
         current.next = current.next.next
 ```
 
+Notice the use of dot notation in the last line of the algorithm above. `current` references the current node we are iterating over. `current.next` accesses `current`'s `next` attribute which references the node in the list that comes after `current`. We can then use dot notation again to go even deeper into the list and access `current.next`'s attributes. `current.next.next` references the node that comes after `current.next`. 
+
+![Dot Notation](images/dot-notation-ex.png)
+
+Alternatively we could initialize additional variables to break up `current.next.next` as follows.
+
+```python
+node_after_current = current.next
+second_node_after_current = node_after_current.next
+```
+![Use Variables in Place of Nested Dot Notation](images/vars-replace-dot-notation.png)
+
+Use whatever syntax is most readable to you!
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: paragraph
+* id: 2cf54c06-adbd-4ab4-8203-9a7e5644f07d
+* title: Invalid Input for `remove`
+* points: 1
+<!-- * topics: [python, pandas] (Checkpoints only, optional the topics for analyzing points) -->
+
+##### !question
+
+Imagine a user passes in an `index` value that is greater than the length of the list to our `remove` method. For example, imagine they call `my_ll.remove(10)` when `my_ll` is a linked list with only 5 elements. 
+
+How does the `remove` algorithm above handle this edge case? Explain. 
+
+##### !end-question
+
+##### !placeholder
+
+
+
+##### !end-placeholder
+
+<!-- other optional sections -->
+<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+<!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
+##### !explanation
+We will traverse the entire list but not remove any nodes. Our method will return after traversing the entire list.
+
+If we pass in an index that is too large, our algorithm's while loop condition will eventually become falsy.  When `current` is updated to reference the tail node, `current.next` becomes `None` and our condition `while current.next and...` becomes falsy. 
+
+Once we exit the while loop, our algorithm asks if `current.next` is truthy or falsy. We know that it is falsy, so we do not enter the body of our if statement. At this point, our algorithm is finished so the function returns by default.
+
+##### !end-explanation 
+
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
+## Summary
+
+Linked lists are not a built-in data type in Python, however we can implement our own `Node` and `LinkedList` classes to represent individual elements of a linked list and an overall linked list respectively. 
+
+Because we only have direct access to the `head` node in a singly linked list (we also have access to the last node in the list, the `tail`, for a doubly linked linked list), to access other nodes in the list we need to traverse it. We can do this by maintaining a variable `current` which tracks the node we are currently iterating over, and following node's `next` pointers to update the node that `current` references.
+
+To add, move, and delete elements from a linked list, we can redirect a node's `next` and/or `previous` pointers to reference other nodes in the list.
+
+
+Most technical interview questions regarding linked lists will involve these two techniques of traversing a linked list and manipulating pointers within the list.
+
+
+## Reflection
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
 
@@ -1219,3 +1304,4 @@ Ex. When should my while loop condition should be `while current` vs `while curr
 ### !end-challenge
 
 <!-- ======================= END CHALLENGE ======================= -->
+
