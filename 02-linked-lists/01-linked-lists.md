@@ -57,7 +57,7 @@ You can use a doubly or singly linked list in any place you could use an array, 
 
 Both arrays and linked lists are linear data structures and both have a clearly defined order with first and last elements.  An array however has the ability to use an _index_ to select any element in constant time. In contrast, to find an arbitrary element in a linked list, we must start at the head node and iterate through the links until we find the desired element. To visualize and explore linked list operations, try out [visualgo.net](https://visualgo.net/en/list).
 
-Big-O For Linked Lists & Arrays
+### Big-O For Linked Lists & Arrays
 
 **#**|**Data Structure**|**Access**|**Search**|**Insertion (Middle)**|**Deletion (Middle)**|**Add First**|**Add Last**|**Delete First**|**Delete Last**
 :-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
