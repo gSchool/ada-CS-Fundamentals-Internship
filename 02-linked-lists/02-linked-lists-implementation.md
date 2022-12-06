@@ -805,7 +805,7 @@ This method will require us to combine our skills of traversing linked lists wit
 
 Start by creating the new node with the `value` passed in.
 
-The ultimate goal for this function is to redirect the current last node in the list to point at the new node last node in the list.
+The ultimate goal for this function is to redirect the current last node in the list to point at the new last node in the list.
 
 Consider how you might handle the edge case in which the list is empty. 
 
