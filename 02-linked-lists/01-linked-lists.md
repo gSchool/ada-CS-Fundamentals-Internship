@@ -355,7 +355,7 @@ Bring these questions to class! If reviewing this material after class, bring th
 ##### !placeholder
 
 Ex. I'm still not understanding why you would use a linked list over an array.
-
+<br>
 Ex. When would you use a doubly linked list vs a singly linked list?
 
 ##### !end-placeholder
