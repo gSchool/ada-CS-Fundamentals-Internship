@@ -78,11 +78,12 @@ Doubly linked lists take up additional memory, due to the additional `previous` 
 
 ## Summary
 
-Linked Lists have the following advantages:
+Linked lists have the following advantages:
 
-- **Dynamic Size** Linked Lists are of dynamic size, a Linked List only uses the memory required for it's current nodes.
-- **Insertion/Deletion** Because each element does not need to be adjacent in a LinkedList it is easier to insert or remove element by adjusting the links, O(1).  
-  - Arrays require shifting adjacent elements on insertion or deletion, O(n).
+- **Dynamic Size** Linked lists are of dynamic size, a linked list only uses the memory required for it's current nodes.
+- **Insertion/Deletion** Because each element does not need to be adjacent in a linked list it is easier to insert or remove an element from the front of a singly linked list or either end of a doubly linked list in O(1) time.  
+  - Arrays require shifting adjacent elements on insertion or deletion at the front of a list, O(n).
+  - Appending to an array is an O(1) operation, unless we have filled our allotted stretch of contiguous memory, in which case the entire array will be copied to a larger piece of contiguous memory allow room for the new element making it an O(n) operation.
 
 Arrays have the following advantages:
 
@@ -333,6 +334,8 @@ A Linked List because it does not require the items to be adjacent and will only
 </details>
 -->
 
+## Reflection
+
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
 
@@ -340,7 +343,7 @@ A Linked List because it does not require the items to be adjacent and will only
 
 * type: paragraph
 * id: 614d90e1-6305-4eab-a57d-c46202da0c7e
-* title: OOP Linked Lists Reflection
+* title: Linked Lists Intro Reflection
 * points: 1
 <!-- * topics: [python, pandas] (Checkpoints only, optional the topics for analyzing points) -->
 
