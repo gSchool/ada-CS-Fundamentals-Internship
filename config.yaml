@@ -202,3 +202,7 @@ Standards:
         Type: Lesson
         UID: a96035b8-5483-4151-a37c-a88e4f12a4ef
         Path: /11-crash-courses/01-oop.md
+      -
+        Type: Lesson
+        UID: d778bd33-7350-4ea9-9730-720d24d547cd
+        Path: /11-crash-courses/02-recursion.md
