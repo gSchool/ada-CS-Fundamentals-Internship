@@ -474,6 +474,11 @@ If the current node is nil return 0
 
 Otherwise return 1 plus the maximum of the heights of the right and left subtrees
 ```
+
+Still feeling stuck? Check this video walkthrough of the solution.
+
+<iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=996e137b-e4f2-460e-a2e8-af0e01521de6&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&captions=true&interactivity=all" height="360" width="640" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
 ##### !end-hint
 ##### !explanation 
 An example of a working implementation:
