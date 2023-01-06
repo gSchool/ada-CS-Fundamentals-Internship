@@ -340,7 +340,7 @@ What is the time complexity of the provided solution to the coin change problem?
 <!-- !hint - !end-hint (markdown, hidden, students click to view) -->
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation 
-The time complexity is O(n) where n is the `target`. In the worst case, we'll have only a coin with value 1 available and our loop will execute `target` amount of times.
+The time complexity is O(nlogn) where n is the size of `target`. This is due to us sorting the coins at the beginning of the algorithm. If we were to use the function with coins that have already been pre-sorted, we could forego the sorting step and the rest of the algorithm would be O(n).
 ##### !end-explanation 
 
 ### !end-challenge
