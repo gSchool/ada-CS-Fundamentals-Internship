@@ -36,10 +36,6 @@ Standards:
         Path: /01-algorithms/02-algorithms-divide-conquer.md
       -
         Type: Lesson
-        UID: 7ea64175-a181-4cb6-9782-481c78c1dbb4
-        Path: /01-algorithms/03-greedy-algorithms.md
-      -
-        Type: Lesson
         UID: 54496b4c-78bc-46ba-92b4-53ccee97e41f
         Path: /01-algorithms/04-algorithms-dynamic-programming.md
       -
