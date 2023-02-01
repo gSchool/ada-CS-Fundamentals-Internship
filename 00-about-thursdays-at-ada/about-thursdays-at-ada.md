@@ -2,11 +2,12 @@
 
 In Computer Science fundamentals students learn the following concepts and data structures:
 
+
+- [Algorithmic Approaches](../01-algorithms/01-algorithms.md) such as Divide & Conquer, Dynamic 
 - [Linked Lists](../02-linked-lists/01-linked-lists.md)
 - [Binary Search Trees](../03-Binary-Search-Trees/01-Ordered-Collections-Of-Data.md)
-- [Graphs: BFS & DFS](../08-graphs/01-graphs.md)
-- [Graphs: Dijkstra](../09-graphs-p2/01-graphs-review.md)
-- [Algorithms](../07-algorithms/01-algorithms.md) such as Divide & Conquer, Dynamic Programming & Greedy Algorithms
+- [Graphs: BFS & DFS](../04-graphs/01-graphs.md)
+- [Graphs: Dijkstra](../05-dijkstras/01-graphs-review.md)Programming & Greedy Algorithms
 
 ### Reverse Classroom
 

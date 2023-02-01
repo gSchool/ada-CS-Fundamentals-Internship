@@ -20,6 +20,45 @@ Standards:
         UID: 0d492a6b-c9d8-492d-910e-219ff5ea80ae
         Path: /00-about-thursdays-at-ada/about-thursdays-at-ada.md
   -
+    Title: Algorithms
+    Description: Divide & Conquer, Greedy and Dynamic Programming
+    UID: ccdccab2-b7f3-42d8-977d-955a58ce9d05
+    SuccessCriteria:
+      - success criteria
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: a76dfc02-3b54-459c-bf72-66a072b26119
+        Path: /01-algorithms/01-algorithms.md
+      -
+        Type: Lesson
+        UID: 1609881b-773a-41e3-aee7-c23c66e20d29
+        Path: /01-algorithms/02-algorithms-divide-conquer.md
+      -
+        Type: Lesson
+        UID: 7ea64175-a181-4cb6-9782-481c78c1dbb4
+        Path: /01-algorithms/03-greedy-algorithms.md
+      -
+        Type: Lesson
+        UID: 54496b4c-78bc-46ba-92b4-53ccee97e41f
+        Path: /01-algorithms/04-algorithms-dynamic-programming.md
+      -
+        Type: Lesson
+        UID: d623f94b-71bc-414b-b138-a4b0264aefcf
+        Path: /01-algorithms/05-sliding-window.md
+      -
+        Type: Lesson
+        UID: e7ac6f0e-1186-4060-8be5-29e46b2fe352
+        Path: /01-algorithms/06-algorithms-supplemental-resources.md
+      -
+        Type: Lesson
+        UID: dfba8ca5-308f-4037-ba6f-b6e8b7876770
+        Path: /01-algorithms/07-algorithms-activity.md
+      -
+        Type: Checkpoint
+        UID: 92514af3-c487-40cb-acbc-8b62d864be82
+        Path: /01-algorithms/08-algorithms-checkpoint.md
+  -
   
     Title: Linked Lists
     Description: Linked Lists
@@ -112,23 +151,23 @@ Standards:
       -
         Type: Lesson
         UID: 43ec38b5-3ce1-4882-b709-ca99d4b702c1
-        Path: /08-graphs/01-graphs.md
+        Path: /04-graphs/01-graphs.md
       -
         Type: Lesson
         UID: 2c83a545-e3fb-4f7f-bd88-3493883e9fa0
-        Path: /08-graphs/02-graphs-algorithms.md
+        Path: /04-graphs/02-graphs-algorithms.md
       -
         Type: Lesson
         UID: b7554bcb-53aa-4db8-b447-1c2e4145b1e0
-        Path: /08-graphs/03-graphs-resources.md
+        Path: /04-graphs/03-graphs-resources.md
       -
         Type: Lesson
         UID: 96fcef62-30b0-4be7-8a63-c4002a53b0e2
-        Path: /08-graphs/04-graphs-activity.md
+        Path: /04-graphs/04-graphs-activity.md
       -
         Type: Checkpoint
         UID: 69125c14-dc13-4099-a556-bc5c360fcf19
-        Path: /08-graphs/05-graphs.checkpoint.md
+        Path: /04-graphs/05-graphs.checkpoint.md
   -
     Title: Graphs Continued
     Description: Graph Data Structures & Algorithms - Dijkstra's
@@ -139,70 +178,16 @@ Standards:
       -
         Type: Lesson
         UID: a1c9e6cf-0bb8-4d02-bd5e-bda148023dd9
-        Path: /09-graphs-p2/01-graphs-review.md
+        Path: /05-dijkstras/01-graphs-review.md
       -
         Type: Lesson
         UID: a0b4d6af-65fb-4d82-bd37-0f952f9c3b92
-        Path: /09-graphs-p2/02-dijkstra.md
+        Path: /05-dijkstras/02-dijkstra.md
       -
         Type: Lesson
         UID: b11a0602-959e-42a2-9670-e7d126e9d98c
-        Path: /09-graphs-p2/03-graphs-2-activity.md
+        Path: /05-dijkstras/03-graphs-2-activity.md
       -
         Type: Checkpoint
         UID: 8c91fa27-f355-4db9-90f4-7082611d9a54
-        Path: /09-graphs-p2/04-graphs-2.checkpoint.md
-  -
-    Title: Algorithms
-    Description: Divide & Conquer, Greedy and Dynamic Programming
-    UID: ccdccab2-b7f3-42d8-977d-955a58ce9d05
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
-      -
-        Type: Lesson
-        UID: a76dfc02-3b54-459c-bf72-66a072b26119
-        Path: /07-algorithms/01-algorithms.md
-      -
-        Type: Lesson
-        UID: 1609881b-773a-41e3-aee7-c23c66e20d29
-        Path: /07-algorithms/02-algorithms-divide-conquer.md
-      -
-        Type: Lesson
-        UID: 7ea64175-a181-4cb6-9782-481c78c1dbb4
-        Path: /07-algorithms/03-greedy-algorithms.md
-      -
-        Type: Lesson
-        UID: 54496b4c-78bc-46ba-92b4-53ccee97e41f
-        Path: /07-algorithms/04-algorithms-dynamic-programming.md
-      -
-        Type: Lesson
-        UID: d623f94b-71bc-414b-b138-a4b0264aefcf
-        Path: /07-algorithms/05-sliding-window.md
-      -
-        Type: Lesson
-        UID: e7ac6f0e-1186-4060-8be5-29e46b2fe352
-        Path: /07-algorithms/06-algorithms-supplemental-resources.md
-      -
-        Type: Lesson
-        UID: dfba8ca5-308f-4037-ba6f-b6e8b7876770
-        Path: /07-algorithms/07-algorithms-activity.md
-      -
-        Type: Checkpoint
-        UID: 92514af3-c487-40cb-acbc-8b62d864be82
-        Path: /07-algorithms/08-algorithms-checkpoint.md
-  -
-    Title: Crash Course Lessons
-    Description: Video lesson and slides for Crash Courses such as OOP, Recursion, etc
-    UID: f0732f6d-faca-45cf-9b59-80164d61d5cb
-    SuccessCriteria:
-      - success criteria
-    ContentFiles:
-      -
-        Type: Lesson
-        UID: a96035b8-5483-4151-a37c-a88e4f12a4ef
-        Path: /11-crash-courses/01-oop.md
-      -
-        Type: Lesson
-        UID: d778bd33-7350-4ea9-9730-720d24d547cd
-        Path: /11-crash-courses/02-recursion.md
+        Path: /05-dijkstras/04-graphs-2.checkpoint.md

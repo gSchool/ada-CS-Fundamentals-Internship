@@ -18,7 +18,7 @@ However, if a maze route that ended in a dead-end offered tastier cheese, the mo
 
 Although greedy algorithms don't always provide the most optimal or even correct solution there are many cases where they do!
 
-We have actually already seen a successful greedy algorithm in practice. [Dijkstra's Algorithm](./../09-graphs-p2/02-dijkstra.md) uses a greedy approach and is proven to always return the shortest path between two connected nodes in any graph with non-negative weights.
+We have actually already seen a successful greedy algorithm in practice. [Dijkstra's Algorithm](./../05-dijkstras/02-dijkstra.md) uses a greedy approach and is proven to always return the shortest path between two connected nodes in any graph with non-negative weights.
 
 ### Dijkstra's as a Greedy Algorithm
 
