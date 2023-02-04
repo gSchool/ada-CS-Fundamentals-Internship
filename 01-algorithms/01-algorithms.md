@@ -69,11 +69,11 @@ Vocab | Definition | Synonyms | How to Use in a Sentence
 :-----:|:-----:|:-----:|:-----:
 Nominal Case | A "normal" or typical input to an application. | normal case, typical case| I used `x=5` as the nominal case.
 Edge Case | An input that is outside the normal range of inputs. |extreme case, corner case | I used `x=0` as an edge case.
-User Story | User stories are a technique to gather requirements written by or for users or customers to influence the functionality of the system being developed. | Acceptance criteria | My first user story is, "As a merchant, I can submit a form to create a new product on the store."
 
-## Steps in Problem Solving
 
-When we look at programming problems, either interview problems, or challenges encountered on the job, we can approach the task systematically.  We will examine one particular strategy which involves first trying to ensure we understand the problem, then breaking down the larger problem into smaller, more approachable steps, solving each one in turn.  Then we will examine our solution, evaluate how effective it is and attempt to improve upon it.
+### Steps in Problem Solving
+
+When we look at programming problems - either interview problems or challenges encountered on the job - we can approach the task systematically. Let's examine one particular strategy which involves first ensuring we understand the problem followed by breaking down the larger problem into smaller, more approachable steps and solving each step in turn. Then, we will examine our solution, evaluate how effective it is and attempt to improve upon it.
 
 Our steps are:
 
@@ -85,62 +85,43 @@ Our steps are:
 
 These steps are adapted from [George Pólya](https://en.wikipedia.org/wiki/George_P%C3%B3lya) a 20th century mathematician who wrote a book called [How to solve it](https://www.adasbooks.com/book/9780691164076) about how to go about solving math problems.
 
-## Sample Problem
+### Sample Problem
 
 We will walk through the steps of solving a problem using the following sample problem:
 
-*Write a function called `minimum_sub_list_length` that takes in a list of positive 
-numbers and a positive integer.*  
+*Write a function called `zero_sum_subarray` that takes in a list of integers.*  
 
-*It should return the minimum length of a contiguous sublist of the given input 
-list which adds up to the given integer.*
+*The function should return a 2D list where the outer list contains all contiguous subsequences within the given list that add up to zero.*
 
-## Understand The Problem
+### Understand the Problem
 
-When we look at a given problem we need to understand what our code is expected to do.  Without solid understanding of our requirements we might write code which does not fully address the problem or even write a solution to a different problem entirely!
+When we look at a given problem we need to understand what our code is expected to do.  Without solid understanding of our requirements, we might write code which does not fully address the problem or even write a solution to a different problem entirely!
 
-### User Stories
+#### Interview Problems
 
-With an industry problem, this may involve talking to "customers," which could be company clients, or members of our or another team which will use the code.  It could also involve talking through requirements with the team or a product manager.  This typically involves writing [*user stories*](https://www.atlassian.com/agile/project-management/user-stories) which are a set of requirements for a given problem.  These user stories are often written in a language called *use case* which is a set of requirements for a given use case.  
+In an interview problem like `zero_sum_subarray`, we need to carefully examine the question and ask the interviewer follow-up questions to make sure we understand what is expected.
 
-For example, a user story might be:
+In this interview problem we can examine the problem statement and figure out that we need to:
 
-* As a user, I want to be able to click on a button to add a new item to my shopping cart in order to assemble an order.
+* Write a function named `zero_sum_subarray`
+* The function should take in a list of integers
+* The function should find all contiguous subsequences in the given list which add up to zero
 
-Typically user stories are written in the template:  
-
-* As a `<type of end user>` I want to be able to `<some sort of action>` in order to `<some kind of outcome>`.  
-
-This may also include a longer-term goal such as the above assembling of an order.
-
-**Why do we need user stories?**
-
-These user stories allow us to assemble requirements to meet the needs of the end user and ensure that we know what our code must do focusing on end-user needs.
-
-### Interview Problems
-
-In an interview problem like the above, we need to carefully examine the question and ask the interviewer followup questions to make sure we understand what is expected.
-
-In this interview problem we can examine the language and figure out that we need to:
-
-* Write a function named `minimum_sub_list_length`
-* The function should take in a list of positive numbers and an integer as parameters
-* The function should find the smallest length of a contiguous sublist of the given list which adds up to the given integer
-
-The 1st two points are clear, but the third is a little more tricky.  We need to understand some of the terminology used in the problem.  Using Google or your own knowledge answer the following.
+The first two points are relatively clear, but the third is a little more tricky.  We need to understand some of the terminology used in the problem.  Using Google or your own knowledge answer the following.
 
 ### !challenge
 
 * type: paragraph
 * id: f0a7b426-d097-4ae6-a25a-2a0567ef46d9
-* title: What do sublist and contiguous mean?
+* title: What do contiguous, subsequence, and 2D list mean?
 
 ##### !question
 
 Explain the meaning of the following terms:
 
 * contiguous
-* sublist
+* subsequence
+* 2D list
 
 Feel free to look up the terms in [Google](https://www.google.com/) or use other resources.
 
@@ -153,23 +134,39 @@ Feel free to look up the terms in [Google](https://www.google.com/) or use other
 
 ##### !explanation
 
-* contiguous: Elements of an array/list are contiguous if they are adjacent to each other in the list and maintain the same order.
-* sublist: A list is a sublist of another list if all the elements of the first list are contained in the second list.
+* contiguous: Elements of an array/list are contiguous if they are *adjacent to each other in the list and maintain the exact same order*.
+* subsequence: A sequence is a subset of a larger sequence in which all the elements of the subsequence are contained in the larger sequence in the *same relative order*. For example, if our larger sequence is the list `[1,2,3,4]`, a subsequence would be `[1,4]` because both `1` and `4` are in each of the two sequences and `1` comes before `4` in each list. `[4,1]` would not count as a subsequence because `1` precedes `4` in the larger list but `1` comes after `4` in the subsequence. Our sequence could also be a string, integer, or another linear series of data. 
+* 2D list: A 2D list/2D array is a *list whose elements are all lists*. The containing list is often called the outer list and its elements are referred to as inner lists. Inner lists are often the same length but can also have different lengths.
 
 ##### !end-explanation
 
 ### !end-challenge
 
+### !callout-info
 
-### Our Understanding
+## Contiguous Subsequence vs Subarray
 
-So in this problem we need to write a function `minimum_sub_list_length` which takes in a list and an integer as parameters and will return the smallest number of contiguous elements, elements adjacent to one another, in the list which add up to the given integer.
+A contiguous subsequence is also known as a [**subarray**](https://www.geeksforgeeks.org/subarraysubstring-vs-subsequence-and-programs-to-generate-them/)/sublist. Many interviewing problems use the terminology contiguous, subsequence, and/or subarray in the problem statement. 
 
-## Explore Example Input/Output
+### !end-callout
+
+### !callout-star
+
+## What if I'm not allowed to use Google?
+
+Ask your interviewer! While it may feel nervewracking to admit you are unfamiliar with a term (or multiple terms!), asking for clarification on unfamiliar terms can also signal that you are a clear communicator, detail-oriented, and collaborative. 
+
+### !end-callout
+
+####  Summarizing Our Understanding
+
+So in this problem we need to write a function `zero_sum_subarray` which takes in a list of integers as parameters and will return all the sublists whose elements add up to zero in an outer list.
+
+### Explore Example Input/Output
 
 Next to ensure we understand the problem we need to develop example inputs and determine what the output *should* be for those given inputs.  In industry this might involve drawing up mock-ups of the program and running through scenarios, or asking a customer or a team member to do so.  It could also involve generating sample input data and determining what the output should be.
 
-In general it's most helpful to develop a few examples which will test the bounaries of what is possible for input.  These are called *edge-cases*.
+In general it's most helpful to develop a few examples which will test the bounaries of what is possible for input.  These are called **edge cases**.
 
 We should consider:
 
