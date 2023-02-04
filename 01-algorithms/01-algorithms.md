@@ -16,14 +16,14 @@ By the end of this lesson you should be able to:
 - Further explain recursion
 - Explain two categories of algorithms: _divide and conquer_ and _dynamic programming_
 
-## Video Lessong
+## Video Lesson
 
 
 - [Slide Deck used for C16](https://docs.google.com/presentation/d/1V4ycrfl3dbL0IbRHqK3ytU45VyMJQNHhyxpc3Ti2e28/edit?usp=sharing)
 
 ## What is an an Algorithm?
 
-Before we can discuss different algorithmic strategies, we need to understanding what an algorithm _is_.  An **algorithm** is a finite set of instructions that, if followed, accomplishes a particular task.  We can think of it as a series of steps to accomplish a task.  For example Google maps has an algorithm to calculate the best route to drive between any two points on map.  
+Before we can discuss different algorithmic strategies, we need to understanding what an algorithm _is_.  An **algorithm** is a finite set of instructions that, if followed, accomplishes a particular task.  We can think of it as a series of steps to accomplish a task.  For example, Google maps has an algorithm to calculate the best route to drive between any two points on map.  
 
 All algorithms must have:
 
@@ -39,11 +39,9 @@ All algorithms must have:
 - Effectiveness
   - It should be possible for a person or computer to fulfill each step in an algorithm and the algorithm should accomplish the given task.
 
-The art of computer science is really the art of devising, analyzing, proving the correctness and testing algorithms.
-
 ### Algorithms areas of study
 
-The study of computer science is the study of algorithms.  Researchers in CS focus on:
+The study of computer science is the study of algorithms. At its core, computer science is really the art of devising, analyzing, proving the correctness of, and testing algorithms:
 
 - **Devising** algorithms
   - This is the art of using data structures and design strategies to develop new and useful algorithms
@@ -55,14 +53,14 @@ The study of computer science is the study of algorithms.  Researchers in CS foc
   - This is identifying the efficency of an algorithm using time and space complexity
 - **Testing** algorithms
   - This is really debugging the algorithm  
-  - When we test an algorithm we run it on sample data. If the tests fail, we try to correct the error
-  - We also _profile_ or conduct performance measurements by running the algorithm on sample data and measuring performance changes and memory usage.
-    - For example [leetcode](https://leetcode.com/) takesyour solution to a common programming problem and compare it's performance to solutions from other developers.
+  - When the algorithm is tested, it is run on sample data. If the tests produce unexpected output, the error causing the unexpected output needs to be debugged
+  - Algorithms are also _profiled_ or assessed on their performance measurements by running the algorithm on sample data and measuring performance changes and memory usage.
+    - For example [leetcode](https://leetcode.com/) takes your solution to a common programming problem and compares its performance to solutions from other developers
 
-This lesson will focus on devising, analyzing, and, testing algorithms. We are choosing to focus on these three aspects because they are the skills most often evaluated during technical interviews for junior software developer roles. Validating algorithms is beyond the scope of this course, but feel free to follow your curiosity!
+This course will focus on devising, analyzing, and, testing algorithms. We are choosing to focus on these three aspects because they are the skills most often evaluated during technical interviews for junior software developer roles. Validating algorithms is beyond the scope of this course, but feel free to follow your curiosity!
 
 ## Devising and Testing Algorithms
-Devising algorithms is really just problem solving. So how do we approach solving a new, knotty problem? What steps can we take when we sit down in front of a programming and... have no idea what to do? This lesson describes a systematic approach to problem solving. Notice the similarity to Problem Solving Exercises in the classroom portion of Ada and the Interview Practice Questions we assign during the Thursdays at Ada portion.In follow-up lessons, we will practice using BIg-O notation to compare multiple approaches to the same problem.  
+Devising algorithms is really just problem solving. So how do we approach solving a new, knotty problem? What steps can we take when we sit down in front of a programming and... have no idea what to do? This lesson describes a systematic approach to problem solving. Notice the similarity to Problem Solving Exercises in the classroom portion of Ada and their equivalent, Interview Practice Questions, in the Thursdays at Ada portion. In follow-up lessons, we will practice using Big-O notation to compare multiple approaches to the same problem.  
 
 ## Analyzing Algorithms
 
