@@ -1,6 +1,7 @@
 # Introduction to Algorithms
 
 <iframe src="https://adaacademy.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=2619c3c1-e6d5-48a1-a199-aad7014dcc4e&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+<!--update video-->
 
 
 **Note** This video lesson covers algorithms content as it was written for cohorts C16 and prior. Significant changes have been made, and the above videos do not fully align with the updated lesson content. However, they do provide a good general overview of divide and conquer, greedy, and dynamic programming for those who prefer video lessons.
@@ -10,18 +11,18 @@
 
 By the end of this lesson you should be able to:
 
-- Further explain time and space complexity
 - Explain the term algorithm
-- Explain three categories of algorithms _greedy_, _divide and conquer_ and _dynamic programming_
+- Further explain time and space complexity
+- Explain _divide and conquer_ and _dynamic programming_ algorithms
 
 ## Video Lesson
 
 
 - [Slide Deck used for C16](https://docs.google.com/presentation/d/1V4ycrfl3dbL0IbRHqK3ytU45VyMJQNHhyxpc3Ti2e28/edit?usp=sharing)
 
-## What is an an algorithm
+## What is an an Algorithm?
 
-So what is an algorithm?  An **algorithm** is a finite set of instructions that, if followed, accomplishes a particular task.  We can think of it as a series of steps to accomplish a task.  For example Google maps has an algorithm to calculate the best route to drive between any two points on map.  
+Before we can discuss different algorithmic strategies, we need to understanding what an algorithm _is_.  An **algorithm** is a finite set of instructions that, if followed, accomplishes a particular task.  We can think of it as a series of steps to accomplish a task.  For example Google maps has an algorithm to calculate the best route to drive between any two points on map.  
 
 All algorithms must have:
 
@@ -50,12 +51,17 @@ The study of computer science is the study of algorithms.  Researchers in CS foc
   - This is the art of proving the correctness of an algorithm for all possible inputs
   - This is very similar to a mathematical proof
 - **Analyzing** algorithms
-  - This is identifying the time and space complexity of an algorithm
+  - This is identifying the efficency of an algorithm using time and space complexity
 - **Testing** algorithms
-  - When we test an algorithm we are really debugging it.  
-  - When we test an algorithm we run it on sample data and try to determine if it failed and if so correct the error.
+  - This is really debugging the algorithm  
+  - When we test an algorithm we run it on sample data. If the tests fail, we try to correct the error
   - We also _profile_ or conduct performance measurements by running the algorithm on sample data and measuring performance changes and memory usage.
-    - If you have seen [leetcode](https://leetcode.com/), this site will take your solution to a common programming problem and compare it's performance to solutions from other developers.
+    - For example [leetcode](https://leetcode.com/) takesyour solution to a common programming problem and compare it's performance to solutions from other developers.
+
+This lesson will focus on devising, analyzing, and, testing algorithms. We are choosing to focus on these three aspects because they are the skills most often evaluated during technical interviews for junior software developer roles. Validating algorithms is beyond the scope of this course, but feel free to follow your curiosity!
+
+## Devising and Testing Algorithms
+Devising algorithms is really just problem solving. So how do we approach solving a new, knotty problem? What steps can we take when we sit down in front of a programming and... have no idea what to do? This lesson describes a systematic approach to problem solving. Notice the similarity to Problem Solving Exercises in the classroom portion of Ada and the Interview Practice Questions we assign during the Thursdays at Ada portion.In follow-up lessons, we will practice using BIg-O notation to compare multiple approaches to the same problem.  
 
 ## Analyzing Algorithms
 
@@ -76,7 +82,7 @@ Most often, we measure things in terms of _worst-case_ performance of an algorit
 | O(2<sup>n</sup>) | Exponential |
 | O(n!) | Factorial |
 
-### Analyzing Binary Search Trees
+### Analyzing Arrays
 
 In a _balanced_ binary search tree, finding a particular node has an asymptotic complexity of O(log<sub>2</sub> n), because at each step we cut the number of possible nodes by half.  This type of algorithm is called a **divide and conquer** algorithm and will be discussed in more detail further on in the lesson.
 
@@ -111,4 +117,8 @@ If you look at the diagram above we will divide and recombine a total of log n l
 There are a [number of different categories of algorithms](https://s2.smu.edu/~vdebroy/cse3353/Lectures/Lecture-7/Algorithm-Types.pdf).  Each category describes the general approach to the algorithm's use in solving its particular problem.  Categories are not exclusive; an algorithm can be a member of multiple categories.  For example QuickSort can be both a divide and conquer algorithm and a randomized algorithm if it picks a random element as a pivot to sort against at each stage.
 
 In this lesson we will look at a few categories, specifically _divide and conquer_ algorithms, _greedy_ algorithms and _dynamic programming_ algorithms.
+
+## Summary
+
+You've been adding algorithms all along!
 
