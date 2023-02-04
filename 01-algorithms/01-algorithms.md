@@ -13,9 +13,10 @@ By the end of this lesson you should be able to:
 
 - Explain the term algorithm
 - Further explain time and space complexity
-- Explain _divide and conquer_ and _dynamic programming_ algorithms
+- Further explain recursion
+- Explain two categories of algorithms: _divide and conquer_ and _dynamic programming_
 
-## Video Lesson
+## Video Lessong
 
 
 - [Slide Deck used for C16](https://docs.google.com/presentation/d/1V4ycrfl3dbL0IbRHqK3ytU45VyMJQNHhyxpc3Ti2e28/edit?usp=sharing)
