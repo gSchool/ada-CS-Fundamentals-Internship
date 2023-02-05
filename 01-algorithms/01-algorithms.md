@@ -16,6 +16,17 @@ By the end of this lesson you should be able to:
 - Further explain recursion
 - Explain two categories of algorithms: _divide and conquer_ and _dynamic programming_
 
+
+### !callout-danger
+
+## How to Approach This Topic
+
+This topic contains review on several topics previously covered in classroom. We recommend first doing a quick skim of each topic and completing each of the included exercises to refamiliarize yourself with the topic. 
+
+After skimming all of the topics, go back and do a closer read of topics you need extra review on. Included in your re-review should be a close reading of dynamic programming.
+
+### !end-callout
+
 ## Video Lesson
 
 
@@ -68,7 +79,7 @@ Devising algorithms is really just problem solving. So how do we approach solvin
 Vocab | Definition | Synonyms | How to Use in a Sentence
 :-----:|:-----:|:-----:|:-----:
 Nominal Case | A "normal" or typical input to an application. | normal case, typical case| I used `x=5` as the nominal case.
-Edge Case | An input that is outside the normal range of inputs. |extreme case, corner case | I used `x=0` as an edge case.
+Edge Case | An input that is at the extreme of the allowable range of inputs. |extreme case| I used `x=0` as an edge case.
 
 
 ### Steps in Problem Solving
@@ -152,9 +163,9 @@ A contiguous subsequence is also known as a [**subarray**](https://www.geeksforg
 
 ### !callout-star
 
-## What if I'm not allowed to use Google?
+## What if Google isn't allowed?
 
-Ask your interviewer! While it may feel nervewracking to admit you are unfamiliar with a term (or multiple terms!), asking for clarification on unfamiliar terms can also signal that you are a clear communicator, detail-oriented, and collaborative. 
+Ask your interviewer! While it may feel nervewracking to admit you are unfamiliar with a term (or multiple terms), asking for clarification can also signal that you are a clear communicator, collaborative, and detail-oriented.
 
 ### !end-callout
 
@@ -164,37 +175,41 @@ So in this problem we need to write a function `zero_sum_subarray` which takes i
 
 ### Explore Example Input/Output
 
-Next to ensure we understand the problem we need to develop example inputs and determine what the output *should* be for those given inputs.  In industry this might involve drawing up mock-ups of the program and running through scenarios, or asking a customer or a team member to do so.  It could also involve generating sample input data and determining what the output should be.
+Next to ensure we understand the problem we need to develop example inputs and determine what the output *should* be for those given inputs.  In industry this might involve drawing mock-ups of the program and running through scenarios or asking a customer or a team member to do so.  It could also involve generating sample input data and determining what the output should be.
 
-In general it's most helpful to develop a few examples which will test the bounaries of what is possible for input.  These are called **edge cases**.
+While we want to ensure our algorithm will work on typical input or **nominal cases**, it is also very important to develop a few examples which will test the boundaries of what is possible for input.  These are called **edge cases**.
 
 We should consider:
-
-* **Nominal Edge Cases**
-  * In this example we could give a list and number which does contain a contiguous sublist which adds up to the given number.
-  * For example:  [1, 2, 3, 4] and 7 would return 2 because [1, 2] adds up to 7.
+* **Nominal Case**
+  * In this example we could give a list that contains two contiguous subsequences which add up to zero. 
+  * For example: an input list of `[-4, 6, -2, 7, -1, 0, 1]` would return `[[-4,6,2], [-1,0,1], [0]]` because the elements of each of the following subarrays: `[-4,6,2]`, `[-1,0,1]`, and `[0]` all add up to zero.
+* **Nominal Edge Case**
+  * In this example we could give a list which contains exactly one contiguous subsequence which adds up to zero.
+  * For example:  an input list of `[1, -1, 2, 4]` would return `[[1,-1]]` because `[1, -1]` adds up to 0.
 * **Negative Edge Case**
-  * In this example we can give a list and a number in which the list does **not** contain a contiguous sublist which adds up to the given number.
-    * For example: [1, 2, 3, 4] and 8 would need to return *something* to indicate that there is no contiguous sublist which adds up to the given number.
-  * Another Negative Edge Case input would be an array and given number for which there is no valid sublist which adds up to the given value.
-    * For example: [6, 7] and 1 would return *something* to indicate there is no contiguous sublist which adds up to the given number.
+  * In this example we could give a list and a number in which the list does **not** contain a contiguous subsequence which adds up to zero.
+    * For example: an input list of `[1, 2, 3, 4]` would need to return *something* to indicate that there is no contiguous sublist which adds up to zero.
+    * Another example: an input list of `[]` needs to return *something* to indicate there is no contiguous sublist which adds up to zero.
 * **Positive Edge Case**
   * This would be an input on the edge of what is possible which returns a valid length of a contiguous sublist.
-  * For example: [1] and 1 would return 1 because [1] is a contiguous sublist which adds up to 1.
+  * For example: the input `[0]` would return `[[0]]` because the entire input list (which can also be considered a subarray) is our target sum of zero.
 
-### Hey We Found a Problem!
+By looking at concrete sample input and output examples, we can see that our problem is not as simple as it seems.  We need to consider cases when the list does not contain a contiguous sublist which adds up to zero.  We also need to consider cases when the list is empty or contains only one element.
 
-By looking at concrete sample input and output examples, we can see that our problem is not as simple as it seems.  We need to consider cases when the list does not contain a contiguous sublist which adds up to the given number.  We also need to consider cases when the list is empty or contains only one element.
+For our purposes we will expect the function to return an empty list `[]` if there is no contiguous sublist which adds up to the given number. In an interview setting, consider asking your interviewer if there is a preferred return value when the algorithm encounteres the edge case scenearios. If there is no preferred return value, make a thoughtful decision about what the algorithm should return and communicate your choice to your interviewer.
 
-These make **excellent** test cases to use when developing and verifying our code.
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-star
 
-For our purposes we will expect the function to return `None` if there is no contiguous sublist which adds up to the given number.  
+## Devising and Testing Go Hand in Hand
 
-## Break Down the Problem
+These sample inputs and outputs make **excellent** test cases to use when verifying the algorithm we devise. Creating tests for an algorithm is often an integral step in helping us devise our algorithm!
 
-Big massive problems are *hard*.  As developers we often find it easier to break down the problem into smaller, easier to understand steps.  This also helps us make an application more modular, testable and maintainable.  Clearly not all problems need to be broken up, but most substantial problems in interviews and in the workplace do.
+### !end-callout
 
-In industry teams will often break the user stories into features and then break down those features into more modular components. This is called *modularizing* the application.
+### Break Down the Problem
+
+Big massive problems are *hard*.  As developers it is often easier to break down the problem into smaller, easier to understand steps.  This also helps us make an application more modular, testable and maintainable.  Clearly not all problems need to be broken up, but most substantial problems in interviews and in the workplace do.
 
 How could you break up our sample problem?  Answer and then check the explanation below.
 
@@ -206,22 +221,26 @@ How could you break up our sample problem?  Answer and then check the explanatio
 
 ##### !question
 
-How would you break down the problem into two subproblems?
+How would you break down the problem into two or more subproblems?
 
 ##### !end-question
 
 ##### !placeholder
 
-Subproblems
-
 ##### !end-placeholder
+##### !hint
+When you think about attempting to solve this problem, what about it seems difficult to you? Where are you getting stuck? 
+
+Feeling stuck often means you've found a subproblem you need to solve!
+##### !end-hint
 
 ##### !explanation
 
-Two subproblems could be:
+Sample subproblems could be:
 
-1.  Determining the sum of a contiguous sublist
-1.  Traversing the list to find the shortest contiguous sublist which sums to the given number
+1.  Finding all the contiguous subsequences.
+2.  Determining the sum of a single contiguous subsequence.
+3.  Traversing the list to find all the contiguous subseuquences which sum to zero.
 
 ##### !end-explanation
 
@@ -240,25 +259,25 @@ Write your solution and then look below to see a sample solution.
 * id: 4dc81336-1c2d-421e-8fe8-27326736b2e3
 * title: Smallest Contiguous Sublist Problem
 * points: 1
-* topics: python, lists, sliding-window
+* topics: python, lists, hash tables
 
 ##### !question
 
-Write a function called `minimum_sub_list_length` that takes in a list of positive numbers, `numbers` and a positive integer, `target`.
+Write a function called `zero_sum_subarray` that takes in a list of integers numbers, `numbers`.
 
-It should return the minimal length of a contiguous sublist of the given input list which adds up to the given integer.
+The function should return a 2D list where the outer list contains all contiguous subsequences within the given list that add up to zero. If there are no contiguous subsequences that add up to zero, return an empty list.
+
+Spend no more than 20 minutes working through this independently. Use the hints below or reach out for help if you are still feeling stuck after 5 minutes.
 
 ##### !end-question
 
 ##### !placeholder
 
 ```py
-def minimum_sub_list_length(numbers, target):
+def zero_sum_subarray(numbers):
     '''
-    INPUT: list of positive numbers, and target a positive integer
-    OUTPUT: the minimal length of a contiguous sublist of the given input list which adds up to the given integer.
-    Return the length of the smallest contiguous sublist which adds up to the given integer or 
-    return None if there is no such sublist.
+    INPUT: list of integers
+    OUTPUT: a 2D list where the outer list contains all contiguous subsequences within the given list that add up to zero. If there are no contiguous subsequences that add up to zero, return an empty list.
     '''
 
 ```
@@ -271,69 +290,87 @@ def minimum_sub_list_length(numbers, target):
 import unittest
 from main import *
 
-class TestChallenge(unittest.TestCase):
-    def test_with_empty_list_and_42(self):
-        self.assertEqual(None,minimum_sub_list_length([], 42))
+class TestPython1(unittest.TestCase):
+  def empty_list_returns_empty_list(self):
+    self.assertEqual([],zero_sum_subarray([]))
 
-    def test_with_one_element_list_and_number_equal_to_the_element(self):
-        self.assertEqual(1,minimum_sub_list_length([12], 12))
+  def test_list_with_only_zero_returns_zero(self):
+    self.assertEqual([[0]],zero_sum_subarray([0]))
 
-    def test_with_one_element_list_and_number__not_equal_to_the_element(self):
-        self.assertEqual(None,minimum_sub_list_length([12], 42))
+  def test_with_one_element_list_and_nonzero_number(self):
+    self.assertEqual([],zero_sum_subarray([12]))
 
-    def test_with_1_2_3_4_and_target_7(self):
-        self.assertEqual(2,minimum_sub_list_length([1, 2, 3, 4], 7))
+  def test_with_one_valid_subarray_length_greater_than_one(self):
+    self.assertEqual([[1,-1]], zero_sum_subarray([1,-1,2,4]))
 
-    def test_with_4_3_2_1_and_target_7(self):
-        self.assertEqual(2,minimum_sub_list_length([4, 3, 2, 1], 7))
+  def test_one_valid_subarray_nonzero_starting_index(self):
+    self.assertEqual([[1,-1]], zero_sum_subarray([2, 1,-1, 4]))
 
-    def test_with_1_2_3_4_and_target_10(self):
-        self.assertEqual(4,minimum_sub_list_length([1, 2, 3, 4], 10))
+  def test_nominal_example(self):
+    result = zero_sum_subarray([-4,6,-2,7,-1,0,1])
+    result.sort()
+    self.assertEqual([[-4,6,-2],[-1,0,1],[0]], result)
 
-    def test_with_1_3_4_and_target_5(self):
-        self.assertEqual(2,minimum_sub_list_length([1, 3, 4], 7))
+  def test_with_duplicate_subarrays(self):
+    result = zero_sum_subarray([7,-4,6,-2,1,-4,6,-2])
+    self.assertEqual([[-4,6,-2],[-4,6,-2]], result)
 
-    def test_with_1_2_3_4_5_and_target_5(self):
-        self.assertEqual(1,minimum_sub_list_length([1, 2, 3, 4, 5], 5))
+  def test_no_subarray_with_zero_sum(self):
+      self.assertEqual([],zero_sum_subarray([1, 2, 3, 4, 5]))
 ```
 
 ##### !end-tests
 
 <!-- other optional sections -->
-<!-- !hint - !end-hint (markdown, hidden, students click to view) -->
+##### !hint 
+Start by solving each subproblem. Then see if you combine the solutions to each subproblem to come up with an overall solution. 
+
+Still feeling stuck? Try watching the video walkthrough of a sample solution below:
+<!-- Insert video solution -->
+
+##### !end-hint 
 <!-- !rubric - !end-rubric (markdown, instructors can see while scoring a checkpoint) -->
 ##### !explanation
 
 A sample solution could be:
 
 ```py
-def minimum_sub_list_length(numbers, target):
+  def zero_sum_subarray(numbers):
     '''
-    INPUT: list of positive numbers, and target a positive integer
-    OUTPUT: the minimal length of a contiguous sublist of the given input list which adds up to the given integer.
-    Return the length of the smallest contiguous sublist which adds up to the given integer or 
-    return None if there is no such sublist.
+    INPUT: list of integers
+    OUTPUT: a 2D list where the outer list contains all contiguous subsequences within the given list that add up to zero. If there are no contiguous subsequences that add up to zero, return an empty list.
     '''
-    if target == 0:
-        return 0
+    # if the input list is empty
+    if not numbers:
+      # return an empty list
+      return []
     
-    min_length = len(numbers) + 1
-  
-    for index in range(0, len(numbers)):
-        current_sum = numbers[index]
-        current_index = index + 1
-        while current_index < len(numbers) and \
-                current_sum + numbers[current_index] <= target:
-            current_sum += numbers[current_index]
-            current_index += 1
-        
-        if current_sum == target and current_index - index < min_length:
-            min_length = current_index - index
-    
-    if min_length == len(numbers) + 1:
-        return None
-    
-    return min_length
+    # create an empty list to store all subarrays with a sum of zero
+    subarrays = []
+
+    # loop through the indices of the input list
+    for i in range(len(numbers)):
+      # initialize a list to hold the current subarray
+      current_subarray = []
+      # initialize an accumulator variable to track the sum of the current subarray
+      subarray_sum = 0
+      # loop through the indices from index i to the end of the list
+      # numbers[i] will be the start of our current subarray
+      for j in range(i, len(numbers)):
+        # add the value of the current element we are iterating over
+        # to the subarray
+        current_subarray.append(numbers[j])
+        # add the value of the current element we are iterating over
+        # to the subarray sum
+        subarray_sum += numbers[j] 
+        # if the subarray's sum is zero
+        if subarray_sum == 0:
+          # add a copy of the current subarray to the end of the list
+          # (we need to copy the current_subarray because lists are mutable)
+          subarrays.append(current_subarray.copy())
+
+    # return all subarrays with a sum of zero
+    return subarrays
 ```
 
 
@@ -347,53 +384,53 @@ def minimum_sub_list_length(numbers, target):
   The solution below works, but as we will see later below, it is not optimal.  We can do better.
 
   ```py
-  def minimum_sub_list_length(numbers, target):
+  def zero_sum_subarray(numbers):
     '''
-    INPUT: list of positive numbers, and target a positive integer
-    OUTPUT: the minimal length of a contiguous sublist of the given input list which adds up to the given integer.
-    Return the length of the smallest contiguous sublist which adds up to the given integer or 
-    return None if there is no such sublist.
+    INPUT: list of integers
+    OUTPUT: a 2D list where the outer list contains all contiguous subsequences within the given list that add up to zero. If there are no contiguous subsequences that add up to zero, return an empty list.
     '''
-    if target == 0:
-        return 0
+    # if the input list is empty
+    if not numbers:
+      # return an empty list
+      return []
     
-    min_length = len(numbers) + 1
-  
-    for index in range(0, len(numbers)):
-        current_sum = numbers[index]
-        current_index = index + 1
-        while current_index < len(numbers) and \
-                current_sum + numbers[current_index] <= target:
-            current_sum += numbers[current_index]
-            current_index += 1
-        
-        if current_sum == target and current_index - index < min_length:
-            min_length = current_index - index
-    
-    if min_length == len(numbers) + 1:
-        return None
-    
-    return min_length
+    # create an empty list to store all subarrays with a sum of zero
+    subarrays = []
+
+    # loop through the indices of the input list
+    for i in range(len(numbers)):
+      # initialize a list to hold the current subarray
+      current_subarray = []
+      # initialize an accumulator variable to track the sum of the current subarray
+      subarray_sum = 0
+      # loop through the indices from index i to the end of the list
+      # numbers[i] will be the start of our current subarray
+      for j in range(i, len(numbers)):
+        # add the value of the current element we are iterating over
+        # to the subarray
+        current_subarray.append(numbers[j])
+        # add the value of the current element we are iterating over
+        # to the subarray sum
+        subarray_sum += numbers[j] 
+        # if the subarray's sum is zero
+        if subarray_sum == 0:
+          # add a copy of the current subarray to the end of the list
+          # (we need to copy the current_subarray because lists are mutable)
+          subarrays.append(current_subarray.copy())
+
+    # return all subarrays with a sum of zero
+    return subarrays
+
   ```
 </details>
 
-This solution works and is a relatively direct straight forward approach. This is often called a "brute force" solution.
+This solution works and is a relatively direct straight forward approach. This is often called a **brute force** solution.
 
-## Simplify/Refactor
+### Simplify/Refactor
 
-The first big challenge in software development is to **produce working code**. After code is working however the time comes to simplify or refactor (improve) the solution.
+The first big challenge in software development is to _produce working code_. If we still have time after producing working code, we should simplify or refactor (improve) our solution.
 
 In the sample solution above we are using a nested loop and the loop repeatably traverses the list. Our code is not time efficient because we examine the same elements of the list repeatedly.
-
-We are only interested in contiguous sublists, elements have to be next to one another. This means we can apply a technique called a [sliding window](https://www.geeksforgeeks.org/window-sliding-technique/).  A sliding window is a technique that creates a contiguous sublist of a the larger list and then iterates through adjusting the start and end indicies of the sublist.  So each iteration either the start index moves forward or the end index moves forward allowing us to have a "sliding" sublist that progresses through the original list.
-
-In this technique we slide a "window" across the list and track the sum of the elements within the window.  If the sum of the elements in the window is equal to the target, we have found a contiguous sublist.  
-
-The image below illustrates the sliding window technique.
-
-![Sliding Window Example](images/problem-solving__sliding-window.gif)
-
-*Fig. Sliding Window*
 
 ### Implementing Our Refactor
 
@@ -420,41 +457,58 @@ Then we can repeat this algorithm:
   <summary>Click here to see a sample solution</summary>
 
   ```py
-  def minimum_sub_list_length(numbers, target):
+  def insert(dict, key, value):
+    if not dict.get(key):
+      dict[key] = [value]
+    else:
+      dict[key].append(value)
+    
+  def zero_sum_subarray(numbers):
     '''
-    INPUT: list of positive numbers, and target a positive integer
-    OUTPUT: the minimal length of a contiguous sublist of the given input list which adds up to the given integer.
-    Return the length of the smallest contiguous sublist which adds up to the given integer or 
-    return None if there is no such sublist.
+    INPUT: list of integers
+    OUTPUT: a 2D list where the outer list contains all contiguous subsequences within the given list that add up to zero. If there are no contiguous subsequences that add up to zero, return an empty list.
     '''
-    if len(numbers) == 0:
-        return None
-          
-    start_index = 0
-    end_index = 1
-    current_sum = numbers[0]
-    min_length_sublist = len(numbers) + 1
-  
-    while end_index < len(numbers) + 1:
+    if not numbers:
+    # return an empty list
+        return []
+    
+    # create an empty list to store all subarrays with a sum of zero
+    subarrays = []
 
-        if current_sum == target:
-            min_length_sublist = min(min_length_sublist, end_index - start_index)
-
-            current_sum -= numbers[start_index]
-            start_index += 1
-
-        elif current_sum < target:
-            if end_index < len(numbers):
-                current_sum += numbers[end_index]
-            end_index += 1
-            
-        elif current_sum > target:
-            current_sum -= numbers[start_index]
-            start_index += 1
-
-    if min_length_sublist == len(numbers) + 1:
-        return None
-    return min_length_sublist
+    # create a dictionary which will map a sum
+    # to a list of the start indices of subarrays with that sum
+    subarray_dict = {}
+    
+    # initialize an accumulator variable to track the sum of the current subarray
+    subarray_sum = 0
+    
+    # loop through the indices of the input list
+    for i in range(len(numbers)):
+      
+      # add the value of the element at the current index to subarr_sum
+      subarray_sum += numbers[i]
+        
+        # if the current sum is zero
+        if subarray_sum == 0:
+          # then there is a subarray that sums to zero from numbers[0:i+1]
+          # appen the subarray to result list
+          subarrays.append(numbers[0:i+1])
+        
+        # if the current sum is already in our dictionary
+        if subarray_sum in subarray_dict:
+          # then there exists at least one subarray ending at index i
+          # with a zero sum
+          # get the list of starting indices for subarrays with that sum 
+          start_indices = subarray_dict.get(subarray_sum)
+            # loop through the starting indices
+            for start_index in start_indices:
+              # append the subarray to the result list
+              subarrays.append(numbers[start_index + 1:i+1])
+        # add the subarray's sum and starting index
+        # as a key value pair to the dictionary
+        subarray_dict[subarray_sum] = [i]
+    # return all subarrays with a sum of zero
+    return subarrays        
   ```
 </details>
 
