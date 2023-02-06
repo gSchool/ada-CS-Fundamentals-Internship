@@ -57,11 +57,13 @@ The following material serves as an addendum to the Divide and Conquer lesson re
 
 Binary search can be used to solve many problems related to searching through sorted data. The following problem offers an opportunity to use the binary search algorithm using a modified approach.
 
+```
 Suppose you are given a sorted array of non-negative distinct integers. You are tasked with finding the smallest missing non-negative element inside of the array. The array should start with the integer 0, if it is present in the array.
 
 For example if the array is [0, 1, 2, 6, 9, 11, 15], the smallest missing element is 3.
 
 If the array is [1, 2, 3, 4, 5], the smallest missing element is 0.
+```
 
 This problem can be solved in O(n) time using a linear search to find the first index containing an element that does not match its value. However, this approach does not take advantage of the fact the input is sorted.
 
@@ -87,6 +89,7 @@ Spend *no more than 15 minutes* writing a modified binary search solution to the
         # if the mid index matches with its value, then the mismatch must lie on the right half
         if nums[mid] == mid:
             return findSmallestMissingNum(nums, mid + 1, right)
+        # otherwise, the mismatch must lie on the right half
         else:
             return findSmallestMissingNum(nums, left, mid - 1)
     ```
