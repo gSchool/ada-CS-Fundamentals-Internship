@@ -27,10 +27,6 @@ Standards:
       - success criteria
     ContentFiles:
       -
-        Type: Instructor
-        UID: 7fc96b73-ed71-405c-925d-faa4b9068284
-        Path: /01-algorithms/00-algorithms.instructor.md
-      -
         Type: Lesson
         UID: a76dfc02-3b54-459c-bf72-66a072b26119
         Path: /01-algorithms/01-algorithms.md
