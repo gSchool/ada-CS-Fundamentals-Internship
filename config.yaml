@@ -36,6 +36,10 @@ Standards:
         Path: /01-algorithms/01-algorithms.md
       -
         Type: Lesson
+        UID: 7efe05b0-1021-403b-8f13-553beec28cfe
+        Path: /01-algorithms/02-algorithm-analysis.md
+      -
+        Type: Lesson
         UID: 1609881b-773a-41e3-aee7-c23c66e20d29
         Path: /01-algorithms/02-algorithms-divide-conquer.md
       -
