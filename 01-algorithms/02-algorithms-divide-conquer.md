@@ -127,7 +127,7 @@ b|
 
 ##### !explanation
 
-The worst-case time complexity for Quicksort is O(N<sup>2</sup>) because picking the worst pivot (e.g. the smallest or biggest remaining element) for each step will result in one array of size n-1 as opposed to two arrays that are approximately n/2 in length. Therefore, step 2: Pick an element from the array as the pivot, is the step that may cause Quicksort to have an O(N<sup>2</sup>) runtime.
+The worst-case time complexity for Quicksort is O(N<sup>2</sup>) because picking the worst pivot (e.g. the smallest or biggest remaining element) for each step will result in one array of size n-1 as opposed to two arrays that are approximately n/2 in length. Therefore, step 2: Pick an element from the array as the pivot, is the step, if incorrectly chosen, that may cause Quicksort to have an O(N<sup>2</sup>) runtime.
 
 ##### !end-explanation 
 
