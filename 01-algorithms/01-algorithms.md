@@ -239,7 +239,7 @@ Feeling stuck often means you've found a subproblem you need to solve!
 Sample subproblems could be:
 
 1.  Finding all the contiguous subsequences.
-2.  Determining the sum of a single contiguous subsequence.
+2.  Determining if a single contiguous subsequence sums to zero.
 3.  Traversing the list to find all the contiguous subseuquences which sum to zero.
 
 ##### !end-explanation
@@ -317,6 +317,11 @@ class TestPython1(unittest.TestCase):
 
   def test_no_subarray_with_zero_sum(self):
       self.assertEqual([],zero_sum_subarray([1, 2, 3, 4, 5]))
+  
+  def test_two_zeroes_in_a_row(self):
+    result = zero_sum_subarray([-4,6,-2,7,-1,0, 0,1])
+    result.sort()
+    self.assertEqual([[-4,6,-2],[-1,0,0,1],[0], [0], [0,0]], result)
 ```
 
 ##### !end-tests
@@ -428,85 +433,124 @@ This solution works and is a relatively direct straight forward approach. This i
 
 ### Simplify/Refactor
 
-The first big challenge in software development is to _produce working code_. If we still have time after producing working code, we should simplify or refactor (improve) our solution.
+The first big challenge in software development is to _produce working code_. If we still have time after producing working code, we should consider opportunites to simplify or refactor (improve) our solution.
 
-In the sample solution above we are using a nested loop and the loop repeatably traverses the list. Our code is not time efficient because we examine the same elements of the list repeatedly.
+In the sample solution above we are using a nested loop to repeatedly traverse the list. The outer list tracked the starting index of our subarrays and the inner list tracked the ending index of our subarrays. This solution isn't very time efficient because we examine the same elements of the list repeatedly.
 
-### Implementing Our Refactor
+<!-- add visualization if time allows -->
 
-In our refactor we can start by creating a window of size 1 from index 0 to index 1.  So our window's `start_index` is `0` and `end_index` is `1`. Our current sum then is the value of the 1st element of the list.
+Is it possible that an alternative approach can help us achieve simpler or more efficient code? Recall that for this problem we came up with the following subproblems:
 
-We track the following values:
+1. Finding all the contiguous subsequences or subarrays
+2. Determining whether a single subarray sums to zero
 
-* `start_index` - Where our window starts
-* `end_index` - Where our window ends
-* `current_sum` - The sum of the elements in the current window
-* `min_length` - The length of the smallest contiguous sublist found thus far.
+Ideally, it would be nice to find all subarrays by only making a single loop
+through our input array. But if we eliminate the second loop, we lose the variable that tracks the ending index. 
 
-Then we can repeat this algorithm:
+<!-- add visualization if time allows -->
 
-1.  If the current sum is equal to the target, we have found a contiguous sublist which adds up to target, and if it is the smallest contiguous sublist we have found so far, we update the minimum length.
-      * We can also advance the window by incrementing the `start_index` by one.
-1.  If the current sum is greater than or equal to the target we can decrease the window size by adding one to the start index of the window.
-1.  If the current sum is less than the target we can increase the window size by adding one to the end index of the window.
-1.  We will repeat this algorithm until the end index has passed the end of the list.
+It doesn't seem like there's an obvious solution that will allow us to find all subarrays with a single loop, so let's pivot and look at our second subproblem. Are there any observations we can make about subarrays that sum to zero? Any patterns we can find may help us optimize our solution to the first subproblem. 
 
-**Practice**:  Go back to the exercise above and try to implement the refactor.  Spend no more than 15 minutes on it.
+Let's take a look at the following sample input `[-4, 6, -2, 7, -1, 0, 1]` which has three subarrays that sum to zero:
+- `[-4, 6, -2]`
+- `[-1, 0, 1]`
+- `[0]`
+
+It is easy to see that the third subarray sums to 0 because each element (in fact the only element) has value 0.
+
+What about the other two subarrays? Observe that the sum of the negative values is equal to the sum of the positive values. In other words, whatever we add to our total we eventually subtract and vice versa. 
+
+Now let's return to our first subproblem and iterate once through the array. We can keep a running sum of each element we had traversed thus far.
+If there exists a subarray that sums to zero and starts at the beginning of the input array, then we will add and subtract the same amount and our total running sum will be 0. If there exists a subarray that sums to zero and has a non-zero starting index, then the running sum before traversing the subarray will be the exact same as the running sum directly after traversing the entire subarray.
+
+![Example zero sum subarray with zero starting index and non-zero starting index](images/example-zero-sum-subarrays.png)
+
+As we iterate through our array, we can use a hashmap or dictionary to map the total sum so far to the index with that sum. This way, if we encounter a sum multiple times, we'll have our current index from our for loop to indicate the end of a subarray which sums to zero and the mapped indices to indicate where that subarray starts!
+
+![Zero Sum Subarray Algorithm](images/zero-sum-subarray.gif)
+
+By considering an alternative approach to each of our subproblems, we've found a new possible solution to our overall problem.
+
+#### Implementing Our Refactor
+
+In our refactor we can start by creating a dictionary that maps sums to indices. We track the following values:
+
+* `subarrays` - all subarrays found thus far
+* `sum_to_index_dict` - all sums found thus far mapped to the indices with that sum
+* `array_sum` - The sum of all elements traversed thus far
+* `curr_sum_start_indices` - All indices in the list traversed thus far whose sum is `array_sum`
+
+Then we can repeat this algorithm for each index:
+
+1. Add the value at that index to `array_sum`
+2.  Set `curr_sum_start_indices` to an empty list
+2. If `array_sum` is zero, add the subarray from index 0 to the current index to `subarrays`
+3.  If the current sum is already in our dictionary, there must be a subarray that sums to zero. 
+    1.  Get the value associated with key `array_sum` from `sum_to_index_dict`
+    2.  Add the subarrays from each index stored in that value + 1 to the current index being iterated over to `subarrays`
+4.  Append the current index to `curr_sum_start_indices`
+5.  Set `sum_to_index_dict[array_sum]` to `curr_sum_start_indices`
+
+**Practice**:  Go back to the exercise above and try to implement the refactor.  Spend no more than 10 minutes on it.
 
 <details style="max-width: 700px; margin: auto;">
   <summary>Click here to see a sample solution</summary>
 
   ```py
-  def insert(dict, key, value):
-    if not dict.get(key):
-      dict[key] = [value]
-    else:
-      dict[key].append(value)
     
   def zero_sum_subarray(numbers):
     '''
     INPUT: list of integers
     OUTPUT: a 2D list where the outer list contains all contiguous subsequences within the given list that add up to zero. If there are no contiguous subsequences that add up to zero, return an empty list.
     '''
+    # if the input array is empty
     if not numbers:
-    # return an empty list
+      # return an empty list
         return []
     
-    # create an empty list to store all subarrays with a sum of zero
+    # create an empty list to store our result
     subarrays = []
 
     # create a dictionary which will map a sum
     # to a list of the start indices of subarrays with that sum
-    subarray_dict = {}
+    sum_to_index_dict = {}
     
-    # initialize an accumulator variable to track the sum of the current subarray
-    subarray_sum = 0
+    # initialize an accumulator variable to track the sum of all elements
+    # in the input array traversed thus far
+    array_sum = 0
     
     # loop through the indices of the input list
     for i in range(len(numbers)):
       
-      # add the value of the element at the current index to subarr_sum
-      subarray_sum += numbers[i]
+      # add the value of the element at the current index to array_sum
+      array_sum += numbers[i]
         
-        # if the current sum is zero
-        if subarray_sum == 0:
-          # then there is a subarray that sums to zero from numbers[0:i+1]
-          # appen the subarray to result list
-          subarrays.append(numbers[0:i+1])
-        
-        # if the current sum is already in our dictionary
-        if subarray_sum in subarray_dict:
-          # then there exists at least one subarray ending at index i
-          # with a zero sum
-          # get the list of starting indices for subarrays with that sum 
-          start_indices = subarray_dict.get(subarray_sum)
-            # loop through the starting indices
-            for start_index in start_indices:
-              # append the subarray to the result list
-              subarrays.append(numbers[start_index + 1:i+1])
-        # add the subarray's sum and starting index
-        # as a key value pair to the dictionary
-        subarray_dict[subarray_sum] = [i]
+      # if the sum thus far is zero
+      if array_sum == 0:
+        # then there is a subarray that sums to zero from numbers[0:i+1]
+        # append the subarray to result list
+        subarrays.append(numbers[:i+1])
+      
+      # create an empty list to hold all indices with the sum array_sum
+      curr_sum_start_indices = []
+
+      # if the current sum is already in our dictionary
+      # we have found at least one subarray that sums to zero 
+      if array_sum in sum_to_index_dict:
+
+        # then set the list of indices with the sum array_sum
+        # to the value paired with key array_sum in our dictionary
+        curr_sum_start_indices = sum_to_index_dict.get(array_sum)
+        # loop through the starting indices
+        for start_index in curr_sum_start_indices:
+          # append the subarray to the result list
+          subarrays.append(numbers[start_index + 1:i+1])
+      # add the current index to the list of indices with sum array_sum
+      curr_sum_start_indices.append(i)
+      # reset the value associated with key array_sum in our dictionary
+      # to the updated list of start indices
+      sum_to_index_dict[array_sum] = curr_sum_start_indices
+
     # return all subarrays with a sum of zero
     return subarrays        
   ```
@@ -528,4 +572,15 @@ The steps we created are:
 
 By making problem solving a process we can reduce stress and improve our ability to work toward solutions.
 
+
+<!-- available callout types: info, success, warning, danger, secondary, star  -->
+### !callout-star
+
+## Should I Be Concerned if I Couldn't Come Up with a Solution Myself?
+
+As you move through the Thursdays at Ada curriculum, you will be asked to attempt many interview practice problems, many of which you may not be able to solve quickly or independently. 
+
+That's okay! Part of the learning process for interviewing includes attempting and 'failing' problems, especially when you're first learning new material. Your progress may be slow and incremental. If you need to use provided and/or outside resources to come to a full solution, focus on understanding the _techniques_ used in the solution. You can bring these techniques with you to help solve future programming problems. 
+
+### !end-callout
 
