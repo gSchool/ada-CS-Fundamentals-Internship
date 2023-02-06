@@ -58,9 +58,13 @@ The following material serves as an addendum to the Divide and Conquer lesson re
 Binary search can be used to solve many problems related to searching through sorted data. The following problem offers an opportunity to use the binary search algorithm using a modified approach.
 
 ```
-Suppose you are given a sorted array of non-negative distinct integers. You are tasked with finding the smallest missing non-negative element inside of the array. The array should start with the integer 0, if it is present in the array.
+Suppose you are given a sorted array of non-negative distinct integers. 
+You are tasked with finding the smallest missing non-negative element inside of the array.
 
-For example if the array is [0, 1, 2, 6, 9, 11, 15], the smallest missing element is 3.
+The array should start with the integer 0, if it is present in the array.
+
+For example:
+If the array is [0, 1, 2, 6, 9, 11, 15], the smallest missing element is 3.
 
 If the array is [1, 2, 3, 4, 5], the smallest missing element is 0.
 ```
