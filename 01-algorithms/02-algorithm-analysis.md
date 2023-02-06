@@ -75,7 +75,7 @@ In Big O terms, we can say an algorithm that perform essentially the same number
 
 #### Linear Time Complexity
 
-On the other hand some algorithms will take an amount of time proportional to changes in the size of the input. A good example is a loop based version of our function that calculates the sum of numbers 1 through n.  
+On the other hand, for some algorithms, the amount of time it takes to run the algorithm is proportional to changes in the size of the input. A good example is a loop based version of our function that calculates the sum of numbers 1 through n.  
 
 ```py
 def add_from_1_to_n(n):
@@ -86,15 +86,15 @@ def add_from_1_to_n(n):
     return total
 ```
 
-If the input size doubles, our function will take roughly double the time to run. We can see this in action by estimating the run time on specific inputs. 
+If the input size doubles, our function will take roughly double the time to run. We can see this in action by estimating the runtime on specific inputs. 
 
-Imagine that assigning total to 0 takes 1 second, incrementing `i` takes 1 second, and adding `i` to the total also takes 1 second. Regardless of whether the n is 10 or 20, initializing total to 0 will take the same amount of time (1 second). But if n is 10, we will need to increment `i` 10 times (10 seconds) and add `i` to `total` 10 times (10 seconds) resulting in an overall run times of 1 + 10 + 10 = 21 seconds. 
+Imagine that assigning `total` to 0 takes 1 second, incrementing `i` takes 1 second, and adding `i` to the total also takes 1 second. Regardless of whether the n is 10 or 20, initializing `total` to 0 will take the same amount of time (1 second). But if n is 10, we will need to increment `i` 10 times (10 seconds) and add `i` to `total` 10 times (10 seconds) resulting in an overall runtime of 1 + 10 + 10 = 21 seconds. 
 
-If n is 20, we will need to increment `i` 20 times (20 seconds) and add `i` to `total` 20 times (20 seconds) resulting in an overall run times of 1 + 20 + 20 = 41 seconds or roughhly double the run time to execute the function when n was 10. 
+If n is 20, we will need to increment `i` 20 times (20 seconds) and add `i` to `total` 20 times (20 seconds) resulting in an overall runtime of 1 + 20 + 20 = 41 seconds.
 
-A function where the run time increases in direct proportion to the size of the input has a **linear time complexity** or `O(n)`.
+A function where the runtime increases in direct proportion to the size of the input is a function  with **linear time complexity** or `O(n)`.
 
-If we altered our algorithm slightly to print all the numbers from 1 to n and then down from n to 1 using a loop it would take `O(n + n)` = `O(2n)` time to execute. For Big O, we drop any coefficients or constant terms. Thus `O(2n)` => `O(n)`.
+If we altered our algorithm slightly to instead use a loop to print all the numbers from 1 to n and then down from n to 1 it would take `O(n + n)` = `O(2n)` time to execute. For Big O, we drop any coefficients or constant terms. Thus `O(2n)` => `O(n)`.
 
 ```py
 def count_up_and_down(n):
@@ -109,11 +109,11 @@ def count_up_and_down(n):
 
 So although `count_up_and_down` may be doing more operations than `add_from_1_to_n` it also has a **linear time complexity** or `O(n)`. 
 
-In general, whenever we do operations that are sequential (one after another) we add their time complexities together. If the time complexities being added are different, say an O(n) and O(1) operation (as opposed to the O(n) + O(n) operation in the example above), the less dominant (faster/better) time complexity is dropped. Thus `O(n + 1)` => `O(n)`
+In general, whenever we do operations that are sequential (one after another) we add their time complexities together. If the time complexities being added are different, say an O(n) and O(1) operation (as opposed to the O(n) + O(n) operation in the example above), the less dominant (faster/better) time complexity is dropped. Thus `O(n + 1)` => `O(n)`.
 
 #### Quadratic Time Complexity
 
-Often we encounter functions which involves nested loops. For example the code below contains a for loop which runs n times and a loop nested inside of it which runs, worst-case, n-1 times where n is the length of numbers.
+Often we encounter algorithms which involve nested loops. For example the code below contains a for loop which runs n times and a loop nested inside of it which runs, worst-case, n-1 times where n is the length of `numbers`.
 
 ```py
   def zero_sum_subarray(numbers):
@@ -138,7 +138,7 @@ When we encounter nested loops or other nested operations, we multiply the time 
 
 So in this case:
 
-* If we multiply the number of iterations the outer loop does by the number of iterations the inner loop does: `(n * (n-1))` = `(n^2 - n)`
+* If we multiply the number of iterations the outer loop does by the number of iterations the inner loop does we have `(n * (n-1))` which is equivalent to `(n^2 - n)`.
 * We can drop the less significant term `n` because `n^2` will dominate the result. 
 * We end up with a time complexity of `O(n^2)`.
 
@@ -169,11 +169,11 @@ def binary_search(test_array, value):
 
 **What is a log again**?
 
-A logarithm can be though of this inverse of an exponent. It is the quantity representing the power to which a fixed number (the base) must be raised to produce a given number. For example the log with base 2 of 8 is 3 because 2^3 = 8.  The log of base 10 of 10000 is 4 because 10^4 = 10000.
+A logarithm can be thought of as the inverse of an exponent. It is the power to which a fixed number (the base) must be raised to produce a given number. For example we say the log with base 2 of 8 is 3 because 2<sup>3</sup> = 8.  The log of base 10 of 10000 is 4 because 10<sup>4</sup> = 10000.
 
 ![Log example](images/problem-solving__log-example.png)
 
-What does this mean practically speaking? In a coding problem if we reduce the size of a problem by dividing the remaining input at a constant rate with each iteration we often get a time complexity involving a logarithm.
+What does this mean practically speaking? In a coding problem, if we reduce the size of a problem by dividing the remaining input at a constant rate with each iteration we often get a time complexity involving a logarithm.
 
 Taking an [example from Stack Overflow](https://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly/2307314#2307314), a physical example of a logathmic algorithm is:
 
@@ -186,7 +186,7 @@ the person's name lies. (This is a binary search for a person's name.)
 ```
 
 
-The classical example of a logarithmic problem is binary search:
+Indeed, the classical example of a logarithmic problem is binary search:
 
 ```py
 def mystery_function(numbers, value):
@@ -207,7 +207,7 @@ def mystery_function(numbers, value):
     return None
 ```
 
-If the input is eight elements [1, 2, 3, 4, 5, 6, 7, 8] and `value` is 2:
+If the input is eight elements [1, 2, 3, 4, 5, 6, 7, 8] and `value` we are searching for is 2:
 
 * In the first iteration `low` will be 0 and `high` would be 7, and  `mid` would be 3 ( (0+7) / 2).
 * On the second iteration `low` remains 0 and `high` becomes 2 and `mid` becomes 1.
@@ -218,18 +218,19 @@ Notice with each iteration the size of the input involved in the search (`low` t
 In the worst case scenario, the algorithm will take the following number of iterations given the input of size `n`:
 
 |   n	|   Number of iterations	|
-|---	|---	|
-|   8	|   3	|
-|   16	|   4	|
-|   32	|   5	|
-|   64	|   6	|
+|---	|---	                    |
+|   8	|   3	                    |
+|   16	|   4	                    |
+|   32	|   5	                    |
+|   64	|   6	                    |
 
 *Table. Number of iterations for each input size.*
 
 In general:
 
 * If the size of the input is *divided* by some value with each iteration, the time complexity involves a logarithm with a base equal to the divisor.
-* By far, the most common logarithmic base is 2 because our algorithms often, like binary search, divide the input size by two with each iteration. 
+* By far, the most common logarithmic base is 2 because our algorithms often, like binary search, divide the input size by two with each iteration.
+  * However, we could have a different base such as 4 which would mean we are dividing the input size by 4 with each iteration
   * Often we drop the base of the logarithm on the assumption that it is 2.
   * For Big-O notation, we do not need to indicate the base.
 
@@ -241,7 +242,7 @@ We will occassionally encounter algorithms that have other time complexities. La
 
 *Fig. From Big O Cheat Sheet*
 
-We may also encounter time complexities which use variables other than `n`. One typical scenario for this is when we have multiple inputs of variable sizes that both affect time complexity.
+We may also encounter time complexities which use variables other than `n`. One typical scenario for this is when we have multiple inputs, each with variable size, that both affect time complexity.
 
 For example, say we have the following function which will make a 2D matrix with `rows` number of rows and `columns` number of columns where all values inside the matrix are initialized to `None`.
 
@@ -257,7 +258,236 @@ def init_matrix(rows, columns):
 
 We could say this algorithm has an **`O(m*n)` time complexity** where `m` is the number of rows and `n` is the number of columns. When discussing time complexity, we want to use separate variables to represent the number of rows and number of columns because their respective values could be drastically different. We could be trying to create a matrix with just 1 row and 1000 columns. 
 
-This is part of the reason it's very important that we clearly define what our Big O variables represent when discussing time and space complexity. When multiple variables are at play, we want to communicate clearly which ones are affecting the overall runtime and/or memory usage.
+Multiple variables is one reason it is very important that we clearly define what our Big O variables represent when discussing time and space complexity. When multiple variables are at play, we want to communicate clearly which ones are affecting the overall runtime and/or memory usage.
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+<!-- Replace everything in square brackets [] and remove brackets  -->
+
+### !challenge
+
+* type: multiple-choice
+* id: d5fd6476-897a-4690-a620-8c1f1a185852
+* title: Even Elements
+* points: 1
+* topics: Big-O, time-complexity
+
+##### !question
+
+What is the *time complexity* of the following function?
+
+```python
+def only_even_elements(array):
+    new_array = []
+    for i in range(0, len(array)):
+        if i % 2 == 0:
+            new_array.append(array[i])
+
+    return new_array
+```
+
+##### !end-question
+
+##### !options
+
+* O(1)
+* O(n)
+* O(log n)
+* O(n^2)
+
+##### !end-options
+
+##### !answer
+
+* O(n)
+
+##### !end-answer
+
+
+### !end-challenge
+
+
+### !challenge
+
+* type: multiple-choice
+* id: 552c0146-f390-4eac-a6a3-15365bae8233
+* title: Sum Digits
+* points: 1
+* topics: python, big-o, sum-digits, time-complexity
+
+##### !question
+
+What is the time complexity of the following function where `n` is the number passed in as a parameter?
+
+```py
+def sum_digits(n):
+    total = 0
+    while n > 0:
+        total += n % 10 # get last digit
+        n //= 10        # remove last digit
+    
+    return total
+```
+##### !end-question
+
+##### !options
+
+* O(1)
+* O(log n)
+* O(n)
+* O(n log n)
+* O(n^2)
+
+##### !end-options
+
+##### !answer
+
+* O(log n)
+
+##### !end-answer
+
+##### !hint
+
+Remember `n` is the number passed in, not the number of digits.
+
+##### !end-hint
+
+##### !explanation
+
+Because we *divide* n by 10 with each iteration of the loop the time complexity is logarithmic.  This is a case where the base of the logarithm is 10, instead of 2 (because we're dividing by 10 with each loop iteration).  If `n` is 57, the loop will execute 2 times.  If we make it a 4 digit number ~100 times bigger, 1057, the loop will execute 4 times.
+
+##### !end-explanation
+
+### !end-challenge
+
+### !challenge
+
+* type: multiple-choice
+* id: bcf1318d-c0ce-4436-a918-6d8b2f7f73bb
+* title: Subtotal List time complexity
+* points: 1
+* topics: python, big-o, time-complexity
+
+##### !question
+
+What is the *time complexity* of the following function?
+
+```py
+def subtotals_list(numbers):
+    subtotals_list = []
+
+    for i in range(0, len(numbers)):
+        subtotal = 0
+        for j in range(0, i + 1):
+            subtotal += numbers[j]
+
+        subtotals_list.append(subtotal)
+
+    return subtotals_list
+```
+
+##### !end-question
+
+##### !options
+
+* O(1)
+* O(log n)
+* O(n)
+* O(n log n)
+* O(n^2)
+
+##### !end-options
+
+##### !answer
+
+* O(n^2)
+
+##### !end-answer
+
+### !end-challenge
+
+
+### !challenge
+
+* type: multiple-choice
+* id: 0099e250-1cb3-4540-a740-223186c00c0c
+* title: Picking Between Solutions
+* points: 1
+* topics: python, big-o, time-complexity
+
+##### !question
+
+Consider the following solutions to a problem.  Which one is the best?
+
+*Code Sample: Solution 1*
+
+```py
+def isAnagram(self, s: str, t: str) -> bool:
+    s_list = []
+    t_list = []
+    s_list[:0] = s
+    t_list[:0] = t
+    
+    for s_letter in s_list:
+        if s_letter in t_list:
+            t_list.remove(s_letter)
+        else:
+            return False
+    
+    return len(t_list) == 0
+```
+
+*Code Sample: Solution 2*
+
+```py
+def isAnagram(self, s: str, t: str) -> bool:
+    s_freq_map = {}
+    t_freq_map = {}
+    if len(s) != len(t):
+        return False
+    
+    for letter in s:
+        if not s_freq_map.get(letter):
+            s_freq_map[letter] = 0
+        
+        s_freq_map[letter] += 1
+    
+    for letter in t:
+        if not t_freq_map.get(letter):
+            t_freq_map[letter] = 0
+        
+        t_freq_map[letter] += 1
+    
+    for letter, count in s_freq_map.items():
+        if t_freq_map.get(letter) != count:
+            return False
+    
+    return True
+```
+
+##### !end-question
+
+##### !options
+
+* Solution 1
+* Solution 2
+* Both are the same
+
+##### !end-options
+
+##### !answer
+
+* Solution 2
+
+##### !end-answer
+
+<!-- other optional sections -->
+##### !hint
+
+What are the time complexities of the two solutions?  Are there any hidden nested loops?
+
+##### !end-hint
+
+### !end-challenge
 
 ### Space Complexity
 
@@ -364,6 +594,95 @@ Because the function only creates 3 "primitive" variables no matter the size of 
 ##### !end-explanation
 
 ### !end-challenge
+### !challenge
+
+* type: multiple-choice
+* id: 9e84ae63-2f27-47a9-8bf5-41192f7c3a7a
+* title: Subtotal List space complexity
+* points: 1
+* topics: python, big-o, space-complexity
+
+##### !question
+
+What is the *space complexity* of the following function?
+
+```py
+def subtotals_list(numbers):
+    subtotals_list = []
+
+    for i in range(0, len(numbers)):
+        subtotal = 0
+        for j in range(0, i + 1):
+            subtotal += numbers[j]
+
+        subtotals_list.append(subtotal)
+
+    return subtotals_list
+```
+
+##### !end-question
+
+##### !options
+
+* O(1)
+* O(log n)
+* O(n)
+* O(n log n)
+* O(n^2)
+
+##### !end-options
+
+##### !answer
+
+* O(n)
+
+##### !end-answer
+
+### !end-challenge
+
+
+### !challenge
+
+* type: multiple-choice
+* id: a29ddd8c-4a9e-4fb9-a286-8d987b55fdb8
+* title: Even Elements
+* points: 1
+* topics: Big-O, space-complexity
+
+##### !question
+
+What is the *space complexity* of the following function?
+
+```python
+def only_even_elements(array):
+    new_array = []
+    for i in range(0, len(array)):
+        if i % 2 == 0:
+            new_array.append(array[i])
+
+    return new_array
+```
+
+##### !end-question
+
+##### !options
+
+* O(1)
+* O(n)
+* O(log n)
+* O(n^2)
+
+##### !end-options
+
+##### !answer
+
+* O(n)
+
+##### !end-answer
+
+
+### !end-challenge
+
 
 **Note on Recursion**
 
@@ -384,6 +703,8 @@ This is because the Python interpreter needs to save every active function call 
 
 *Fig. Call stack diagram*
 
+We'll discuss how the recursive call stack affects space complexity more in future lessons.
+
 ## Summary
 
 Big O is a standard way to measure how much the time an algorithm takes and how much memory an algorithm requires to run as the input size increases. This allows us to compare different solutions to measure them against each other. Big O is helpful in selecting the proper algorithm to use for a problem.
@@ -399,90 +720,6 @@ Some general rules to use when thinking about time and space complexity:
 
 ## Categories of Algorithms
 
-There are a [number of different categories of algorithms](https://s2.smu.edu/~vdebroy/cse3353/Lectures/Lecture-7/Algorithm-Types.pdf).  Each category describes the general approach to the algorithm's use in solving its particular problem.  Categories are not exclusive; an algorithm can be a member of multiple categories.  For example QuickSort can be both a divide and conquer algorithm and a randomized algorithm if it picks a random element as a pivot to sort against at each stage.
+There are a [number of different categories of algorithms](https://s2.smu.edu/~vdebroy/cse3353/Lectures/Lecture-7/Algorithm-Types.pdf).  Each category describes the general approach to the algorithm's use in solving its particular problem.  Categories are not exclusive; an algorithm can be a member of multiple categories.  For example QuickSort can be both a divide and conquer algorithm and a randomized algorithm if it picks a random element as a pivot to sort against at each stage. Categories of algorithms can provide us with useful tips and techniques for devising algorithms to problems that fall within a category.
 
-In this lesson we will look at a few categories, specifically _divide and conquer_ algorithms, _greedy_ algorithms and _dynamic programming_ algorithms.
-
-## Summary
-
-You've been adding algorithms all along!
-
-<!-- 
-Consider this problem:
-
-```
-Write a function to add up all the numbers from 1 to n.
-```
-
-We could solve the problem by using a loop to iterate through the numbers from 1 to n and add them all up.
-
-```python
-def add_from_1_to_n(n):
-    total = 0
-    for i in range(1, n + 1):
-        total += i
-    
-    return total
-```
-
-Or we could perform the following arithmetic to solve the problem:
-
-```python
-def add_from_1_to_n(n):
-    return (n * (n + 1)) / 2
-```
-
-
-
-So `n * (n+1)` is twice the sum of all the numbers from 1 to n. Thus the answer is `(n * (n+1)) / 2`
-</details>
-
-How does the second approach perform compared to the first implementation?  We can use Big O notation to answer this question. Big O provides a precise language to describe how a function performs in terms of time the algorithm takes and memory used during execution.
-
-Generally when we evaluate an algorithm, or solution to a problem, we look at in in terms of:
-
-* How long does it take to run?
-* How much memory does it take to run?
-* How maintainable is the code?
-  * Can it be tested throughly?
-  * Can it be read easily?
-
-The third criteria is often even more important than either runtime or memory usage. Development time is important and expensive. However sometimes in mission critical applications, bottlenecks in how fast an algorithm runs or how much memory it consumes can be very important.
-
-## Evaluating Time & Space Complexity
-
-So both functions calculate the same answer, but how do we judge which is better? Reviewing what we know about space complexity both use similar amounts of memory as both only create a limited number of integer variables, no lists, dictionaries, or other variables with variable size. 
-
-While the loop-based solution is easier to understand for anyone who has not worked through the arithmetic solution, the arithmetic solution will run faster as it does not require a loop which performs `n` additions. But _how_ much better is it?
-
-If we time our code we can observe how long each option takes to run on various input sizes.
-
-|Input size *n* |  Loop-based solution |  Arithmetic solution 	|
-|---	        |---	               |---                     |
-|   1000000	    | 0.036s  	           | ~0s                    |
-|   10000000	|   0.30s	           |  ~0s                   |
-|   10000000	|   2.99s	           |  ~0s                   |
-|   10000000	|   30.03s	           |  ~0s                   |
-
-
-Looking at the timing results of the two functions we can see that the arithmetic solution is *much* faster.  Notice that as `n` increases tenfold, the number of seconds it takes to run the loop-based solution also increeases by an approximate factor of ten.
-
-Below, we can compare the run time of the two approaches graphically. 
-
-![Loop based vs arithmetic solution chart](./images/problem-solving-looped-based-vs-arithmetic-timing.svg)
-
-### Why Timing Our Code Is Not Enough
-
-However timing our code, while helpful, is not enough. This is because:
-
-* Other programs can be running while our code executes, making our measurements less accurate
-* Computers vary in speed and accuracy, so the amount of time the program takes to run on one computer would be different from another.
-* Other factors outside of our code timing results can vary between executions.
-
-We could try to count the number of operations performed by our code, but high level languages often obscure the number of operations performed. For example, in Python the number of operations performed by a library function is not easily accessible. 
-
-Instead as computer scientists we have developed Big O notation as a way to formalize a rough estimate of the number of how the number of operations *change* as the size of the input increases.
-
-**Note:** We care about how the algorithm performance *changes* as the input size **increases**.
-
--->
+Next, we will look at two categories:  _divide and conquer_ algorithms and _dynamic programming_ algorithms.
