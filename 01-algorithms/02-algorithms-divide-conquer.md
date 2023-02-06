@@ -49,7 +49,48 @@ Here's a description of the binary search algorithm:
 1. If at any point, we end up with an empty range, we know the value was not in the array, and we can return a result indicating the value was not found, such as `None`. Other variations of binary search may return the index of where the value _should_ have been, but as a negative value to indicate that it was missing.
 1. Each recursion divides the array in half and performs the binary search on a smaller subproblem.
 
-## 
+## Binary Search in the Wild
+
+### Binary Search: A modified approach
+
+The following material serves as an addendum to the Divide and Conquer lesson reviewed during class. 
+
+Binary search can be used to solve many problems related to searching through sorted data. The following problem offers an opportunity to use the binary search algorithm using a modified approach.
+
+Suppose you are given a sorted array of non-negative distinct integers. You are tasked with finding the smallest missing non-negative element inside of the array. The array should start with the integer 0, if it is present in the array.
+
+For example if the array is [0, 1, 2, 6, 9, 11, 15], the smallest missing element is 3.
+
+If the array is [1, 2, 3, 4, 5], the smallest missing element is 0.
+
+This problem can be solved in O(n) time using a linear search to find the first index containing an element that does not match its value. However, this approach does not take advantage of the fact the input is sorted.
+
+We can instead use a modified binary search algorithm to solve the problem in O(log(n)) time.
+
+Spend *no more than 15 minutes* writing a modified binary search solution to the problem detailed above.
+
+<details style="max-width: 700px; margin: auto;">
+  <summary>Click here to see a sample solution</summary>
+    ```py
+    def findSmallestMissingNum(nums, left = None, right = None):
+        # initialize right and left
+        if left is None and right is None:
+            (left, right) = (0, len(nums) - 1)
+        
+        # base case
+        if left > right:
+            return left
+
+        # calculate the middle index
+        mid = (left + right) // 2
+
+        # if the mid index matches with its value, then the mismatch must lie on the right half
+        if nums[mid] == mid:
+            return findSmallestMissingNum(nums, mid + 1, right)
+        else:
+            return findSmallestMissingNum(nums, left, mid - 1)
+    ```
+</details>
 
 ## Check for Understanding
 
@@ -144,3 +185,4 @@ In a divide and conquer solution we break a large problem into one or more small
 - [Daniel Liang's Binary Search Animation](https://yongdanielliang.github.io/animation/web/BinarySearchNew.html)
 - [Geeks for Geeks: Python Program for QuickSort](https://www.geeksforgeeks.org/python-program-for-quicksort/)
 - [hackerearth: QuickSort Animation](https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/visualize/)
+- [Find the smallest missing element from a sorted array](https://www.techiedelight.com/find-smallest-missing-element-sorted-array/)
