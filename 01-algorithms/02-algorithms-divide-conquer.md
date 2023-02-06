@@ -2,7 +2,7 @@
 
 ## Goals
 
-You may recall learning about divide and conquer algorithms such as Binary Search, Quick Sort, and Merge Sort. This lesson is intended to serve as a refresher for the divide and conquer approach, how to design divide and conquer algorithms, and when such algorithms may be applicable.
+You may recall learning about divide and conquer algorithms such as Binary Search, Quick Sort, and Merge Sort. This lesson is intended to serve as a refresher for the divide and conquer approach.
 
 This lesson requires prior knowledge about the divide and conquer technique and you are encouraged to re-read the Divide and Conquer lesson under the Algorithmic Strategies topic provided during classroom if you require more details about any of the review topics mentioned here. Any new topics covered in this lesson will be clearly indicated.
 
@@ -49,6 +49,8 @@ Here's a description of the binary search algorithm:
 1. If at any point, we end up with an empty range, we know the value was not in the array, and we can return a result indicating the value was not found, such as `None`. Other variations of binary search may return the index of where the value _should_ have been, but as a negative value to indicate that it was missing.
 1. Each recursion divides the array in half and performs the binary search on a smaller subproblem.
 
+## 
+
 ## Check for Understanding
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
@@ -58,32 +60,33 @@ Here's a description of the binary search algorithm:
 
 * type: multiple-choice
 * id: 645bad5d-af5f-42a9-a7e4-c70412972ab1
-* title: Time Complexity of Quicksort
+* title: Quicksort Weakness
 
 ##### !question
 
-What is the *Worst-Case* time complexity for Quicksort?
+Which step in the Quicksort algorithm may cause the algorithm to run in O(N<sup>2</sup>) time?
 
 ##### !end-question
 
 ##### !options
 
-a| O(NlogN)
-b| O(N)
-c| O(N<sup>2</sup>)
+a| If the array is only one element or empty, we are done, the array is sorted.
+b| Pick an element from the array as the pivot.
+c| Move all elements smaller than the pivot to the left and all elements larger than the pivot to the right.
+d| Perform QuickSort on the left and right sides of the pivot.
 
 ##### !end-options
 
 ##### !answer
 
-c|
+b|
 
 ##### !end-answer
 
 
 ##### !explanation
 
-The worst-case time complexity for Quicksort is O(N<sup>2</sup>) because picking the worst pivot (e.g. the smallest or biggest remaining element) for each step will result in one array of size n-1 as opposed to two arrays that are approximately n/2 in length.
+The worst-case time complexity for Quicksort is O(N<sup>2</sup>) because picking the worst pivot (e.g. the smallest or biggest remaining element) for each step will result in one array of size n-1 as opposed to two arrays that are approximately n/2 in length. Therefore, step 2: Pick an element from the array as the pivot, is the step that may cause Quicksort to have an O(N<sup>2</sup>) runtime.
 
 ##### !end-explanation 
 
@@ -94,40 +97,34 @@ The worst-case time complexity for Quicksort is O(N<sup>2</sup>) because picking
 
 ### !challenge
 
-* type: checkbox
+* type: multiple-choice
 * id: 25522151-56d9-4495-9691-da53700f896e
-* title: Divide and Conquer Algorithms
+* title: Binary Search Implementation Detail
 
 ##### !question
 
-Select all of the following which would be considered Divide/Decrease and Conquer algorithms.
+Which of the following lines in Python can be used to calculate the middle index used in step 1 of Binary Search? Assume the variable `high` stores the upper bound of where we want to search in the array and `low` stores the lower bound for where we want to search in the array.
 
 ##### !end-question
 
 ##### !options
 
-a| Mergesort
-b| Dijkstra's Algorithm
-c| Insertion sort
-d| Quicksort
-e| Binary Search
+a| mid = (low - high) * 2
+b| mid = (high - low) // 2
+c| mid = (high + low) * 2
+d| mid = (low + high) // 2
 
 ##### !end-options
 
 ##### !answer
 
-a|
 d|
-e|
 
 ##### !end-answer
 
 #### !explanation
 
-Dijkstra's Algorithm is not considered a divide and conquer algorithm because at no point are we breaking the problem into subproblems of the same type and recursively solving the subproblems.
-<br>
-
-Similarly, <a href="https://www.geeksforgeeks.org/insertion-sort/">Insertion Sort</a> is not a divide and conquer algorithm because the algorithm does not involve breaking down the problem into subproblems.
+The answer is (low + high) // 2 because the index calculated using that expression is the index of the middle element. For example, if the lower bound is 2 and the upper bound is 16, the middle element between indices 2 and 16 is the element in index 8. 
 
 #### !end-explanation 
 
