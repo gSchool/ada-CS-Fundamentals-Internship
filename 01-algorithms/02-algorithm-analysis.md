@@ -12,148 +12,70 @@ By the end of this lesson we will be able to:
 
 ## Overview
 
-When we analyze an algorithm we generally do not care how an algorithm performs on a specific input size.  Instead we look at how the runtime and memory usage changes as the input size grows.  Looking at how an algorithm's runtime and memory usage increases with increasing input is called, _Asymptotic Analysis_, i.e. Big O.
+When we analyze an algorithm we generally do not care how an algorithm performs on a specific input size.  Instead we look at how the runtime and memory usage changes as the input size grows.  Looking at how an algorithm's runtime and memory usage increases with increasing input is called, **Asymptotic Analysis**, i.e. Big O.
 
-Why bother with asymptotic analysis?  Why bother with examining how an algorithm increases in runtime and memory usage as the input size increases?  Asymptotic analysis allows us to compare algorithms and select one over another.  It also allows us to judge if any algorithm will be able to solve a particular problem within a meaningful amount of time or the system's limited storage capacity.
+Why bother with asymptotic analysis?  Why bother with examining how an algorithm increases in runtime and memory usage as the input size grows?  Asymptotic analysis allows us to compare algorithms and select one over another.  It also allows us to judge if any algorithm will be able to solve a particular problem within a meaningful amount of time or within the system's limited storage capacity.
 
-Most often, we measure things in terms of _worst-case_ performance of an algorithm.  This is important when response time and memory usage is critical like in managing a self-driving car or autopilot system.  There are also times where the _average-case_ performance is important, especially where an algorithm is run often or across many instance, like an analysis program run regularly on a cloud platform. The average runtime (and standard deviation) can be important for a task run thousands of times an hour.
+Most often, we measure things in terms of _worst-case_ performance of an algorithm.  This is important when response time and memory usage is critical like when managing a self-driving car or autopilot system.  There are also times where the _average-case_ performance is important, especially where an algorithm is run often or across many instances, like an analysis program run regularly on a cloud platform; the average runtime (and standard deviation) can be important for a task run thousands of times an hour.
 
 <!-- Add graphs -->
-| Big-O | English Term
-|--- |--- |
-| O(1) | Constant |
-| O(log n) | Logarithmic |
-| O(n) | Linear |
-| O(n<sup>2</sup>) | Quadratic |
-| O(n<sup>3</sup>) | Cubic |
-| O(2<sup>n</sup>) | Exponential |
-| O(n!) | Factorial |
+| Big O            | English Term   |
+|---               |---             |
+| O(1)             | Constant       |
+| O(log n)         | Logarithmic    |
+| O(n)             | Linear         |
+| O(n<sup>2</sup>) | Quadratic      |
+| O(n<sup>3</sup>) | Cubic          |
+| O(2<sup>n</sup>) | Exponential    |
+| O(n!)            | Factorial      |
 
-## Review of Big O Notation
+## Review of Big O Notation 
 
-Consider this problem:
+### Time Complexity
 
-```
-Write a function to add up all the numbers from 1 to n.
-```
+When we consider sample input to programming exercises like the type often asked in technical interviews, we usually consider relatively small inputs because they are easier for us to understand. Analyzing different algorithms on such small inputs, it can be difficult to understand why time complexity might matter. Even inefficient algorithms often perform well on small inputs. But as the size of the input `n` increases, the number of operations performed by the algorithm often also increases. *We care about how the trend in the number of operations changes with the size of the input*. We also attempt to estimate the worst-case scenario for the number of operations. Big O provides a way to measure and discuss how the worst-case scenario for the number of operations changes with the size of the input.
 
-We could solve the problem by using a loop to iterate through the numbers from 1 to n and add them all up.
+#### Constant Time Complexity
 
-```python
-def add_from_1_to_n(n):
-    total = 0
-    for i in range(1, n + 1):
-        total += i
-    
-    return total
-```
+Some algorithms take essentially the same or _constant_ amount of time to run regardless of the size of the input. 
 
-Or we could do arithmetic to solve the problem:
+Consider the example below which returns the sum of numbers 1 through n. 
 
-*Code snippet: Using arithmetic*
-
-```python
+```py
 def add_from_1_to_n(n):
     return (n * (n + 1)) / 2
 ```
 
 <details style="max-width: 700px; margin: auto;">
-  <summary>How does the 2nd solution work?</summary>
+  <summary>How does this solution work?</summary>
 
-  How does the 2nd solution work?
+One alternative solution to this same problem would be to loop through the numbers from 1 to n and return the result:
 
-If we look at the loop based solution to the problem we can see that it will add up all the numbers from 1 to n.
+`1  +   2  +  3  + ...  + (n-1)  + n`
 
-1  +   2  +  3  + ...  + (n-1)  + n
+We could rewrite the above expression in descending order as:
 
-We could rewrite it as:
+`n + (n-1) + ... +  3 +  2  + 1`
 
-n + (n-1) + ... +  3 +  2  + 1
-
-So we could get twice the sum by adding both versions together:
+If we add both of the above expressions together, we get two times the sum we are looking for: 
 
 ```
    1    +    2    +    3    + ... + (n-1) + n
 +  n    +  (n-1)  +  (n-2)  + ... +   2   + 1
 ----------------------------------------------
-(n+1) + (n+1) + (n+1) + ... + (n+1) + (n+1)     <--- adding (n+1) n times
+(n+1)   +  (n+1)  +  (n+1)  + ... + (n+1) + (n+1) <-- adds (n+1) n times
 
 n * (n+1)
 ```
-
-So `n * (n+1)` is twice the sum of all the numbers from 1 to n. Thus the answer is `(n * (n+1)) / 2`
 </details>
 
-It may seem clear that the second approach is better, but how does it perform compared to the 1st implementation?  We can use Big O notation to answer this question. Big O provides a precise language to describe how a function performs in terms of time the algorithm takes and memory used during execution.
+Notice that regardless of the size of n, we perform the same number of operations: Whether n is 1 or one million, we multiply its value by itself plus one, then divide the resulting product in half. 
 
-Generally when we evaluate an algorithm, or solution to a problem, we look at in in terms of:
-
-* How long does it take to run
-* How much memory does it take to run
-* How maintainable is the code
-  * Can it be tested throughly
-  * Can it be read easily
-
-The third criteria is often the most important. Development time is important and expensive,  however sometimes in mission critical application bottlenecks how fast an algorithm runs or memory consumption can be very important.
-
-## Evaluating Time & Space Complexity
-
-So both functions calculate the same answer, but how do we judge which is better? Both use similar amounts of memory as both only create a limited number of integer variables, no lists or dictionaries. The loop-based solution is easier to understand for anyone who has not worked through the arithmetic solution.
-
-However the arithmetic solution will run faster as it does not require a loop which performs `n` additions. However how much better is it?
-
-If we timed our code we could observe how long it takes to run.
-
-|  n 	|  Loop-based solution 	|  Arithmetic solution 	|
-|---	|---	|---    |
-|   1000000	| 0.036s  	| ~0s      |
-|   10000000	|   0.30s	|  ~0s     |
-|   10000000	|   2.99s	|  ~0s     |
-|   10000000	|   30.03s	|  ~0s     |
-
-
-Looking at the timing results of the two functions we can see that the arithmetic solution is *much* faster. This is because the arithmetic solution performs much fewer operations and the number of operations does not change when `n` becomes large. On the other hand the loop-based solution performs a coorespondingly larger number of operations as `n` increases. Notice that as `n` increased tenfold, the number of seconds it took to run the loop-based solution increased by an approximate factor of ten.
-
-![Loop based vs arithmetic solution chart](images/problem-solving__loop-based-vs-arithmetic-timing.svg)
-
-*Fig. Loop based vs arithmetic solution chart*
-
-### Why Timing Our Code Is Not Enough
-
-However timing our code, while helpful, is not enough. This is because:
-
-* Other programs can be running while our code executes, making our measurements less accurate
-* Computers vary in speed and accuracy, so the amount of time the program takes to run on one computer would be different from another.
-* Other factors outside of our code timing results can vary between executions.
-
-We could try to count the number of operations performed by our code, but high level languages often obscure the number of operations performed. For example, in Python the number of operations performed by a library function is not easily accessible. 
-
-Instead as computer scientists we have developed Big O notation as a way to formalize a rough estimate of the number of how the number of operations *change* as the size of the input increases.
-
-**Note:** We care about how the algorithm performance *changes* as the input size **increases**.
-
-### Time Complexity
-
-Thus enters the field of time complexity. Even inefficient algorithms can often perform well with small inputs. But as the size of the input `n` increases, the number of operations performed by the algorithm often increases. **We care about how the trend in the number of operations changes with the size of the input**. We also attempt to estimate the worst-case scenario for the number of operations. Big O provides a way to measure and discuss how the worst-case scenario for the number of operations changes with the size of the input.
-
-* **Formal definition of Time Complexity:**
-  * A theoretical measure of the execution of the time an algorithm needs, given the problem size n, which is usually the number of items.
-  * Informally, saying some equation f(n) = O(g(n)) means that the actual runtime is less than some constant multiple of g(n). The notation is read, "f of n is big oh of g of n".
-
-#### Constant Time Complexity
-
-Some algorithms will take essentially the same amount of time regardless of the size of the input. A good example is our arithmetic solution from above. It takes the same amount of time regardless of the size of the input.
-
-```py
-def add_from_1_to_n(n):
-    return (n * (n + 1)) / 2
-```
-
-So for these **constant time** algorithms we say the algorithm has a **constant time complexity** or `O(1)`.
+In Big O terms, we can say an algorithm that perform essentially the same number of operations regardless of the size of the input has a **constant time complexity** or is `O(1)`. Note that `1` is a constant (not variable) value. 
 
 #### Linear Time Complexity
 
-On the other hand some algorithms will take an amount of time proportional to changes in the size of the input. A good example is our loop based function. If the input size doubles, the function will take roughly twice as long to run. 
+On the other hand some algorithms will take an amount of time proportional to changes in the size of the input. A good example is a loop based version of our function that calculates the sum of numbers 1 through n.  
 
 ```py
 def add_from_1_to_n(n):
@@ -164,9 +86,15 @@ def add_from_1_to_n(n):
     return total
 ```
 
-This is called a **linear time complexity** or `O(n)`.
+If the input size doubles, our function will take roughly double the time to run. We can see this in action by estimating the run time on specific inputs. 
 
-Notice that if we had an algorithm that printed all the numbers from 1 to n and then down from n to 1 it would take `O(n + n)` = `O(2n)` time to execute, but for Big O we drop any cooeficients or less significant terms. Thus `O(2n)` = `O(n)`.
+Imagine that assigning total to 0 takes 1 second, incrementing `i` takes 1 second, and adding `i` to the total also takes 1 second. Regardless of whether the n is 10 or 20, initializing total to 0 will take the same amount of time (1 second). But if n is 10, we will need to increment `i` 10 times (10 seconds) and add `i` to `total` 10 times (10 seconds) resulting in an overall run times of 1 + 10 + 10 = 21 seconds. 
+
+If n is 20, we will need to increment `i` 20 times (20 seconds) and add `i` to `total` 20 times (20 seconds) resulting in an overall run times of 1 + 20 + 20 = 41 seconds or roughhly double the run time to execute the function when n was 10. 
+
+A function where the run time increases in direct proportion to the size of the input has a **linear time complexity** or `O(n)`.
+
+If we altered our algorithm slightly to print all the numbers from 1 to n and then down from n to 1 using a loop it would take `O(n + n)` = `O(2n)` time to execute. For Big O, we drop any coefficients or constant terms. Thus `O(2n)` => `O(n)`.
 
 ```py
 def count_up_and_down(n):
@@ -179,49 +107,44 @@ def count_up_and_down(n):
         print(i)
 ```
 
-So the above function also has a **linear time complexity** or `O(n)`.
+So although `count_up_and_down` may be doing more operations than `add_from_1_to_n` it also has a **linear time complexity** or `O(n)`. 
+
+In general, whenever we do operations that are sequential (one after another) we add their time complexities together. If the time complexities being added are different, say an O(n) and O(1) operation (as opposed to the O(n) + O(n) operation in the example above), the less dominant (faster/better) time complexity is dropped. Thus `O(n + 1)` => `O(n)`
 
 #### Quadratic Time Complexity
 
-Often we will have a function which involves nested loops. For example the code below contains a for loop which runs n times and a loop nested inside which runs, worst-case, n-1 times.
+Often we encounter functions which involves nested loops. For example the code below contains a for loop which runs n times and a loop nested inside of it which runs, worst-case, n-1 times where n is the length of numbers.
 
 ```py
-def minimum_sub_list_length(numbers, target):
-    if target == 0:
-        return 0
-    
-    min_length = len(numbers) + 1
-  
-    # loop runs n times
-    for index in range(0, len(numbers)):
-        current_sum = numbers[index]
-        current_index = index + 1
-        # nested loop runs, worst-case n-1 times
-        while current_index < len(numbers) and \
-                current_sum + numbers[current_index] <= target:
-            current_sum += numbers[current_index]
-            current_index += 1
-        
-        if current_sum == target and current_index - index < min_length:
-            min_length = current_index - index
-    
-    if min_length == len(numbers) + 1:
-        return None
-    
-    return min_length
+  def zero_sum_subarray(numbers):
+    if not numbers:
+      return []
+
+    subarrays = []
+
+    for i in range(len(numbers)):
+      current_subarray = []
+      subarray_sum = 0
+      for j in range(i, len(numbers)):
+        current_subarray.append(numbers[j])
+        subarray_sum += numbers[j] 
+        if subarray_sum == 0:
+          subarrays.append(current_subarray.copy())
+
+    return subarrays
 ```
 
-When we encounter nested loops, we multiply the time complexity of the inner loop by the number of iterations of the outer loop. 
+When we encounter nested loops or other nested operations, we multiply the time complexity of the inner loop by the number of iterations of the outer loop. 
 
 So in this case:
 
-* If we multiply the number of iteration on the outer loop by the inner loop: `(n * (n-1))` = `(n^2 - n)`
+* If we multiply the number of iterations the outer loop does by the number of iterations the inner loop does: `(n * (n-1))` = `(n^2 - n)`
 * We can drop the less significant term `n` because `n^2` will dominate the result. 
 * We end up with a time complexity of `O(n^2)`.
 
 This is called a **quadratic time complexity** or `O(n^2)`.
 
-#### Logorithms
+#### Logarithms
 
 Sometimes algorithms may produce time complexities more sophisticated than quadratic or linear. For example, the following function will take `O(log n)` time.
 
@@ -246,13 +169,11 @@ def binary_search(test_array, value):
 
 **What is a log again**?
 
-A logarithm is a quantity representing the power to which a fixed number (the base) must be raised to produce a given number. For example the log with base 2 of 8 is 3 (2^3 = 8)  The log of base 10 of 10000 is 4 (10^4 = 10000).
-
-See below. 
+A logarithm can be though of this inverse of an exponent. It is the quantity representing the power to which a fixed number (the base) must be raised to produce a given number. For example the log with base 2 of 8 is 3 because 2^3 = 8.  The log of base 10 of 10000 is 4 because 10^4 = 10000.
 
 ![Log example](images/problem-solving__log-example.png)
 
-In a coding problem if we reduce the size of a problem by dividing the remaining input with each iteration we often get a time complexity involving a logarithm.
+What does this mean practically speaking? In a coding problem if we reduce the size of a problem by dividing the remaining input at a constant rate with each iteration we often get a time complexity involving a logarithm.
 
 Taking an [example from Stack Overflow](https://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly/2307314#2307314), a physical example of a logathmic algorithm is:
 
@@ -263,6 +184,7 @@ then checking to see whether the person's name is at that point. Then
 repeat the process about halfway through the part of the book where 
 the person's name lies. (This is a binary search for a person's name.)
 ```
+
 
 The classical example of a logarithmic problem is binary search:
 
@@ -318,6 +240,24 @@ We will occassionally encounter algorithms that have other time complexities. La
 [![Time complexity chart](images/problem-solving__big-o-cheat-sheet.png)](https://www.bigocheatsheet.com/)
 
 *Fig. From Big O Cheat Sheet*
+
+We may also encounter time complexities which use variables other than `n`. One typical scenario for this is when we have multiple inputs of variable sizes that both affect time complexity.
+
+For example, say we have the following function which will make a 2D matrix with `rows` number of rows and `columns` number of columns where all values inside the matrix are initialized to `None`.
+
+```python
+def init_matrix(rows, columns):
+    matrix = []
+    for r in range(rows):
+        matrix.append([])
+        for c in range(columns):
+            matrix[r].append(None)
+    return matrix
+```
+
+We could say this algorithm has an **`O(m*n)` time complexity** where `m` is the number of rows and `n` is the number of columns. When discussing time complexity, we want to use separate variables to represent the number of rows and number of columns because their respective values could be drastically different. We could be trying to create a matrix with just 1 row and 1000 columns. 
+
+This is part of the reason it's very important that we clearly define what our Big O variables represent when discussing time and space complexity. When multiple variables are at play, we want to communicate clearly which ones are affecting the overall runtime and/or memory usage.
 
 ### Space Complexity
 
@@ -457,24 +397,6 @@ Some general rules to use when thinking about time and space complexity:
 * Accessing an element in an array or a value in a dictionary by the key is constant `O(1)`
 * In a loop the time complexity is the length of the outer loop multiplied by the time complexity of the loop body
 
-
-
-### Mergesort
-
-Mergesort is another classic divide and conquer algorithm.  In mergesort, if our list has a size greater than 1, we divide our list into two halves conduct a mergesort on each half and merge the sorted lists together.
-
-![Example MergeSort Diagram](images/MergeSort.png)
-
-#### Analysis of Mergesort
-
-If the Time complexity of mergesort is `T(n)` we can determine the time complexity of mergesort as follows.
-
-**Dividing** When we divide the list into two sublists this takes `O(1)` as it just calculates the middle of the sub-array.
-**Conquer**  We then recursively sort each half, which is of size n/2.  You can then say that the time complexity of both halves is `2 * T(n/2)`.
-**Combining** The merge method into an n-element subarray is `O(n)`.  
-
-
-
 ## Categories of Algorithms
 
 There are a [number of different categories of algorithms](https://s2.smu.edu/~vdebroy/cse3353/Lectures/Lecture-7/Algorithm-Types.pdf).  Each category describes the general approach to the algorithm's use in solving its particular problem.  Categories are not exclusive; an algorithm can be a member of multiple categories.  For example QuickSort can be both a divide and conquer algorithm and a randomized algorithm if it picks a random element as a pivot to sort against at each stage.
@@ -484,3 +406,83 @@ In this lesson we will look at a few categories, specifically _divide and conque
 ## Summary
 
 You've been adding algorithms all along!
+
+<!-- 
+Consider this problem:
+
+```
+Write a function to add up all the numbers from 1 to n.
+```
+
+We could solve the problem by using a loop to iterate through the numbers from 1 to n and add them all up.
+
+```python
+def add_from_1_to_n(n):
+    total = 0
+    for i in range(1, n + 1):
+        total += i
+    
+    return total
+```
+
+Or we could perform the following arithmetic to solve the problem:
+
+```python
+def add_from_1_to_n(n):
+    return (n * (n + 1)) / 2
+```
+
+
+
+So `n * (n+1)` is twice the sum of all the numbers from 1 to n. Thus the answer is `(n * (n+1)) / 2`
+</details>
+
+How does the second approach perform compared to the first implementation?  We can use Big O notation to answer this question. Big O provides a precise language to describe how a function performs in terms of time the algorithm takes and memory used during execution.
+
+Generally when we evaluate an algorithm, or solution to a problem, we look at in in terms of:
+
+* How long does it take to run?
+* How much memory does it take to run?
+* How maintainable is the code?
+  * Can it be tested throughly?
+  * Can it be read easily?
+
+The third criteria is often even more important than either runtime or memory usage. Development time is important and expensive. However sometimes in mission critical applications, bottlenecks in how fast an algorithm runs or how much memory it consumes can be very important.
+
+## Evaluating Time & Space Complexity
+
+So both functions calculate the same answer, but how do we judge which is better? Reviewing what we know about space complexity both use similar amounts of memory as both only create a limited number of integer variables, no lists, dictionaries, or other variables with variable size. 
+
+While the loop-based solution is easier to understand for anyone who has not worked through the arithmetic solution, the arithmetic solution will run faster as it does not require a loop which performs `n` additions. But _how_ much better is it?
+
+If we time our code we can observe how long each option takes to run on various input sizes.
+
+|Input size *n* |  Loop-based solution |  Arithmetic solution 	|
+|---	        |---	               |---                     |
+|   1000000	    | 0.036s  	           | ~0s                    |
+|   10000000	|   0.30s	           |  ~0s                   |
+|   10000000	|   2.99s	           |  ~0s                   |
+|   10000000	|   30.03s	           |  ~0s                   |
+
+
+Looking at the timing results of the two functions we can see that the arithmetic solution is *much* faster.  Notice that as `n` increases tenfold, the number of seconds it takes to run the loop-based solution also increeases by an approximate factor of ten.
+
+Below, we can compare the run time of the two approaches graphically. 
+
+![Loop based vs arithmetic solution chart](./images/problem-solving-looped-based-vs-arithmetic-timing.svg)
+
+### Why Timing Our Code Is Not Enough
+
+However timing our code, while helpful, is not enough. This is because:
+
+* Other programs can be running while our code executes, making our measurements less accurate
+* Computers vary in speed and accuracy, so the amount of time the program takes to run on one computer would be different from another.
+* Other factors outside of our code timing results can vary between executions.
+
+We could try to count the number of operations performed by our code, but high level languages often obscure the number of operations performed. For example, in Python the number of operations performed by a library function is not easily accessible. 
+
+Instead as computer scientists we have developed Big O notation as a way to formalize a rough estimate of the number of how the number of operations *change* as the size of the input increases.
+
+**Note:** We care about how the algorithm performance *changes* as the input size **increases**.
+
+-->

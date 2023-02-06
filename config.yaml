@@ -20,8 +20,8 @@ Standards:
         UID: 0d492a6b-c9d8-492d-910e-219ff5ea80ae
         Path: /00-about-thursdays-at-ada/about-thursdays-at-ada.md
   -
-    Title: Algorithms
-    Description: Divide & Conquer, Greedy and Dynamic Programming
+    Title: Algorithmic Approaches
+    Description: Introduction to Algorithms, Analysis of Algorithms, Divide and Conquer, Recursion, Dynamic Programming
     UID: ccdccab2-b7f3-42d8-977d-955a58ce9d05
     SuccessCriteria:
       - success criteria
