@@ -526,7 +526,7 @@ def double_numbers(numbers):
 
 This function created a new list of numbers proportional in size to the input. So the space complexity is `O(n)`.
 
-Now try to estimate time time complexity for the following function.
+Now try to estimate time complexity for the following function.
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
