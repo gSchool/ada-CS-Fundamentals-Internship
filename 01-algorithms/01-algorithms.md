@@ -34,7 +34,7 @@ After skimming all of the topics, go back and do a closer read of topics you nee
 
 ## What is an an Algorithm?
 
-Before we can discuss different algorithmic strategies, we need to understanding what an algorithm _is_.  An **algorithm** is a finite set of instructions that, if followed, accomplishes a particular task.  We can think of it as a series of steps to accomplish a task.  For example, Google maps has an algorithm to calculate the best route to drive between any two points on map.  
+Before we can discuss different algorithmic strategies, we need to understand what an algorithm _is_.  An **algorithm** is a finite set of instructions that, if followed, accomplishes a particular task.  We can think of it as a series of steps to accomplish a task.  For example, Google Maps has an algorithm to calculate the best route to drive between any two points on a map.  
 
 All algorithms must have:
 
