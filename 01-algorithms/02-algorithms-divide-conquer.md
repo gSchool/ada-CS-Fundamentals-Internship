@@ -1,14 +1,14 @@
 # Divide and Conquer
 
-## Goals
+## Learning Goals
 
-You may recall learning about divide and conquer algorithms such as Binary Search, Quick Sort, and Merge Sort. This lesson is intended to serve as a refresher for the divide and conquer approach.
+You may recall learning about divide and conquer algorithms such as Quick Sort, and Merge Sort, Binary Search. This lesson is intended to serve as a refresher for the divide and conquer approach.
 
 This lesson requires prior knowledge about the divide and conquer technique and you are encouraged to re-read the Divide and Conquer lesson under the Algorithmic Strategies topic provided during classroom if you require more details about any of the review topics mentioned here. Any new topics covered in this lesson will be clearly indicated.
 
 ## Overview
 
-As a reminder, **Divide and Conquer** is an approach to problem solving that breaks down a large problem into multiple, smaller subproblems. We use the results of those subproblems to solve the original problem.
+As a reminder, **Divide and Conquer** is an approach to problem solving that breaks down a large problem into multiple, smaller subproblems. We combine the results of those subproblems to solve the original problem.
 
 When we write a divide-and-conquer solution we can follow these steps:
 
@@ -61,7 +61,7 @@ Binary search can be used to solve many problems related to searching through so
 Suppose you are given a sorted array of non-negative distinct integers. 
 You are tasked with finding the smallest missing non-negative element inside of the array.
 
-The array should start with the integer 0, if it is present in the array.
+If present, the array should start with the integer 0.
 
 For example:
 If the array is [0, 1, 2, 6, 9, 11, 15], the smallest missing element is 3.
