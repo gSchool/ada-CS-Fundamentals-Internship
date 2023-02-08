@@ -2,7 +2,7 @@
 
 ## Learning Goals
 
-You may recall learning about divide and conquer algorithms such as Quick Sort, and Merge Sort, Binary Search. This lesson is intended to serve as a refresher for the divide and conquer approach.
+You may recall learning about divide and conquer algorithms such as Quick Sort, Merge Sort, and Binary Search. This lesson is intended to serve as a refresher for the divide and conquer approach.
 
 This lesson requires prior knowledge about the divide and conquer technique and you are encouraged to re-read the Divide and Conquer lesson under the Algorithmic Strategies topic provided during classroom if you require more details about any of the review topics mentioned here. Any new topics covered in this lesson will be clearly indicated.
 
@@ -27,6 +27,9 @@ QuickSort is an algorithm which takes a divide-and-conquer approach to sorting a
 1. Move all elements smaller than the pivot to the left and all elements larger than the pivot to the right. Note that the pivot is now in the correct index. Picking a pivot and rearranging the elements is referred to as _partitioning_.
 1. Perform QuickSort on the left and right sides of the pivot.
 
+![QuickSorting the array (7, 3, 9, 1, 6, 8, 2, 5) where the pivot is chosen by taking the last element in the array. The first pivot is 5, which after rearranging gives the array (3, 1, 2, 5, 6, 8, 9, 7). The left array (3, 1, 2) and right array (6, 8, 9, 7) are QuickSorted. 2 is selected as the pivot, and after rearranging, the left array becomes (1, 2, 3). The left and right arrays are (1) and (3), which are both 1 element, meaning they are sorted. Returning to (6, 8, 9, 7), 7 is picked as the pivot. After rearranging, the array becomes (6, 7, 9, 8). The left array is (6), which is sorted. The right array is (9, 8). 8 is selected as the pivot. After rearranging, the array becomes (8, 9). There is no left array, and the right is (9), which is sorted. All subarrays have been sorted, meaning the whole array is sorted, having become (1, 2, 3, 5, 6, 7, 8, 9).](images/algorithmic-strategies_divide-and-conquer_quick-sort.png)  
+ _Fig. Tracing through an application of QuickSort in which the final element in a subarray is chosen as the pivot._
+
 ### Example: Merge Sort
 
 Merge sort is another divide-and-conquer algorithm. It involves the following three stages:
@@ -34,6 +37,9 @@ Merge sort is another divide-and-conquer algorithm. It involves the following th
 1. _Divide_ the array into two subarrays at each step until each subarray is of size one.
 2. _Sort_ each subarray with the merge sort algorithm. (An array of size one is trivially sorted.)
 3. _Merge_ the subarrays into one array by combining two subarrays into one at each step.
+
+![Merge sort example. The list starts with the values (7, 2, 8, 1, 6, 5, 3, 9) (s=0, m=4, e=8). This is split into to lists with one having (7, 2, 8, 1) (s=0, m=2, e=4), and the other having (6, 5, 3, 9) (s=4, m=6, e=8). Each list of four values is split into two lists of 2 value, resulting in 4 total lists. (7, 2) (s=0, m=1, e=2), (8, 1) (s=2, m=3, e=4), (6, 5) (s=4, m=5, e=6), and (3, 9) (s=6, m=7, e=8). Finally, each list of two is split into two single item lists for a total of 8 single item lists. (7) (s=0, e=1), (2) (s=1, e=2), (8) (s=2, e=3), (1) (s=3, e=4), (6) (s=4, e=5), (5) (s=5, e=6), (3) (s=6, e=7), (9) (s=7, e=8). Now each array has only a single value, making it implicitly sorted. The individual subarrays are merged so that they preserve their sorted property by combining them into a temporary array, then copying the sorted values over the merged range until the entire array becomes sorted.](images/algorithmic-strategies_divide-and-conquer_merge-sort.png)  
+ _Fig. Example run of merge sort showing the index calculations used to split and merge the arrays. Note the convention used of the end index being exclusive._
 
 ### Example: Binary Search (Decrease-and-Conquer)
 
@@ -48,6 +54,9 @@ Here's a description of the binary search algorithm:
 1. If we don't find the value, we determine whether it would be in the left or right half of the array by seeing whether it is smaller or larger than the middle element. Remember, we can make this decision because _we assume the array is sorted!_ Then we perform a binary search on the selected half.
 1. If at any point, we end up with an empty range, we know the value was not in the array, and we can return a result indicating the value was not found, such as `None`. Other variations of binary search may return the index of where the value _should_ have been, but as a negative value to indicate that it was missing.
 1. Each recursion divides the array in half and performs the binary search on a smaller subproblem.
+
+![Performing binary search for the value 5 in the sorted list (1, 2, 3, 5, 6, 7, 8, 9). Looking for 5. Check the value at the midway index (s=0, m=4, e=8). 5 is less than 6. Adjust the ending index to rule out the right half. Check the value at the updated midway index (s=0, m=2, e=4). 5 is greater than 3. ADjust the starting index to rule out the left half. Check the value at the updated midway index (s=3, m=3, e=4). The value, 5, was found. Return the position, 3.](images/algorithmic-strategies_divide-and-conquer_binary-search.png)  
+ _Fig. Looking for the position of the value 5 in a sorted array using binary search._
 
 ## Binary Search in the Wild
 
