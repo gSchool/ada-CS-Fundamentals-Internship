@@ -175,7 +175,7 @@ A logarithm can be thought of as the inverse of an exponent. It is the power to 
 
 What does this mean practically speaking? In a coding problem, if we reduce the size of a problem by dividing the remaining input at a constant rate with each iteration we often get a time complexity involving a logarithm.
 
-Taking an [example from Stack Overflow](https://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly/2307314#2307314), a physical example of a logathmic algorithm is:
+Taking an [example from Stack Overflow](https://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly/2307314#2307314), a physical example of a logarithmic algorithm is:
 
 ```
 Given a person's name, find the phone number by picking a random point 
@@ -526,7 +526,7 @@ def double_numbers(numbers):
 
 This function created a new list of numbers proportional in size to the input. So the space complexity is `O(n)`.
 
-Now try to estimate time time complexity for the following function.
+Now try to estimate time complexity for the following function.
 
 <!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
 <!-- Replace everything in square brackets [] and remove brackets  -->
