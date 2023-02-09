@@ -2,13 +2,23 @@
 
 ## Learning Goals
 
-You may recall learning about divide and conquer algorithms such as Quick Sort, Merge Sort, and Binary Search. This lesson is intended to serve as a refresher for the divide and conquer approach.
+This lesson is intended to serve as an abbreviated walkthrough of the divide and conquer approach.
 
-This lesson requires prior knowledge about the divide and conquer technique and you are encouraged to re-read the Divide and Conquer lesson under the Algorithmic Strategies topic provided during classroom if you require more details about any of the review topics mentioned here. Any new topics covered in this lesson will be clearly indicated.
+This lesson does not require prior knowledge about the divide and conquer technique, however you are encouraged to re-read the Divide and Conquer lesson under the Algorithmic Strategies topic provided during classroom* if you require more details about any of the review topics mentioned here.
+
+If you did not have an opportunity to learn about these algorithms previously, you are invited to follow your curiosity and research any topics with which you are unfamiliar. Any topics that were not covered in classroom will be clearly indicated.
+
+### !callout-info
+
+## *Didn't review Divide and Conquer in Classroom?
+
+No problem! Keep reading and you'll get a description of the most pertinent algorithms. However, further research may be required if deeper knowledge or example implementations are desired.
+
+### !end-callout
 
 ## Overview
 
-As a reminder, **Divide and Conquer** is an approach to problem solving that breaks down a large problem into multiple, smaller subproblems. We combine the results of those subproblems to solve the original problem.
+**Divide and Conquer** is an approach to problem solving that breaks down a large problem into multiple, smaller subproblems. We combine the results of those subproblems to solve the original problem.
 
 When we write a divide-and-conquer solution we can follow these steps:
 
@@ -58,11 +68,55 @@ Here's a description of the binary search algorithm:
 ![Performing binary search for the value 5 in the sorted list (1, 2, 3, 5, 6, 7, 8, 9). Looking for 5. Check the value at the midway index (s=0, m=4, e=8). 5 is less than 6. Adjust the ending index to rule out the right half. Check the value at the updated midway index (s=0, m=2, e=4). 5 is greater than 3. ADjust the starting index to rule out the left half. Check the value at the updated midway index (s=3, m=3, e=4). The value, 5, was found. Return the position, 3.](images/algorithmic-strategies_divide-and-conquer_binary-search.png)  
  _Fig. Looking for the position of the value 5 in a sorted array using binary search._
 
-## Binary Search in the Wild
+## Other Examples of Divide and Conquer Algorithms
+
+The following material serves as an addendum to any Divide and Conquer content you may have covered in class. 
+
+## Minimum and Maximum Elements in an Array
+
+Suppose you are presented with the following problem:
+
+```
+Given an integer array, find the minimum and maximum element present in it by making the minimum number of comparisons.
+```
+
+Let's solve this problem using the divide and conquer method.
+
+The first step is to break the problem down into subproblems of the same type. We can do so by splitting the list into two halves repeatedly until there are only one or two elements to observe. We will also need to keep track of the minimum and maximum elements we have encountered thus far. We will update the min and max once we've reached the base case of one or two elements in the list.
+
+1. Create placeholders for the minimum and maximum elements. Set the minimum to the maximum integer value, set the maximum to the minimum integer value.
+1. Base Case: If there's only one element in the list, update the min and max by doing two comparisons
+1. Recursively call the function on both halves of the list
+1. Return the min and max values
+
+Notice we are dividing the list up, making comparisons to one element, and then combining the results by storing the minimum and maximum values encountered during our recursion.
+
+Spend *no more than 15 minutes* writing a solution to the problem detailed above.
+
+<details style="max-width: 700px; margin: auto;">
+  <summary>Click here to see a sample solution</summary>
+    ```py
+    import sys
+    def findMinAndMax(nums, left, right, minNum=sys.maxsize, maxNum=-sys.maxsize):
+        if left == right:
+            minNum = min(nums[left], minNum)
+            maxNum = max(nums[left], maxNum)
+            return minNum, maxNum
+    
+        # find the middle element
+        mid = (left + right) // 2
+    
+        # recur for the left sublist
+        minNum, maxNum = findMinAndMax(nums, left, mid, minNum, maxNum)
+    
+        # recur for the right sublist
+        minNum, maxNum = findMinAndMax(nums, mid + 1, right, minNum, maxNum)
+    
+        return minNum, maxNum
+    ```
+</details>
 
 ### Binary Search: A modified approach
-
-The following material serves as an addendum to the Divide and Conquer lesson reviewed during class. 
 
 Binary search can be used to solve many problems related to searching through sorted data. The following problem offers an opportunity to use the binary search algorithm using a modified approach.
 
@@ -156,11 +210,11 @@ The worst-case time complexity for Quicksort is O(N<sup>2</sup>) because picking
 
 * type: multiple-choice
 * id: 25522151-56d9-4495-9691-da53700f896e
-* title: Binary Search Implementation Detail
+* title: Common Divide and Conquer Implementation Detail
 
 ##### !question
 
-Which of the following lines in Python can be used to calculate the middle index used in step 1 of Binary Search? Assume the variable `high` stores the upper bound of where we want to search in the array and `low` stores the lower bound for where we want to search in the array.
+Which of the following lines in Python can be used to calculate the middle index used in step 1 of Binary Search and Merge Sort? Assume the variable `high` stores the upper bound of where we want to search in the array and `low` stores the lower bound for where we want to search in the array.
 
 ##### !end-question
 
@@ -201,4 +255,4 @@ In a divide and conquer solution we break a large problem into one or more small
 - [Daniel Liang's Binary Search Animation](https://yongdanielliang.github.io/animation/web/BinarySearchNew.html)
 - [Geeks for Geeks: Python Program for QuickSort](https://www.geeksforgeeks.org/python-program-for-quicksort/)
 - [hackerearth: QuickSort Animation](https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/visualize/)
-- [Find the smallest missing element from a sorted array](https://www.techiedelight.com/find-smallest-missing-element-sorted-array/)
+- [Write a program to calculate x to the nth power](https://www.geeksforgeeks.org/write-a-c-program-to-calculate-powxn/)
