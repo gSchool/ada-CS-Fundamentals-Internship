@@ -467,7 +467,7 @@ Instead of storing a list of all indices associated with a value, we only store 
 
     # loop through indices and values of input list
     for index, element in enumerate(numbers):
-      # if teh element has been seen previously
+      # if the element has been seen previously
       if element in elt_to_idx_map:
         # if the difference between current index
         # and index already in the dictionary 
