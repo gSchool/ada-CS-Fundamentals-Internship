@@ -98,8 +98,11 @@ Spend *no more than 15 minutes* writing a solution to the problem detailed above
     ```py
     import sys
     def findMinAndMax(nums, left, right, minNum=sys.maxsize, maxNum=-sys.maxsize):
+        # base case: the list is of size 1
         if left == right:
+            # set minNum to the minimum of the remaining element and the current minimum stored in minNum
             minNum = min(nums[left], minNum)
+            # set maxNum to the maximum of the remaining element and the current max stored in maxNum
             maxNum = max(nums[left], maxNum)
             return minNum, maxNum
     
