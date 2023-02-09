@@ -404,7 +404,7 @@ In our current approach we work through a single subarray and check as we move t
 
 Ideally, it would be nice to find all subarrays by only making a single loop through our input array. But if we eliminate the second loop in our current implementation, we no longer update the value that tracks the end index of our subarrays.
 
-What if we flipped our approach so that instead of first confirming we are within a subarray of length k and then checking wehther it contains duplicates, we instead track the indices of every value in our array and use arithmetic to see if any value with more than two instances is less than k?
+What if we flipped our approach so that instead of first confirming we are within a subarray of length k and then checking whether it contains duplicates, we instead track the indices of every value in our array and use arithmetic to see if any value with more than two instances is less than k?
 
 For this approach, we could pair elements in the array with the indices at which they occur using a dictionary. We know dictionaries are also called hashtables, and that hashtables have very fast look-up times!
 
