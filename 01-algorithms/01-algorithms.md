@@ -400,7 +400,7 @@ Is it possible that an alternative approach can help us achieve simpler or more 
 1. Finding all subarrays of size k
 2. Determining whether a single subarray contains duplicates
 
-In our current approach we work through a single subarray and check as we move through that subarray whether it contians duplicates. Then we repeat the process with the next subarray. 
+In our current approach we work through a single subarray and check as we move through that subarray whether it contains duplicates. Then we repeat the process with the next subarray. 
 
 Ideally, it would be nice to find all subarrays by only making a single loop through our input array. But if we eliminate the second loop in our current implementation, we no longer update the value that tracks the end index of our subarrays.
 
