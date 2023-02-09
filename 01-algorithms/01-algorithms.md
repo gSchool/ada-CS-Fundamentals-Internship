@@ -157,7 +157,7 @@ We should consider:
   
 By looking at concrete sample input and output examples, we can see that our problem is not as simple as it seems. We need to consider cases where we have a list with less than two elements or `k` is zero. 
 
-For our purposes we will expect the function to return `False` if the length of the list is less than two or if `k` is zero. In an interview setting, consider asking your interviewer if there is a preferred return value when the algorithm encounteres the edge case scenearios. If there is no preferred return value, make a thoughtful decision about what the algorithm should return and communicate your choice to your interviewer.
+For our purposes we will expect the function to return `False` if the length of the list is less than two or if `k` is zero. In an interview setting, consider asking your interviewer if there is a preferred return value when the algorithm encounters the edge case scenarios. If there is no preferred return value, make a thoughtful decision about what the algorithm should return and communicate your choice to your interviewer.
 
 <!-- available callout types: info, success, warning, danger, secondary, star  -->
 ### !callout-star
