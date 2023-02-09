@@ -227,7 +227,7 @@ Write a function called `duplicates_within_k` that takes in a list of integers n
 
 The function should return `True` if the same integer occurs multiple times within `k` distance. It should return `False` otherwise.
 
-Spend no more than 15 minutes working through this independently. Use the hints below or reach out for help if you are still feeling stuck after 5 minutes.
+Spend no more than 15 minutes working through this independently. Use the hints below or reach out for help if you are still feeling stuck after 15 minutes.
 
 ##### !end-question
 
