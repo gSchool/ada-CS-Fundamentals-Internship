@@ -86,10 +86,20 @@ The first step is to break the problem down into subproblems of the same type. W
 
 1. Create placeholders for the minimum and maximum elements. Set the minimum to the maximum integer value, set the maximum to the minimum integer value.
 1. Base Case: If there's only one element in the list, update the min and max by doing two comparisons
+    1. If the min is bigger than the value of the one element in the list, update the min
+    1. If the max is smaller than the value of the one element in the list, update the max
 1. Recursively call the function on both halves of the list
 1. Return the min and max values
 
-Notice we are dividing the list up, making comparisons to one element, and then combining the results by storing the minimum and maximum values encountered during our recursion.
+In this algorithm we are dividing the list up until there is only one element, making comparisons of the minimum and maximum values to this one element and updating the values if needed, and then combining the results by storing the minimum and maximum values encountered during our recursion.
+
+### !callout-info
+
+## Notice something familiar?
+
+You may notice similarities between this algorithm and the Merge Sort algorithm described above. If so, that's great! The Merge Sort and Binary Search algorithms are excellent models for a large number of divide-and-conquer algorithms. Due to this fact, it is recommended to spend more time understanding Merge Sort and Binary Search than any other divide-and-conquer algorithms. 
+
+### !end-callout
 
 Spend *no more than 15 minutes* writing a solution to the problem detailed above.
 
