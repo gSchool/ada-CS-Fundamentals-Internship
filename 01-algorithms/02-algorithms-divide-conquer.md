@@ -82,9 +82,7 @@ The following material serves as an addendum to any Divide and Conquer content y
 
 Suppose you are presented with the following problem:
 
-```
-Given an integer array, find the minimum and maximum element present in it by making the minimum number of comparisons.
-```
+*Given an integer array, find the minimum and maximum element present in it by making the minimum number of comparisons*
 
 Let's solve this problem using the divide and conquer method.
 
