@@ -164,11 +164,19 @@ Spend *no more than 15 minutes* writing a modified binary search solution to the
 
 <details style="max-width: 700px; margin: auto;">
 
-<summary>Click here for a hint</summary>
+<summary>Click here for pseudocode of the sample solution</summary>
 
-Keep in mind that we are looking for the first index containing an element that does not match its value in the array. 
+Keep in mind that we are looking for the first index containing an element that does not match its value in the array.
 
-If we check the 
+For our function, we can pass in the array, and the range of indices we would like to check, `left` and `right`.
+
+Our base case will check if the `left` index is greater than the `right` index. If so, the function will return the left index as this will be the first number that is missing from our list.
+
+Now we'll work on the recursive step. The first step is to calculate the middle index and store it in `mid`.
+
+If we check the middle element and its value does match the index, the mismatch must be on the right side of the list, so we will recurse on the right side. 
+
+If we check the middle element and its value does not match the index, the mismatch must be on the left side of the list, so we will recurse on the left side of the list.
 
 </details>
 
@@ -178,14 +186,15 @@ If we check the
 <summary>Click here to see a sample solution</summary>
 
 ```py
-[1, 2, 3, 4, 5]
 def findSmallestMissingNum(nums, left = None, right = None):
     # initialize right and left
     if left is None and right is None:
         (left, right) = (0, len(nums) - 1)
     
     # base case
+    # if the left index is greater than the right index
     if left > right:
+        # the left index is the first missing number
         return left
 
     # calculate the middle index
