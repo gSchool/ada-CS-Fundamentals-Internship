@@ -164,9 +164,21 @@ Spend *no more than 15 minutes* writing a modified binary search solution to the
 
 <details style="max-width: 700px; margin: auto;">
 
+<summary>Click here for a hint</summary>
+
+Keep in mind that we are looking for the first index containing an element that does not match its value in the array. 
+
+If we check the 
+
+</details>
+
+
+<details style="max-width: 700px; margin: auto;">
+
 <summary>Click here to see a sample solution</summary>
 
 ```py
+[1, 2, 3, 4, 5]
 def findSmallestMissingNum(nums, left = None, right = None):
     # initialize right and left
     if left is None and right is None:
@@ -182,7 +194,7 @@ def findSmallestMissingNum(nums, left = None, right = None):
     # if the mid index matches with its value, then the mismatch must lie on the right half
     if nums[mid] == mid:
         return findSmallestMissingNum(nums, mid + 1, right)
-    # otherwise, the mismatch must lie on the right half
+    # otherwise, the mismatch must lie on the left half
     else:
         return findSmallestMissingNum(nums, left, mid - 1)
 ```
