@@ -86,7 +86,7 @@ Suppose you are presented with the following problem:
 
 Let's solve this problem using the divide and conquer method.
 
-The first step is to break the problem down into subproblems of the same type. We can do so by splitting the list into two halves repeatedly until there are only one or two elements to observe. We will also need to keep track of the minimum and maximum elements we have encountered thus far. We will update the min and max once we've reached the base case of one or two elements in the list.
+The first step is to break the problem down into subproblems of the same type. We can do so by splitting the list into two halves repeatedly until there is only one element to observe. We will also need to keep track of the minimum and maximum elements we have encountered thus far. We will update the min and max once we've reached the base case of one element in the list.
 
 1. Create placeholders for the minimum and maximum elements. Set the minimum to the maximum integer value, set the maximum to the minimum integer value.
 1. Base Case: If there's only one element in the list, update the min and max by doing two comparisons
@@ -151,7 +151,7 @@ If present, the array should start with the integer 0.
 For example:
 If the array is [0, 1, 2, 6, 9, 11, 15], the smallest missing element is 3.
 
-If the array is [1, 2, 3, 4, 5], the smallest missing element is 0.
+If the array is [0, 1, 2, 3, 4, 5], the smallest missing element is 6.
 ```
 
 This problem can be solved in O(n) time using a linear search to find the first index containing an element that does not match its value. However, this approach does not take advantage of the fact the input is sorted.
@@ -166,15 +166,11 @@ Spend *no more than 15 minutes* writing a modified binary search solution to the
 
 Keep in mind that we are looking for the first index containing an element that does not match its value in the array.
 
-For our function, we can pass in the array, and the range of indices we would like to check, `left` and `right`.
-
-Our base case will check if the `left` index is greater than the `right` index. If so, the function will return the left index as this will be the first number that is missing from our list.
-
-Now we'll work on the recursive step. The first step is to calculate the middle index and store it in `mid`.
-
-If we check the middle element and its value does match the index, the mismatch must be on the right side of the list, so we will recurse on the right side. 
-
-If we check the middle element and its value does not match the index, the mismatch must be on the left side of the list, so we will recurse on the left side of the list.
+1. For our function, we can pass in the array, and the range of indices we would like to check, `left` and `right`.
+2. Our base case will check if the `left` index is greater than the `right` index. If so, the function will return the left index as this will be the first number that is missing from our list.
+3. Now we'll work on the recursive step. The first step is to calculate the middle index and store it in `mid`.
+    1. If we check the middle element and its value does match the index, the mismatch must be on the right side of the list, so we will recurse on the right side. 
+    2. If we check the middle element and its value does not match the index, the mismatch must be on the left side of the list, so we will recurse on the left side of the list.
 
 </details>
 
