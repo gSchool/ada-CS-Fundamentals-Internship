@@ -26,6 +26,12 @@ When we write a divide-and-conquer solution we can follow these steps:
 1. Recursively solve the subproblems
 1. Combine the solved subproblems to solve the larger problem
 
+There could be several sub-problems to a problem, so we need to choose the correct sub-problem involved. Most situations require for us to divide the problem into two equal parts.
+
+Solving the sub-problems recursively requires for us to carefully consider the input parameters for the recursive call of each sub-problem. It is also crucial for us to have the correct base case for the recursion. To do so, we need to identify the smallest version of the sub problem for which we already know the solution.
+
+Afterwards, we identify the correct operation for combining the solutions of the sub-problems to get our final result.
+
 ## Algorithms Previously Covered
 
 ### Example: QuickSort
@@ -93,9 +99,12 @@ The first step is to break the problem down into subproblems of the same type. W
 
 In this algorithm we are dividing the list up until there is only one element, making comparisons of the minimum and maximum values to this one element and updating the values if needed, and then combining the results by storing the minimum and maximum values encountered during our recursion.
 
+![Performing a modified version of Merge Sort to identify the minimum and maximum values of an array](images/algorithmic-strategies_divide-and-conquer_min-max.png)  
+ _Fig. Performing a modified version of Merge Sort to identify the minimum and maximum values of an array._
+
 ### !callout-info
 
-## Notice something familiar?
+## Is there an echo in here?
 
 You may notice similarities between this algorithm and the Merge Sort algorithm described above. If so, that's great! The Merge Sort and Binary Search algorithms are excellent models for a large number of divide-and-conquer algorithms. Due to this fact, it is recommended to spend more time understanding Merge Sort and Binary Search than any other divide-and-conquer algorithms. 
 
@@ -104,29 +113,31 @@ You may notice similarities between this algorithm and the Merge Sort algorithm 
 Spend *no more than 15 minutes* writing a solution to the problem detailed above.
 
 <details style="max-width: 700px; margin: auto;">
-  <summary>Click here to see a sample solution</summary>
-    ```py
-    import sys
-    def findMinAndMax(nums, left, right, minNum=sys.maxsize, maxNum=-sys.maxsize):
-        # base case: the list is of size 1
-        if left == right:
-            # set minNum to the minimum of the remaining element and the current minimum stored in minNum
-            minNum = min(nums[left], minNum)
-            # set maxNum to the maximum of the remaining element and the current max stored in maxNum
-            maxNum = max(nums[left], maxNum)
-            return minNum, maxNum
-    
-        # find the middle element
-        mid = (left + right) // 2
-    
-        # recur for the left sublist
-        minNum, maxNum = findMinAndMax(nums, left, mid, minNum, maxNum)
-    
-        # recur for the right sublist
-        minNum, maxNum = findMinAndMax(nums, mid + 1, right, minNum, maxNum)
-    
+
+<summary>Click here to see a sample solution</summary>
+
+```py
+import sys
+def findMinAndMax(nums, left, right, minNum=sys.maxsize, maxNum=-sys.maxsize):
+    # base case: the list is of size 1
+    if left == right:
+        # set minNum to the minimum of the remaining element and the current minimum stored in minNum
+        minNum = min(nums[left], minNum)
+        # set maxNum to the maximum of the remaining element and the current max stored in maxNum
+        maxNum = max(nums[left], maxNum)
         return minNum, maxNum
-    ```
+
+    # find the middle element
+    mid = (left + right) // 2
+
+    # recur for the left sublist
+    minNum, maxNum = findMinAndMax(nums, left, mid, minNum, maxNum)
+
+    # recur for the right sublist
+    minNum, maxNum = findMinAndMax(nums, mid + 1, right, minNum, maxNum)
+
+    return minNum, maxNum
+```
 </details>
 
 ### Binary Search: A modified approach
@@ -152,27 +163,29 @@ We can instead use a modified binary search algorithm to solve the problem in O(
 Spend *no more than 15 minutes* writing a modified binary search solution to the problem detailed above.
 
 <details style="max-width: 700px; margin: auto;">
-  <summary>Click here to see a sample solution</summary>
-    ```py
-    def findSmallestMissingNum(nums, left = None, right = None):
-        # initialize right and left
-        if left is None and right is None:
-            (left, right) = (0, len(nums) - 1)
-        
-        # base case
-        if left > right:
-            return left
 
-        # calculate the middle index
-        mid = (left + right) // 2
+<summary>Click here to see a sample solution</summary>
 
-        # if the mid index matches with its value, then the mismatch must lie on the right half
-        if nums[mid] == mid:
-            return findSmallestMissingNum(nums, mid + 1, right)
-        # otherwise, the mismatch must lie on the right half
-        else:
-            return findSmallestMissingNum(nums, left, mid - 1)
-    ```
+```py
+def findSmallestMissingNum(nums, left = None, right = None):
+    # initialize right and left
+    if left is None and right is None:
+        (left, right) = (0, len(nums) - 1)
+    
+    # base case
+    if left > right:
+        return left
+
+    # calculate the middle index
+    mid = (left + right) // 2
+
+    # if the mid index matches with its value, then the mismatch must lie on the right half
+    if nums[mid] == mid:
+        return findSmallestMissingNum(nums, mid + 1, right)
+    # otherwise, the mismatch must lie on the right half
+    else:
+        return findSmallestMissingNum(nums, left, mid - 1)
+```
 </details>
 
 ## Check for Understanding
@@ -268,4 +281,3 @@ In a divide and conquer solution we break a large problem into one or more small
 - [Daniel Liang's Binary Search Animation](https://yongdanielliang.github.io/animation/web/BinarySearchNew.html)
 - [Geeks for Geeks: Python Program for QuickSort](https://www.geeksforgeeks.org/python-program-for-quicksort/)
 - [hackerearth: QuickSort Animation](https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/visualize/)
-- [Write a program to calculate x to the nth power](https://www.geeksforgeeks.org/write-a-c-program-to-calculate-powxn/)
