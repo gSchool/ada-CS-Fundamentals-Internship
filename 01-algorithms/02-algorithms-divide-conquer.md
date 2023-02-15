@@ -78,7 +78,7 @@ Here's a description of the binary search algorithm:
 
 The following material serves as an addendum to any Divide and Conquer content you may have covered in class. 
 
-## Minimum and Maximum Elements in an Array
+### Minimum and Maximum Elements in an Array
 
 Suppose you are presented with the following problem:
 
@@ -95,7 +95,7 @@ The first step is to break the problem down into subproblems of the same type. W
 1. Recursively call the function on both halves of the list
 1. Return the min and max values
 
-In this algorithm we are dividing the list up until there is only one element, making comparisons of the minimum and maximum values to this one element and updating the values if needed, and then combining the results by storing the minimum and maximum values encountered during our recursion.
+In this algorithm we are dividing the list up until there is only one element, making comparisons of the minimum and maximum values to this one element and updating the values if needed, and then combining the results by storing the minimum and maximum values encountered during our recursive calls.
 
 ![Performing a modified version of Merge Sort to identify the minimum and maximum values of an array](images/algorithmic-strategies_divide-and-conquer_min-max.png)  
  _Fig. Performing a modified version of Merge Sort to identify the minimum and maximum values of an array._
@@ -104,7 +104,7 @@ In this algorithm we are dividing the list up until there is only one element, m
 
 ## Is there an echo in here?
 
-You may notice similarities between this algorithm and the Merge Sort algorithm described above. If so, that's great! The Merge Sort and Binary Search algorithms are excellent models for a large number of divide-and-conquer algorithms. Due to this fact, it is recommended to spend more time understanding Merge Sort and Binary Search than any other divide-and-conquer algorithms. 
+You may notice similarities between this algorithm and the Merge Sort algorithm described above. If so, that's great! The Merge Sort and Binary Search algorithms are excellent models for a large number of divide-and-conquer algorithms. While it is not necessary to memorize these algorithms, we do recommend prioritizing thoroughly understanding how the Merge Sort and Binary Search algorithms work over any other divide-and-conquer algorithms. 
 
 ### !end-callout
 
@@ -154,7 +154,7 @@ If the array is [0, 1, 2, 6, 9, 11, 15], the smallest missing element is 3.
 If the array is [0, 1, 2, 3, 4, 5], the smallest missing element is 6.
 ```
 
-This problem can be solved in O(n) time using a linear search to find the first index containing an element that does not match its value. However, this approach does not take advantage of the fact the input is sorted.
+This problem can be solved in O(n) time using a linear search to find the first index containing an element whose value and index are not equal. However, this approach does not take advantage of the fact the input is sorted.
 
 We can instead use a modified binary search algorithm to solve the problem in O(log(n)) time.
 
