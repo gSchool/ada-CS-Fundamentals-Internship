@@ -144,7 +144,7 @@ Binary search can be used to solve many problems related to searching through so
 
 ```
 Suppose we are given a sorted array of non-negative distinct integers. 
-You are tasked with finding the smallest missing non-negative element inside of the array.
+We would like to find the smallest missing non-negative element inside of the array.
 
 If present, the array should start with the integer 0.
 
