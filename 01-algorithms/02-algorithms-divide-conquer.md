@@ -143,7 +143,7 @@ def findMinAndMax(nums, left, right, minNum=sys.maxsize, maxNum=-sys.maxsize):
 Binary search can be used to solve many problems related to searching through sorted data. The following problem offers an opportunity to use the binary search algorithm using a modified approach.
 
 ```
-Suppose you are given a sorted array of non-negative distinct integers. 
+Suppose we are given a sorted array of non-negative distinct integers. 
 You are tasked with finding the smallest missing non-negative element inside of the array.
 
 If present, the array should start with the integer 0.
