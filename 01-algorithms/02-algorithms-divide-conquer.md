@@ -26,7 +26,7 @@ When we write a divide-and-conquer solution we can follow these steps:
 1. Recursively solve the subproblems
 1. Combine the solved subproblems to solve the larger problem
 
-There could be several sub-problems to a problem, so we need to choose the correct sub-problem involved. Most situations require for us to divide the problem into two equal parts.
+There can be several subproblems within a single problem, so we need to choose the correct subproblem involved. Most situations require us to divide the problem into two equal parts.
 
 Solving the sub-problems recursively requires for us to carefully consider the input parameters for the recursive call of each sub-problem. It is also crucial for us to have the correct base case for the recursion. To do so, we need to identify the smallest version of the sub problem for which we already know the solution.
 
