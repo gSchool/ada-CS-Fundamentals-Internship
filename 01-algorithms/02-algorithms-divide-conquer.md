@@ -61,7 +61,7 @@ Merge sort is another divide-and-conquer algorithm. It involves the following th
 
 Binary search is often called a decrease-and-conquer algorithm because it decreases the size of the array by half with each step. No matter how large the original array was, at each step we'll be able to discard half the remaining data from consideration! The half-sized array will then be analyzed with the same step as the full-sized array.
 
-Binary search is technically not considered a divide-and-conquer algorithm but instead a decrease-and-conquer algorithm because divide-and-conquer algorithms typically have *two or more* subproblems which are generated from the main problem. In contrast, the binary search algorithm decreases to one sub-problem.
+Binary search is technically not a divide-and-conquer algorithm but instead a decrease-and-conquer algorithm because divide-and-conquer algorithms typically have *two or more* subproblems which are generated from the main problem. In contrast, the binary search algorithm decreases to one subproblem.
 
 Here's a description of the binary search algorithm:
 
