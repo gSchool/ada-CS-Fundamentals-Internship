@@ -67,7 +67,7 @@ Here's a description of the binary search algorithm:
 
 1. Starting with a sorted array, we check whether the array contains a particular value by comparing the search value with the element in the middle of the array.
 1. If we find the value, return the position where it was found.
-1. If we don't find the value, we determine whether it would be in the left or right half of the array by seeing whether it is smaller or larger than the middle element. Remember, we can make this decision because _we assume the array is sorted!_ Then we perform a binary search on the selected half.
+1. If we don't find the value, we determine whether it would be in the left or right half of the array by checking whether it is smaller or larger than the middle element. Remember, we can make this decision because _we assume the array is sorted!_ Then we perform a binary search on the selected half.
 1. If at any point, we end up with an empty range, we know the value was not in the array, and we can return a result indicating the value was not found, such as `None`. Other variations of binary search may return the index of where the value _should_ have been, but as a negative value to indicate that it was missing.
 1. Each recursion divides the array in half and performs the binary search on a smaller subproblem.
 
