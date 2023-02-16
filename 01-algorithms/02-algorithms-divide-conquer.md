@@ -108,7 +108,89 @@ You may notice similarities between this algorithm and the Merge Sort algorithm 
 
 ### !end-callout
 
-Spend *no more than 15 minutes* writing a solution to the problem detailed above.
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: f08a392c-ccb2-463f-b085-ed3050c5adc4
+* title: Minimum and Maximum Elements in an Array
+* points: 0
+
+##### !question
+
+Given an integer array, find the minimum and maximum element present in it by making the minimum number of comparisons.
+
+**Try implementing the algorithm below. Spend no more than 15 minutes on this**
+
+##### !end-question
+
+##### !placeholder
+```py
+def min_max(arr):
+  '''
+  INPUT: 1-dimensional array with integers which can be either positive or negative
+  OUTPUT: Tuple where the first element is the minimum element in the array and the second element is the maximum element in the array.
+
+  Example input:
+  [7, 1, 8, 5, 10, 4, 2, 6]
+
+  Example output:
+  (1, 10)
+  '''
+  pass
+```
+
+##### !end-placeholder
+
+##### !tests
+```py
+import unittest
+import main as p
+
+class TestPython1(unittest.TestCase):
+    def test_one(self):
+        # Arrange
+        arr = [-2, -3, 4, -1, -2, 1, 5, -3]
+        # Act
+        minimum, maximum = p.min_max(arr)
+        # Assert
+        self.assertEqual(-3, minimum)
+        self.assertEqual(5, maximum)
+
+    def test_two(self):
+        # Arrange
+        arr = [-2,1,-3,4,-1,2,1,-5,4]
+        # Act
+        minimum, maximum = p.min_max(arr)
+        # Assert
+        self.assertEqual(-5, minimum)
+        self.assertEqual(4, maximum)
+
+    def test_three(self):
+        # Arrange
+        arr = [1]
+        # Act
+        minimum, maximum = p.min_max(arr)
+        # Assert
+        self.assertEqual(1, minimum)
+        self.assertEqual(1, maximum)
+
+    def test_four(self):
+        # Arrange
+        arr = [5,4,-1,7,8]
+        # Act
+        minimum, maximum = p.min_max(arr)
+        # Assert
+        self.assertEqual(8, maximum)
+        self.assertEqual(-1, minimum)
+```
+
+##### !end-tests
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 <details style="max-width: 700px; margin: auto;">
 
@@ -116,7 +198,7 @@ Spend *no more than 15 minutes* writing a solution to the problem detailed above
 
 ```py
 import sys
-def findMinAndMax(nums, left, right, minNum=sys.maxsize, maxNum=-sys.maxsize):
+def min_max_helper(nums, left, right, minNum=sys.maxsize, maxNum=-sys.maxsize):
     # base case: the list is of size 1
     if left == right:
         # set minNum to the minimum of the remaining element and the current minimum stored in minNum
@@ -129,12 +211,15 @@ def findMinAndMax(nums, left, right, minNum=sys.maxsize, maxNum=-sys.maxsize):
     mid = (left + right) // 2
 
     # recur for the left sublist
-    minNum, maxNum = findMinAndMax(nums, left, mid, minNum, maxNum)
+    minNum, maxNum = min_max_helper(nums, left, mid, minNum, maxNum)
 
     # recur for the right sublist
-    minNum, maxNum = findMinAndMax(nums, mid + 1, right, minNum, maxNum)
+    minNum, maxNum = min_max_helper(nums, mid + 1, right, minNum, maxNum)
 
     return minNum, maxNum
+
+def min_max(nums):
+    return min_max_helper(nums, 0, len(nums) - 1)
 ```
 </details>
 
@@ -147,11 +232,14 @@ Suppose we are given a sorted array of non-negative distinct integers.
 We would like to find the smallest missing non-negative element inside of the array.
 
 If present, the array should start with the integer 0.
+If the array contains all of the elements (none are missing), return the next number following the last number in the array.
 
 For example:
 If the array is [0, 1, 2, 6, 9, 11, 15], the smallest missing element is 3.
 
-If the array is [0, 1, 2, 3, 4, 5], the smallest missing element is 6.
+If the array is [0, 1, 2, 3, 4, 5], the smallest missing element is 6 as it is the first smallest element missing from the array.
+
+If the array is [1, 2, 4, 5, 6], the smallest missing element is 0.
 ```
 
 This problem can be solved in O(n) time using a linear search to find the first index containing an element whose value and index are not equal. However, this approach does not take advantage of the fact the input is sorted.
@@ -159,6 +247,79 @@ This problem can be solved in O(n) time using a linear search to find the first 
 We can instead use a modified binary search algorithm to solve the problem in O(log(n)) time.
 
 Spend *no more than 15 minutes* writing a modified binary search solution to the problem detailed above.
+
+<!-- >>>>>>>>>>>>>>>>>>>>>> BEGIN CHALLENGE >>>>>>>>>>>>>>>>>>>>>> -->
+
+### !challenge
+
+* type: code-snippet
+* language: python3.6
+* id: b124a149-3361-4359-9582-ec8eec166f14
+* title: Smallest Missing Element
+* points: 0
+
+##### !question
+
+Suppose we are given a sorted array of non-negative distinct integers. 
+We would like to find the smallest missing non-negative element inside of the array.
+
+**Try implementing the algorithm below. Spend no more than 15 minutes on this**
+
+##### !end-question
+
+##### !placeholder
+```py
+def smallest_missing_num(nums):
+  '''
+  INPUT: 1-dimensional array with integers 
+  OUTPUT: The integer which represents the smallest missing non-negative element inside of the array. If the array contains all of the elements, return the smallest number following the length of the array.
+
+  Example input:
+  [0, 1, 2, 6, 9, 11, 15]
+
+  Example output:
+  3
+  '''
+  pass
+```
+
+##### !end-placeholder
+
+##### !tests
+```py
+import unittest
+import main as p
+
+class TestPython1(unittest.TestCase):
+    def test_one(self):
+        # Arrange
+        arr = [0, 1, 2, 6, 9, 11, 15]
+        # Act
+        result = p.smallest_missing_num(arr)
+        # Assert
+        self.assertEqual(3, result)
+
+    def test_two(self):
+        # Arrange
+        arr = [0, 1, 2, 3, 4, 5]
+        # Act
+        result = p.smallest_missing_num(arr)
+        # Assert
+        self.assertEqual(6, result)
+
+    def test_three(self):
+        # Arrange
+        arr = [1, 2, 3, 4, 5]
+        # Act
+        result = p.smallest_missing_num(arr)
+        # Assert
+        self.assertEqual(0, result)
+```
+
+##### !end-tests
+### !end-challenge
+
+<!-- ======================= END CHALLENGE ======================= -->
 
 <details style="max-width: 700px; margin: auto;">
 
@@ -180,11 +341,7 @@ Keep in mind that we are looking for the first index containing an element that 
 <summary>Click here to see a sample solution</summary>
 
 ```py
-def findSmallestMissingNum(nums, left = None, right = None):
-    # initialize right and left
-    if left is None and right is None:
-        (left, right) = (0, len(nums) - 1)
-    
+def smallest_missing_num_helper(nums, left, right):  
     # base case
     # if the left index is greater than the right index
     if left > right:
@@ -196,10 +353,13 @@ def findSmallestMissingNum(nums, left = None, right = None):
 
     # if the mid index matches with its value, then the mismatch must lie on the right half
     if nums[mid] == mid:
-        return findSmallestMissingNum(nums, mid + 1, right)
+        return smallest_missing_num_helper(nums, mid + 1, right)
     # otherwise, the mismatch must lie on the left half
     else:
-        return findSmallestMissingNum(nums, left, mid - 1)
+        return smallest_missing_num_helper(nums, left, mid - 1)
+
+def smallest_missing_num(nums):
+    return smallest_missing_num_helper(nums, 0, len(nums) - 1)
 ```
 </details>
 
