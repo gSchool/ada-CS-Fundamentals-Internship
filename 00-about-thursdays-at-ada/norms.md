@@ -1,7 +1,7 @@
 # Thursdays at Ada Norms
 
 * **Attendance at Thursdays at Ada is optional for graduation** from the program. 
-  * We expect interns to be choose to engage with live Thursdays at Ada content as is most helpful to their learning needs.
+  * We expect interns to choose to engage with live Thursdays at Ada content as is most helpful to their learning needs.
 * CS Fundamentals assignments are a required part of your continuing education and graduation requirements. 
   * **You need to complete 80% (4/5) of problem sets for CS Fundamentals**. 
   * **You need to complete 100% (5/5) of Interview Practice Questions for CS Fundamentals**.
