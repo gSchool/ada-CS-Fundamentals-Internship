@@ -29,7 +29,7 @@ If you are able to read through the new topic material (without completing the p
  Choose your own completion dates by filling out and submitting [your personal study plan](https://docs.google.com/document/d/1uCUKu9sZLUSbxsUVobnf8d2EaudXIQxqFpSRhhYE2jU/edit?usp=sharing)
 
  ## Need to Change your Study Plan?
- We expect that most interns will need to adjust their intial study plan . If you are altering any milestones we ask that you update your study plan and fill out the milestone extension form, to give the Thursdays at Ada team awareness of your progress:
+We expect that most interns will need to adjust their initial study plan. If you are altering any milestones we ask that you update your study plan and fill out the milestone extension form, to give the Thursdays at Ada team awareness of your progress:
 [Milestone Extension Form](https://docs.google.com/forms/d/e/1FAIpQLSeBxKIJUhkQ9li3ZOmsSnqlQ38xnBhLEYO8Bnh2CkJkf8i3Ww/viewform?usp=sf_link)
 
  ## Final Deadline 
