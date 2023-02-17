@@ -6,8 +6,8 @@
   * **You need to complete 80% (4/5) of problem sets for CS Fundamentals**. 
   * **You need to complete 100% (5/5) of Interview Practice Questions for CS Fundamentals**.
   * **You need to complete 5 peer-to-peer mock interviews for CS Fundamentals**.
-  * New topics and problem sets are released at least two weeks before they are due
-  * New projects are released four weeks before they are due
+  * New topics and problem sets are released at least two weeks before the live session date
+  * New projects are released at least four weeks before the Plan A proposed completion date
   * Please contact your instructors and make use of the TAs for support.
   * Contact the Career Services Managers for Internship support
 * Career Development facilitators and speakers are volunteers who are excited to share their expertise with you. 
