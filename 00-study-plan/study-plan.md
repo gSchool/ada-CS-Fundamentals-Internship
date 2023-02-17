@@ -9,7 +9,7 @@
  - [Tigons TAA Study Plan Guide](https://docs.google.com/document/d/1pwa85WrRYpqs6rVNPSqOB6QZo-BH4tQcItQ_k99gSkc/edit?usp=sharing)
 
  ## Completion Options
-There a three basic paths to complete Thursdays at Ada requirements.
+There are three basic paths to complete Thursdays at Ada requirements.
 
  ### Path A
 Path A keeps pace with CS Fundamentals live sessions and will ensure you have covered all topics by the end of the third month of internship which is when many folks choose to actively begin their job search. Path A follows the pattern of learning a new CS Fundamentals topic and completing an interview practice question every two weeks. 
