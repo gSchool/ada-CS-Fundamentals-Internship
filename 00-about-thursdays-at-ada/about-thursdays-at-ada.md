@@ -3,15 +3,15 @@
 In Computer Science fundamentals students learn the following concepts and data structures:
 
 
-- [Algorithmic Approaches](../01-algorithms/01-algorithms.md) such as Divide & Conquer, Dynamic 
+- [Algorithmic Approaches](../01-algorithms/01-algorithms.md)
 - [Linked Lists](../02-linked-lists/01-linked-lists.md)
 - [Binary Search Trees](../03-Binary-Search-Trees/01-Ordered-Collections-Of-Data.md)
 - [Graphs: BFS & DFS](../04-graphs/01-graphs.md)
-- [Graphs: Dijkstra](../05-dijkstras/01-graphs-review.md)Programming & Greedy Algorithms
+- [Graphs: Dijkstra](../05-dijkstras/01-graphs-review.md)
 
 ### Reverse Classroom
 
-CS Fundamentals is taught in a [flipped-classroom](https://omerad.msu.edu/index.php?option=com_content&view=article&id=162:what-why-and-how-to-implement-a-flipped-classroom-model&catid=27:teaching) style. Students are assigned a week prior to review a markdown lesson with accompanying video lesson and slides. In class students are expected to ask questions, review concepts, and work on exercises in groups. Students are also given time to engage in a mock interview with a peer.
+CS Fundamentals is taught in a [flipped-classroom](https://omerad.msu.edu/index.php?option=com_content&view=article&id=162:what-why-and-how-to-implement-a-flipped-classroom-model&catid=27:teaching) style. Students are provided with a Learn topic to review two weeks prior to a live review session. In class students are expected to ask questions, review concepts, and work on exercises in groups. 
 
 ### CS Fun Recorded Sessions
 
@@ -28,28 +28,28 @@ All the CS Fundamentals and Career Services online sessions are recorded in Pano
 - [Thursdays at Ada Guide](https://drive.google.com/file/d/1Vz_NIgcPUqJlR9d1ZYUW8y3lJNVL_Xfl/view?usp=sharing)
 - [Thursdays at Ada Office Hours Guide](https://docs.google.com/document/d/12gi9oNXoXWvpJPANPbKE_KAvCJ9dwVNSkXmht5H0M84/edit?usp=sharing)
 - [Career Development Post Session Document](https://docs.google.com/document/d/1smwDoWvg1GUZjkxj4-CNSIDZpsbvwzBPHHXj5BQn748/edit?usp=sharing)
-- [CS Fundamentals Self Study Guide](https://docs.google.com/document/d/1Q5hpP5k4aNA3rTZB7_FkY8ZcxKldU_kkF21ssF5gMFE/edit?usp=sharing)
-- [Request Instructor Feedback on your Project Submission](https://forms.gle/8Y73jxau5T9kR8Q37)
+- [Your Study Plan Template](https://docs.google.com/document/d/1uCUKu9sZLUSbxsUVobnf8d2EaudXIQxqFpSRhhYE2jU/edit?usp=sharing)
+- [Submit an Alteration to Your Study Plan](https://docs.google.com/forms/d/e/1FAIpQLSeBxKIJUhkQ9li3ZOmsSnqlQ38xnBhLEYO8Bnh2CkJkf8i3Ww/viewform?usp=sf_link)
 
-#### Section A
-- [Section A Thursdays at Ada Overview Calendar](https://drive.google.com/file/d/1iQuNpFJ73xROlf-PZevYyWR_x1ZFImbk/view?usp=sharing)
-- [Section A CS Fundamentals Detailed Class Schedule](https://docs.google.com/document/d/1YHIPQZ50EqcFOiQKt3G76znzv-xwXEwqYzEMkEtjm8s/edit?usp=sharing)
+#### Ligers
+- [Ligers Thursdays at Ada Overview Calendar](https://calendar.google.com/calendar/u/0?cid=Y18wZmVlNmQxZWFhNzM4YWVlNzM5YTRkZjZmNmRjN2YzNzFmNmExMDkxYWFjMzlkODBhM2YzMjkyNDBlN2I4ZDBlQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
+- [Ligers CS Fundamentals Detailed Class Schedule](https://docs.google.com/document/d/14UwD9Er-pqmEgcEh1efBihnR-dgeSWhPE0K0N8KU1Wo/edit?usp=share_link)
+- [Ligers Personal Study Plan Guide](https://docs.google.com/document/d/19RsoW-SDkUapg0CQuTbCLKaUHuPGDFs6jh85QsjSTJs/edit?usp=sharing)
 
-#### Section B
-- [Section B Thursdays at Ada Overview Calendar](https://drive.google.com/file/d/1dInNdZve_Kb5dicLH32zeB0S6ZcrLj20/view?usp=sharing)
-- [ Section B CS Fundamentals Detailed Class Schedule](https://docs.google.com/document/d/18Rbl1scPfK3G0r25aQupYiAdDKrtHbBj5SyZlhDSFhw/edit?usp=sharing)
+#### Tigons
+- [Tigons Thursdays at Ada Overview Calendar](https://calendar.google.com/calendar/u/0?cid=Y19jYmZjN2VkMGRkMjkxY2M3MGNjMGM1NzljYzkxNzY4MzZhMTQ0MWJlYTk1MWRlMTc4ODc3NGE5ZDA0OTI0MTBmQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
+- [ Tigons CS Fundamentals Detailed Class Schedule](https://docs.google.com/document/d/1qQ9FzZ-w0Tep3KENv3knBzXXKmIhCX2il8362ixGWvk/edit?usp=share_link)
+- [Tigons Personal Study Plan Guide](https://docs.google.com/document/d/1pwa85WrRYpqs6rVNPSqOB6QZo-BH4tQcItQ_k99gSkc/edit?usp=sharing)
 
 
 #### Office Hours
-- [Seattle Office Hours](https://calendar.google.com/calendar/embed?src=c_cm98vq3aobh8vjgsvjofbojs40%40group.calendar.google.com&ctz=America%2FLos_Angeles)
-- [Digital Office Hours](https://calendar.google.com/calendar/embed?src=c_uaq8jpkddnnq12uof9733jhpn0%40group.calendar.google.com&ctz=America%2FLos_Angeles)
-
+- [Office Hours Calendar](https://calendar.google.com/calendar/u/0?cid=Y183NGY4Zjk4NDM1MWQ1NzEyZDIxOWVlMGFkOTBmN2EyMjBkYjcxN2RlOTkzODZlZGZlNTZkNDgwNWYxODUxYmVjQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
 
 #### Classroom Links
-- Career Development Sessions are hosted via Zoom Webinar. Links to each session's will be posted in your section's Slack channel.
-- CS Fundamentals sessions will be held in the [CS Fundamentals Zoom Room](https://adadev-org.zoom.us/j/7753306872)
+- Career Development Sessions and Mock Interviews are hosted in the [Career Services Zoom Room](http://careerservices.adadev.org)
+- CS Fundamentals sessions will be held in the [CS Fundamentals Zoom Room](http://cs-fun.adadev.org)
 
 
 #### Study Hall Zoom
-- The [thursdays.adadev.org](https://thursdays.adadev.org) is available for intern use as a study hall. 
+- The [thursdays.adadev.org](https://thursdays.adadev.org) is available for intern use as a study hall and community space. 
 - Host Key: 471379
