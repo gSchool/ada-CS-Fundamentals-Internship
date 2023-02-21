@@ -199,7 +199,7 @@ Feeling stuck often means you've found a subproblem you need to solve!
 
 Sample subproblems could be:
 
-1.  Finding all sublists of size `k+1`. 
+1.  Finding all sublists of size `k+1`. An element + the next k elements in the list means each sublist we are interested in sublists of size `k+1`.
 2.  Determining if a single sublist has duplicate elements.
 
 ##### !end-explanation
